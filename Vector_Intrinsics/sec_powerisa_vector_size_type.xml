@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Copyright (c) 2017 OpenPOWER Foundation
+  
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+  
+-->
+<section xmlns="http://docbook.org/ns/docbook"
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  version="5.0"
+  xml:id="sec_powerisa_vector_size_type">
+  <title>How vector elements change size and type</title>
+  
+  <para>Most vector built ins return the same vector type as the (first) 
+  input parameters, but there are exceptions. Examples include; conversions 
+  between types, compares , pack, unpack,  merge, and integer multiply 
+  operations.</para>
+
+  <para>Converting floats to from integer will change the type and something 
+  change the element size as well (double ↔ int and float ↔ long). For the 
+  VMX the conversions are always the same size (float ↔ [unsigned] int). But 
+  VSX allows conversion of 64-bit (long or double) to from 32-bit (float or 
+   int)  with the inherent size changes. The PowerISA VSX defines a 4 element 
+  vector layout where little endian elements 0, 2 are used for input/output and 
+  elements 1,3 are undefined. The OpenPOWER ABI Appendix A define 
+  <literal>vec_double</literal> and <literal>vec_float</literal> 
+  with even/odd and high/low extensions as program aids. These are not 
+  included in GCC 7 or earlier but are planned for GCC 8.</para>
+
+  <para>Compare operations produce either 
+  <literal>vector bool &lt;</literal>input element type<literal>&gt;</literal> 
+  (effectively bit masks) or predicates (the condition code for all and 
+  any are represented as an int truth variable). When a predicate compare (i.e. 
+  <literal>vec_all_eq</literal>, <literal>vec_any_gt</literal>), 
+  is used in a if statement,  the condition code is 
+  used directly in the conditional branch and the int truth value is not 
+  generated.</para>
+
+  <para>Pack operations pack integer elements into the next smaller (half) 
+  integer sized elements. Pack operations include signed and unsigned saturate 
+  and unsigned modulo forms. As the packed result will be half the size (in 
+  bits), pack instructions require 2 vectors (256-bits) as input and generate a 
+  single 128-bit vector results.
+  <programlisting><![CDATA[vec_vpkudum ({1, 2}, {101, 102}) result={1, 2, 101, 102}]]></programlisting></para>
+
+  <para>Unpack operations expand integer elements into the next larger size 
+  elements. The integers are always treated as signed values and sign-extended. 
+  The processor design avoids instructions that return multiple register values. 
+  So the PowerISA defines unpack-high and unpack low forms where instruction 
+  takes (the high or low) half of vector elements and extends them to fill the 
+  vector output. Element order is maintained and an unpack high / low sequence 
+  with same input vector has the effect of unpacking to a 256-bit result in two 
+  vector registers.
+  <programlisting><![CDATA[vec_vupkhsw ({1, 2, 3, 4}) result={1, 2}
+vec_vupkhsw ({-1, 2, -3, 4}) result={-1, 2}
+vec_vupklsw ({1, 2, 3, 4}) result={3, 4}
+vec_vupklsw ({-1, 2, -3, 4}) result={-3, 4}]]></programlisting></para>
+
+  <para>Merge operations resemble shuffling two (vectors) card decks 
+  together, alternating (elements) cards in the result.   As we are merging from 
+  2 vectors (256-bits) into 1 vector (128-bits) and the elements do not change 
+  size, we have merge high and merge low instruction forms for each (byte, 
+  halfword and word) integer type. The merge high operations alternate elements 
+  from the (vector register left) high half of the two input vectors. The merge 
+  low operation alternate elements from the (vector register right) low half of 
+  the two input vectors.</para>
+
+  <para>For PowerISA 2.07 we added vector merge word even / odd instructions. 
+  Instead of high or low elements the shuffle is from the even or odd number 
+  elements of the two input vectors. Passing the same vector to both inputs to 
+  merge produces splat like results for each doubleword half, which is handy in 
+  some convert operations.
+  <programlisting><![CDATA[vec_mrghd ({1, 2}, {101, 102}) result={1, 101}
+vec_mrgld ({1, 2}, {101, 102}) result={2, 102}
+
+vec_vmrghw ({1, 2, 3, 4}, {101, 102, 103, 104}) result={1, 101, 2, 102}
+vec_vmrghw ({1, 2, 3, 4}, {1, 2, 3, 4}) result={1, 1, 2, 2}
+vec_vmrglw ({1, 2, 3, 4}, {101, 102, 103, 104}) result={3, 103, 4, 104}
+vec_vmrglw ({1, 2, 3, 4}, {1, 2, 3, 4}) result={3, 3, 4, 4}
+
+
+vec_mergee ({1, 2, 3, 4}, {101, 102, 103, 104}) result={1, 101, 3, 103}
+vec_mergee ({1, 2, 3, 4}, {1, 2, 3, 4}) result={1, 1, 3, 3}
+vec_mergeo ({1, 2, 3, 4}, {101, 102, 103, 104}) result={2, 102, 4, 104}
+vec_mergeo ({1, 2, 3, 4}, {1, 2, 3, 4}) result={2, 2, 4, 4}]]></programlisting></para>
+
+  <para>Integer multiply has the potential to generate twice as many bits in 
+  the product as input. A multiply of 2 int (32-bit) values produces a long 
+  (64-bits). Normal C language * operations ignore this and discard the top 
+  32-bits of the result. However  in some computations it useful to preserve the 
+  double product precision for intermediate computation before reducing the final 
+  result back to the original precision.</para>
+
+  <para>The PowerISA VMX instruction set took the later approach ie keep all 
+  the product bits until the programmer explicitly asks for the truncated result. 
+  So the vector integer multiple are split into even/odd forms across signed and 
+  unsigned; byte, halfword and word inputs. This requires two instructions (given 
+  the same inputs) to generated the full vector  multiply across 2 vector 
+  registers and 256-bits. Again as POWER processors are super-scalar this pair of 
+  instructions should execute in parallel.</para>
+
+  <para>The set of expanded product values can either be used directly in 
+  further (doubled precision) computation or merged/packed into the single single 
+  vector at the smaller bit size. This is what the compiler will generate for C 
+  vector extension multiply of vector integer types.</para>
+
+</section>
+

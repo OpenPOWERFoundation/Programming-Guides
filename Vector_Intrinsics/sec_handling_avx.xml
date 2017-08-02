@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Copyright (c) 2017 OpenPOWER Foundation
+  
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+  
+-->
+<section xmlns="http://docbook.org/ns/docbook"
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  version="5.0"
+  xml:id="sec_handling_avx">
+  <title>Dealing with AVX and AVX512</title>
+  
+  <para>AVX is a bit easier for PowerISA and the ELF V2 ABI. First we have 
+  lots (64) of vector registers and a super scalar vector pipe-line (can execute 
+  two or more independent 128-bit vector operations concurrently). Second the ELF 
+  V2 ABI was designed to pass and return larger aggregates in vector 
+  registers:</para>
+
+  <itemizedlist>
+    <listitem>
+      <para>Up to 12 qualified vector arguments can be passed in 
+      v2–v13.</para>
+    </listitem>
+    <listitem>
+      <para>A qualified vector argument corresponds to:
+        <itemizedlist>
+          <listitem>
+            <para>A vector data type</para>
+          </listitem>
+
+          <listitem>
+            <para>A member of a homogeneous aggregate of multiple like data types 
+            passed in up to eight vector registers.</para>
+          </listitem>
+
+          <listitem>
+            <para>Homogeneous floating-point or vector aggregate return values 
+            that consist of up to eight registers with up to eight elements will 
+            be returned in floating-point or vector registers that correspond to 
+            the parameter registers that would be used if the return value type 
+            were the first input parameter to a function.</para>
+          </listitem>
+        </itemizedlist>
+      </para>
+    </listitem>
+  </itemizedlist>
+
+  <para>So the ABI allows for passing up to three structures each 
+  representing 512-bit vectors and returning such (512-bit) structure all in VMX 
+  registers. This can be extended further by spilling parameters (beyond 12 X 
+  128-bit vectors) to the parameter save area, but we should not need that, as 
+  most intrinsics only use 2 or 3 operands.. Vector registers not needed for 
+  parameter passing, along with an additional 8 volatile vector registers, are 
+  available for scratch and local variables. All can be used by the application 
+  without requiring register spill to the save area. So most intrinsic operations 
+  on 256- or 512-bit vectors can be held within existing PowerISA vector 
+  registers. </para>
+
+  <para>For larger functions that might use multiple AVX 256 or 512-bit 
+  intrinsics and, as a result, push beyond the 20 volatile vector registers, the 
+  compiler will just allocate non-volatile vector registers by allocating a stack 
+  frame and spilling non-volatile vector registers to the save area (as needed in 
+  the function prologue). This frees up to 64 vectors (32 x 256-bit or 16 x 
+  512-bit structs) for code optimization. </para>
+
+  <para>Based on the specifics of our ISA and ABI we will not not use 
+  <literal>__vector_size__</literal> (32) or (64) in the PowerPC implementation of 
+  <literal>__m256</literal> and <literal>__m512</literal> 
+  types. Instead we will typedef structs of 2 or 4 vector (<literal>__m128</literal>) fields. This 
+  allows efficient handling of these larger data types without require new GCC 
+  language extensions. </para>
+
+  <para>In the end we should use the same type names and definitions as the 
+  GCC X86 intrinsic headers where possible. Where that is not possible we can 
+  define new typedefs that provide the best mapping to the underlying PowerISA 
+  hardware.</para>
+
+</section>
+

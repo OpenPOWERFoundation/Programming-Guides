@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Copyright (c) 2017 OpenPOWER Foundation
+  
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+  
+-->
+<section xmlns="http://docbook.org/ns/docbook"
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  version="5.0"
+  xml:id="sec_how_findout">
+  <title>How did I find this out?</title>
+  
+  <para>The next question is where did I get the details above. The GCC 
+  documentation for <emphasis role="bold"><literal>__builtin_ia32_loadupd</literal></emphasis>
+  provides minimal information (the 
+  builtin name, parameters and return types). Not very informative. </para>
+
+  <para>Looking up the Intel intrinsic description is more informative. You 
+  can Google the intrinsic name or use the 
+  <link xlink:href="https://software.intel.com/sites/landingpage/IntrinsicsGuide/">Intel 
+  Intrinsic guide</link> for this. The Intrinsic Guide is interactive and 
+  includes  Intel (Chip) technology and text based search capabilities. Clicking 
+  on the intrinsic name opens to a synopsis including; the underlying instruction 
+  name, text description, operation pseudo code, and in some cases performance 
+  information (latency and throughput).</para>
+
+  <para>The key is to get a description of the intrinsic (operand fields and 
+  types, and which fields are updated for the result) and the underlying Intel 
+  instruction. If the Intrinsic guide is not clear you can look up the 
+  instruction details in the 
+  “<link xlink:href="https://software.intel.com/en-us/articles/intel-sdm">Intel® 64 and IA-32 
+  Architectures Software Developer’s Manual</link>”.</para>
+
+  <para>Information about the PowerISA vector facilities is found in the 
+  <link xlink:href="https://openpowerfoundation.org/?resource_lib=ibm-power-isa-version-2-07-b">PowerISA Version 2.07B</link> (for POWER8 and 
+  <link xlink:href="https://www.docdroid.net/tWT7hjD/powerisa-v30.pdf.html">3.0 for 
+  POWER9</link>) manual, Book I, Chapter 6. Vector Facility and Chapter 7. 
+  Vector-Scalar Floating-Point Operations. Another good reference is the 
+  <link xlink:href="https://openpowerfoundation.org/technical/technical-resources/technical-specifications/">OpenPOWER ELF V2 application binary interface</link> (ABI) 
+  document, Chapter 6. Vector Programming Interfaces and Appendix A. Predefined 
+  Functions for Vector Programming.</para>
+
+  <para>Another useful document is the original <link xlink:href="http://www.nxp.com/assets/documents/data/en/reference-manuals/ALTIVECPEM.pdf">Altivec Technology Programers Interface Manual</link> 
+  with a  user friendly structure and many helpful diagrams. But alas the PIM does does not 
+  cover the resent PowerISA (power7,  power8, and power9) enhancements.</para>
+
+</section>
+

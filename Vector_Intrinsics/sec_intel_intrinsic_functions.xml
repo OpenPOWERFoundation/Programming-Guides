@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Copyright (c) 2017 OpenPOWER Foundation
+  
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+  
+-->
+<section xmlns="http://docbook.org/ns/docbook"
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  version="5.0"
+  xml:id="sec_intel_intrinsic_functions">
+  <title>Intel Intrinsic functions</title>
+  
+  <para>So what is an intrinsic function? From Wikipedia:
+
+    <blockquote><para>In <link xlink:href="https://en.wikipedia.org/wiki/Compiler_theory">compiler theory</link>, an 
+    <emphasis role="bold">intrinsic function</emphasis> is a function available for use in a given 
+    <link xlink:href="https://en.wikipedia.org/wiki/Programming_language">programming 
+    language</link> whose implementation is handled specially by the compiler. 
+    Typically, it substitutes a sequence of automatically generated instructions 
+    for the original function call, similar to an 
+    <link xlink:href="https://en.wikipedia.org/wiki/Inline_function">inline function</link>. 
+    Unlike an inline function though, the compiler has an intimate knowledge of the 
+    intrinsic function and can therefore better integrate it and optimize it for 
+    the situation. This is also called builtin function in many languages.</para></blockquote></para>
+
+  <para>The “Intel Intrinsics” API provides access to the many 
+  instruction set extensions (Intel Technologies) that Intel has added (and 
+  continues to add) over the years. The intrinsics provided access to new 
+  instruction capabilities before the compilers could exploit them directly. 
+  Initially these intrinsic functions where defined for the Intel and Microsoft 
+  compiler and where eventually implemented and contributed to GCC.</para>
+
+  <para>The Intel Intrinsics have a specific type and naming structure. In 
+  this naming structure, functions starts with a common prefix (MMX and SSE use 
+  '_mm' prefix, while AVX added the '_mm256' '_mm512' prefixes), then a short 
+  functional name ('set', 'load', 'store', 'add', 'mul', 'blend', 'shuffle', '…') and a suffix 
+  ('_pd', '_sd', '_pi32'...) with type and packing information. See 
+  <xref linkend="app_intel_suffixes"/> for the list of common intrisic suffixes.</para>
+
+  <para>Oddly many of the MMX/SSE operations are not vectors at all. There 
+  are a lot of scalar operations on a single float, double, or long long type. In 
+  effect these are scalars that can take advantage of the larger (xmm) register 
+  space. Also in the Intel 32-bit architecture they provided IEEE754 float and 
+  double types, and 64-bit integers that did not exist or where hard to implement 
+  in the base i386/387 instruction set. These scalar operation use a suffix 
+  starting with '_s' (<literal>_sd</literal> for scalar double float, 
+  <literal>_ss</literal> scalar float, and <literal>_si64</literal> 
+  for scalar long long).</para>
+
+  <para>True vector operations use the packed or extended packed suffixes, 
+  starting with '_p' or '_ep' (<literal>_pd</literal> for vector double, 
+  <literal>_ps</literal> for vector float, and 
+  <literal>_epi32</literal> for vector int). The use of '_ep'  
+  seems to be reserved to disambiguate 
+  intrinsics that existed in the (64-bit vector) MMX extension from the extended 
+  (128-bit vector) SSE equivalent. For example 
+  <emphasis role="bold"><literal>_mm_add_pi32</literal></emphasis> is a MMX operation on 
+  a pair of 32-bit integers, while 
+  <emphasis role="bold"><literal>_mm_add_epi32</literal></emphasis> is an SSE2 operation on vector 
+  of 4 32-bit integers.</para>
+
+  <para>The GCC  builtins for the 
+  <link xlink:href="https://gcc.gnu.org/onlinedocs/gcc-6.3.0/gcc/x86-Built-in-Functions.html#x86-Built-in-Functions">i386.target</link>, 
+  (includes x86 and x86_64) are not 
+  the same as the Intel Intrinsics. While they have similar intent and cover most 
+  of the same functions, they use a different naming (prefixed with 
+  <literal>__builtin_ia32_</literal>, then function name with type suffix) and uses GCC vector type 
+  modes for operand types. For example:
+  <programlisting><![CDATA[v8qi __builtin_ia32_paddb (v8qi, v8qi)
+v4hi __builtin_ia32_paddw (v4hi, v4hi)
+v2si __builtin_ia32_paddd (v2si, v2si)
+v2di __builtin_ia32_paddq (v2di, v2di)]]></programlisting></para>
+
+  <para>Note: A key difference between GCC builtins for i386 and Powerpc is 
+  that the x86 builtins have different names of each operation and type while the 
+  powerpc altivec builtins tend to have a single generatic builtin for  each 
+  operation, across a set of compatible operand types. </para>
+
+  <para>In GCC the Intel Intrinsic header (*intrin.h) files are implemented 
+  as a set of inline functions using the Intel Intrinsic API names and types. 
+  These functions are implemented as either GCC C vector extension code or via 
+  one or more GCC builtins for the i386 target. So lets take a look at some 
+  examples from GCC's SSE2 intrinsic header emmintrin.h:
+  <programlisting><![CDATA[extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_add_pd (__m128d __A, __m128d __B)
+{
+  return (__m128d) ((__v2df)__A + (__v2df)__B);
+}
+
+extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_add_sd (__m128d __A, __m128d __B)
+{
+  return (__m128d)__builtin_ia32_addsd ((__v2df)__A, (__v2df)__B);
+}]]></programlisting></para>
+
+  <para>Note that the  
+  <emphasis role="bold"><literal>_mm_add_pd</literal></emphasis> is implemented direct as C vector 
+  extension code., while 
+  <emphasis role="bold"><literal>_mm_add_sd</literal></emphasis> is implemented via the GCC builtin 
+  <emphasis role="bold"><literal>__builtin_ia32_addsd</literal></emphasis>. From the 
+  discussion above we know the <literal>_pd</literal> suffix 
+  indicates a packed vector double while the <literal>_sd</literal> suffix indicates a scalar double 
+  in a XMM register. </para>
+  
+  <xi:include href="sec_packed_vs_scalar_intrinsics.xml"/>
+  <xi:include href="sec_vec_or_not.xml"/>
+  <xi:include href="sec_crossing_lanes.xml"/>
+
+</section>
+

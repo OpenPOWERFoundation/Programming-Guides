@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Copyright (c) 2017 OpenPOWER Foundation
+  
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+  
+-->
+<section xmlns="http://docbook.org/ns/docbook"
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  version="5.0"
+  xml:id="sec_performance_sse">
+  <title>Using SSE float and double scalars</title>
+  
+  <para>SSE scalar float / double intrinsics  “hand” optimization is no 
+  longer necessary. This was important, when SSE was initially introduced, and 
+  compiler support was limited or nonexistent.  Also SSE scalar float / double 
+  provided additional (16) registers and IEEE754 compliance, not available from 
+  the 8087 floating point architecture that preceded it. So application 
+  developers where motivated to use SSE instruction versus what the compiler was 
+  generating at the time.</para>
+
+  <para>Modern compilers can now to generate and  optimize these (SSE 
+  scalar) instructions for Intel from C standard scalar code. Of course PowerISA 
+  supported IEEE754 float and double and had 32 dedicated floating point 
+  registers from the start (and now 64 with VSX). So replacing a Intel specific 
+  scalar intrinsic implementation with the equivalent C language scalar 
+  implementation is usually a win; allows the compiler to apply the latest 
+  optimization and tuning for the latest generation processor, and is portable to 
+  other platforms where the compiler can also apply the latest optimization and 
+  tuning for that processors latest generation.</para>
+   
+</section>
+

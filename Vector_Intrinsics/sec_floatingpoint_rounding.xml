@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Copyright (c) 2017 OpenPOWER Foundation
+  
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+  
+-->
+<section xmlns="http://docbook.org/ns/docbook"
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  version="5.0"
+  xml:id="sec_floatingpoint_rounding">
+  <title>Floating-point rounding modes</title>
+  
+  <para>The Intel (x86 / x86_64) and PowerISA architectures both support the 
+  4 IEEE754 rounding modes. Again while the Intel Intrinsic API allows the 
+  application to change rounding modes via updates to the 
+  <literal>MXCSR</literal> it is a bad idea 
+  and should be replaced with the POSIX APIs (<literal>fegetround</literal> and 
+  <literal>fesetround</literal>). </para>
+  
+</section>
+

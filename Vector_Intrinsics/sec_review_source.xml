@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Copyright (c) 2017 OpenPOWER Foundation
+  
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+  
+-->
+<section xmlns="http://docbook.org/ns/docbook"
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  version="5.0"
+  xml:id="sec_review_source">
+  <title>Look at the source, Luke</title>
+  
+  <para>So if this is a code porting activity, where is the source? All the 
+  source code we need to look at is in the GCC source trees. You can either git 
+  (<link xlink:href="https://gcc.gnu.org/wiki/GitMirror">https://gcc.gnu.org/wiki/GitMirro</link>) 
+  the gcc source  or down load one of the 
+  recent AT source tars (for example: 
+  <link xlink:href="ftp://ftp.unicamp.br/pub/linuxpatch/toolchain/at/ubuntu/dists/xenial/at10.0/">ftp://ftp.unicamp.br/pub/linuxpatch/toolchain/at/ubuntu/dists/xenial/at10.0/</link>). 
+   You will find the intrinsic headers in the ./gcc/config/i386/ 
+  sub-directory.</para>
+
+  <para>If you have a Intel Linux workstation or laptop with GCC installed, 
+  you already have these headers, if you want to take a look:
+  <screen><prompt>$ </prompt><userinput>find /usr/lib -name '*mmintrin.h'</userinput>
+/usr/lib/gcc/x86_64-redhat-linux/4.4.4/include/wmmintrin.h
+/usr/lib/gcc/x86_64-redhat-linux/4.4.4/include/mmintrin.h
+/usr/lib/gcc/x86_64-redhat-linux/4.4.4/include/xmmintrin.h
+/usr/lib/gcc/x86_64-redhat-linux/4.4.4/include/emmintrin.h
+/usr/lib/gcc/x86_64-redhat-linux/4.4.4/include/tmmintrin.h
+...
+<prompt>$ </prompt></screen></para>
+
+  <para>But depending on the vintage of the distro, these may not be the 
+  latest versions of the headers. Looking at the header source will tell you a 
+  few things.: The include structure (what other headers are implicitly 
+  included). The types that are used at the API. And finally, how the API is 
+  implemented.</para>
+  
+  <para><literallayout>smmintrin.h	(SSE4.1)	includes tmmintrin,h
+tmmintrin.h (SSSE3) includes pmmintrin.h
+pmmintrin.h (SSE3)  includes emmintrin,h
+emmintrin.h (SSE2)  includes xmmintrin.h
+xmmintrin.h (SSE)   includes mmintrin.h and mm_malloc.h
+mmintrin.h  (MMX)</literallayout></para>
+
+  <xi:include href="sec_intel_intrinsic_includes.xml"/>
+  <xi:include href="sec_intel_intrinsic_types.xml"/>
+  <xi:include href="sec_api_implemented.xml"/>
+
+
+</section>
+

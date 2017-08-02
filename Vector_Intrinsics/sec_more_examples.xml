@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Copyright (c) 2017 OpenPOWER Foundation
+  
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+  
+-->
+<section xmlns="http://docbook.org/ns/docbook"
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  version="5.0"
+  xml:id="sec_more_examples">
+  <title>Some more intrinsic examples</title>
+  
+  <para>The intrinsic 
+  <link xlink:href="https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_cvtpd_ps&amp;expand=1624">_mm_cvtpd_ps</link> 
+  converts a packed vector double into 
+  a packed vector single float. Since only 2 doubles fit into a 128-bit vector 
+  only 2 floats are returned and occupy only half (64-bits) of the XMM register. 
+  For this intrinsic the 64-bit are packed into the logical left half of the 
+  registers and the logical right half of the register is set to zero (as per the 
+  Intel <literal>cvtpd2ps</literal> instruction).</para>
+
+  <para>The PowerISA provides the VSX Vector round and Convert 
+  Double-Precision to Single-Precision format (xvcvdpsp) instruction. In the ABI 
+  this is <literal>vec_floato</literal> (vector double) .  
+  This instruction convert each double 
+  element then transfers converted element 0 to float element 1, and converted 
+  element 1 to float element 3. Float elements 0 and 2 are undefined (the 
+  hardware can do what ever). This does not match the expected results for 
+  <literal>_mm_cvtpd_ps</literal>.
+  <programlisting><![CDATA[vec_floato ({1.0, 2.0}) result = {<undefined>, 1.0, <undefined>, 2.0}
+_mm_cvtpd_ps  ({1.0, 2.0}) result = {1.0, 2.0, 0.0, 0.0}]]></programlisting></para>
+
+  <para>So we need to re-position the results to word elements 0 and 2, which 
+  allows a pack operation to deliver the correct format. Here the merge odd 
+  splats element 1 to 0 and element 3 to 2. The Pack operation combines the low 
+  half of each doubleword from the vector result and vector of zeros to generate 
+  the require format.
+  <programlisting><![CDATA[extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cvtpd_ps (__m128d __A)
+{
+	__v4sf result;
+	__v4si temp;
+	const __v4si vzero = {0,0,0,0};
+//	temp = (__v4si)vec_floato (__A); /* GCC 8 */
+
+    __asm__(
+		"xvcvdpsp %x0,%x1;\n"
+		: "=wa" (temp)
+		: "wa" (__A)
+        : );
+
+	temp = vec_mergeo (temp, temp);
+	result = (__v4sf)vec_vpkudum ((vector long)temp, (vector long)vzero);
+ 	return (result);
+}]]></programlisting></para>
+
+  <para>This  technique is also used to implement  
+  <link xlink:href="https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_cvttpd_epi32&amp;expand=1624,1859">_mm_cvttpd_epi32</link> 
+  which converts a packed vector double in to a packed vector int. The PowerISA instruction 
+  <literal>xvcvdpsxws</literal> uses a similar layout for the result as 
+  <literal>xvcvdpsp</literal> and requires the same fix up.</para>
+
+</section>
+

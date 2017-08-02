@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Copyright (c) 2017 OpenPOWER Foundation
+  
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+  
+-->
+<section xmlns="http://docbook.org/ns/docbook"
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  version="5.0"
+  xml:id="sec_performance">
+  <title>Performance</title>
+  
+  <para>The performance of a ported intrinsic depends on the specifics of the 
+  intrinsic and the context it is used in. Many of the SIMD operations have 
+  equivalent instructions in both architectures. For example the vector float and 
+  vector double match very closely. However the SSE and VSX scalars have subtle 
+  differences of how the scalar is positioned with the vector registers and what 
+  happens to the rest (non-scalar part) of the register (previously discussed in 
+  <xref linkend="sec_packed_vs_scalar_intrinsics"/>). 
+  This requires additional PowerISA instructions 
+  to preserve the non-scalar portion of the vector registers. This may or may not 
+  be important to the logic of the program being ported, but we have handle the 
+  case where it is.</para>
+
+  <para>This is where the context of now the intrinsic is used starts to 
+  matter. If the scalar intrinsics are used within a larger program the compiler 
+  may be able to eliminate the redundant register moves as the results are never 
+  used. In the other cases common set up (like permute vectors or bit masks) can 
+  be common-ed up and hoisted out of the loop. So it is very important to let the 
+  compiler do its job with higher optimization levels (<literal>-O3</literal>, 
+  <literal>-funroll-loops</literal>).</para>
+  
+  <xi:include href="sec_performance_sse.xml"/>
+  <xi:include href="sec_performance_mmx.xml"/>
+
+</section>
+

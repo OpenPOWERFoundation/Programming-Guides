@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Copyright (c) 2017 OpenPOWER Foundation
+  
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+  
+-->
+<section xmlns="http://docbook.org/ns/docbook"
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  version="5.0"
+  xml:id="sec_other_intrinsic_examples">
+  <title>Examples implemented using other intrinsics</title>
+  
+  <para>Some intrinsic implementations are defined in terms of other 
+  intrinsics. For example.
+  <programlisting><![CDATA[/* Create a vector with element [0] as F and the rest zero.  */
+extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_set_sd (double __F)
+{
+  return __extension__ (__m128d){ __F, 0.0 };
+}
+
+/* Create a vector with element [0] as *P and the rest zero.  */
+extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_load_sd (double const *__P)
+{
+  return _mm_set_sd (*__P);
+}]]></programlisting></para>
+
+  <para>This notion of using part (one fourth or half) of the SSE XMM 
+  register and leaving the rest unchanged (or forced to zero) is specific to SSE 
+  scalar operations and can generate some complicated (sub-optimal) PowerISA 
+  code.  In this case <emphasis role="bold"><literal>_mm_load_sd</literal></emphasis> 
+  passes the dereferenced double value  to 
+  <emphasis role="bold"><literal>_mm_set_sd</literal></emphasis> which 
+  uses C vector initializer notation to combine (merge) that 
+  double scalar value with a scalar 0.0 constant into a vector double.</para>
+
+  <para>While code like this should work as-is for PPC64LE, you should look 
+  at the generated code and assess if it is reasonable.  In this case the code 
+  is not awful (a load double splat, vector xor to generate 0.0s, then a 
+  <literal>xxmrghd</literal>
+  to combine __F and 0.0).  Other examples may generate sub-optimal code and 
+  justify a rewrite to PowerISA scalar or vector code (<link 
+  xlink:href="https://gcc.gnu.org/onlinedocs/gcc-6.3.0/gcc/PowerPC-AltiVec_002fVSX-Built-
+  in-Functions.html#PowerPC-AltiVec_002fVSX-Built-in-Functions">GCC PowerPC 
+  AltiVec Built-in Functions</link> or inline assembler). </para>
+
+  <para>Net: try using the existing C code if you can, but check on what the 
+  compiler generates.  If the generated code is horrendous, it may be worth the 
+  effort to write a PowerISA specific equivalent. For codes making extensive use 
+  of MMX or SSE scalar intrinsics you will be better off rewriting to use 
+  standard C scalar types and letting the the GCC compiler handle the details 
+  (see <link linkend="sec_prefered_methods"/>).</para>
+
+</section>
+

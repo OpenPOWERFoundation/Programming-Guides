@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Copyright (c) 2017 OpenPOWER Foundation
+  
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+  
+-->
+<section xmlns="http://docbook.org/ns/docbook"
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  version="5.0"
+  xml:id="sec_intel_intrinsic_includes">
+  <title>The structure of the intrinsic includes</title>
+  
+  <para>The GCC x86 intrinsic functions for vector were initially grouped by 
+  technology (MMX and SSE), which starts with MMX continues with SSE through 
+  SSE4.1 stacked like a set of Russian dolls.</para>
+
+  <para>Basically each higher layer include, needs typedefs and helper macros 
+  defined by the lower level intrinsic includes. mm_malloc.h simply provides 
+  wrappers for posix_memalign and free. Then it gets a little weird, starting 
+  with the crypto extensions:
+  
+  <programlisting><![CDATA[wmmintrin.h  (AES)	includes emmintrin.h]]></programlisting></para>
+  
+  <para>For AVX, AVX2, and AVX512 they must have decided 
+  that the Russian Dolls thing was getting out of hand. AVX et all is split 
+  across 14 files
+  
+  <programlisting><![CDATA[#include <avxintrin.h>
+#include <avx2intrin.h>
+#include <avx512fintrin.h>
+#include <avx512erintrin.h>
+#include <avx512pfintrin.h>
+#include <avx512cdintrin.h>
+#include <avx512vlintrin.h>
+#include <avx512bwintrin.h>
+#include <avx512dqintrin.h>
+#include <avx512vlbwintrin.h>
+#include <avx512vldqintrin.h>
+#include <avx512ifmaintrin.h>
+#include <avx512ifmavlintrin.h>
+#include <avx512vbmiintrin.h>
+#include <avx512vbmivlintrin.h>]]></programlisting>
+  
+  but they do not want the applications include these 
+  individually.</para>
+  
+  <para>So <emphasis role="bold">immintrin.h</emphasis> includes everything Intel vector, include all the 
+  AVX, AES, SSE and MMX flavors. 
+  <programlisting><![CDATA[#ifndef _IMMINTRIN_H_INCLUDED
+# error "Never use <avxintrin.h> directly; include <immintrin.h> instead."
+#endif]]></programlisting></para>
+
+  <para>So what is the net? The include structure provides some strong clues 
+  about the order that we should approach this effort.  For example if you need 
+  to intrinsic from SSE4 (smmintrin.h) we are likely to need to type definitions 
+  from SSE (emmintrin.h). So a bottoms up (MMX, SSE, SSE2, …) approach seems 
+  like the best plan of attack. Also saving the AVX parts for latter make sense, 
+  as most are just wider forms of operations that already exists in SSE.</para>
+
+  <para>We should use the same include structure to implement our PowerISA 
+  equivalent API headers. This will make porting easier (drop-in replacement) and 
+  should get the application running quickly on POWER. Then we are in a position 
+  to profile and analyze the resulting application. This will show any hot spots 
+  where the simple one-to-one transformation results in bottlenecks and 
+  additional tuning is needed. For these cases we should improve our tools (SDK 
+  MA/SCA) to identify opportunities for, and perhaps propose, alternative 
+  sequences that are better tuned to PowerISA and our micro-architecture.</para>
+
+</section>
+

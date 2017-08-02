@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Copyright (c) 2017 OpenPOWER Foundation
+  
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+  
+-->
+<appendix xmlns="http://docbook.org/ns/docbook"
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  version="5.0"
+  xml:id="app_intel_suffixes">
+    <?dbhtml stop-chunking?>
+  <title>Intel Intrinsic suffixes</title>
+  
+  <section>
+    <title>MMX</title>
+      <variablelist>
+        <varlistentry>
+          <term><emphasis role="bold"><literal>_pi16</literal></emphasis></term>
+            <listitem><para>4 x packed short int</para></listitem>
+			  </varlistentry>
+
+        <varlistentry>
+          <term><emphasis role="bold"><literal>_pi32</literal></emphasis></term>
+            <listitem><para>2 x packed int</para></listitem>
+			  </varlistentry>
+
+        <varlistentry>
+          <term><emphasis role="bold"><literal>_pi8</literal></emphasis></term>
+            <listitem><para>8 x packed signed char</para></listitem>
+			  </varlistentry>
+
+        <varlistentry>
+          <term><emphasis role="bold"><literal>_pu16</literal></emphasis></term>
+            <listitem><para>4 x packed unsigned short int</para></listitem>
+			  </varlistentry>
+
+        <varlistentry>
+          <term><emphasis role="bold"><literal>_pu8</literal></emphasis></term>
+            <listitem><para>8 x packed unsigned char</para></listitem>
+			  </varlistentry>
+
+        <varlistentry>
+          <term><emphasis role="bold"><literal>_si64</literal></emphasis></term>
+            <listitem><para>single 64-bit binary (logical)</para></listitem>
+			  </varlistentry>
+      </variablelist>
+  </section>
+  
+  <section>
+    <title>SSE</title>
+      <variablelist>
+        <varlistentry>
+          <term><emphasis role="bold"><literal>_ps</literal></emphasis></term>
+            <listitem><para>4 x packed float</para></listitem>
+			  </varlistentry>
+
+        <varlistentry>
+          <term><emphasis role="bold"><literal>_ss</literal></emphasis></term>
+            <listitem><para>single scalar float</para></listitem>
+			  </varlistentry>
+
+        <varlistentry>
+          <term><emphasis role="bold"><literal>_si32</literal></emphasis></term>
+            <listitem><para>single 32-bit int</para></listitem>
+			  </varlistentry>
+
+        <varlistentry>
+          <term><emphasis role="bold"><literal>_si64</literal></emphasis></term>
+            <listitem><para>single 64-bit long int</para></listitem>
+			  </varlistentry>
+      </variablelist>
+  </section>
+  
+  <section>
+    <title>SSE2</title>
+      <variablelist>
+        <varlistentry>
+          <term><emphasis role="bold"><literal>_epi16</literal></emphasis></term>
+            <listitem><para>8 x packed short int</para></listitem>
+			  </varlistentry>
+
+        <varlistentry>
+          <term><emphasis role="bold"><literal>_epi32</literal></emphasis></term>
+            <listitem><para>4 x packed int</para></listitem>
+			  </varlistentry>
+
+        <varlistentry>
+          <term><emphasis role="bold"><literal>_epi64</literal></emphasis></term>
+            <listitem><para>2 x packed long int</para></listitem>
+			  </varlistentry>
+
+        <varlistentry>
+          <term><emphasis role="bold"><literal>_epi8</literal></emphasis></term>
+            <listitem><para>16 x packed signed char</para></listitem>
+			  </varlistentry>
+
+        <varlistentry>
+          <term><emphasis role="bold"><literal>_epu16</literal></emphasis></term>
+            <listitem><para>8 x packed unsigned short int</para></listitem>
+			  </varlistentry>
+
+        <varlistentry>
+          <term><emphasis role="bold"><literal>_epu32</literal></emphasis></term>
+            <listitem><para>4 x packed unsigned int</para></listitem>
+			  </varlistentry>
+
+        <varlistentry>
+          <term><emphasis role="bold"><literal>_epu8</literal></emphasis></term>
+            <listitem><para>16 x packed unsigned char</para></listitem>
+			  </varlistentry>
+      </variablelist>
+
+      <!-- Is this break really desired? -->
+      <para/>
+      
+      <variablelist>
+        <varlistentry>
+          <term><emphasis role="bold"><literal>_pd</literal></emphasis></term>
+            <listitem><para>2 x packed double</para></listitem>
+			  </varlistentry>
+
+        <varlistentry>
+          <term><emphasis role="bold"><literal>_sd</literal></emphasis></term>
+            <listitem><para>single scalar double</para></listitem>
+			  </varlistentry>
+ 
+        <varlistentry>
+          <term><emphasis role="bold"><literal>_pi64</literal></emphasis></term>
+            <listitem><para>single long int</para></listitem>
+			  </varlistentry>
+
+        <varlistentry>
+          <term><emphasis role="bold"><literal>_si128</literal></emphasis></term>
+            <listitem><para>single 128-bit binary (logical)</para></listitem>
+			  </varlistentry>
+     </variablelist>
+		
+  </section>
+  
+  <section>
+    <title>AVX/AVX2 __m256_*</title>
+      <variablelist>
+        <varlistentry>
+          <term><emphasis role="bold"><literal>_ps</literal></emphasis></term>
+            <listitem><para>8 x packed float</para></listitem>
+			  </varlistentry>
+
+        <varlistentry>
+          <term><emphasis role="bold"><literal>_pd</literal></emphasis></term>
+            <listitem><para>4 x packed double</para></listitem>
+			  </varlistentry>
+
+        <varlistentry>
+          <term><emphasis role="bold"><literal>_epi16</literal></emphasis></term>
+            <listitem><para>16 x packed short int</para></listitem>
+			  </varlistentry>
+
+        <varlistentry>
+          <term><emphasis role="bold"><literal>_epi32</literal></emphasis></term>
+            <listitem><para>8 x packed int</para></listitem>
+			  </varlistentry>
+
+        <varlistentry>
+          <term><emphasis role="bold"><literal>_epi64</literal></emphasis></term>
+            <listitem><para>4 x packed long int</para></listitem>
+			  </varlistentry>
+
+        <varlistentry>
+          <term><emphasis role="bold"><literal>_epi8</literal></emphasis></term>
+            <listitem><para>32 x packed signed char</para></listitem>
+			  </varlistentry>
+
+        <varlistentry>
+          <term><emphasis role="bold"><literal>_epu16</literal></emphasis></term>
+            <listitem><para>16 x packed unsigned short int</para></listitem>
+			  </varlistentry>
+
+        <varlistentry>
+          <term><emphasis role="bold"><literal>_epu32</literal></emphasis></term>
+            <listitem><para>8 x packed unsigned int</para></listitem>
+			  </varlistentry>
+
+        <varlistentry>
+          <term><emphasis role="bold"><literal>_epu8</literal></emphasis></term>
+            <listitem><para>32 x packed unsigned char</para></listitem>
+			  </varlistentry>
+
+        <varlistentry>
+          <term><emphasis role="bold"><literal>_ss</literal></emphasis></term>
+            <listitem><para>single scalar float (broadcast/splat)</para></listitem>
+			  </varlistentry>
+
+        <varlistentry>
+          <term><emphasis role="bold"><literal>_sd</literal></emphasis></term>
+            <listitem><para>single scalar double</para></listitem>
+			  </varlistentry>
+
+        <varlistentry>
+          <term><emphasis role="bold"><literal>_si256</literal></emphasis></term>
+            <listitem><para>single 256-bit binary (logical)</para></listitem>
+			  </varlistentry>
+
+        <varlistentry>
+          <term><emphasis role="bold"><literal>_pd256</literal></emphasis></term>
+            <listitem><para>cast / zero extend</para></listitem>
+			  </varlistentry>
+
+        <varlistentry>
+          <term><emphasis role="bold"><literal>_ps256</literal></emphasis></term>
+            <listitem><para>cast / zero extend</para></listitem>
+			  </varlistentry>
+
+        <varlistentry>
+          <term><emphasis role="bold"><literal>_pd128</literal></emphasis></term>
+            <listitem><para>cast</para></listitem>
+			  </varlistentry>
+
+        <varlistentry>
+          <term><emphasis role="bold"><literal>_ps128</literal></emphasis></term>
+            <listitem><para>cast</para></listitem>
+			  </varlistentry>
+      </variablelist>
+  </section>
+  
+  <section>
+    <title>AVX512 __m512_*</title>
+      <variablelist>
+        <varlistentry>
+          <term><emphasis role="bold"><literal>_ps</literal></emphasis></term>
+            <listitem><para>16 x packed float</para></listitem>
+			  </varlistentry>
+
+        <varlistentry>
+          <term><emphasis role="bold"><literal>_pd</literal></emphasis></term>
+            <listitem><para>8 x packed double</para></listitem>
+			  </varlistentry>
+
+        <varlistentry>
+          <term><emphasis role="bold"><literal>_epi16</literal></emphasis></term>
+            <listitem><para>32 x packed short int</para></listitem>
+			  </varlistentry>
+
+        <varlistentry>
+          <term><emphasis role="bold"><literal>_epi32</literal></emphasis></term>
+            <listitem><para>16 x packed int</para></listitem>
+			  </varlistentry>
+
+        <varlistentry>
+          <term><emphasis role="bold"><literal>_epi64</literal></emphasis></term>
+            <listitem><para>8 x packed long int</para></listitem>
+			  </varlistentry>
+
+        <varlistentry>
+          <term><emphasis role="bold"><literal>_epi8</literal></emphasis></term>
+            <listitem><para>64 x packed signed char</para></listitem>
+			  </varlistentry>
+
+        <varlistentry>
+          <term><emphasis role="bold"><literal>_epu16</literal></emphasis></term>
+            <listitem><para>32 x packed unsigned short int</para></listitem>
+			  </varlistentry>
+
+        <varlistentry>
+          <term><emphasis role="bold"><literal>_epu32</literal></emphasis></term>
+            <listitem><para>16 x packed unsigned int</para></listitem>
+			  </varlistentry>
+
+        <varlistentry>
+          <term><emphasis role="bold"><literal>_epu64</literal></emphasis></term>
+            <listitem><para>8 x packed unsigned long int</para></listitem>
+			  </varlistentry>
+
+        <varlistentry>
+          <term><emphasis role="bold"><literal>_epu8</literal></emphasis></term>
+            <listitem><para>64 x packed unsigned char</para></listitem>
+			  </varlistentry>
+
+        <varlistentry>
+          <term><emphasis role="bold"><literal>_ss</literal></emphasis></term>
+            <listitem><para>single scalar float</para></listitem>
+			  </varlistentry>
+
+        <varlistentry>
+          <term><emphasis role="bold"><literal>_sd</literal></emphasis></term>
+            <listitem><para>single scalar double</para></listitem>
+			  </varlistentry>
+
+        <varlistentry>
+          <term><emphasis role="bold"><literal>_si512</literal></emphasis></term>
+            <listitem><para>single 512-bit binary (logical)</para></listitem>
+			  </varlistentry>
+
+        <varlistentry>
+          <term><emphasis role="bold"><literal>_pd512</literal></emphasis></term>
+            <listitem><para>cast / zero extend</para></listitem>
+			  </varlistentry>
+
+        <varlistentry>
+          <term><emphasis role="bold"><literal>_ps512</literal></emphasis></term>
+            <listitem><para>cast / zero extend</para></listitem>
+			  </varlistentry>
+      </variablelist>
+ 	  </section>
+
+</appendix>
+

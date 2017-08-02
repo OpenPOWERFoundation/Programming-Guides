@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Copyright (c) 2017 OpenPOWER Foundation
+  
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+  
+-->
+<section xmlns="http://docbook.org/ns/docbook"
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  version="5.0"
+  xml:id="sec_simple_examples">
+  <title>Some simple examples</title>
+  
+  <para>For example; a vector double splat looks like this:
+  <programlisting><![CDATA[/* Create a vector with both elements equal to F.  */
+extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_set1_pd (double __F)
+{
+  return __extension__ (__m128d){ __F, __F };
+}]]></programlisting></para>
+  
+  <para>Another example:
+  <programlisting><![CDATA[extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_add_pd (__m128d __A, __m128d __B)
+{
+  return (__m128d) ((__v2df)__A + (__v2df)__B);
+}]]></programlisting></para>
+  
+  <para>Note in the example above the cast to __v2df for the operation. Both 
+  __m128d and __v2df are vector double, but __v2df does no have the <literal>__may_alias__</literal> 
+  attribute. And one more example:
+  <programlisting><![CDATA[extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_mullo_epi16 (__m128i __A, __m128i __B)
+{
+  return (__m128i) ((__v8hu)__A * (__v8hu)__B);
+}]]></programlisting></para>
+  
+  <para>Note this requires a cast for the compiler to generate the correct 
+  code for the intended operation. The parameters and result are the generic 
+  <literal>__m128i</literal>, which is a vector long long with the 
+  <literal>__may_alias__</literal> attribute. But 
+  operation is a vector multiply low unsigned short (<literal>__v8hu</literal>). So not only do we 
+  use the cast to drop the <literal>__may_alias__</literal> attribute but we also need to cast to 
+  the correct (vector unsigned short) type for the specified operation.</para>
+
+  <para>I have successfully copied these (and similar) source snippets over 
+  to the PPC64LE implementation unchanged. This of course assumes the associated 
+  types are defined and with compatible attributes.</para>
+
+</section>
+

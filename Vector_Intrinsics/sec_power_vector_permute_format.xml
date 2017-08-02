@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Copyright (c) 2017 OpenPOWER Foundation
+  
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+  
+-->
+<section xmlns="http://docbook.org/ns/docbook"
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  version="5.0"
+  xml:id="sec_power_vector_permute_format">
+  <title>Vector permute and formatting instructions</title>
+
+  <para>The vector Permute and formatting chapter follows and is an important 
+  one to study. These operation operation on the byte, halfword, word (and with 
+  2.07 doubleword) integer types . Plus special Pixel type. The shifts 
+  instructions in this chapter operate on the vector as a whole at either the bit 
+  or the byte (octet) level, This is an important chapter to study for moving 
+  PowerISA vector results into the vector elements that Intel Intrinsics 
+  expect:
+  
+  <literallayout><literal>6.8 Vector Permute and Formatting Instructions . . . . . . . . . . . 249
+6.8.1 Vector Pack and Unpack Instructions  . . . . . . . . . . . . . 249
+6.8.2 Vector Merge Instructions  . . . . . . . . . . . . . . . . . . 256
+6.8.3 Vector Splat Instructions  . . . . . . . . . . . . . . . . . . 259
+6.8.4 Vector Permute Instruction . . . . . . . . . . . . . . . . . . 260
+6.8.5 Vector Select Instruction  . . . . . . . . . . . . . . . . . . 261
+6.8.6 Vector Shift Instructions  . . . . . . . . . . . . . . . . . . 262</literal></literallayout></para>
+
+  <para>The Vector Integer instructions include the add / subtract / Multiply 
+  / Multiply Add/Sum / (no divide) operations for the standard integer types. 
+  There are instruction forms that  provide signed, unsigned, modulo, and 
+  saturate results for most operations. The PowerISA 2.07 extension add / 
+  subtract of 128-bit integers with carry and extend to 256, 512-bit and beyond , 
+  is included here. There are signed / unsigned compares across the standard 
+  integer types (byte, .. doubleword). The usual and bit-wise logical operations. 
+  And the SIMD shift / rotate instructions that operate on the vector elements 
+  for various types.
+
+  <literallayout><literal>6.9 Vector Integer Instructions  . . . . . . . . . . . . . . . . . . 264
+6.9.1 Vector Integer Arithmetic Instructions . . . . . . . . . . . . 264
+6.9.2 Vector Integer Compare Instructions. . . . . . . . . . . . . . 294
+6.9.3 Vector Logical Instructions  . . . . . . . . . . . . . . . . . 300
+6.9.4 Vector Integer Rotate and Shift Instructions . . . . . . . . . 302</literal></literallayout></para>
+
+  <para>The vector [single] float instructions are grouped into this chapter. 
+  This chapter does not include the double float instructions which are described 
+  in the VSX chapter. VSX also include additional float instructions that operate 
+  on the whole 64 register vector-scalar set.
+
+  <literallayout><literal>6.10 Vector Floating-Point Instruction Set . . . . . . . . . . . . . 306
+6.10.1 Vector Floating-Point Arithmetic Instructions . . . . . . . . 306
+6.10.2 Vector Floating-Point Maximum and Minimum Instructions  . . . 308
+6.10.3 Vector Floating-Point Rounding and Conversion Instructions. . 309
+6.10.4 Vector Floating-Point Compare Instructions  . . . . . . . . . 313
+6.10.5 Vector Floating-Point Estimate Instructions . . . . . . . . . 316</literal></literallayout></para>
+
+  <para>The vector XOR based instructions are new with PowerISA 2.07 (POWER8) 
+  and provide vector  crypto and check-sum operations:
+
+  <literallayout><literal>6.11 Vector Exclusive-OR-based Instructions  . . . . . . . . . . . . 318
+6.11.1 Vector AES Instructions . . . . . . . . . . . . . . . . . . . 318
+6.11.2 Vector SHA-256 and SHA-512 Sigma Instructions . . . . . . . . 320
+6.11.3 Vector Binary Polynomial Multiplication Instructions. . . . . 321
+6.11.4 Vector Permute and Exclusive-OR Instruction . . . . . . . . . 323</literal></literallayout></para>
+
+  <para>The vector gather and bit permute support bit level rearrangement of 
+  bits with in the vector. While the vector versions of the count leading zeros 
+  and population count are useful to accelerate specific algorithms.
+
+  <literallayout><literal>6.12 Vector Gather Instruction . . . . . . . . . . . . . . . . . . . 324
+6.13 Vector Count Leading Zeros Instructions . . . . . . . . . . . . 325
+6.14 Vector Population Count Instructions. . . . . . . . . . . . . . 326
+6.15 Vector Bit Permute Instruction  . . . . . . . . . . . . . . . . 327</literal></literallayout></para>
+
+  <para>The Decimal Integer add / subtract instructions complement the 
+  Decimal Floating-Point instructions. They can also be used to accelerated some 
+  binary to/from decimal conversions. The VSCR instruction provides access the 
+  the Non-Java mode floating-point control and the saturation status. These 
+  instruction are not normally of interest in porting Intel intrinsics.
+
+  <literallayout><literal>6.16 Decimal Integer Arithmetic Instructions . . . . . . . . . . . . 328
+6.17 Vector Status and Control Register Instructions . . . . . . . . 331</literal></literallayout></para>
+
+  <para>With PowerISA 2.07B (Power8) several major extension where added to 
+  the Vector Facility:</para>
+
+  <itemizedlist>
+    <listitem>
+      <para>Vector Crypto: Under “Vector Exclusive-OR-based Instructions 
+      Vector Exclusive-OR-based Instructions”, AES [inverse] Cipher, SHA 256 / 512 
+      Sigma, Polynomial Multiplication, and Permute and XOR instructions.</para>
+    </listitem>
+    <listitem>
+      <para>64-bit Integer; signed and unsigned add / subtract, signed and 
+      unsigned compare, Even / Odd 32 x 32 multiple with 64-bit product, signed / 
+      unsigned max / min, rotate and shift left/right.</para>
+    </listitem>
+    <listitem>
+      <para>Direct Move between GRPs and the FPRs / Left half of Vector 
+      Registers.</para>
+    </listitem>
+    <listitem>
+      <para>128-bit integer add / subtract with carry / extend, direct 
+      support for vector <literal>__int128</literal> and multiple precision arithmetic.</para>
+    </listitem>
+    <listitem>
+      <para>Decimal Integer add subtract for 31 digit BCD.</para>
+    </listitem>
+    <listitem>
+      <para>Miscellaneous SIMD extensions: Count leading Zeros, Population 
+      count, bit gather / permute, and vector forms of eqv, nand, orc.</para>
+    </listitem>
+  </itemizedlist>
+
+  <para>The rational for why these are included in the Vector Facilities 
+  (VMX) (vs Vector-Scalar Floating-Point Operations (VSX)) has more to do with 
+  how the instruction where encoded then with the type of operations or the ISA 
+  version of introduction. This is primarily a trade-off between the bits 
+  required for register selection vs bits for extended op-code space within in a 
+  fixed 32-bit instruction. Basically accessing 32 vector registers require 
+  5-bits per register, while accessing all 64 vector-scalar registers require 
+  6-bits per register. When you consider the most vector instructions require  3 
+   and some (select, fused multiply-add) require 4 register operand forms,  the 
+  impact on op-code space is significant. The larger register set of VSX was 
+  justified by queuing theory of larger HPC matrix codes using double float, 
+  while 32 registers are sufficient for most applications.</para>
+
+  <para>So by definition the VMX instructions are restricted to the original 
+  32 vector registers while VSX instructions are encoded to  access all 64 
+  floating-point scalar and vector double registers. This distinction can be 
+  troublesome when programming at the assembler level, but the compiler and 
+  compiler built-ins can hide most of this detail from the programmer. </para>
+  
+</section>
+

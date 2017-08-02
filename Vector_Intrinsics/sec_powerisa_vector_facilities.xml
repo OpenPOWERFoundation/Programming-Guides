@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Copyright (c) 2017 OpenPOWER Foundation
+  
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+  
+-->
+<section xmlns="http://docbook.org/ns/docbook"
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  version="5.0"
+  xml:id="sec_powerisa_vector_facilities">
+  <title>PowerISA Vector facilities</title>
+  
+  <para>The PowerISA vector facilities (VMX and VSX) are extensive, but does 
+  not always provide a direct or obvious functional equivalent to the Intel 
+  Intrinsics. But being not obvious is not the same as imposible. It just 
+  requires some basic programing skills.</para>
+
+  <para>It is a good idea to have an overall understanding of the vector 
+  capabilities the PowerISA. You do not need to memorize every instructions but 
+  is helps to know where to look. Both the PowerISA and OpenPOWER ABI have a 
+  specific structure and organization that can help you find what you looking 
+  for. </para>
+
+  <para>It also helps to understand the relationship between the PowerISAs 
+  low level instructions and the higher abstraction of the vector intrinsics as 
+  defined by the OpenPOWER ABIs Vector Programming Interfaces and the the defacto 
+  standard of GCC's PowerPC AltiVec Built-in Functions.</para>
+  
+  <xi:include href="sec_powerisa.xml"/>
+  <xi:include href="sec_powerisa_vector_intrinsics.xml"/>
+  <xi:include href="sec_powerisa_vector_size_type.xml"/>
+
+</section>
+

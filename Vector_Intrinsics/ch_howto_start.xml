@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Copyright (c) 2017 OpenPOWER Foundation
+  
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+  
+-->
+<chapter xmlns="http://docbook.org/ns/docbook"
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  version="5.0"
+  xml:id="ch_howto_start">
+  <title>How do we work this?</title>
+  
+  <para>The working assumption is to start with the existing GCC headers from 
+  ./gcc/config/i386/, then convert them to PowerISA and add them to 
+  ./gcc/config/rs6000/. I assume we will replicate the existing header structure 
+  and retain the existing header file and intrinsic names. This also allows us to 
+  reuse existing DejaGNU test cases from ./gcc/testsuite/gcc.target/i386, modify 
+  them as needed for the POWER target, and them to the 
+  ./gcc/testsuite/gcc.target/powerpc.</para>
+
+  <para>We can be flexible on the sequence that headers/intrinsics and test 
+  cases are ported.  This should be based on customer need and resolving 
+  internal dependencies.  This implies an oldest-to-newest / bottoms-up (MMX, 
+  SSE, SSE2, …) strategy. The assumption is, existing community and user 
+  application codes, are more likely to have optimized code for previous 
+  generation ubiquitous (SSE, SSE2, ...) processors than the latest (and rare) 
+  SkyLake AVX512.</para>
+
+  <para>I would start with an existing header from the current GCC 
+   ./gcc/config/i386/ and copy the header comment (including FSF copyright) down 
+  to any vector typedefs used in the API or implementation. Skip the Intel 
+  intrinsic implementation code for now, but add the ending #end if matching the 
+  headers conditional guard against multiple inclusion. You can add  #include 
+  &lt;alternative&gt; as needed. For examples:
+  <programlisting><![CDATA[/* Copyright (C) 2003-2017 Free Software Foundation, Inc
+...
+/* This header provides a best effort implementation of the Intel X86
+ * SSE2 intrinsics for the PowerPC target.  This implementation is a
+ * combination of compiled C vector codes or equivalent sequences of
+ * GCC vector builtins from the GCC PowerPC Altivec target.
+ *
+ * However some details of this implementation will differ from
+ * the X86 due to differences in the underlying hardware or GCC
+ * implementation. For example the PowerPC target only uses unordered
+ * floating point compares. */
+
+#ifndef EMMINTRIN_H_
+#define EMMINTRIN_H_
+
+#include <altivec.h>
+#include <assert.h>
+
+/* We need definitions from the SSE header files.  */
+#include <xmmintrin.h>
+
+/* The Intel API is flexible enough that we must allow aliasing with other
+   vector types, and their scalar components.  */
+typedef float __m128 __attribute__ ((__vector_size__ (16), __may_alias__));
+
+/* Internal data types for implementing the intrinsics.  */
+typedef float __v4sf __attribute__ ((__vector_size__ (16)));
+/* more typedefs.  */
+
+/* The intrinsic implmentations go here.  */
+
+#endif /* EMMINTRIN_H_ */]]></programlisting></para>
+
+  <para>Then you can start adding small groups of related intrinsic 
+  implementations to the header to be compiled and  examine the generated code. 
+  Once you have what looks like reasonable code you can grep through 
+   ./gcc/testsuite/gcc.target/i386 for examples using the intrinsic names you 
+  just added. You should be able to find functional tests for most X86 
+  intrinsics. </para>
+
+  <para>The 
+  <link xlink:href="https://gcc.gnu.org/onlinedocs/gccint/Testsuites.html#Testsuites">GCC 
+  testsuite</link> uses the DejaGNU  test framework as documented in the 
+  <link xlink:href="https://gcc.gnu.org/onlinedocs/gccint/">GNU Compiler Collection (GCC) 
+  Internals</link> manual. GCC adds its own DejaGNU directives and extensions, 
+  that are embedded in the testsuite source as comments.  Some are platform 
+  specific and will need to be adjusted for tests that are ported to our 
+  platform. For example
+  <programlisting><![CDATA[/* { dg-do run } */
+/* { dg-options "-O2 -msse2" } */
+/* { dg-require-effective-target sse2 } */]]></programlisting></para>
+
+  <para>should become something like
+  <programlisting><![CDATA[/* { dg-do run } */
+/* { dg-options "-O3 -mpower8-vector" } */
+/* { dg-require-effective-target lp64 } */
+/* { dg-require-effective-target p8vector_hw { target powerpc*-*-* } } */]]></programlisting></para>
+
+  <para>Repeat this process until you have equivalent implementations for all 
+  the intrinsics in that header and associated test cases that execute without 
+  error.</para>
+
+  <xi:include href="sec_prefered_methods.xml"/>
+  <xi:include href="sec_prepare.xml"/>  
+  <xi:include href="sec_differences.xml"/>
+
+
+</chapter>
+

@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Copyright (c) 2017 OpenPOWER Foundation
+  
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+  
+-->
+<section xmlns="http://docbook.org/ns/docbook"
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  version="5.0"
+  xml:id="sec_power_vector_scalar_floatingpoint">
+  <title>Vector-Scalar Floating-Point Operations (VSX)</title>
+  
+  <para>With PowerISA 2.06 (POWER7) we extended the vector SIMD capabilities 
+  of the PowerISA:</para>
+  
+  <itemizedlist>
+    <listitem>
+      <para>Extend the available vector and floating-point scalar register 
+      sets from 32 registers each to a combined 64 x 64-bit scalar floating-point and 
+      64 x 128-bit vector registers.</para>
+    </listitem>
+    <listitem>
+      <para>Enable scalar double float operations on all 64 scalar 
+      registers.</para>
+    </listitem>
+    <listitem>
+      <para>Enable vector double and vector float operations for all 64 
+      vector registers.</para>
+    </listitem>
+    <listitem>
+      <para>Enable super-scalar execution of vector instructions and support 
+      2 independent vector floating point  pipelines for parallel execution of 4 x 
+      64-bit Floating point Fused Multiply Adds (FMAs) and 8 x 32-bit (FMAs) per 
+      cycle.</para>
+    </listitem>
+  </itemizedlist>
+
+  <para>With PowerISA 2.07 (POWER8) we added single-precision scalar 
+  floating-point instruction to VSX. This completes the floating-point 
+  computational set for VSX. This ISA release also clarified how these operate in 
+  the Little Endian storage model.</para>
+
+  <para>While the focus was on enhanced floating-point computation (for High 
+  Performance Computing),  VSX also extended  the ISA with additional storage 
+  access, logical, and permute (merge, splat, shift) instructions. This was 
+  necessary to extend these operations cover 64 VSX registers, and improves 
+  unaligned storage access for vectors  (not available in VMX).</para>
+
+  <para>The PowerISA 2.07B Chapter 7. Vector-Scalar Floating-Point Operations 
+  is organized starting with an introduction and overview (chapters 7.1- 7.5) . 
+  The early sections (7.1 and 7.2) describe the layout of the 64 VSX registers 
+  and how they relate (overlap and inter-operate) to the existing floating point 
+  scalar (FPRs) and (VMX VRs) vector registers.
+
+  <literallayout><literal>7.1 Introduction . . . . . . . . . . . . . . . . . . . . . . . . . . 317
+7.1.1 Overview of the Vector-Scalar Extension  . . . . . . . . . . . 317
+7.2 VSX Registers  . . . . . . . . . . . . . . . . . . . . . . . . . 318
+7.2.1 Vector-Scalar Registers  . . . . . . . . . . . . . . . . . . . 318
+7.2.2 Floating-Point Status and Control Register . . . . . . . . . . 321</literal></literallayout></para>
+
+  <para>The definitions given in “7.1.1.1 Compatibility with Category 
+  Floating-Point and Category Decimal Floating-Point Operations”, and 
+  “7.1.1.2 Compatibility with Category Vector Operations”
+    <blockquote>
+      <para>The instruction sets defined in Chapter 4.
+      Floating-Point Facility and Chapter 5. Decimal
+      Floating-Point retain their definition with one primary
+      difference. The FPRs are mapped to doubleword
+      element 0 of VSRs 0-31. The contents of doubleword 1
+      of the VSR corresponding to a source FPR specified
+      by an instruction are ignored. The contents of
+      doubleword 1 of a VSR corresponding to the target
+      FPR specified by an instruction are undefined.</para>
+      
+      <para>The instruction set defined in Chapter 6. Vector Facility
+      [Category: Vector], retains its definition with one
+      primary difference. The VRs are mapped to VSRs
+      32-63.</para></blockquote></para>
+
+  <note><para>The reference to scalar element 0 above is from the big endian 
+  register perspective of the ISA. In the PPC64LE ABI implementation, and for the 
+  purpose of porting Intel intrinsics, this is logical element 1.  Intel SSE 
+  scalar intrinsics operated on logical element [0],  which is in the wrong 
+  position for PowerISA FPU and VSX scalar floating-point  operations. Another 
+  important note is what happens to the other half of the VSR when you execute a 
+  scalar floating-point instruction (<emphasis>The contents of doubleword 1 of a VSR … 
+  are undefined.</emphasis>)</para></note>
+
+  <para>The compiler will hide some of this detail when generating code for 
+  little endian vector element [] notation and most vector built-ins. For example 
+  <literal>vec_splat (A, 0)</literal> is transformed for 
+  PPC64LE to <literal>xxspltd VRT,VRA,1</literal>. 
+  What the compiler <emphasis><emphasis role="bold">can not</emphasis></emphasis> 
+  hide is the different placement of scalars within vector registers.</para>
+
+  <para>Vector registers (VRs) 0-31 overlay and can be accessed from vector 
+  scalar registers (VSRs) 32-63. The ABI also specifies that VR2-13 are used to 
+  pass parameter and return values. In some cases the same (similar) operations 
+  exist in both VMX and VSX instruction forms, while in the other cases 
+  operations only exist for VMX (byte level permute and shift) or VSX (Vector 
+  double).</para>
+
+  <para>So resister selection that; avoids unnecessary vector moves, follows 
+  the ABI, while maintaining the correct instruction specific register numbering, 
+  can be tricky. The 
+  <link xlink:href="https://gcc.gnu.org/onlinedocs/gcc-6.3.0/gcc/Machine-Constraints.html#Machine-Constraints">GCC register constraint</link> 
+  annotations for Inline 
+  assembler using vector instructions  is challenging, even for experts. So only 
+  experts should be writing assembler and then only in extraordinary 
+  circumstances. You should leave these details to the compiler (using vector 
+  extensions and vector built-ins) when ever possible.</para>
+
+  <para>The next sections get is into the details of floating point 
+  representation, operations, and exceptions. Basically the implementation 
+  details for the IEEE754R and C/C++ language standards that most developers only 
+  access via higher level APIs. So most programmers will not need this level of 
+  detail, but it is there if needed.
+
+  <literallayout><literal>7.3 VSX Operations . . . . . . . . . . . . . . . . . . . . . . . . . 326
+7.3.1 VSX Floating-Point Arithmetic Overview . . . . . . . . . . . . 326
+7.3.2 VSX Floating-Point Data  . . . . . . . . . . . . . . . . . . . 327
+7.3.3 VSX Floating-Point Execution Models  . . . . . . . . . . . . . 335
+7.4 VSX Floating-Point Exceptions  . . . . . . . . . . . . . . . . . 338
+7.4.1 Floating-Point Invalid Operation Exception . . . . . . . . . . 341
+7.4.2 Floating-Point Zero Divide Exception . . . . . . . . . . . . . 347
+7.4.3 Floating-Point Overflow Exception. . . . . . . . . . . . . . . 349
+7.4.4 Floating-Point Underflow Exception . . . . . . . . . . . . . . 351</literal></literallayout></para>
+
+  <para>Finally an overview the VSX storage access instructions for big and 
+  little endian and for aligned and unaligned data addresses. This included 
+  diagrams that illuminate the differences
+
+  <literallayout><literal>7.5 VSX Storage Access Operations  . . . . . . . . . . . . . . . . . 356
+7.5.1 Accessing Aligned Storage Operands . . . . . . . . . . . . . . 356
+7.5.2 Accessing Unaligned Storage Operands . . . . . . . . . . . . . 357
+7.5.3 Storage Access Exceptions  . . . . . . . . . . . . . . . . . . 358</literal></literallayout></para>
+
+  <para>Section 7.6 starts with a VSX instruction Set Summary which is the 
+  place to start to get an feel for the types and operations supported.  The 
+  emphasis on float-point, both scalar and vector (especially vector double), is 
+  pronounced. Many of the scalar and single-precision vector instruction look 
+  like duplicates of what we have seen in the Chapter 4 Floating-Point and 
+  Chapter 6 Vector facilities. The difference here is, new instruction encodings 
+  to access the full 64 VSX register space. </para>
+
+  <para>In addition there are small number of logical instructions are 
+  include to support predication (selecting / masking vector elements based on 
+  compare results). And set of permute, merge, shift, and splat instructions that 
+  operation on VSX word (float) and doubleword (double) elements. As mentioned 
+  about VMX section 6.8 these instructions are good to study as they are useful 
+  for realigning elements from PowerISA vector results to that required for Intel 
+  Intrinsics.
+
+  <literallayout><literal>7.6 VSX Instruction Set . . . . . . . . . . . . . . . . . . . . . .  359
+7.6.1 VSX Instruction Set Summary . . . . . . . . . . . . . . . . .  359
+7.6.1.1 VSX Storage Access Instructions . . . . . . . . . . . . . .  359
+7.6.1.2 VSX Move Instructions . . . . . . . . . . . . . . . . . . .  360
+7.6.1.3 VSX Floating-Point Arithmetic Instructions  . . . . . . . .  360
+7.6.1.4 VSX Floating-Point Compare Instructions . . . . . . . . . .  363
+7.6.1.5 VSX DP-SP Conversion Instructions . . . . . . . . . . . . .  364
+7.6.1.6 VSX Integer Conversion Instructions . . . . . . . . . . . .  364
+7.6.1.7 VSX Round to Floating-Point Integer Instructions  . . . . .  366
+7.6.1.8 VSX Logical Instructions. . . . . . . . . . . . . . . . . .  366
+7.6.1.9 VSX Permute Instructions. . . . . . . . . . . . . . . . . .  367
+7.6.2 VSX Instruction Description Conventions . . . . . . . . . . .  368
+7.6.3 VSX Instruction Descriptions  . . . . . . . . . . . . . . . .  392</literal></literallayout></para>
+
+  <para>The VSX Instruction Descriptions section contains the detail 
+  description for each VSX category instruction.  The table entries from the 
+  Instruction Set Summary are formatted in the document at hyperlinks to 
+  corresponding instruction description.</para>
+
+</section>
+

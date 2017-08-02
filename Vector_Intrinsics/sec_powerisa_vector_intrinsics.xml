@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Copyright (c) 2017 OpenPOWER Foundation
+  
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+  
+-->
+<section xmlns="http://docbook.org/ns/docbook"
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  version="5.0"
+  xml:id="sec_powerisa_vector_intrinsics">
+  <title>PowerISA Vector Intrinsics</title>
+  
+  <para>The 
+  <emphasis role="bold">OpenPOWER ELF V2 application binary interface (ABI): Chapter 6.</emphasis> 
+  <emphasis><emphasis role="bold">Vector Programming Interfaces</emphasis></emphasis> and 
+  <emphasis><emphasis role="bold">Appendix A. Predefined Functions for Vector 
+  Programming</emphasis></emphasis> document the current and proposed vector built-ins we expect all 
+  C/C++ compilers implement. </para>
+
+  <para>Some of these operations are endian sensitive and the compiler needs 
+  to make corresponding adjustments as  it generate code for endian sensitive 
+  built-ins. There is a good overview for this in the 
+  <emphasis role="bold">OpenPOWER ABI Section</emphasis>
+  <emphasis><emphasis role="bold">6.4. 
+  Vector Built-in Functions</emphasis></emphasis>.</para>
+
+  <para>Appendix A is organized (sorted) by built-in name, output type, then 
+  parameter types. Most built-ins are generic as the named the operation (add, 
+  sub, mul, cmpeq, ...) applies to multiple types. </para>
+
+  <para>So the build <literal>vec_add</literal> built-in applies to all the signed and unsigned 
+  integer types (char, short, in, and long) plus float and double floating-point 
+  types. The compiler looks at the parameter type to select the vector 
+  instruction (or instruction sequence) that implements the (add) operation on 
+  that type. The compiler infers the output result type from the operation and 
+  input parameters and will complain if the target variable type is not 
+  compatible. For example:
+  <programlisting><![CDATA[vector signed char vec_add (vector signed char, vector signed char);
+vector unsigned char vec_add (vector unsigned char, vector unsigned char);
+vector signed short vec_add (vector signed short, vector signed short);
+vector unsigned short vec_add (vector unsigned short, vector unsigned short);
+vector signed int vec_add (vector signed int, vector signed int);
+vector unsigned int vec_add (vector unsigned int, vector unsigned int);
+vector signed int vec_add (vector signed long, vector signed long);
+vector unsigned int vec_add (vector unsigned long, vector unsigned long);
+vector float vec_add (vector float, vector float);
+vector double vec_add (vector double, vector double);]]></programlisting></para>
+
+  <para>This is one key difference between PowerISA built-ins and Intel 
+  Intrinsics (Intel Intrinsics are not generic and include type information in 
+  the name). This is why it is so important to understand the vector element 
+  types and to add the appropriate type casts to get the correct results.</para>
+
+  <para>The defacto standard implementation is GCC as defined in the include 
+  file <literal>&lt;altivec.h&gt;</literal> and documented in the GCC online documentation in 
+  <link xlink:href="https://gcc.gnu.org/onlinedocs/gcc-6.3.0/gcc/PowerPC-AltiVec_002fVSX-Built-in-Functions.html#PowerPC-AltiVec_002fVSX-Built-in-Functions">6.59.20 PowerPC 
+  AltiVec Built-in Functions</link>. The header file name and section title 
+  reflect the origin of the Vector Facility, but recent versions of GCC altivec.h 
+  include built-ins for newer PowerISA 2.06 and 2.07 VMX plus VSX extensions. 
+  This is a work in progress where your  (older) distro GCC compiler may not 
+  include built-ins for the latest PowerISA 3.0 or ABI edition. So before you use 
+  a built-in you find in the ABI Appendix A, check the specific 
+  <link xlink:href="https://gcc.gnu.org/onlinedocs/">GCC online documentation</link> for the 
+  GCC version you are using.</para>
+
+</section>
+
