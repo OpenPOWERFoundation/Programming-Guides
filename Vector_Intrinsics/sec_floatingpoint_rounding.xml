@@ -23,7 +23,7 @@
   <title>Floating-point rounding modes</title>
   
   <para>The Intel (x86 / x86_64) and PowerISA architectures both support the 
-  4 IEEE754 rounding modes. Again while the Intel Intrinsic API allows the 
+  4 IEEE-754 rounding modes. Again while the Intel Intrinsic API allows the 
   application to change rounding modes via updates to the 
   <literal>MXCSR</literal> it is a bad idea 
   and should be replaced with the POSIX APIs (<literal>fegetround</literal> and 

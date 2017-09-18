@@ -53,8 +53,8 @@
   are a lot of scalar operations on a single float, double, or long long type. In 
   effect these are scalars that can take advantage of the larger (xmm) register 
   space. Also in the Intel 32-bit architecture they provided IEEE754 float and 
-  double types, and 64-bit integers that did not exist or where hard to implement 
-  in the base i386/387 instruction set. These scalar operation use a suffix 
+  double types, and 64-bit integers that did not exist or were hard to implement 
+  in the base i386/387 instruction set. These scalar operations use a suffix 
   starting with '_s' (<literal>_sd</literal> for scalar double float, 
   <literal>_ss</literal> scalar float, and <literal>_si64</literal> 
   for scalar long long).</para>
@@ -72,7 +72,7 @@
   of 4 32-bit integers.</para>
 
   <para>The GCC  builtins for the 
-  <link xlink:href="https://gcc.gnu.org/onlinedocs/gcc-6.3.0/gcc/x86-Built-in-Functions.html#x86-Built-in-Functions">i386.target</link>, 
+  <link xlink:href="https://gcc.gnu.org/onlinedocs/gcc-6.3.0/gcc/x86-Built-in-Functions.html#x86-Built-in-Functions">i386.target</link> 
   (includes x86 and x86_64) are not 
   the same as the Intel Intrinsics. While they have similar intent and cover most 
   of the same functions, they use a different naming (prefixed with 
@@ -83,10 +83,10 @@ v4hi __builtin_ia32_paddw (v4hi, v4hi)
 v2si __builtin_ia32_paddd (v2si, v2si)
 v2di __builtin_ia32_paddq (v2di, v2di)]]></programlisting></para>
 
-  <para>Note: A key difference between GCC builtins for i386 and Powerpc is 
-  that the x86 builtins have different names of each operation and type while the 
-  powerpc altivec builtins tend to have a single generatic builtin for  each 
-  operation, across a set of compatible operand types. </para>
+  <note><para>A key difference between GCC built-ins for i386 and PowerPC is 
+  that the x86 built-ins have different names of each operation and type while the 
+  PowerPC altivec built-ins tend to have a single generic built-in for  each 
+  operation, across a set of compatible operand types. </para></note>
 
   <para>In GCC the Intel Intrinsic header (*intrin.h) files are implemented 
   as a set of inline functions using the Intel Intrinsic API names and types. 
@@ -106,7 +106,7 @@ _mm_add_sd (__m128d __A, __m128d __B)
 }]]></programlisting></para>
 
   <para>Note that the  
-  <emphasis role="bold"><literal>_mm_add_pd</literal></emphasis> is implemented direct as C vector 
+  <emphasis role="bold"><literal>_mm_add_pd</literal></emphasis> is implemented direct as GCC C vector 
   extension code., while 
   <emphasis role="bold"><literal>_mm_add_sd</literal></emphasis> is implemented via the GCC builtin 
   <emphasis role="bold"><literal>__builtin_ia32_addsd</literal></emphasis>. From the 

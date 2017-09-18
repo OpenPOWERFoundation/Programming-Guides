@@ -31,13 +31,13 @@
   <xref linkend="sec_packed_vs_scalar_intrinsics"/>). 
   This requires additional PowerISA instructions 
   to preserve the non-scalar portion of the vector registers. This may or may not 
-  be important to the logic of the program being ported, but we have handle the 
+  be important to the logic of the program being ported, but we have to handle the 
   case where it is.</para>
 
-  <para>This is where the context of now the intrinsic is used starts to 
+  <para>This is where the context of how the intrinsic is used starts to 
   matter. If the scalar intrinsics are used within a larger program the compiler 
   may be able to eliminate the redundant register moves as the results are never 
-  used. In the other cases common set up (like permute vectors or bit masks) can 
+  used. In other cases common set up (like permute vectors or bit masks) can 
   be common-ed up and hoisted out of the loop. So it is very important to let the 
   compiler do its job with higher optimization levels (<literal>-O3</literal>, 
   <literal>-funroll-loops</literal>).</para>

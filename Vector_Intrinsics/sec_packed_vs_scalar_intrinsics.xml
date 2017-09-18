@@ -23,8 +23,8 @@
   <title>Packed vs scalar intrinsics</title>
   
   <para>So what is actually going on here? The vector code is clear enough if 
-  you know that '+' operator is applied to each vector element. The the intent of 
-  the builtin is a little less clear, as the GCC documentation for 
+  you know that the '+' operator is applied to each vector element. The intent of 
+  the X86 built-in is a little less clear, as the GCC documentation for 
   <literal>__builtin_ia32_addsd</literal> is not very 
   helpful (nonexistent). So perhaps the 
   <link xlink:href="https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_add_pd&amp;expand=97">Intel Intrinsic Guide</link> 
@@ -54,7 +54,7 @@
   <itemizedlist>
     <listitem>
       <para>The vector bit and field numbering is different (reversed).
-      <itemizedlist>
+      <itemizedlist spacing="compact">
         <listitem>
           <para>For Intel the scalar is always placed in the low order (right most) 
           bits of the XMM register (and the low order address for load and store).</para>
@@ -62,13 +62,13 @@
         
         <listitem>
           <para>For PowerISA and VSX, scalar floating point operations and Floating 
-          Point Registers (FPRs) are on the low numbered bits which is the left hand 
+          Point Registers (FPRs) are in the low numbered bits which is the left hand 
           side of the vector / scalar register (VSR). </para>
         </listitem>
 
         <listitem>
-          <para>For the PowerPC64 ELF V2  little endian ABI we also make point of 
-          making the GCC vector extensions and vector built ins, appear to be little 
+          <para>For the PowerPC64 ELF V2  little endian ABI we also make a point of 
+          making the GCC vector extensions and vector built-ins, appear to be little 
           endian. So vector element 0 corresponds to the low order address and low 
           order (right hand) bits of the vector register (VSR).</para>
         </listitem>
@@ -77,7 +77,7 @@
     <listitem>
       <para>The handling of the non-scalar part of the register for scalar 
       operations are different.
-      <itemizedlist>
+      <itemizedlist spacing="compact">
         <listitem>
           <para>For Intel ISA the scalar operations either leaves the high order part 
           of the XMM vector unchanged or in some cases force it to 0.0.</para>
@@ -94,7 +94,7 @@
   <para>To minimize confusion and use consistent nomenclature, I will try to 
   use the terms logical left and logical right elements based on the order they 
   apprear in a C vector initializers and element index order. So in the vector 
-  <literal>(__v2df){1.0, 20.}</literal>, The value 1.0 is the in the logical left element [0] and 
+  <literal>(__v2df){1.0, 2.0}</literal>, The value 1.0 is the in the logical left element [0] and 
   the value 2.0 is logical right element [1].</para>
 
   <para>So lets look at how to implement these intrinsics for the PowerISA. 
@@ -119,7 +119,7 @@ _mm_add_sd (__m128d __A, __m128d __B)
   compiler generates the following code for PPC64LE target.:</para>
 
   <para>The packed vector double generated the corresponding VSX vector 
-  double add (xvadddp). But the scalar implementation is bit more complicated. 
+  double add (xvadddp). But the scalar implementation is a bit more complicated. 
   <programlisting><![CDATA[0000000000000720 <test_add_pd>:
  720:	07 1b 42 f0 	xvadddp vs34,vs34,vs35
 	...
@@ -149,7 +149,7 @@ _mm_add_sd (__m128d __A, __m128d __B)
   element (copied to itself).<footnote><para>Fun 
   fact: The vector registers in PowerISA are decidedly Big Endian. But we decided 
   to make the PPC64LE ABI behave like a Little Endian system to make application 
-  porting easier. This require the compiler to manipulate the PowerISA vector 
+  porting easier. This requires the compiler to manipulate the PowerISA vector 
   instrinsic behind the the scenes to get the correct Little Endian results. For 
   example the element selector [0|1] for <literal>vec_splat</literal> and the 
   generation of <literal>vec_mergeh</literal> vs <literal>vec_mergel</literal> 
@@ -161,9 +161,9 @@ _mm_add_sd (__m128d __A, __m128d __B)
   opportunity to optimize the whole function. </para>
 
   <para>Now we can look at a slightly more interesting (complicated) case. 
-  Square root (<literal>sqrt</literal>) is not a arithmetic operator in C and is usually handled 
+  Square root (<literal>sqrt</literal>) is not an arithmetic operator in C and is usually handled 
   with a library call or a compiler builtin. We really want to avoid a library 
-  calls and want to avoid any unexpected side effects. As you see below the 
+  call and want to avoid any unexpected side effects. As you see below the 
   implementation of 
   <link xlink:href="https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_sqrt_pd&amp;expand=4926"><literal>_mm_sqrt_pd</literal></link> and 
   <link xlink:href="https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_sqrt_sd&amp;expand=4926,4956"><literal>_mm_sqrt_sd</literal></link> 
@@ -197,13 +197,14 @@ _mm_sqrt_sd (__m128d __A, __m128d __B)
   external library dependency for what should be only a few inline instructions. 
   So this is not a good option.</para>
 
-  <para>Thinking outside the box; we do have an inline intrinsic for a 
-  (packed) vector double sqrt, that we just implemented. However we need to 
+  <para>Thinking outside the box: we do have an inline intrinsic for a 
+  (packed) vector double sqrt that we just implemented. However we need to 
   insure the other half of <literal>__B</literal> (<literal>__B[1]</literal>) 
-  does not cause an harmful side effects 
+  does not cause any harmful side effects 
   (like raising exceptions for NAN or  negative values). The simplest solution 
-  is to splat <literal>__B[0]</literal> to both halves of a temporary value before taking the 
-  <literal>vec_sqrt</literal>. Then this result can be combined with <literal>__A[1]</literal> to return the final 
+  is to vector splat <literal>__B[0]</literal> to both halves of a temporary
+  value before taking the <literal>vec_sqrt</literal>.
+  Then this result can be combined with <literal>__A[1]</literal> to return the final 
   result. For example:
   <programlisting><![CDATA[extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
 _mm_sqrt_pd (__m128d __A)
@@ -228,8 +229,8 @@ _mm_sqrt_sd (__m128d __A, __m128d __B)
   to combine the final result. You could also use the <literal>{c[0], __A[1]}</literal> 
   initializer instead of <literal>_mm_setr_pd</literal>.</para>
 
-  <para>Now we can look at vector and scalar compares that add there own 
-  complication: For example, the Intel Intrinsic Guide for 
+  <para>Now we can look at vector and scalar compares that add their own 
+  complications: For example, the Intel Intrinsic Guide for 
   <link xlink:href="https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_cmpeq_pd&amp;expand=779,788,779"><literal>_mm_cmpeq_pd</literal></link> 
   describes comparing double elements [0|1] and returning 
   either 0s for not equal and 1s (<literal>0xFFFFFFFFFFFFFFFF</literal> 
@@ -242,9 +243,9 @@ _mm_sqrt_sd (__m128d __A, __m128d __B)
   the final vector result.</para>
 
   <para>The packed vector implementation for PowerISA is simple as VSX 
-  provides the equivalent instruction and GCC provides the 
-  <literal>vec_cmpeq</literal> builtin 
-  supporting the vector double type. The technique of using scalar comparison 
+  provides the equivalent instruction and GCC provides the builtin 
+  <literal>vec_cmpeq</literal> supporting the vector double type. 
+  However the technique of using scalar comparison 
   operators on the <literal>__A[0]</literal> and <literal>__B[0]</literal> 
   does not work as the C comparison operators 
   return 0 or 1 results while we need the vector select mask (effectively 0 or 
@@ -253,10 +254,10 @@ _mm_sqrt_sd (__m128d __A, __m128d __B)
   banks.</para>
 
   <para>In this case we are better off using explicit vector built-ins for 
-  <literal>_mm_add_sd</literal> as and example. We can use <literal>vec_splat</literal> 
-  from element [0] to temporaries 
-  where we can safely use <literal>vec_cmpeq</literal> to generate the expect selector mask. Note 
-  that the <literal>vec_cmpeq</literal> returns a bool long type so we need the cast the result back 
+  <literal>_mm_add_sd</literal> and <literal>_mm_sqrt_sd</literal> as examples.
+  We can use <literal>vec_splat</literal> from element [0] to temporaries 
+  where we can safely use <literal>vec_cmpeq</literal> to generate the expected selector mask. Note 
+  that the <literal>vec_cmpeq</literal> returns a bool long type so we need to cast the result back 
   to <literal>__v2df</literal>. Then use the 
   <literal>(__m128d){c[0], __A[1]}</literal> initializer to combine the 
   comparison result with the original <literal>__A[1]</literal> input and cast to the require 
@@ -283,20 +284,6 @@ _mm_cmpeq_sd(__m128d  __A, __m128d  __B)
 	return ((__m128d){c[0], __A[1]});
 }]]></programlisting></para>
 
-  <para>Now lets look at a similar example that adds some surprising 
-  complexity. This is the compare not equal case so we should be able to find the 
-  equivalent vec_cmpne builtin:
-  <programlisting><![CDATA[extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
-_mm_cmpneq_pd (__m128d __A, __m128d __B)
-{
-  return (__m128d)__builtin_ia32_cmpneqpd ((__v2df)__A, (__v2df)__B);
-}
-
-extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
-_mm_cmpneq_sd (__m128d __A, __m128d __B)
-{
-  return (__m128d)__builtin_ia32_cmpneqsd ((__v2df)__A, (__v2df)__B);
-}]]></programlisting></para>
 
 </section>
 

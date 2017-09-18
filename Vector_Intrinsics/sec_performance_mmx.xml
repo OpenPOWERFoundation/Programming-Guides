@@ -23,17 +23,17 @@
   <title>Using MMX intrinsics</title>
   
   <para>MMX was the first and oldest SIMD extension and initially filled a 
-  need for wider (64-bit) integer and additional register. This is back when 
+  need for wider (64-bit) integer and additional registers. This is back when 
   processors were 32-bit and 8 x 32-bit registers was starting to cramp our 
   programming style. Now 64-bit processors, larger register sets, and 128-bit (or 
-  larger) vector SIMD extensions are common. There is simply no good reasons 
+  larger) vector SIMD extensions are common. There is simply no good reason to 
   write new code using the (now) very limited MMX capabilities. </para>
 
   <para>We recommend that existing MMX codes be rewritten to use the newer 
-  SSE  and VMX/VSX intrinsics or using the more portable GCC  builtin vector 
+  SSE and VMX/VSX intrinsics or using the more portable GCC  builtin vector 
   support or in the case of si64 operations use C scalar code. The MMX si64 
-  scalars which are just (64-bit) operations on long long int types and any 
-  modern C compiler can handle this type. The char short in SIMD operations 
+  scalars are just (64-bit) operations on long long int types and any 
+  modern C compiler can handle this type. The char / short in SIMD operations 
   should all be promoted to 128-bit SIMD operations on GCC builtin vectors. Both 
   will improve cross platform portability and performance.</para>
   

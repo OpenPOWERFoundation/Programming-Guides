@@ -27,18 +27,25 @@
   applications, and make them (or equivalents) available for the PowerPC64LE 
   platform. These X86 intrinsics started with the Intel and Microsoft compilers 
   but were then ported to the GCC compiler. The GCC implementation is a set of 
-  headers with inline functions. These inline functions provide a implementation 
+  headers with inline functions. These inline functions provide an implementation 
   mapping from the Intel/Microsoft dialect intrinsic names to the corresponding 
-  GCC Intel built-in's or directly via C language vector extension syntax.</para>
+  GCC Intel built-ins or directly via C language vector extension syntax.</para>
 
   <para>The current proposal is to start with the existing X86 GCC intrinsic 
   headers and port them (copy and change the source)  to POWER using C language 
   vector extensions, VMX and VSX built-ins. Another key assumption is that we 
-  will be able to use many of existing Intel DejaGNU test cases on 
+  will be able to use many of the existing Intel DejaGNU test cases in 
   ./gcc/testsuite/gcc.target/i386. This document is intended as a guide to 
   developers participating in this effort. However this document provides 
   guidance and examples that should be useful to developers who may encounter X86 
   intrinsics in code that they are porting to another platform.</para>
+
+  <note><para>(<emphasis>We have started contributions of X86 intrinsic headers
+  to the GCC project.</emphasis>) The current status of the project is the BMI
+  (bmiintrin.h), BMI2 (bmi2intrin.h), MMX (mmintrin.h), and SSE (xmmintrin.h)
+  intrinsic headers are committed to GCC development trunk for GCC 8.
+  Work on SSE2 (emmintrin.h) is in progress.
+  </para></note>
 
   <xi:include href="sec_review_source.xml"/>
 

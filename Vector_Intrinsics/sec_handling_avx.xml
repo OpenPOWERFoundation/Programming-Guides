@@ -23,7 +23,7 @@
   <title>Dealing with AVX and AVX512</title>
   
   <para>AVX is a bit easier for PowerISA and the ELF V2 ABI. First we have 
-  lots (64) of vector registers and a super scalar vector pipe-line (can execute 
+  lots (64) of vector registers and a superscalar vector pipeline (can execute 
   two or more independent 128-bit vector operations concurrently). Second the ELF 
   V2 ABI was designed to pass and return larger aggregates in vector 
   registers:</para>
@@ -35,7 +35,7 @@
     </listitem>
     <listitem>
       <para>A qualified vector argument corresponds to:
-        <itemizedlist>
+        <itemizedlist spacing="compact">
           <listitem>
             <para>A vector data type</para>
           </listitem>
@@ -58,7 +58,7 @@
   </itemizedlist>
 
   <para>So the ABI allows for passing up to three structures each 
-  representing 512-bit vectors and returning such (512-bit) structure all in VMX 
+  representing 512-bit vectors and returning such (512-bit) structures all in VMX 
   registers. This can be extended further by spilling parameters (beyond 12 X 
   128-bit vectors) to the parameter save area, but we should not need that, as 
   most intrinsics only use 2 or 3 operands.. Vector registers not needed for 
@@ -79,7 +79,7 @@
   <literal>__vector_size__</literal> (32) or (64) in the PowerPC implementation of 
   <literal>__m256</literal> and <literal>__m512</literal> 
   types. Instead we will typedef structs of 2 or 4 vector (<literal>__m128</literal>) fields. This 
-  allows efficient handling of these larger data types without require new GCC 
+  allows efficient handling of these larger data types without requiring new GCC 
   language extensions. </para>
 
   <para>In the end we should use the same type names and definitions as the 

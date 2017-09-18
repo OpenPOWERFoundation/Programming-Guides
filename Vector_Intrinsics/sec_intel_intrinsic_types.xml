@@ -42,28 +42,35 @@ typedef float __v4sf __attribute__ ((__vector_size__ (16)));]]></programlisting>
     in which pointers to one vector type are permitted to alias pointers to a 
     different vector type.</para></blockquote></para>
   
-  <para>So there are a 
-  couple of issues here: 1)  the API seem to force the compiler to assume 
-  aliasing of any parameter passed by reference. Normally the compiler assumes 
-  that parameters of different size do not overlap in storage, which allows more 
-  optimization. 2) the data type used at the interface may not be the correct 
-  type for the implied operation. So parameters of type 
-  <literal>__m128i</literal> (which is defined 
-  as vector long long) is also used for parameters and return values of vector 
-  [char | short | int ]. </para>
+  <para>There are a couple of issues here:
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>The API seems to force the compiler to assume 
+      aliasing of any parameter passed by reference.</para>
+    </listitem>
+    <listitem>
+      <para>The data type used at the interface may not be
+      the correct type for the implied operation.</para>
+    </listitem>
+  </itemizedlist>
+  Normally the compiler assumes that parameters of different size do
+  not overlap in storage, which allows more optimization.
+  However parameters for different vector element sizes 
+  [char | short | int | long] are all passed and returned as type <literal>__m128i</literal>
+  (defined as vector long long). </para>
 
-  <para>This may not matter when using x86 built-in's but does matter when 
-  the implementation uses C vector extensions or in our case use PowerPC generic 
+  <para>This may not matter when using x86 built-ins but does matter when 
+  the implementation uses C vector extensions or in our case uses PowerPC generic 
   vector built-ins 
   (<xref linkend="sec_powerisa_vector_intrinsics"/>). 
-  For the later cases the type must be correct for 
+  For the latter cases the type must be correct for 
   the compiler to generate the correct type (char, short, int, long) 
   (<xref linkend="sec_api_implemented"/>) for the generic 
   builtin operation. There is also concern that excessive use of 
   <literal>__may_alias__</literal>
   will limit compiler optimization. We are not sure how important this attribute 
   is to the correct operation of the API.  So at a later stage we should 
-  experiment with removing it from our implementation for PowerPC</para>
+  experiment with removing it from our implementation for PowerPC.</para>
 
   <para>The good news is that PowerISA has good support for 128-bit vectors 
   and (with the addition of VSX) all the required vector data (char, short, int, 
@@ -76,11 +83,16 @@ typedef float __v4sf __attribute__ ((__vector_size__ (16)));]]></programlisting>
   implemented as vector attribute extensions of the appropriate  size (   
   <literal>__vector_size__</literal> ({8 | 16 | 32, and 64}). For the PowerPC target  GCC currently 
   only supports the native <literal>__vector_size__</literal> ( 16 ). These we can support directly 
-  in VMX/VSX registers and associated instructions. The GCC will compile with 
+  in VMX/VSX registers and associated instructions. GCC will compile code with 
   other   <literal>__vector_size__</literal> values, but the resulting types are treated as simple 
   arrays of the element type. This does not allow the compiler to use the vector 
-  registers and vector instructions for these (nonnative) vectors.   So what is 
-  a programmer to do?</para>
+  registers and vector instructions for these (nonnative) vectors.</para>
+
+  <para>So the PowerISA VMX/VSX facilities and GCC compiler support for 
+  128-bit/16-byte vectors and associated vector built-ins
+  are well matched to implementing equivalent X86 SSE intrinsic functions.
+  However implementing the older MMX (64-bit) and the latest
+  AVX (256 / 512-bit) extensions requires more thought and some ingenuity.</para>
     
   <xi:include href="sec_handling_mmx.xml"/>
   <xi:include href="sec_handling_avx.xml"/>

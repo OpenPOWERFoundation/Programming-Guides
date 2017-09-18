@@ -22,23 +22,23 @@
   xml:id="sec_performance_sse">
   <title>Using SSE float and double scalars</title>
   
-  <para>SSE scalar float / double intrinsics  “hand” optimization is no 
+  <para>For SSE scalar float / double intrinsics,  “hand” optimization is no 
   longer necessary. This was important, when SSE was initially introduced, and 
   compiler support was limited or nonexistent.  Also SSE scalar float / double 
-  provided additional (16) registers and IEEE754 compliance, not available from 
+  provided additional (16) registers and IEEE-754 compliance, not available from 
   the 8087 floating point architecture that preceded it. So application 
-  developers where motivated to use SSE instruction versus what the compiler was 
+  developers where motivated to use SSE instructions versus what the compiler was 
   generating at the time.</para>
 
-  <para>Modern compilers can now to generate and  optimize these (SSE 
+  <para>Modern compilers can now generate and optimize these (SSE 
   scalar) instructions for Intel from C standard scalar code. Of course PowerISA 
-  supported IEEE754 float and double and had 32 dedicated floating point 
-  registers from the start (and now 64 with VSX). So replacing a Intel specific 
+  supported IEEE-754 float and double and had 32 dedicated floating point 
+  registers from the start (and now 64 with VSX). So replacing Intel specific 
   scalar intrinsic implementation with the equivalent C language scalar 
-  implementation is usually a win; allows the compiler to apply the latest 
+  implementation is usually a win; it allows the compiler to apply the latest 
   optimization and tuning for the latest generation processor, and is portable to 
   other platforms where the compiler can also apply the latest optimization and 
-  tuning for that processors latest generation.</para>
+  tuning for that processor's latest generation.</para>
    
 </section>
 

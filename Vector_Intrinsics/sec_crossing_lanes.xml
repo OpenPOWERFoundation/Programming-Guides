@@ -22,24 +22,26 @@
   xml:id="sec_crossing_lanes">
   <title>Crossing lanes</title>
   
-  <para>We have seen that, most of the time, vector SIMD units prefer to keep 
+  <para>Vector SIMD units prefer to keep 
   computations in the same “lane” (element number) as the input elements. The 
-  only exception in the examples so far are the occasional splat (copy one 
+  only exception in the examples so far are the occasional vector splat (copy one 
   element to all the other elements of the vector) operations. Splat is an 
   example of the general category of “permute” operations (Intel would call 
-  this a “shuffle” or “blend”). Permutes selects and rearrange the 
-  elements of (usually) a concatenated pair of vectors and delivers those 
-  selected elements, in a specific order, to a result vector. The selection and 
-  order of elements in the result is controlled by a third vector, either as 3rd 
-  input vector or and immediate field of the instruction.</para>
+  this a “shuffle” or “blend”). </para>
 
-  <para>For example the Intel intrisics for 
+ <para>Permutes select and rearrange the 
+  elements of an input vector (or a concatenated pair of vectors) and deliver those 
+  selected elements, in a specific order, to a result vector. The selection and 
+  order of elements in the result is controlled by a third operand, either as a 3rd 
+  input vector or as an immediate field of the instruction.</para>
+
+  <para>For example, consider the Intel intrisics for 
   <link xlink:href="https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_hadd&amp;expand=2757,4767,409,2757">Horizontal Add / Subtract</link> 
-  added with SSE3. These instrinsics add (subtract) adjacent element pairs, across pair of 
+  added with SSE3. These instrinsics add (subtract) adjacent element pairs across a pair of 
   input vectors, placing the sum of the adjacent elements in the result vector. 
   For example 
   <link xlink:href="https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_hadd_ps&amp;expand=2757,4767,409,2757,2757">_mm_hadd_ps</link>  
-  which implments the operation on float:
+  which implements the operation on float:
   <programlisting><![CDATA[	result[0] = __A[1] + __A[0];
 	result[1] = __A[3] + __A[2];
 	result[2] = __B[1] + __B[0];
@@ -60,15 +62,16 @@
   the vector add (to implement Horizontal Add).  </para>
 
   <para>The PowerISA provides generalized byte-level vector permute (vperm) 
-  based a vector register pair source as input and a control vector. The control 
+  based on a vector register pair (32 bytes) source as input and a (16-byte) control vector. 
+  The control 
   vector provides 16 indexes (0-31) to select bytes from the concatenated input 
-  vector register pair (VRA, VRB). A more specific set of permutes (pack, unpack, 
-  merge, splat) operations (across element sizes) are encoded as separate 
-  instruction opcodes or instruction immediate fields.</para>
+  vector register pair (VRA, VRB). There are also predefined permutes (splat, pack, unpack, 
+  merge) operations (across element sizes) that are encoded as separate 
+  instruction op-codes or instruction immediate fields.</para>
 
   <para>Unfortunately only the general <literal>vec_perm</literal> 
   can provide the realignment 
-  we need the _mm_hadd_ps operation or any of the int, short variants of hadd. 
+  we need for the _mm_hadd_ps operation or any of the int, short variants of hadd. 
   For example:
   <programlisting><![CDATA[extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
 _mm_hadd_ps (__m128 __X, __m128 __Y)
@@ -89,12 +92,12 @@ _mm_hadd_ps (__m128 __X, __m128 __Y)
   word elements across <literal>__X</literal> and <literal>__Y</literal>, 
   and another to select the odd word elements 
   across <literal>__X</literal> and <literal>__Y</literal>. 
-  The result of these permutes (<literal>vec_perm</literal>) are inputs to the 
-  <literal>vec_add</literal> and completes the add operation. </para>
+  The results of these permutes (<literal>vec_perm</literal>) are inputs to the 
+  <literal>vec_add</literal> that completes the horizontal add operation. </para>
 
-  <para>Fortunately the permute required for the double (64-bit) case (IE 
-  _mm_hadd_pd) reduces to the equivalent of <literal>vec_mergeh</literal> / 
-  <literal>vec_mergel</literal>  doubleword 
+  <para>Fortunately the permute required for the double (64-bit) case 
+  (<literal>_mm_hadd_pd</literal>) reduces to the equivalent of 
+  <literal>vec_mergeh</literal> / <literal>vec_mergel</literal>  doubleword 
   (which are variants of  VSX Permute Doubleword Immediate). So the 
   implementation of _mm_hadd_pd can be simplified to this:
   <programlisting><![CDATA[extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))

@@ -22,23 +22,25 @@
   xml:id="sec_power_vmx">
   <title>The Vector Facility (VMX)</title>
   
- <para>The orginal VMX supported SIMD integer byte, halfword, and word, and 
+ <para>The original VMX supported SIMD integer byte, halfword, and word, and 
   single float data types within a separate (from GPR and FPR) bank of 32 x 
-  128-bit vector registers. These operations like to stay within their (SIMD) 
+  128-bit vector registers. The arithmetic operations like to stay within their (SIMD) 
   lanes except where the operation changes the element data size (integer 
-  multiply, pack, and unpack). </para>
+  multiply) or the generalized permute operations
+  (splat, permute, pack, unpack merge). </para>
 
-  <para>This is complimented by bit logical and shift / rotate / permute / 
-  merge instuctions that operate on the vector as a whole.  Some operation 
+  <para>This is complemented by bit logical and shift / rotate instructions
+  that operate on the vector as a whole.  Some operations
   (permute, pack, merge, shift double, select) will select 128 bits from a pair 
-  of vectors (256-bits) and deliver 128-bit vector result. These instructions 
-  will cross lanes or multiple registers to grab fields and assmeble them into 
+  of vectors (256-bits) and delivers a 128-bit vector result. These instructions 
+  will cross lanes or multiple registers to grab fields and assemble them into 
   the single register result.</para>
 
   <para>The PowerISA 2.07B Chapter 6. Vector Facility is organised starting 
   with an overview (chapters 6.1- 6.6):
 
-  <literallayout><literal>6.1 Vector Facility Overview . . . . . . . . . . . . . . . . . . . . 227
+  <literallayout><literal>
+6.1 Vector Facility Overview . . . . . . . . . . . . . . . . . . . . 227
 6.2 Chapter Conventions. . . . . . . . . . . . . . . . . . . . . . . 227
 6.2.1 Description of Instruction Operation . . . . . . . . . . . . . 227
 6.3 Vector Facility Registers  . . . . . . . . . . . . . . . . . . . 234
@@ -52,14 +54,18 @@
 6.6 Vector Floating-Point Operations . . . . . . . . . . . . . . . . 240
 6.6.1 Floating-Point Overview  . . . . . . . . . . . . . . . . . . . 240
 6.6.2 Floating-Point Exceptions  . . . . . . . . . . . . . . . . . . 240
+  </literal></literallayout></para>
+  
+  <para>Then a chapter on storage (load/store) access for vector and vector 
+  elements:
+
+  <literallayout><literal>
 6.7 Vector Storage Access Instructions . . . . . . . . . . . . . . . 242
 6.7.1 Storage Access Exceptions  . . . . . . . . . . . . . . . . . . 242
 6.7.2 Vector Load Instructions . . . . . . . . . . . . . . . . . . . 243
 6.7.3 Vector Store Instructions. . . . . . . . . . . . . . . . . . . 246
-6.7.4 Vector Alignment Support Instructions. . . . . . . . . . . . . 248</literal></literallayout></para>
-  
-  <para>Then a chapter on storage (load/store) access for vector and vector 
-  elements:</para>
+6.7.4 Vector Alignment Support Instructions. . . . . . . . . . . . . 248
+  </literal></literallayout></para>
   
   <xi:include href="sec_power_vector_permute_format.xml"/>
 

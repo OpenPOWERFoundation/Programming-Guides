@@ -20,7 +20,7 @@
   xmlns:xlink="http://www.w3.org/1999/xlink"
   version="5.0"
   xml:id="sec_prefered_methods">
-  <title>Prefered methods</title>
+  <title>Preferred methods</title>
   
   <para>As we will see there are multiple ways to implement the logic of 
   these intrinsics. Some implementation methods are preferred because they allow 
@@ -32,7 +32,7 @@
   each intrinsic implementation. In general we should use the following list as a 
   guide to these decisions:</para>
   
-  <orderedlist>
+  <orderedlist spacing="compact">
     <listitem>
       <para>Use C vector arithmetic, logical, dereference, etc., operators in 
       preference to intrinsics.</para>

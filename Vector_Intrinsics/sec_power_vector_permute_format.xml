@@ -23,10 +23,13 @@
   <title>Vector permute and formatting instructions</title>
 
   <para>The vector Permute and formatting chapter follows and is an important 
-  one to study. These operation operation on the byte, halfword, word (and with 
-  2.07 doubleword) integer types . Plus special Pixel type. The shifts 
+  one to study. These operate on the byte, halfword, word (and with 
+  PowerISA 2.07 doubleword) integer types,
+  plus special pixel type. </para>
+
+  <para>The shift
   instructions in this chapter operate on the vector as a whole at either the bit 
-  or the byte (octet) level, This is an important chapter to study for moving 
+  or the byte (octet) level. This is an important chapter to study for moving 
   PowerISA vector results into the vector elements that Intel Intrinsics 
   expect:
   
@@ -41,12 +44,13 @@
   <para>The Vector Integer instructions include the add / subtract / Multiply 
   / Multiply Add/Sum / (no divide) operations for the standard integer types. 
   There are instruction forms that  provide signed, unsigned, modulo, and 
-  saturate results for most operations. The PowerISA 2.07 extension add / 
-  subtract of 128-bit integers with carry and extend to 256, 512-bit and beyond , 
-  is included here. There are signed / unsigned compares across the standard 
-  integer types (byte, .. doubleword). The usual and bit-wise logical operations. 
-  And the SIMD shift / rotate instructions that operate on the vector elements 
-  for various types.
+  saturate results for most operations. PowerISA 2.07 extends vector integer
+  operations to add / subtract quadword (128-bit) integers with carry and extend.
+  This supports extended binary integer arithmetic to 256, 512-bit and beyond. 
+  There are signed / unsigned compares across the standard 
+  integer types (byte, .. doubleword); the usual bit-wise logical operations;
+  and the SIMD shift / rotate instructions that operate on the vector elements 
+  for various integer types.
 
   <literallayout><literal>6.9 Vector Integer Instructions  . . . . . . . . . . . . . . . . . . 264
 6.9.1 Vector Integer Arithmetic Instructions . . . . . . . . . . . . 264
@@ -55,8 +59,8 @@
 6.9.4 Vector Integer Rotate and Shift Instructions . . . . . . . . . 302</literal></literallayout></para>
 
   <para>The vector [single] float instructions are grouped into this chapter. 
-  This chapter does not include the double float instructions which are described 
-  in the VSX chapter. VSX also include additional float instructions that operate 
+  This chapter does not include the double float instructions, which are described 
+  in the VSX chapter. VSX also includes additional float instructions that operate 
   on the whole 64 register vector-scalar set.
 
   <literallayout><literal>6.10 Vector Floating-Point Instruction Set . . . . . . . . . . . . . 306
@@ -67,7 +71,7 @@
 6.10.5 Vector Floating-Point Estimate Instructions . . . . . . . . . 316</literal></literallayout></para>
 
   <para>The vector XOR based instructions are new with PowerISA 2.07 (POWER8) 
-  and provide vector  crypto and check-sum operations:
+  and provide vector crypto and check-sum operations:
 
   <literallayout><literal>6.11 Vector Exclusive-OR-based Instructions  . . . . . . . . . . . . 318
 6.11.1 Vector AES Instructions . . . . . . . . . . . . . . . . . . . 318
@@ -75,28 +79,28 @@
 6.11.3 Vector Binary Polynomial Multiplication Instructions. . . . . 321
 6.11.4 Vector Permute and Exclusive-OR Instruction . . . . . . . . . 323</literal></literallayout></para>
 
-  <para>The vector gather and bit permute support bit level rearrangement of 
-  bits with in the vector. While the vector versions of the count leading zeros 
-  and population count are useful to accelerate specific algorithms.
+  <para>The vector gather and bit permute instructions support bit-level rearrangement of 
+  bits with in the vector, while the vector versions of the count leading zeros 
+  and population count instructions are useful to accelerate specific algorithms.
 
   <literallayout><literal>6.12 Vector Gather Instruction . . . . . . . . . . . . . . . . . . . 324
 6.13 Vector Count Leading Zeros Instructions . . . . . . . . . . . . 325
 6.14 Vector Population Count Instructions. . . . . . . . . . . . . . 326
 6.15 Vector Bit Permute Instruction  . . . . . . . . . . . . . . . . 327</literal></literallayout></para>
 
-  <para>The Decimal Integer add / subtract instructions complement the 
-  Decimal Floating-Point instructions. They can also be used to accelerated some 
-  binary to/from decimal conversions. The VSCR instruction provides access the 
+  <para>The Decimal Integer add / subtract (fixed point) instructions complement the 
+  Decimal Floating-Point instructions. They can also be used to accelerate some 
+  binary to/from decimal conversions. The VSCR instructions provide access to
   the Non-Java mode floating-point control and the saturation status. These 
-  instruction are not normally of interest in porting Intel intrinsics.
+  instructions are not normally of interest in porting Intel intrinsics.
 
   <literallayout><literal>6.16 Decimal Integer Arithmetic Instructions . . . . . . . . . . . . 328
 6.17 Vector Status and Control Register Instructions . . . . . . . . 331</literal></literallayout></para>
 
-  <para>With PowerISA 2.07B (Power8) several major extension where added to 
+  <para>With PowerISA 2.07B (Power8) several major extensions were added to 
   the Vector Facility:</para>
 
-  <itemizedlist>
+  <itemizedlist spacing="compact">
     <listitem>
       <para>Vector Crypto: Under “Vector Exclusive-OR-based Instructions 
       Vector Exclusive-OR-based Instructions”, AES [inverse] Cipher, SHA 256 / 512 
@@ -108,7 +112,7 @@
       unsigned max / min, rotate and shift left/right.</para>
     </listitem>
     <listitem>
-      <para>Direct Move between GRPs and the FPRs / Left half of Vector 
+      <para>Direct Move between GPRs and the FPRs / Left half of Vector 
       Registers.</para>
     </listitem>
     <listitem>
@@ -116,7 +120,7 @@
       support for vector <literal>__int128</literal> and multiple precision arithmetic.</para>
     </listitem>
     <listitem>
-      <para>Decimal Integer add subtract for 31 digit BCD.</para>
+      <para>Decimal Integer add / subtract for 31 digit Binary Coded Decimal (BCD).</para>
     </listitem>
     <listitem>
       <para>Miscellaneous SIMD extensions: Count leading Zeros, Population 
@@ -124,17 +128,19 @@
     </listitem>
   </itemizedlist>
 
-  <para>The rational for why these are included in the Vector Facilities 
+  <para>The rationale for these being included in the Vector Facilities 
   (VMX) (vs Vector-Scalar Floating-Point Operations (VSX)) has more to do with 
-  how the instruction where encoded then with the type of operations or the ISA 
+  how the instructions were encoded than with the type of operations or the ISA 
   version of introduction. This is primarily a trade-off between the bits 
-  required for register selection vs bits for extended op-code space within in a 
-  fixed 32-bit instruction. Basically accessing 32 vector registers require 
-  5-bits per register, while accessing all 64 vector-scalar registers require 
-  6-bits per register. When you consider the most vector instructions require  3 
-   and some (select, fused multiply-add) require 4 register operand forms,  the 
+  required for register selection versus the bits for extended op-code space within a 
+  fixed 32-bit instruction. </para>
+
+  <para>Basically accessing 32 vector registers requires 
+  5 bits per register, while accessing all 64 vector-scalar registers require 
+  6 bits per register. When you consider that most vector instructions require
+  3 and some (select, fused multiply-add) require 4 register operand forms,  the 
   impact on op-code space is significant. The larger register set of VSX was 
-  justified by queuing theory of larger HPC matrix codes using double float, 
+  justified by queueing theory of larger HPC matrix codes using double float, 
   while 32 registers are sufficient for most applications.</para>
 
   <para>So by definition the VMX instructions are restricted to the original 

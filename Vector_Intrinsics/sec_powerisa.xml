@@ -22,7 +22,7 @@
   xml:id="sec_powerisa">
   <title>The PowerISA</title>
   
-  <para>The PowerISA is for historical reasons is organized at the top level 
+  <para>The PowerISA Vector facilities, for historical reasons are organized at the top level 
   by the distinction between older Vector Facility (Altivec / VMX) and the newer 
   Vector-Scalar Floating-Point Operations (VSX). </para>
  

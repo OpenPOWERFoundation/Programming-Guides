@@ -23,7 +23,7 @@
   <title>GCC Vector Extensions</title>
   
   <para>The GCC vector extensions are common syntax but implemented in a 
-  target specific way. Using the C vector extensions require the 
+  target specific way. Using the C vector extensions requires the 
   <literal>__gnu_inline__</literal> 
   attribute to avoid syntax errors in case the user specified  C standard 
   compliance (<literal>-std=c90</literal>, <literal>-std=c11</literal>, 
@@ -78,10 +78,18 @@ _mm_store_ss (float *__P, __m128 __A)
 
   <para>The code generation is complicated by the fact that PowerISA vector 
   registers are Big Endian (element 0 is the left most word of the vector) and 
-  X86 scalar stores are from the left most (work/dword) for the vector register. 
+  scalar loads / stores are also to / from the right most word / dword.
+  X86 scalar loads / stores are to / from the right most element for the
+  XMM vector register.
+  The PowerPC64 ELF V2 ABI mimics the X86 Little Endian behavior by placing
+  logical element [0] in the right most element of the vector register. </para>
+
+  <para>This may require the compiler to generate additional instructions
+  to place the scalar value in the expected position.
   Application code with extensive use of scalar (vs packed) intrinsic loads / 
-  stores should be flagged for rewrite to native PPC code using exisiing scalar 
-  types (float, double, int, long, etc.). </para>
+  stores should be flagged for rewrite to C code using existing scalar 
+  types (float, double, int, long, etc.). The compiler may be able the
+  vectorize this scalar code using the native vector SIMD instruction set.</para>
 
   <para>Another example is the set reverse order:
   <programlisting><![CDATA[/* Create the vector [Z Y X W].  */
@@ -103,7 +111,7 @@ _mm_setr_ps (float __Z, float __Y, float __X, float __W)
   constant of the appropriate endian. However code with variables in the 
   initializer can get complicated as it often requires transfers between register 
   sets and perhaps format conversions. We can assume that the compiler will 
-  generate the correct code, but if this class of intrinsics shows up a hot spot, 
+  generate the correct code, but if this class of intrinsics shows up as a hot spot, 
   a rewrite to native PPC vector built-ins may be appropriate. For example 
   initializer of a variable replicated to all the vector fields might not be 
   recognized as a “load and splat” and making this explicit may help the 

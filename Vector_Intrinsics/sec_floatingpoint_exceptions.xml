@@ -22,16 +22,16 @@
   xml:id="sec_floatingpoint_exceptions">
   <title>Floating Point Exceptions</title>
   
-  <para>Nominally both ISAs support the IEEE754 specifications, but there are 
-  some subtle differences. Both architecture define a status and control register 
-  to record exceptions and enable / disable floating exceptions for program 
+  <para>Nominally both ISAs support the IEEE-754 specifications, but there are 
+  some subtle differences. Both architectures define a status and control register 
+  to record exceptions and enable / disable floating point exceptions for program 
   interrupt or default action. Intel has a MXCSR and PowerISA has a FPSCR which 
   basically do the same thing but with different bit layout. </para>
 
   <para>Intel provides <literal>_mm_setcsr</literal> / <literal>_mm_getcsr</literal> 
-  intrinsics to allow direct 
-  access to the MXCSR. In the early days before the OS POSIX run-times where 
-  updated  to manage the MXCSR, this might have been useful. Today this would be 
+  intrinsic functions to allow direct access to the MXCSR. 
+  This might have been useful in the early days before the OS run-times were 
+  updated to manage the MXCSR via the  POSIX APIs. Today this would be 
   highly discouraged with a strong preference to use the POSIX APIs 
   (<literal>feclearexceptflag</literal>, 
   <literal>fegetexceptflag</literal>, 
@@ -44,29 +44,29 @@
   might be simpler just to replace these intrinsics with macros that generate 
   #error.</para>
 
-  <para>The Intel MXCSR does have some none (POSIX/IEEE754) standard quirks; 
-  Flush-To-Zero and Denormals-Are-Zeros flags. This simplifies the hardware 
+  <para>The Intel MXCSR does have some non- (POSIX/IEEE754) standard quirks: 
+  The Flush-To-Zero and Denormals-Are-Zeros flags. This simplifies the hardware 
   response to what should be a rare condition (underflows where the result can 
   not be represented in the exponent range and precision of the format) by simply 
   returning a signed 0.0 value. The intrinsic header implementation does provide 
   constant masks for <literal>_MM_DENORMALS_ZERO_ON</literal> 
   (<literal>&lt;pmmintrin.h&gt;</literal>) and 
-  <literal>_MM_FLUSH_ZERO_ON</literal> (<literal>&lt;xmmintrin.h&gt;</literal>, 
+  <literal>_MM_FLUSH_ZERO_ON</literal> (<literal>&lt;xmmintrin.h&gt;</literal>), 
   so technically it is available to users 
   of the Intel Intrinsics API.</para>
 
   <para>The VMX Vector facility provides a separate Vector Status and Control 
   register (VSCR) with a Non-Java Mode control bit. This control combines the 
-  flush-to-zero semantics for floating Point underflow and denormal values. But 
+  flush-to-zero semantics for floating point underflow and denormal values. But 
   this control only applies to VMX vector float instructions and does not apply 
   to VSX scalar floating Point or vector double instructions. The FPSCR does 
   define a Floating-Point non-IEEE mode which is optional in the architecture. 
-  This would apply to Scalar and VSX floating-point operations if it was 
+  This would apply to Scalar and VSX floating-point operations if it were 
   implemented. This was largely intended for embedded processors and is not 
   implemented in the POWER processor line.</para>
 
-  <para>As the flush-to-zero is primarily a performance enhansement and is 
-  clearly outside the IEEE754 standard, it may be best to simply ignore this 
+  <para>As the flush-to-zero is primarily a performance enhancement and is 
+  clearly outside the IEEE-754 standard, it may be best to simply ignore this 
   option for the intrinsic port.</para>
 
 </section>

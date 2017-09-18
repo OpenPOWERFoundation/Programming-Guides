@@ -26,12 +26,12 @@
   with knowledge of PowerISA vector facilities and how to access the associated 
   documentation.</para>
 
-  <itemizedlist>
+  <itemizedlist spacing="compact">
     <listitem>
       <para>
-        <link xlink:href="https://gcc.gnu.org/onlinedocs/gcc-6.3.0/gcc/Vector-Extensions.html#Vector-Extensions">GCC vector extention</link> 
+        <link xlink:href="https://gcc.gnu.org/onlinedocs/gcc-6.3.0/gcc/Vector-Extensions.html#Vector-Extensions"><emphasis role="italic">GCC vector extension</emphasis></link> 
         syntax and usage. This is one of a set of GCC 
-        "<link xlink:href="https://gcc.gnu.org/onlinedocs/gcc-6.3.0/gcc/C-Extensions.html#C-Extensions">Extentions to the C language Family</link>” 
+        "<link xlink:href="https://gcc.gnu.org/onlinedocs/gcc-6.3.0/gcc/C-Extensions.html#C-Extensions"><emphasis role="italic">Extensions to the C language Family</emphasis></link>” 
         that the intrinsic header implementation depends 
         on.  As many of the GCC intrinsics for x86 are implemented via C vector 
         extensions, reading and understanding of this code is an important part of the 

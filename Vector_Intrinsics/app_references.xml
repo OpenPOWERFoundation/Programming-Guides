@@ -58,10 +58,10 @@
       <link xlink:href="https://gcc.gnu.org/onlinedocs/">GCC online documentation</link>
     </para>
     <para>
-      <link xlink:href="https://gcc.gnu.org/onlinedocs/gcc-6.3.0/gcc/">GCC Manual (GCC 6.3)</link>
+      <link xlink:href="https://gcc.gnu.org/gcc.pdf">GCC Manual</link>
     </para>
     <para>
-      <link xlink:href="https://gcc.gnu.org/onlinedocs/gccint/">GCC Internals Manual</link>
+      <link xlink:href="https://gcc.gnu.org/gccint.pdf">GCC Internals Manual</link>
     </para>
     <para/>
   </section>

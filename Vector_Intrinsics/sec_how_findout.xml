@@ -52,9 +52,9 @@
   document, Chapter 6. Vector Programming Interfaces and Appendix A. Predefined 
   Functions for Vector Programming.</para>
 
-  <para>Another useful document is the original <link xlink:href="http://www.nxp.com/assets/documents/data/en/reference-manuals/ALTIVECPEM.pdf">Altivec Technology Programers Interface Manual</link> 
-  with a  user friendly structure and many helpful diagrams. But alas the PIM does does not 
-  cover the resent PowerISA (power7,  power8, and power9) enhancements.</para>
+  <para>Another useful document is the original <link xlink:href="http://www.nxp.com/assets/documents/data/en/reference-manuals/ALTIVECPEM.pdf">Altivec Technology Programmers Interface Manual</link> 
+  with a user friendly structure and many helpful diagrams. But alas the PIM does does not 
+  cover the recent PowerISA (power7,  power8, and power9) enhancements.</para>
 
 </section>
 

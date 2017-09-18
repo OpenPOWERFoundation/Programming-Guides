@@ -22,6 +22,25 @@
   xml:id="sec_vec_or_not">
   <title>To vec_not or not</title>
   
+  <para>Now lets look at a similar example that adds some surprising 
+  complexity. When we look at the negated compare forms we can not find
+  exact matches in the PowerISA. But a little knowledge of boolean
+  algebra can show the way to the equivalent functions.</para>
+
+  <para>First the X86 compare not equal case where we might expect to
+  find the equivalent vec_cmpne builtins for PowerISA:
+  <programlisting><![CDATA[extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cmpneq_pd (__m128d __A, __m128d __B)
+{
+  return (__m128d)__builtin_ia32_cmpneqpd ((__v2df)__A, (__v2df)__B);
+}
+
+extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm_cmpneq_sd (__m128d __A, __m128d __B)
+{
+  return (__m128d)__builtin_ia32_cmpneqsd ((__v2df)__A, (__v2df)__B);
+}]]></programlisting></para>
+
   <para>Well not exactly. Looking at the OpenPOWER ABI document we see a 
   reference to 
   <literal>vec_cmpne</literal> for all numeric types. But when we look in the current 
@@ -52,7 +71,7 @@
 
   <para>This is RISC philosophy again. We can always use a logical 
   instruction (like bit wise <emphasis role="bold">and</emphasis> or 
-  <emphasis role="bold">or</emphasis>) to effect a move given that we also have 
+  <emphasis role="bold">or</emphasis>) to effect a move, given that we also have 
   nondestructive 3 register instruction forms. In the PowerISA most instruction 
   have two input registers and a separate result register. So if the result 
   register number is  different from either input register then the inputs are 
@@ -62,22 +81,21 @@
 
   <para>The statement <literal>B = vec_or (A,A)</literal> is is effectively a vector move/copy 
   from <literal>A</literal> to <literal>B</literal>. And <literal>A = vec_or (A,A)</literal> is obviously a 
-  <emphasis role="bold"><literal>nop</literal></emphasis> (no operation). In the the 
-  PowerISA defines the preferred <literal>nop</literal> and register move for vector registers in 
-  this way.</para>
+  <emphasis role="bold"><literal>nop</literal></emphasis> (no operation). In fact the 
+  PowerISA defines the preferred <literal>nop</literal> and register move for vector registers
+  in this way.</para>
 
-  <para>It is also useful to have hardware implement the logical operators 
+  <para>The PowerISA implements the logical operators 
   <emphasis role="bold">nor</emphasis> (<emphasis role="bold">not or</emphasis>) 
   and <emphasis role="bold">nand</emphasis> (<emphasis role="bold">not and</emphasis>).  
   The PowerISA provides these instruction for 
-  fixed point and vector logical operation. So <literal>vec_not(A)</literal> 
+  fixed point and vector logical operations. So <literal>vec_not(A)</literal> 
   can be implemented as <literal>vec_nor(A,A)</literal>. 
-  So looking at the  implementation of _mm_cmpne we propose the 
-  following:
+  So for the implementation of _mm_cmpne we propose the following:
   <programlisting><![CDATA[extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
 _mm_cmpneq_pd (__m128d __A, __m128d __B)
 {
-  __m128d	temp = (__m128d)vec_cmpeq (__A, __B);
+  __v2df temp = (__v2df ) vec_cmpeq ((__v2df) __A, (__v2df)__B);
   return ((__m128d)vec_nor (temp, temp));
 }
 extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
@@ -94,15 +112,15 @@ _mm_cmpneq_sd (__m128d __A, __m128d __B)
   <para>The Intel Intrinsics also include the not forms of the relational 
   compares:
   <programlisting><![CDATA[extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
-_mm_cmpnlt_sd (__m128d __A, __m128d __B)
+_mm_cmpnlt_pd (__m128d __A, __m128d __B)
 {
-  return (__m128d)__builtin_ia32_cmpnltsd ((__v2df)__A, (__v2df)__B);
+  return (__m128d)__builtin_ia32_cmpnltpd ((__v2df)__A, (__v2df)__B);
 }
 
 extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
-_mm_cmpnle_sd (__m128d __A, __m128d __B)
+_mm_cmpnle_pd (__m128d __A, __m128d __B)
 {
-  return (__m128d)__builtin_ia32_cmpnlesd ((__v2df)__A, (__v2df)__B);
+  return (__m128d)__builtin_ia32_cmpnlepd ((__v2df)__A, (__v2df)__B);
 }]]></programlisting></para>
 
   <para>The PowerISA and OpenPOWER ABI, or GCC PowerPC Altivec Built-in 

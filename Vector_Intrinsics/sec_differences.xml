@@ -23,12 +23,12 @@
   <title>Profound differences</title>
   
   <para>We have already mentioned above a number of architectural differences 
-  that effect porting of codes containing Intel intrinsics to POWER. The fact 
+  that affect porting of codes containing Intel intrinsics to POWER. The fact 
   that Intel supports multiple vector extensions with different vector widths 
-  (64, 128, 256, and 512-bits) while the PowerISA only supports vectors of 
-  128-bits is one issue. Another is the difference in how the respective ISAs 
-  support scalars in vector registers is another.  In the text above we propose 
-  workable alternatives for the PowerPC port. There also differences in the 
+  (64, 128, 256, and 512 bits) while the PowerISA only supports vectors of 
+  128 bits is one issue. Another is the difference in how the respective ISAs 
+  support scalars in vector registers.  In the text above we propose 
+  workable alternatives for the PowerPC port. There are also differences in the 
   handling of floating point exceptions and rounding modes that may impact the 
   application's performance or behavior.</para>
   

@@ -54,15 +54,16 @@ _mm_load_sd (double const *__P)
   to combine __F and 0.0).  Other examples may generate sub-optimal code and 
   justify a rewrite to PowerISA scalar or vector code (<link 
   xlink:href="https://gcc.gnu.org/onlinedocs/gcc-6.3.0/gcc/PowerPC-AltiVec_002fVSX-Built-
-  in-Functions.html#PowerPC-AltiVec_002fVSX-Built-in-Functions">GCC PowerPC 
-  AltiVec Built-in Functions</link> or inline assembler). </para>
+  in-Functions.html#PowerPC-AltiVec_002fVSX-Built-in-Functions">
+  <emphasis role="italic">GCC PowerPC AltiVec Built-in Functions</emphasis></link> 
+  or inline assembler). </para>
 
-  <para>Net: try using the existing C code if you can, but check on what the 
+  <note><para>Try using the existing C code if you can, but check on what the 
   compiler generates.  If the generated code is horrendous, it may be worth the 
   effort to write a PowerISA specific equivalent. For codes making extensive use 
   of MMX or SSE scalar intrinsics you will be better off rewriting to use 
-  standard C scalar types and letting the the GCC compiler handle the details 
-  (see <link linkend="sec_prefered_methods"/>).</para>
+  standard C scalar types and letting the GCC compiler handle the details 
+  (see <xref linkend="sec_prefered_methods"/>).</para></note>
 
 </section>
 

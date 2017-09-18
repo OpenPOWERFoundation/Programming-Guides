@@ -23,12 +23,14 @@
   <title>How do we work this?</title>
   
   <para>The working assumption is to start with the existing GCC headers from 
-  ./gcc/config/i386/, then convert them to PowerISA and add them to 
-  ./gcc/config/rs6000/. I assume we will replicate the existing header structure 
-  and retain the existing header file and intrinsic names. This also allows us to 
-  reuse existing DejaGNU test cases from ./gcc/testsuite/gcc.target/i386, modify 
-  them as needed for the POWER target, and them to the 
-  ./gcc/testsuite/gcc.target/powerpc.</para>
+  <literal>./gcc/config/i386/</literal>, then convert them to PowerISA
+  and add them to <literal>./gcc/config/rs6000/</literal>. 
+  I assume we will replicate the existing header structure 
+  and retain the existing header file and intrinsic names.
+  This also allows us to reuse existing DejaGNU test cases from
+  <literal>./gcc/testsuite/gcc.target/i386</literal>, modify 
+  them as needed for the POWER target, and add them to
+  <literal>./gcc/testsuite/gcc.target/powerpc</literal>.</para>
 
   <para>We can be flexible on the sequence that headers/intrinsics and test 
   cases are ported.  This should be based on customer need and resolving 
@@ -42,8 +44,8 @@
    ./gcc/config/i386/ and copy the header comment (including FSF copyright) down 
   to any vector typedefs used in the API or implementation. Skip the Intel 
   intrinsic implementation code for now, but add the ending #end if matching the 
-  headers conditional guard against multiple inclusion. You can add  #include 
-  &lt;alternative&gt; as needed. For examples:
+  headers conditional guard against multiple inclusion. You can add additional
+  #include's as needed. For example:
   <programlisting><![CDATA[/* Copyright (C) 2003-2017 Free Software Foundation, Inc
 ...
 /* This header provides a best effort implementation of the Intel X86
@@ -85,10 +87,13 @@ typedef float __v4sf __attribute__ ((__vector_size__ (16)));
   intrinsics. </para>
 
   <para>The 
-  <link xlink:href="https://gcc.gnu.org/onlinedocs/gccint/Testsuites.html#Testsuites">GCC 
-  testsuite</link> uses the DejaGNU  test framework as documented in the 
-  <link xlink:href="https://gcc.gnu.org/onlinedocs/gccint/">GNU Compiler Collection (GCC) 
-  Internals</link> manual. GCC adds its own DejaGNU directives and extensions, 
+  <link xlink:href="https://gcc.gnu.org/onlinedocs/gccint/Testsuites.html#Testsuites">
+  <emphasis role="italic">GCC testsuite</emphasis></link>
+  uses the DejaGNU  test framework as documented in the 
+  <link xlink:href="https://gcc.gnu.org/onlinedocs/gccint/">
+  <emphasis role="italic">GNU Compiler Collection (GCC) 
+  Internals</emphasis></link> 
+  manual. GCC adds its own DejaGNU directives and extensions, 
   that are embedded in the testsuite source as comments.  Some are platform 
   specific and will need to be adjusted for tests that are ported to our 
   platform. For example
@@ -102,9 +107,9 @@ typedef float __v4sf __attribute__ ((__vector_size__ (16)));
 /* { dg-require-effective-target lp64 } */
 /* { dg-require-effective-target p8vector_hw { target powerpc*-*-* } } */]]></programlisting></para>
 
-  <para>Repeat this process until you have equivalent implementations for all 
-  the intrinsics in that header and associated test cases that execute without 
-  error.</para>
+  <para>Repeat this process until you have equivalent DejaGNU test
+  implementations for all the intrinsics in that header and associated
+  test cases that execute without error.</para>
 
   <xi:include href="sec_prefered_methods.xml"/>
   <xi:include href="sec_prepare.xml"/>  

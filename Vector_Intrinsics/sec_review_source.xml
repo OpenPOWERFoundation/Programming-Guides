@@ -25,13 +25,13 @@
   <para>So if this is a code porting activity, where is the source? All the 
   source code we need to look at is in the GCC source trees. You can either git 
   (<link xlink:href="https://gcc.gnu.org/wiki/GitMirror">https://gcc.gnu.org/wiki/GitMirro</link>) 
-  the gcc source  or down load one of the 
+  the gcc source  or download one of the 
   recent AT source tars (for example: 
   <link xlink:href="ftp://ftp.unicamp.br/pub/linuxpatch/toolchain/at/ubuntu/dists/xenial/at10.0/">ftp://ftp.unicamp.br/pub/linuxpatch/toolchain/at/ubuntu/dists/xenial/at10.0/</link>). 
    You will find the intrinsic headers in the ./gcc/config/i386/ 
   sub-directory.</para>
 
-  <para>If you have a Intel Linux workstation or laptop with GCC installed, 
+  <para>If you have an Intel Linux workstation or laptop with GCC installed, 
   you already have these headers, if you want to take a look:
   <screen><prompt>$ </prompt><userinput>find /usr/lib -name '*mmintrin.h'</userinput>
 /usr/lib/gcc/x86_64-redhat-linux/4.4.4/include/wmmintrin.h
@@ -44,8 +44,8 @@
 
   <para>But depending on the vintage of the distro, these may not be the 
   latest versions of the headers. Looking at the header source will tell you a 
-  few things.: The include structure (what other headers are implicitly 
-  included). The types that are used at the API. And finally, how the API is 
+  few things: the include structure (what other headers are implicitly 
+  included), the types that are used at the API, and finally, how the API is 
   implemented.</para>
   
   <para><literallayout>smmintrin.h	(SSE4.1)	includes tmmintrin,h

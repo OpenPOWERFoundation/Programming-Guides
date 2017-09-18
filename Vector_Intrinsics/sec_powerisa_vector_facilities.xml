@@ -22,21 +22,21 @@
   xml:id="sec_powerisa_vector_facilities">
   <title>PowerISA Vector facilities</title>
   
-  <para>The PowerISA vector facilities (VMX and VSX) are extensive, but does 
+  <para>The PowerISA vector facilities (VMX and VSX) are extensive, but do 
   not always provide a direct or obvious functional equivalent to the Intel 
-  Intrinsics. But being not obvious is not the same as imposible. It just 
+  Intrinsics. However not being obvious is not the same as impossible. It just 
   requires some basic programing skills.</para>
 
   <para>It is a good idea to have an overall understanding of the vector 
-  capabilities the PowerISA. You do not need to memorize every instructions but 
-  is helps to know where to look. Both the PowerISA and OpenPOWER ABI have a 
-  specific structure and organization that can help you find what you looking 
+  capabilities of the PowerISA. You do not need to memorize every instruction but 
+  it helps to know where to look. Both the PowerISA and OpenPOWER ABI have a 
+  specific structure and organization that can help you find what you are looking 
   for. </para>
 
-  <para>It also helps to understand the relationship between the PowerISAs 
+  <para>It also helps to understand the relationship between the PowerISA's 
   low level instructions and the higher abstraction of the vector intrinsics as 
-  defined by the OpenPOWER ABIs Vector Programming Interfaces and the the defacto 
-  standard of GCC's PowerPC AltiVec Built-in Functions.</para>
+  defined by the OpenPOWER ABI's Vector Programming Interfaces and the de facto 
+  standard of GCC's PowerPC AltiVec Builtin Functions.</para>
   
   <xi:include href="sec_powerisa.xml"/>
   <xi:include href="sec_powerisa_vector_intrinsics.xml"/>

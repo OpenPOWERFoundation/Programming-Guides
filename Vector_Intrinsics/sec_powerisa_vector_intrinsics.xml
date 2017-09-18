@@ -30,23 +30,23 @@
   C/C++ compilers implement. </para>
 
   <para>Some of these operations are endian sensitive and the compiler needs 
-  to make corresponding adjustments as  it generate code for endian sensitive 
+  to make corresponding adjustments as it generates code for endian sensitive 
   built-ins. There is a good overview for this in the 
   <emphasis role="bold">OpenPOWER ABI Section</emphasis>
   <emphasis><emphasis role="bold">6.4. 
   Vector Built-in Functions</emphasis></emphasis>.</para>
 
   <para>Appendix A is organized (sorted) by built-in name, output type, then 
-  parameter types. Most built-ins are generic as the named the operation (add, 
+  parameter types. Most built-ins are generic as the named operation (add, 
   sub, mul, cmpeq, ...) applies to multiple types. </para>
 
-  <para>So the build <literal>vec_add</literal> built-in applies to all the signed and unsigned 
+  <para>So the <literal>vec_add</literal> built-in applies to all the signed and unsigned 
   integer types (char, short, in, and long) plus float and double floating-point 
   types. The compiler looks at the parameter type to select the vector 
-  instruction (or instruction sequence) that implements the (add) operation on 
+  instruction (or instruction sequence) that implements the add operation on 
   that type. The compiler infers the output result type from the operation and 
   input parameters and will complain if the target variable type is not 
-  compatible. For example:
+  compatible. Some examples:
   <programlisting><![CDATA[vector signed char vec_add (vector signed char, vector signed char);
 vector unsigned char vec_add (vector unsigned char, vector unsigned char);
 vector signed short vec_add (vector signed short, vector signed short);
@@ -63,7 +63,7 @@ vector double vec_add (vector double, vector double);]]></programlisting></para>
   the name). This is why it is so important to understand the vector element 
   types and to add the appropriate type casts to get the correct results.</para>
 
-  <para>The defacto standard implementation is GCC as defined in the include 
+  <para>The de facto standard implementation in GCC is defined in the include 
   file <literal>&lt;altivec.h&gt;</literal> and documented in the GCC online documentation in 
   <link xlink:href="https://gcc.gnu.org/onlinedocs/gcc-6.3.0/gcc/PowerPC-AltiVec_002fVSX-Built-in-Functions.html#PowerPC-AltiVec_002fVSX-Built-in-Functions">6.59.20 PowerPC 
   AltiVec Built-in Functions</link>. The header file name and section title 
