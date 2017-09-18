@@ -39,7 +39,7 @@
       <holder>OpenPOWER Foundation</holder>
     </copyright>
     <!-- TODO: Set the correct document releaseinfo -->
-    <releaseinfo>Revision 0.1</releaseinfo>
+    <releaseinfo>Revision 0.2</releaseinfo>
     <productname>OpenPOWER</productname>
     <pubdate/>
 
@@ -73,7 +73,17 @@
           <revdescription>
             <itemizedlist spacing="compact">
               <listitem>
-                <para>Revision 0.2 - initial draft from Steve Munroe</para>
+                <para>Revision 0.2 - Miscellaneous correction for spelling, grammar and punctuation.</para>
+              </listitem>
+            </itemizedlist>
+          </revdescription>
+      </revision>
+      <revision>
+          <date>2017-07-26</date>
+          <revdescription>
+            <itemizedlist spacing="compact">
+              <listitem>
+                <para>Revision 0.1 - initial draft from Steve Munroe</para>
               </listitem>
             </itemizedlist>
           </revdescription>
