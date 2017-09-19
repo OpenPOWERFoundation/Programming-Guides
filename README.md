@@ -1,5 +1,5 @@
-# Porting Guide for Linux on Power
-TBD...
+# Programming Guides for Linux on Power
+Description TBD...
 
 To build this project, one must ensure that the Docs-Master project has
 also been cloned at the same directory level as the Docs-Template project.
@@ -14,12 +14,12 @@ This can be accomplished with the following steps:
 2. Clone this project (Docs-Template) using the following command:
 
   ```
-  $ git clone https://ibm.github.com/scheel/SJM-Porting-Guide.git
+  $ git clone https://github.com/OpenPOWERFoundation/Programming-Guides.git
   ```
   
 3. Build the project with these commands:
   ```
-  $ cd SJM-Porting-Guide
+  $ cd Programming-Guides
   $ mvn clean generate-sources
   ```
 
