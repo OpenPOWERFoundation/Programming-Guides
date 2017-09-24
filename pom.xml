@@ -18,5 +18,6 @@
     <!-- TODO: Add new documents are build in the project, add their directories to this list to
                enable all document builds from the top level -->
     <module>Porting_Vector_Intrinsics</module>
+    <module>Intrinsics_Reference</module>
   </modules>
 </project>
