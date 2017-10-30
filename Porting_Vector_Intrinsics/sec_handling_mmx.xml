@@ -36,8 +36,8 @@
   the supported element types. So a 64-bit unsigned long long is the best type 
   for parameter passing and return values, especially for the 64-bit (_si64) 
   operations as these normally generate a single PowerISA instruction.
-  <phrase revisionflag="added">So for the PowerPC implementation we will define
-  <literal>__m64</literal> as:</phrase>
+  So for the PowerPC implementation we will define
+  <literal>__m64</literal> as:
   <programlisting><![CDATA[typedef __attribute__ ((__aligned__ (8))) unsigned long long __m64;]]></programlisting></para>
 
   <para>The SSE extensions include some copy / convert operations for 
