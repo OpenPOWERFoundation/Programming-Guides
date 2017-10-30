@@ -48,6 +48,7 @@ _mm_mullo_epi16 (__m128i __A, __m128i __B)
   
   <para>Note this requires a cast for the compiler to generate the correct 
   code for the intended operation. The parameters and result are the generic 
+  interface
   type <literal>__m128i</literal>, which is a vector long long with the 
   <literal>__may_alias__</literal> attribute. But 
   operation is a vector multiply low on unsigned short elements.

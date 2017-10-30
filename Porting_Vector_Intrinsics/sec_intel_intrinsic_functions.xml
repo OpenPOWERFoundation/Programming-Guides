@@ -85,8 +85,9 @@ v2di __builtin_ia32_paddq (v2di, v2di)]]></programlisting></para>
 
   <note><para>A key difference between GCC built-ins for i386 and PowerPC is 
   that the x86 built-ins have different names of each operation and type while the 
-  PowerPC altivec built-ins tend to have a single generic built-in for  each 
-  operation, across a set of compatible operand types. </para></note>
+  PowerPC altivec built-ins tend to have a single overloaded
+  built-in for each operation, 
+  across a set of compatible operand types. </para></note>
 
   <para>In GCC the Intel Intrinsic header (*intrin.h) files are implemented 
   as a set of inline functions using the Intel Intrinsic API names and types. 

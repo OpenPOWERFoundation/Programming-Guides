@@ -37,8 +37,9 @@
   Vector Built-in Functions</emphasis></emphasis>.</para>
 
   <para>Appendix A is organized (sorted) by built-in name, output type, then 
-  parameter types. Most built-ins are generic as the named operation (add, 
-  sub, mul, cmpeq, ...) applies to multiple types. </para>
+  parameter types. Most built-ins are overloaded
+  as the named operation (vec_add, 
+  vec_sub, vec_mul, vec_cmpeq, ...) applies to multiple types. </para>
 
   <para>So the <literal>vec_add</literal> built-in applies to all the signed and unsigned 
   integer types (char, short, in, and long) plus float and double floating-point 
@@ -59,7 +60,8 @@ vector float vec_add (vector float, vector float);
 vector double vec_add (vector double, vector double);]]></programlisting></para>
 
   <para>This is one key difference between PowerISA built-ins and Intel 
-  Intrinsics (Intel Intrinsics are not generic and include type information in 
+  Intrinsics (Intel Intrinsics are not overloaded
+  and include type information in 
   the name). This is why it is so important to understand the vector element 
   types and to add the appropriate type casts to get the correct results.</para>
 
