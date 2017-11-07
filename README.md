@@ -39,10 +39,14 @@ can be found in the LICENSE file or online at
   http://www.apache.org/licenses/LICENSE-2.0
 
 ## Community
-TBD...
+To comment on, propose changes, and engage in community dialogue, you can open issues 
+in the [Project Issues](https://github.com/OpenPOWERFoundation/ELFv2-ABI/issues) or post to
+the community mailing list \([syssw-programming-guides@mailinglist.openpowerfoundation.org](mailto://syssw-programming-guides@mailinglist.openpowerfoundation.org)\).
 
 ## Contributions
-TBD...
+To contribute to the project, post patches to the community mailing list 
+\([syssw-programming-guides@mailinglist.openpowerfoundation.org](mailto://syssw-programming-guides@mailinglist.openpowerfoundation.org)\)
+where they will be reviewed and approved when ready.
 
 Contributions to this project should conform to the `Developer Certificate
 of Origin` as defined at http://elinux.org/Developer_Certificate_Of_Origin.
