@@ -48,7 +48,7 @@ can be found in the LICENSE file or online at
 
 ## Community
 To comment on, propose changes, and engage in community dialogue, you can open issues 
-in the [Project Issues](https://github.com/OpenPOWERFoundation/Programing-Guides/issues) or post to
+in the [Project Issues](https://github.com/OpenPOWERFoundation/Programming-Guides/issues) or post to
 the community mailing list \([syssw-programming-guides@mailinglist.openpowerfoundation.org](mailto://syssw-programming-guides@mailinglist.openpowerfoundation.org)\).
 
 ## Contributions
