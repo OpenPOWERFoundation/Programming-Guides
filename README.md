@@ -13,7 +13,7 @@ contained:
   is just beginning to be created.
 
 To build this project, one must ensure that the Docs-Master project has
-also been cloned at the same directory level as the Docs-Template project.
+also been cloned at the same directory level as the Programming-Guides project.
 This can be accomplished with the following steps:
 
 1. Clone the master documentation project (Docs-Master) using the following command:
@@ -22,7 +22,7 @@ This can be accomplished with the following steps:
   $ git clone https://github.com/OpenPOWERFoundation/Docs-Master.git
   ```
   
-2. Clone this project (Docs-Template) using the following command:
+2. Clone this project (Programming-Guides) using the following command:
 
   ```
   $ git clone https://github.com/OpenPOWERFoundation/Programming-Guides.git
