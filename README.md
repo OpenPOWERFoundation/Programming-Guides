@@ -9,7 +9,7 @@ contained:
    Document library at [TBD](http://openpowerfoundation.org/?resource_lib=TBD).
    
 - *Intrinsic Function Programming Reference* -- A document detailing
-  the various vector intinsics on the OpenPOWER processor.  This document
+  the various vector intrinsics on the OpenPOWER processor.  This document
   is just beginning to be created.
 
 To build this project, one must ensure that the Docs-Master project has
