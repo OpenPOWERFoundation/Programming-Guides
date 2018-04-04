@@ -1,8 +1,19 @@
 # Programming Guides for Linux on Power
-Description TBD...
+This project contains documentation helpful to application developers
+for Linux on OpenPOWER systems.  The following documents are 
+contained:
+
+- *Linux on Power Porting Guide: Vector Intrinsics* -- A guide to porting
+   x86 vector intrinsics to the OpenPOWER processor. The online 
+   version of the document can be found in the OpenPOWER Foundation
+   Document library at [TBD](http://openpowerfoundation.org/?resource_lib=TBD).
+   
+- *Intrinsic Function Programming Reference* -- A document detailing
+  the various vector intrinsics on the OpenPOWER processor.  This document
+  is just beginning to be created.
 
 To build this project, one must ensure that the Docs-Master project has
-also been cloned at the same directory level as the Docs-Template project.
+also been cloned at the same directory level as the Programming-Guides project.
 This can be accomplished with the following steps:
 
 1. Clone the master documentation project (Docs-Master) using the following command:
@@ -11,20 +22,17 @@ This can be accomplished with the following steps:
   $ git clone https://github.com/OpenPOWERFoundation/Docs-Master.git
   ```
   
-2. Clone this project (Docs-Template) using the following command:
+2. Clone this project (Programming-Guides) using the following command:
 
   ```
   $ git clone https://github.com/OpenPOWERFoundation/Programming-Guides.git
   ```
   
-3. Build the project with these commands:
+3. Build all the documents withing the project with these commands:
   ```
   $ cd Programming-Guides
   $ mvn clean generate-sources
   ```
-
-The online version of the document can be found in the OpenPOWER Foundation
-Document library at [TBD](http://openpowerfoundation.org/?resource_lib=TBD).
 
 The project which controls the look and feel of the document is the 
 [Docs-Maven-Plugin project](https://github.com/OpenPOWERFoundation/Docs-Maven-Plugin), an 
@@ -39,10 +47,14 @@ can be found in the LICENSE file or online at
   http://www.apache.org/licenses/LICENSE-2.0
 
 ## Community
-TBD...
+To comment on, propose changes, and engage in community dialogue, you can open issues 
+in the [Project Issues](https://github.com/OpenPOWERFoundation/Programming-Guides/issues) or post to
+the community mailing list \([syssw-programming-guides@mailinglist.openpowerfoundation.org](mailto://syssw-programming-guides@mailinglist.openpowerfoundation.org)\).
 
 ## Contributions
-TBD...
+To contribute to the project, post patches to the community mailing list 
+\([syssw-programming-guides@mailinglist.openpowerfoundation.org](mailto://syssw-programming-guides@mailinglist.openpowerfoundation.org)\)
+where they will be reviewed and approved when ready.
 
 Contributions to this project should conform to the `Developer Certificate
 of Origin` as defined at http://elinux.org/Developer_Certificate_Of_Origin.

@@ -80,7 +80,9 @@
       <para>This document is a Non-standard Track, Work Group Specification work product owned by the
       System Software Workgroup and handled in compliance with the requirements outlined in the
       <citetitle>OpenPOWER Foundation Work Group (WG) Process</citetitle> document.  It was
-      created using the <citetitle>Master Template Guide</citetitle> version &template_version;.</para>
+      created using the <citetitle>Master Template Guide</citetitle> version &template_version;.
+      Comments, questions, etc. can be submitted to the public mailing list  for this document at 
+      <email>syssw-programming-guides@mailinglist.openpowerfoundation.org</email>.</para>
     </abstract>
 
     <revhistory>

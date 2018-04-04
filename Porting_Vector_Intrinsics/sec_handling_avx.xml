@@ -75,14 +75,87 @@
   the function prologue). This frees up to 64 vectors (32 x 256-bit or 16 x 
   512-bit structs) for code optimization. </para>
 
-  <para>Based on the specifics of our ISA and ABI we will not not use 
+  <para>Based on the specifics of our ISA and ABI we will not use 
   <literal>__vector_size__</literal> (32) or (64) in the PowerPC implementation of 
   <literal>__m256</literal> and <literal>__m512</literal> 
-  types. Instead we will typedef structs of 2 or 4 vector (<literal>__m128</literal>) fields. This 
+  types. Instead we will typedef structs of 2 or 4 vector (<literal>__vector</literal>) fields. This 
   allows efficient handling of these larger data types without requiring new GCC 
-  language extensions. </para>
+  language extensions or vector builtins. For example:
+<programlisting><![CDATA[/* Internal data types for implementing the AVX in PowerISA intrinsics.  */
+typedef struct __v4df
+{
+  __vector double vd0;
+  __vector double vd1;
+} __vx4df;
 
-  <para>In the end we should use the same type names and definitions as the 
+/* The Intel API is flexible enough that we must allow aliasing with other
+   vector types, and their scalar components.  */
+typedef struct __m256d
+{
+  __vector double vd0;
+  __vector double vd1;
+}__attribute__ ((__may_alias__)) __m256d;]]></programlisting></para>
+
+  <para>This requires a different syntax for operations
+  where the 128-bit vector chunks are explicitly referenced. 
+  For example:
+  <programlisting><![CDATA[extern __inline __mx256d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm256_add_pd (__m256d __A, __m256d __B)
+{
+  __m256d temp;
+  temp.vd0 = __A.vd0 + __B.vd0;
+  temp.vd1 = __A.vd1 + __B.vd1;
+  return (temp);
+}]]></programlisting></para>
+
+  <para>But this creates a new issue because
+  the C language does not allow direct casts between structs.
+  This can be an issue where the intrinsic interface type is not the correct type for the operation.
+  For example AVX2 integer operations:
+  <programlisting><![CDATA[
+/* The Intel API is flexible enough that we must allow aliasing with other
+   vector types, and their scalar components.  */
+typedef struct __m256i
+{
+  __vector long long vdi0;
+  __vector long long vdi1;
+} __m256i;
+
+/* Internal data types for implementing the AVX in PowerISA intrinsics.  */
+typedef struct __v16hi
+{
+  __vector short vhi0;
+  __vector short vhi1;
+} __v16hi;
+]]></programlisting></para>
+
+  <para>For the AVX2 intrinsic <literal>_mm256_add_epi16</literal>
+  we need to cast the input vectors
+  of 64-bit long long (<literal>__m256i</literal>) into vectors of 16-bit short
+  (<literal>__v16hi</literal>) before the overloaded add operations.
+  Here we need to use a pointer reference cast.
+  For example:
+  <programlisting><![CDATA[
+extern __inline __m256i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mx256_add_epi16 (__m256i __A, __m256i __B)
+{
+  __m256i result;
+  __v16hi a = *((__v16hi *)&__A);
+  __v16hi b = *((__v16hi *)&__B);
+  __v16hi c;
+
+  c.vhi0 = a.vhi0 + b.vhi0;
+  c.vhi1 = a.vhi1 + b.vhi1;
+
+  result = *((__m256i *)&c);
+  return (result);
+}]]></programlisting></para>
+  <para>As this and related examples are inlined,
+  we expect the compiler to recognize this
+  is a "nop cast" and avoid generating any additional instructions.</para>
+
+  <para>In the end we should try
+  to use the same type names and definitions as the 
   GCC X86 intrinsic headers where possible. Where that is not possible we can 
   define new typedefs that provide the best mapping to the underlying PowerISA 
   hardware.</para>

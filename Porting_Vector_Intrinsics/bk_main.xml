@@ -39,7 +39,7 @@
       <holder>OpenPOWER Foundation</holder>
     </copyright>
     <!-- TODO: Set the correct document releaseinfo -->
-    <releaseinfo>Revision 0.2</releaseinfo>
+    <releaseinfo>Revision 1.0</releaseinfo>
     <productname>OpenPOWER</productname>
     <pubdate/>
 
@@ -58,16 +58,37 @@
       applications, and make them (or equivalents) available for the PowerPC64LE 
       platform.</para>
       
-      <para>This document is a Standard Track, Work Group Note work product owned by the
+      <para>This document is a Non-standard Track, Work Group Note work product owned by the
       System Software Workgroup and handled in compliance with the requirements outlined in the
       <citetitle>OpenPOWER Foundation Work Group (WG) Process</citetitle> document.  It was
       created using the <citetitle>Master Template Guide</citetitle> version 0.9.5. Comments,
       questions, etc. can be submitted to the public mailing list  for this document at 
-      <link xlink:href="http://tbd.openpowerfoundation.org">TBD</link>.</para>
+      <email>syssw-programming-guides@mailinglist.openpowerfoundation.org</email>.</para>
     </abstract>
 
     <revhistory>
       <!-- TODO: Update as new revisions created -->
+      <revision>
+          <date>2018-3-14</date>
+          <revdescription>
+            <itemizedlist spacing="compact">
+              <listitem>
+                <para>Revision 1.0 - Minor updates.  Published version.</para>
+              </listitem>
+            </itemizedlist>
+          </revdescription>
+      </revision>
+      <revision>
+          <date>2017-10-30</date>
+          <revdescription>
+            <itemizedlist spacing="compact">
+              <listitem>
+                <para>Revision 0.3 - Updates to describe issues associated with larger vector sizes
+                and proposed solutions.</para>
+              </listitem>
+            </itemizedlist>
+          </revdescription>
+      </revision>
       <revision>
           <date>2017-09-14</date>
           <revdescription>

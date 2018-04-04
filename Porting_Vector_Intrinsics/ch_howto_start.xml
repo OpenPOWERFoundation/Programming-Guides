@@ -72,12 +72,21 @@
 typedef float __m128 __attribute__ ((__vector_size__ (16), __may_alias__));
 
 /* Internal data types for implementing the intrinsics.  */
-typedef float __v4sf __attribute__ ((__vector_size__ (16)));
+typedef __vector float __v4sf;
 /* more typedefs.  */
 
 /* The intrinsic implmentations go here.  */
 
 #endif /* EMMINTRIN_H_ */]]></programlisting></para>
+
+  <note><para>
+  The interface typedef (__m128) uses the GCC vector builtin
+  extension syntax, while the internal typedef (__v4sf) uses the altivec
+  vector extension syntax.
+  This allows the internal typedefs to work correctly with the PowerPC
+  overloaded vector builtins. Also we use the __vector (vs vector) type prefix
+  to avoid name space conflicts with C++.
+  </para></note>
 
   <para>Then you can start adding small groups of related intrinsic 
   implementations to the header to be compiled and  examine the generated code. 

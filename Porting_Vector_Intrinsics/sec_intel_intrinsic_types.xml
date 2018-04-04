@@ -45,8 +45,16 @@ typedef float __v4sf __attribute__ ((__vector_size__ (16)));]]></programlisting>
   <para>There are a couple of issues here:
   <itemizedlist spacing="compact">
     <listitem>
-      <para>The API seems to force the compiler to assume 
+      <para>The use of __may_alias__ in the API seems to force the compiler to assume 
       aliasing of any parameter passed by reference.</para>
+    </listitem>
+    <listitem>
+      <para>
+      The GCC vector builtin type system (example above) is slightly different
+      syntax from the original Altivec __vector types. Internally the two typedef forms
+      may represent the same 128-bit vector type,
+      but for early source parsing and overloaded vector builtins they are
+      handled differently.</para>
     </listitem>
     <listitem>
       <para>The data type used at the interface may not be
@@ -60,13 +68,16 @@ typedef float __v4sf __attribute__ ((__vector_size__ (16)));]]></programlisting>
   (defined as vector long long). </para>
 
   <para>This may not matter when using x86 built-ins but does matter when 
-  the implementation uses C vector extensions or in our case uses PowerPC generic 
+  the implementation uses C vector extensions or in our case using PowerPC 
+  overloaded
   vector built-ins 
   (<xref linkend="sec_powerisa_vector_intrinsics"/>). 
   For the latter cases the type must be correct for 
-  the compiler to generate the correct type (char, short, int, long) 
-  (<xref linkend="sec_api_implemented"/>) for the generic 
-  builtin operation. There is also concern that excessive use of 
+  the compiler to generate the correct code for the
+  type (char, short, int, long) 
+  (<xref linkend="sec_api_implemented"/>) for
+  overloaded builtin operations.
+  There is also concern that excessive use of 
   <literal>__may_alias__</literal>
   will limit compiler optimization. We are not sure how important this attribute 
   is to the correct operation of the API.  So at a later stage we should 
@@ -83,16 +94,76 @@ typedef float __v4sf __attribute__ ((__vector_size__ (16)));]]></programlisting>
   implemented as vector attribute extensions of the appropriate  size (   
   <literal>__vector_size__</literal> ({8 | 16 | 32, and 64}). For the PowerPC target  GCC currently 
   only supports the native <literal>__vector_size__</literal> ( 16 ). These we can support directly 
-  in VMX/VSX registers and associated instructions. GCC will compile code with 
+  in VMX/VSX registers and associated instructions.</para>
+
+  <para>GCC will compile code with 
   other   <literal>__vector_size__</literal> values, but the resulting types are treated as simple 
   arrays of the element type. This does not allow the compiler to use the vector 
-  registers and vector instructions for these (nonnative) vectors.</para>
+  registers for parameter passing and return values.
+  For example this intrinsic from immintrin.h:
+  <programlisting><![CDATA[typedef double __m256d __attribute__ ((__vector_size__ (32), __may_alias__));
+
+extern __inline __m256d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+_mm256_add_pd (__m256d __A, __m256d __B)
+{
+  return (__m256d) ((__v4df)__A + (__v4df)__B);
+}
+]]></programlisting></para>
+  <para>And test case:
+  <programlisting><![CDATA[__m256d
+test_mm256_add_pd (__m256d __A, __m256d __B)
+{
+  return (_mm256_add_pd (__A, __B));
+}
+]]></programlisting></para>
+  <para>Current GCC generates:
+  <programlisting><![CDATA[0000000000000970 <test_mm256_add_pd>:
+ 970:	10 00 20 39 	li      r9,16
+ 974:	98 26 80 7d 	lxvd2x  vs12,0,r4
+ 978:	98 2e 40 7d 	lxvd2x  vs10,0,r5
+ 97c:	20 00 e0 38 	li      r7,32
+ 980:	f8 ff e1 fb 	std     r31,-8(r1)
+ 984:	b1 ff 21 f8 	stdu    r1,-80(r1)
+ 988:	30 00 00 39 	li      r8,48
+ 98c:	98 4e 04 7c 	lxvd2x  vs0,r4,r9
+ 990:	98 4e 65 7d 	lxvd2x  vs11,r5,r9
+ 994:	00 53 8c f1 	xvadddp vs12,vs12,vs10
+ 998:	00 00 c1 e8 	ld      r6,0(r1)
+ 99c:	78 0b 3f 7c 	mr      r31,r1
+ 9a0:	00 5b 00 f0 	xvadddp vs0,vs0,vs11
+ 9a4:	c1 ff c1 f8 	stdu    r6,-64(r1)
+ 9a8:	98 3f 9f 7d 	stxvd2x vs12,r31,r7
+ 9ac:	98 47 1f 7c 	stxvd2x vs0,r31,r8
+ 9b0:	98 3e 9f 7d 	lxvd2x  vs12,r31,r7
+ 9b4:	98 46 1f 7c 	lxvd2x  vs0,r31,r8
+ 9b8:	50 00 3f 38 	addi    r1,r31,80
+ 9bc:	f8 ff e1 eb 	ld      r31,-8(r1)
+ 9c0:	98 1f 80 7d 	stxvd2x vs12,0,r3
+ 9c4:	98 4f 03 7c 	stxvd2x vs0,r3,r9
+ 9c8:	20 00 80 4e 	blr]]></programlisting></para>
+
+  <para>The compiler treats the parameters and return value
+  as scalar arrays, which are passed by reference.
+  The operation is vectorized in this case,
+  but the 256-bit result is returned through storage.</para>
+
+  <para>This is not what we want to see for a simple 4 by double add.
+  It would be better if we can pass and return 
+  MMX (<xref linkend="sec_handling_mmx"/>) and AVX (<xref linkend="sec_handling_avx"/>)
+  values as PowerPC registers and avoid the storage references.
+  If we can get the parameter and return values as registers,
+  this example will reduce to:
+  <programlisting><![CDATA[0000000000000970 <test_mx256_add_pd>:
+ 970:	xvadddp vs34,vs34,vs36
+ 974:	xvadddp vs35,vs35,vs37
+ 978:	blr]]></programlisting></para>
 
   <para>So the PowerISA VMX/VSX facilities and GCC compiler support for 
   128-bit/16-byte vectors and associated vector built-ins
   are well matched to implementing equivalent X86 SSE intrinsic functions.
   However implementing the older MMX (64-bit) and the latest
-  AVX (256 / 512-bit) extensions requires more thought and some ingenuity.</para>
+  AVX (256 / 512-bit) extensions requires more thought and some 
+  ingenuity.</para>
     
   <xi:include href="sec_handling_mmx.xml"/>
   <xi:include href="sec_handling_avx.xml"/>
