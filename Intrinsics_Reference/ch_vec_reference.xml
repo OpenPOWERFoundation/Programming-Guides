@@ -5224,34 +5224,41 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       role="bold">a</emphasis>.
       </para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
-      None.
+      Differences in element numbering require different implementations
+      for big- and little-endian code generation.
       </para>
       
       <table frame="all">
 	<title>Supported type signatures for vec_doublee</title>
-	<tgroup cols="4">
+	<tgroup cols="5">
           <colspec colname="c1" colwidth="20*" />
           <colspec colname="c2" colwidth="20*" />
           <colspec colname="c3" colwidth="20*" />
           <colspec colname="c4" colwidth="20*" />
+          <colspec colname="c5" colwidth="20*" />
           <thead>
             <row>
-              <entry align="center">
+              <entry align="center" valign="middle">
 		<para>
                   <emphasis role="bold">r</emphasis>
 		</para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
 		<para>
                   <emphasis role="bold">a</emphasis>
 		</para>
               </entry>
               <entry align="center">
 		<para>
-                  <emphasis role="bold">Example Implementation</emphasis>
+                  <emphasis role="bold">Example LE Implementation</emphasis>
 		</para>
               </entry>
               <entry align="center">
+		<para>
+                  <emphasis role="bold">Example BE Implementation</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
 		<para>
                   <emphasis role="bold">Restrictions</emphasis>
 		</para>
@@ -5268,7 +5275,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               </entry>
               <entry>
 		<programlisting>
-   [TBD]
+   xxsldwi    t,a,a,1
+   xvcvsxwdp  r,t
+		</programlisting>
+              </entry>
+              <entry>
+		<programlisting>
+   xvcvsxwdp  r,a
+
 		</programlisting>
               </entry>
               <entry align="center" valign="middle">
@@ -5284,7 +5298,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               </entry>
               <entry>
 		<programlisting>
-   [TBD]
+   xxsldwi    t,a,a,1
+   xvcvuxwdp  r,t
+		</programlisting>
+              </entry>
+              <entry>
+		<programlisting>
+   xvcvuxwdp  r,a
+
 		</programlisting>
               </entry>
               <entry align="center" valign="middle">
@@ -5300,7 +5321,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               </entry>
               <entry>
 		<programlisting>
-   [TBD]
+   xxsldwi    t,a,a,1
+   xvcvspdp   r,t
+		</programlisting>
+              </entry>
+              <entry>
+		<programlisting>
+   xvcvspdp   r,a
+
 		</programlisting>
               </entry>
               <entry align="center" valign="middle">
@@ -5331,34 +5359,41 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       role="bold">a</emphasis>.
       </para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
-      None.
+      Differences in element numbering require different implementations
+      for big- and little-endian code generation.
       </para>
       
       <table frame="all">
 	<title>Supported type signatures for vec_doubleh</title>
-	<tgroup cols="4">
+	<tgroup cols="5">
           <colspec colname="c1" colwidth="20*" />
           <colspec colname="c2" colwidth="20*" />
           <colspec colname="c3" colwidth="20*" />
           <colspec colname="c4" colwidth="20*" />
+          <colspec colname="c5" colwidth="20*" />
           <thead>
             <row>
-              <entry align="center">
+              <entry align="center" valign="middle">
 		<para>
                   <emphasis role="bold">r</emphasis>
 		</para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
 		<para>
                   <emphasis role="bold">a</emphasis>
 		</para>
               </entry>
               <entry align="center">
 		<para>
-                  <emphasis role="bold">Example Implementation</emphasis>
+                  <emphasis role="bold">Example LE Implementation</emphasis>
 		</para>
               </entry>
               <entry align="center">
+		<para>
+                  <emphasis role="bold">Example BE Implementation</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
 		<para>
                   <emphasis role="bold">Restrictions</emphasis>
 		</para>
@@ -5375,7 +5410,16 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               </entry>
               <entry>
 		<programlisting>
-   [TBD]
+   xxsldwi    t,a,a,3
+   xxsldwi    u,a,t,2
+   xvcvsxwdp  r,u
+		</programlisting>
+              </entry>
+              <entry>
+		<programlisting>
+   xxsldwi    t,a,a,1
+   xxsldwi    u,t,a,3
+   xvcvsxwdp  r,u
 		</programlisting>
               </entry>
               <entry align="center" valign="middle">
@@ -5391,7 +5435,16 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               </entry>
               <entry>
 		<programlisting>
-   [TBD]
+   xxsldwi    t,a,a,3
+   xxsldwi    u,a,t,2
+   xvcvuxwdp  r,u
+		</programlisting>
+              </entry>
+              <entry>
+		<programlisting>
+   xxsldwi    t,a,a,1
+   xxsldwi    u,t,a,3
+   xvcvuxwdp  r,u
 		</programlisting>
               </entry>
               <entry align="center" valign="middle">
@@ -5407,7 +5460,16 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               </entry>
               <entry>
 		<programlisting>
-   [TBD]
+   xxsldwi    t,a,a,3
+   xxsldwi    u,a,t,2
+   xvcvspdp   r,u
+		</programlisting>
+              </entry>
+              <entry>
+		<programlisting>
+   xxsldwi    t,a,a,1
+   xxsldwi    u,t,a,3
+   xvcvspdp   r,u
 		</programlisting>
               </entry>
               <entry align="center" valign="middle">
@@ -5438,34 +5500,41 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       role="bold">a</emphasis>.
       </para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
-      None.
+      Differences in element numbering require different implementations
+      for big- and little-endian code generation.
       </para>
       
       <table frame="all">
 	<title>Supported type signatures for vec_doublel</title>
-	<tgroup cols="4">
+	<tgroup cols="5">
           <colspec colname="c1" colwidth="20*" />
           <colspec colname="c2" colwidth="20*" />
           <colspec colname="c3" colwidth="20*" />
           <colspec colname="c4" colwidth="20*" />
+          <colspec colname="c5" colwidth="20*" />
           <thead>
             <row>
-              <entry align="center">
+              <entry align="center" valign="middle">
 		<para>
                   <emphasis role="bold">r</emphasis>
 		</para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
 		<para>
                   <emphasis role="bold">a</emphasis>
 		</para>
               </entry>
               <entry align="center">
 		<para>
-                  <emphasis role="bold">Example Implementation</emphasis>
+                  <emphasis role="bold">Example LE Implementation</emphasis>
 		</para>
               </entry>
               <entry align="center">
+		<para>
+                  <emphasis role="bold">Example BE Implementation</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
 		<para>
                   <emphasis role="bold">Restrictions</emphasis>
 		</para>
@@ -5482,7 +5551,16 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               </entry>
               <entry>
 		<programlisting>
-   [TBD]
+   xxsldwi    t,a,a,1
+   xxsldwi    u,t,a,3
+   xvcvsxwdp  r,u
+		</programlisting>
+              </entry>
+              <entry>
+		<programlisting>
+   xxsldwi    t,a,a,3
+   xxsldwi    u,a,t,2
+   xvcvsxwdp  r,u
 		</programlisting>
               </entry>
               <entry align="center" valign="middle">
@@ -5498,7 +5576,16 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               </entry>
               <entry>
 		<programlisting>
-   [TBD]
+   xxsldwi    t,a,a,1
+   xxsldwi    u,t,a,3
+   xvcvuxwdp  r,u
+		</programlisting>
+              </entry>
+              <entry>
+		<programlisting>
+   xxsldwi    t,a,a,3
+   xxsldwi    u,a,t,2
+   xvcvuxwdp  r,u
 		</programlisting>
               </entry>
               <entry align="center" valign="middle">
@@ -5514,7 +5601,16 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               </entry>
               <entry>
 		<programlisting>
-   [TBD]
+   xxsldwi    t,a,a,1
+   xxsldwi    u,t,a,3
+   xvcvspdp   r,u
+		</programlisting>
+              </entry>
+              <entry>
+		<programlisting>
+   xxsldwi    t,a,a,3
+   xxsldwi    u,a,t,2
+   xvcvspdp   r,u
 		</programlisting>
               </entry>
               <entry align="center" valign="middle">
@@ -5545,34 +5641,41 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       role="bold">a</emphasis>.
       </para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
-      None.
+      Differences in element numbering require different implementations
+      for big- and little-endian code generation.
       </para>
       
       <table frame="all">
 	<title>Supported type signatures for vec_doubleo</title>
-	<tgroup cols="4">
+	<tgroup cols="5">
           <colspec colname="c1" colwidth="20*" />
           <colspec colname="c2" colwidth="20*" />
           <colspec colname="c3" colwidth="20*" />
           <colspec colname="c4" colwidth="20*" />
+          <colspec colname="c5" colwidth="20*" />
           <thead>
             <row>
-              <entry align="center">
+              <entry align="center" valign="middle">
 		<para>
                   <emphasis role="bold">r</emphasis>
 		</para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
 		<para>
                   <emphasis role="bold">a</emphasis>
 		</para>
               </entry>
               <entry align="center">
 		<para>
-                  <emphasis role="bold">Example Implementation</emphasis>
+                  <emphasis role="bold">Example LE Implementation</emphasis>
 		</para>
               </entry>
               <entry align="center">
+		<para>
+                  <emphasis role="bold">Example BE Implementation</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
 		<para>
                   <emphasis role="bold">Restrictions</emphasis>
 		</para>
@@ -5589,7 +5692,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               </entry>
               <entry>
 		<programlisting>
-   [TBD]
+   xvcvsxwdp  r,a
+
+		</programlisting>
+              </entry>
+              <entry>
+		<programlisting>
+   xxsldwi    t,a,a,1
+   xvcvsxwdp  r,t
 		</programlisting>
               </entry>
               <entry align="center" valign="middle">
@@ -5605,7 +5715,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               </entry>
               <entry>
 		<programlisting>
-   [TBD]
+   xvcvuxwdp  r,a
+
+		</programlisting>
+              </entry>
+              <entry>
+		<programlisting>
+   xxsldwi    t,a,a,1
+   xvcvuxwdp  r,t
 		</programlisting>
               </entry>
               <entry align="center" valign="middle">
@@ -5621,7 +5738,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               </entry>
               <entry>
 		<programlisting>
-   [TBD]
+   xvcvspdp   r,a
+
+		</programlisting>
+              </entry>
+              <entry>
+		<programlisting>
+   xxsldwi    t,a,a,1
+   xvcvspdp   r,t
 		</programlisting>
               </entry>
               <entry align="center" valign="middle">
@@ -6005,40 +6129,52 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       The element numbering within a register is left-to-right for big-endian
       targets, and right-to-left for little-endian targets.
       </para>
+      <para><emphasis role="bold">Notes:</emphasis>
+      Prior to ISA 3.0, less efficient code sequences must be used to
+      implement vec_extract.
+      </para>
       
       <table frame="all">
 	<title>Supported type signatures for vec_extract</title>
-	<tgroup cols="5">
+	<tgroup cols="6">
           <colspec colname="c1" colwidth="20*" />
           <colspec colname="c2" colwidth="20*" />
-          <colspec colname="c3" colwidth="20*" />
-          <colspec colname="c4" colwidth="20*" />
-          <colspec colname="c5" colwidth="20*" />
+          <colspec colname="c3" colwidth="18*" />
+          <colspec colname="c4" colwidth="21*" />
+          <colspec colname="c5" colwidth="21*" />
+          <colspec colname="c6" colwidth="18*" />
           <thead>
             <row>
-              <entry align="center">
+              <entry align="center" valign="middle">
 		<para>
                   <emphasis role="bold">r</emphasis>
 		</para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
 		<para>
                   <emphasis role="bold">a</emphasis>
 		</para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
 		<para>
                   <emphasis role="bold">b</emphasis>
 		</para>
               </entry>
               <entry align="center">
 		<para>
-                  <emphasis role="bold">Example LE Implementation</emphasis>
+                  <emphasis role="bold">Example ISA 3.0 LE
+		  Implementation</emphasis>
 		</para>
               </entry>
               <entry align="center">
 		<para>
-                  <emphasis role="bold">Example BE Implementation</emphasis>
+                  <emphasis role="bold">Example ISA 3.0 BE
+		  Implementation</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">Restrictions</emphasis>
 		</para>
               </entry>
             </row>
@@ -6056,13 +6192,407 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               </entry>
               <entry>
 		<programlisting>
-   vexptefp  r,a
+ vextubrx t,b,a
+ extsb    r,t
 		</programlisting>
               </entry>
               <entry>
 		<programlisting>
-   vexptefp  r,a
+ vextublx t,b,a
+ extsb    r,t
 		</programlisting>
+              </entry>
+	      <entry>
+		<para></para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>unsigned char</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector bool char</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> signed int</para>
+              </entry>
+              <entry>
+                <programlisting>
+ vextubrx t,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+ vextublx t,b,a
+		</programlisting>
+              </entry>
+	      <entry>
+		<para></para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>unsigned char</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned char</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> signed int</para>
+              </entry>
+              <entry>
+                <programlisting>
+ vextubrx t,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+ vextublx t,b,a
+		</programlisting>
+              </entry>
+	      <entry>
+		<para></para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>signed int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> signed int</para>
+              </entry>
+              <entry>
+                <programlisting>
+ slwi     t,b,2
+ vextuwrx u,t,a
+ extsw    r,u
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+ slwi     t,b,2
+ vextuwlx u,t,a
+ extsw    r,u
+		</programlisting>
+              </entry>
+	      <entry>
+		<para></para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector bool int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> signed int</para>
+              </entry>
+              <entry>
+                <programlisting>
+ slwi     t,b,2
+ vextuwrx r,t,a
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+ slwi     t,b,2
+ vextuwlx r,t,a
+		</programlisting>
+              </entry>
+	      <entry>
+		<para></para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> signed int</para>
+              </entry>
+              <entry>
+                <programlisting>
+ slwi     t,b,2
+ vextuwrx r,t,a
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+ slwi     t,b,2
+ vextuwlx r,t,a
+		</programlisting>
+              </entry>
+	      <entry>
+		<para></para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>signed long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> signed int</para>
+              </entry>
+              <entry>
+                <programlisting>
+ xori    t,b,0x1
+ rldic   u,t,6,57
+ mtvsrdd v,u,u
+ vslo    w,a,v
+ mfvsrd  r,w
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+ rldic   t,b,6,57
+ mtvsrdd u,t,t
+ vslo    v,a,u
+ mfvsrd  r,v
+
+		</programlisting>
+              </entry>
+	      <entry>
+		<para></para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>unsigned long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector bool long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> signed int</para>
+              </entry>
+	      <entry>
+                <programlisting>
+ xori    t,b,0x1
+ rldic   u,t,6,57
+ mtvsrdd v,u,u
+ vslo    w,a,v
+ mfvsrd  r,w
+		</programlisting>
+	      </entry>
+              <entry>
+                <programlisting>
+ rldic   t,b,6,57
+ mtvsrdd u,t,t
+ vslo    v,a,u
+ mfvsrd  r,v
+
+		</programlisting>
+              </entry>
+	      <entry>
+		<para></para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>unsigned long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> signed int</para>
+              </entry>
+              <entry>
+                <programlisting>
+ xori    t,b,0x1
+ rldic   u,t,6,57
+ mtvsrdd v,u,u
+ vslo    w,a,v
+ mfvsrd  r,w
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+ rldic   t,b,6,57
+ mtvsrdd u,t,t
+ vslo    v,a,u
+ mfvsrd  r,v
+
+		</programlisting>
+              </entry>
+	      <entry>
+		<para></para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>signed short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> signed int</para>
+              </entry>
+              <entry>
+                <programlisting>
+ slwi     t,b,1
+ vextuhrx u,t,a
+ extsh    r,u
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+ slwi     t,b,1
+ vextuhlx u,t,a
+ extsh    r,u
+		</programlisting>
+              </entry>
+	      <entry>
+		<para></para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>unsigned short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector bool short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> signed int</para>
+              </entry>
+              <entry>
+                <programlisting>
+ slwi     t,b,1
+ vextuhrx r,t,a
+                </programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+ slwi     t,b,1
+ vextuhlx r,t,a
+		</programlisting>
+              </entry>
+	      <entry>
+		<para></para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>unsigned short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> signed int</para>
+              </entry>
+              <entry>
+                <programlisting>
+ slwi     t,b,1
+ vextuhrx r,t,a
+                </programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+ slwi     t,b,1
+ vextuhlx r,t,a
+		</programlisting>
+              </entry>
+	      <entry>
+		<para></para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>double</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector double</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> signed int</para>
+              </entry>
+              <entry>
+                <programlisting>
+ xori    t,b,0x1
+ rldic   u,t,6,57
+ mtvsrdd v,u,u
+ vslo    r,a,v
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+ rldic   t,b,6,57
+ mtvsrdd u,t,t
+ vslo    r,a,u
+
+		</programlisting>
+              </entry>
+	      <entry>
+		<para></para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>float</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector float</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> signed int</para>
+              </entry>
+              <entry>
+                <programlisting>
+ rldicl   t,b,0,62
+ subfic   u,t,3
+ sldi     v,u,5
+ mtvsrdd  w,v,v
+ vslo     x,a,w
+ xscvspdp r,x
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+
+ sldi     t,b,5
+ mtvsrdd  u,t,t
+ vslo     v,a,u
+ xscvspdp r,v
+
+		</programlisting>
+              </entry>
+	      <entry>
+		<para></para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>_Float16</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector _Float16</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> signed int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>Not yet available</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>Not yet available</para>
+              </entry>
+              <entry align="center">
+                <para>ISA 3.0 or later</para>
+		<para>Phased in</para>
               </entry>
             </row>
           </tbody>
@@ -6074,19 +6604,23 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
 
     <simplesect xml:id="vec_extract_exp">
       <title>vec_extract_exp</title>
-      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <subtitle>Vector Extract Exponent</subtitle>
       <programlisting>
-      r = vec_extract_exp (ARG1)
+      r = vec_extract_exp (a)
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
       Extracts an exponent from a floating-point number.
       </para>
-      <para><emphasis role="bold">Result value: </emphasis>Each element of the returned integer vector is extracted from the exponent field of the corresponding floating-point vector element.</para>
-<para>The extracted exponents of ARG1 are returned as 
-              right-justified unsigned integers containing biased exponents, in
-              accordance with the exponent representation specified by IEEE
-              754, without further processing.</para>
+      <para><emphasis role="bold">Result value: </emphasis>
+      Each element of <emphasis role="bold">r</emphasis> is extracted
+      from the exponent field of the corresponding floating-point
+      vector element of <emphasis role="bold">a</emphasis>.
+      </para>
+      <para>The extracted exponents of <emphasis role="bold">a</emphasis>
+      are returned as right-justified unsigned integers containing biased
+      exponents, in accordance with the exponent representation specified
+      by IEEE 754, without further processing.</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
@@ -6107,7 +6641,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               </entry>
               <entry align="center">
                 <para>
-                  <emphasis role="bold">ARG1</emphasis>
+                  <emphasis role="bold">a</emphasis>
                 </para>
               </entry>
               <entry align="center">
@@ -6127,9 +6661,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>vector double</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  xvxexpdp r,a
+		</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -6141,9 +6677,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>vector float</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  xvxexpsp r,a
+		</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
