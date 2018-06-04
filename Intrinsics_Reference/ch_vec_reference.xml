@@ -6694,17 +6694,26 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
 
     <simplesect xml:id="vec_extract_fp32_from_shorth">
       <title>vec_extract_fp32_from_shorth</title>
-      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <subtitle>Vector Extract Floats from High Elements of Vector Short Int</subtitle>
       <programlisting>
-      r = vec_extract_fp32_from_shorth (ARG1)
+      r = vec_extract_fp32_from_shorth (a)
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
-      Extracts four single-precision floating-point numbers from the high elements of a vector of eight 16-bit elements, interpreting each element as a 16-bit floating-point number in IEEE format.
+      Extracts four single-precision floating-point numbers from the high
+      elements of a vector of eight 16-bit elements, interpreting each
+      element as a 16-bit floating-point number in IEEE format.
       </para>
-      <para><emphasis role="bold">Result value: </emphasis>The first four elements are interpreted as 16-bit floating-point numbers in IEEE format, and extended to single-precision format, returning a vector with four single-precision IEEE numbers.</para>
+      <para><emphasis role="bold">Result value: </emphasis>
+      The first four elements of <emphasis role="bold">a</emphasis> are
+      interpreted as 16-bit floating-point numbers in IEEE format, and
+      extended to single-precision format, returning a vector with four
+      single-precision IEEE numbers.</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
-      None.
+      The element numbering within a register is left-to-right for big-endian
+      targets, and right-to-left for little-endian targets.  Thus the
+      permute control vector at address <emphasis role="bold">pcv</emphasis>
+      in the example implementation will differ for big- and little-endian.
       </para>
       
       <table frame="all">
@@ -6723,7 +6732,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               </entry>
               <entry align="center">
                 <para>
-                  <emphasis role="bold">ARG1</emphasis>
+                  <emphasis role="bold">a</emphasis>
                 </para>
               </entry>
               <entry align="center">
@@ -6743,9 +6752,13 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>vector unsigned short</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  lxv      t,0(pcv)
+  vperm    u,a,a,t
+  xvcvhpsp r,u
+		</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -6758,17 +6771,26 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
 
     <simplesect xml:id="vec_extract_fp32_from_shortl">
       <title>vec_extract_fp32_from_shortl</title>
-      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <subtitle>Vector Extract Floats from Low Elements of Vector Short Int</subtitle>
       <programlisting>
-      r = vec_extract_fp32_from_shortl (ARG1)
+      r = vec_extract_fp32_from_shortl (a)
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
-      
+      Extracts four single-precision floating-point numbers from the low
+      elements of a vector of eight 16-bit elements, interpreting each
+      element as a 16-bit floating-point number in IEEE format.
       </para>
-      <para><emphasis role="bold">Result value: </emphasis>The last four elements are interpreted as 16-bit floating-point numbers in IEEE format, and extended to single-precision format, returning a vector with four single-precision IEEE numbers.</para>
+      <para><emphasis role="bold">Result value: </emphasis>
+      The last four elements of <emphasis role="bold">a</emphasis> are
+      interpreted as 16-bit floating-point numbers in IEEE format, and
+      extended to single-precision format, returning a vector with four
+      single-precision IEEE numbers.</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
-      None.
+      The element numbering within a register is left-to-right for big-endian
+      targets, and right-to-left for little-endian targets.  Thus the
+      permute control vector at address <emphasis role="bold">pcv</emphasis>
+      in the example implementation will differ for big- and little-endian.
       </para>
       
       <table frame="all">
@@ -6787,7 +6809,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               </entry>
               <entry align="center">
                 <para>
-                  <emphasis role="bold">ARG1</emphasis>
+                  <emphasis role="bold">a</emphasis>
                 </para>
               </entry>
               <entry align="center">
@@ -6807,9 +6829,13 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>vector unsigned short</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  lxv      t,0(pcv)
+  vperm    u,a,a,t
+  xvcvhpsp r,u
+		</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -6822,20 +6848,23 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
 
     <simplesect xml:id="vec_extract_sig">
       <title>vec_extract_sig</title>
-      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <subtitle>Vector Extract Significand</subtitle>
       <programlisting>
-      r = vec_extract_sig (ARG1)
+      r = vec_extract_sig (a)
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
-      Extracts a significand (mantissa) from a floating-point number.
+      Extracts a vector of significands (mantissas) from a vector of
+      floating-point numbers.
       </para>
-      <para><emphasis role="bold">Result value: </emphasis>Each element of the returned integer vector is extracted from the significand (mantissa) field of the corresponding floating-point vector element.</para>
-<para>The significand is from the corresponding floating-point
-              number in accordance with the IEEE format. The returned result
-              includes the implicit leading digit. The value of that digit is
-              not encoded in the IEEE format, but is implied by the
-              exponent.</para>
+      <para><emphasis role="bold">Result value: </emphasis>Each element of
+      <emphasis role="bold">r</emphasis> is extracted from the significand
+      (mantissa) field of the corresponding floating-point element of
+      <emphasis role="bold">a</emphasis>.</para>
+      <para>The significand is from the corresponding floating-point
+      number in accordance with the IEEE format. The returned result
+      includes the implicit leading digit. The value of that digit is
+      not encoded in the IEEE format, but is implied by the exponent.</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
@@ -6856,7 +6885,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               </entry>
               <entry align="center">
                 <para>
-                  <emphasis role="bold">ARG1</emphasis>
+                  <emphasis role="bold">a</emphasis>
                 </para>
               </entry>
               <entry align="center">
@@ -6876,9 +6905,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>vector double</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+   xvxsigdp r,a
+		</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -6890,9 +6921,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>vector float</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+   xvxsigsp r,a
+		</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -6905,48 +6938,59 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
 
     <simplesect xml:id="vec_extract4b">
       <title>vec_extract4b</title>
-      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <subtitle>Vector Extract Four Bytes</subtitle>
       <programlisting>
-      r = vec_extract4b (ARG1, ARG2)
+      r = vec_extract4b (a, b)
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
-      Extracts a word from a vector at a byte position.
+      Extracts a word from vector <emphasis role="bold">a</emphasis> at
+      constant byte position <emphasis role="bold">b</emphasis>.
       </para>
-      <para><emphasis role="bold">Result value: </emphasis>The first doubleword element of the result contains the zero-extended extracted word from ARG1. The second doubleword is set to 0. ARG2 specifies the least-significant byte number (0–12) of the word to be extracted.</para>
+      <para><emphasis role="bold">Result value: </emphasis>The first
+      doubleword element of <emphasis role="bold">r</emphasis> contains
+      the zero-extended extracted word from <emphasis role="bold">a</emphasis>.
+      The second doubleword is set to 0. <emphasis role="bold">b</emphasis>
+      specifies the least-significant byte number (0–12) of the word
+      to be extracted.</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
-      None.
+      The element numbering within a register is left-to-right for big-endian
+      targets, and right-to-left for little-endian targets.
       </para>
       
       <table frame="all">
       <title>Supported type signatures for vec_extract4b</title>
-      <tgroup cols="5">
+      <tgroup cols="6">
           <colspec colname="c1" colwidth="20*" />
           <colspec colname="c2" colwidth="20*" />
-          <colspec colname="c3" colwidth="20*" />
-          <colspec colname="c4" colwidth="20*" />
-          <colspec colname="c5" colwidth="20*" />
+          <colspec colname="c3" colwidth="16*" />
+          <colspec colname="c4" colwidth="24*" />
+          <colspec colname="c5" colwidth="22*" />
+          <colspec colname="c6" colwidth="18*" />
           <thead>
             <row>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
                   <emphasis role="bold">r</emphasis>
                 </para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
-                  <emphasis role="bold">ARG1</emphasis>
+                  <emphasis role="bold">a</emphasis>
+                </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+                  <emphasis role="bold">b</emphasis>
                 </para>
               </entry>
               <entry align="center">
-                <para>
-                  <emphasis role="bold">ARG2</emphasis>
-                </para>
+                <para><emphasis role="bold">Example LE Implementation</emphasis></para>
               </entry>
               <entry align="center">
-                <para><emphasis role="bold">Example Implementation</emphasis></para>
+                <para><emphasis role="bold">Example BE Implementation</emphasis></para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para><emphasis role="bold">Restrictions</emphasis></para>
               </entry>
             </row>
@@ -6963,9 +7007,16 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> const int</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+ xxextractuw r,a,12-b
+		</programlisting>
               </entry>
               <entry>
+                <programlisting>
+ xxextractuw r,a,b
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -6983,6 +7034,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       r = vec_first_match_index (ARG1, ARG2)
       </programlisting>
 
+      <para><emphasis>GCC 8.1 implementation is broken!</emphasis></para>
       <para><emphasis role="bold">Purpose:</emphasis>
       Performs a comparison of equality on each of the corresponding elements of ARG1 and ARG2, and returns the first position of equality.
       </para>
@@ -7038,7 +7090,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               <entry>
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -7055,7 +7107,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               <entry>
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -7072,7 +7124,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               <entry>
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -7089,7 +7141,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               <entry>
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -7106,7 +7158,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               <entry>
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -7123,7 +7175,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               <entry>
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -7141,6 +7193,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       r = vec_first_match_or_eos_index (ARG1, ARG2)
       </programlisting>
 
+      <para><emphasis>GCC 8.1 implementation is broken!</emphasis></para>
       <para><emphasis role="bold">Purpose:</emphasis>
       Performs a comparison of equality on each of the corresponding elements of ARG1 and ARG2. Returns the first position of equality, or the zero string terminator.
       </para>
@@ -7196,7 +7249,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               <entry>
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -7213,7 +7266,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               <entry>
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -7230,7 +7283,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               <entry>
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -7247,7 +7300,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               <entry>
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -7264,7 +7317,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               <entry>
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -7281,7 +7334,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               <entry>
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -7299,6 +7352,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       r = vec_first_mismatch_index (ARG1, ARG2)
       </programlisting>
 
+      <para><emphasis>GCC 8.1 implementation is broken!</emphasis></para>
       <para><emphasis role="bold">Purpose:</emphasis>
       Performs a comparison of inequality on each of the corresponding elements of ARG1 and ARG2, and returns the first position of inequality.
       </para>
@@ -7354,7 +7408,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               <entry>
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -7371,7 +7425,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               <entry>
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -7388,7 +7442,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               <entry>
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -7405,7 +7459,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               <entry>
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -7422,7 +7476,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               <entry>
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -7439,7 +7493,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               <entry>
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -7457,6 +7511,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       r = vec_first_mismatch_or_eos_index (ARG1, ARG2)
       </programlisting>
 
+      <para><emphasis>GCC 8.1 implementation is broken!</emphasis></para>
       <para><emphasis role="bold">Purpose:</emphasis>
       Performs a comparison of inequality on each of the corresponding elements of ARG1 and ARG2. Returns the first position of inequality, or the zero string terminator.
       </para>
@@ -7512,7 +7567,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               <entry>
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -7529,7 +7584,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               <entry>
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -7546,7 +7601,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               <entry>
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -7563,7 +7618,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               <entry>
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -7580,7 +7635,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               <entry>
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -7597,7 +7652,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               <entry>
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -7610,15 +7665,19 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
 
     <simplesect xml:id="vec_float">
       <title>vec_float</title>
-      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <subtitle>Vector Convert Integer to Floating-Point</subtitle>
       <programlisting>
-      r = vec_float (ARG1)
+      r = vec_float (a)
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
-      Converts a vector of integers to a vector of single-precision floating-point numbers.
+      Converts a vector of integers to a vector of single-precision
+      floating-point numbers.
       </para>
-      <para><emphasis role="bold">Result value: </emphasis>Target elements are obtained by converting the respective source elements to single-precision floating-point numbers.</para>
+      <para><emphasis role="bold">Result value: </emphasis>Elements of
+      <emphasis role="bold">r</emphasis> are obtained by converting the
+      respective elements of <emphasis role="bold">a</emphasis> to
+      single-precision floating-point numbers.</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
@@ -7638,7 +7697,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               </entry>
               <entry align="center">
                 <para>
-                  <emphasis role="bold">ARG1</emphasis>
+                  <emphasis role="bold">a</emphasis>
                 </para>
               </entry>
               <entry align="center">
@@ -7655,7 +7714,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>vector signed int</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  xvcvsxwsp r,a
+		</programlisting>
               </entry>
             </row>
             <row>
@@ -7666,7 +7727,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>vector unsigned int</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  xvcvuxwsp r,a
+		</programlisting>
               </entry>
             </row>
           </tbody>
@@ -7678,34 +7741,37 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
 
     <simplesect xml:id="vec_float2">
       <title>vec_float2</title>
-      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <subtitle>Vector Convert Two Vectors to Floating-Point</subtitle>
       <programlisting>
-      r = vec_float2 (ARG1, ARG2)
+      r = vec_float2 (a, b)
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
-      Converts an input vector to a vector of single-precision numbers.
+      Converts two input vectors of long long integers or double-precision
+      floating-point numbers to a vector of single-precision numbers.
       </para>
-      <para><emphasis role="bold">Result value: </emphasis>Target elements are obtained by converting the source elements to single-precision numbers as follows:</para>
-<itemizedlist>
-                <listitem>
-                  <para>Target elements 0 and 1 from source 0</para>
-                </listitem>
-                <listitem>
-                  <para>Target elements 2 and 3 from source 1</para>
-                </listitem>
-              </itemizedlist>
+      <para><emphasis role="bold">Result value: </emphasis>Elements of
+      <emphasis role="bold">r</emphasis> are obtained by converting the
+      elements of <emphasis role="bold">a</emphasis> and
+      <emphasis role="bold">b</emphasis> to single-precision numbers.
+      Elements 0 and 1 of <emphasis role="bold">r</emphasis> are converted
+      from elements 0 and 1 of <emphasis role="bold">a</emphasis>,
+      respectively, and elements 2 and 3 of <emphasis role="bold">r</emphasis>
+      are converted from elements 0 and 1 of <emphasis
+      role="bold">b</emphasis>, respectively. </para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
-      None.
+      The element numbering within a register is left-to-right for big-endian
+      targets, and right-to-left for little-endian targets.
       </para>
       
       <table frame="all">
       <title>Supported type signatures for vec_float2</title>
-      <tgroup cols="4">
+      <tgroup cols="5">
           <colspec colname="c1" colwidth="20*" />
           <colspec colname="c2" colwidth="20*" />
           <colspec colname="c3" colwidth="20*" />
           <colspec colname="c4" colwidth="20*" />
+          <colspec colname="c5" colwidth="20*" />
           <thead>
             <row>
               <entry align="center">
@@ -7715,16 +7781,19 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               </entry>
               <entry align="center">
                 <para>
-                  <emphasis role="bold">ARG1</emphasis>
+                  <emphasis role="bold">a</emphasis>
                 </para>
               </entry>
               <entry align="center">
                 <para>
-                  <emphasis role="bold">ARG2</emphasis>
+                  <emphasis role="bold">b</emphasis>
                 </para>
               </entry>
               <entry align="center">
-                <para><emphasis role="bold">Example Implementation</emphasis></para>
+                <para><emphasis role="bold">Example LE Implementation</emphasis></para>
+              </entry>
+              <entry align="center">
+                <para><emphasis role="bold">Example BE Implementation</emphasis></para>
               </entry>
             </row>
           </thead>
@@ -7740,7 +7809,22 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> vector signed long long</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+ xxpermdi  t,b,a,0
+ xxpermdi  u,b,a,3
+ xvcvsxdsp v,t
+ xvcvsxdsp w,u
+ vmrgow    r,v,w
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+ xxpermdi  t,b,a,0
+ xxpermdi  u,b,a,3
+ xvcvsxdsp v,t
+ xvcvsxdsp w,u
+ vmrgew    r,v,w
+		</programlisting>
               </entry>
             </row>
             <row>
@@ -7754,7 +7838,22 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> vector unsigned long long</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+ xxpermdi  t,b,a,0
+ xxpermdi  u,b,a,3
+ xvcvsxdsp v,t
+ xvcvsxdsp w,u
+ vmrgow    r,v,w
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+ xxpermdi  t,b,a,0
+ xxpermdi  u,b,a,3
+ xvcvsxdsp v,t
+ xvcvsxdsp w,u
+ vmrgew    r,v,w
+		</programlisting>
               </entry>
             </row>
             <row>
@@ -7768,7 +7867,22 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> vector double</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+ xxpermdi  t,b,a,0
+ xxpermdi  u,b,a,3
+ xvcvsxdsp v,t
+ xvcvsxdsp w,u
+ vmrgow    r,v,w
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+ xxpermdi  t,b,a,0
+ xxpermdi  u,b,a,3
+ xvcvsxdsp v,t
+ xvcvsxdsp w,u
+ vmrgew    r,v,w
+		</programlisting>
               </entry>
             </row>
           </tbody>
@@ -7780,25 +7894,33 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
 
     <simplesect xml:id="vec_floate">
       <title>vec_floate</title>
-      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <subtitle>Vector Convert to Floating-Point in Even Elements</subtitle>
       <programlisting>
-      r = vec_floate (ARG2)
+      r = vec_floate (a)
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
-      Converts an input vector to a vector of single-precision numbers.
+      Converts the elements of an input vector to single-precision
+      floating-point and stores the results in the even elements of
+      the target vector.
       </para>
-      <para><emphasis role="bold">Result value: </emphasis>The even-numbered target elements are obtained by converting the source elements to single-precision numbers, using the current floating-point rounding mode.</para>
+      <para><emphasis role="bold">Result value: </emphasis>The even-numbered
+      elements of <emphasis role="bold">r</emphasis> are obtained by
+      converting the elements of <emphasis role="bold">a</emphasis> to
+      single-precision numbers, using the current floating-point rounding
+      mode.</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
-      None.
+      The element numbering within a register is left-to-right for big-endian
+      targets, and right-to-left for little-endian targets.
       </para>
       
       <table frame="all">
       <title>Supported type signatures for vec_floate</title>
-      <tgroup cols="3">
+      <tgroup cols="4">
           <colspec colname="c1" colwidth="20*" />
           <colspec colname="c2" colwidth="20*" />
           <colspec colname="c3" colwidth="20*" />
+          <colspec colname="c4" colwidth="20*" />
           <thead>
             <row>
               <entry align="center">
@@ -7808,11 +7930,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               </entry>
               <entry align="center">
                 <para>
-                  <emphasis role="bold">ARG2</emphasis>
+                  <emphasis role="bold">a</emphasis>
                 </para>
               </entry>
               <entry align="center">
-                <para><emphasis role="bold">Example Implementation</emphasis></para>
+                <para><emphasis role="bold">Example LE Implementation</emphasis></para>
+              </entry>
+              <entry align="center">
+                <para><emphasis role="bold">Example BE Implementation</emphasis></para>
               </entry>
             </row>
           </thead>
@@ -7825,7 +7950,16 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>vector signed long long</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+ xvcvsxdsp  r,a
+
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+ xvcvsxdsp  t,a
+ vsldoi     r,t,t,4
+		</programlisting>
               </entry>
             </row>
             <row>
@@ -7836,7 +7970,16 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>vector unsigned long long</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+ xvcvuxdsp  r,a
+
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+ xvcvuxdsp  t,a
+ vsldoi     r,t,t,4
+		</programlisting>
               </entry>
             </row>
             <row>
@@ -7847,7 +7990,16 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>vector double</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+ xvcvdpsp  r,a
+
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+ xvcvdpsp  t,a
+ vsldoi    r,t,t,4
+		</programlisting>
               </entry>
             </row>
           </tbody>
@@ -7859,17 +8011,27 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
 
     <simplesect xml:id="vec_floath">
       <title>vec_floath</title>
-      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <subtitle>Vector Convert High Elements to Float</subtitle>
       <programlisting>
-      r = vec_floath (ARG2)
+      r = vec_floath (a)
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
-      Converts a vector to a vector of single-precision floating-point numbers.
+      Converts the first four elements of a vector of half-precision
+      floating-point numbers to a vector of single-precision floating-point
+      numbers.
       </para>
-      <para><emphasis role="bold">Result value: </emphasis>Target elements 0 through 3 are set to the converted values of source elements 0 through 3, respectively.</para>
+      <para><emphasis role="bold">Result value: </emphasis>Elements 0 through 3
+      of <emphasis role="bold">r</emphasis> are set to the converted values
+      of elements 0 through 3, respectively, of <emphasis
+      role="bold">a</emphasis>.</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
-      None.
+      The element numbering within a register is left-to-right for big-endian
+      targets, and right-to-left for little-endian targets.
+      </para>
+      <para><emphasis role="bold">Notes:</emphasis>
+      No Power compilers yet support the vector _Float16 type, so this
+      interface is currently deferred.
       </para>
       
       <table frame="all">
@@ -7888,7 +8050,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               </entry>
               <entry align="center">
                 <para>
-                  <emphasis role="bold">ARG2</emphasis>
+                  <emphasis role="bold">a</emphasis>
                 </para>
               </entry>
               <entry align="center">
@@ -7907,11 +8069,12 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               <entry align="center" valign="middle">
                 <para>vector _Float16</para>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
+		<para>Deferred</para>
               </entry>
             </row>
           </tbody>
@@ -7923,17 +8086,27 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
 
     <simplesect xml:id="vec_floatl">
       <title>vec_floatl</title>
-      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <subtitle>Vector Convert Low Elements to Float</subtitle>
       <programlisting>
-      r = vec_floatl (ARG2)
+      r = vec_floatl (a)
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
-      Converts a vector to a vector of single-precision floating-point numbers.
+      Converts the last four elements of a vector of half-precision
+      floating-point numbers to a vector of single-precision floating-point
+      numbers.
       </para>
-      <para><emphasis role="bold">Result value: </emphasis>Target elements 0 through 3 are set to the converted values of source elements 4 through 7, respectively.</para>
+      <para><emphasis role="bold">Result value: </emphasis>Elements 0 through 3
+      of <emphasis role="bold">r</emphasis> are set to the converted values of
+      elements 4 through 7, respectively, of <emphasis
+      role="bold">a</emphasis>.</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
-      None.
+      The element numbering within a register is left-to-right for big-endian
+      targets, and right-to-left for little-endian targets.
+      </para>
+      <para><emphasis role="bold">Notes:</emphasis>
+      No Power compilers yet support the vector _Float16 type, so this
+      interface is currently deferred.
       </para>
       
       <table frame="all">
@@ -7952,7 +8125,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               </entry>
               <entry align="center">
                 <para>
-                  <emphasis role="bold">ARG2</emphasis>
+                  <emphasis role="bold">a</emphasis>
                 </para>
               </entry>
               <entry align="center">
@@ -7971,11 +8144,12 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               <entry align="center" valign="middle">
                 <para>vector _Float16</para>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
+		<para>Deferred</para>
               </entry>
             </row>
           </tbody>
@@ -7987,25 +8161,33 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
 
     <simplesect xml:id="vec_floato">
       <title>vec_floato</title>
-      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <subtitle>Vector Convert to Floating-Point in Odd Elements</subtitle>
       <programlisting>
-      r = vec_floato (ARG2)
+      r = vec_floato (a)
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
-      Converts an input vector to a vector of single-precision numbers.
+      Converts the elements of an input vector to single-precision
+      floating-point and stores the results in the odd elements of the
+      target vector.
       </para>
-      <para><emphasis role="bold">Result value: </emphasis>The odd-numbered target elements are obtained by converting the source elements to single-precision numbers, using the current floating-point rounding mode.</para>
+      <para><emphasis role="bold">Result value: </emphasis>The odd-numbered
+      elements of <emphasis role="bold">r</emphasis> are obtained by
+      converting the elements of <emphasis role="bold">a</emphasis> to
+      single-precision numbers, using the current floating-point rounding
+      mode.</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
-      None.
+      The element numbering within a register is left-to-right for big-endian
+      targets, and right-to-left for little-endian targets.
       </para>
       
       <table frame="all">
       <title>Supported type signatures for vec_floato</title>
-      <tgroup cols="3">
+      <tgroup cols="4">
           <colspec colname="c1" colwidth="20*" />
           <colspec colname="c2" colwidth="20*" />
           <colspec colname="c3" colwidth="20*" />
+          <colspec colname="c4" colwidth="20*" />
           <thead>
             <row>
               <entry align="center">
@@ -8015,11 +8197,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               </entry>
               <entry align="center">
                 <para>
-                  <emphasis role="bold">ARG2</emphasis>
+                  <emphasis role="bold">a</emphasis>
                 </para>
               </entry>
               <entry align="center">
-                <para><emphasis role="bold">Example Implementation</emphasis></para>
+                <para><emphasis role="bold">Example LE Implementation</emphasis></para>
+              </entry>
+              <entry align="center">
+                <para><emphasis role="bold">Example BE Implementation</emphasis></para>
               </entry>
             </row>
           </thead>
@@ -8032,7 +8217,16 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>vector signed long long</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  xvcvsxdsp t,a
+  vsldoi    r,t,t,4
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+  xvcvsxdsp r,a
+
+		</programlisting>
               </entry>
             </row>
             <row>
@@ -8043,7 +8237,16 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>vector unsigned long long</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  xvcvuxdsp t,a
+  vsldoi    r,t,t,4
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+  xvcvuxdsp r,a
+
+		</programlisting>
               </entry>
             </row>
             <row>
@@ -8054,7 +8257,16 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>vector double</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  xvcvdpsp  t,a
+  vsldoi    r,t,t,4
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+  xvcvdpsp  r,a
+
+		</programlisting>
               </entry>
             </row>
           </tbody>
@@ -8066,15 +8278,20 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
 
     <simplesect xml:id="vec_floor">
       <title>vec_floor</title>
-      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <subtitle>Vector Floor</subtitle>
       <programlisting>
-      r = vec_floor (ARG1)
+      r = vec_floor (a)
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
-      Returns a vector containing the largest representable floating-point integral values less than or equal to the values of the corresponding elements of the given vector.
+      Returns a vector containing the largest representable floating-point
+      integral values less than or equal to the values of the corresponding
+      elements of the given vector.
       </para>
-      <para><emphasis role="bold">Result value: </emphasis>Each element of the result contains the largest representable floating-point integral value less than or equal to the value of the corresponding element of ARG1.</para>
+      <para><emphasis role="bold">Result value: </emphasis>Each element of
+      <emphasis role="bold">r</emphasis> contains the largest representable
+      floating-point integral value less than or equal to the value of the
+      corresponding element of <emphasis role="bold">a</emphasis>.</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
@@ -8094,7 +8311,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               </entry>
               <entry align="center">
                 <para>
-                  <emphasis role="bold">ARG1</emphasis>
+                  <emphasis role="bold">a</emphasis>
                 </para>
               </entry>
               <entry align="center">
@@ -8111,7 +8328,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>vector double</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  xvrdpim  r,a
+		</programlisting>
               </entry>
             </row>
             <row>
@@ -8122,7 +8341,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>vector float</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  xvrspim  r,a
+		</programlisting>
               </entry>
             </row>
           </tbody>
@@ -8134,17 +8355,30 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
 
     <simplesect xml:id="vec_gb">
       <title>vec_gb</title>
-      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <subtitle>Vector Gather Bits by Byte</subtitle>
       <programlisting>
-      r = vec_gb (ARG1)
+      r = vec_gb (a)
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
       Performs a gather-bits operation on the input.
       </para>
-      <para><emphasis role="bold">Result value: </emphasis>Within each doubleword, let x(i) (0 ≤ i &lt; 8) denote the byte elements of the corresponding input doubleword element, with x(7) the most-significant byte. For each pair of i and j (0 ≤ i &lt; 8, 0 ≤ j &lt; 8), the j-th bit of the i-th byte element of the result is set to the value of the i-th bit of the j-th byte element of the input.</para>
+      <para><emphasis role="bold">Result value: </emphasis>Within each
+      doubleword, let x(i) (0 ≤ i &lt; 8) denote the byte elements, with
+      x(0) the most-significant byte. For each pair of i and j (0 ≤ i
+      &lt; 8, 0 ≤ j &lt; 8), the <emphasis>j</emphasis>th bit of the
+      <emphasis>i</emphasis>th byte element of
+      <emphasis role="bold">r</emphasis> is set to the value of the
+      <emphasis>i</emphasis>th bit of the <emphasis>j</emphasis>th byte
+      element of <emphasis role="bold">a</emphasis>.</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
-      None.
+      The <emphasis role="bold">vec_gb</emphasis> intrinsic function assumes
+      big-endian (left-to-right) numbering for both bits and bytes, matching
+      the ISA 2.07 <emphasis role="bold">vgbbd</emphasis> instruction.
+      </para>
+      <para><emphasis role="bold">Notes:</emphasis>
+      <emphasis>Try to get the diagram from the ISA manual to include
+      here.</emphasis>
       </para>
       
       <table frame="all">
@@ -8162,7 +8396,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               </entry>
               <entry align="center">
                 <para>
-                  <emphasis role="bold">ARG1</emphasis>
+                  <emphasis role="bold">a</emphasis>
                 </para>
               </entry>
               <entry align="center">
@@ -8179,7 +8413,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>vector unsigned char</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  vgbbd  r,a
+		</programlisting>
               </entry>
             </row>
           </tbody>
@@ -8191,54 +8427,86 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
 
     <simplesect xml:id="vec_insert">
       <title>vec_insert</title>
-      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <subtitle>Vector Insert</subtitle>
       <programlisting>
-      r = vec_insert (ARG1, ARG2, ARG3)
+      r = vec_insert (a, b, c)
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
-      Returns a copy of vector ARG2 with element ARG3 replaced by the value of ARG1.
+      Returns a copy of vector <emphasis role="bold">b</emphasis>  with
+      element <emphasis role="bold">c</emphasis> replaced by the value of
+      <emphasis role="bold">a</emphasis>.
       </para>
-      <para><emphasis role="bold">Result value: </emphasis>A copy of vector ARG2 with element ARG3 replaced by the value of ARG1. This function uses modular arithmetic on ARG3 to determine the element number. For example, if ARG3 is out of range, the compiler uses ARG3 modulo the number of elements in the vector to determine the element position.</para>
+      <para><emphasis role="bold">Result value: </emphasis>
+      <emphasis role="bold">r</emphasis> contains a copy of vector
+      <emphasis role="bold">b</emphasis> with element <emphasis
+      role="bold">c</emphasis> replaced by the value of <emphasis
+      role="bold">a</emphasis>. This function uses modular arithmetic on
+      <emphasis role="bold">c</emphasis> to determine the element number.
+      For example, if <emphasis role="bold">c</emphasis> is out of range, the
+      compiler uses <emphasis role="bold">c</emphasis> modulo the number of
+      elements in the vector to determine the element position.</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
-      None.
+      The element numbering within a register is left-to-right for big-endian
+      targets, and right-to-left for little-endian targets.
+      </para>
+      <para><emphasis role="bold">Notes:</emphasis>
+      <itemizedlist>
+	<listitem><para>
+	  No Power compilers yet support the vector _Float16 type, so that
+	  interface is currently deferred.
+	</para></listitem>
+	<listitem><para>
+	  The sample implementations are given for ISA 3.0 when <emphasis
+	  role="bold">c</emphasis> is a constant.  For earlier target
+	  architectures, or when <emphasis role="bold">c</emphasis> is
+	  variable, less efficient sequences are required.  The sample
+	  implementations also assume that <emphasis role="bold">c</emphasis>
+	  is in range; that is, any required modulus operations have
+	  already been performed on the constant index.
+	</para></listitem>
+      </itemizedlist>
       </para>
       
       <table frame="all">
       <title>Supported type signatures for vec_insert</title>
-      <tgroup cols="6">
-          <colspec colname="c1" colwidth="20*" />
-          <colspec colname="c2" colwidth="20*" />
-          <colspec colname="c3" colwidth="20*" />
-          <colspec colname="c4" colwidth="20*" />
-          <colspec colname="c5" colwidth="20*" />
-          <colspec colname="c6" colwidth="20*" />
+      <tgroup cols="7">
+          <colspec colname="c1" colwidth="15*" />
+          <colspec colname="c2" colwidth="13*" />
+          <colspec colname="c3" colwidth="15*" />
+          <colspec colname="c4" colwidth="13*" />
+          <colspec colname="c5" colwidth="35*" />
+          <colspec colname="c6" colwidth="31*" />
+          <colspec colname="c7" colwidth="15*" />
           <thead>
             <row>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
                   <emphasis role="bold">r</emphasis>
                 </para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
-                  <emphasis role="bold">ARG1</emphasis>
+                  <emphasis role="bold">a</emphasis>
                 </para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
-                  <emphasis role="bold">ARG2</emphasis>
+                  <emphasis role="bold">b</emphasis>
                 </para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
-                  <emphasis role="bold">ARG3</emphasis>
+                  <emphasis role="bold">c</emphasis>
                 </para>
               </entry>
-              <entry align="center">
-                <para><emphasis role="bold">Example Implementation</emphasis></para>
+              <entry align="center" valign="middle">
+                <para><emphasis role="bold">Example ISA 3.0 LE Implementation</emphasis></para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
+                <para><emphasis role="bold">Example ISA 3.0 BE Implementation</emphasis></para>
+              </entry>
+              <entry align="center" valign="middle">
                 <para><emphasis role="bold">Restrictions</emphasis></para>
               </entry>
             </row>
@@ -8258,7 +8526,16 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> signed int</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+ mtvsrwz  t,b
+ vinsertb r,t,15-c
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+ mtvsrwz  t,b
+ vinsertb r,t,c
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
@@ -8278,7 +8555,16 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> signed int</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+ mtvsrwz  t,b
+ vinsertb r,t,15-c
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+ mtvsrwz  t,b
+ vinsertb r,t,c
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
@@ -8298,7 +8584,16 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> signed int</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+ mtvsrwz   t,b
+ xxinsertw r,t,(3-c)*4
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+ mtvsrwz  t,b
+ vinsertb r,t,c*4
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
@@ -8318,7 +8613,16 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> signed int</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+ mtvsrwz   t,b
+ xxinsertw r,t,(3-c)*4
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+ mtvsrwz  t,b
+ vinsertb r,t,c*4
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
@@ -8338,7 +8642,16 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> signed int</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+ mtvsrd   t,b
+ xxpermdi r,t,a,c
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+ mtvsrd   t,b
+ xxpermdi r,t,a,1-c
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
@@ -8358,7 +8671,16 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> signed int</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+ mtvsrd   t,b
+ xxpermdi r,t,a,c
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+ mtvsrd   t,b
+ xxpermdi r,t,a,1-c
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
@@ -8378,7 +8700,16 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> signed int</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+ mtvsrwz  t,b
+ vinserth r,t,a,(7-c)*2
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+ mtvsrd   t,b
+ vinserth r,t,a,c*2
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
@@ -8398,7 +8729,16 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> signed int</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+ mtvsrwz  t,b
+ vinserth r,t,a,(7-c)*2
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+ mtvsrd   t,b
+ vinserth r,t,a,c*2
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
@@ -8418,7 +8758,18 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> signed int</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+ xxpermdi r,b,a,1 [c=0]
+        [or]
+ xxpermdi r,a,b,1 [c=1]
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+ xxpermdi r,a,b,1 [c=0]
+        [or]
+ xxpermdi r,b,a,1 [c=1]
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
@@ -8438,9 +8789,20 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> signed int</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+ xscvdpspn   t,a
+ xxextractuw u,t,4
+ xxinsertw   r/b,u,(3-c)*4
+		</programlisting>
               </entry>
               <entry>
+                <programlisting>
+ xscvdpspn   t,a
+ xxextractuw u,t,4
+ xxinsertw   r/b,u,c*4
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
                 <para></para>
               </entry>
             </row>
@@ -8458,10 +8820,19 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> signed int</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+ mtvsrwz  t,b
+ vinserth r,t,a,(7-c)*2
+		</programlisting>
               </entry>
               <entry>
-                <para>ISA 3.0 or later</para>
+                <programlisting>
+ mtvsrd   t,b
+ vinserth r,t,a,c*2
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>Deferred</para>
               </entry>
             </row>
           </tbody>
@@ -8473,20 +8844,24 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
 
     <simplesect xml:id="vec_insert_exp">
       <title>vec_insert_exp</title>
-      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <subtitle>Vector Insert Exponent</subtitle>
       <programlisting>
-      r = vec_insert_exp (ARG1, ARG2)
+      r = vec_insert_exp (a, b)
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
-      Inserts an exponent into a floating-point number.
+      Inserts exponents into a vector of floating-point numbers.
       </para>
-      <para><emphasis role="bold">Result value: </emphasis>Each element of the returned floating-point vector is generated by combining the exponent specified by the corresponding element of ARG2 with the sign and significand of the corresponding element of ARG1.</para>
-<para>The inserted exponent of ARG2 is treated as a
-              right-justified unsigned integer containing a biased exponent, in
-              accordance with the exponent representation specified by IEEE
-              754. It is combined with the sign and significand of ARG1 without
-              further processing.</para>
+      <para><emphasis role="bold">Result value: </emphasis>Each element of
+      <emphasis role="bold">r</emphasis> is generated by combining the exponent
+      specified by the corresponding element of <emphasis
+      role="bold">b</emphasis> with the sign and significand of the
+      corresponding element of <emphasis role="bold">a</emphasis>.</para>
+      <para>The inserted exponent of <emphasis role="bold">b</emphasis> is
+      treated as a right-justified unsigned integer containing a biased
+      exponent, in accordance with the exponent representation specified by
+      IEEE 754. It is combined with the sign and significand of
+      <emphasis role="bold">a</emphasis> without further processing.</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
@@ -8501,25 +8876,25 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
           <colspec colname="c5" colwidth="20*" />
           <thead>
             <row>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
                   <emphasis role="bold">r</emphasis>
                 </para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
-                  <emphasis role="bold">ARG1</emphasis>
+                  <emphasis role="bold">a</emphasis>
                 </para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
-                  <emphasis role="bold">ARG2</emphasis>
+                  <emphasis role="bold">b</emphasis>
                 </para>
               </entry>
               <entry align="center">
                 <para><emphasis role="bold">Example Implementation</emphasis></para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para><emphasis role="bold">Restrictions</emphasis></para>
               </entry>
             </row>
@@ -8536,9 +8911,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> vector unsigned long long</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  xviexpdp  r,a,b
+		</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -8553,9 +8930,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> vector unsigned long long</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  xviexpdp  r,a,b
+		</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -8570,9 +8949,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> vector unsigned int</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  xviexpsp  r,a,b
+		</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -8587,9 +8968,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> vector unsigned int</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  xviexpsp  r,a,b
+		</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -8602,54 +8985,64 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
 
     <simplesect xml:id="vec_insert4b">
       <title>vec_insert4b</title>
-      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <subtitle>Vector Insert Four Bytes</subtitle>
       <programlisting>
-      r = vec_insert4b (ARG1, ARG2, ARG3)
+      r = vec_insert4b (a, b, c)
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
       Inserts a word into a vector at a byte position.
       </para>
-      <para><emphasis role="bold">Result value: </emphasis>Let W be the first doubleword element of ARG1, truncated to 32 bits. The result vector is formed by inserting W into ARG2 at the byte position (0–12) specified by ARG3.</para>
+      <para><emphasis role="bold">Result value: </emphasis>Let W be the first
+      doubleword element of <emphasis role="bold">a</emphasis>, truncated to
+      32 bits. The result vector <emphasis role="bold">r</emphasis> is formed
+      by inserting W into <emphasis role="bold">b</emphasis> at the byte
+      position (0–12) specified by <emphasis
+      role="bold">c</emphasis>.</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
-      None.
+      The element and byte numbering within a register is left-to-right for
+      big-endian targets, and right-to-left for little-endian targets.
       </para>
       
       <table frame="all">
       <title>Supported type signatures for vec_insert4b</title>
-      <tgroup cols="6">
-          <colspec colname="c1" colwidth="20*" />
-          <colspec colname="c2" colwidth="20*" />
-          <colspec colname="c3" colwidth="20*" />
-          <colspec colname="c4" colwidth="20*" />
-          <colspec colname="c5" colwidth="20*" />
-          <colspec colname="c6" colwidth="20*" />
+      <tgroup cols="7">
+          <colspec colname="c1" colwidth="18*" />
+          <colspec colname="c2" colwidth="18*" />
+          <colspec colname="c3" colwidth="18*" />
+          <colspec colname="c4" colwidth="16*" />
+          <colspec colname="c5" colwidth="26*" />
+          <colspec colname="c6" colwidth="26*" />
+          <colspec colname="c7" colwidth="16*" />
           <thead>
             <row>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
                   <emphasis role="bold">r</emphasis>
                 </para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
-                  <emphasis role="bold">ARG1</emphasis>
+                  <emphasis role="bold">a</emphasis>
+                </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+                  <emphasis role="bold">b</emphasis>
+                </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+                  <emphasis role="bold">c</emphasis>
                 </para>
               </entry>
               <entry align="center">
-                <para>
-                  <emphasis role="bold">ARG2</emphasis>
-                </para>
+                <para><emphasis role="bold">Example LE Implementation</emphasis></para>
               </entry>
               <entry align="center">
-                <para>
-                  <emphasis role="bold">ARG3</emphasis>
-                </para>
+                <para><emphasis role="bold">Example BE Implementation</emphasis></para>
               </entry>
-              <entry align="center">
-                <para><emphasis role="bold">Example Implementation</emphasis></para>
-              </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para><emphasis role="bold">Restrictions</emphasis></para>
               </entry>
             </row>
@@ -8669,9 +9062,18 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> const int</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+ xxpermdi  t,a,a,1
+ xxinsertw b,t,12-c
+		</programlisting>
               </entry>
               <entry>
+                <programlisting>
+ xxinsertw b,t,c
+
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -8689,9 +9091,18 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> const int</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+ xxpermdi  t,a,a,1
+ xxinsertw b,t,12-c
+		</programlisting>
               </entry>
               <entry>
+                <programlisting>
+ xxinsertw b,t,c
+
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -8704,15 +9115,19 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
 
     <simplesect xml:id="vec_loge">
       <title>vec_loge</title>
-      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <subtitle>Vector Base-2 Logarithm Estimate</subtitle>
       <programlisting>
-      r = vec_loge (ARG1)
+      r = vec_loge (a)
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
-      Returns a vector containing estimates of the base-2 logarithms of the corresponding elements of the given vector.
+      Returns a vector containing estimates of the base-2 logarithms of the
+      corresponding elements of the source vector.
       </para>
-      <para><emphasis role="bold">Result value: </emphasis>Each element of the result contains the estimated value of the base-2 logarithm of the corresponding element of ARG1.</para>
+      <para><emphasis role="bold">Result value: </emphasis>Each element of
+      <emphasis role="bold">r</emphasis> contains an estimated value of the
+      base-2 logarithm of the corresponding element of <emphasis
+      role="bold">a</emphasis>.</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
@@ -8732,7 +9147,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               </entry>
               <entry align="center">
                 <para>
-                  <emphasis role="bold">ARG1</emphasis>
+                  <emphasis role="bold">a</emphasis>
                 </para>
               </entry>
               <entry align="center">
@@ -8749,7 +9164,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>vector float</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  vlogefp  r,a
+		</programlisting>
               </entry>
             </row>
           </tbody>
@@ -9667,7 +10084,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               <entry>
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -9995,7 +10412,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               <entry>
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -12916,7 +13333,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               <entry>
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -12989,7 +13406,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               <entry>
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -13402,7 +13819,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               <entry>
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -13416,7 +13833,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               <entry>
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -13430,7 +13847,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               <entry>
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -13444,7 +13861,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               <entry>
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -13458,7 +13875,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               <entry>
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -13472,7 +13889,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               <entry>
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -13854,7 +14271,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               <entry>
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -14535,7 +14952,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               <entry>
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -14795,7 +15212,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               <entry>
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -15109,7 +15526,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               <entry>
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -15129,7 +15546,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               <entry>
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -15216,7 +15633,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               <entry>
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -15236,7 +15653,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               <entry>
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -16088,7 +16505,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               <entry>
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -16108,7 +16525,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               <entry>
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -17622,7 +18039,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               <entry>
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -17950,7 +18367,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               <entry>
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -18524,7 +18941,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               <entry>
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -19503,7 +19920,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               <entry>
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -20518,7 +20935,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               <entry>
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -20535,7 +20952,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               <entry>
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -20808,7 +21225,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               <entry>
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -21013,7 +21430,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               <entry>
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -21557,7 +21974,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               <entry>
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -21837,7 +22254,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               <entry>
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -21915,7 +22332,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               <entry>
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -21932,7 +22349,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               <entry>
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -21949,7 +22366,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               <entry>
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -21966,7 +22383,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               <entry>
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -21983,7 +22400,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               <entry>
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -22000,7 +22417,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               <entry>
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -22017,7 +22434,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               <entry>
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -22034,7 +22451,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               <entry>
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -22051,7 +22468,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               <entry>
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -22068,7 +22485,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               <entry>
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -22085,7 +22502,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               <entry>
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -22102,7 +22519,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               <entry>
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -22119,7 +22536,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               <entry>
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -22197,7 +22614,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               <entry>
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -22774,7 +23191,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               <entry>
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -23099,7 +23516,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               <entry>
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -23186,7 +23603,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               <entry>
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -23206,7 +23623,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               <entry>
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -23226,7 +23643,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               <entry>
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -23246,7 +23663,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               <entry>
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -23266,7 +23683,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               <entry>
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -23286,7 +23703,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               <entry>
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -23306,7 +23723,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               <entry>
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -23326,7 +23743,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               <entry>
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -23346,7 +23763,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               <entry>
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -23366,7 +23783,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               <entry>
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -23386,7 +23803,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               <entry>
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -23406,7 +23823,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               <entry>
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -23426,7 +23843,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               <entry>
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
@@ -23513,7 +23930,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               <entry>
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
-              <entry>
+              <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
               </entry>
             </row>
