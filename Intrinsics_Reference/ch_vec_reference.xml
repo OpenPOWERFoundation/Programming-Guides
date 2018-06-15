@@ -16688,15 +16688,22 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
 
     <simplesect xml:id="vec_rint">
       <title>vec_rint</title>
-      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <subtitle>Vector Round to Nearest Integer</subtitle>
       <programlisting>
-      r = vec_rint (ARG1)
+      r = vec_rint (a)
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
-      Returns a vector containing the floating-point integral values nearest to the values of the corresponding elements of the given vector.
+      Returns a vector containing the floating-point integral values nearest
+      to the values of the corresponding elements of the given vector.
       </para>
-      <para><emphasis role="bold">Result value: </emphasis>Each element of the result contains the nearest representable floating-point integral value to the value of the corresponding element of ARG1. When an input element value is exactly between two integer values, the result value is selected based on the rounding mode specified by the Floating-Point Rounding Control field (RN) of the FPSCR register.</para>
+      <para><emphasis role="bold">Result value: </emphasis>Each element of
+      <emphasis role="bold">r</emphasis> contains the nearest representable
+      floating-point integral value to the value of the corresponding element
+      of <emphasis role="bold">a</emphasis>. When an input element value is
+      exactly between two integer values, the result value is selected based
+      on the rounding mode specified by the Floating-Point Rounding Control
+      field (RN) of the FPSCR register.</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
@@ -16716,7 +16723,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               </entry>
               <entry align="center">
                 <para>
-                  <emphasis role="bold">ARG1</emphasis>
+                  <emphasis role="bold">a</emphasis>
                 </para>
               </entry>
               <entry align="center">
@@ -16733,7 +16740,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>vector double</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  xvrdpic  r,a
+		</programlisting>
               </entry>
             </row>
             <row>
@@ -16744,7 +16753,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>vector float</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  xvrspic  r,a
+		</programlisting>
               </entry>
             </row>
           </tbody>
@@ -16756,15 +16767,19 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
 
     <simplesect xml:id="vec_rl">
       <title>vec_rl</title>
-      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <subtitle>Vector Rotate Left</subtitle>
       <programlisting>
-      r = vec_rl (ARG1, ARG2)
+      r = vec_rl (a, b)
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
       Rotates each element of a vector left by a given number of bits.
       </para>
-      <para><emphasis role="bold">Result value: </emphasis>Each element of the result is obtained by rotating the corresponding element of ARG1 left by the number of bits specified by the corresponding element of ARG2.</para>
+      <para><emphasis role="bold">Result value: </emphasis>Each element of
+      <emphasis role="bold">r</emphasis> is obtained by rotating the
+      corresponding element of <emphasis role="bold">a</emphasis> left by the
+      number of bits specified by the corresponding element of
+      <emphasis role="bold">b</emphasis>.</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
@@ -16785,12 +16800,12 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               </entry>
               <entry align="center">
                 <para>
-                  <emphasis role="bold">ARG1</emphasis>
+                  <emphasis role="bold">a</emphasis>
                 </para>
               </entry>
               <entry align="center">
                 <para>
-                  <emphasis role="bold">ARG2</emphasis>
+                  <emphasis role="bold">b</emphasis>
                 </para>
               </entry>
               <entry align="center">
@@ -16810,7 +16825,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> vector unsigned char</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  vrlb  r,a,b
+		</programlisting>
               </entry>
             </row>
             <row>
@@ -16824,7 +16841,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> vector unsigned char</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  vrlb  r,a,b
+		</programlisting>
               </entry>
             </row>
             <row>
@@ -16838,7 +16857,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> vector unsigned int</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  vrlw  r,a,b
+		</programlisting>
               </entry>
             </row>
             <row>
@@ -16852,7 +16873,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> vector unsigned int</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  vrlw  r,a,b
+		</programlisting>
               </entry>
             </row>
             <row>
@@ -16866,7 +16889,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> vector unsigned long long</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  vrld  r,a,b
+		</programlisting>
               </entry>
             </row>
             <row>
@@ -16880,7 +16905,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> vector unsigned long long</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  vrld  r,a,b
+		</programlisting>
               </entry>
             </row>
             <row>
@@ -16894,7 +16921,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> vector unsigned short</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  vrlh  r,a,b
+		</programlisting>
               </entry>
             </row>
             <row>
@@ -16908,7 +16937,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> vector unsigned short</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  vrlh  r,a,b
+		</programlisting>
               </entry>
             </row>
           </tbody>
