@@ -19469,7 +19469,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
 
     <simplesect xml:id="vec_slo">
       <title>vec_slo</title>
-      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <subtitle>Vector Shift Left by Octets</subtitle>
       <programlisting>
       r = vec_slo (ARG1, ARG2)
       </programlisting>
@@ -19477,9 +19477,17 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       <para><emphasis role="bold">Purpose:</emphasis>
       Left shifts a vector by a given number of bytes (octets).
       </para>
-      <para><emphasis role="bold">Result value: </emphasis>The result is the contents of ARG1, shifted left by the number of bytes specified by the most-significant nibble of the least-significant byte</para>
+      <para><emphasis role="bold">Result value: </emphasis>Vector <emphasis
+      role="bold">r</emphasis> receives the contents of <emphasis
+      role="bold">a</emphasis>, shifted left by the number of bytes specified
+      by bits 1:4 of the least-significant byte of <emphasis
+      role="bold">b</emphasis>.</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
-      None.
+      This intrinsic is <emphasis>not</emphasis> endian-neutral, so uses of
+      vec_sll in big-endian code must be rewritten for little-endian targets.
+      The shift count is in element 15 of <emphasis role="bold">b</emphasis>
+      for big-endian, but in element 0 of <emphasis role="bold">b</emphasis>
+      for little-endian.
       </para>
       
       <table frame="all">
@@ -19498,12 +19506,12 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               </entry>
               <entry align="center">
                 <para>
-                  <emphasis role="bold">ARG1</emphasis>
+                  <emphasis role="bold">a</emphasis>
                 </para>
               </entry>
               <entry align="center">
                 <para>
-                  <emphasis role="bold">ARG2</emphasis>
+                  <emphasis role="bold">b</emphasis>
                 </para>
               </entry>
               <entry align="center">
@@ -19523,7 +19531,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> vector signed char</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  vslo  r,a,b
+		</programlisting>
               </entry>
             </row>
             <row>
@@ -19537,7 +19547,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> vector unsigned char</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  vslo  r,a,b
+		</programlisting>
               </entry>
             </row>
             <row>
@@ -19551,7 +19563,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> vector signed char</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  vslo  r,a,b
+		</programlisting>
               </entry>
             </row>
             <row>
@@ -19565,7 +19579,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> vector unsigned char</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  vslo  r,a,b
+		</programlisting>
               </entry>
             </row>
             <row>
@@ -19579,7 +19595,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> vector signed char</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  vslo  r,a,b
+		</programlisting>
               </entry>
             </row>
             <row>
@@ -19593,7 +19611,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> vector unsigned char</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  vslo  r,a,b
+		</programlisting>
               </entry>
             </row>
             <row>
@@ -19607,7 +19627,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> vector signed char</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  vslo  r,a,b
+		</programlisting>
               </entry>
             </row>
             <row>
@@ -19621,7 +19643,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> vector unsigned char</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  vslo  r,a,b
+		</programlisting>
               </entry>
             </row>
             <row>
@@ -19635,7 +19659,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> vector signed char</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  vslo  r,a,b
+		</programlisting>
               </entry>
             </row>
             <row>
@@ -19649,7 +19675,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> vector unsigned char</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  vslo  r,a,b
+		</programlisting>
               </entry>
             </row>
             <row>
@@ -19663,7 +19691,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> vector signed char</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  vslo  r,a,b
+		</programlisting>
               </entry>
             </row>
             <row>
@@ -19677,7 +19707,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> vector unsigned char</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  vslo  r,a,b
+		</programlisting>
               </entry>
             </row>
             <row>
@@ -19691,7 +19723,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> vector signed char</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  vslo  r,a,b
+		</programlisting>
               </entry>
             </row>
             <row>
@@ -19705,7 +19739,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> vector unsigned char</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  vslo  r,a,b
+		</programlisting>
               </entry>
             </row>
             <row>
@@ -19719,7 +19755,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> vector signed char</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  vslo  r,a,b
+		</programlisting>
               </entry>
             </row>
             <row>
@@ -19733,7 +19771,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> vector unsigned char</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  vslo  r,a,b
+		</programlisting>
               </entry>
             </row>
             <row>
@@ -19747,7 +19787,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> vector signed char</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  vslo  r,a,b
+		</programlisting>
               </entry>
             </row>
             <row>
@@ -19761,7 +19803,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> vector unsigned char</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  vslo  r,a,b
+		</programlisting>
               </entry>
             </row>
             <row>
@@ -19775,7 +19819,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> vector signed char</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  vslo  r,a,b
+		</programlisting>
               </entry>
             </row>
             <row>
@@ -19789,7 +19835,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> vector unsigned char</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  vslo  r,a,b
+		</programlisting>
               </entry>
             </row>
           </tbody>
@@ -19801,17 +19849,29 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
 
     <simplesect xml:id="vec_slv">
       <title>vec_slv</title>
-      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <subtitle>Vector Shift Left Variable</subtitle>
       <programlisting>
-      r = vec_slv (ARG1, ARG2)
+      r = vec_slv (a, b)
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
       Left-shifts a vector by a varying number of bits by element.
       </para>
-      <para><emphasis role="bold">Result value: </emphasis>For each integer 0</para>
+      <para><emphasis role="bold">Result value: </emphasis>Let <emphasis
+      role="bold">v</emphasis> be a 17-byte vector formed from <emphasis
+      role="bold">a</emphasis> in bytes [0:15] and a zero byte in element 16.
+      Then each byte element <emphasis>i</emphasis> of <emphasis
+      role="bold">r</emphasis> is determined as follows.  The start bit
+      <emphasis>sb</emphasis> is obtained from bits 5:7 of byte element
+      <emphasis>i</emphasis> of <emphasis role="bold">a</emphasis>.  Then
+      the contents of bits <emphasis>sb</emphasis>:<emphasis>sb+7</emphasis>
+      of the halfword in byte elements
+      <emphasis>i</emphasis>:<emphasis>i+1</emphasis> of <emphasis
+      role="bold">v</emphasis> are placed into byte element
+      <emphasis>i</emphasis> of <emphasis role="bold">r</emphasis>.</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
-      None.
+      All bit and byte element numbers are specified in big-endian order.
+      This intrinsic is <emphasis>not</emphasis> endian-neutral.
       </para>
       
       <table frame="all">
@@ -19824,25 +19884,25 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
           <colspec colname="c5" colwidth="20*" />
           <thead>
             <row>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
                   <emphasis role="bold">r</emphasis>
                 </para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
-                  <emphasis role="bold">ARG1</emphasis>
+                  <emphasis role="bold">a</emphasis>
                 </para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
-                  <emphasis role="bold">ARG2</emphasis>
+                  <emphasis role="bold">b</emphasis>
                 </para>
               </entry>
               <entry align="center">
                 <para><emphasis role="bold">Example Implementation</emphasis></para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para><emphasis role="bold">Restrictions</emphasis></para>
               </entry>
             </row>
@@ -19859,7 +19919,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> vector unsigned char</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  vslv  r,a,b
+		</programlisting>
               </entry>
               <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
@@ -19874,48 +19936,63 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
 
     <simplesect xml:id="vec_splat">
       <title>vec_splat</title>
-      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <subtitle>Vector Splat</subtitle>
       <programlisting>
-      r = vec_splat (ARG1, ARG2)
+      r = vec_splat (a, b)
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
       Returns a vector that has all of its elements set to a given value.
       </para>
-      <para><emphasis role="bold">Result value: </emphasis>The value of each element of the result is the value of the element of ARG1 specified by ARG2, which should be an element number less than the number of elements supported for the respective ARG1 type.</para>
+      <para><emphasis role="bold">Result value: </emphasis>The value of each
+      element of <emphasis role="bold">r</emphasis> is the value of the
+      element of <emphasis role="bold">a</emphasis> specified by <emphasis
+      role="bold">b</emphasis>, which must be an element number less than the
+      number of elements supported for <emphasis role="bold">a</emphasis>'s
+      type.</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
-      None.
+      The element numbering within a register is left-to-right for big-endian
+      targets, and right-to-left for little-endian targets.
       </para>
-      
+      <para><emphasis role="bold">Notes:</emphasis>
+      No Power compilers yet support the vector _Float16 type, so those
+      interfaces are currently deferred.</para>
+
       <table frame="all">
       <title>Supported type signatures for vec_splat</title>
-      <tgroup cols="5">
+      <tgroup cols="6">
           <colspec colname="c1" colwidth="20*" />
           <colspec colname="c2" colwidth="20*" />
-          <colspec colname="c3" colwidth="20*" />
-          <colspec colname="c4" colwidth="20*" />
+          <colspec colname="c3" colwidth="17*" />
+          <colspec colname="c4" colwidth="26*" />
           <colspec colname="c5" colwidth="20*" />
+          <colspec colname="c6" colwidth="17*" />
           <thead>
             <row>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
                   <emphasis role="bold">r</emphasis>
                 </para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
-                  <emphasis role="bold">ARG1</emphasis>
+                  <emphasis role="bold">a</emphasis>
+                </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+                  <emphasis role="bold">b</emphasis>
                 </para>
               </entry>
               <entry align="center">
-                <para>
-                  <emphasis role="bold">ARG2</emphasis>
-                </para>
+                <para><emphasis role="bold">Example LE
+		Implementation</emphasis></para>
               </entry>
               <entry align="center">
-                <para><emphasis role="bold">Example Implementation</emphasis></para>
+                <para><emphasis role="bold">Example BE
+		Implementation</emphasis></para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para><emphasis role="bold">Restrictions</emphasis></para>
               </entry>
             </row>
@@ -19932,7 +20009,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> const int</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+ vspltb r,a,15-b
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+ vspltb r,a,b
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
@@ -19949,7 +20033,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> const int</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+ vspltb r,a,15-b
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+ vspltb r,a,b
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
@@ -19966,7 +20057,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> const int</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+ vspltb r,a,15-b
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+ vspltb r,a,b
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
@@ -19983,7 +20081,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> const int</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+ xxspltw r,a,3-b
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+ xxspltw r,a,b
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
@@ -20000,7 +20105,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> const int</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+ xxspltw r,a,3-b
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+ xxspltw r,a,b
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
@@ -20017,7 +20129,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> const int</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+ xxspltw r,a,3-b
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+ xxspltw r,a,b
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
@@ -20034,7 +20153,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> const int</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+ xxpermdi r,a,a,(1-b)*3
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+ xxpermdi r,a,a,b
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
@@ -20051,7 +20177,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> const int</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+ xxpermdi r,a,a,(1-b)*3
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+ xxpermdi r,a,a,b
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
@@ -20068,7 +20201,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> const int</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+ xxpermdi r,a,a,(1-b)*3
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+ xxpermdi r,a,a,b
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
@@ -20085,7 +20225,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> const int</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+ vsplth r,a,7-b
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+ vsplth r,a,b
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
@@ -20102,7 +20249,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> const int</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+ vsplth r,a,7-b
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+ vsplth r,a,b
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
@@ -20119,7 +20273,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> const int</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+ vsplth r,a,7-b
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+ vsplth r,a,b
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
@@ -20136,7 +20297,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> const int</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+ vsplth r,a,7-b
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+ vsplth r,a,b
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
@@ -20153,7 +20321,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> const int</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+ xxpermdi r,a,a,(1-b)*3
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+ xxpermdi r,a,a,b
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
@@ -20170,7 +20345,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> const int</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+ xxspltw r,a,3-b
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+ xxspltw r,a,b
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
@@ -20187,10 +20369,17 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> const int</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+ vsplth r,a,7-b
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+ vsplth r,a,b
+		</programlisting>
               </entry>
               <entry align="center" valign="middle">
-                <para>ISA 3.0 or later</para>
+                <para>Deferred</para>
               </entry>
             </row>
           </tbody>
@@ -20202,15 +20391,18 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
 
     <simplesect xml:id="vec_splat_s8">
       <title>vec_splat_s8</title>
-      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <subtitle>Vector Splat to Signed Byte</subtitle>
       <programlisting>
-      r = vec_splat_s8 (ARG1)
+      r = vec_splat_s8 (a)
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
       Returns a vector with all elements equal to the given value.
       </para>
-      <para><emphasis role="bold">Result value: </emphasis>The bit pattern of ARG1 is interpreted as a signed value. Each element of the result is given this value.</para>
+      <para><emphasis role="bold">Result value: </emphasis>
+      Each element of <emphasis role="bold">r</emphasis> is given the
+      sign-extended 5-bit value of <emphasis role="bold">a</emphasis>.
+      The range of this value is [-16:15].</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
@@ -20230,7 +20422,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               </entry>
               <entry align="center">
                 <para>
-                  <emphasis role="bold">ARG1</emphasis>
+                  <emphasis role="bold">a</emphasis>
                 </para>
               </entry>
               <entry align="center">
@@ -20244,10 +20436,12 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>vector signed char</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>const int</para>
+                <para>5-bit signed literal</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  vspltisb  r,a
+		</programlisting>
               </entry>
             </row>
           </tbody>
@@ -20259,15 +20453,18 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
 
     <simplesect xml:id="vec_splat_s16">
       <title>vec_splat_s16</title>
-      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <subtitle>Vector Splat to Signed Halfword</subtitle>
       <programlisting>
-      r = vec_splat_s16 (ARG1)
+      r = vec_splat_s16 (a)
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
       Returns a vector with all elements equal to the given value.
       </para>
-      <para><emphasis role="bold">Result value: </emphasis>Each element of the result has the value of ARG1.</para>
+      <para><emphasis role="bold">Result value: </emphasis>
+      Each element of <emphasis role="bold">r</emphasis> is given the
+      sign-extended 5-bit value of <emphasis role="bold">a</emphasis>.
+      The range of this value is [-16:15].</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
@@ -20287,7 +20484,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               </entry>
               <entry align="center">
                 <para>
-                  <emphasis role="bold">ARG1</emphasis>
+                  <emphasis role="bold">a</emphasis>
                 </para>
               </entry>
               <entry align="center">
@@ -20301,10 +20498,12 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>vector signed short</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>const int</para>
+                <para>5-bit signed literal</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  vspltish  r,a
+		</programlisting>
               </entry>
             </row>
           </tbody>
@@ -20316,15 +20515,18 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
 
     <simplesect xml:id="vec_splat_s32">
       <title>vec_splat_s32</title>
-      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <subtitle>Vector Splat to Signed Word</subtitle>
       <programlisting>
-      r = vec_splat_s32 (ARG1)
+      r = vec_splat_s32 (a)
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
       Returns a vector with all elements equal to the given value.
       </para>
-      <para><emphasis role="bold">Result value: </emphasis>Each element of the result has the value of ARG1.</para>
+      <para><emphasis role="bold">Result value: </emphasis>
+      Each element of <emphasis role="bold">r</emphasis> is given the
+      sign-extended 5-bit value of <emphasis role="bold">a</emphasis>.
+      The range of this value is [-16:15].</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
@@ -20344,7 +20546,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               </entry>
               <entry align="center">
                 <para>
-                  <emphasis role="bold">ARG1</emphasis>
+                  <emphasis role="bold">a</emphasis>
                 </para>
               </entry>
               <entry align="center">
@@ -20358,10 +20560,12 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>vector signed int</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>const int</para>
+                <para>5-bit signed literal</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  vspltisw  r,a
+		</programlisting>
               </entry>
             </row>
           </tbody>
@@ -20373,15 +20577,20 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
 
     <simplesect xml:id="vec_splat_u8">
       <title>vec_splat_u8</title>
-      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <subtitle>Vector Splat to Unsigned Byte</subtitle>
       <programlisting>
-      r = vec_splat_u8 (ARG1)
+      r = vec_splat_u8 (a)
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
       Returns a vector with all elements equal to the given value.
       </para>
-      <para><emphasis role="bold">Result value: </emphasis>The bit pattern of ARG1 is interpreted as an unsigned value. Each element of the result is given this value.</para>
+      <para><emphasis role="bold">Result value: </emphasis>
+      The 5-bit signed value of <emphasis role="bold">a</emphasis> is
+      sign-extended to a byte and the resulting value is cast to an
+      unsigned char.  This value is placed in each element of
+      <emphasis role="bold">r</emphasis>.  The range of the original value is
+      [-16:15].</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
@@ -20401,7 +20610,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               </entry>
               <entry align="center">
                 <para>
-                  <emphasis role="bold">ARG1</emphasis>
+                  <emphasis role="bold">a</emphasis>
                 </para>
               </entry>
               <entry align="center">
@@ -20415,10 +20624,12 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>vector unsigned char</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>const int</para>
+                <para>5-bit signed literal</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  vspltisb  r,a
+		</programlisting>
               </entry>
             </row>
           </tbody>
@@ -20430,15 +20641,20 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
 
     <simplesect xml:id="vec_splat_u16">
       <title>vec_splat_u16</title>
-      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <subtitle>Vector Splat to Unsigned Halfword</subtitle>
       <programlisting>
-      r = vec_splat_u16 (ARG1)
+      r = vec_splat_u16 (a)
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
       Returns a vector with all elements equal to the given value.
       </para>
-      <para><emphasis role="bold">Result value: </emphasis>The bit pattern of ARG1 is interpreted as an unsigned value. Each element of the result is given this value.</para>
+      <para><emphasis role="bold">Result value: </emphasis>
+      The 5-bit signed value of <emphasis role="bold">a</emphasis> is
+      sign-extended to a halfword and the resulting value is cast to an
+      unsigned short.  This value is placed in each element of
+      <emphasis role="bold">r</emphasis>.  The range of the original value is
+      [-16:15].</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
@@ -20458,7 +20674,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               </entry>
               <entry align="center">
                 <para>
-                  <emphasis role="bold">ARG1</emphasis>
+                  <emphasis role="bold">a</emphasis>
                 </para>
               </entry>
               <entry align="center">
@@ -20472,10 +20688,12 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>vector unsigned short</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>const int</para>
+                <para>5-bit signed literal</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  vspltish  r,a
+		</programlisting>
               </entry>
             </row>
           </tbody>
@@ -20487,15 +20705,20 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
 
     <simplesect xml:id="vec_splat_u32">
       <title>vec_splat_u32</title>
-      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <subtitle>Vector Splat to Unsigned Word</subtitle>
       <programlisting>
-      r = vec_splat_u32 (ARG1)
+      r = vec_splat_u32 (a)
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
       Returns a vector with all elements equal to the given value.
       </para>
-      <para><emphasis role="bold">Result value: </emphasis>The bit pattern of ARG1 is interpreted as an unsigned value. Each element of the result is given this value.</para>
+      <para><emphasis role="bold">Result value: </emphasis>
+      The 5-bit signed value of <emphasis role="bold">a</emphasis> is
+      sign-extended to a word and the resulting value is cast to an
+      unsigned int.  This value is placed in each element of
+      <emphasis role="bold">r</emphasis>.  The range of the original value is
+      [-16:15].</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
@@ -20515,7 +20738,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               </entry>
               <entry align="center">
                 <para>
-                  <emphasis role="bold">ARG1</emphasis>
+                  <emphasis role="bold">a</emphasis>
                 </para>
               </entry>
               <entry align="center">
@@ -20529,10 +20752,12 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>vector unsigned int</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>const int</para>
+                <para>5-bit signed literal</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  vspltisw  r,a
+		</programlisting>
               </entry>
             </row>
           </tbody>
@@ -20544,18 +20769,24 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
 
     <simplesect xml:id="vec_splats">
       <title>vec_splats</title>
-      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <subtitle>Vector Splat Scalar</subtitle>
       <programlisting>
-      r = vec_splats (ARG1)
+      r = vec_splats (a)
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
-      Returns a vector with the value of each element set to ARG1.
+      Returns a vector with the value of each element set to the value of
+      the scalar input parameter.
       </para>
-      <para><emphasis role="bold">Result value: </emphasis>Each element of the result is set to the value of the scalar input parameter.</para>
+      <para><emphasis role="bold">Result value: </emphasis>Each element of
+      <emphasis role="bold">r</emphasis> is set to the value of <emphasis
+      role="bold">a</emphasis>.</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
+      <para><emphasis role="bold">Notes:</emphasis>
+      No Power compilers yet support the vector _Float16 type, so that
+      interface is currently deferred.</para>
       
       <table frame="all">
       <title>Supported type signatures for vec_splats</title>
@@ -20573,7 +20804,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               </entry>
               <entry align="center">
                 <para>
-                  <emphasis role="bold">ARG1</emphasis>
+                  <emphasis role="bold">a</emphasis>
                 </para>
               </entry>
               <entry align="center">
@@ -20593,7 +20824,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>signed char</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  rlwinm  t,a,0,0xff
+  mtvsrd  u,t
+  vspltb  r,u,7
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
@@ -20607,7 +20842,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>unsigned char</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  rlwinm  t,a,0,0xff
+  mtvsrd  u,t
+  vspltb  r,u,7
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
@@ -20621,7 +20860,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>signed int</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  mtvsrd  t,a
+  vspltb  r,t,7
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
@@ -20635,7 +20877,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>unsigned int</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  mtvsrd  t,a
+  vspltb  r,t,7
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
@@ -20649,7 +20894,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>signed __int128</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  mtvsrwz  t,a
+  xxspltw  r,t,1
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
@@ -20663,7 +20911,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>unsigned __int128</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  mtvsrwz  t,a
+  xxspltw  r,t,1
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
@@ -20677,7 +20928,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>signed long long</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  mtvsrd    t,a
+  xxpermdi  r,t,t,0
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
@@ -20691,7 +20945,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>unsigned long long</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  mtvsrd    t,a
+  xxpermdi  r,t,t,0
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
@@ -20705,7 +20962,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>signed short</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  rlwinm  t,a,0,0xffff
+  mtvsrd  u,t
+  vsplth  r,u,3
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
@@ -20719,7 +20980,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>unsigned short</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  rlwinm  t,a,0,0xffff
+  mtvsrd  u,t
+  vsplth  r,u,3
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
@@ -20733,7 +20998,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>double</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  xxpermdi  r,a,a,0
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
@@ -20747,7 +21014,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>float</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  xxscvdpspn  t,a
+  xxspltw     r,t,0
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
@@ -20764,7 +21034,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <programlisting>sample implementation TBD</programlisting>
               </entry>
               <entry align="center" valign="middle">
-                <para>ISA 3.0 or later</para>
+                <para>Deferred</para>
               </entry>
             </row>
           </tbody>
@@ -20776,15 +21046,18 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
 
     <simplesect xml:id="vec_sqrt">
       <title>vec_sqrt</title>
-      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <subtitle>Vector Square Root</subtitle>
       <programlisting>
-      r = vec_sqrt (ARG1)
+      r = vec_sqrt (a)
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
-      Returns a vector containing the square root of each element in the given vector.
+      Returns a vector containing the square root of each element in the
+      source vector.
       </para>
-      <para><emphasis role="bold">Result value: </emphasis>Each element of the result vector is the square root of the corresponding element of ARG1.</para>
+      <para><emphasis role="bold">Result value: </emphasis>Each element of
+      <emphasis role="bold">r</emphasis> is the square root of the
+      corresponding element of <emphasis role="bold">a</emphasis>.</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
@@ -20804,7 +21077,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               </entry>
               <entry align="center">
                 <para>
-                  <emphasis role="bold">ARG1</emphasis>
+                  <emphasis role="bold">a</emphasis>
                 </para>
               </entry>
               <entry align="center">
@@ -20821,7 +21094,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>vector double</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  xvsqrtdp  r,a
+		</programlisting>
               </entry>
             </row>
             <row>
@@ -20832,7 +21107,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>vector float</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  xvsqrtsp  r,a
+		</programlisting>
               </entry>
             </row>
           </tbody>
