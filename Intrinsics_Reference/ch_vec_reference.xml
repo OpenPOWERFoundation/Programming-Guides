@@ -22093,7 +22093,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       start bit <emphasis>sb</emphasis> is obtained from bits 5:7 of
       byte element <emphasis>i</emphasis> of <emphasis
       role="bold">a</emphasis>.  Then the contents of bits
-      (8-<emphasis>sb</emphasis>):(15-<emphasis>sb</emphasis>) of the
+      (8 &#8211; <emphasis>sb</emphasis>):(15 &#8211; <emphasis>sb</emphasis>) of the
       halfword in byte elements <emphasis>i</emphasis>:<emphasis>i</emphasis>+1
       of <emphasis role="bold">v</emphasis> are placed into byte element
       <emphasis>i</emphasis> of <emphasis role="bold">r</emphasis>.</para>
@@ -22614,10 +22614,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               </entry>
               <entry>
                 <programlisting>
- vspltisw t,1
- vsubuwm  u,a,b
- xxland   v,c,t
- vsubuwm  r,u,v
+  vspltisw  t,1
+  vsubuwm   u,a,b
+  xxland    v,c,t
+  vsubuwm   r,u,v
 		</programlisting>
               </entry>
             </row>
@@ -22636,10 +22636,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               </entry>
               <entry>
                 <programlisting>
- vspltisw t,1
- vsubuwm  u,a,b
- xxland   v,c,t
- vsubuwm  r,u,v
+  vspltisw  t,1
+  vsubuwm   u,a,b
+  xxland    v,c,t
+  vsubuwm   r,u,v
 		</programlisting>
               </entry>
             </row>
@@ -22658,7 +22658,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               </entry>
               <entry>
                 <programlisting>
- vsubeuqm r,a,b,c
+  vsubeuqm  r,a,b,c
 		</programlisting>
               </entry>
             </row>
@@ -22677,7 +22677,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               </entry>
               <entry>
                 <programlisting>
- vsubeuqm r,a,b,c
+  vsubeuqm  r,a,b,c
 		</programlisting>
               </entry>
             </row>
@@ -22690,15 +22690,24 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
 
     <simplesect xml:id="vec_subec">
       <title>vec_subec</title>
-      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <subtitle>Vector Subtract Extended Carryout</subtitle>
       <programlisting>
-      r = vec_subec (ARG1, ARG2, ARG3)
+      r = vec_subec (a, b, c)
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
-      Returns a vector containing the carries produced by first elementwise subtracting vector ARG2 from vector ARG1, and then elementwise adding vector ARG3 to the difference. ARG3 is a carry vector, with each element having a value of 0 or 1.
+      Returns a vector containing the carries produced by subtracting one
+      vector from another, then adding a third vector to the difference.  The
+      third vector is a carry vector, with each element having a value of 0
+      or 1.
       </para>
-      <para><emphasis role="bold">Result value: </emphasis>The value of each element of the result is the carry produced by subtracting the corresponding element of ARG2 from the corresponding element of ARG1, and then adding the carry specified in the corresponding element of ARG3 (1 if there is a carry, 0 otherwise).</para>
+      <para><emphasis role="bold">Result value: </emphasis>The value of each
+      element of <emphasis role="bold">r</emphasis> is the carry produced by
+      subtracting the corresponding element of <emphasis
+      role="bold">b</emphasis> from the corresponding element of <emphasis
+      role="bold">a</emphasis>, and then adding the carry specified in the
+      corresponding element of <emphasis role="bold">c</emphasis> (1 if there
+      is a carry, 0 otherwise).</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
@@ -22713,24 +22722,24 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
           <colspec colname="c5" colwidth="20*" />
           <thead>
             <row>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
                   <emphasis role="bold">r</emphasis>
                 </para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
-                  <emphasis role="bold">ARG1</emphasis>
+                  <emphasis role="bold">a</emphasis>
                 </para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
-                  <emphasis role="bold">ARG2</emphasis>
+                  <emphasis role="bold">b</emphasis>
                 </para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
-                  <emphasis role="bold">ARG3</emphasis>
+                  <emphasis role="bold">c</emphasis>
                 </para>
               </entry>
               <entry align="center">
@@ -22753,7 +22762,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> vector signed int</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  vspltisw  t,1
+  xxland    u,c,t
+  vsubuwm   v,a,b
+  vsubcuw   w,a,b
+  vsubcuw   x,v,u
+  xxlor     r,w,x
+		</programlisting>
               </entry>
             </row>
             <row>
@@ -22770,7 +22786,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> vector unsigned int</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  vspltisw  t,1
+  xxland    u,c,t
+  vsubuwm   v,a,b
+  vsubcuw   w,a,b
+  vsubcuw   x,v,u
+  xxlor     r,w,x
+		</programlisting>
               </entry>
             </row>
             <row>
@@ -22787,7 +22810,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> vector signed __int128</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  vsubecuq  r,a,b,c
+		</programlisting>
               </entry>
             </row>
             <row>
@@ -22804,7 +22829,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> vector unsigned __int128</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  vsubecuq  r,a,b,c
+		</programlisting>
               </entry>
             </row>
           </tbody>
@@ -22816,15 +22843,20 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
 
     <simplesect xml:id="vec_subs">
       <title>vec_subs</title>
-      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <subtitle>Vector Subtract Saturated</subtitle>
       <programlisting>
-      r = vec_subs (ARG1, ARG2)
+      r = vec_subs (a, b)
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
-      Returns a vector containing the saturated differences of each set of corresponding elements of the given vectors.
+      Returns a vector containing the saturated differences of each set of
+      corresponding elements of the source vectors.
       </para>
-      <para><emphasis role="bold">Result value: </emphasis>The value of each element of the result is the saturated result of subtracting the value of the corresponding element of ARG2 from the value of the corresponding element of ARG1.</para>
+      <para><emphasis role="bold">Result value: </emphasis>The value of each
+      element of <emphasis role="bold">r</emphasis> is the saturated result of
+      subtracting the value of the corresponding element of <emphasis
+      role="bold">b</emphasis> from the value of the corresponding element of
+      <emphasis role="bold">a</emphasis>.</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
@@ -22845,12 +22877,12 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               </entry>
               <entry align="center">
                 <para>
-                  <emphasis role="bold">ARG1</emphasis>
+                  <emphasis role="bold">a</emphasis>
                 </para>
               </entry>
               <entry align="center">
                 <para>
-                  <emphasis role="bold">ARG2</emphasis>
+                  <emphasis role="bold">b</emphasis>
                 </para>
               </entry>
               <entry align="center">
@@ -22870,7 +22902,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> vector signed char</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  vsubsbs  r,a,b
+		</programlisting>
               </entry>
             </row>
             <row>
@@ -22884,7 +22918,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> vector unsigned char</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  vsububs  r,a,b
+		</programlisting>
               </entry>
             </row>
             <row>
@@ -22898,7 +22934,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> vector signed int</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  vsubsws  r,a,b
+		</programlisting>
               </entry>
             </row>
             <row>
@@ -22912,7 +22950,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> vector unsigned int</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  vsubuws  r,a,b
+		</programlisting>
               </entry>
             </row>
             <row>
@@ -22926,7 +22966,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> vector signed short</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  vsubshs  r,a,b
+		</programlisting>
               </entry>
             </row>
             <row>
@@ -22940,7 +22982,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> vector unsigned short</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  vsubuhs  r,a,b
+		</programlisting>
               </entry>
             </row>
           </tbody>
@@ -22952,45 +22996,61 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
 
     <simplesect xml:id="vec_sum2s">
       <title>vec_sum2s</title>
-      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <subtitle>Vector Sum Across Half</subtitle>
       <programlisting>
-      r = vec_sum2s (ARG1, ARG2)
+      r = vec_sum2s (a, b)
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
-      Returns a vector containing the results of performing a sum-across-doublewords vector operation on the given vectors.
+      Returns a vector containing the results of performing a sum-across
+      operation within each doubleword of the first source vector together with
+      accumulated results in the second source vector.
       </para>
-      <para><emphasis role="bold">Result value: </emphasis>The first and third element of the result are 0. The second element of the result contains the saturated sum of the first and second elements of ARG1 and the second element of ARG2. The fourth element of the result contains the saturated sum of the third and fourth elements of ARG1 and the fourth element of ARG2.</para>
+      <para><emphasis role="bold">Result value: </emphasis>Elements 0 and 2
+      of <emphasis role="bold">r</emphasis> are 0. Element 1 of <emphasis
+      role="bold">r</emphasis> contains the saturated sum of elements 0 and 1
+      of <emphasis role="bold">a</emphasis> and element 1 of <emphasis
+      role="bold">b</emphasis>. Element 3 of <emphasis
+      role="bold">r</emphasis> contains the saturated sum of elements 2 and 3
+      of <emphasis role="bold">a</emphasis> and element 3 of <emphasis
+      role="bold">b</emphasis>.</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
-      None.
+      The element numbering within a register is left-to-right for big-endian
+      targets, and right-to-left for little-endian targets.
       </para>
       
       <table frame="all">
       <title>Supported type signatures for vec_sum2s</title>
-      <tgroup cols="4">
+      <tgroup cols="5">
           <colspec colname="c1" colwidth="20*" />
           <colspec colname="c2" colwidth="20*" />
           <colspec colname="c3" colwidth="20*" />
           <colspec colname="c4" colwidth="20*" />
+          <colspec colname="c5" colwidth="20*" />
           <thead>
             <row>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
                   <emphasis role="bold">r</emphasis>
                 </para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
-                  <emphasis role="bold">ARG1</emphasis>
+                  <emphasis role="bold">a</emphasis>
+                </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+                  <emphasis role="bold">b</emphasis>
                 </para>
               </entry>
               <entry align="center">
-                <para>
-                  <emphasis role="bold">ARG2</emphasis>
-                </para>
+                <para><emphasis role="bold">Example LE
+		Implementation</emphasis></para>
               </entry>
               <entry align="center">
-                <para><emphasis role="bold">Example Implementation</emphasis></para>
+                <para><emphasis role="bold">Example BE
+		Implementation</emphasis></para>
               </entry>
             </row>
           </thead>
@@ -23006,7 +23066,18 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> vector signed int</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  vsldoi    t,b,b,12
+  vsum2sws  u,a,t
+  vsldoi    r,u,u,4
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+
+  vsum2sws  r,a,b
+
+		</programlisting>
               </entry>
             </row>
           </tbody>
@@ -23018,45 +23089,64 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
 
     <simplesect xml:id="vec_sum4s">
       <title>vec_sum4s</title>
-      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <subtitle>Vector Sum Across Quarter</subtitle>
       <programlisting>
-      r = vec_sum4s (ARG1, ARG2)
+      r = vec_sum4s (a, b)
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
-      Returns a vector containing the results of performing a sum-across-words vector operation on the given vectors.
+      Returns a vector containing the results of performing a sum-across
+      operation within each word of the first source vector together with
+      accumulated results in the second source vector.
       </para>
-      <para><emphasis role="bold">Result value: </emphasis>Assume that the elements of each vector are numbered beginning with 0. If ARG1 is a vector signed char vector or a vector unsigned char vector, then let m be 4. Otherwise, let m be 2. For each element n of the result vector, the value is obtained by adding elements mn through mn + m – 1 of ARG1 and element n of ARG2 using saturated addition.</para>
+      <para><emphasis role="bold">Result value: </emphasis>If <emphasis
+      role="bold">a</emphasis> is a vector of signed or unsigned char, then
+      let <emphasis>m</emphasis> be 4; otherwise, let <emphasis>m</emphasis>
+      be 2. For each element <emphasis>n</emphasis> of the result vector, the
+      value is obtained by adding elements <emphasis>mn</emphasis> through
+      <emphasis>mn</emphasis> + <emphasis>m</emphasis> – 1 of <emphasis
+      role="bold">a</emphasis> and element <emphasis>n</emphasis> of <emphasis
+      role="bold">b</emphasis> using saturated addition.</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
-      None.
+      The element numbering within a register is left-to-right for big-endian
+      targets, and right-to-left for little-endian targets.
       </para>
+      <para><emphasis role="bold">Notes:</emphasis>
+      <emphasis>Issue #438 in the power-gcc github tracker has been opened
+      for wrong little-endian behavior.</emphasis></para>
       
       <table frame="all">
       <title>Supported type signatures for vec_sum4s</title>
-      <tgroup cols="4">
+      <tgroup cols="5">
           <colspec colname="c1" colwidth="20*" />
           <colspec colname="c2" colwidth="20*" />
           <colspec colname="c3" colwidth="20*" />
           <colspec colname="c4" colwidth="20*" />
+          <colspec colname="c5" colwidth="20*" />
           <thead>
             <row>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
                   <emphasis role="bold">r</emphasis>
                 </para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
                   <emphasis role="bold">ARG1</emphasis>
                 </para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
                   <emphasis role="bold">ARG2</emphasis>
                 </para>
               </entry>
               <entry align="center">
-                <para><emphasis role="bold">Example Implementation</emphasis></para>
+                <para><emphasis role="bold">Example LE
+		Implementation</emphasis></para>
+              </entry>
+              <entry align="center">
+                <para><emphasis role="bold">Example BE
+		Implementation</emphasis></para>
               </entry>
             </row>
           </thead>
@@ -23069,10 +23159,17 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>vector signed char</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> vector signed int</para>
+                <para>vector signed int</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  TBD
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+  vsum4sbs  r,a,b
+		</programlisting>
               </entry>
             </row>
             <row>
@@ -23083,10 +23180,17 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>vector signed short</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> vector signed int</para>
+                <para>vector signed int</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  TBD
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+  vsum4shs  r,a,b
+		</programlisting>
               </entry>
             </row>
             <row>
@@ -23097,10 +23201,17 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>vector unsigned char</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> vector unsigned int</para>
+                <para>vector unsigned int</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  TBD
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+  vsum4ubs  r,a,b
+		</programlisting>
               </entry>
             </row>
           </tbody>
@@ -23112,45 +23223,57 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
 
     <simplesect xml:id="vec_sums">
       <title>vec_sums</title>
-      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <subtitle>Vector Sum Across</subtitle>
       <programlisting>
-      r = vec_sums (ARG1, ARG2)
+      r = vec_sums (a, b)
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
-      Returns a vector containing the results of performing a sum across vector operation on the given vectors.
+      Returns a vector containing the results of performing a sum-across
+      operation on the first source vector together with accumulated results
+      in the second source vector.
       </para>
-      <para><emphasis role="bold">Result value: </emphasis>The first three elements of the result are 0. The fourth element is the saturated sum of all the elements of ARG1 and the fourth element of ARG2.</para>
+      <para><emphasis role="bold">Result value: </emphasis>Elements 0, 1, and 2
+      of <emphasis role="bold">r</emphasis> are 0. Element 3 is the saturated
+      sum of all the elements of <emphasis role="bold">a</emphasis> and
+      element 3 of <emphasis role="bold">b</emphasis>.</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
-      None.
+      The element numbering within a register is left-to-right for big-endian
+      targets, and right-to-left for little-endian targets.
       </para>
       
       <table frame="all">
       <title>Supported type signatures for vec_sums</title>
-      <tgroup cols="4">
+      <tgroup cols="5">
           <colspec colname="c1" colwidth="20*" />
           <colspec colname="c2" colwidth="20*" />
           <colspec colname="c3" colwidth="20*" />
           <colspec colname="c4" colwidth="20*" />
+          <colspec colname="c5" colwidth="20*" />
           <thead>
             <row>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
                   <emphasis role="bold">r</emphasis>
                 </para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
-                  <emphasis role="bold">ARG1</emphasis>
+                  <emphasis role="bold">a</emphasis>
+                </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+                  <emphasis role="bold">b</emphasis>
                 </para>
               </entry>
               <entry align="center">
-                <para>
-                  <emphasis role="bold">ARG2</emphasis>
-                </para>
+                <para><emphasis role="bold">Example LE
+		Implementation</emphasis></para>
               </entry>
               <entry align="center">
-                <para><emphasis role="bold">Example Implementation</emphasis></para>
+                <para><emphasis role="bold">Example BE
+		Implementation</emphasis></para>
               </entry>
             </row>
           </thead>
@@ -23163,10 +23286,21 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>vector signed int</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> vector signed int</para>
+                <para>vector signed int</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  vspltw   t,b,0
+  vsumsws  u,a,t
+  vsldoi   r,u,u,12
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+
+  vsumsws  r,a,b
+
+		</programlisting>
               </entry>
             </row>
           </tbody>
@@ -23178,15 +23312,31 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
 
     <simplesect xml:id="vec_test_data_class">
       <title>vec_test_data_class</title>
-      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <subtitle>Vector Test Data Class</subtitle>
       <programlisting>
-      r = vec_test_data_class (ARG1, ARG2)
+      r = vec_test_data_class (a, b)
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
       Determines the data class for each floating-point element.
       </para>
-      <para><emphasis role="bold">Result value: </emphasis>Each element is set to all ones if the corresponding element of ARG1 matches one of the possible data types selected by ARG2. If not, each element is set to all zeros. ARG2 can select one of the data types defined in</para>
+      <para><emphasis role="bold">Result value: </emphasis>Each element of
+      <emphasis role="bold">r</emphasis> is set to all ones if the
+      corresponding element of <emphasis role="bold">a</emphasis> matches one
+      of the possible data types selected by <emphasis
+      role="bold">b</emphasis>. If not, the element is set to all zeros.
+      <emphasis role="bold">b</emphasis> can select one of the following data
+      classes, or more than one of them by ORing the constants together.
+      <programlisting>
+  Not a number (NaN)       64
+  Positive infinity        32
+  Negative infinity        16
+  Positive zero             8
+  Negative zero             4
+  Positive subnormal        2
+  Negative subnormal        1
+      </programlisting>
+      </para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
@@ -23201,25 +23351,25 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
           <colspec colname="c5" colwidth="20*" />
           <thead>
             <row>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
                   <emphasis role="bold">r</emphasis>
                 </para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
-                  <emphasis role="bold">ARG1</emphasis>
+                  <emphasis role="bold">a</emphasis>
                 </para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
-                  <emphasis role="bold">ARG2</emphasis>
+                  <emphasis role="bold">b</emphasis>
                 </para>
               </entry>
               <entry align="center">
                 <para><emphasis role="bold">Example Implementation</emphasis></para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para><emphasis role="bold">Restrictions</emphasis></para>
               </entry>
             </row>
@@ -23233,10 +23383,12 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>vector float</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> const int</para>
+                <para>const int</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  xvtstdcsp  r,a,b
+		</programlisting>
               </entry>
               <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
@@ -23253,7 +23405,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> const int</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  xvtstdcdp  r,a,b
+		</programlisting>
               </entry>
               <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
@@ -23268,15 +23422,19 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
 
     <simplesect xml:id="vec_trunc">
       <title>vec_trunc</title>
-      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <subtitle>Vector Truncate</subtitle>
       <programlisting>
-      r = vec_trunc (ARG1)
+      r = vec_trunc (a)
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
-      Returns a vector containing the truncated values of the corresponding elements of the given vector.
+      Returns a vector containing the truncated values of the corresponding
+      elements of the given vector.
       </para>
-      <para><emphasis role="bold">Result value: </emphasis>Each element of the result contains the value of the corresponding element of ARG1, truncated to an integral value.</para>
+      <para><emphasis role="bold">Result value: </emphasis>Each element of
+      <emphasis role="bold">r</emphasis> contains the value of the
+      corresponding element of <emphasis role="bold">a</emphasis>, truncated
+      to an integral value.</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
@@ -23296,7 +23454,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               </entry>
               <entry align="center">
                 <para>
-                  <emphasis role="bold">ARG1</emphasis>
+                  <emphasis role="bold">a</emphasis>
                 </para>
               </entry>
               <entry align="center">
@@ -23313,7 +23471,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>vector double</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  xvrdpiz  r,a
+		</programlisting>
               </entry>
             </row>
             <row>
@@ -23324,7 +23484,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>vector float</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  xvrspiz  r,a
+		</programlisting>
               </entry>
             </row>
           </tbody>
@@ -23336,71 +23498,106 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
 
     <simplesect xml:id="vec_unpackh">
       <title>vec_unpackh</title>
-      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <subtitle>Vector Unpack High</subtitle>
       <programlisting>
-      r = vec_unpackh (ARG1)
+      r = vec_unpackh (a)
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
-      Unpacks the most-significant (“high”) half of a vector into a vector with larger elements.
+      Unpacks the most-significant (“high”) half of a vector into a vector
+      with larger elements.
       </para>
-      <para><emphasis role="bold">Result value: </emphasis>If ARG1 is an integer vector, the value of each element of the result is the value of the corresponding element of the most-significant half of ARG1.</para>
-<para>If ARG1 is a floating-point vector, the value of each
-              element of the result is the value of the corresponding element
-              of the most-significant half of ARG1, widened to the result
-              precision.</para>
-<para>If ARG1 is a pixel vector, the value of each element of the
-              result is taken from the corresponding element of the
-              most-significant half of ARG1 as follows:</para>
-<itemizedlist spacing="compact">
-                <listitem>
-                  <para>All bits in the first byte of the element of the result
-                  are set to the value of the first bit of the element of
-                  ARG1.</para>
-                </listitem>
-                <listitem>
-                  <para>The least-significant 5 bits of the second byte of the
-                  element of the result are set to the value of the next 5 bits
-                  in the element of ARG1.</para>
-                </listitem>
-                <listitem>
-                  <para>The least-significant 5 bits of the third byte of the
-                  element of the result are set to the value of the next 5 bits
-                  in the element of ARG1.</para>
-                </listitem>
-                <listitem>
-                  <para>The least-significant 5 bits of the fourth byte of the
-                  element of the result are set to the value of the next 5 bits
-                  in the element of ARG1.</para>
-                </listitem>
-              </itemizedlist>
+      <para><emphasis role="bold">Result value: </emphasis>If <emphasis
+      role="bold">a</emphasis> is an integer vector, the value of each element
+      of <emphasis role="bold">r</emphasis> is the value of the corresponding
+      element of the most-significant half of <emphasis
+      role="bold">a</emphasis>.</para>
+      <para>If <emphasis role="bold">a</emphasis> is a floating-point vector,
+      the value of each element of <emphasis role="bold">r</emphasis> is the
+      value of the corresponding element of the most-significant half of
+      <emphasis role="bold">a</emphasis>, widened to the result
+      precision.</para>
+      <para>If <emphasis role="bold">a</emphasis> is a pixel vector, the value
+      of each element of <emphasis role="bold">r</emphasis> is taken from the
+      corresponding element of the most-significant half of <emphasis
+      role="bold">a</emphasis> as follows:</para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para>All bits in the first byte of the element of <emphasis
+	  role="bold">r</emphasis> are set to the value of the first bit of
+	  the element of <emphasis role="bold">a</emphasis>.</para>
+        </listitem>
+        <listitem>
+          <para>The least-significant 5 bits of the second byte of the
+          element of <emphasis role="bold">r</emphasis> are set to the value
+	  of the next 5 bits in the element of <emphasis
+	  role="bold">a</emphasis>.</para>
+        </listitem>
+        <listitem>
+          <para>The least-significant 5 bits of the third byte of the
+          element of <emphasis role="bold">r</emphasis> are set to the value
+	  of the next 5 bits in the element of <emphasis
+	  role="bold">a</emphasis>.</para>
+        </listitem>
+        <listitem>
+          <para>The least-significant 5 bits of the fourth byte of the
+          element of <emphasis role="bold">r</emphasis> are set to the value
+	  of the next 5 bits in the element of <emphasis
+	  role="bold">a</emphasis>.</para>
+        </listitem>
+      </itemizedlist>
       <para><emphasis role="bold">Endian considerations:</emphasis>
-      None.
+      The "high" half of a vector with <emphasis>n</emphasis> elements is the
+      first <emphasis>n</emphasis>/2 elements of the vector.  For little
+      endian, these elements are in the rightmost half of the vector.  For
+      big endian, these elements are in the leftmost half of the vector.
       </para>
+      <para><emphasis role="bold">Notes:</emphasis></para>
+      <itemizedlist>
+	<listitem>
+	  <para>
+	    <emphasis>Issue #439 in the power-gcc github tracker is open
+	    against wrong code produced by GCC for unpacking floats to
+	    doubles.</emphasis>
+	  </para>
+	</listitem>
+	<listitem>
+	  <para>
+	    No Power compilers yet support the vector _Float16 type, so that
+	    interface is currently deferred.
+	  </para>
+	</listitem>
+      </itemizedlist>
       
       <table frame="all">
       <title>Supported type signatures for vec_unpackh</title>
-      <tgroup cols="4">
+      <tgroup cols="5">
           <colspec colname="c1" colwidth="20*" />
           <colspec colname="c2" colwidth="20*" />
           <colspec colname="c3" colwidth="20*" />
           <colspec colname="c4" colwidth="20*" />
+          <colspec colname="c5" colwidth="20*" />
           <thead>
             <row>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
                   <emphasis role="bold">r</emphasis>
                 </para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
-                  <emphasis role="bold">ARG1</emphasis>
+                  <emphasis role="bold">a</emphasis>
                 </para>
               </entry>
               <entry align="center">
-                <para><emphasis role="bold">Example Implementation</emphasis></para>
+                <para><emphasis role="bold">Example LE
+		Implementation</emphasis></para>
               </entry>
               <entry align="center">
+                <para><emphasis role="bold">Example BE
+		Implementation</emphasis></para>
+              </entry>
+              <entry align="center" valign="middle">
                 <para><emphasis role="bold">Restrictions</emphasis></para>
               </entry>
             </row>
@@ -23414,7 +23611,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>vector bool short</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  vupklsh  r,a
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+  vupkhsh  r,a
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
@@ -23428,7 +23632,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>vector signed short</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  vupklsh  r,a
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+  vupkhsh  r,a
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
@@ -23442,7 +23653,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>vector pixel</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  vupklpx  r,a
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+  vupkhpx  r,a
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
@@ -23456,7 +23674,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>vector bool int</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  vupklsw  r,a
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+  vupkhsw  r,a
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
@@ -23470,7 +23695,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>vector signed int</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  vupklsw  r,a
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+  vupkhsw  r,a
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
@@ -23484,7 +23716,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>vector bool char</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  vupklsb  r,a
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+  vupkhsb  r,a
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
@@ -23498,7 +23737,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>vector signed char</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  vupklsb  r,a
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+  vupkhsb  r,a
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
@@ -23512,7 +23758,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>vector float</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>[TBD]</programlisting>
+              </entry>
+              <entry>
+                <programlisting>[TBD]</programlisting>
               </entry>
               <entry>
                 <para></para>
@@ -23526,10 +23775,13 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>vector _Float16</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>[TBD]</programlisting>
+              </entry>
+              <entry>
+                <programlisting>[TBD]</programlisting>
               </entry>
               <entry align="center" valign="middle">
-                <para>ISA 3.0 or later</para>
+                <para>Deferred</para>
               </entry>
             </row>
           </tbody>
@@ -23541,71 +23793,106 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
 
     <simplesect xml:id="vec_unpackl">
       <title>vec_unpackl</title>
-      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <subtitle>Vector Unpack Low</subtitle>
       <programlisting>
-      r = vec_unpackl (ARG1)
+      r = vec_unpackl (a)
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
-      Unpacks the least-significant (“low”) half of a vector into a vector with larger elements.
+      Unpacks the least-significant (“low”) half of a vector into a vector
+      with larger elements.
       </para>
-      <para><emphasis role="bold">Result value: </emphasis>If ARG1 is an integer vector, the value of each element of the result is the value of the corresponding element of the least-significant half of ARG1.</para>
-<para>If ARG1 is a floating-point vector, the value of each
-              element of the result is the value of the corresponding element
-              of the least-significant half of ARG, widened to the result
-              precision.</para>
-<para>If ARG1 is a pixel vector, the value of each element of the
-              result is taken from the corresponding element of the
-              least-significant half of ARG1 as follows:</para>
-<itemizedlist spacing="compact">
-                <listitem>
-                  <para>All bits in the first byte of the element of the result
-                  are set to the value of the first bit of the element of
-                  ARG1.</para>
-                </listitem>
-                <listitem>
-                  <para>The least-significant 5 bits of the second byte of the
-                  element of the result are set to the value of the next 5 bits
-                  in the element of ARG1.</para>
-                </listitem>
-                <listitem>
-                  <para>The least-significant 5 bits of the third byte of the
-                  element of the result are set to the value of the next 5 bits
-                  in the element of ARG1.</para>
-                </listitem>
-                <listitem>
-                  <para>The least-significant 5 bits of the fourth byte of the
-                  element of the result are set to the value of the next 5 bits
-                  in the element of ARG1.</para>
-                </listitem>
-              </itemizedlist>
+      <para><emphasis role="bold">Result value: </emphasis>If <emphasis
+      role="bold">a</emphasis> is an integer vector, the value of each element
+      of <emphasis role="bold">r</emphasis> is the value of the corresponding
+      element of the least-significant half of <emphasis
+      role="bold">a</emphasis>.</para>
+      <para>If <emphasis role="bold">a</emphasis> is a floating-point vector,
+      the value of each element of <emphasis role="bold">r</emphasis> is the
+      value of the corresponding element of the least-significant half of
+      <emphasis role="bold">a</emphasis>, widened to the result
+      precision.</para>
+      <para>If <emphasis role="bold">a</emphasis> is a pixel vector, the value
+      of each element of <emphasis role="bold">r</emphasis> is taken from the
+      corresponding element of the least-significant half of <emphasis
+      role="bold">a</emphasis> as follows:</para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para>All bits in the first byte of the element of <emphasis
+	  role="bold">r</emphasis> are set to the value of the first bit of
+	  the element of <emphasis role="bold">a</emphasis>.</para>
+        </listitem>
+        <listitem>
+          <para>The least-significant 5 bits of the second byte of the
+          element of <emphasis role="bold">r</emphasis> are set to the value
+	  of the next 5 bits in the element of <emphasis
+	  role="bold">a</emphasis>.</para>
+        </listitem>
+        <listitem>
+          <para>The least-significant 5 bits of the third byte of the
+          element of <emphasis role="bold">r</emphasis> are set to the value
+	  of the next 5 bits in the element of <emphasis
+	  role="bold">a</emphasis>.</para>
+        </listitem>
+        <listitem>
+          <para>The least-significant 5 bits of the fourth byte of the
+          element of <emphasis role="bold">r</emphasis> are set to the value
+	  of the next 5 bits in the element of <emphasis
+	  role="bold">a</emphasis>.</para>
+        </listitem>
+      </itemizedlist>
       <para><emphasis role="bold">Endian considerations:</emphasis>
-      None.
+      The "high" half of a vector with <emphasis>n</emphasis> elements is the
+      first <emphasis>n</emphasis>/2 elements of the vector.  For little
+      endian, these elements are in the rightmost half of the vector.  For
+      big endian, these elements are in the leftmost half of the vector.
       </para>
+      <para><emphasis role="bold">Notes:</emphasis></para>
+      <itemizedlist>
+	<listitem>
+	  <para>
+	    <emphasis>Issue #439 in the power-gcc github tracker is open
+	    against wrong code produced by GCC for unpacking floats to
+	    doubles.</emphasis>
+	  </para>
+	</listitem>
+	<listitem>
+	  <para>
+	    No Power compilers yet support the vector _Float16 type, so that
+	    interface is currently deferred.
+	  </para>
+	</listitem>
+      </itemizedlist>
       
       <table frame="all">
       <title>Supported type signatures for vec_unpackl</title>
-      <tgroup cols="4">
+      <tgroup cols="5">
           <colspec colname="c1" colwidth="20*" />
           <colspec colname="c2" colwidth="20*" />
           <colspec colname="c3" colwidth="20*" />
           <colspec colname="c4" colwidth="20*" />
+          <colspec colname="c5" colwidth="20*" />
           <thead>
             <row>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
                   <emphasis role="bold">r</emphasis>
                 </para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
                   <emphasis role="bold">ARG1</emphasis>
                 </para>
               </entry>
               <entry align="center">
-                <para><emphasis role="bold">Example Implementation</emphasis></para>
+                <para><emphasis role="bold">Example LE
+		Implementation</emphasis></para>
               </entry>
               <entry align="center">
+                <para><emphasis role="bold">Example BE
+		Implementation</emphasis></para>
+              </entry>
+              <entry align="center" valign="middle">
                 <para><emphasis role="bold">Restrictions</emphasis></para>
               </entry>
             </row>
@@ -23619,7 +23906,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>vector bool short</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  vupkhsh  r,a
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+  vupklsh  r,a
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
@@ -23633,7 +23927,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>vector signed short</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  vupkhsh  r,a
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+  vupklsh  r,a
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
@@ -23647,7 +23948,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>vector pixel</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  vupkhpx  r,a
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+  vupklpx  r,a
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
@@ -23661,7 +23969,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>vector bool int</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  vupkhsw  r,a
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+  vupklsw  r,a
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
@@ -23675,7 +23990,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>vector signed int</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  vupkhsw  r,a
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+  vupklsw  r,a
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
@@ -23689,7 +24011,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>vector bool char</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  vupkhsb  r,a
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+  vupklsb  r,a
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
@@ -23703,7 +24032,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>vector signed char</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  vupkhsb  r,a
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+  vupklsb  r,a
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
@@ -23717,7 +24053,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>vector float</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>[TBD]</programlisting>
+              </entry>
+              <entry>
+                <programlisting>[TBD]</programlisting>
               </entry>
               <entry>
                 <para></para>
@@ -23731,10 +24070,13 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>vector _Float16</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>[TBD]</programlisting>
+              </entry>
+              <entry>
+                <programlisting>[TBD]</programlisting>
               </entry>
               <entry align="center" valign="middle">
-                <para>ISA 3.0 or later</para>
+                <para>Deferred</para>
               </entry>
             </row>
           </tbody>
