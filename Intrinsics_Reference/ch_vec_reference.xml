@@ -18355,7 +18355,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       <emphasis role="bold">r</emphasis> contains element 0 of <emphasis
       role="bold">a</emphasis>, truncated to a signed integer.  Element 2 of
       <emphasis role="bold">r</emphasis> contains element 1 of <emphasis
-      role="bold">a</emphasis>, truncated to a signed integer.</para>
+      role="bold">a</emphasis>, truncated to a signed integer.  Elements 1 and
+      3 of <emphasis role="bold">r</emphasis> are undefined.</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       The element numbering within a register is left-to-right for big-endian
       targets, and right-to-left for little-endian targets.
@@ -18400,13 +18401,13 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               </entry>
               <entry>
                 <programlisting>
-  xvdvdpsxws  t,a
+  xvcvdpsxws  t,a
   vsldoi      r,t,t,12
 		</programlisting>
               </entry>
               <entry>
                 <programlisting>
-  xvdvdpsxws  t,a
+  xvcvdpsxws  t,a
 
 		</programlisting>
               </entry>
@@ -18433,7 +18434,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       <emphasis role="bold">r</emphasis> contains element 0 of <emphasis
       role="bold">a</emphasis>, truncated to a signed integer.  Element 3 of
       <emphasis role="bold">r</emphasis> contains element 1 of <emphasis
-      role="bold">a</emphasis>, truncated to a signed integer.</para>
+      role="bold">a</emphasis>, truncated to a signed integer.  Elements 0 and
+      2 of <emphasis role="bold">r</emphasis> are undefined.</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       The element numbering within a register is left-to-right for big-endian
       targets, and right-to-left for little-endian targets.
@@ -23108,21 +23110,16 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       role="bold">a</emphasis> and element <emphasis>n</emphasis> of <emphasis
       role="bold">b</emphasis> using saturated addition.</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
-      The element numbering within a register is left-to-right for big-endian
-      targets, and right-to-left for little-endian targets.
+      None.
       </para>
-      <para><emphasis role="bold">Notes:</emphasis>
-      <emphasis>Issue #438 in the power-gcc github tracker has been opened
-      for wrong little-endian behavior.</emphasis></para>
       
       <table frame="all">
       <title>Supported type signatures for vec_sum4s</title>
-      <tgroup cols="5">
+      <tgroup cols="4">
           <colspec colname="c1" colwidth="20*" />
           <colspec colname="c2" colwidth="20*" />
           <colspec colname="c3" colwidth="20*" />
           <colspec colname="c4" colwidth="20*" />
-          <colspec colname="c5" colwidth="20*" />
           <thead>
             <row>
               <entry align="center" valign="middle">
@@ -23132,20 +23129,16 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               </entry>
               <entry align="center" valign="middle">
                 <para>
-                  <emphasis role="bold">ARG1</emphasis>
+                  <emphasis role="bold">a</emphasis>
                 </para>
               </entry>
               <entry align="center" valign="middle">
                 <para>
-                  <emphasis role="bold">ARG2</emphasis>
+                  <emphasis role="bold">b</emphasis>
                 </para>
               </entry>
               <entry align="center">
-                <para><emphasis role="bold">Example LE
-		Implementation</emphasis></para>
-              </entry>
-              <entry align="center">
-                <para><emphasis role="bold">Example BE
+                <para><emphasis role="bold">Example
 		Implementation</emphasis></para>
               </entry>
             </row>
@@ -23160,11 +23153,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               </entry>
               <entry align="center" valign="middle">
                 <para>vector signed int</para>
-              </entry>
-              <entry>
-                <programlisting>
-  TBD
-		</programlisting>
               </entry>
               <entry>
                 <programlisting>
@@ -23184,11 +23172,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               </entry>
               <entry>
                 <programlisting>
-  TBD
-		</programlisting>
-              </entry>
-              <entry>
-                <programlisting>
   vsum4shs  r,a,b
 		</programlisting>
               </entry>
@@ -23202,11 +23185,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               </entry>
               <entry align="center" valign="middle">
                 <para>vector unsigned int</para>
-              </entry>
-              <entry>
-                <programlisting>
-  TBD
-		</programlisting>
               </entry>
               <entry>
                 <programlisting>
@@ -24088,15 +24066,19 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
 
     <simplesect xml:id="vec_unsigned">
       <title>vec_unsigned</title>
-      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <subtitle>Vector Convert Floating-Point to Unsigned Integer</subtitle>
       <programlisting>
-      r = vec_unsigned (ARG1)
+      r = vec_unsigned (a)
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
-      Converts a vector of double-precision numbers to a vector of unsigned integers.
+      Converts a vector of floating-point numbers to a vector of unsigned
+      integers.
       </para>
-      <para><emphasis role="bold">Result value: </emphasis>Target elements are obtained by truncating the respective source elements to unsigned integers.</para>
+      <para><emphasis role="bold">Result value: </emphasis>Each element of
+      <emphasis role="bold">r</emphasis> is obtained by truncating the
+      corresponding element of <emphasis role="bold">a</emphasis> to an
+      unsigned integer.</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
@@ -24116,7 +24098,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               </entry>
               <entry align="center">
                 <para>
-                  <emphasis role="bold">ARG1</emphasis>
+                  <emphasis role="bold">a</emphasis>
                 </para>
               </entry>
               <entry align="center">
@@ -24133,7 +24115,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>vector float</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  xvcvspsxws  r,a
+		</programlisting>
               </entry>
             </row>
             <row>
@@ -24144,7 +24128,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>vector double</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  xvcvdpsxds  r,a
+		</programlisting>
               </entry>
             </row>
           </tbody>
@@ -24156,53 +24142,58 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
 
     <simplesect xml:id="vec_unsigned2">
       <title>vec_unsigned2</title>
-      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <subtitle>Vector Convert Double-Precision to Unsigned Word</subtitle>
       <programlisting>
-      r = vec_unsigned2 (ARG1, ARG2)
+      r = vec_unsigned2 (a, b)
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
-      Converts a vector of double-precision numbers to a vector of unsigned integers.
+      Converts two vectors of double-precision floating-point numbers to a
+      vector of unsigned 32-bit integers.
       </para>
-      <para><emphasis role="bold">Result value: </emphasis>Target elements are obtained by truncating the source elements to the unsigned integers as follows:</para>
-<itemizedlist spacing="compact">
-                <listitem>
-                  <para>Target elements 0 and 1 from source 0</para>
-                </listitem>
-                <listitem>
-                  <para>Target elements 2 and 3 from source 1</para>
-                </listitem>
-              </itemizedlist>
+      <para><emphasis role="bold">Result value: </emphasis>Let <emphasis
+      role="bold">v</emphasis> be the concatenation of <emphasis
+      role="bold">a</emphasis> and <emphasis role="bold">b</emphasis>.  Each
+      element of <emphasis role="bold">r</emphasis> is obtained by truncating
+      the corresponding element of <emphasis role="bold">v</emphasis> to an
+      unsigned 32-bit integer.</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
-      None.
+      The element numbering within a register is left-to-right for big-endian
+      targets, and right-to-left for little-endian targets.
       </para>
       
       <table frame="all">
       <title>Supported type signatures for vec_unsigned2</title>
-      <tgroup cols="4">
+      <tgroup cols="5">
           <colspec colname="c1" colwidth="20*" />
           <colspec colname="c2" colwidth="20*" />
           <colspec colname="c3" colwidth="20*" />
           <colspec colname="c4" colwidth="20*" />
+          <colspec colname="c5" colwidth="20*" />
           <thead>
             <row>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
                   <emphasis role="bold">r</emphasis>
                 </para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
-                  <emphasis role="bold">ARG1</emphasis>
+                  <emphasis role="bold">a</emphasis>
+                </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+                  <emphasis role="bold">b</emphasis>
                 </para>
               </entry>
               <entry align="center">
-                <para>
-                  <emphasis role="bold">ARG2</emphasis>
-                </para>
+                <para><emphasis role="bold">Example LE
+		Implementation</emphasis></para>
               </entry>
               <entry align="center">
-                <para><emphasis role="bold">Example Implementation</emphasis></para>
+                <para><emphasis role="bold">Example BE
+		Implementation</emphasis></para>
               </entry>
             </row>
           </thead>
@@ -24215,10 +24206,25 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>vector double</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> vector double</para>
+                <para>vector double</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+ xxpermdi   t,b,a,3
+ xxpermdi   u,b,a,0
+ xvcvdpuxws v,t
+ xvcvdpuxws w,u
+ vmrgow     r,w,v
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+ xxpermdi   t,a,b,3
+ xxpermdi   u,a,b,0
+ xvcvdpuxws v,t
+ xvcvdpuxws w,u
+ vmrgew     r,v,w
+		</programlisting>
               </entry>
             </row>
           </tbody>
@@ -24230,41 +24236,55 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
 
     <simplesect xml:id="vec_unsignede">
       <title>vec_unsignede</title>
-      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <subtitle>Vector Convert Double-Precision to Unsigned Word
+      Even</subtitle>
       <programlisting>
-      r = vec_unsignede (ARG1)
+      r = vec_unsignede (a)
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
-      Converts an input vector to a vector of unsigned integers.
+      Converts elements of an input vector to unsigned integers and stores
+      them in the even-numbered elements of the result vector.
       </para>
-      <para><emphasis role="bold">Result value: </emphasis>The even target elements are obtained by truncating the source elements to unsigned integers as follows:</para>
-<para>Target elements 0 and 2 contain the converted values of the
-              input vector.</para>
+      <para><emphasis role="bold">Result value: </emphasis>Element 0 of
+      <emphasis role="bold">r</emphasis> contains element 0 of <emphasis
+      role="bold">a</emphasis>, truncated to an unsigned integer.  Element 2 of
+      <emphasis role="bold">r</emphasis> contains element 1 of <emphasis
+      role="bold">a</emphasis>, truncated to a signed integer.  Elements 1 and
+      3 of <emphasis role="bold">r</emphasis> are undefined.  Truncation
+      of a negative number to an unsigned integer results in a value of
+      zero.</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
-      None.
+      The element numbering within a register is left-to-right for big-endian
+      targets, and right-to-left for little-endian targets.
       </para>
       
       <table frame="all">
       <title>Supported type signatures for vec_unsignede</title>
-      <tgroup cols="3">
+      <tgroup cols="4">
           <colspec colname="c1" colwidth="20*" />
           <colspec colname="c2" colwidth="20*" />
           <colspec colname="c3" colwidth="20*" />
+          <colspec colname="c4" colwidth="20*" />
           <thead>
             <row>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
                   <emphasis role="bold">r</emphasis>
                 </para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
-                  <emphasis role="bold">ARG1</emphasis>
+                  <emphasis role="bold">a</emphasis>
                 </para>
               </entry>
               <entry align="center">
-                <para><emphasis role="bold">Example Implementation</emphasis></para>
+                <para><emphasis role="bold">Example LE
+		Implementation</emphasis></para>
+              </entry>
+              <entry align="center">
+                <para><emphasis role="bold">Example BE
+		Implementation</emphasis></para>
               </entry>
             </row>
           </thead>
@@ -24277,7 +24297,16 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>vector double</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+ xvcvdpuxws t,a
+ vsldoi     r,t,t,12
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+ xvcvdpuxws r,a
+
+		</programlisting>
               </entry>
             </row>
           </tbody>
@@ -24289,41 +24318,54 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
 
     <simplesect xml:id="vec_unsignedo">
       <title>vec_unsignedo</title>
-      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <subtitle>Vector Convert Double-Precision to Unsigned Word Odd</subtitle>
       <programlisting>
-      r = vec_unsignedo (ARG1)
+      r = vec_unsignedo (a)
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
-      Converts an input vector to a vector of unsigned integers.
+      Converts elements of an input vector to unsigned integers and stores
+      them in the odd-numbered elements of the result vector.
       </para>
-      <para><emphasis role="bold">Result value: </emphasis>The odd target elements are obtained by truncating the source elements to unsigned integers as follows:</para>
-<para>Target elements 1 and 3 contain the converted values of the
-              input vector.</para>
+      <para><emphasis role="bold">Result value: </emphasis> Element 1 of
+      <emphasis role="bold">r</emphasis> contains element 0 of <emphasis
+      role="bold">a</emphasis>, truncated to an unsigned integer.  Element 3 of
+      <emphasis role="bold">r</emphasis> contains element 1 of <emphasis
+      role="bold">a</emphasis>, truncated to an unsigned integer.  Elements 0
+      and 2 of <emphasis role="bold">r</emphasis> are undefined.  Truncation
+      of a negative number to an unsigned integer results in a value of
+      zero.</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
-      None.
+      The element numbering within a register is left-to-right for big-endian
+      targets, and right-to-left for little-endian targets.
       </para>
       
       <table frame="all">
       <title>Supported type signatures for vec_unsignedo</title>
-      <tgroup cols="3">
+      <tgroup cols="4">
           <colspec colname="c1" colwidth="20*" />
           <colspec colname="c2" colwidth="20*" />
           <colspec colname="c3" colwidth="20*" />
+          <colspec colname="c4" colwidth="20*" />
           <thead>
             <row>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
                   <emphasis role="bold">r</emphasis>
                 </para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
-                  <emphasis role="bold">ARG1</emphasis>
+                  <emphasis role="bold">a</emphasis>
                 </para>
               </entry>
               <entry align="center">
-                <para><emphasis role="bold">Example Implementation</emphasis></para>
+                <para><emphasis role="bold">Example LE
+		Implementation</emphasis></para>
+              </entry>
+              <entry align="center">
+                <para><emphasis role="bold">Example BE
+		Implementation</emphasis></para>
               </entry>
             </row>
           </thead>
@@ -24336,7 +24378,16 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>vector double</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+ xvcvdpuxws r,a
+
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+ xvcvdpuxws t,a
+ vsldoi     r,t,t,12
+		</programlisting>
               </entry>
             </row>
           </tbody>
@@ -24348,25 +24399,45 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
 
     <simplesect xml:id="vec_xl">
       <title>vec_xl</title>
-      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <subtitle>VSX Unaligned Load</subtitle>
       <programlisting>
-      r = vec_xl (ARG1, ARG2)
+      r = vec_xl (a, b)
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
-      Loads a 16-byte vector from the memory address specified by the displacement and the pointer.
+      Loads a 16-byte vector from the memory address specified by the
+      displacement and the pointer.
       </para>
-      <para><emphasis role="bold">Result value: </emphasis>This function adds the displacement and the pointer R-value to obtain the address for the load operation.</para>
-<important>
-                <para>For languages that support built-in
-                methods for pointer dereferencing, such as the C/C++ pointer
-                dereference * and array access [ ] operators, use of the
-                native operators is encouraged and use of the vec_xl
-                intrinsic is discouraged.</para>
-              </important>
+      <para><emphasis role="bold">Result value: </emphasis>The value of
+      <emphasis role="bold">r</emphasis> is obtained by adding <emphasis
+      role="bold">a</emphasis> and <emphasis role="bold">b</emphasis>, then
+      loading the 16-byte vector from the resultant memory address.</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
-      None.
+      For ISA 2.07, there is no bi-endian unaligned load instruction.
+      For little-endian targets, it is necessary to use the lxvd2x instruction
+      and swap the doublewords with an xxswapd instruction.  For big-endian
+      targets, the lxvd2x instruction or lxvw4x instruction suffices.  The
+      examples below assume ISA 3.0, where the bi-endian lxv instruction is
+      available.
       </para>
+      <para><emphasis role="bold">Notes:</emphasis></para>
+      <itemizedlist>
+	<listitem>
+	  <para>
+	    For languages that support built-in methods for pointer
+	    dereferencing, such as the C/C++ * and [ ] operators, use of the
+	    native operators is encouraged when the memory to be accessed is
+	    aligned on a 32-bit boundary or aligned to the type of <emphasis
+	    role="bold">b</emphasis>, whichever is weaker.
+	  </para>
+	</listitem>
+	<listitem>
+	  <para>
+	    No Power compilers yet support the vector _Float16 type, so that
+	    interface is currently deferred.
+	  </para>
+	</listitem>
+      </itemizedlist>
       
       <table frame="all">
       <title>Supported type signatures for vec_xl</title>
@@ -24378,25 +24449,26 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
           <colspec colname="c5" colwidth="20*" />
           <thead>
             <row>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
                   <emphasis role="bold">r</emphasis>
                 </para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
-                  <emphasis role="bold">ARG1</emphasis>
+                  <emphasis role="bold">a</emphasis>
+                </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+                  <emphasis role="bold">b</emphasis>
                 </para>
               </entry>
               <entry align="center">
-                <para>
-                  <emphasis role="bold">ARG2</emphasis>
-                </para>
+                <para><emphasis role="bold">Example ISA 3.0
+		Implementation</emphasis></para>
               </entry>
-              <entry align="center">
-                <para><emphasis role="bold">Example Implementation</emphasis></para>
-              </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para><emphasis role="bold">Restrictions</emphasis></para>
               </entry>
             </row>
@@ -24410,10 +24482,12 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> signed char *</para>
+                <para>signed char *</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  lxv  r,a(b)
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
@@ -24430,7 +24504,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> unsigned char *</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  lxv  r,a(b)
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
@@ -24447,7 +24523,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> signed int *</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  lxv  r,a(b)
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
@@ -24464,7 +24542,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> unsigned int *</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  lxv  r,a(b)
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
@@ -24481,7 +24561,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> signed __int128 *</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  lxv  r,a(b)
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
@@ -24498,7 +24580,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> unsigned __int128 *</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  lxv  r,a(b)
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
@@ -24515,7 +24599,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> signed long long *</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  lxv  r,a(b)
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
@@ -24532,7 +24618,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> unsigned long long *</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  lxv  r,a(b)
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
@@ -24549,7 +24637,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> signed short *</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  lxv  r,a(b)
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
@@ -24566,7 +24656,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> unsigned short *</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  lxv  r,a(b)
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
@@ -24583,7 +24675,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> double *</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  lxv  r,a(b)
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
@@ -24600,7 +24694,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> float *</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  lxv  r,a(b)
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
@@ -24617,10 +24713,12 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> _Float16 *</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  lxv  r,a(b)
+		</programlisting>
               </entry>
               <entry align="center" valign="middle">
-                <para>ISA 3.0 or later</para>
+                <para>Deferred</para>
               </entry>
             </row>
           </tbody>
@@ -24632,51 +24730,66 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
 
     <simplesect xml:id="vec_xl_be">
       <title>vec_xl_be</title>
-      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <subtitle>VSX Unaligned Load as Big Endian</subtitle>
       <programlisting>
-      r = vec_xl_be (ARG1, ARG2)
+      r = vec_xl_be (a, b)
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
-      In little-endian environments, loads the elements of the 16-byte vector ARG1 starting with the highest-numbered element at the memory address specified by the displacement ARG1 and the pointer ARG2. In big-endian environments, this operator performs the same operation as VEC_XL.
+      Loads a vector from an address into a register in big-endian element
+      order, regardless of the endianness of the target machine.
       </para>
-      <para><emphasis role="bold">Result value: </emphasis>In little-endian mode, loads the elements of the vector in sequential order, with the highest-numbered element loaded from the lowest data address and the lowest-numbered element of the vector at the highest address. All elements are loaded in little-endian data format.</para>
-<para>This function adds the displacement and the pointer R-value
-              to obtain the address for the load operation. It does not
-              truncate the affected address to a multiple of 16 bytes.</para>
+      <para><emphasis role="bold">Result value: </emphasis>The value of
+      <emphasis role="bold">r</emphasis> is obtained by adding <emphasis
+      role="bold">a</emphasis> and <emphasis role="bold">b</emphasis>, then
+      loading the vector elements from the resulting address in big-endian
+      order.</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
-      None.
+      In big-endian mode, this acts just like the vec_xl intrinsic.
+      In little-endian mode, the highest-numbered element of <emphasis
+      role="bold">r</emphasis> is loaded from the lowest data address, and
+      the lowest-numbered element of <emphasis role="bold">r</emphasis> from
+      the highest data address.
       </para>
+      <para><emphasis role="bold">Notes:</emphasis>
+      No Power compilers yet support the vector _Float16 type, so that
+      interface is currently deferred.</para>
       
       <table frame="all">
       <title>Supported type signatures for vec_xl_be</title>
-      <tgroup cols="5">
+      <tgroup cols="6">
           <colspec colname="c1" colwidth="20*" />
           <colspec colname="c2" colwidth="20*" />
           <colspec colname="c3" colwidth="20*" />
           <colspec colname="c4" colwidth="20*" />
           <colspec colname="c5" colwidth="20*" />
+          <colspec colname="c6" colwidth="20*" />
           <thead>
             <row>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
                   <emphasis role="bold">r</emphasis>
                 </para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
-                  <emphasis role="bold">ARG1</emphasis>
+                  <emphasis role="bold">a</emphasis>
                 </para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
-                  <emphasis role="bold">ARG2</emphasis>
+                  <emphasis role="bold">b</emphasis>
                 </para>
               </entry>
-              <entry align="center">
-                <para><emphasis role="bold">Example Implementation</emphasis></para>
+              <entry align="center" valign="middle">
+                <para><emphasis role="bold">Example ISA 3.0 LE
+		Implementation</emphasis></para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
+                <para><emphasis role="bold">Example ISA 3.0 BE
+		Implementation</emphasis></para>
+              </entry>
+              <entry align="center" valign="middle">
                 <para><emphasis role="bold">Restrictions</emphasis></para>
               </entry>
             </row>
@@ -24690,10 +24803,17 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> signed char *</para>
+                <para>signed char *</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+ lxvb16x r,a,b
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+ lxv r,a,b
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
@@ -24710,7 +24830,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> unsigned char *</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+ lxvb16x r,a,b
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+ lxv r,a,b
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
@@ -24727,7 +24854,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> signed int *</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+ lxvw4x r,a,b
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+ lxv r,a,b
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
@@ -24744,7 +24878,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> unsigned int *</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+ lxvw4x r,a,b
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+ lxv r,a,b
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
@@ -24761,7 +24902,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> signed __int128 *</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+ lxv r,a,b
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+ lxv r,a,b
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
@@ -24778,7 +24926,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> unsigned __int128 *</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+ lxv r,a,b
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+ lxv r,a,b
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
@@ -24795,7 +24950,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> signed long long *</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+ lxvd2x r,a,b
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+ lxv r,a,b
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
@@ -24812,7 +24974,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> unsigned long long *</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+ lxvd2x r,a,b
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+ lxv r,a,b
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
@@ -24829,7 +24998,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> signed short *</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+ lxvh8x r,a,b
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+ lxv r,a,b
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
@@ -24846,7 +25022,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> unsigned short *</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+ lxvh8x r,a,b
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+ lxv r,a,b
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
@@ -24863,7 +25046,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> double *</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+ lxvd2x r,a,b
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+ lxv r,a,b
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
@@ -24880,7 +25070,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> float *</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+ lxvw4x r,a,b
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+ lxv r,a,b
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
@@ -24897,10 +25094,17 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> _Float16 *</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+ lxvh8x r,a,b
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+ lxv r,a,b
+		</programlisting>
               </entry>
               <entry align="center" valign="middle">
-                <para>ISA 3.0 or later</para>
+                <para>Deferred</para>
               </entry>
             </row>
           </tbody>
@@ -25520,70 +25724,82 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
 
     <simplesect xml:id="vec_xst">
       <title>vec_xst</title>
-      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <subtitle>VSX Unaligned Store</subtitle>
       <programlisting>
-      r = vec_xst (ARG1, ARG2, ARG3)
+      vec_xst (a, b, c)
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
-      
+      Stores a 16-byte value into memory at the address specified by the
+      displacement and pointer.
       </para>
-      <para><emphasis role="bold">Result value: </emphasis>Stores the provided vector in memory.</para>
-<important>
-                <para>For languages that support built-in
-                methods for pointer dereferencing, such as the C/C++ pointer
-                dereference * and array access [ ] operators, use of the
-                native operators is encouraged and use of the vec_xl
-                intrinsic is discouraged.</para>
-              </important>
+      <para><emphasis role="bold">Operation: </emphasis>The values of
+      <emphasis role="bold">b</emphasis> and <emphasis
+      role="bold">c</emphasis> are added, and the value of <emphasis
+      role="bold">a</emphasis> is stored to the resultant address.</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
-      None.
+      For ISA 2.07, there is no bi-endian unaligned store instruction.  For
+      little-endian targets, it is necessary to first swap the doublewords
+      of the value to be stored using an xxswapd instruction, and then store
+      the result using the stxvd2x instruction.  For big-endian targets, the
+      stxvd2x or stxvw4x instruction suffices.  The examples below assume ISA
+      3.0, where the bi-endian stxv instruction is available.
       </para>
+      <para><emphasis role="bold">Notes:</emphasis></para>
+      <itemizedlist>
+	<listitem>
+	  <para>
+	    For languages that support built-in methods for pointer
+	    dereferencing, such as the C/C++ * and [ ] operators, use of the
+	    native operators is encouraged when the memory to be accessed is
+	    aligned on a 32-bit boundary or aligned to the type of <emphasis
+	    role="bold">b</emphasis>, whichever is weaker.
+	  </para>
+	</listitem>
+	<listitem>
+	  <para>
+	    No Power compilers yet support the vector _Float16 type, so that
+	    interface is currently deferred.
+	  </para>
+	</listitem>
+      </itemizedlist>
       
       <table frame="all">
       <title>Supported type signatures for vec_xst</title>
-      <tgroup cols="6">
+      <tgroup cols="5">
           <colspec colname="c1" colwidth="20*" />
           <colspec colname="c2" colwidth="20*" />
           <colspec colname="c3" colwidth="20*" />
           <colspec colname="c4" colwidth="20*" />
           <colspec colname="c5" colwidth="20*" />
-          <colspec colname="c6" colwidth="20*" />
           <thead>
             <row>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
-                  <emphasis role="bold">r</emphasis>
+                  <emphasis role="bold">a</emphasis>
                 </para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
-                  <emphasis role="bold">ARG1</emphasis>
+                  <emphasis role="bold">b</emphasis>
                 </para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
-                  <emphasis role="bold">ARG2</emphasis>
+                  <emphasis role="bold">c</emphasis>
                 </para>
               </entry>
-              <entry align="center">
-                <para>
-                  <emphasis role="bold">ARG3</emphasis>
-                </para>
+              <entry align="center" valign="middle">
+                <para><emphasis role="bold">Example ISA 3.0
+		Implementation</emphasis></para>
               </entry>
-              <entry align="center">
-                <para><emphasis role="bold">Example Implementation</emphasis></para>
-              </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para><emphasis role="bold">Restrictions</emphasis></para>
               </entry>
             </row>
           </thead>
           <tbody>
             <row>
-              <entry align="center" valign="middle">
-                <para>void</para>
-              </entry>
               <entry align="center" valign="middle">
                 <para>vector signed char</para>
               </entry>
@@ -25594,16 +25810,15 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> signed char *</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  stxv  a,b(c)
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
               </entry>
             </row>
             <row>
-              <entry align="center" valign="middle">
-                <para>void</para>
-              </entry>
               <entry align="center" valign="middle">
                 <para>vector unsigned char</para>
               </entry>
@@ -25614,16 +25829,15 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> unsigned char *</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  stxv  a,b(c)
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
               </entry>
             </row>
             <row>
-              <entry align="center" valign="middle">
-                <para>void</para>
-              </entry>
               <entry align="center" valign="middle">
                 <para>vector signed int</para>
               </entry>
@@ -25634,16 +25848,15 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> signed int *</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  stxv  a,b(c)
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
               </entry>
             </row>
             <row>
-              <entry align="center" valign="middle">
-                <para>void</para>
-              </entry>
               <entry align="center" valign="middle">
                 <para>vector unsigned int</para>
               </entry>
@@ -25654,16 +25867,15 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> unsigned int *</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  stxv  a,b(c)
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
               </entry>
             </row>
             <row>
-              <entry align="center" valign="middle">
-                <para>void</para>
-              </entry>
               <entry align="center" valign="middle">
                 <para>vector signed __int128</para>
               </entry>
@@ -25674,16 +25886,15 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> signed __int128 *</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  stxv  a,b(c)
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
               </entry>
             </row>
             <row>
-              <entry align="center" valign="middle">
-                <para>void</para>
-              </entry>
               <entry align="center" valign="middle">
                 <para>vector unsigned __int128</para>
               </entry>
@@ -25694,16 +25905,15 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> unsigned __int128 *</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  stxv  a,b(c)
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
               </entry>
             </row>
             <row>
-              <entry align="center" valign="middle">
-                <para>void</para>
-              </entry>
               <entry align="center" valign="middle">
                 <para>vector signed long long</para>
               </entry>
@@ -25714,16 +25924,15 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> signed long long *</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  stxv  a,b(c)
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
               </entry>
             </row>
             <row>
-              <entry align="center" valign="middle">
-                <para>void</para>
-              </entry>
               <entry align="center" valign="middle">
                 <para>vector unsigned long long</para>
               </entry>
@@ -25734,16 +25943,15 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> unsigned long long *</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  stxv  a,b(c)
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
               </entry>
             </row>
             <row>
-              <entry align="center" valign="middle">
-                <para>void</para>
-              </entry>
               <entry align="center" valign="middle">
                 <para>vector signed short</para>
               </entry>
@@ -25754,16 +25962,15 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> signed short *</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  stxv  a,b(c)
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
               </entry>
             </row>
             <row>
-              <entry align="center" valign="middle">
-                <para>void</para>
-              </entry>
               <entry align="center" valign="middle">
                 <para>vector unsigned short</para>
               </entry>
@@ -25774,16 +25981,15 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> unsigned short *</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  stxv  a,b(c)
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
               </entry>
             </row>
             <row>
-              <entry align="center" valign="middle">
-                <para>void</para>
-              </entry>
               <entry align="center" valign="middle">
                 <para>vector double</para>
               </entry>
@@ -25794,16 +26000,15 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> double *</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  stxv  a,b(c)
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
               </entry>
             </row>
             <row>
-              <entry align="center" valign="middle">
-                <para>void</para>
-              </entry>
               <entry align="center" valign="middle">
                 <para>vector float</para>
               </entry>
@@ -25814,16 +26019,15 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> float *</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  stxv  a,b(c)
+		</programlisting>
               </entry>
               <entry>
                 <para></para>
               </entry>
             </row>
             <row>
-              <entry align="center" valign="middle">
-                <para>void</para>
-              </entry>
               <entry align="center" valign="middle">
                 <para>vector _Float16</para>
               </entry>
@@ -25834,7 +26038,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> _Float16 *</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  stxv  a,b(c)
+		</programlisting>
               </entry>
               <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
