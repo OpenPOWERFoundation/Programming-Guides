@@ -1220,6 +1220,1821 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
     </simplesect>
 
     <?hard-pagebreak?>
+
+    <simplesect xml:id="vec_all_eq">
+      <title>vec_all_eq</title>
+      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <programlisting>
+      r = vec_all_eq (ARG1, ARG2)
+      </programlisting>
+
+      <para><emphasis role="bold">Purpose:</emphasis>
+      Tests whether all sets of corresponding elements of the given vectors are equal.
+      </para>
+      <para><emphasis role="bold">Result value:  </emphasis>The result is 1 if each element of ARG1 is equal to the corresponding element of ARG2. Otherwise, the result is 0.</para>
+      <para><emphasis role="bold">Endian considerations:</emphasis>
+      None.
+      </para>
+      
+      <table frame="all">
+      <title>Supported type signatures for vec_all_eq</title>
+      <tgroup cols="4">
+          <colspec colname="c1" colwidth="20*" />
+          <colspec colname="c2" colwidth="20*" />
+          <colspec colname="c3" colwidth="20*" />
+          <colspec colname="c4" colwidth="20*" />
+          <thead>
+            <row>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">r</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">ARG1</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">ARG2</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para><emphasis role="bold">Example Implementation</emphasis></para>
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector bool char</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector bool char</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed char</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector signed char</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned char</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector unsigned char</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector bool int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector bool int</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector signed int</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector unsigned int</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector bool long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector bool long long</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector signed long long</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector unsigned long long</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector pixel</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector pixel</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector bool short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector bool short</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector signed short</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector unsigned short</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector double</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector double</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector float</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector float</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+
+    </simplesect>
+    <?hard-pagebreak?>
+
+    <simplesect xml:id="vec_all_ge">
+      <title>vec_all_ge</title>
+      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <programlisting>
+      r = vec_all_ge (ARG1, ARG2)
+      </programlisting>
+
+      <para><emphasis role="bold">Purpose:</emphasis>
+      Tests whether all elements of the first argument are greater than or equal to the corresponding elements of the second argument.
+      </para>
+      <para><emphasis role="bold">Result value:  </emphasis>The result is 1 if all elements of ARG1 are greater than or equal to the corresponding elements of ARG2. Otherwise, the result is 0.</para>
+      <para><emphasis role="bold">Endian considerations:</emphasis>
+      None.
+      </para>
+      
+      <table frame="all">
+      <title>Supported type signatures for vec_all_ge</title>
+      <tgroup cols="4">
+          <colspec colname="c1" colwidth="20*" />
+          <colspec colname="c2" colwidth="20*" />
+          <colspec colname="c3" colwidth="20*" />
+          <colspec colname="c4" colwidth="20*" />
+          <thead>
+            <row>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">r</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">ARG1</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">ARG2</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para><emphasis role="bold">Example Implementation</emphasis></para>
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed char</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector signed char</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned char</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector unsigned char</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector signed int</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector unsigned int</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector signed long long</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector unsigned long long</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector signed short</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector unsigned short</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector double</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector double</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector float</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector float</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+
+    </simplesect>
+    <?hard-pagebreak?>
+
+    <simplesect xml:id="vec_all_gt">
+      <title>vec_all_gt</title>
+      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <programlisting>
+      r = vec_all_gt (ARG1, ARG2)
+      </programlisting>
+
+      <para><emphasis role="bold">Purpose:</emphasis>
+      Tests whether all elements of the first argument are greater than the corresponding elements of the second argument.
+      </para>
+      <para><emphasis role="bold">Result value:  </emphasis>The result is 1 if all elements of ARG1 are greater than the corresponding elements of ARG2. Otherwise, the result is 0.</para>
+      <para><emphasis role="bold">Endian considerations:</emphasis>
+      None.
+      </para>
+      
+      <table frame="all">
+      <title>Supported type signatures for vec_all_gt</title>
+      <tgroup cols="4">
+          <colspec colname="c1" colwidth="20*" />
+          <colspec colname="c2" colwidth="20*" />
+          <colspec colname="c3" colwidth="20*" />
+          <colspec colname="c4" colwidth="20*" />
+          <thead>
+            <row>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">r</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">ARG1</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">ARG2</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para><emphasis role="bold">Example Implementation</emphasis></para>
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed char</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector signed char</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned char</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector unsigned char</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector signed int</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector unsigned int</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector signed long long</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector unsigned long long</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector signed short</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector unsigned short</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector double</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector double</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector float</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector float</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+
+    </simplesect>
+    <?hard-pagebreak?>
+
+    <simplesect xml:id="vec_all_in">
+      <title>vec_all_in</title>
+      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <programlisting>
+      r = vec_all_in (ARG1, ARG2)
+      </programlisting>
+
+      <para><emphasis role="bold">Purpose:</emphasis>
+      Tests whether each element of a given vector is within a given range.
+      </para>
+      <para><emphasis role="bold">Result value:  </emphasis>The result is 1 if all elements of ARG1 have values less than or equal to the value of the corresponding element of ARG2, and greater than or equal to the negative of the value of the corresponding element of ARG2. Otherwise, the result is 0.</para>
+      <para><emphasis role="bold">Endian considerations:</emphasis>
+      None.
+      </para>
+      
+      <table frame="all">
+      <title>Supported type signatures for vec_all_in</title>
+      <tgroup cols="4">
+          <colspec colname="c1" colwidth="20*" />
+          <colspec colname="c2" colwidth="20*" />
+          <colspec colname="c3" colwidth="20*" />
+          <colspec colname="c4" colwidth="20*" />
+          <thead>
+            <row>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">r</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">ARG1</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">ARG2</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para><emphasis role="bold">Example Implementation</emphasis></para>
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector float</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector float</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+
+    </simplesect>
+    <?hard-pagebreak?>
+
+    <simplesect xml:id="vec_all_le">
+      <title>vec_all_le</title>
+      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <programlisting>
+      r = vec_all_le (ARG1, ARG2)
+      </programlisting>
+
+      <para><emphasis role="bold">Purpose:</emphasis>
+      Tests whether all elements of the first argument are less than or equal to the corresponding elements of the second argument.
+      </para>
+      <para><emphasis role="bold">Result value:  </emphasis>The result is 1 if all elements of ARG1 are less than or equal to the corresponding elements of ARG2. Otherwise, the result is 0.</para>
+      <para><emphasis role="bold">Endian considerations:</emphasis>
+      None.
+      </para>
+      
+      <table frame="all">
+      <title>Supported type signatures for vec_all_le</title>
+      <tgroup cols="4">
+          <colspec colname="c1" colwidth="20*" />
+          <colspec colname="c2" colwidth="20*" />
+          <colspec colname="c3" colwidth="20*" />
+          <colspec colname="c4" colwidth="20*" />
+          <thead>
+            <row>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">r</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">ARG1</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">ARG2</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para><emphasis role="bold">Example Implementation</emphasis></para>
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed char</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector signed char</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned char</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector unsigned char</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector signed int</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector unsigned int</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector signed long long</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector unsigned long long</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector signed short</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector unsigned short</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector double</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector double</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector float</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector float</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+
+    </simplesect>
+    <?hard-pagebreak?>
+
+    <simplesect xml:id="vec_all_lt">
+      <title>vec_all_lt</title>
+      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <programlisting>
+      r = vec_all_lt (ARG1, ARG2)
+      </programlisting>
+
+      <para><emphasis role="bold">Purpose:</emphasis>
+      Tests whether all elements of the first argument are less than the corresponding elements of the second argument.
+      </para>
+      <para><emphasis role="bold">Result value:  </emphasis>The result is 1 if all elements of ARG1 are less than the corresponding elements of ARG2. Otherwise, the result is 0.</para>
+      <para><emphasis role="bold">Endian considerations:</emphasis>
+      None.
+      </para>
+      
+      <table frame="all">
+      <title>Supported type signatures for vec_all_lt</title>
+      <tgroup cols="4">
+          <colspec colname="c1" colwidth="20*" />
+          <colspec colname="c2" colwidth="20*" />
+          <colspec colname="c3" colwidth="20*" />
+          <colspec colname="c4" colwidth="20*" />
+          <thead>
+            <row>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">r</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">ARG1</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">ARG2</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para><emphasis role="bold">Example Implementation</emphasis></para>
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed char</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector signed char</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned char</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector unsigned char</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector signed int</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector unsigned int</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector signed long long</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector unsigned long long</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector signed short</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector unsigned short</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector double</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector double</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector float</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector float</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+
+    </simplesect>
+    <?hard-pagebreak?>
+
+    <simplesect xml:id="vec_all_nan">
+      <title>vec_all_nan</title>
+      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <programlisting>
+      r = vec_all_nan (ARG1)
+      </programlisting>
+
+      <para><emphasis role="bold">Purpose:</emphasis>
+      Tests whether each element of the given vector is a not-a-number (NaN).
+      </para>
+      <para><emphasis role="bold">Result value:  </emphasis>The result is 1 if each element of ARG1 is a NaN. Otherwise, the result is 0.</para>
+      <para><emphasis role="bold">Endian considerations:</emphasis>
+      None.
+      </para>
+      
+      <table frame="all">
+      <title>Supported type signatures for vec_all_nan</title>
+      <tgroup cols="3">
+          <colspec colname="c1" colwidth="20*" />
+          <colspec colname="c2" colwidth="20*" />
+          <colspec colname="c3" colwidth="20*" />
+          <thead>
+            <row>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">r</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">ARG1</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para><emphasis role="bold">Example Implementation</emphasis></para>
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector double</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector float</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+
+    </simplesect>
+    <?hard-pagebreak?>
+
+    <simplesect xml:id="vec_all_ne">
+      <title>vec_all_ne</title>
+      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <programlisting>
+      r = vec_all_ne (ARG1, ARG2)
+      </programlisting>
+
+      <para><emphasis role="bold">Purpose:</emphasis>
+      Tests whether all sets of corresponding elements of the given vectors are not equal.
+      </para>
+      <para><emphasis role="bold">Result value:  </emphasis>The result is 1 if each element of ARG1 is not equal to the corresponding element of ARG2. Otherwise, the result is 0.</para>
+      <para><emphasis role="bold">Endian considerations:</emphasis>
+      None.
+      </para>
+      
+      <table frame="all">
+      <title>Supported type signatures for vec_all_ne</title>
+      <tgroup cols="4">
+          <colspec colname="c1" colwidth="20*" />
+          <colspec colname="c2" colwidth="20*" />
+          <colspec colname="c3" colwidth="20*" />
+          <colspec colname="c4" colwidth="20*" />
+          <thead>
+            <row>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">r</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">ARG1</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">ARG2</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para><emphasis role="bold">Example Implementation</emphasis></para>
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector bool char</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector bool char</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed char</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector signed char</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned char</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector unsigned char</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector bool int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector bool int</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector signed int</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector unsigned int</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector bool long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector bool long long</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector signed long long</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector unsigned long long</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector pixel</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector pixel</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector bool short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector bool short</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector signed short</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector unsigned short</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector double</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector double</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector float</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector float</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+
+    </simplesect>
+    <?hard-pagebreak?>
+
+    <simplesect xml:id="vec_all_nge">
+      <title>vec_all_nge</title>
+      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <programlisting>
+      r = vec_all_nge (ARG1, ARG2)
+      </programlisting>
+
+      <para><emphasis role="bold">Purpose:</emphasis>
+      Tests whether each element of the first argument is not greater than or equal to the corresponding element of the second argument.
+      </para>
+      <para><emphasis role="bold">Result value:  </emphasis>The result is 1 if each element of ARG1 is not greater than or equal to the corresponding element of ARG2. Otherwise, the result is 0.</para>
+      <para><emphasis role="bold">Endian considerations:</emphasis>
+      None.
+      </para>
+      
+      <table frame="all">
+      <title>Supported type signatures for vec_all_nge</title>
+      <tgroup cols="4">
+          <colspec colname="c1" colwidth="20*" />
+          <colspec colname="c2" colwidth="20*" />
+          <colspec colname="c3" colwidth="20*" />
+          <colspec colname="c4" colwidth="20*" />
+          <thead>
+            <row>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">r</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">ARG1</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">ARG2</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para><emphasis role="bold">Example Implementation</emphasis></para>
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector double</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector double</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector float</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector float</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+
+    </simplesect>
+    <?hard-pagebreak?>
+
+    <simplesect xml:id="vec_all_ngt">
+      <title>vec_all_ngt</title>
+      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <programlisting>
+      r = vec_all_ngt (ARG1, ARG2)
+      </programlisting>
+
+      <para><emphasis role="bold">Purpose:</emphasis>
+      Tests whether each element of the first argument is not greater than the corresponding element of the second argument.
+      </para>
+      <para><emphasis role="bold">Result value:  </emphasis>The result is 1 if each element of ARG1 is not greater than the corresponding element of ARG2. Otherwise, the result is 0.</para>
+      <para><emphasis role="bold">Endian considerations:</emphasis>
+      None.
+      </para>
+      
+      <table frame="all">
+      <title>Supported type signatures for vec_all_ngt</title>
+      <tgroup cols="4">
+          <colspec colname="c1" colwidth="20*" />
+          <colspec colname="c2" colwidth="20*" />
+          <colspec colname="c3" colwidth="20*" />
+          <colspec colname="c4" colwidth="20*" />
+          <thead>
+            <row>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">r</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">ARG1</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">ARG2</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para><emphasis role="bold">Example Implementation</emphasis></para>
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector double</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector double</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector float</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector float</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+
+    </simplesect>
+    <?hard-pagebreak?>
+
+    <simplesect xml:id="vec_all_nle">
+      <title>vec_all_nle</title>
+      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <programlisting>
+      r = vec_all_nle (ARG1, ARG2)
+      </programlisting>
+
+      <para><emphasis role="bold">Purpose:</emphasis>
+      Tests whether each element of the first argument is not less than or equal to the corresponding element of the second argument.
+      </para>
+      <para><emphasis role="bold">Result value:  </emphasis>The result is 1 if each element of ARG1 is not less than or equal to the corresponding element of ARG2. Otherwise, the result is 0.</para>
+      <para><emphasis role="bold">Endian considerations:</emphasis>
+      None.
+      </para>
+      
+      <table frame="all">
+      <title>Supported type signatures for vec_all_nle</title>
+      <tgroup cols="4">
+          <colspec colname="c1" colwidth="20*" />
+          <colspec colname="c2" colwidth="20*" />
+          <colspec colname="c3" colwidth="20*" />
+          <colspec colname="c4" colwidth="20*" />
+          <thead>
+            <row>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">r</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">ARG1</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">ARG2</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para><emphasis role="bold">Example Implementation</emphasis></para>
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector double</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector double</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector float</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector float</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+
+    </simplesect>
+    <?hard-pagebreak?>
+
+    <simplesect xml:id="vec_all_nlt">
+      <title>vec_all_nlt</title>
+      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <programlisting>
+      r = vec_all_nlt (ARG1, ARG2)
+      </programlisting>
+
+      <para><emphasis role="bold">Purpose:</emphasis>
+      Tests whether each element of the first argument is not less than the corresponding element of the second argument.
+      </para>
+      <para><emphasis role="bold">Result value:  </emphasis>The result is 1 if each element of ARG1 is not less than the corresponding element of ARG2. Otherwise, the result is 0.</para>
+      <para><emphasis role="bold">Endian considerations:</emphasis>
+      None.
+      </para>
+      
+      <table frame="all">
+      <title>Supported type signatures for vec_all_nlt</title>
+      <tgroup cols="4">
+          <colspec colname="c1" colwidth="20*" />
+          <colspec colname="c2" colwidth="20*" />
+          <colspec colname="c3" colwidth="20*" />
+          <colspec colname="c4" colwidth="20*" />
+          <thead>
+            <row>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">r</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">ARG1</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">ARG2</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para><emphasis role="bold">Example Implementation</emphasis></para>
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector double</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector double</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector float</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector float</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+
+    </simplesect>
+    <?hard-pagebreak?>
+
+    <simplesect xml:id="vec_all_numeric">
+      <title>vec_all_numeric</title>
+      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <programlisting>
+      r = vec_all_numeric (ARG1)
+      </programlisting>
+
+      <para><emphasis role="bold">Purpose:</emphasis>
+      Tests whether each element of the given vector is numeric (not a NaN).
+      </para>
+      <para><emphasis role="bold">Result value:  </emphasis>The result is 1 if each element of ARG1 is numeric (not a NaN). Otherwise, the result is 0.</para>
+      <para><emphasis role="bold">Endian considerations:</emphasis>
+      None.
+      </para>
+      
+      <table frame="all">
+      <title>Supported type signatures for vec_all_numeric</title>
+      <tgroup cols="3">
+          <colspec colname="c1" colwidth="20*" />
+          <colspec colname="c2" colwidth="20*" />
+          <colspec colname="c3" colwidth="20*" />
+          <thead>
+            <row>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">r</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">ARG1</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para><emphasis role="bold">Example Implementation</emphasis></para>
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector double</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector float</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+
+    </simplesect>
+
+    <?hard-pagebreak?>
     <simplesect xml:id="vec_and">
       <title>vec_and</title>
       <subtitle>Vector AND</subtitle>
@@ -1855,6 +3670,1821 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
     </simplesect>
 
     <?hard-pagebreak?>
+
+    <simplesect xml:id="vec_any_eq">
+      <title>vec_any_eq</title>
+      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <programlisting>
+      r = vec_any_eq (ARG1, ARG2)
+      </programlisting>
+
+      <para><emphasis role="bold">Purpose:</emphasis>
+      Tests whether any set of corresponding elements of the given vectors is equal.
+      </para>
+      <para><emphasis role="bold">Result value:  </emphasis>The result is 1 if any element of ARG1 is equal to the corresponding element of ARG2. Otherwise, the result is 0.</para>
+      <para><emphasis role="bold">Endian considerations:</emphasis>
+      None.
+      </para>
+      
+      <table frame="all">
+      <title>Supported type signatures for vec_any_eq</title>
+      <tgroup cols="4">
+          <colspec colname="c1" colwidth="20*" />
+          <colspec colname="c2" colwidth="20*" />
+          <colspec colname="c3" colwidth="20*" />
+          <colspec colname="c4" colwidth="20*" />
+          <thead>
+            <row>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">r</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">ARG1</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">ARG2</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para><emphasis role="bold">Example Implementation</emphasis></para>
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector bool char</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector bool char</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed char</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector signed char</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned char</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector unsigned char</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector bool int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector bool int</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector signed int</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector unsigned int</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector bool long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector bool long long</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector signed long long</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector unsigned long long</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector pixel</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector pixel</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector bool short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector bool short</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector signed short</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector unsigned short</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector double</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector double</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector float</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector float</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+
+    </simplesect>
+    <?hard-pagebreak?>
+
+    <simplesect xml:id="vec_any_ge">
+      <title>vec_any_ge</title>
+      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <programlisting>
+      r = vec_any_ge (ARG1, ARG2)
+      </programlisting>
+
+      <para><emphasis role="bold">Purpose:</emphasis>
+      Tests whether any element of the first argument is greater than or equal to the corresponding element of the second argument.
+      </para>
+      <para><emphasis role="bold">Result value:  </emphasis>The result is 1 if any element of ARG1 is greater than or equal to the corresponding element of ARG2. Otherwise, the result is 0.</para>
+      <para><emphasis role="bold">Endian considerations:</emphasis>
+      None.
+      </para>
+      
+      <table frame="all">
+      <title>Supported type signatures for vec_any_ge</title>
+      <tgroup cols="4">
+          <colspec colname="c1" colwidth="20*" />
+          <colspec colname="c2" colwidth="20*" />
+          <colspec colname="c3" colwidth="20*" />
+          <colspec colname="c4" colwidth="20*" />
+          <thead>
+            <row>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">r</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">ARG1</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">ARG2</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para><emphasis role="bold">Example Implementation</emphasis></para>
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed char</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector signed char</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned char</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector unsigned char</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector signed int</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector unsigned int</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector signed long long</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector unsigned long long</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector signed short</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector unsigned short</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector double</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector double</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector float</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector float</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+
+    </simplesect>
+    <?hard-pagebreak?>
+
+    <simplesect xml:id="vec_any_gt">
+      <title>vec_any_gt</title>
+      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <programlisting>
+      r = vec_any_gt (ARG1, ARG2)
+      </programlisting>
+
+      <para><emphasis role="bold">Purpose:</emphasis>
+      Tests whether any element of the first argument is greater than the corresponding element of the second argument.
+      </para>
+      <para><emphasis role="bold">Result value:  </emphasis>The result is 1 if any element of ARG1 is greater than the corresponding element of ARG2. Otherwise, the result is 0.</para>
+      <para><emphasis role="bold">Endian considerations:</emphasis>
+      None.
+      </para>
+      
+      <table frame="all">
+      <title>Supported type signatures for vec_any_gt</title>
+      <tgroup cols="4">
+          <colspec colname="c1" colwidth="20*" />
+          <colspec colname="c2" colwidth="20*" />
+          <colspec colname="c3" colwidth="20*" />
+          <colspec colname="c4" colwidth="20*" />
+          <thead>
+            <row>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">r</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">ARG1</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">ARG2</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para><emphasis role="bold">Example Implementation</emphasis></para>
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed char</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector signed char</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned char</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector unsigned char</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector signed int</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector unsigned int</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector signed long long</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector unsigned long long</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector signed short</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector unsigned short</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector double</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector double</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector float</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector float</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+
+    </simplesect>
+    <?hard-pagebreak?>
+
+    <simplesect xml:id="vec_any_le">
+      <title>vec_any_le</title>
+      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <programlisting>
+      r = vec_any_le (ARG1, ARG2)
+      </programlisting>
+
+      <para><emphasis role="bold">Purpose:</emphasis>
+      Tests whether any element of the first argument is less than or equal to the corresponding element of the second argument.
+      </para>
+      <para><emphasis role="bold">Result value:  </emphasis>The result is 1 if any element of ARG1 is less than or equal to the corresponding element of ARG2. Otherwise, the result is 0.</para>
+      <para><emphasis role="bold">Endian considerations:</emphasis>
+      None.
+      </para>
+      
+      <table frame="all">
+      <title>Supported type signatures for vec_any_le</title>
+      <tgroup cols="4">
+          <colspec colname="c1" colwidth="20*" />
+          <colspec colname="c2" colwidth="20*" />
+          <colspec colname="c3" colwidth="20*" />
+          <colspec colname="c4" colwidth="20*" />
+          <thead>
+            <row>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">r</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">ARG1</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">ARG2</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para><emphasis role="bold">Example Implementation</emphasis></para>
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed char</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector signed char</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned char</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector unsigned char</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector signed int</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector unsigned int</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector signed long long</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector unsigned long long</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector signed short</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector unsigned short</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector double</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector double</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector float</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector float</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+
+    </simplesect>
+    <?hard-pagebreak?>
+
+    <simplesect xml:id="vec_any_lt">
+      <title>vec_any_lt</title>
+      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <programlisting>
+      r = vec_any_lt (ARG1, ARG2)
+      </programlisting>
+
+      <para><emphasis role="bold">Purpose:</emphasis>
+      Tests whether any element of the first argument is less than the corresponding element of the second argument.
+      </para>
+      <para><emphasis role="bold">Result value:  </emphasis>The result is 1 if any element of ARG1 is less than the corresponding element of ARG2. Otherwise, the result is 0.</para>
+      <para><emphasis role="bold">Endian considerations:</emphasis>
+      None.
+      </para>
+      
+      <table frame="all">
+      <title>Supported type signatures for vec_any_lt</title>
+      <tgroup cols="4">
+          <colspec colname="c1" colwidth="20*" />
+          <colspec colname="c2" colwidth="20*" />
+          <colspec colname="c3" colwidth="20*" />
+          <colspec colname="c4" colwidth="20*" />
+          <thead>
+            <row>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">r</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">ARG1</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">ARG2</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para><emphasis role="bold">Example Implementation</emphasis></para>
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed char</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector signed char</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned char</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector unsigned char</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector signed int</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector unsigned int</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector signed long long</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector unsigned long long</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector signed short</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector unsigned short</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector double</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector double</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector float</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector float</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+
+    </simplesect>
+    <?hard-pagebreak?>
+
+    <simplesect xml:id="vec_any_nan">
+      <title>vec_any_nan</title>
+      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <programlisting>
+      r = vec_any_nan (ARG1)
+      </programlisting>
+
+      <para><emphasis role="bold">Purpose:</emphasis>
+      Tests whether any element of the given vector is a NaN.
+      </para>
+      <para><emphasis role="bold">Result value:  </emphasis>The result is 1 if any element of ARG1 is a NaN. Otherwise, the result is 0.</para>
+      <para><emphasis role="bold">Endian considerations:</emphasis>
+      None.
+      </para>
+      
+      <table frame="all">
+      <title>Supported type signatures for vec_any_nan</title>
+      <tgroup cols="3">
+          <colspec colname="c1" colwidth="20*" />
+          <colspec colname="c2" colwidth="20*" />
+          <colspec colname="c3" colwidth="20*" />
+          <thead>
+            <row>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">r</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">ARG1</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para><emphasis role="bold">Example Implementation</emphasis></para>
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector double</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector float</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+
+    </simplesect>
+    <?hard-pagebreak?>
+
+    <simplesect xml:id="vec_any_ne">
+      <title>vec_any_ne</title>
+      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <programlisting>
+      r = vec_any_ne (ARG1, ARG2)
+      </programlisting>
+
+      <para><emphasis role="bold">Purpose:</emphasis>
+      Tests whether any set of corresponding elements of the given vectors is not equal.
+      </para>
+      <para><emphasis role="bold">Result value:  </emphasis>The result is 1 if any element of ARG1 is not equal to the corresponding element of ARG2. Otherwise, the result is 0.</para>
+      <para><emphasis role="bold">Endian considerations:</emphasis>
+      None.
+      </para>
+      
+      <table frame="all">
+      <title>Supported type signatures for vec_any_ne</title>
+      <tgroup cols="4">
+          <colspec colname="c1" colwidth="20*" />
+          <colspec colname="c2" colwidth="20*" />
+          <colspec colname="c3" colwidth="20*" />
+          <colspec colname="c4" colwidth="20*" />
+          <thead>
+            <row>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">r</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">ARG1</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">ARG2</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para><emphasis role="bold">Example Implementation</emphasis></para>
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector bool char</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector bool char</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed char</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector signed char</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned char</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector unsigned char</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector bool int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector bool int</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector signed int</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector unsigned int</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector bool long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector bool long long</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector signed long long</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector unsigned long long</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector pixel</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector pixel</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector bool short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector bool short</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector signed short</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector unsigned short</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector double</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector double</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector float</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector float</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+
+    </simplesect>
+    <?hard-pagebreak?>
+
+    <simplesect xml:id="vec_any_nge">
+      <title>vec_any_nge</title>
+      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <programlisting>
+      r = vec_any_nge (ARG1, ARG2)
+      </programlisting>
+
+      <para><emphasis role="bold">Purpose:</emphasis>
+      Tests whether any element of the first argument is not greater than or equal to the corresponding element of the second argument.
+      </para>
+      <para><emphasis role="bold">Result value:  </emphasis>The result is 1 if any element of ARG1 is not greater than or equal to the corresponding element of ARG2. Otherwise, the result is 0.</para>
+      <para><emphasis role="bold">Endian considerations:</emphasis>
+      None.
+      </para>
+      
+      <table frame="all">
+      <title>Supported type signatures for vec_any_nge</title>
+      <tgroup cols="4">
+          <colspec colname="c1" colwidth="20*" />
+          <colspec colname="c2" colwidth="20*" />
+          <colspec colname="c3" colwidth="20*" />
+          <colspec colname="c4" colwidth="20*" />
+          <thead>
+            <row>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">r</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">ARG1</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">ARG2</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para><emphasis role="bold">Example Implementation</emphasis></para>
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector double</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector double</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector float</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector float</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+
+    </simplesect>
+    <?hard-pagebreak?>
+
+    <simplesect xml:id="vec_any_ngt">
+      <title>vec_any_ngt</title>
+      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <programlisting>
+      r = vec_any_ngt (ARG1, ARG2)
+      </programlisting>
+
+      <para><emphasis role="bold">Purpose:</emphasis>
+      Tests whether any element of the first argument is not greater than the corresponding element of the second argument.
+      </para>
+      <para><emphasis role="bold">Result value:  </emphasis>The result is 1 if any element of ARG1 is not greater than the corresponding element of ARG2. Otherwise, the result is 0.</para>
+      <para><emphasis role="bold">Endian considerations:</emphasis>
+      None.
+      </para>
+      
+      <table frame="all">
+      <title>Supported type signatures for vec_any_ngt</title>
+      <tgroup cols="4">
+          <colspec colname="c1" colwidth="20*" />
+          <colspec colname="c2" colwidth="20*" />
+          <colspec colname="c3" colwidth="20*" />
+          <colspec colname="c4" colwidth="20*" />
+          <thead>
+            <row>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">r</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">ARG1</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">ARG2</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para><emphasis role="bold">Example Implementation</emphasis></para>
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector double</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector double</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector float</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector float</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+
+    </simplesect>
+    <?hard-pagebreak?>
+
+    <simplesect xml:id="vec_any_nle">
+      <title>vec_any_nle</title>
+      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <programlisting>
+      r = vec_any_nle (ARG1, ARG2)
+      </programlisting>
+
+      <para><emphasis role="bold">Purpose:</emphasis>
+      Tests whether any element of the first argument is not less than or equal to the corresponding element of the second argument.
+      </para>
+      <para><emphasis role="bold">Result value:  </emphasis>The result is 1 if any element of ARG1 is not less than or equal to the corresponding element of ARG2. Otherwise, the result is 0.</para>
+      <para><emphasis role="bold">Endian considerations:</emphasis>
+      None.
+      </para>
+      
+      <table frame="all">
+      <title>Supported type signatures for vec_any_nle</title>
+      <tgroup cols="4">
+          <colspec colname="c1" colwidth="20*" />
+          <colspec colname="c2" colwidth="20*" />
+          <colspec colname="c3" colwidth="20*" />
+          <colspec colname="c4" colwidth="20*" />
+          <thead>
+            <row>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">r</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">ARG1</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">ARG2</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para><emphasis role="bold">Example Implementation</emphasis></para>
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector double</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector double</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector float</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector float</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+
+    </simplesect>
+    <?hard-pagebreak?>
+
+    <simplesect xml:id="vec_any_nlt">
+      <title>vec_any_nlt</title>
+      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <programlisting>
+      r = vec_any_nlt (ARG1, ARG2)
+      </programlisting>
+
+      <para><emphasis role="bold">Purpose:</emphasis>
+      Tests whether any element of the first argument is not less than the corresponding element of the second argument.
+      </para>
+      <para><emphasis role="bold">Result value:  </emphasis>The result is 1 if any element of ARG1 is not less than the corresponding element of ARG2. Otherwise, the result is 0.</para>
+      <para><emphasis role="bold">Endian considerations:</emphasis>
+      None.
+      </para>
+      
+      <table frame="all">
+      <title>Supported type signatures for vec_any_nlt</title>
+      <tgroup cols="4">
+          <colspec colname="c1" colwidth="20*" />
+          <colspec colname="c2" colwidth="20*" />
+          <colspec colname="c3" colwidth="20*" />
+          <colspec colname="c4" colwidth="20*" />
+          <thead>
+            <row>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">r</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">ARG1</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">ARG2</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para><emphasis role="bold">Example Implementation</emphasis></para>
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector double</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector double</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector float</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector float</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+
+    </simplesect>
+    <?hard-pagebreak?>
+
+    <simplesect xml:id="vec_any_numeric">
+      <title>vec_any_numeric</title>
+      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <programlisting>
+      r = vec_any_numeric (ARG1)
+      </programlisting>
+
+      <para><emphasis role="bold">Purpose:</emphasis>
+      Tests whether any element of the given vector is numeric (not a NaN).
+      </para>
+      <para><emphasis role="bold">Result value:  </emphasis>The result is 1 if any element of ARG1 is numeric (not a NaN). Otherwise, the result is 0.</para>
+      <para><emphasis role="bold">Endian considerations:</emphasis>
+      None.
+      </para>
+      
+      <table frame="all">
+      <title>Supported type signatures for vec_any_numeric</title>
+      <tgroup cols="3">
+          <colspec colname="c1" colwidth="20*" />
+          <colspec colname="c2" colwidth="20*" />
+          <colspec colname="c3" colwidth="20*" />
+          <thead>
+            <row>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">r</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">ARG1</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para><emphasis role="bold">Example Implementation</emphasis></para>
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector double</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector float</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+
+    </simplesect>
+    <?hard-pagebreak?>
+
+    <simplesect xml:id="vec_any_out">
+      <title>vec_any_out</title>
+      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <programlisting>
+      r = vec_any_out (ARG1, ARG2)
+      </programlisting>
+
+      <para><emphasis role="bold">Purpose:</emphasis>
+      Tests whether the value of any element of a given vector is outside of a given range.
+      </para>
+      <para><emphasis role="bold">Result value:  </emphasis>The result is 1 if the value of any element of ARG1 is greater than the value of the corresponding element of ARG2 or less than the negative of the value of the corresponding element of ARG2. Otherwise, the result is 0.</para>
+      <para><emphasis role="bold">Endian considerations:</emphasis>
+      None.
+      </para>
+      
+      <table frame="all">
+      <title>Supported type signatures for vec_any_out</title>
+      <tgroup cols="4">
+          <colspec colname="c1" colwidth="20*" />
+          <colspec colname="c2" colwidth="20*" />
+          <colspec colname="c3" colwidth="20*" />
+          <colspec colname="c4" colwidth="20*" />
+          <thead>
+            <row>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">r</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">ARG1</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">ARG2</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para><emphasis role="bold">Example Implementation</emphasis></para>
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector float</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector float</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+
+    </simplesect>
+
+    <?hard-pagebreak?>
     <simplesect xml:id="vec_avg">
       <title>vec_avg</title>
       <subtitle>Vector Average</subtitle>
@@ -2308,6 +5938,138 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
     </simplesect>
 
     <?hard-pagebreak?>
+    <simplesect xml:id="vec_cipher_be">
+      <title>vec_cipher_be</title>
+      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <programlisting>
+      r = vec_cipher_be (ARG1, ARG2)
+      </programlisting>
+
+      <para><emphasis role="bold">Purpose:</emphasis>
+      Performs one round of the AES cipher operation on an intermediate state state_array by using a given round_key.
+      </para>
+      
+      <para><emphasis role="bold">Endian considerations:</emphasis>
+      None.
+      </para>
+      
+      <table frame="all">
+      <title>Supported type signatures for vec_cipher_be</title>
+      <tgroup cols="4">
+          <colspec colname="c1" colwidth="20*" />
+          <colspec colname="c2" colwidth="20*" />
+          <colspec colname="c3" colwidth="20*" />
+          <colspec colname="c4" colwidth="20*" />
+          <thead>
+            <row>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">r</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">ARG1</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">ARG2</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para><emphasis role="bold">Example Implementation</emphasis></para>
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector unsigned char</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned char</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector unsigned char</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+
+    </simplesect>
+    <?hard-pagebreak?>
+
+    <simplesect xml:id="vec_cipherlast_be">
+      <title>vec_cipherlast_be</title>
+      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <programlisting>
+      r = vec_cipherlast_be (ARG1, ARG2)
+      </programlisting>
+
+      <para><emphasis role="bold">Purpose:</emphasis>
+      Performs the final round of the AES cipher operation on an intermediate state state_array using the specified round_key.
+      </para>
+      
+      <para><emphasis role="bold">Endian considerations:</emphasis>
+      None.
+      </para>
+      
+      <table frame="all">
+      <title>Supported type signatures for vec_cipherlast_be</title>
+      <tgroup cols="4">
+          <colspec colname="c1" colwidth="20*" />
+          <colspec colname="c2" colwidth="20*" />
+          <colspec colname="c3" colwidth="20*" />
+          <colspec colname="c4" colwidth="20*" />
+          <thead>
+            <row>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">r</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">ARG1</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">ARG2</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para><emphasis role="bold">Example Implementation</emphasis></para>
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector unsigned char</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned char</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector unsigned char</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+
+    </simplesect>
+    <?hard-pagebreak?>
+
     <simplesect xml:id="vec_cmpb">
       <title>vec_cmpb</title>
       <subtitle>Vector Compare Bytes</subtitle>
@@ -9113,6 +12875,70 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
     </simplesect>
     <?hard-pagebreak?>
 
+    <simplesect xml:id="vec_ld">
+      <title>vec_ld</title>
+      <subtitle>Vector Load</subtitle>
+      <programlisting>
+      r = vec_ld (a, b)
+      </programlisting>
+
+      <para><emphasis role="bold">Purpose:</emphasis>
+      Performs a 16-byte load at a 16-byte-aligned address.
+      </para>
+      <para><emphasis role="bold">Result value: </emphasis>The scalar value
+      <emphasis role="bold">a</emphasis>
+      is added to the pointer value <emphasis role="bold">b</emphasis>, and
+      the result is rounded down to the nearest multiple of 16.  The 16-byte
+      value at this address is loaded into <emphasis role="bold">r</emphasis>.
+      </para>
+      <para><emphasis role="bold">Endian considerations:</emphasis>
+      None.
+      </para>
+      
+      <table frame="all">
+      <title>Supported type signatures for vec_loge</title>
+      <tgroup cols="3">
+          <colspec colname="c1" colwidth="20*" />
+          <colspec colname="c2" colwidth="20*" />
+          <colspec colname="c3" colwidth="20*" />
+          <thead>
+            <row>
+              <entry align="center" valign="middle">
+                <para>
+                  <emphasis role="bold">r</emphasis>
+                </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+                  <emphasis role="bold">a</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para><emphasis role="bold">Example Implementation</emphasis></para>
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector float</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector float</para>
+              </entry>
+              <entry>
+                <programlisting>
+  vlogefp  r,a
+		</programlisting>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+
+    </simplesect>
+    <?hard-pagebreak?>
+
     <simplesect xml:id="vec_loge">
       <title>vec_loge</title>
       <subtitle>Vector Base-2 Logarithm Estimate</subtitle>
@@ -11032,6 +14858,54 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
     </simplesect>
     <?hard-pagebreak?>
 
+    <simplesect xml:id="vec_mfvscr">
+      <title>vec_mfvscr</title>
+      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <programlisting>
+      r = vec_mfvscr ()
+      </programlisting>
+
+      <para><emphasis role="bold">Purpose:</emphasis>
+      Copies the contents of the Vector Status and Control Register into the result vector.
+      </para>
+      <para><emphasis role="bold">Result value:  </emphasis>The high-order 16 bits of the VSCR are copied into the seventh element of the result. The low-order 16 bits of the VSCR are copied into the eighth element of the result. All other elements are set to zero.</para>
+      <para><emphasis role="bold">Endian considerations:</emphasis>
+      None.
+      </para>
+      
+      <table frame="all">
+      <title>Supported type signatures for vec_mfvscr</title>
+      <tgroup cols="2">
+          <colspec colname="c1" colwidth="20*" />
+          <colspec colname="c2" colwidth="20*" />
+          <thead>
+            <row>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">r</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para><emphasis role="bold">Example Implementation</emphasis></para>
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector unsigned short</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+
+    </simplesect>
+    <?hard-pagebreak?>
+
     <simplesect xml:id="vec_min">
       <title>vec_min</title>
       <subtitle>Vector Minimum</subtitle>
@@ -11680,6 +15554,162 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <programlisting>
  vmsumuhs r,a,b,c
 		</programlisting>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+
+    </simplesect>
+    <?hard-pagebreak?>
+
+    <simplesect xml:id="vec_mtvscr">
+      <title>vec_mtvscr</title>
+      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <programlisting>
+      r = vec_mtvscr (ARG1)
+      </programlisting>
+
+      <para><emphasis role="bold">Purpose:</emphasis>
+      Copies the given value into the Vector Status and Control Register. The low-order 32 bits of ARG1 are copied into the VSCR.
+      </para>
+      
+      <para><emphasis role="bold">Endian considerations:</emphasis>
+      None.
+      </para>
+      
+      <table frame="all">
+      <title>Supported type signatures for vec_mtvscr</title>
+      <tgroup cols="3">
+          <colspec colname="c1" colwidth="20*" />
+          <colspec colname="c2" colwidth="20*" />
+          <colspec colname="c3" colwidth="20*" />
+          <thead>
+            <row>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">r</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">ARG1</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para><emphasis role="bold">Example Implementation</emphasis></para>
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+                <para>void</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector bool char</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>void</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed char</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>void</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned char</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>void</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector bool int</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>void</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed int</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>void</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned int</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>void</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector pixel</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>void</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector bool short</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>void</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed short</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>void</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned short</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
               </entry>
             </row>
           </tbody>
@@ -12713,6 +16743,138 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <programlisting>
   xxlnand  r,a,b
 		</programlisting>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+
+    </simplesect>
+    <?hard-pagebreak?>
+
+    <simplesect xml:id="vec_ncipher_be">
+      <title>vec_ncipher_be</title>
+      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <programlisting>
+      r = vec_ncipher_be (ARG1, ARG2)
+      </programlisting>
+
+      <para><emphasis role="bold">Purpose:</emphasis>
+      Performs one round of the AES inverse cipher operation on an intermediate state state_array using a given round_key.
+      </para>
+      
+      <para><emphasis role="bold">Endian considerations:</emphasis>
+      None.
+      </para>
+      
+      <table frame="all">
+      <title>Supported type signatures for vec_ncipher_be</title>
+      <tgroup cols="4">
+          <colspec colname="c1" colwidth="20*" />
+          <colspec colname="c2" colwidth="20*" />
+          <colspec colname="c3" colwidth="20*" />
+          <colspec colname="c4" colwidth="20*" />
+          <thead>
+            <row>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">r</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">ARG1</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">ARG2</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para><emphasis role="bold">Example Implementation</emphasis></para>
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector unsigned char</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned char</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector unsigned char</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+
+    </simplesect>
+    <?hard-pagebreak?>
+
+    <simplesect xml:id="vec_ncipherlast_be">
+      <title>vec_ncipherlast_be</title>
+      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <programlisting>
+      r = vec_ncipherlast_be (ARG1, ARG2)
+      </programlisting>
+
+      <para><emphasis role="bold">Purpose:</emphasis>
+      Performs the final round of the AES inverse cipher operation on an intermediate state state_array using the specified round_key.
+      </para>
+      
+      <para><emphasis role="bold">Endian considerations:</emphasis>
+      None.
+      </para>
+      
+      <table frame="all">
+      <title>Supported type signatures for vec_ncipherlast_be</title>
+      <tgroup cols="4">
+          <colspec colname="c1" colwidth="20*" />
+          <colspec colname="c2" colwidth="20*" />
+          <colspec colname="c3" colwidth="20*" />
+          <colspec colname="c4" colwidth="20*" />
+          <thead>
+            <row>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">r</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">ARG1</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">ARG2</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para><emphasis role="bold">Example Implementation</emphasis></para>
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector unsigned char</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned char</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector unsigned char</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
               </entry>
             </row>
           </tbody>
@@ -15695,6 +19857,114 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
     </simplesect>
     <?hard-pagebreak?>
 
+    <simplesect xml:id="vec_pmsum_be">
+      <title>vec_pmsum_be</title>
+      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <programlisting>
+      r = vec_pmsum_be (ARG1, ARG2)
+      </programlisting>
+
+      <para><emphasis role="bold">Purpose:</emphasis>
+      Performs the exclusive-OR operation (implementing polynomial addition) on each even-odd pair of the polynomial-multiplication result of the corresponding elements.
+      </para>
+      
+      <para><emphasis role="bold">Endian considerations:</emphasis>
+      None.
+      </para>
+      
+      <table frame="all">
+      <title>Supported type signatures for vec_pmsum_be</title>
+      <tgroup cols="4">
+          <colspec colname="c1" colwidth="20*" />
+          <colspec colname="c2" colwidth="20*" />
+          <colspec colname="c3" colwidth="20*" />
+          <colspec colname="c4" colwidth="20*" />
+          <thead>
+            <row>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">r</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">ARG1</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">ARG2</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para><emphasis role="bold">Example Implementation</emphasis></para>
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector unsigned short</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector unsigned __int128</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector unsigned long long</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector unsigned long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector unsigned int</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector unsigned short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned char</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector unsigned char</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+
+    </simplesect>
+    <?hard-pagebreak?>
+
     <simplesect xml:id="vec_popcnt">
       <title>vec_popcnt</title>
       <subtitle>Vector Population Count</subtitle>
@@ -17438,6 +21708,63 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
     </simplesect>
     <?hard-pagebreak?>
 
+    <simplesect xml:id="vec_sbox_be">
+      <title>vec_sbox_be</title>
+      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <programlisting>
+      r = vec_sbox_be (ARG1)
+      </programlisting>
+
+      <para><emphasis role="bold">Purpose:</emphasis>
+      Performs the SubBytes operation, as defined in Federal Information Processing Standards FIPS-197, on a state_array.
+      </para>
+      
+      <para><emphasis role="bold">Endian considerations:</emphasis>
+      None.
+      </para>
+      
+      <table frame="all">
+      <title>Supported type signatures for vec_sbox_be</title>
+      <tgroup cols="3">
+          <colspec colname="c1" colwidth="20*" />
+          <colspec colname="c2" colwidth="20*" />
+          <colspec colname="c3" colwidth="20*" />
+          <thead>
+            <row>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">r</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">ARG1</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para><emphasis role="bold">Example Implementation</emphasis></para>
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector unsigned char</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned char</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+
+    </simplesect>
+    <?hard-pagebreak?>
+
     <simplesect xml:id="vec_sel">
       <title>vec_sel</title>
       <subtitle>Vector Select</subtitle>
@@ -18161,6 +22488,98 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               </entry>
               <entry align="center" valign="middle">
                 <para>Deferred</para>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+
+    </simplesect>
+    <?hard-pagebreak?>
+
+    <simplesect xml:id="vec_shasigma_be">
+      <title>vec_shasigma_be</title>
+      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <programlisting>
+      r = vec_shasigma_be (ARG1, ARG2, ARG3)
+      </programlisting>
+
+      <para><emphasis role="bold">Purpose:</emphasis>
+      Performs a Secure Hash computation in accordance with Federal Information Processing Standards FIPS-180-3.
+      </para>
+      
+      <para><emphasis role="bold">Endian considerations:</emphasis>
+      None.
+      </para>
+      
+      <table frame="all">
+      <title>Supported type signatures for vec_shasigma_be</title>
+      <tgroup cols="5">
+          <colspec colname="c1" colwidth="20*" />
+          <colspec colname="c2" colwidth="20*" />
+          <colspec colname="c3" colwidth="20*" />
+          <colspec colname="c4" colwidth="20*" />
+          <colspec colname="c5" colwidth="20*" />
+          <thead>
+            <row>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">r</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">ARG1</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">ARG2</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">ARG3</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para><emphasis role="bold">Example Implementation</emphasis></para>
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> const int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> const int</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector unsigned long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> const int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> const int</para>
+              </entry>
+              <entry>
+                <programlisting>sample implementation TBD</programlisting>
               </entry>
             </row>
           </tbody>
