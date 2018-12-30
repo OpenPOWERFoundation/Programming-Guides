@@ -6888,18 +6888,33 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
     <?hard-pagebreak?>
     <simplesect xml:id="vec_cipher_be">
       <title>vec_cipher_be</title>
-      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <subtitle>Vector AES Cipher Big-Endian</subtitle>
       <programlisting>
-      r = vec_cipher_be (ARG1, ARG2)
+      r = vec_cipher_be (a, b)
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
-      Performs one round of the AES cipher operation on an intermediate state state_array by using a given round_key.
+      Performs one round of the AES cipher operation on an intermediate state
+      array <emphasis role="bold">a</emphasis> by using a given round key
+      <emphasis role="bold">b</emphasis>.
+      </para>
+      
+      <para><emphasis role="bold">Result value: r</emphasis> contains the
+      resulting intermediate state, after one round of the AES cipher
+      operation on intermediate state array <emphasis role="bold">a</emphasis>,
+      using the round key specified by <emphasis role="bold">b</emphasis>.
       </para>
       
       <para><emphasis role="bold">Endian considerations:</emphasis>
-      None.
+      All element and bit numberings of the AES cipher operation use
+      big-endian (i.e., left-to-right) order, reflecting the underlying
+      hardware insruction.  Unlike most of the vector intrinsics in this
+      chapter, <code>vec_cipher_be</code> does not follow the bi-endian
+      programming model.
       </para>
+
+      <para><emphasis role="bold">Notes:</emphasis> This intrinsic may
+      not yet be available in all implementations.</para>
       
       <table frame="all">
       <title>Supported type signatures for vec_cipher_be</title>
@@ -6917,12 +6932,12 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               </entry>
               <entry align="center">
                 <para>
-                  <emphasis role="bold">ARG1</emphasis>
+                  <emphasis role="bold">a</emphasis>
                 </para>
               </entry>
               <entry align="center">
                 <para>
-                  <emphasis role="bold">ARG2</emphasis>
+                  <emphasis role="bold">b</emphasis>
                 </para>
               </entry>
               <entry align="center">
@@ -6942,7 +6957,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> vector unsigned char</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  vcipher  r,a,b
+		</programlisting>
               </entry>
             </row>
           </tbody>
@@ -6954,18 +6971,33 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
 
     <simplesect xml:id="vec_cipherlast_be">
       <title>vec_cipherlast_be</title>
-      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <subtitle>Vector AES Cipher Last Big-Endian</subtitle>
       <programlisting>
-      r = vec_cipherlast_be (ARG1, ARG2)
+      r = vec_cipherlast_be (a, b)
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
-      Performs the final round of the AES cipher operation on an intermediate state state_array using the specified round_key.
+      Performs the final round of the AES cipher operation on an intermediate
+      state array <emphasis role="bold">a</emphasis> using the specified
+      round key <emphasis role="bold">b</emphasis>.
+      </para>
+      
+      <para><emphasis role="bold">Result value: r</emphasis> contains the
+      resulting final state, after the final round of the AES cipher
+      operation on intermediate state array <emphasis role="bold">a</emphasis>,
+      using the round key specified by <emphasis role="bold">b</emphasis>.
       </para>
       
       <para><emphasis role="bold">Endian considerations:</emphasis>
-      None.
+      All element and bit numberings of the AES cipher-last operation use
+      big-endian (i.e., left-to-right) order, reflecting the underlying
+      hardware insruction.  Unlike most of the vector intrinsics in this
+      chapter, <code>vec_cipherlast_be</code> does not follow the bi-endian
+      programming model.
       </para>
+
+      <para><emphasis role="bold">Notes:</emphasis> This intrinsic may
+      not yet be available in all implementations.</para>
       
       <table frame="all">
       <title>Supported type signatures for vec_cipherlast_be</title>
@@ -6983,12 +7015,12 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               </entry>
               <entry align="center">
                 <para>
-                  <emphasis role="bold">ARG1</emphasis>
+                  <emphasis role="bold">a</emphasis>
                 </para>
               </entry>
               <entry align="center">
                 <para>
-                  <emphasis role="bold">ARG2</emphasis>
+                  <emphasis role="bold">b</emphasis>
                 </para>
               </entry>
               <entry align="center">
@@ -7008,7 +7040,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> vector unsigned char</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  vcipherlast  r,a,b
+		</programlisting>
               </entry>
             </row>
           </tbody>
@@ -15808,17 +15842,25 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
 
     <simplesect xml:id="vec_mfvscr">
       <title>vec_mfvscr</title>
-      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <subtitle>Vector Move From Vector Status and Control Register</subtitle>
       <programlisting>
       r = vec_mfvscr ()
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
-      Copies the contents of the Vector Status and Control Register into the result vector.
+      Copies the contents of the Vector Status and Control Register into the
+      result vector.
       </para>
-      <para><emphasis role="bold">Result value:  </emphasis>The high-order 16 bits of the VSCR are copied into the seventh element of the result. The low-order 16 bits of the VSCR are copied into the eighth element of the result. All other elements are set to zero.</para>
+      <para><emphasis role="bold">Result value:  </emphasis>The high-order 16
+      bits of the VSCR are copied into the seventh element of <emphasis
+      role="bold">r</emphasis>, using big-endian (left-to-right) order. The
+      low-order 16 bits of the VSCR are copied into the eighth element of
+      <emphasis role="bold">r</emphasis>, using big-endian order.  All other
+      elements of <emphasis role="bold">r</emphasis> are set to zero.
+      </para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
-      None.
+      The contents of the VSCR are placed in the low-order 32 bits of the
+      result vector, regardless of endianness.
       </para>
       
       <table frame="all">
@@ -15834,7 +15876,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 </para>
               </entry>
               <entry align="center">
-                <para><emphasis role="bold">Example Implementation</emphasis></para>
+                <para><emphasis role="bold">Example
+		Implementation</emphasis></para>
               </entry>
             </row>
           </thead>
@@ -15844,7 +15887,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>vector unsigned short</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  mfvscr  a
+		</programlisting>
               </entry>
             </row>
           </tbody>
@@ -16513,14 +16558,18 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
 
     <simplesect xml:id="vec_mtvscr">
       <title>vec_mtvscr</title>
-      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <subtitle>Vector Move to Vector Status and Control Register</subtitle>
       <programlisting>
-      r = vec_mtvscr (ARG1)
+      r = vec_mtvscr (a)
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
-      Copies the given value into the Vector Status and Control Register. The low-order 32 bits of ARG1 are copied into the VSCR.
+      Copies the given value into the Vector Status and Control Register.
+      The low-order 32 bits of <emphasis role="bold">a</emphasis> are copied
+      into the VSCR.
       </para>
+
+      <para><emphasis role="bold">Result value:</emphasis> None.</para>
       
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
@@ -16541,11 +16590,12 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               </entry>
               <entry align="center">
                 <para>
-                  <emphasis role="bold">ARG1</emphasis>
+                  <emphasis role="bold">a</emphasis>
                 </para>
               </entry>
               <entry align="center">
-                <para><emphasis role="bold">Example Implementation</emphasis></para>
+                <para><emphasis role="bold">Example
+		Implementation</emphasis></para>
               </entry>
             </row>
           </thead>
@@ -16558,7 +16608,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>vector bool char</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  mtvscr  a
+		</programlisting>
               </entry>
             </row>
             <row>
@@ -16569,7 +16621,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>vector signed char</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  mtvscr  a
+		</programlisting>
               </entry>
             </row>
             <row>
@@ -16580,7 +16634,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>vector unsigned char</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  mtvscr  a
+		</programlisting>
               </entry>
             </row>
             <row>
@@ -16591,7 +16647,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>vector bool int</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  mtvscr  a
+		</programlisting>
               </entry>
             </row>
             <row>
@@ -16602,7 +16660,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>vector signed int</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  mtvscr  a
+		</programlisting>
               </entry>
             </row>
             <row>
@@ -16613,7 +16673,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>vector unsigned int</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  mtvscr  a
+		</programlisting>
               </entry>
             </row>
             <row>
@@ -16624,7 +16686,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>vector pixel</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  mtvscr  a
+		</programlisting>
               </entry>
             </row>
             <row>
@@ -16635,7 +16699,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>vector bool short</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  mtvscr  a
+		</programlisting>
               </entry>
             </row>
             <row>
@@ -16646,7 +16712,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>vector signed short</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  mtvscr  a
+		</programlisting>
               </entry>
             </row>
             <row>
@@ -16657,7 +16725,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>vector unsigned short</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  mtvscr  a
+		</programlisting>
               </entry>
             </row>
           </tbody>
@@ -17696,24 +17766,38 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
           </tbody>
         </tgroup>
       </table>
-
     </simplesect>
-    <?hard-pagebreak?>
 
+    <?hard-pagebreak?>
     <simplesect xml:id="vec_ncipher_be">
       <title>vec_ncipher_be</title>
-      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <subtitle>Vector AES Inverse Cipher Big-Endian</subtitle>
       <programlisting>
-      r = vec_ncipher_be (ARG1, ARG2)
+      r = vec_ncipher_be (a, b)
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
-      Performs one round of the AES inverse cipher operation on an intermediate state state_array using a given round_key.
+      Performs one round of the AES inverse cipher operation on an
+      intermediate state array <emphasis role="bold">a</emphasis> by using a
+      given round key <emphasis role="bold">b</emphasis>.
+      </para>
+      
+      <para><emphasis role="bold">Result value: r</emphasis> contains the
+      resulting intermediate state, after one round of the AES inverse cipher
+      operation on intermediate state array <emphasis role="bold">a</emphasis>,
+      using the round key specified by <emphasis role="bold">b</emphasis>.
       </para>
       
       <para><emphasis role="bold">Endian considerations:</emphasis>
-      None.
+      All element and bit numberings of the AES inverse cipher operation use
+      big-endian (i.e., left-to-right) order, reflecting the underlying
+      hardware insruction.  Unlike most of the vector intrinsics in this
+      chapter, <code>vec_ncipher_be</code> does not follow the bi-endian
+      programming model.
       </para>
+
+      <para><emphasis role="bold">Notes:</emphasis> This intrinsic may
+      not yet be available in all implementations.</para>
       
       <table frame="all">
       <title>Supported type signatures for vec_ncipher_be</title>
@@ -17731,12 +17815,12 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               </entry>
               <entry align="center">
                 <para>
-                  <emphasis role="bold">ARG1</emphasis>
+                  <emphasis role="bold">a</emphasis>
                 </para>
               </entry>
               <entry align="center">
                 <para>
-                  <emphasis role="bold">ARG2</emphasis>
+                  <emphasis role="bold">b</emphasis>
                 </para>
               </entry>
               <entry align="center">
@@ -17756,7 +17840,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> vector unsigned char</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  vncipher  r,a,b
+		</programlisting>
               </entry>
             </row>
           </tbody>
@@ -17768,18 +17854,33 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
 
     <simplesect xml:id="vec_ncipherlast_be">
       <title>vec_ncipherlast_be</title>
-      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <subtitle>Vector AES Inverse Cipher Last Big-Endian</subtitle>
       <programlisting>
-      r = vec_ncipherlast_be (ARG1, ARG2)
+      r = vec_ncipherlast_be (a, b)
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
-      Performs the final round of the AES inverse cipher operation on an intermediate state state_array using the specified round_key.
+      Performs the final round of the AES inverse cipher operation on an
+      intermediate state array <emphasis role="bold">a</emphasis> using the
+      specified round key <emphasis role="bold">b</emphasis>.
+      </para>
+      
+      <para><emphasis role="bold">Result value: r</emphasis> contains the
+      resulting final state, after the final round of the AES inverse cipher
+      operation on intermediate state array <emphasis role="bold">a</emphasis>,
+      using the round key specified by <emphasis role="bold">b</emphasis>.
       </para>
       
       <para><emphasis role="bold">Endian considerations:</emphasis>
-      None.
+      All element and bit numberings of the AES inverse cipher-last operation
+      use big-endian (i.e., left-to-right) order, reflecting the underlying
+      hardware insruction.  Unlike most of the vector intrinsics in this
+      chapter, <code>vec_ncipherlast_be</code> does not follow the bi-endian
+      programming model.
       </para>
+
+      <para><emphasis role="bold">Notes:</emphasis> This intrinsic may
+      not yet be available in all implementations.</para>
       
       <table frame="all">
       <title>Supported type signatures for vec_ncipherlast_be</title>
@@ -17797,12 +17898,12 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               </entry>
               <entry align="center">
                 <para>
-                  <emphasis role="bold">ARG1</emphasis>
+                  <emphasis role="bold">a</emphasis>
                 </para>
               </entry>
               <entry align="center">
                 <para>
-                  <emphasis role="bold">ARG2</emphasis>
+                  <emphasis role="bold">b</emphasis>
                 </para>
               </entry>
               <entry align="center">
@@ -17822,7 +17923,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> vector unsigned char</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  vncipherlast  r,a,b
+		</programlisting>
               </entry>
             </row>
           </tbody>
@@ -20807,17 +20910,33 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
 
     <simplesect xml:id="vec_pmsum_be">
       <title>vec_pmsum_be</title>
-      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <subtitle>Vector Polynomial Multiply-Sum Big-Endian</subtitle>
       <programlisting>
-      r = vec_pmsum_be (ARG1, ARG2)
+      r = vec_pmsum_be (a, b)
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
-      Performs the exclusive-OR operation (implementing polynomial addition) on each even-odd pair of the polynomial-multiplication result of the corresponding elements.
+      Performs the exclusive-OR operation (implementing polynomial addition)
+      on each even-odd pair of the polynomial-multiplication result of the
+      corresponding elements of <emphasis role="bold">a</emphasis> and
+      <emphasis role="bold">b</emphasis>.
+      </para>
+      <para><emphasis role="bold">Result value: </emphasis>Each element
+      <emphasis>i</emphasis> of <emphasis role="bold">r</emphasis> is
+      computed by an exclusive-OR operation of the polynomial
+      multiplication of input elements 2 &#x00d7; <emphasis>i</emphasis> of
+      <emphasis role="bold">a</emphasis> and <emphasis
+      role="bold">b</emphasis> and input elements 2 &#x00d7;
+      <emphasis>i</emphasis> + 1 of <emphasis role="bold">a</emphasis> and
+      <emphasis role="bold">b</emphasis>.
       </para>
       
       <para><emphasis role="bold">Endian considerations:</emphasis>
-      None.
+      All element numberings in the above description denote big-endian
+      (i.e., left-to-right) order, reflecting the underlying hardware
+      insruction.  Unlike most of the vector intrinsics in this chapter,
+      <code>vec_pmsum_be</code> does not follow the bi-endian
+      programming model.
       </para>
       
       <table frame="all">
@@ -20829,22 +20948,22 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
           <colspec colname="c4" colwidth="20*" />
           <thead>
             <row>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
                   <emphasis role="bold">r</emphasis>
                 </para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
-                  <emphasis role="bold">ARG1</emphasis>
+                  <emphasis role="bold">a</emphasis>
                 </para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
-                  <emphasis role="bold">ARG2</emphasis>
+                  <emphasis role="bold">b</emphasis>
                 </para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para><emphasis role="bold">Example Implementation</emphasis></para>
               </entry>
             </row>
@@ -20861,7 +20980,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> vector unsigned short</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  vpmsumh  r,a,b
+		</programlisting>
               </entry>
             </row>
             <row>
@@ -20875,7 +20996,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> vector unsigned long long</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  vpmsumd  r,a,b
+		</programlisting>
               </entry>
             </row>
             <row>
@@ -20889,7 +21012,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> vector unsigned int</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  vpmsumw  r,a,b
+		</programlisting>
               </entry>
             </row>
             <row>
@@ -20903,7 +21028,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> vector unsigned char</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  vpmsumb  r,a,b
+		</programlisting>
               </entry>
             </row>
           </tbody>
@@ -22658,18 +22785,32 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
 
     <simplesect xml:id="vec_sbox_be">
       <title>vec_sbox_be</title>
-      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <subtitle>Vector AES SubBytes Big-Endian</subtitle>
       <programlisting>
-      r = vec_sbox_be (ARG1)
+      r = vec_sbox_be (a)
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
-      Performs the SubBytes operation, as defined in Federal Information Processing Standards FIPS-197, on a state_array.
+      Performs the SubBytes operation, as defined in Federal Information
+      Processing Standards FIPS-197, on a state_array contained in
+      <emphasis role="bold">a</emphasis>.
       </para>
+
+      <para><emphasis role="bold">Result value: r</emphasis> contains the
+      result of the SubBytes operation, as defined in Federal Information
+      Processing Standard FIPS-197, on the state array represented by
+      <emphasis role="bold">a</emphasis>.</para>
       
       <para><emphasis role="bold">Endian considerations:</emphasis>
-      None.
+      All element numberings of the SubBytes operation use
+      big-endian (i.e., left-to-right) order, reflecting the underlying
+      hardware insruction.  Unlike most of the vector intrinsics in this
+      chapter, <code>vec_sbox_be</code> does not follow the bi-endian
+      programming model.
       </para>
+
+      <para><emphasis role="bold">Notes:</emphasis> This intrinsic may
+      not yet be available in all implementations.</para>
       
       <table frame="all">
       <title>Supported type signatures for vec_sbox_be</title>
@@ -22686,7 +22827,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               </entry>
               <entry align="center">
                 <para>
-                  <emphasis role="bold">ARG1</emphasis>
+                  <emphasis role="bold">a</emphasis>
                 </para>
               </entry>
               <entry align="center">
@@ -22703,7 +22844,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>vector unsigned char</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  vsbox  r,a
+		</programlisting>
               </entry>
             </row>
           </tbody>
@@ -23447,17 +23590,107 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
 
     <simplesect xml:id="vec_shasigma_be">
       <title>vec_shasigma_be</title>
-      <subtitle>Vector ... Spelled Out Name TBD</subtitle>
+      <subtitle>Vector SHA Sigma Big-Endian</subtitle>
       <programlisting>
-      r = vec_shasigma_be (ARG1, ARG2, ARG3)
+      r = vec_shasigma_be (a, b, c)
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
-      Performs a Secure Hash computation in accordance with Federal Information Processing Standards FIPS-180-3.
+      Performs a Secure Hash computation in accordance with Federal
+      Information Processing Standards FIPS-180-3.
       </para>
       
+      <para><emphasis role="bold">Result value:</emphasis> Each element of
+      <emphasis role="bold">r</emphasis> contains the SHA256 or SHA512 hash
+      as follows.
+      </para>
+
+      <para>The result of the SHA-256 function (<emphasis
+      role="bold">r</emphasis>[<emphasis>i</emphasis>] for
+      <emphasis>i</emphasis> = 0 to 3) is:</para>
+      <itemizedlist>
+	<listitem>
+	  <para>
+	    &#x03c3;0(<emphasis
+	    role="bold">a</emphasis>[<emphasis>i</emphasis>]), if <emphasis
+	    role="bold">b</emphasis> is 0 and bit <emphasis>i</emphasis> of
+	    the 4-bit <emphasis role="bold">c</emphasis> is 0.
+	  </para>
+	</listitem>
+	<listitem>
+	  <para>
+	    &#x03c3;1(<emphasis
+	    role="bold">a</emphasis>[<emphasis>i</emphasis>]), if <emphasis
+	    role="bold">b</emphasis> is 0 and bit <emphasis>i</emphasis> of
+	    the 4-bit <emphasis role="bold">c</emphasis> is 1.
+	  </para>
+	</listitem>
+	<listitem>
+	  <para>
+	    &#x03a3;0(<emphasis
+	    role="bold">a</emphasis>[<emphasis>i</emphasis>]), if <emphasis
+	    role="bold">b</emphasis> is nonzero and bit <emphasis>i</emphasis>
+	    of the 4-bit <emphasis role="bold">c</emphasis> is 0.
+	  </para>
+	</listitem>
+	<listitem>
+	  <para>
+	    &#x03a3;1(<emphasis
+	    role="bold">a</emphasis>[<emphasis>i</emphasis>]), if <emphasis
+	    role="bold">b</emphasis> is nonzero and bit <emphasis>i</emphasis>
+	    of the 4-bit <emphasis role="bold">c</emphasis> is 1.
+	  </para>
+	</listitem>
+      </itemizedlist>
+
+      <para>The result of the SHA-512 function (<emphasis
+      role="bold">r</emphasis>[<emphasis>i</emphasis>] for
+      <emphasis>i</emphasis> = 0 to 1) is:</para>
+      <itemizedlist>
+	<listitem>
+	  <para>
+	    &#x03c3;0(<emphasis
+	    role="bold">a</emphasis>[<emphasis>i</emphasis>]), if <emphasis
+	    role="bold">b</emphasis> is 0 and bit 2 &#x00d7;
+	    <emphasis>i</emphasis> of the 4-bit <emphasis
+	    role="bold">c</emphasis> is 0.
+	  </para>
+	</listitem>
+	<listitem>
+	  <para>
+	    &#x03c3;1(<emphasis
+	    role="bold">a</emphasis>[<emphasis>i</emphasis>]), if <emphasis
+	    role="bold">b</emphasis> is 0 and bit 2 &#x00d7;
+	    <emphasis>i</emphasis> of the 4-bit <emphasis
+	    role="bold">c</emphasis> is 1.
+	  </para>
+	</listitem>
+	<listitem>
+	  <para>
+	    &#x03a3;0(<emphasis
+	    role="bold">a</emphasis>[<emphasis>i</emphasis>]), if <emphasis
+	    role="bold">b</emphasis> is nonzero and bit 2 &#x00d7;
+	    <emphasis>i</emphasis> of the 4-bit <emphasis
+	    role="bold">c</emphasis> is 0.
+	  </para>
+	</listitem>
+	<listitem>
+	  <para>
+	    &#x03a3;1(<emphasis
+	    role="bold">a</emphasis>[<emphasis>i</emphasis>]), if <emphasis
+	    role="bold">b</emphasis> is nonzero and bit 2 &#x00d7;
+	    <emphasis>i</emphasis> of the 4-bit <emphasis
+	    role="bold">c</emphasis> is 1.
+	  </para>
+	</listitem>
+      </itemizedlist>
+
       <para><emphasis role="bold">Endian considerations:</emphasis>
-      None.
+      All element numberings in the above description denote big-endian
+      (i.e., left-to-right) order, reflecting the underlying hardware
+      insruction.  Unlike most of the vector intrinsics in this chapter,
+      <code>vec_pmsum_be</code> does not follow the bi-endian
+      programming model.
       </para>
       
       <table frame="all">
@@ -23470,27 +23703,27 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
           <colspec colname="c5" colwidth="20*" />
           <thead>
             <row>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
                   <emphasis role="bold">r</emphasis>
                 </para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
-                  <emphasis role="bold">ARG1</emphasis>
+                  <emphasis role="bold">a</emphasis>
                 </para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
-                  <emphasis role="bold">ARG2</emphasis>
+                  <emphasis role="bold">b</emphasis>
                 </para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
-                  <emphasis role="bold">ARG3</emphasis>
+                  <emphasis role="bold">c</emphasis>
                 </para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para><emphasis role="bold">Example Implementation</emphasis></para>
               </entry>
             </row>
@@ -23504,13 +23737,15 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>vector unsigned int</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> const int</para>
+                <para>const int</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> const int</para>
+                <para>const int</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  vshasigmaw  r,a,b,c
+		</programlisting>
               </entry>
             </row>
             <row>
@@ -23527,7 +23762,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para> const int</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  vshasigmaw  r,a,b,d
+		</programlisting>
               </entry>
             </row>
           </tbody>
