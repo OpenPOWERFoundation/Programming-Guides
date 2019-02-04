@@ -13859,30 +13859,37 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
 
     <simplesect xml:id="vec_ld">
       <title>vec_ld</title>
-      <subtitle>Vector Load</subtitle>
+      <subtitle>Vector Load Indexed</subtitle>
       <programlisting>
       r = vec_ld (a, b)
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
-      Performs a 16-byte load at a 16-byte-aligned address.
+      Loads a 16-byte vector from the memory address specified by the
+      displacement and the pointer, ignoring the four low-order bits
+      of the calculated address.
       </para>
-      <para><emphasis role="bold">Result value: </emphasis>The scalar value
-      <emphasis role="bold">a</emphasis>
-      is added to the pointer value <emphasis role="bold">b</emphasis>, and
-      the result is rounded down to the nearest multiple of 16.  The 16-byte
-      value at this address is loaded into <emphasis role="bold">r</emphasis>.
-      </para>
+      <para><emphasis role="bold">Result value: </emphasis>The value of
+      <emphasis role="bold">r</emphasis> is obtained by adding <emphasis
+      role="bold">a</emphasis> and <emphasis role="bold">b</emphasis>,
+      masking off the four low-order bits of the result, and
+      loading the 16-byte vector from the resultant memory address.</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
+      <para><emphasis role="bold">Notes:</emphasis> No Power compilers yet
+      support the vector _Float16 type, so those interfaces are currently
+      deferred.
+      </para>
       
       <table frame="all">
-      <title>Supported type signatures for vec_loge</title>
-      <tgroup cols="3">
+      <title>Supported type signatures for vec_ld</title>
+      <tgroup cols="5">
           <colspec colname="c1" colwidth="20*" />
           <colspec colname="c2" colwidth="20*" />
           <colspec colname="c3" colwidth="20*" />
+          <colspec colname="c4" colwidth="20*" />
+          <colspec colname="c5" colwidth="20*" />
           <thead>
             <row>
               <entry align="center" valign="middle">
@@ -13895,23 +13902,1367 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                   <emphasis role="bold">a</emphasis>
                 </para>
               </entry>
+              <entry align="center" valign="middle">
+                <para>
+                  <emphasis role="bold">b</emphasis>
+                </para>
+              </entry>
               <entry align="center">
-                <para><emphasis role="bold">Example Implementation</emphasis></para>
+                <para><emphasis role="bold">Example ISA 3.0
+		Implementation</emphasis></para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para><emphasis role="bold">Restrictions</emphasis></para>
               </entry>
             </row>
           </thead>
           <tbody>
             <row>
               <entry align="center" valign="middle">
-                <para>vector float</para>
+                <para>vector bool char</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>vector float</para>
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector bool char *</para>
               </entry>
               <entry>
                 <programlisting>
-  vlogefp  r,a
+  lvx  r,b,a
 		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector signed char</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>signed char *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  lvx  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector signed char</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed char *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  lvx  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector unsigned char</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> unsigned char *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  lvx  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector unsigned char</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned char *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  lvx  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector bool int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector bool int *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  lvx  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector signed int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> signed int *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  lvx  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector signed int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed int *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  lvx  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> unsigned int *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  lvx  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned int *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  lvx  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector signed __int128</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>signed __int128 *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  lvx  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector signed __int128</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed __int128 *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  lvx  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector unsigned __int128</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> unsigned __int128 *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  lvx  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector unsigned __int128</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned __int128 *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  lvx  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector bool long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector bool long long *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  lvx  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector signed long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> signed long long *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  lvx  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector signed long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed long long *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  lvx  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector unsigned long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> unsigned long long *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  lvx  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector unsigned long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned long long *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  lvx  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector pixel</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector pixel *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  lvx  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector bool short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector bool short *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  lvx  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector signed short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> signed short *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  lvx  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector signed short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed short *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  lvx  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector unsigned short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> unsigned short *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  lvx  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector unsigned short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned short *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  lvx  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector double</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> double *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  lvx  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector double</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector double *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  lvx  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector float</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> float *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  lvx  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector float</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector float *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  lvx  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector _Float16</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> _Float16 *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  lvx  r,b,a
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>Deferred</para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector _Float16</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector _Float16 *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  lvx  r,b,a
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>Deferred</para>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+
+    </simplesect>
+    <?hard-pagebreak?>
+
+    <simplesect xml:id="vec_lde">
+      <title>vec_lde</title>
+      <subtitle>Vector Load Element Indexed</subtitle>
+      <programlisting>
+      r = vec_lde (a, b)
+      </programlisting>
+
+      <para><emphasis role="bold">Purpose:</emphasis>
+      Loads a single element into the position in the vector register
+      corresponding to its address, leaving the remaining elements of
+      the register undefined.
+      </para>
+      <para><emphasis role="bold">Result value: </emphasis>
+      The integer value <emphasis role="bold">a</emphasis> is added to the
+      pointer value <emphasis role="bold">b</emphasis>.  The resulting
+      address is rounded down to the nearest address that is a multiple of
+      <emphasis>es</emphasis>, where <emphasis>es</emphasis> is 1 for
+      char pointers, 2 for short pointers, and 4 for float or int pointers.
+      The element at this address is loaded into an element of <emphasis
+      role="bold">r</emphasis>, leaving all other elements of <emphasis
+      role="bold">r</emphasis> undefined.  The position of the loaded
+      element in <emphasis role="bold">r</emphasis> is determined by taking the
+      address modulo 16.
+      </para>
+      <para><emphasis role="bold">Endian considerations:</emphasis>
+      None.
+      </para>
+      
+      <table frame="all">
+      <title>Supported type signatures for vec_lde</title>
+      <tgroup cols="4">
+          <colspec colname="c1" colwidth="20*" />
+          <colspec colname="c2" colwidth="20*" />
+          <colspec colname="c3" colwidth="20*" />
+          <colspec colname="c4" colwidth="20*" />
+          <thead>
+            <row>
+              <entry align="center" valign="middle">
+                <para>
+                  <emphasis role="bold">r</emphasis>
+                </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+                  <emphasis role="bold">a</emphasis>
+                </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+                  <emphasis role="bold">b</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para><emphasis role="bold">Example ISA 3.0
+		Implementation</emphasis></para>
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector signed char</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>signed char *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  lvebx  r,b,a
+		</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector unsigned char</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>unsigned char *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  lvebx  r,b,a
+		</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector signed int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>signed int *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  lvewx  r,b,a
+		</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>unsigned int *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  lvewx  r,b,a
+		</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector signed short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>signed short *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  lvehx  r,b,a
+		</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector unsigned short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>unsigned short *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  lvehx  r,b,a
+		</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector float</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>float *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  lvewx  r,b,a
+		</programlisting>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+
+    </simplesect>
+    <?hard-pagebreak?>
+
+    <simplesect xml:id="vec_ldl">
+      <title>vec_ldl</title>
+      <subtitle>Vector Load Indexed Least Recently Used</subtitle>
+      <programlisting>
+      r = vec_ldl (a, b)
+      </programlisting>
+
+      <para><emphasis role="bold">Purpose:</emphasis>
+      Loads a 16-byte vector from the memory address specified by the
+      displacement and the pointer, ignoring the four low-order bits
+      of the calculated address, and marks the cache line loaded from
+      as least recently used.
+      </para>
+      <para><emphasis role="bold">Result value: </emphasis>The value of
+      <emphasis role="bold">r</emphasis> is obtained by adding <emphasis
+      role="bold">a</emphasis> and <emphasis role="bold">b</emphasis>,
+      masking off the four low-order bits of the result, and
+      loading the 16-byte vector from the resultant memory address.</para>
+      <para><emphasis role="bold">Endian considerations:</emphasis>
+      None.
+      </para>
+      <para><emphasis role="bold">Notes:</emphasis> No Power compilers yet
+      support the vector _Float16 type, so those interfaces are currently
+      deferred.
+      </para>
+      
+      <table frame="all">
+      <title>Supported type signatures for vec_ldl</title>
+      <tgroup cols="5">
+          <colspec colname="c1" colwidth="20*" />
+          <colspec colname="c2" colwidth="20*" />
+          <colspec colname="c3" colwidth="20*" />
+          <colspec colname="c4" colwidth="20*" />
+          <colspec colname="c5" colwidth="20*" />
+          <thead>
+            <row>
+              <entry align="center" valign="middle">
+                <para>
+                  <emphasis role="bold">r</emphasis>
+                </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+                  <emphasis role="bold">a</emphasis>
+                </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+                  <emphasis role="bold">b</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para><emphasis role="bold">Example ISA 3.0
+		Implementation</emphasis></para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para><emphasis role="bold">Restrictions</emphasis></para>
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector bool char</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector bool char *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  lvxl  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector signed char</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>signed char *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  lvxl  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector signed char</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed char *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  lvxl  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector unsigned char</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> unsigned char *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  lvxl  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector unsigned char</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned char *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  lvxl  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector bool int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector bool int *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  lvxl  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector signed int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> signed int *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  lvxl  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector signed int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed int *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  lvxl  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> unsigned int *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  lvxl  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned int *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  lvxl  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector bool long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector bool long long *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  lvxl  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector signed long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> signed long long *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  lvxl  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector signed long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed long long *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  lvxl  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector unsigned long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> unsigned long long *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  lvxl  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector unsigned long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned long long *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  lvxl  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector pixel</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector pixel *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  lvxl  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector bool short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector bool short *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  lvxl  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector signed short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> signed short *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  lvxl  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector signed short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed short *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  lvxl  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector unsigned short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> unsigned short *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  lvxl  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector unsigned short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned short *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  lvxl  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector double</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> double *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  lvxl  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector double</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector double *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  lvxl  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector float</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> float *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  lvxl  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector float</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector float *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  lvxl  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector _Float16</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> _Float16 *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  lvxl  r,b,a
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>Deferred</para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector _Float16</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector _Float16 *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  lvxl  r,b,a
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>Deferred</para>
               </entry>
             </row>
           </tbody>
@@ -21410,6 +22761,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
 	    required for earlier ISA levels.
 	  </para>
 	</listitem>
+	<listitem>
+	  <para>
+	    Interfaces that make no change to the data are deprecated.
+	  </para>
+	</listitem>
       </itemizedlist>
       </para>
       
@@ -21453,8 +22809,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
   [none]
 		</programlisting>
               </entry>
-              <entry>
-                <para></para>
+              <entry align="center" valign="middle">
+                <para>Deprecated</para>
               </entry>
             </row>
             <row>
@@ -21469,8 +22825,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
   [none]
 		</programlisting>
               </entry>
-              <entry>
-                <para></para>
+              <entry align="center" valign="middle">
+                <para>Deprecated</para>
               </entry>
             </row>
             <row>
@@ -21485,8 +22841,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
   [none]
 		</programlisting>
               </entry>
-              <entry>
-                <para></para>
+              <entry align="center" valign="middle">
+                <para>Deprecated</para>
               </entry>
             </row>
             <row>
@@ -21501,8 +22857,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
   xxbrw  r,a
 		</programlisting>
               </entry>
-              <entry>
-                <para></para>
+              <entry align="center" valign="middle">
+                <para>Deprecated</para>
               </entry>
             </row>
             <row>
@@ -21581,8 +22937,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
   xxbrd  r,a
 		</programlisting>
               </entry>
-              <entry>
-                <para></para>
+              <entry align="center" valign="middle">
+                <para>Deprecated</para>
               </entry>
             </row>
             <row>
@@ -21629,8 +22985,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
   xxbrh  r,a
 		</programlisting>
               </entry>
-              <entry>
-                <para></para>
+              <entry align="center" valign="middle">
+                <para>Deprecated</para>
               </entry>
             </row>
             <row>
@@ -27759,6 +29115,1699 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
               </entry>
               <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+
+    </simplesect>
+    <?hard-pagebreak?>
+
+    <simplesect xml:id="vec_st">
+      <title>vec_st</title>
+      <subtitle>Vector Store Indexed</subtitle>
+      <programlisting>
+      vec_st (a, b, c)
+      </programlisting>
+
+      <para><emphasis role="bold">Purpose:</emphasis>
+      Stores a 16-byte vector into memory at the address specified by a
+      displacement and a pointer, ignoring the four low-order bits
+      of the calculated address.
+      </para>
+      <para><emphasis role="bold">Operation: </emphasis>A memory address
+      is obtained by adding <emphasis role="bold">b</emphasis> and <emphasis
+      role="bold">c</emphasis>, and masking off the four low-order bits of the
+      result.  The 16-byte vector in <emphasis role="bold">a</emphasis> is
+      stored to the resultant memory address.</para>
+      <para><emphasis role="bold">Endian considerations:</emphasis>
+      None.
+      </para>
+      <para><emphasis role="bold">Notes:</emphasis> No Power compilers yet
+      support the vector _Float16 type, so those interfaces are currently
+      deferred.
+      </para>
+      
+      <table frame="all">
+      <title>Supported type signatures for vec_st</title>
+      <tgroup cols="5">
+          <colspec colname="c1" colwidth="20*" />
+          <colspec colname="c2" colwidth="20*" />
+          <colspec colname="c3" colwidth="20*" />
+          <colspec colname="c4" colwidth="20*" />
+          <colspec colname="c5" colwidth="20*" />
+          <thead>
+            <row>
+              <entry align="center" valign="middle">
+                <para>
+                  <emphasis role="bold">a</emphasis>
+                </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+                  <emphasis role="bold">b</emphasis>
+                </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+                  <emphasis role="bold">c</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para><emphasis role="bold">Example ISA 3.0
+		Implementation</emphasis></para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para><emphasis role="bold">Restrictions</emphasis></para>
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector bool char</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector bool char *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  stvx  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector bool char</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>signed char *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  stvx  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector bool char</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>unsigned char *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  stvx  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector signed char</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>signed char *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  stvx  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector signed char</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed char *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  stvx  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector unsigned char</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> unsigned char *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  stvx  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector unsigned char</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned char *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  stvx  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector bool int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector bool int *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  stvx  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector bool int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>signed int *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  stvx  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector bool int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>unsigned int *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  stvx  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector signed int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> signed int *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  stvx  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector signed int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed int *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  stvx  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> unsigned int *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  stvx  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned int *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  stvx  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector bool long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector bool long long *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  stvx  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector signed long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> signed long long *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  stvx  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector signed long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed long long *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  stvx  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector unsigned long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> unsigned long long *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  stvx  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector unsigned long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned long long *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  stvx  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector pixel</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector pixel *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  stvx  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector bool short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector bool short *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  stvx  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector bool short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>signed short *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  stvx  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector bool short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>unsigned short *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  stvx  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector signed short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> signed short *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  stvx  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector signed short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed short *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  stvx  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector unsigned short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> unsigned short *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  stvx  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector unsigned short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned short *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  stvx  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector double</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> double *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  stvx  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector double</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector double *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  stvx  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector float</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> float *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  stvx  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector float</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector float *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  stvx  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector _Float16</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> _Float16 *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  stvx  r,b,a
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>Deferred</para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector _Float16</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector _Float16 *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  stvx  r,b,a
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>Deferred</para>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+
+    </simplesect>
+    <?hard-pagebreak?>
+
+    <simplesect xml:id="vec_ste">
+      <title>vec_ste</title>
+      <subtitle>Vector Store Element Indexed</subtitle>
+      <programlisting>
+      vec_ste (a, b, c)
+      </programlisting>
+
+      <para><emphasis role="bold">Purpose:</emphasis>
+      Stores a single element from a 16-byte vector into memory at the address
+      specified by a displacement and a pointer, aligned to the element size.
+      </para>
+      <para><emphasis role="bold">Operation: </emphasis>The integer value
+      <emphasis role="bold">b</emphasis> is added to the pointer value
+      <emphasis role="bold">c</emphasis>.  The resulting address is rounded
+      down to the nearest address that is a multiple of
+      <emphasis>es</emphasis>, where <emphasis>es</emphasis> is 1 for char
+      pointers, 2 for short pointers, and 4 for float or int pointers.
+      An element offset <emphasis>eo</emphasis> is calculated by taking the
+      resultant address modulo 16.  The vector element of <emphasis
+      role="bold">a</emphasis> at offset <emphasis>eo</emphasis> is stored
+      to the resultant address.</para>
+      <para><emphasis role="bold">Endian considerations:</emphasis>
+      None.
+      </para>
+      
+      <table frame="all">
+      <title>Supported type signatures for vec_ste</title>
+      <tgroup cols="4">
+          <colspec colname="c1" colwidth="20*" />
+          <colspec colname="c2" colwidth="20*" />
+          <colspec colname="c3" colwidth="20*" />
+          <colspec colname="c4" colwidth="20*" />
+          <thead>
+            <row>
+              <entry align="center" valign="middle">
+                <para>
+                  <emphasis role="bold">a</emphasis>
+                </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+                  <emphasis role="bold">b</emphasis>
+                </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+                  <emphasis role="bold">c</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para><emphasis role="bold">Example ISA 3.0
+		Implementation</emphasis></para>
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector bool char</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>signed char *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  stvebx  r,b,a
+		</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector bool char</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>unsigned char *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  stvebx  r,b,a
+		</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector signed char</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>signed char *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  stvebx  r,b,a
+		</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector unsigned char</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>unsigned char *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  stvebx  r,b,a
+		</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector bool int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>signed int *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  stvewx  r,b,a
+		</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector bool int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>unsigned int *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  stvewx  r,b,a
+		</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector signed int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>signed int *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  stvewx  r,b,a
+		</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>unsigned int *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  stvewx  r,b,a
+		</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector pixel</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>signed short *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  stvehx  r,b,a
+		</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector pixel</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>unsigned short *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  stvehx  r,b,a
+		</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector bool short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>signed short *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  stvehx  r,b,a
+		</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector bool short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>unsigned short *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  stvehx  r,b,a
+		</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector signed short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>signed short *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  stvehx  r,b,a
+		</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector unsigned short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>unsigned short *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  stvehx  r,b,a
+		</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector float</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>float *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  stvewx  r,b,a
+		</programlisting>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+
+    </simplesect>
+    <?hard-pagebreak?>
+
+    <simplesect xml:id="vec_stl">
+      <title>vec_stl</title>
+      <subtitle>Vector Store Indexed Least Recently Used</subtitle>
+      <programlisting>
+      vec_stl (a, b, c)
+      </programlisting>
+
+      <para><emphasis role="bold">Purpose:</emphasis>
+      Stores a 16-byte vector into memory at the address specified by a
+      displacement and a pointer, ignoring the four low-order bits
+      of the calculated address, and marking the cache line containing
+      the address as least frequently used.
+      </para>
+      <para><emphasis role="bold">Operation: </emphasis>A memory address
+      is obtained by adding <emphasis role="bold">b</emphasis> and <emphasis
+      role="bold">c</emphasis>, and masking off the four low-order bits of the
+      result.  The 16-byte vector in <emphasis role="bold">a</emphasis> is
+      stored to the resultant memory address, and the containing cache
+      line is marked as least frequently used.</para>
+      <para><emphasis role="bold">Endian considerations:</emphasis>
+      None.
+      </para>
+      <para><emphasis role="bold">Notes:</emphasis> No Power compilers yet
+      support the vector _Float16 type, so those interfaces are currently
+      deferred.
+      </para>
+      
+      <table frame="all">
+      <title>Supported type signatures for vec_stl</title>
+      <tgroup cols="5">
+          <colspec colname="c1" colwidth="20*" />
+          <colspec colname="c2" colwidth="20*" />
+          <colspec colname="c3" colwidth="20*" />
+          <colspec colname="c4" colwidth="20*" />
+          <colspec colname="c5" colwidth="20*" />
+          <thead>
+            <row>
+              <entry align="center" valign="middle">
+                <para>
+                  <emphasis role="bold">a</emphasis>
+                </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+                  <emphasis role="bold">b</emphasis>
+                </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+                  <emphasis role="bold">c</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para><emphasis role="bold">Example ISA 3.0
+		Implementation</emphasis></para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para><emphasis role="bold">Restrictions</emphasis></para>
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector bool char</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector bool char *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  stvxl  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector bool char</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>signed char *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  stvxl  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector bool char</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>unsigned char *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  stvxl  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector signed char</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>signed char *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  stvxl  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector signed char</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed char *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  stvxl  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector unsigned char</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> unsigned char *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  stvxl  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector unsigned char</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned char *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  stvxl  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector bool int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector bool int *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  stvxl  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector bool int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>signed int *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  stvxl  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector bool int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>unsigned int *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  stvxl  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector signed int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> signed int *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  stvxl  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector signed int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed int *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  stvxl  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> unsigned int *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  stvxl  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned int *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  stvxl  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector bool long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector bool long long *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  stvxl  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector signed long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> signed long long *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  stvxl  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector signed long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed long long *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  stvxl  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector unsigned long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> unsigned long long *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  stvxl  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector unsigned long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned long long *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  stvxl  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector pixel</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector pixel *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  stvxl  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector bool short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector bool short *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  stvxl  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector bool short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>signed short *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  stvxl  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector bool short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>unsigned short *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  stvxl  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector signed short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> signed short *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  stvxl  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector signed short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed short *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  stvxl  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector unsigned short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> unsigned short *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  stvxl  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector unsigned short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned short *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  stvxl  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector double</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> double *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  stvxl  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector double</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector double *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  stvxl  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector float</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> float *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  stvxl  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector float</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector float *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  stvxl  r,b,a
+		</programlisting>
+              </entry>
+              <entry>
+                <para></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector _Float16</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> _Float16 *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  stvxl  r,b,a
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>Deferred</para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector _Float16</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>any integral type</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector _Float16 *</para>
+              </entry>
+              <entry>
+                <programlisting>
+  stvxl  r,b,a
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>Deferred</para>
               </entry>
             </row>
           </tbody>
