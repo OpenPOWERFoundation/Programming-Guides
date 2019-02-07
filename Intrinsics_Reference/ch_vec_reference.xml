@@ -10867,8 +10867,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       The value of each element of <emphasis role="bold">r</emphasis> is the
       element of <emphasis role="bold">a</emphasis> at position
       <emphasis role="bold">b</emphasis> modulo the number of elements of
-      <emphasis role="bold">a</emphasis>.  Note that <emphasis
-      role="bold">b</emphasis> must be a constant.
+      <emphasis role="bold">a</emphasis>.
       </para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       The element numbering within a register is left-to-right for big-endian
@@ -10933,7 +10932,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
 		<para>vector signed char</para>
               </entry>
               <entry align="center" valign="middle">
-		<para>const signed int</para>
+		<para>signed int</para>
               </entry>
               <entry>
 		<programlisting>
@@ -10959,7 +10958,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>vector bool char</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> const signed int</para>
+                <para> signed int</para>
               </entry>
               <entry>
                 <programlisting>
@@ -10983,7 +10982,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>vector unsigned char</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> const signed int</para>
+                <para> signed int</para>
               </entry>
               <entry>
                 <programlisting>
@@ -11007,7 +11006,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>vector signed int</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> const signed int</para>
+                <para> signed int</para>
               </entry>
               <entry>
                 <programlisting>
@@ -11035,7 +11034,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>vector bool int</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> const signed int</para>
+                <para> signed int</para>
               </entry>
               <entry>
                 <programlisting>
@@ -11061,7 +11060,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>vector unsigned int</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> const signed int</para>
+                <para> signed int</para>
               </entry>
               <entry>
                 <programlisting>
@@ -11087,7 +11086,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>vector signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> const signed int</para>
+                <para> signed int</para>
               </entry>
               <entry>
                 <programlisting>
@@ -11119,7 +11118,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>vector bool long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> const signed int</para>
+                <para> signed int</para>
               </entry>
 	      <entry>
                 <programlisting>
@@ -11151,7 +11150,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>vector unsigned long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> const signed int</para>
+                <para> signed int</para>
               </entry>
               <entry>
                 <programlisting>
@@ -11183,7 +11182,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>vector signed short</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> const signed int</para>
+                <para> signed int</para>
               </entry>
               <entry>
                 <programlisting>
@@ -11211,7 +11210,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>vector bool short</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> const signed int</para>
+                <para> signed int</para>
               </entry>
               <entry>
                 <programlisting>
@@ -11237,7 +11236,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>vector unsigned short</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> const signed int</para>
+                <para> signed int</para>
               </entry>
               <entry>
                 <programlisting>
@@ -11263,7 +11262,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>vector double</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> const signed int</para>
+                <para> signed int</para>
               </entry>
               <entry>
                 <programlisting>
@@ -11293,7 +11292,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>vector float</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> const signed int</para>
+                <para> signed int</para>
               </entry>
               <entry>
                 <programlisting>
@@ -11327,7 +11326,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
                 <para>vector _Float16</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> const signed int</para>
+                <para> signed int</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>Not yet available</para>
