@@ -51,6 +51,43 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>vspltisw</primary>
+	<secondary>vec_abs</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vsububm</primary>
+	<secondary>vec_abs</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vmaxsb</primary>
+	<secondary>vec_abs</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vsubuwm</primary>
+	<secondary>vec_abs</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vmaxsw</primary>
+	<secondary>vec_abs</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vsubudm</primary>
+	<secondary>vec_abs</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vmaxsd</primary>
+	<secondary>vec_abs</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvabssp</primary>
+	<secondary>vec_abs</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvabsdp</primary>
+	<secondary>vec_abs</secondary>
+      </indexterm>
+
       <table frame="all">
 	<title>Supported type signatures for vec_abs</title>
 	<tgroup cols="3">
@@ -190,6 +227,19 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>vabsdub</primary>
+	<secondary>vec_absd</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vabsduh</primary>
+	<secondary>vec_absd</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vabsduw</primary>
+	<secondary>vec_absd</secondary>
+      </indexterm>
+
       <table frame="all">
 	<title>Supported type signatures for vec_absd</title>
 	<tgroup cols="5">
@@ -313,6 +363,44 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>vspltisb</primary>
+	<secondary>vec_abss</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vsubsbs</primary>
+	<secondary>vec_abss</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vmaxsb</primary>
+	<secondary>vec_abss</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vspltish</primary>
+	<secondary>vec_abss</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vsubshs</primary>
+	<secondary>vec_abss</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vmaxsh</primary>
+	<secondary>vec_abss</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vspltisw</primary>
+	<secondary>vec_abss</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vsubsws</primary>
+	<secondary>vec_abss</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vmaxsw</primary>
+	<secondary>vec_abss</secondary>
+      </indexterm>
+
+
       <table frame="all">
 	<title>Supported type signatures for vec_abss</title>
 	<tgroup cols="3">
@@ -411,6 +499,35 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>vaddubm</primary>
+	<secondary>vec_add</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vadduhm</primary>
+	<secondary>vec_add</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vadduwm</primary>
+	<secondary>vec_add</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vaddudm</primary>
+	<secondary>vec_add</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vadduqm</primary>
+	<secondary>vec_add</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvaddsp</primary>
+	<secondary>vec_add</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvadddp</primary>
+	<secondary>vec_add</secondary>
+      </indexterm>
+
       <table frame="all">
 	<title>Supported type signatures for vec_add</title>
 	<tgroup cols="4">
@@ -662,6 +779,15 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>vaddcuw</primary>
+	<secondary>vec_addc</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vaddcuq</primary>
+	<secondary>vec_addc</secondary>
+      </indexterm>
+
       <table frame="all">
 	<title>Supported type signatures for vec_addc</title>
 	<tgroup cols="4">
@@ -786,6 +912,23 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>vspltisw</primary>
+	<secondary>vec_adde</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vadduwm</primary>
+	<secondary>vec_adde</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xxland</primary>
+	<secondary>vec_adde</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vaddeuqm</primary>
+	<secondary>vec_adde</secondary>
+      </indexterm>
+
       <table frame="all">
 	<title>Supported type signatures for vec_adde</title>
 	<tgroup cols="5">
@@ -935,6 +1078,31 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>vspltisw</primary>
+	<secondary>vec_addec</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xxland</primary>
+	<secondary>vec_addec</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vadduwm</primary>
+	<secondary>vec_addec</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vaddcuw</primary>
+	<secondary>vec_addec</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xxlor</primary>
+	<secondary>vec_addec</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vaddecuq</primary>
+	<secondary>vec_addec</secondary>
+      </indexterm>
+
       <table frame="all">
 	<title>Supported type signatures for vec_addec</title>
 	<tgroup cols="5">
@@ -1085,6 +1253,31 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>vaddsbs</primary>
+	<secondary>vec_adds</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vaddubs</primary>
+	<secondary>vec_adds</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vaddshs</primary>
+	<secondary>vec_adds</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vadduhs</primary>
+	<secondary>vec_adds</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vaddsws</primary>
+	<secondary>vec_adds</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vadduws</primary>
+	<secondary>vec_adds</secondary>
+      </indexterm>
+
       <table frame="all">
 	<title>Supported type signatures for vec_adds</title>
 	<tgroup cols="4">
@@ -1240,6 +1433,39 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>vcmpequb.</primary>
+	<secondary>vec_all_eq</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>mfocrf</primary>
+	<secondary>vec_all_eq</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>rlwinm</primary>
+	<secondary>vec_all_eq</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpequw.</primary>
+	<secondary>vec_all_eq</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpequd.</primary>
+	<secondary>vec_all_eq</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpequh.</primary>
+	<secondary>vec_all_eq</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvcmpeqdp.</primary>
+	<secondary>vec_all_eq</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvcmpeqsp.</primary>
+	<secondary>vec_all_eq</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_all_eq</title>
       <tgroup cols="4">
@@ -1567,6 +1793,55 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>vcmpgtsb.</primary>
+	<secondary>vec_all_ge</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>mfocrf</primary>
+	<secondary>vec_all_ge</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>rlwinm</primary>
+	<secondary>vec_all_ge</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtub.</primary>
+	<secondary>vec_all_ge</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtsw.</primary>
+	<secondary>vec_all_ge</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtuw.</primary>
+	<secondary>vec_all_ge</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtsd.</primary>
+	<secondary>vec_all_ge</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtud.</primary>
+	<secondary>vec_all_ge</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtsh.</primary>
+	<secondary>vec_all_ge</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtuh.</primary>
+	<secondary>vec_all_ge</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvcmpgedp.</primary>
+	<secondary>vec_all_ge</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvcmpgesp.</primary>
+	<secondary>vec_all_ge</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_all_ge</title>
       <tgroup cols="4">
@@ -1804,6 +2079,55 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>vcmpgtsb.</primary>
+	<secondary>vec_all_gt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>mfocrf</primary>
+	<secondary>vec_all_gt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>rlwinm</primary>
+	<secondary>vec_all_gt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtub.</primary>
+	<secondary>vec_all_gt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtsw.</primary>
+	<secondary>vec_all_gt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtuw.</primary>
+	<secondary>vec_all_gt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtsd.</primary>
+	<secondary>vec_all_gt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtud.</primary>
+	<secondary>vec_all_gt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtsh.</primary>
+	<secondary>vec_all_gt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtuh.</primary>
+	<secondary>vec_all_gt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvcmpgtdp.</primary>
+	<secondary>vec_all_gt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvcmpgtsp.</primary>
+	<secondary>vec_all_gt</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_all_gt</title>
       <tgroup cols="4">
@@ -2042,6 +2366,19 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>vcmpbfp.</primary>
+	<secondary>vec_all_in</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>mfocrf</primary>
+	<secondary>vec_all_in</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>rlwinm</primary>
+	<secondary>vec_all_in</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_all_in</title>
       <tgroup cols="4">
@@ -2117,6 +2454,55 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>vcmpgtsb.</primary>
+	<secondary>vec_all_le</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>mfocrf</primary>
+	<secondary>vec_all_le</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>rlwinm</primary>
+	<secondary>vec_all_le</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtub.</primary>
+	<secondary>vec_all_le</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtsw.</primary>
+	<secondary>vec_all_le</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtuw.</primary>
+	<secondary>vec_all_le</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtsd.</primary>
+	<secondary>vec_all_le</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtud.</primary>
+	<secondary>vec_all_le</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtsh.</primary>
+	<secondary>vec_all_le</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtuh.</primary>
+	<secondary>vec_all_le</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvcmpgedp.</primary>
+	<secondary>vec_all_le</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvcmpgesp.</primary>
+	<secondary>vec_all_le</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_all_le</title>
       <tgroup cols="4">
@@ -2354,6 +2740,55 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>vcmpgtsb.</primary>
+	<secondary>vec_all_lt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>mfocrf</primary>
+	<secondary>vec_all_lt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>rlwinm</primary>
+	<secondary>vec_all_lt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtub.</primary>
+	<secondary>vec_all_lt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtsw.</primary>
+	<secondary>vec_all_lt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtuw.</primary>
+	<secondary>vec_all_lt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtsd.</primary>
+	<secondary>vec_all_lt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtud.</primary>
+	<secondary>vec_all_lt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtsh.</primary>
+	<secondary>vec_all_lt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtuh.</primary>
+	<secondary>vec_all_lt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvcmpgtdp.</primary>
+	<secondary>vec_all_lt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvcmpgtsp.</primary>
+	<secondary>vec_all_lt</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_all_lt</title>
       <tgroup cols="4">
@@ -2589,6 +3024,23 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>xvcmpeqdp.</primary>
+	<secondary>vec_all_nan</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>mfocrf</primary>
+	<secondary>vec_all_nan</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>rlwinm</primary>
+	<secondary>vec_all_nan</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvcmpeqsp.</primary>
+	<secondary>vec_all_nan</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_all_nan</title>
       <tgroup cols="3">
@@ -2669,6 +3121,39 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>vcmpneb.</primary>
+	<secondary>vec_all_ne</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>mfocrf</primary>
+	<secondary>vec_all_ne</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>rlwinm</primary>
+	<secondary>vec_all_ne</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpnew.</primary>
+	<secondary>vec_all_ne</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpequd.</primary>
+	<secondary>vec_all_ne</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpneh.</primary>
+	<secondary>vec_all_ne</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvcmpeqdp.</primary>
+	<secondary>vec_all_ne</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvcmpeqsp.</primary>
+	<secondary>vec_all_ne</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_all_ne</title>
       <tgroup cols="4">
@@ -2997,6 +3482,23 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>xvcmpeqdp.</primary>
+	<secondary>vec_all_nge</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>mfocrf</primary>
+	<secondary>vec_all_nge</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>rlwinm</primary>
+	<secondary>vec_all_nge</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvcmpeqsp.</primary>
+	<secondary>vec_all_nge</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_all_nge</title>
       <tgroup cols="4">
@@ -3090,6 +3592,23 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>xvcmpgtdp.</primary>
+	<secondary>vec_all_ngt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>mfocrf</primary>
+	<secondary>vec_all_ngt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>rlwinm</primary>
+	<secondary>vec_all_ngt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvcmpgtsp.</primary>
+	<secondary>vec_all_ngt</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_all_ngt</title>
       <tgroup cols="4">
@@ -3183,6 +3702,23 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>xvcmpgedp.</primary>
+	<secondary>vec_all_nle</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>mfocrf</primary>
+	<secondary>vec_all_nle</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>rlwinm</primary>
+	<secondary>vec_all_nle</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvcmpgesp.</primary>
+	<secondary>vec_all_nle</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_all_nle</title>
       <tgroup cols="4">
@@ -3276,6 +3812,23 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>xvcmpgtdp.</primary>
+	<secondary>vec_all_nlt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>mfocrf</primary>
+	<secondary>vec_all_nlt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>rlwinm</primary>
+	<secondary>vec_all_nlt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvcmpgtsp.</primary>
+	<secondary>vec_all_nlt</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_all_nlt</title>
       <tgroup cols="4">
@@ -3366,6 +3919,23 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>xvcmpeqdp.</primary>
+	<secondary>vec_all_numeric</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>mfocrf</primary>
+	<secondary>vec_all_numeric</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>rlwinm</primary>
+	<secondary>vec_all_numeric</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvcmpeqsp.</primary>
+	<secondary>vec_all_numeric</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_all_numeric</title>
       <tgroup cols="3">
@@ -3446,6 +4016,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>xxland</primary>
+	<secondary>vec_and</secondary>
+      </indexterm>
+
       <table frame="all">
 	<title>Supported type signatures for vec_and</title>
 	<tgroup cols="5">
@@ -3764,6 +4339,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>xxlandc</primary>
+	<secondary>vec_andc</secondary>
+      </indexterm>
+
       <table frame="all">
 	<title>Supported type signatures for vec_andc</title>
 	<tgroup cols="5">
@@ -4082,6 +4662,47 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>vcmpneb.</primary>
+	<secondary>vec_any_eq</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>mfocrf</primary>
+	<secondary>vec_any_eq</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>rlwinm</primary>
+	<secondary>vec_any_eq</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>cntlzw</primary>
+	<secondary>vec_any_eq</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>srwi</primary>
+	<secondary>vec_any_eq</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpnew.</primary>
+	<secondary>vec_any_eq</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpequd.</primary>
+	<secondary>vec_any_eq</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpneh.</primary>
+	<secondary>vec_any_eq</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvcmpeqdp.</primary>
+	<secondary>vec_any_eq</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvcmpeqsp.</primary>
+	<secondary>vec_any_eq</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_any_eq</title>
       <tgroup cols="4">
@@ -4439,6 +5060,63 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>vcmpgtsb.</primary>
+	<secondary>vec_any_ge</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>mfocrf</primary>
+	<secondary>vec_any_ge</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>rlwinm</primary>
+	<secondary>vec_any_ge</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>cntlzw</primary>
+	<secondary>vec_any_ge</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>srwi</primary>
+	<secondary>vec_any_ge</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtub.</primary>
+	<secondary>vec_any_ge</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtsw.</primary>
+	<secondary>vec_any_ge</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtuw.</primary>
+	<secondary>vec_any_ge</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtsd.</primary>
+	<secondary>vec_any_ge</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtud.</primary>
+	<secondary>vec_any_ge</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtsh.</primary>
+	<secondary>vec_any_ge</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtuh.</primary>
+	<secondary>vec_any_ge</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvcmpgedp.</primary>
+	<secondary>vec_any_ge</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvcmpgesp.</primary>
+	<secondary>vec_any_ge</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_any_ge</title>
       <tgroup cols="4">
@@ -4696,6 +5374,63 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>vcmpgtsb.</primary>
+	<secondary>vec_any_gt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>mfocrf</primary>
+	<secondary>vec_any_gt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>rlwinm</primary>
+	<secondary>vec_any_gt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>cntlzw</primary>
+	<secondary>vec_any_gt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>srwi</primary>
+	<secondary>vec_any_gt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtub.</primary>
+	<secondary>vec_any_gt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtsw.</primary>
+	<secondary>vec_any_gt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtuw.</primary>
+	<secondary>vec_any_gt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtsd.</primary>
+	<secondary>vec_any_gt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtud.</primary>
+	<secondary>vec_any_gt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtsh.</primary>
+	<secondary>vec_any_gt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtuh.</primary>
+	<secondary>vec_any_gt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvcmpgtdp.</primary>
+	<secondary>vec_any_gt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvcmpgtsp.</primary>
+	<secondary>vec_any_gt</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_any_gt</title>
       <tgroup cols="4">
@@ -4953,6 +5688,63 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>vcmpgtsb.</primary>
+	<secondary>vec_any_le</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>mfocrf</primary>
+	<secondary>vec_any_le</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>rlwinm</primary>
+	<secondary>vec_any_le</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>cntlzw</primary>
+	<secondary>vec_any_le</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>srwi</primary>
+	<secondary>vec_any_le</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtub.</primary>
+	<secondary>vec_any_le</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtsw.</primary>
+	<secondary>vec_any_le</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtuw.</primary>
+	<secondary>vec_any_le</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtsd.</primary>
+	<secondary>vec_any_le</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtud.</primary>
+	<secondary>vec_any_le</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtsh.</primary>
+	<secondary>vec_any_le</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtuh.</primary>
+	<secondary>vec_any_le</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvcmpgedp.</primary>
+	<secondary>vec_any_le</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvcmpgesp.</primary>
+	<secondary>vec_any_le</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_any_le</title>
       <tgroup cols="4">
@@ -5209,6 +6001,63 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>vcmpgtsb.</primary>
+	<secondary>vec_any_lt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>mfocrf</primary>
+	<secondary>vec_any_lt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>rlwinm</primary>
+	<secondary>vec_any_lt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>cntlzw</primary>
+	<secondary>vec_any_lt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>srwi</primary>
+	<secondary>vec_any_lt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtub.</primary>
+	<secondary>vec_any_lt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtsw.</primary>
+	<secondary>vec_any_lt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtuw.</primary>
+	<secondary>vec_any_lt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtsd.</primary>
+	<secondary>vec_any_lt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtud.</primary>
+	<secondary>vec_any_lt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtsh.</primary>
+	<secondary>vec_any_lt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtuh.</primary>
+	<secondary>vec_any_lt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvcmpgtdp.</primary>
+	<secondary>vec_any_lt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvcmpgtsp.</primary>
+	<secondary>vec_any_lt</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_any_lt</title>
       <tgroup cols="4">
@@ -5463,6 +6312,31 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>xvcmpeqdp.</primary>
+	<secondary>vec_any_nan</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>mfocrf</primary>
+	<secondary>vec_any_nan</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>rlwinm</primary>
+	<secondary>vec_any_nan</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>cntlzw</primary>
+	<secondary>vec_any_nan</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>srwi</primary>
+	<secondary>vec_any_nan</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvcmpeqsp.</primary>
+	<secondary>vec_any_nan</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_any_nan</title>
       <tgroup cols="3">
@@ -5547,6 +6421,47 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>vcmpequb.</primary>
+	<secondary>vec_any_ne</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>mfocrf</primary>
+	<secondary>vec_any_ne</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>rlwinm</primary>
+	<secondary>vec_any_ne</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>cntlzw</primary>
+	<secondary>vec_any_ne</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>srwi</primary>
+	<secondary>vec_any_ne</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpequw.</primary>
+	<secondary>vec_any_ne</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpequd.</primary>
+	<secondary>vec_any_ne</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpequh.</primary>
+	<secondary>vec_any_ne</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvcmpeqdp.</primary>
+	<secondary>vec_any_ne</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvcmpeqsp.</primary>
+	<secondary>vec_any_ne</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_any_ne</title>
       <tgroup cols="4">
@@ -5905,6 +6820,31 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>xvcmpgedp.</primary>
+	<secondary>vec_any_nge</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>mfocrf</primary>
+	<secondary>vec_any_nge</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>rlwinm</primary>
+	<secondary>vec_any_nge</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>cntlzw</primary>
+	<secondary>vec_any_nge</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>srwi</primary>
+	<secondary>vec_any_nge</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvcmpgesp.</primary>
+	<secondary>vec_any_nge</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_any_nge</title>
       <tgroup cols="4">
@@ -6002,6 +6942,31 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>xvcmpgtdp.</primary>
+	<secondary>vec_any_ngt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>mfocrf</primary>
+	<secondary>vec_any_ngt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>rlwinm</primary>
+	<secondary>vec_any_ngt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>cntlzw</primary>
+	<secondary>vec_any_ngt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>srwi</primary>
+	<secondary>vec_any_ngt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvcmpgtsp.</primary>
+	<secondary>vec_any_ngt</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_any_ngt</title>
       <tgroup cols="4">
@@ -6099,6 +7064,31 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>xvcmpgedp.</primary>
+	<secondary>vec_any_nle</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>mfocrf</primary>
+	<secondary>vec_any_nle</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>rlwinm</primary>
+	<secondary>vec_any_nle</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>cntlzw</primary>
+	<secondary>vec_any_nle</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>srwi</primary>
+	<secondary>vec_any_nle</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvcmpgesp.</primary>
+	<secondary>vec_any_nle</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_any_nle</title>
       <tgroup cols="4">
@@ -6196,6 +7186,31 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>xvcmpgtdp.</primary>
+	<secondary>vec_any_nlt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>mfocrf</primary>
+	<secondary>vec_any_nlt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>rlwinm</primary>
+	<secondary>vec_any_nlt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>cntlzw</primary>
+	<secondary>vec_any_nlt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>srwi</primary>
+	<secondary>vec_any_nlt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvcmpgtsp.</primary>
+	<secondary>vec_any_nlt</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_any_nlt</title>
       <tgroup cols="4">
@@ -6290,6 +7305,31 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>xvcmpeqdp.</primary>
+	<secondary>vec_any_numeric</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>mfocrf</primary>
+	<secondary>vec_any_numeric</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>rlwinm</primary>
+	<secondary>vec_any_numeric</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>cntlzw</primary>
+	<secondary>vec_any_numeric</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>srwi</primary>
+	<secondary>vec_any_numeric</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvcmpeqsp.</primary>
+	<secondary>vec_any_numeric</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_any_numeric</title>
       <tgroup cols="3">
@@ -6376,6 +7416,27 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>vcmpbfp.</primary>
+	<secondary>vec_any_out</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>mfocrf</primary>
+	<secondary>vec_any_out</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>rlwinm</primary>
+	<secondary>vec_any_out</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>cntlzw</primary>
+	<secondary>vec_any_out</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>srwi</primary>
+	<secondary>vec_any_out</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_any_out</title>
       <tgroup cols="4">
@@ -6452,6 +7513,31 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>vavgsb</primary>
+	<secondary>vec_avg</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vavgub</primary>
+	<secondary>vec_avg</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vavgsh</primary>
+	<secondary>vec_avg</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vavguh</primary>
+	<secondary>vec_avg</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vavgsw</primary>
+	<secondary>vec_avg</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vavguw</primary>
+	<secondary>vec_avg</secondary>
+      </indexterm>
+
       <table frame="all">
 	<title>Supported type signatures for vec_avg</title>
 	<tgroup cols="4">
@@ -6703,6 +7789,15 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       does not follow the bi-endian programming model.
       </para>
       
+      <indexterm>
+	<primary>vbpermq</primary>
+	<secondary>vec_bperm</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vbpermd</primary>
+	<secondary>vec_bperm</secondary>
+      </indexterm>
+
       <table frame="all">
 	<title>Supported type signatures for vec_bperm</title>
 	<tgroup cols="5">
@@ -6827,6 +7922,15 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>xvrspip</primary>
+	<secondary>vec_ceil</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvrdpip</primary>
+	<secondary>vec_ceil</secondary>
+      </indexterm>
+
       <table frame="all">
 	<title>Supported type signatures for vec_ceil</title>
 	<tgroup cols="3">
@@ -6916,6 +8020,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       <para><emphasis role="bold">Notes:</emphasis> This intrinsic may
       not yet be available in all implementations.</para>
       
+      <indexterm>
+	<primary>vcipher</primary>
+	<secondary>vec_cipher_be</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_cipher_be</title>
       <tgroup cols="4">
@@ -6999,6 +8108,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       <para><emphasis role="bold">Notes:</emphasis> This intrinsic may
       not yet be available in all implementations.</para>
       
+      <indexterm>
+	<primary>vcipherlast</primary>
+	<secondary>vec_cipherlast_be</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_cipherlast_be</title>
       <tgroup cols="4">
@@ -7101,6 +8215,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>vcmpbfp</primary>
+	<secondary>vec_cmpb</secondary>
+      </indexterm>
+
       <table frame="all">
 	<title>Supported type signatures for vec_cmpb</title>
 	<tgroup cols="4">
@@ -7177,6 +8296,31 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>vcmpequb</primary>
+	<secondary>vec_cmpeq</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpequh</primary>
+	<secondary>vec_cmpeq</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpequw</primary>
+	<secondary>vec_cmpeq</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpequd</primary>
+	<secondary>vec_cmpeq</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvcmpeqsp</primary>
+	<secondary>vec_cmpeq</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvcmpeqdp</primary>
+	<secondary>vec_cmpeq</secondary>
+      </indexterm>
+
       <table frame="all">
 	<title>Supported type signatures for vec_cmpeq</title>
 	<tgroup cols="4">
@@ -7463,6 +8607,51 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>vcmpgtsb</primary>
+	<secondary>vec_cmpge</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xxlnor</primary>
+	<secondary>vec_cmpge</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtub</primary>
+	<secondary>vec_cmpge</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtsh</primary>
+	<secondary>vec_cmpge</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtuh</primary>
+	<secondary>vec_cmpge</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtsw</primary>
+	<secondary>vec_cmpge</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtuw</primary>
+	<secondary>vec_cmpge</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtsd</primary>
+	<secondary>vec_cmpge</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtud</primary>
+	<secondary>vec_cmpge</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvcmpgesp</primary>
+	<secondary>vec_cmpge</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvcmpgedp</primary>
+	<secondary>vec_cmpge</secondary>
+      </indexterm>
+
       <table frame="all">
 	<title>Supported type signatures for vec_cmpge</title>
 	<tgroup cols="4">
@@ -7693,6 +8882,47 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>vcmpgtsb</primary>
+	<secondary>vec_cmpgt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtub</primary>
+	<secondary>vec_cmpgt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtsh</primary>
+	<secondary>vec_cmpgt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtuh</primary>
+	<secondary>vec_cmpgt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtsw</primary>
+	<secondary>vec_cmpgt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtuw</primary>
+	<secondary>vec_cmpgt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtsd</primary>
+	<secondary>vec_cmpgt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtud</primary>
+	<secondary>vec_cmpgt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvcmpgtsp</primary>
+	<secondary>vec_cmpgt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvcmpgtdp</primary>
+	<secondary>vec_cmpgt</secondary>
+      </indexterm>
+
       <table frame="all">
 	<title>Supported type signatures for vec_cmpgt</title>
 	<tgroup cols="4">
@@ -7915,6 +9145,51 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>vcmpgtsb</primary>
+	<secondary>vec_cmple</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xxlnor</primary>
+	<secondary>vec_cmple</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtub</primary>
+	<secondary>vec_cmple</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtsh</primary>
+	<secondary>vec_cmple</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtuh</primary>
+	<secondary>vec_cmple</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtsw</primary>
+	<secondary>vec_cmple</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtuw</primary>
+	<secondary>vec_cmple</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtsd</primary>
+	<secondary>vec_cmple</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtud</primary>
+	<secondary>vec_cmple</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvcmpgesp</primary>
+	<secondary>vec_cmple</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvcmpgedp</primary>
+	<secondary>vec_cmple</secondary>
+      </indexterm>
+
       <table frame="all">
 	<title>Supported type signatures for vec_cmple</title>
 	<tgroup cols="4">
@@ -8145,6 +9420,47 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>vcmpgtsb</primary>
+	<secondary>vec_cmplt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtub</primary>
+	<secondary>vec_cmplt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtsh</primary>
+	<secondary>vec_cmplt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtuh</primary>
+	<secondary>vec_cmplt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtsw</primary>
+	<secondary>vec_cmplt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtuw</primary>
+	<secondary>vec_cmplt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtsd</primary>
+	<secondary>vec_cmplt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtud</primary>
+	<secondary>vec_cmplt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvcmpgtsp</primary>
+	<secondary>vec_cmplt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvcmpgtdp</primary>
+	<secondary>vec_cmplt</secondary>
+      </indexterm>
+
       <table frame="all">
 	<title>Supported type signatures for vec_cmplt</title>
 	<tgroup cols="4">
@@ -8365,6 +9681,35 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>vcmpneb</primary>
+	<secondary>vec_cmpne</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpneh</primary>
+	<secondary>vec_cmpne</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpnew</primary>
+	<secondary>vec_cmpne</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpequd</primary>
+	<secondary>vec_cmpne</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xxlnor</primary>
+	<secondary>vec_cmpne</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvcmpeqsp</primary>
+	<secondary>vec_cmpne</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvcmpeqdp</primary>
+	<secondary>vec_cmpne</secondary>
+      </indexterm>
+
       <table frame="all">
 	<title>Supported type signatures for vec_cmpne</title>
 	<tgroup cols="4">
@@ -8657,6 +10002,19 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>vcmpnezb</primary>
+	<secondary>vec_cmpnez</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpnezh</primary>
+	<secondary>vec_cmpnez</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpnezw</primary>
+	<secondary>vec_cmpnez</secondary>
+      </indexterm>
+
       <table frame="all">
 	<title>Supported type signatures for vec_cmpnez</title>
 	<tgroup cols="5">
@@ -8836,6 +10194,23 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>vclzb</primary>
+	<secondary>vec_cntlz</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vclzh</primary>
+	<secondary>vec_cntlz</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vclzw</primary>
+	<secondary>vec_cntlz</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vclzd</primary>
+	<secondary>vec_cntlz</secondary>
+      </indexterm>
+
       <table frame="all">
 	<title>Supported type signatures for vec_cntlz</title>
 	<tgroup cols="4">
@@ -9026,6 +10401,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>vclzlsbb</primary>
+	<secondary>vec_cntlz_lsbb</secondary>
+      </indexterm>
+
       <table frame="all">
 	<title>Supported type signatures for vec_cntlz_lsbb</title>
 	<tgroup cols="4">
@@ -9117,6 +10497,23 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>vctzb</primary>
+	<secondary>vec_cnttz</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vctzh</primary>
+	<secondary>vec_cnttz</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vctzw</primary>
+	<secondary>vec_cnttz</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vctzd</primary>
+	<secondary>vec_cnttz</secondary>
+      </indexterm>
+
       <table frame="all">
 	<title>Supported type signatures for vec_cnttz</title>
 	<tgroup cols="4">
@@ -9307,6 +10704,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>vctzlsbb</primary>
+	<secondary>vec_cnttz_lsbb</secondary>
+      </indexterm>
+
       <table frame="all">
 	<title>Supported type signatures for vec_cnttz_lsbb</title>
 	<tgroup cols="4">
@@ -9400,6 +10802,15 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>xvcpsgnsp</primary>
+	<secondary>vec_cpsgn</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvcpsgndp</primary>
+	<secondary>vec_cpsgn</secondary>
+      </indexterm>
+
       <table frame="all">
 	<title>Supported type signatures for vec_cpsgn</title>
 	<tgroup cols="5">
@@ -9504,6 +10915,15 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>vcfsx</primary>
+	<secondary>vec_ctf</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcfux</primary>
+	<secondary>vec_ctf</secondary>
+      </indexterm>
+
       <table frame="all">
 	<title>Supported type signatures for vec_ctf</title>
 	<tgroup cols="4">
@@ -9596,6 +11016,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>vctsxs</primary>
+	<secondary>vec_cts</secondary>
+      </indexterm>
+
       <table frame="all">
 	<title>Supported type signatures for vec_cts</title>
 	<tgroup cols="4">
@@ -9672,6 +11097,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>vctuxs</primary>
+	<secondary>vec_ctu</secondary>
+      </indexterm>
+
       <table frame="all">
 	<title>Supported type signatures for vec_ctu</title>
 	<tgroup cols="4">
@@ -9749,6 +11179,35 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>xxspltd</primary>
+	<secondary>vec_div</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>mfvsrd</primary>
+	<secondary>vec_div</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>divd</primary>
+	<secondary>vec_div</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>mtvsrd</primary>
+	<secondary>vec_div</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xxmrghd</primary>
+	<secondary>vec_div</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvdivsp</primary>
+	<secondary>vec_div</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvdivdp</primary>
+	<secondary>vec_div</secondary>
+      </indexterm>
+
       <table frame="all">
 	<title>Supported type signatures for vec_div</title>
 	<tgroup cols="4">
@@ -9892,6 +11351,15 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>xvcvsxddp</primary>
+	<secondary>vec_double</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvcvuxddp</primary>
+	<secondary>vec_double</secondary>
+      </indexterm>
+
       <table frame="all">
 	<title>Supported type signatures for vec_double</title>
 	<tgroup cols="3">
@@ -9972,6 +11440,23 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       for big- and little-endian code generation.
       </para>
       
+      <indexterm>
+	<primary>xxsldwi</primary>
+	<secondary>vec_doublee</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvcvsxwdp</primary>
+	<secondary>vec_doublee</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvcvuxwdp</primary>
+	<secondary>vec_doublee</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvcvspdp</primary>
+	<secondary>vec_doublee</secondary>
+      </indexterm>
+
       <table frame="all">
 	<title>Supported type signatures for vec_doublee</title>
 	<tgroup cols="5">
@@ -10107,6 +11592,23 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       for big- and little-endian code generation.
       </para>
       
+      <indexterm>
+	<primary>xxsldwi</primary>
+	<secondary>vec_doubleh</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvcvsxwdp</primary>
+	<secondary>vec_doubleh</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvcvuxwdp</primary>
+	<secondary>vec_doubleh</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvcvspdp</primary>
+	<secondary>vec_doubleh</secondary>
+      </indexterm>
+
       <table frame="all">
 	<title>Supported type signatures for vec_doubleh</title>
 	<tgroup cols="5">
@@ -10248,6 +11750,23 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       for big- and little-endian code generation.
       </para>
       
+      <indexterm>
+	<primary>xxsldwi</primary>
+	<secondary>vec_doublel</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvcvsxwdp</primary>
+	<secondary>vec_doublel</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvcvuxwdp</primary>
+	<secondary>vec_doublel</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvcvspdp</primary>
+	<secondary>vec_doublel</secondary>
+      </indexterm>
+
       <table frame="all">
 	<title>Supported type signatures for vec_doublel</title>
 	<tgroup cols="5">
@@ -10389,6 +11908,23 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       for big- and little-endian code generation.
       </para>
       
+      <indexterm>
+	<primary>xvcvsxwdp</primary>
+	<secondary>vec_doubleo</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xxsldwi</primary>
+	<secondary>vec_doubleo</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvcvuxwdp</primary>
+	<secondary>vec_doubleo</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvcvspdp</primary>
+	<secondary>vec_doubleo</secondary>
+      </indexterm>
+
       <table frame="all">
 	<title>Supported type signatures for vec_doubleo</title>
 	<tgroup cols="5">
@@ -10522,6 +12058,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>xxleqv</primary>
+	<secondary>vec_eqv</secondary>
+      </indexterm>
+
       <table frame="all">
 	<title>Supported type signatures for vec_eqv</title>
 	<tgroup cols="4">
@@ -10806,6 +12347,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>vexptefp</primary>
+	<secondary>vec_expte</secondary>
+      </indexterm>
+
       <table frame="all">
 	<title>Supported type signatures for vec_expte</title>
 	<tgroup cols="3">
@@ -10878,6 +12424,83 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       implement vec_extract.
       </para>
       
+      <indexterm>
+	<primary>vextubrx</primary>
+	<secondary>vec_extract</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>extsb</primary>
+	<secondary>vec_extract</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vextublx</primary>
+	<secondary>vec_extract</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>slwi</primary>
+	<secondary>vec_extract</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vextuwrx</primary>
+	<secondary>vec_extract</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>extsw</primary>
+	<secondary>vec_extract</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vextuwlx</primary>
+	<secondary>vec_extract</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xori</primary>
+	<secondary>vec_extract</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>rldic</primary>
+	<secondary>vec_extract</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>mtvsrdd</primary>
+	<secondary>vec_extract</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vslo</primary>
+	<secondary>vec_extract</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>mfvsrd</primary>
+	<secondary>vec_extract</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vextuhrx</primary>
+	<secondary>vec_extract</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>extsh</primary>
+	<secondary>vec_extract</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vextuhlx</primary>
+	<secondary>vec_extract</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>rldicl</primary>
+	<secondary>vec_extract</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>subfic</primary>
+	<secondary>vec_extract</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>sldi</primary>
+	<secondary>vec_extract</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xscvspdp</primary>
+	<secondary>vec_extract</secondary>
+      </indexterm>
+
       <table frame="all">
 	<title>Supported type signatures for vec_extract</title>
 	<tgroup cols="6">
@@ -11369,6 +12992,15 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>xvxexpdp</primary>
+	<secondary>vec_extract_exp</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvxexpsp</primary>
+	<secondary>vec_extract_exp</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_extract_exp</title>
       <tgroup cols="4">
@@ -11460,6 +13092,19 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       in the example implementation will differ for big- and little-endian.
       </para>
       
+      <indexterm>
+	<primary>lxv</primary>
+	<secondary>vec_extract_fp32_from_shorth</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vperm</primary>
+	<secondary>vec_extract_fp32_from_shorth</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvcvhpsp</primary>
+	<secondary>vec_extract_fp32_from_shorth</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_extract_fp32_from_shorth</title>
       <tgroup cols="4">
@@ -11537,6 +13182,19 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       in the example implementation will differ for big- and little-endian.
       </para>
       
+      <indexterm>
+	<primary>lxv</primary>
+	<secondary>vec_extract_fp32_from_shortl</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vperm</primary>
+	<secondary>vec_extract_fp32_from_shortl</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvcvhpsp</primary>
+	<secondary>vec_extract_fp32_from_shortl</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_extract_fp32_from_shortl</title>
       <tgroup cols="4">
@@ -11613,6 +13271,15 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>xvxsigdp</primary>
+	<secondary>vec_extract_sig</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvxsigsp</primary>
+	<secondary>vec_extract_sig</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_extract_sig</title>
       <tgroup cols="4">
@@ -11702,6 +13369,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       targets, and right-to-left for little-endian targets.
       </para>
       
+      <indexterm>
+	<primary>xxextractuw</primary>
+	<secondary>vec_extract4b</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_extract4b</title>
       <tgroup cols="6">
@@ -12426,6 +14098,15 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>xvcvsxwsp</primary>
+	<secondary>vec_float</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvcvuxwsp</primary>
+	<secondary>vec_float</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_float</title>
       <tgroup cols="3">
@@ -12508,6 +14189,23 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       targets, and right-to-left for little-endian targets.
       </para>
       
+      <indexterm>
+	<primary>xxpermdi</primary>
+	<secondary>vec_float2</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvcvsxdsp</primary>
+	<secondary>vec_float2</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vmrgow</primary>
+	<secondary>vec_float2</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vmrgew</primary>
+	<secondary>vec_float2</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_float2</title>
       <tgroup cols="5">
@@ -12658,6 +14356,23 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       targets, and right-to-left for little-endian targets.
       </para>
       
+      <indexterm>
+	<primary>xvcvsxdsp</primary>
+	<secondary>vec_floate</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vsldoi</primary>
+	<secondary>vec_floate</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvcvuxdsp</primary>
+	<secondary>vec_floate</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvcvdpsp</primary>
+	<secondary>vec_floate</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_floate</title>
       <tgroup cols="4">
@@ -12925,6 +14640,23 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       targets, and right-to-left for little-endian targets.
       </para>
       
+      <indexterm>
+	<primary>xvcvsxdsp</primary>
+	<secondary>vec_floato</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vsldoi</primary>
+	<secondary>vec_floato</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvcvuxdsp</primary>
+	<secondary>vec_floato</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvcvdpsp</primary>
+	<secondary>vec_floato</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_floato</title>
       <tgroup cols="4">
@@ -13040,6 +14772,15 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>xvrdpim</primary>
+	<secondary>vec_floor</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvrspim</primary>
+	<secondary>vec_floor</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_floor</title>
       <tgroup cols="3">
@@ -13125,6 +14866,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       here.</emphasis>
       </para>
       
+      <indexterm>
+	<primary>vgbbd</primary>
+	<secondary>vec_gb</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_gb</title>
       <tgroup cols="3">
@@ -13212,6 +14958,39 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       </itemizedlist>
       </para>
       
+      <indexterm>
+	<primary>mtvsrwz</primary>
+	<secondary>vec_insert</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vinsertb</primary>
+	<secondary>vec_insert</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xxinsertw</primary>
+	<secondary>vec_insert</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>mtvsrd</primary>
+	<secondary>vec_insert</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xxpermdi</primary>
+	<secondary>vec_insert</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vinserth</primary>
+	<secondary>vec_insert</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xscvdpspn</primary>
+	<secondary>vec_insert</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xxextractuw</primary>
+	<secondary>vec_insert</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_insert</title>
       <tgroup cols="7">
@@ -13610,6 +15389,15 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>xviexpdp</primary>
+	<secondary>vec_insert_exp</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xviexpsp</primary>
+	<secondary>vec_insert_exp</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_insert_exp</title>
       <tgroup cols="5">
@@ -13748,6 +15536,15 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       big-endian targets, and right-to-left for little-endian targets.
       </para>
       
+      <indexterm>
+	<primary>xxpermdi</primary>
+	<secondary>vec_insert4b</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xxinsertw</primary>
+	<secondary>vec_insert4b</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_insert4b</title>
       <tgroup cols="7">
@@ -13882,6 +15679,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       deferred.
       </para>
       
+      <indexterm>
+	<primary>lvx</primary>
+	<secondary>vec_ld</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_ld</title>
       <tgroup cols="5">
@@ -14541,6 +16343,19 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>lvebx</primary>
+	<secondary>vec_lde</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>lvewx</primary>
+	<secondary>vec_lde</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>lvehx</primary>
+	<secondary>vec_lde</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_lde</title>
       <tgroup cols="4">
@@ -14717,6 +16532,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       deferred.
       </para>
       
+      <indexterm>
+	<primary>lvxl</primary>
+	<secondary>vec_ldl</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_ldl</title>
       <tgroup cols="5">
@@ -15291,6 +17111,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>vlogefp</primary>
+	<secondary>vec_loge</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_loge</title>
       <tgroup cols="3">
@@ -15357,6 +17182,19 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>vmladduhm</primary>
+	<secondary>vec_madd</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvmaddmdp</primary>
+	<secondary>vec_madd</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvmaddmsp</primary>
+	<secondary>vec_madd</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_madd</title>
       <tgroup cols="5">
@@ -15537,6 +17375,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>vmhaddshs</primary>
+	<secondary>vec_madds</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_madds</title>
       <tgroup cols="5">
@@ -15619,6 +17462,47 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>vmaxsb</primary>
+	<secondary>vec_max</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vmaxub</primary>
+	<secondary>vec_max</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vmaxsw</primary>
+	<secondary>vec_max</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vmaxuw</primary>
+	<secondary>vec_max</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vmaxsd</primary>
+	<secondary>vec_max</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vmaxud</primary>
+	<secondary>vec_max</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vmaxsh</primary>
+	<secondary>vec_max</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vmaxuh</primary>
+	<secondary>vec_max</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvmaxdp</primary>
+	<secondary>vec_max</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvmaxsp</primary>
+	<secondary>vec_max</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_max</title>
       <tgroup cols="4">
@@ -15837,6 +17721,19 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       targets, and right-to-left for little-endian targets.
       </para>
       
+      <indexterm>
+	<primary>vmrgow</primary>
+	<secondary>vec_mergee</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vmrgew</primary>
+	<secondary>vec_mergee</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xxpermdi</primary>
+	<secondary>vec_mergee</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_mergee</title>
       <tgroup cols="5">
@@ -16073,6 +17970,35 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       interface is currently deferred.
       </para>
       
+      <indexterm>
+	<primary>vmrglb</primary>
+	<secondary>vec_mergeh</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xxpermdi</primary>
+	<secondary>vec_mergeh</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vmrghb</primary>
+	<secondary>vec_mergeh</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vmrglw</primary>
+	<secondary>vec_mergeh</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vmrghw</primary>
+	<secondary>vec_mergeh</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vmrglh</primary>
+	<secondary>vec_mergeh</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vmrghh</primary>
+	<secondary>vec_mergeh</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_mergeh</title>
       <tgroup cols="6">
@@ -16532,6 +18458,35 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       interface is currently deferred.
       </para>
       
+      <indexterm>
+	<primary>vmrghb</primary>
+	<secondary>vec_mergel</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vmrglb</primary>
+	<secondary>vec_mergel</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vmrghw</primary>
+	<secondary>vec_mergel</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vmrglw</primary>
+	<secondary>vec_mergel</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xxpermdi</primary>
+	<secondary>vec_mergel</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vmrghh</primary>
+	<secondary>vec_mergel</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vmrglh</primary>
+	<secondary>vec_mergel</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_mergel</title>
       <tgroup cols="6">
@@ -16982,6 +18937,19 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       targets, and right-to-left for little-endian targets.
       </para>
       
+      <indexterm>
+	<primary>vmrgew</primary>
+	<secondary>vec_mergeo</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vmrgow</primary>
+	<secondary>vec_mergeo</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xxpermdi</primary>
+	<secondary>vec_mergeo</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_mergeo</title>
       <tgroup cols="5">
@@ -17214,6 +19182,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       result vector, regardless of endianness.
       </para>
       
+      <indexterm>
+	<primary>mfvscr</primary>
+	<secondary>vec_mfvscr</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_mfvscr</title>
       <tgroup cols="2">
@@ -17269,6 +19242,47 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>vminsb</primary>
+	<secondary>vec_min</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vminub</primary>
+	<secondary>vec_min</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vminsw</primary>
+	<secondary>vec_min</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vminuw</primary>
+	<secondary>vec_min</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vminsd</primary>
+	<secondary>vec_min</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vminud</primary>
+	<secondary>vec_min</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vminsh</primary>
+	<secondary>vec_min</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vminuh</primary>
+	<secondary>vec_min</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvmindp</primary>
+	<secondary>vec_min</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvminsp</primary>
+	<secondary>vec_min</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_min</title>
       <tgroup cols="4">
@@ -17490,6 +19504,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>vmhraddshs</primary>
+	<secondary>vec_mradds</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_mradds</title>
       <tgroup cols="5">
@@ -17573,6 +19592,15 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>xvmsubmdp</primary>
+	<secondary>vec_msub</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvmsubmsp</primary>
+	<secondary>vec_msub</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_msub</title>
       <tgroup cols="5">
@@ -17682,6 +19710,23 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>vmsummbm</primary>
+	<secondary>vec_msum</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vmsumshm</primary>
+	<secondary>vec_msum</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vmsumubm</primary>
+	<secondary>vec_msum</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vmsumuhm</primary>
+	<secondary>vec_msum</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_msum</title>
       <tgroup cols="5">
@@ -17826,6 +19871,15 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>vmsumshs</primary>
+	<secondary>vec_msums</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vmsumuhs</primary>
+	<secondary>vec_msums</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_msums</title>
       <tgroup cols="5">
@@ -17926,6 +19980,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>mtvscr</primary>
+	<secondary>vec_mtvscr</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_mtvscr</title>
       <tgroup cols="3">
@@ -18125,6 +20184,43 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
 	</listitem>
       </itemizedlist>
       
+      <indexterm>
+	<primary>vmulesb</primary>
+	<secondary>vec_mul</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vmulosb</primary>
+	<secondary>vec_mul</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>lxvw4x</primary>
+	<secondary>vec_mul</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vperm</primary>
+	<secondary>vec_mul</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vmuluwm</primary>
+	<secondary>vec_mul</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xxspltib</primary>
+	<secondary>vec_mul</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vmladduhm</primary>
+	<secondary>vec_mul</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvmuldp</primary>
+	<secondary>vec_mul</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvmulsp</primary>
+	<secondary>vec_mul</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_mul</title>
       <tgroup cols="4">
@@ -18351,6 +20447,55 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       targets, and right-to-left for little-endian targets.
       </para>
       
+      <indexterm>
+	<primary>vmulosh</primary>
+	<secondary>vec_mule</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vmulesh</primary>
+	<secondary>vec_mule</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vmulouh</primary>
+	<secondary>vec_mule</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vmuleuh</primary>
+	<secondary>vec_mule</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vmulosw</primary>
+	<secondary>vec_mule</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vmulesw</primary>
+	<secondary>vec_mule</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vmulouw</primary>
+	<secondary>vec_mule</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vmuleuw</primary>
+	<secondary>vec_mule</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vmulosb</primary>
+	<secondary>vec_mule</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vmulesb</primary>
+	<secondary>vec_mule</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vmuloub</primary>
+	<secondary>vec_mule</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vmuleub</primary>
+	<secondary>vec_mule</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_mule</title>
       <tgroup cols="5">
@@ -18539,6 +20684,55 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       targets, and right-to-left for little-endian targets.
       </para>
       
+      <indexterm>
+	<primary>vmulesh</primary>
+	<secondary>vec_mulo</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vmulosh</primary>
+	<secondary>vec_mulo</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vmuleuh</primary>
+	<secondary>vec_mulo</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vmulouh</primary>
+	<secondary>vec_mulo</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vmulesw</primary>
+	<secondary>vec_mulo</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vmulosw</primary>
+	<secondary>vec_mulo</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vmuleuw</primary>
+	<secondary>vec_mulo</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vmulouw</primary>
+	<secondary>vec_mulo</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vmulesb</primary>
+	<secondary>vec_mulo</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vmulosb</primary>
+	<secondary>vec_mulo</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vmuleub</primary>
+	<secondary>vec_mulo</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vmuloub</primary>
+	<secondary>vec_mulo</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_mulo</title>
       <tgroup cols="5">
@@ -18726,6 +20920,51 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>vspltisw</primary>
+	<secondary>vec_nabs</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vsububm</primary>
+	<secondary>vec_nabs</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vminsb</primary>
+	<secondary>vec_nabs</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vsubuwm</primary>
+	<secondary>vec_nabs</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vminsw</primary>
+	<secondary>vec_nabs</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vsubudm</primary>
+	<secondary>vec_nabs</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vminsd</primary>
+	<secondary>vec_nabs</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vsubuhm</primary>
+	<secondary>vec_nabs</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vminsh</primary>
+	<secondary>vec_nabs</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvnabsdp</primary>
+	<secondary>vec_nabs</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvnabssp</primary>
+	<secondary>vec_nabs</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_nabs</title>
       <tgroup cols="3">
@@ -18860,6 +21099,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>xxlnand</primary>
+	<secondary>vec_nand</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_nand</title>
       <tgroup cols="4">
@@ -19150,6 +21394,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       <para><emphasis role="bold">Notes:</emphasis> This intrinsic may
       not yet be available in all implementations.</para>
       
+      <indexterm>
+	<primary>vncipher</primary>
+	<secondary>vec_ncipher_be</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_ncipher_be</title>
       <tgroup cols="4">
@@ -19233,6 +21482,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       <para><emphasis role="bold">Notes:</emphasis> This intrinsic may
       not yet be available in all implementations.</para>
       
+      <indexterm>
+	<primary>vncipherlast</primary>
+	<secondary>vec_ncipherlast_be</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_ncipherlast_be</title>
       <tgroup cols="4">
@@ -19307,6 +21561,15 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>xvrdpi</primary>
+	<secondary>vec_nearbyint</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvrspi</primary>
+	<secondary>vec_nearbyint</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_nearbyint</title>
       <tgroup cols="3">
@@ -19383,6 +21646,35 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>vspltisw</primary>
+	<secondary>vec_neg</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vsububm</primary>
+	<secondary>vec_neg</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vsubuwm</primary>
+	<secondary>vec_neg</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vsubudm</primary>
+	<secondary>vec_neg</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vsubuhm</primary>
+	<secondary>vec_neg</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvnegdp</primary>
+	<secondary>vec_neg</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvnegsp</primary>
+	<secondary>vec_neg</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_neg</title>
       <tgroup cols="3">
@@ -19517,6 +21809,15 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>xvnmaddadp</primary>
+	<secondary>vec_nmadd</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvnmaddasp</primary>
+	<secondary>vec_nmadd</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_nmadd</title>
       <tgroup cols="5">
@@ -19619,6 +21920,15 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>xvnmsubmdp</primary>
+	<secondary>vec_nmsub</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvnmsubmsp</primary>
+	<secondary>vec_nmsub</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_nmsub</title>
       <tgroup cols="5">
@@ -19717,6 +22027,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>xxlnor</primary>
+	<secondary>vec_nor</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_nor</title>
       <tgroup cols="4">
@@ -19995,6 +22310,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>xxlor</primary>
+	<secondary>vec_or</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_or</title>
       <tgroup cols="4">
@@ -20274,6 +22594,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>xxlorc</primary>
+	<secondary>vec_orc</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_orc</title>
       <tgroup cols="4">
@@ -20566,6 +22891,19 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       </emphasis>
       </para>
       
+      <indexterm>
+	<primary>vpkuhum</primary>
+	<secondary>vec_pack</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vpkudum</primary>
+	<secondary>vec_pack</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vpkuwum</primary>
+	<secondary>vec_pack</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_pack</title>
       <tgroup cols="6">
@@ -20890,6 +23228,15 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       targets, and right-to-left for little-endian targets.
       </para>
       
+      <indexterm>
+	<primary>vctuxs</primary>
+	<secondary>vec_pack_to_short_fp32</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vpkswss</primary>
+	<secondary>vec_pack_to_short_fp32</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_pack_to_short_fp32</title>
       <tgroup cols="6">
@@ -20996,6 +23343,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       targets, and right-to-left for little-endian targets.
       </para>
       
+      <indexterm>
+	<primary>vpkpx</primary>
+	<secondary>vec_packpx</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_packpx</title>
       <tgroup cols="5">
@@ -21080,6 +23432,31 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       targets, and right-to-left for little-endian targets.
       </para>
       
+      <indexterm>
+	<primary>vpkshss</primary>
+	<secondary>vec_packs</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vpkuhus</primary>
+	<secondary>vec_packs</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vpksdss</primary>
+	<secondary>vec_packs</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vpkudus</primary>
+	<secondary>vec_packs</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vpkswss</primary>
+	<secondary>vec_packs</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vpkuwus</primary>
+	<secondary>vec_packs</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_packs</title>
       <tgroup cols="5">
@@ -21269,6 +23646,31 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       targets, and right-to-left for little-endian targets.
       </para>
       
+      <indexterm>
+	<primary>vpkshus</primary>
+	<secondary>vec_packsu</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vpkuhus</primary>
+	<secondary>vec_packsu</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vpksdus</primary>
+	<secondary>vec_packsu</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vpkudus</primary>
+	<secondary>vec_packsu</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vpkswus</primary>
+	<secondary>vec_packsu</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vpkuwus</primary>
+	<secondary>vec_packsu</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_packsu</title>
       <tgroup cols="5">
@@ -21454,6 +23856,19 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>vprtybw</primary>
+	<secondary>vec_parity_lsbb</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vprtybq</primary>
+	<secondary>vec_parity_lsbb</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vprtybd</primary>
+	<secondary>vec_parity_lsbb</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_parity_lsbb</title>
       <tgroup cols="4">
@@ -21626,6 +24041,15 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
 	</listitem>
       </itemizedlist>
       
+      <indexterm>
+	<primary>vpermr</primary>
+	<secondary>vec_perm</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vperm</primary>
+	<secondary>vec_perm</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_perm</title>
       <tgroup cols="7">

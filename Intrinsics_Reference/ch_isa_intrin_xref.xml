@@ -20,7 +20,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_isa_intrin_xref">
   <!-- Chapter Title goes here. -->
   <title>Instruction/Intrinsic Cross-Reference</title>
  
-  <para>This chapter will contain a cross-reference from Power hardware
+  <para>This chapter contains a cross-reference from Power hardware
   instructions to intrinsics that generate them.</para>
   
+  <index>
+    <title> </title>
+  </index>
+
 </chapter>
