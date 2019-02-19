@@ -34046,6 +34046,15 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>vsubcuw</primary>
+	<secondary>vec_subc</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vsubcuq</primary>
+	<secondary>vec_subc</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_subc</title>
       <tgroup cols="4">
@@ -34175,6 +34184,23 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       <emphasis>Investigate apparent inconsistency here.</emphasis>
       </para>
       
+      <indexterm>
+	<primary>vspltisw</primary>
+	<secondary>vec_sube</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vsubuwm</primary>
+	<secondary>vec_sube</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xxland</primary>
+	<secondary>vec_sube</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vsubeuqm</primary>
+	<secondary>vec_sube</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_sube</title>
       <tgroup cols="5">
@@ -34324,6 +34350,31 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>vspltisw</primary>
+	<secondary>vec_subec</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xxland</primary>
+	<secondary>vec_subec</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vsubuwm</primary>
+	<secondary>vec_subec</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vsubcuw</primary>
+	<secondary>vec_subec</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xxlor</primary>
+	<secondary>vec_subec</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vsubecuq</primary>
+	<secondary>vec_subec</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_subec</title>
       <tgroup cols="5">
@@ -34473,6 +34524,31 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>vsubsbs</primary>
+	<secondary>vec_subs</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vsububs</primary>
+	<secondary>vec_subs</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vsubsws</primary>
+	<secondary>vec_subs</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vsubuws</primary>
+	<secondary>vec_subs</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vsubshs</primary>
+	<secondary>vec_subs</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vsubuhs</primary>
+	<secondary>vec_subs</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_subs</title>
       <tgroup cols="4">
@@ -34631,6 +34707,15 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       targets, and right-to-left for little-endian targets.
       </para>
       
+      <indexterm>
+	<primary>vsldoi</primary>
+	<secondary>vec_sum2s</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vsum2sws</primary>
+	<secondary>vec_sum2s</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_sum2s</title>
       <tgroup cols="5">
@@ -34723,6 +34808,19 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>vsum4sbs</primary>
+	<secondary>vec_sum4s</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vsum4shs</primary>
+	<secondary>vec_sum4s</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vsum4ubs</primary>
+	<secondary>vec_sum4s</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_sum4s</title>
       <tgroup cols="4">
@@ -34830,6 +34928,19 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       targets, and right-to-left for little-endian targets.
       </para>
       
+      <indexterm>
+	<primary>vspltw</primary>
+	<secondary>vec_sums</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vsumsws</primary>
+	<secondary>vec_sums</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vsldoi</primary>
+	<secondary>vec_sums</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_sums</title>
       <tgroup cols="5">
@@ -34929,6 +35040,15 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>xvtstdcsp</primary>
+	<secondary>vec_test_data_class</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvtstdcdp</primary>
+	<secondary>vec_test_data_class</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_test_data_class</title>
       <tgroup cols="5">
@@ -35027,6 +35147,15 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>xvrdpiz</primary>
+	<secondary>vec_trunc</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvrspiz</primary>
+	<secondary>vec_trunc</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_trunc</title>
       <tgroup cols="3">
@@ -35157,6 +35286,39 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
 	</listitem>
       </itemizedlist>
       
+      <indexterm>
+	<primary>vupklsh</primary>
+	<secondary>vec_unpackh</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vupkhsh</primary>
+	<secondary>vec_unpackh</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vupklpx</primary>
+	<secondary>vec_unpackh</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vupkhpx</primary>
+	<secondary>vec_unpackh</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vupklsw</primary>
+	<secondary>vec_unpackh</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vupkhsw</primary>
+	<secondary>vec_unpackh</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vupklsb</primary>
+	<secondary>vec_unpackh</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vupkhsb</primary>
+	<secondary>vec_unpackh</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_unpackh</title>
       <tgroup cols="5">
@@ -35452,6 +35614,39 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
 	</listitem>
       </itemizedlist>
       
+      <indexterm>
+	<primary>vupkhsh</primary>
+	<secondary>vec_unpackl</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vupklsh</primary>
+	<secondary>vec_unpackl</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vupkhpx</primary>
+	<secondary>vec_unpackl</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vupklpx</primary>
+	<secondary>vec_unpackl</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vupkhsw</primary>
+	<secondary>vec_unpackl</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vupklsw</primary>
+	<secondary>vec_unpackl</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vupkhsb</primary>
+	<secondary>vec_unpackl</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vupklsb</primary>
+	<secondary>vec_unpackl</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_unpackl</title>
       <tgroup cols="5">
@@ -35693,6 +35888,15 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>xvcvspsxws</primary>
+	<secondary>vec_unsigned</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvcvdpsxds</primary>
+	<secondary>vec_unsigned</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_unsigned</title>
       <tgroup cols="3">
@@ -35772,6 +35976,23 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       targets, and right-to-left for little-endian targets.
       </para>
       
+      <indexterm>
+	<primary>xxpermdi</primary>
+	<secondary>vec_unsigned2</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvcvdpuxws</primary>
+	<secondary>vec_unsigned2</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vmrgow</primary>
+	<secondary>vec_unsigned2</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vmrgew</primary>
+	<secondary>vec_unsigned2</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_unsigned2</title>
       <tgroup cols="5">
@@ -35869,6 +36090,15 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       targets, and right-to-left for little-endian targets.
       </para>
       
+      <indexterm>
+	<primary>xvcvdpuxws</primary>
+	<secondary>vec_unsignede</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vsldoi</primary>
+	<secondary>vec_unsignede</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_unsignede</title>
       <tgroup cols="4">
@@ -35950,6 +36180,15 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       targets, and right-to-left for little-endian targets.
       </para>
       
+      <indexterm>
+	<primary>xvcvdpuxws</primary>
+	<secondary>vec_unsignedo</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vsldoi</primary>
+	<secondary>vec_unsignedo</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_unsignedo</title>
       <tgroup cols="4">
@@ -36049,6 +36288,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
 	</listitem>
       </itemizedlist>
       
+      <indexterm>
+	<primary>lxv</primary>
+	<secondary>vec_xl</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_xl</title>
       <tgroup cols="5">
@@ -36365,6 +36609,27 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       No Power compilers yet support the vector _Float16 type, so that
       interface is currently deferred.</para>
       
+      <indexterm>
+	<primary>lxvb16x</primary>
+	<secondary>vec_xl_be</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>lxv</primary>
+	<secondary>vec_xl_be</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>lxvw4x</primary>
+	<secondary>vec_xl_be</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>lxvd2x</primary>
+	<secondary>vec_xl_be</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>lxvh8x</primary>
+	<secondary>vec_xl_be</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_xl_be</title>
       <tgroup cols="6">
@@ -36765,6 +37030,15 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
 	</listitem>
       </itemizedlist>
       
+      <indexterm>
+	<primary>sldi</primary>
+	<secondary>vec_xl_len</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>lxvl</primary>
+	<secondary>vec_xl_len</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_xl_len</title>
       <tgroup cols="5">
@@ -37095,6 +37369,23 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>sldi</primary>
+	<secondary>vec_xl_len_r</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>lvsl</primary>
+	<secondary>vec_xl_len_r</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>lxvll</primary>
+	<secondary>vec_xl_len_r</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vperm</primary>
+	<secondary>vec_xl_len_r</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_xl_len_r</title>
       <tgroup cols="5">
@@ -37176,6 +37467,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>xxlxor</primary>
+	<secondary>vec_xor</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_xor</title>
       <tgroup cols="4">
@@ -37479,6 +37775,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
 	</listitem>
       </itemizedlist>
       
+      <indexterm>
+	<primary>stxv</primary>
+	<secondary>vec_xst</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_xst</title>
       <tgroup cols="5">
@@ -37795,6 +38096,27 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       No Power compilers yet support the vector _Float16 type, so that
       interface is currently deferred.</para>
       
+      <indexterm>
+	<primary>stxvb16x</primary>
+	<secondary>vec_xst_be</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>stxv</primary>
+	<secondary>vec_xst_be</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>stxvw4x</primary>
+	<secondary>vec_xst_be</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>stxvd2x</primary>
+	<secondary>vec_xst_be</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>stxvh8x</primary>
+	<secondary>vec_xst_be</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_xst_be</title>
       <tgroup cols="6">
@@ -38184,6 +38506,15 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       No Power compilers yet support the vector _Float16 type, so that
       interface is currently deferred.</para>
       
+      <indexterm>
+	<primary>sldi</primary>
+	<secondary>vec_xst_len</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>stxvl</primary>
+	<secondary>vec_xst_len</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_xst_len</title>
       <tgroup cols="5">
@@ -38510,6 +38841,23 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>lvsr</primary>
+	<secondary>vec_xst_len_r</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>sldi</primary>
+	<secondary>vec_xst_len_r</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vperm</primary>
+	<secondary>vec_xst_len_r</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>stxvll</primary>
+	<secondary>vec_xst_len_r</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_xst_len_r</title>
       <tgroup cols="5">
