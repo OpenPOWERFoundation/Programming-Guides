@@ -30564,6 +30564,39 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       No Power compilers yet support the vector _Float16 type, so that
       interface is currently deferred.</para>
       
+      <indexterm>
+	<primary>rlwinm</primary>
+	<secondary>vec_splats</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>mtvsrd</primary>
+	<secondary>vec_splats</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vspltb</primary>
+	<secondary>vec_splats</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>mtvsrwz</primary>
+	<secondary>vec_splats</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xxspltw</primary>
+	<secondary>vec_splats</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xxpermdi</primary>
+	<secondary>vec_splats</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vsplth</primary>
+	<secondary>vec_splats</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xxscvdpspn</primary>
+	<secondary>vec_splats</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_splats</title>
       <tgroup cols="4">
@@ -30838,6 +30871,15 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>xvsqrtdp</primary>
+	<secondary>vec_sqrt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvsqrtsp</primary>
+	<secondary>vec_sqrt</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_sqrt</title>
       <tgroup cols="3">
@@ -30916,6 +30958,23 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>vsrb</primary>
+	<secondary>vec_sr</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vsrw</primary>
+	<secondary>vec_sr</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vsrd</primary>
+	<secondary>vec_sr</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vsrh</primary>
+	<secondary>vec_sr</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_sr</title>
       <tgroup cols="4">
@@ -31102,6 +31161,23 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>vsrab</primary>
+	<secondary>vec_sra</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vsraw</primary>
+	<secondary>vec_sra</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vsrad</primary>
+	<secondary>vec_sra</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vsrah</primary>
+	<secondary>vec_sra</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_sra</title>
       <tgroup cols="4">
@@ -31289,6 +31365,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       vec_srl in big-endian code must be rewritten for little-endian targets.
       </para>
       
+      <indexterm>
+	<primary>vsr</primary>
+	<secondary>vec_srl</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_srl</title>
       <tgroup cols="4">
@@ -31494,6 +31575,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       for little-endian.
       </para>
       
+      <indexterm>
+	<primary>vsro</primary>
+	<secondary>vec_sro</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_sro</title>
       <tgroup cols="4">
@@ -31878,6 +31964,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       This intrinsic is <emphasis>not</emphasis> endian-neutral.
       </para>
       
+      <indexterm>
+	<primary>vsrv</primary>
+	<secondary>vec_srv</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_srv</title>
       <tgroup cols="5">
@@ -31963,6 +32054,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       deferred.
       </para>
       
+      <indexterm>
+	<primary>stvx</primary>
+	<secondary>vec_st</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_st</title>
       <tgroup cols="5">
@@ -32657,6 +32753,19 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>stvebx</primary>
+	<secondary>vec_ste</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>stvewx</primary>
+	<secondary>vec_ste</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>stvehx</primary>
+	<secondary>vec_ste</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_ste</title>
       <tgroup cols="4">
@@ -32962,6 +33071,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       deferred.
       </para>
       
+      <indexterm>
+	<primary>stvxl</primary>
+	<secondary>vec_stl</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_stl</title>
       <tgroup cols="5">
@@ -33653,6 +33767,35 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
       None.
       </para>
       
+      <indexterm>
+	<primary>vsububm</primary>
+	<secondary>vec_sub</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vsubuwm</primary>
+	<secondary>vec_sub</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vsubuqm</primary>
+	<secondary>vec_sub</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vsubudm</primary>
+	<secondary>vec_sub</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vsubuhm</primary>
+	<secondary>vec_sub</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvsubdp</primary>
+	<secondary>vec_sub</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvsubsp</primary>
+	<secondary>vec_sub</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_sub</title>
       <tgroup cols="4">
