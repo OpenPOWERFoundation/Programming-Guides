@@ -24035,6 +24035,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_vec_intrinsics">
 	</listitem>
 	<listitem>
 	  <para>
+	    The <code>vec_perm</code> built-in should only use permutations
+	    that reorder vector elements of the specified type, not to reorder
+	    bytes within those elements.  The results are not guaranteed to be
+	    consistent across big- and little-endian if you violate this rule.
+	  </para>
+	</listitem>
+	<listitem>
+	  <para>
 	    No Power compilers yet support the vector _Float16 type, so that
 	    interface is currently deferred.
 	  </para>

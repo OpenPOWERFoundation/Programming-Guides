@@ -123,7 +123,7 @@
   <xi:include href="ch_vec_reference.xml"/>
   <!-- xi:include href="ch_scal_reference.xml"/ -->
   <xi:include href="ch_isa_intrin_xref.xml"/>
-  <xi:include href="app_a.xml"/>
+  <!-- xi:include href="app_a.xml"/ -->
 
   <!-- The app_foundation.xml appendix file is required by all documents. -->
   <xi:include href="../../Docs-Master/common/app_foundation.xml"/>
