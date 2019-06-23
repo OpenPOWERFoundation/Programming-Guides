@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  Copyright (c) 2016 OpenPOWER Foundation
+  Copyright (c) 2019 OpenPOWER Foundation
   
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -118,8 +118,9 @@
   <!-- TODO: Add your chapter heading files here.  Remove both files and insert your own. -->
   <!--       See the template document for naming conventions and location of files.      -->
   <!-- xi:include href="ch_template_overview.xml"/ -->
-  <!-- WJS: The ch_outline.xml file is temporary while I work out the rest -->
-  <xi:include href="ch_outline.xml"/>
+  <xi:include href="ch_intro.xml"/>
+  <xi:include href="ch_biendian.xml"/>
+  <xi:include href="ch_techniques.xml"/>
   <xi:include href="ch_vec_reference.xml"/>
   <!-- xi:include href="ch_scal_reference.xml"/ -->
   <xi:include href="ch_isa_intrin_xref.xml"/>

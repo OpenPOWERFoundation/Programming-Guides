@@ -1,0 +1,56 @@
+<!--
+  Copyright (c) 2019 OpenPOWER Foundation
+  
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+  
+-->
+<chapter version="5.0" xml:lang="en" xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
+xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_techniques">
+  
+  <!-- Chapter Title goes here. -->
+  <title>Vector Programming Techniques</title>
+
+  <section>
+    <title>Help the Compiler Help You</title>
+    <para>
+      Start with scalar code, which is the most portable.  Use various
+      tricks for helping the compiler vectorize scalar code.  Make
+      sure you align your data on 16-byte boundaries wherever
+      possible, and tell the compiler it's aligned.  Use __restrict__
+      pointers to promise data does not alias.
+    </para>
+  </section>
+
+  <section>
+    <title>Use Portable Intrinsics</title>
+    <para>
+      Individual compilers may provide other intrinsic support.  Only
+      the intrinsics in this manual are guaranteed to be portable
+      across compliant compilers.
+    </para>
+    <para>
+      Some compilers may provide compatibility headers for use with
+      other architectures.  Recent GCC and Clang compilers support
+      compatibility headers for the lower levels of the x86 vector
+      architecture.  These can be used initially for ease of porting,
+      but for best performance, it is preferable to rewrite important
+      sections of code with native Power intrinsics.
+    </para>
+  </section>
+
+  <section>
+    <title>Use Assembly Code Sparingly</title>
+    <para>filler</para>
+  </section>
+
+</chapter>

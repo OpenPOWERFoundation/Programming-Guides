@@ -15,16 +15,24 @@
   
 -->
 <chapter version="5.0" xml:lang="en" xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
-xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_isa_intrin_xref">
+xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_intro">
   
   <!-- Chapter Title goes here. -->
-  <title>Instruction/Intrinsic Cross-Reference</title>
- 
-  <para>This chapter contains a cross-reference from Power hardware
-  instructions to intrinsics that generate them.</para>
-  
-  <index>
-    <title> </title>
-  </index>
+  <title>Introduction to Vector Programming on Power</title>
+
+  <section>
+    <title>A Brief History</title>
+    <para>filler</para>
+  </section>
+
+  <section>
+    <title>The Unified Vector Register Set</title>
+    <para>filler</para>
+  </section>
+
+  <section>
+    <title>Useful Links</title>
+    <para>filler</para>
+  </section>
 
 </chapter>

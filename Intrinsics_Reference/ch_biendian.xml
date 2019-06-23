@@ -15,16 +15,29 @@
   
 -->
 <chapter version="5.0" xml:lang="en" xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
-xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_isa_intrin_xref">
+xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_biendian">
   
   <!-- Chapter Title goes here. -->
-  <title>Instruction/Intrinsic Cross-Reference</title>
- 
-  <para>This chapter contains a cross-reference from Power hardware
-  instructions to intrinsics that generate them.</para>
-  
-  <index>
-    <title> </title>
-  </index>
+  <title>The Power Bi-Endian Programming Model</title>
+
+  <section>
+    <title>Purpose</title>
+    <para>filler</para>
+  </section>
+
+  <section>
+    <title>Examples</title>
+    <para>filler</para>
+  </section>
+
+  <section>
+    <title>Limitations</title>
+    <para>
+      <code>vec_sld</code>
+    </para>
+    <para>
+      <code>vec_perm</code>
+    </para>
+  </section>
 
 </chapter>
