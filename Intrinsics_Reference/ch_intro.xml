@@ -18,11 +18,69 @@
 xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_intro">
   
   <!-- Chapter Title goes here. -->
-  <title>Introduction to Vector Programming on Power</title>
+  <title>Introduction to Vector Programming on POWER</title>
 
   <section>
     <title>A Brief History</title>
-    <para>filler</para>
+    <para>
+      The history of vector programming on POWER processors begins
+      with the AIM (Apple, IBM, Motorola) alliance in the 1990s.  The
+      AIM partners developed the Power Vector Media Extension (VMX) to
+      accelerate multimedia applications, particularly image
+      processing.  VMX is the name still used by IBM for this
+      instruction set.  Freescale (formerly Motorola) used the
+      trademark "AltiVec," while Apple at one time called it "Velocity
+      Engine."  While VMX remains the most official name, the term
+      AltiVec is still in common use today.  Freescale's AltiVec
+      Technology Programming Interface Manual (the "AltiVec PIM") is
+      still available online for reference (see <xref
+      linkend="VIPR.intro.links" />).
+    </para>
+    <para>
+      The original VMX specification provided for thirty-two 128-bit
+      vector registers (VRs).  Each register can be treated as
+      containing sixteen 8-bit character values, eight 16-bit short
+      integer values, four 32-bit integer values, or four 32-bit
+      single-precision floating-point values (the "VMX data types").
+      Furthermore, the integer data types have signed, unsigned, and
+      boolean variants.  An extensive set of arithmetic, logical,
+      comparison, conversion, memory access, and permute class
+      operations were specified to operate on these registers.
+    </para>
+    <para>
+      The AltiVec PIM documents intrinsic functions to be used by
+      programmers to access the VMX instruction set.  Because similar
+      operations are provided for all the VMX data types, the PIM
+      provides for overloaded intrinsics that can operate on different
+      data types.  However, such function overloading is not normally
+      acceptable in the C programming language, so compilers compliant
+      with the AltiVec PIM (such as <code>gcc</code> and
+      <code>clang</code>) were required to add special handling to
+      their parsers to permit this.  The PIM suggested (but did not
+      mandate) the use of a header file,
+      <code>&lt;altivec.h&gt;</code>, for implementations that provide
+      AltiVec intrinsics.  This is common practice for all compliant
+      compilers today.
+    </para>
+    <para>
+      The first chips incorporating the VMX instruction set were
+      introduced by Freescale in 1999, and used primarly in Apple
+      desktop computers.  IBM's last desktop CPU (the PowerPC 970)
+      also included AltiVec support, and was used in the Apple
+      PowerMac G5.  IBM initially omitted support for VMX from its
+      server-class computers, but added support for it in the POWER6
+      server family.
+    </para>
+    <para>
+      Next talk about VSX introduced for P7.  Changes in registers and
+      types.
+    </para>
+    <section>
+      <title>Little-Endian Linux</title>
+      <para>
+	Yes, it caused a lot of problems.  See chapter on this.
+      </para>
+    </section>
   </section>
 
   <section>
@@ -30,7 +88,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_intro">
     <para>filler</para>
   </section>
 
-  <section>
+  <section xml:id="VIPR.intro.links">
     <title>Useful Links</title>
     <para>filler</para>
   </section>
