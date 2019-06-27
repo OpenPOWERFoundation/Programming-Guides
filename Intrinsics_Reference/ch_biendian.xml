@@ -78,13 +78,17 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.biendian">
       languages), these data types may be accessed based on the type
       names listed in <xref linkend="VIPR.biendian.vectypes" /> when
       Power ISA SIMD language extensions are enabled using either the
-      <code>vector</code> or <code>__vector</code> keywords.  NOTE
-      THAT THIS IS THE FIRST TIME WE'VE MENTIONED THESE LANGUAGE
-      EXTENSIONS, NEED TO FIX THAT.
+      <code>vector</code> or <code>__vector</code> keywords.  [FIXME:
+      We haven't talked about these at all.  Need to borrow some
+      description from the AltiVec PIM about the usage of vector,
+      bool, and pixel, and supplement with the problems this causes
+      with strict-ANSI C++.  Maybe a separate section on "Language
+      Elements" should precede this one.]
     </para> 
     <para>
-      For the Fortran language, OH YET ANOTHER STINKING TABLE gives a
-      correspondence between Fortran and C/C++ language types.
+      For the Fortran language, [FIXME: link to table in later
+      section] gives a correspondence between Fortran and C/C++
+      language types.
     </para>
     <para>
       The assignment operator always performs a byte-by-byte data copy
@@ -413,9 +417,11 @@ register vector double vd = vec_splats(*double_ptr);</programlisting>
     <title>Vector Operators</title>
     <para>
       In addition to the dereference and assignment operators, the
-      Power SIMD Vector Programming API (REALLY?) provides the usual
-      operators that are valid on pointers; these operators are also
-      valid for pointers to vector types.
+      Power SIMD Vector Programming API [FIXME: If we're going to use
+      a term like this, let's use it consistently; also, SIMD and
+      Vector are redundant] provides the usual operators that are
+      valid on pointers; these operators are also valid for pointers
+      to vector types.
     </para>
     <para>
       The traditional C/C++ operators are defined on vector types
@@ -452,6 +458,273 @@ register vector double vd = vec_splats(*double_ptr);</programlisting>
 
   <section xml:id="VIPR.biendian.layout">
     <title>Vector Layout and Element Numbering</title>
+    <para>
+      Vector data types consist of a homogeneous sequence of elements
+      of the base data type specified in the vector data
+      type. Individual elements of a vector can be addressed by a
+      vector element number. Element numbers can be established either
+      by counting from the “left” of a register and assigning the
+      left-most element the element number 0, or from the “right” of
+      the register and assigning the right-most element the element
+      number 0.
+    </para>
+    <para>
+      In big-endian environments, establishing element counts from the
+      left makes the element stored at the lowest memory address the
+      lowest-numbered element. Thus, when vectors and arrays of a
+      given base data type are overlaid, vector element 0 corresponds
+      to array element 0, vector element 1 corresponds to array
+      element 1, and so forth.
+    </para>
+    <para>
+      In little-endian environments, establishing element counts from
+      the right makes the element stored at the lowest memory address
+      the lowest-numbered element. Thus, when vectors and arrays of a
+      given base data type are overlaid, vector element 0 will
+      correspond to array element 0, vector element 1 will correspond
+      to array element 1, and so forth.
+    </para>
+    <para>
+      Consequently, the vector numbering schemes can be described as
+      big-endian and little-endian vector layouts and vector element
+      numberings.
+    </para>
+    <para>
+      For internal consistency, in the ELF V2 ABI, the default vector
+      layout and vector element ordering in big-endian environments
+      shall be big endian, and the default vector layout and vector
+      element ordering in little-endian environments shall be little
+      endian. [FIXME: Here's a purported ABI requirement; should this
+      somehow remain part of the ABI document?]
+    </para>
+    <para>
+      This element numbering shall also be used by the <code>[]</code>
+      accessor method to vector elements provided as an extension of
+      the C/C++ languages by some compilers, as well as for other
+      language extensions or library constructs that directly or
+      indirectly refer to elements by their element number.
+    </para>
+    <para>
+      Application programs may query the vector element ordering in
+      use by testing the __VEC_ELEMENT_REG_ORDER__ macro. This macro
+      has two possible values:
+    </para>
+    <informaltable frame="none" rowsep="0" colsep="0">
+      <tgroup cols="2">
+        <colspec colname="c1" colwidth="40*" />
+        <colspec colname="c2" colwidth="60*" />
+        <tbody>
+          <row>
+            <entry>
+              <para>__ORDER_LITTLE_ENDIAN__</para>
+            </entry>
+            <entry>
+              <para>Vector elements use little-endian element ordering.</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>__ORDER_BIG_ENDIAN__</para>
+            </entry>
+            <entry>
+              <para>Vector elements use big-endian element ordering.</para>
+            </entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </informaltable>
+  </section>
+
+  <section>
+    <title>Vector Built-In Functions</title>
+    <para>
+      Some of the POWER SIMD hardware instructions refer, implicitly
+      or explicitly, to vector element numbers.  For example, the
+      <code>vspltb</code> instruction has as one of its inputs an
+      index into a vector.  The element at that index position is to
+      be replicated in every element of the output vector.  For
+      another example, <code>vmuleuh</code> instruction operates on
+      the even-numbered elements of its input vectors.  The hardware
+      instructions define these element numbers using big-endian
+      element order, even when the machine is running in little-endian
+      mode.  Thus, a built-in function that maps directly to the
+      underlying hardware instruction, regardless of the target
+      endianness, has the potential to confuse programmers on
+      little-endian platforms.
+    </para>
+    <para>
+      It is more useful to define built-in functions that map to these
+      instructions to use natural element order.  That is, the
+      explicit or implicit element numbers specified by such built-in
+      functions should be interpreted using big-endian element order
+      on a big-endian platform, and using little-endian element order
+      on a little-endian platform.
+    </para>
+    <para>
+      The descriptions of the built-in functions in <xref
+      linkend="VIPR.vec-ref" /> contain notes on endian issues that
+      apply to each built-in function.  Furthermore, a built-in
+      function requiring a different compiler implementation for
+      big-endian than it uses for little-endian has a sample
+      compiler implementation for both BE and LE.  These sample
+      implementations are only intended as examples; designers of a
+      compiler are free to use other methods to implement the
+      specified semantics as they see fit.
+    </para>
+    <section>
+      <title>Extended Data Movement Functions</title>
+      <para>
+	The built-in functions in <xref
+	linkend="VIPR.biendian.vmx-mem" /> map to Altivec/VMX load and
+	store instructions and provide access to the “auto-aligning”
+	memory instructions of the VMX ISA where low-order address
+	bits are discarded before performing a memory access. These
+	instructions access load and store data in accordance with the
+	program's current endian mode, and do not need to be adapted
+	by the compiler to reflect little-endian operating during code
+	generation.
+      </para>
+      <table frame="all" pgwide="1" xml:id="VIPR.biendian.vmx-mem">
+        <title>VMX Memory Access Built-In Functions</title>
+        <tgroup cols="3">
+          <colspec colname="c1" colwidth="15*" align="center" />
+          <colspec colname="c2" colwidth="35*" align="center" />
+          <colspec colname="c3" colwidth="50*" />
+          <thead>
+            <row>
+              <entry>
+                <para>
+                  <emphasis role="bold">Built-in Function</emphasis>
+                </para>
+              </entry>
+              <entry>
+                <para>
+                  <emphasis role="bold">Corresponding POWER
+                  Instructions</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">Implementation Notes</emphasis>
+                </para>
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>
+                <para>vec_ld</para>
+              </entry>
+              <entry>
+                <para>lvx</para>
+              </entry>
+              <entry>
+                <para>Hardware works as a function of endian mode.</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>vec_lde</para>
+              </entry>
+              <entry>
+                <para>lvebx, lvehx, lvewx</para>
+              </entry>
+              <entry>
+                <para>Hardware works as a function of endian mode.</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>vec_ldl</para>
+              </entry>
+              <entry>
+                <para>lvxl</para>
+              </entry>
+              <entry>
+                <para>Hardware works as a function of endian mode.</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>vec_st</para>
+              </entry>
+              <entry>
+                <para>stvx</para>
+              </entry>
+              <entry>
+                <para>Hardware works as a function of endian mode.</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>vec_ste</para>
+              </entry>
+              <entry>
+                <para>stvebx, stvehx, stvewx</para>
+              </entry>
+              <entry>
+                <para>Hardware works as a function of endian mode.</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>vec_stl</para>
+              </entry>
+              <entry>
+                <para>stvxl</para>
+              </entry>
+              <entry>
+                <para>Hardware works as a function of endian mode.</para>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+      <para>
+	Previous versions of the VMX built-in functions defined
+	intrinsics to access the VMX instructions <code>lvsl</code>
+	and <code>lvsr</code>, which could be used in conjunction with
+	<code>vec_vperm</code> and VMX load and store instructions for
+	unaligned access. The <code>vec_lvsl</code> and
+	<code>vec_lvsr</code> interfaces are deprecated in accordance
+	with the interfaces specified here. For compatibility, the
+	built-in pseudo sequences published in previous VMX documents
+	continue to work with little-endian data layout and the
+	little-endian vector layout described in this
+	document. However, the use of these sequences in new code is
+	discouraged and usually results in worse performance. It is
+	recommended (but not required) that compilers issue a warning
+	when these functions are used in little-endian
+	environments. It is recommended that programmers use the
+	<code>vec_xl</code> and <code>vec_xst</code> vector built-in
+	functions to access unaligned data streams.  See the
+	descriptions of these instructions in <xref
+	linkend="VIPR.vec-ref" /> for further description and
+	implementation details.
+      </para>
+    </section>
+    <section>
+      <title>Big-Endian Vector Layout in Little-Endian Environments
+      (Deprecated)</title>
+      <para>
+	Versions 1.0 through 1.4 of the 64-Bit ELFv2 ABI Specification
+	for POWER provided for optional compiler support for using
+	big-endian element ordering in little-endian environments.
+	This was initially deemed useful for porting certain libraries
+	that assumed big-endian element ordering regardless of the
+	endianness of their input streams.  In practice, this
+	introduced serious compiler complexity without much utility.
+	Thus this support (previously controlled by switches
+	<code>-maltivec=be</code> and/or <code>-qaltivec=be</code>) is
+	now deprecated.  Current versions of the gcc and clang
+	open-source compilers do not implement this support.
+      </para>
+    </section>
+  </section>
+
+  <section>
+    <title>Language-Specific Vector Support for Other
+    Languages</title>
     <para>
       filler
     </para>
