@@ -66,6 +66,13 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.biendian">
     element order.
   </para> 
 
+  <note>
+    <para>
+      Much of the information in this chapter was formerly part of
+      Chapter 6 of the 64-Bit ELF V2 ABI Specification for POWER.
+    </para>
+  </note>
+
   <section>
     <title>Vector Data Types</title>
     <para>
@@ -86,9 +93,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.biendian">
       Elements" should precede this one.]
     </para> 
     <para>
-      For the Fortran language, [FIXME: link to table in later
-      section] gives a correspondence between Fortran and C/C++
-      language types.
+      For the Fortran language, <xref
+      linkend="VIPR.biendian.fortran-types" /> gives a correspondence
+      between Fortran and C/C++ language types.
     </para>
     <para>
       The assignment operator always performs a byte-by-byte data copy
@@ -490,14 +497,6 @@ register vector double vd = vec_splats(*double_ptr);</programlisting>
       numberings.
     </para>
     <para>
-      For internal consistency, in the ELF V2 ABI, the default vector
-      layout and vector element ordering in big-endian environments
-      shall be big endian, and the default vector layout and vector
-      element ordering in little-endian environments shall be little
-      endian. [FIXME: Here's a purported ABI requirement; should this
-      somehow remain part of the ABI document?]
-    </para>
-    <para>
       This element numbering shall also be used by the <code>[]</code>
       accessor method to vector elements provided as an extension of
       the C/C++ languages by some compilers, as well as for other
@@ -725,9 +724,259 @@ register vector double vd = vec_splats(*double_ptr);</programlisting>
   <section>
     <title>Language-Specific Vector Support for Other
     Languages</title>
-    <para>
-      filler
-    </para>
+    <section>
+      <title>Fortran</title>
+      <para>
+	<xref linkend="VIPR.biendian.fortran-types" /> shows the
+	correspondence between the C/C++ types described in this
+	document and their Fortran equivalents. In Fortran, the
+	Boolean vector data types are represented by
+	<code>VECTOR(UNSIGNED(</code><emphasis>n</emphasis><code>))</code>.
+      </para>
+      <table frame="all" pgwide="1" xml:id="VIPR.biendian.fortran-types">
+        <title>Fortran Vector Data Types</title>
+        <tgroup cols="2">
+          <colspec colname="c1" colwidth="50*" />
+          <colspec colname="c2" colwidth="50*" />
+          <thead>
+            <row>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">XL Fortran Vector Type</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">XL C/C++ Vector Type</emphasis>
+                </para>
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>
+                <para>VECTOR(INTEGER(1))</para>
+              </entry>
+              <entry>
+                <para>vector signed char</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>VECTOR(INTEGER(2))</para>
+              </entry>
+              <entry>
+                <para>vector signed short</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>VECTOR(INTEGER(4))</para>
+              </entry>
+              <entry>
+                <para>vector signed int</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>VECTOR(INTEGER(8))</para>
+              </entry>
+              <entry>
+                <para>vector signed long long, vector signed long<footnote
+		xml:id="vlongappalling">
+                  <para>The vector long types are deprecated due to their
+                  ambiguity between 32-bit and 64-bit environments. The use
+                  of the vector long long types is preferred.</para>
+		</footnote></para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>VECTOR(INTEGER(16))</para>
+              </entry>
+              <entry>
+                <para>vector signed __int128</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>VECTOR(UNSIGNED(1))</para>
+              </entry>
+              <entry>
+                <para>vector unsigned char</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>VECTOR(UNSIGNED(2))</para>
+              </entry>
+              <entry>
+                <para>vector unsigned short</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>VECTOR(UNSIGNED(4))</para>
+              </entry>
+              <entry>
+                <para>vector unsigned int</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>VECTOR(UNSIGNED(8))</para>
+              </entry>
+              <entry>
+                <para>vector unsigned long long, vector unsigned long<footnoteref
+		linkend="vlongappalling" /></para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>VECTOR(UNSIGNED(16))</para>
+              </entry>
+              <entry>
+                <para>vector unsigned __int128</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>VECTOR(REAL(4))</para>
+              </entry>
+              <entry>
+                <para>vector float</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>VECTOR(REAL(8))</para>
+              </entry>
+              <entry>
+                <para>vector double</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>VECTOR(PIXEL)</para>
+              </entry>
+              <entry>
+                <para>vector pixel</para>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+      <para>
+	Because the Fortran language does not support pointers, vector
+	built-in functions that expect pointers to a base type take an
+	array element reference to indicate the address of a memory
+	location that is the subject of a memory access built-in
+	function.
+      </para>
+      <para>
+	Because the Fortran language does not support type casts, the
+	<code>vec_convert</code> and <code>vec_concat</code> built-in
+	functions shown in <xref linkend="VIPR.endian.convert" /> are
+	provided to perform bit-exact type conversions between vector
+	types.
+      </para>
+      <table frame="all" pgwide="1" xml:id="VIPR.endian.convert">
+        <title>Built-In Vector Conversion Functions</title>
+        <tgroup cols="2">
+          <colspec colname="c1" colwidth="30*" align="center" />
+          <colspec colname="c2" colwidth="70*" />
+          <thead>
+            <row>
+              <entry>
+                <para>
+                  <emphasis role="bold">Group</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">Description</emphasis>
+                </para>
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>
+                <para>VEC_CONCAT (ARG1, ARG2)<?linebreak?>(Fortran)</para>
+                <para></para>
+              </entry>
+              <entry>
+                <para>Purpose:</para>
+                <para>Concatenates two elements to form a vector.</para>
+                <para>Result value:</para>
+                <para>The resulting vector consists of the two scalar elements,
+                ARG1 and ARG2, assigned to elements 0 and 1 (using the
+                environment’s native endian numbering), respectively.</para>
+                <itemizedlist>
+                  <listitem>
+                    <para><emphasis role="bold">Note:  </emphasis>This function corresponds to the C/C++ vector
+                    constructor (vector type){a,b}. It is provided only for
+                    languages without vector constructors.</para>
+                  </listitem>
+                </itemizedlist>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para></para>
+              </entry>
+              <entry>
+                <para>vector signed long long vec_concat (signed long long,
+                signed long long);</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para></para>
+              </entry>
+              <entry>
+                <para>vector unsigned long long vec_concat (unsigned long long,
+                unsigned long long);</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para></para>
+              </entry>
+              <entry>
+                <para>vector double vec_concat (double, double);</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>VEC_CONVERT(V, MOLD)</para>
+              </entry>
+              <entry>
+                <para>Purpose:</para>
+                <para>Converts a vector to a vector of a given type.</para>
+                <para>Class:</para>
+                <para>Pure function</para>
+                <para>Argument type and attributes:</para>
+                <itemizedlist spacing="compact">
+                  <listitem>
+                    <para>V Must be an INTENT(IN) vector.</para>
+                  </listitem>
+                  <listitem>
+                    <para>MOLD Must be an INTENT(IN) vector. If it is a
+                    variable, it need not be defined.</para>
+                  </listitem>
+                </itemizedlist>
+                <para>Result type and attributes:</para>
+                <para>The result is a vector of the same type as MOLD.</para>
+                <para>Result value:</para>
+                <para>The result is as if it were on the left-hand side of an
+                intrinsic assignment with V on the right-hand side.</para>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
   </section>
 
   <section>
