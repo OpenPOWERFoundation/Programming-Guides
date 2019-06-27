@@ -15,7 +15,7 @@
   
 -->
 <chapter version="5.0" xml:lang="en" xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
-xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_biendian">
+xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.biendian">
   
   <!-- Chapter Title goes here. -->
   <title>The Power Bi-Endian Programming Model</title>

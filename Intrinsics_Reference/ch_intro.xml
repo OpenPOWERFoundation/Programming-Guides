@@ -72,18 +72,61 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_intro">
       server family.
     </para>
     <para>
-      Next talk about VSX introduced for P7.  Changes in registers and
-      types.
+      IBM extended VMX by introducing the Vector-Scalar Extension
+      (VSX) for the POWER7 family of processors.  VSX adds 64 logical
+      Vector Scalar Registers (VSRs); however, to optimize the amount
+      of per-process register state, the registers overlap with the
+      VRs and the scalar floating-point registers (FPRs) (see <xref
+      linkend="VIPR.intro.unified" />).  The VSRs can represent all
+      the data types representable by the VRs, and can also be treated
+      as containing two 64-bit integers or two 64-bit double-precision
+      floating-point values.  
+    </para>
+    <para>
+      Both the VMX and VSX instruction sets have been expanded for the
+      POWER8 and POWER9 processor families.  Starting with POWER8,
+      a VSR can now contain a single 128-bit integer; and starting
+      with POWER9, a VSR can contain a single 128-bit floating-point
+      value.  The VMX and VSX instruction sets together may be
+      referred to as the POWER SIMD (single-instruction,
+      multiple-data) instructions.
     </para>
     <section>
       <title>Little-Endian Linux</title>
       <para>
-	Yes, it caused a lot of problems.  See chapter on this.
+	The POWER architecture has supported operation in either
+	big-endian (BE) or little-endian (LE) mode from the
+	beginning.  However, IBM's POWER servers were only shipped
+	with big-endian operating systems (AIX, Linux, i5/OS) prior to
+	the introduction of POWER8.  With POWER8, IBM began
+	supporting little-endian Linux distributions for the first
+	time, and introduced a new application binary interface (the
+	64-Bit ELFv2 ABI Specification <xref
+	linkend="VIPR.intro.links" />) that can be used for either
+	big- or little-endian support.  In practice, the ELFv2 ABI is
+	currently used only for little-endian Linux.
+      </para>
+      <para>
+	Although POWER has always supported big- and little-endian
+	memory accesses, the introduction of vector register support
+	added a layer of complexity to programming for processors
+	operating in different endian modes.  Arrays of elements
+	loaded into a VR or VSR will be indexed from left to right in
+	the register in big-endian mode, but will be indexed from
+	right to left in the register in little-endian mode.  However,
+	the VMX and VSX instructions originally assumed that elements
+	will always be indexed from left to right in the register.
+	This is an inconvenience that needs to be hidden from the
+	application programmer wherever possible.  To this end, IBM
+	developed a bi-endian vector programming model (see <xref
+	linkend="VIPR.biendian" />).  The intrinsic functions provided
+	for the bi-endian vector programming model are described in
+	<xref linkend="VIPR.vec-ref" />.
       </para>
     </section>
   </section>
 
-  <section>
+  <section xml:id="VIPR.intro.unified">
     <title>The Unified Vector Register Set</title>
     <para>filler</para>
   </section>
