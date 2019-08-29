@@ -10917,6 +10917,12 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
+      <para><emphasis role="bold">Notes:</emphasis>
+      The example implementations below assume <emphasis
+      role="bold">b</emphasis> is zero, so that the scaling code is
+      omitted.  Scaling is accomplished by loading a constant and
+      multiplying it by the result.
+      </para>
       
       <indexterm>
 	<primary>vcfsx</primary>
@@ -10988,6 +10994,38 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry>
 		<programlisting>
    vcfux  r,a,b
+		</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector double</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector signed long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>const int</para>
+              </entry>
+              <entry>
+		<programlisting>
+   xvcvsxddp  r,a,b
+		</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector double</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>const int</para>
+              </entry>
+              <entry>
+		<programlisting>
+   xvcvuxddp  r,a,b
 		</programlisting>
               </entry>
             </row>
