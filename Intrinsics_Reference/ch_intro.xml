@@ -128,12 +128,87 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_intro">
 
   <section xml:id="VIPR.intro.unified">
     <title>The Unified Vector Register Set</title>
-    <para>filler</para>
+    <para>
+      In OpenPOWER-compliant processors, floating-point and vector
+      operations are implemented using a unified vector-scalar model.
+      As shown in <xref linkend="FPR-VSR" /> and <xref
+      linkend="VR-VSR" />, there are 64 vector-scalar registers; each
+      is 128 bits wide.
+    </para>
+    <para>
+      The vector-scalar registers can be addressed with VSX
+      instructions, for vector and scalar processing of all 64
+      registers, or with the "classic" POWER floating-point
+      instructions to refer to a 32-register subset of these, having
+      64 bits per register.  They can also be addressed with VMX
+      instructions to refer to a 32-register subset of 128-bit registers.
+    </para>
+    <figure pgwide="1" xml:id="FPR-VSR">
+      <title>Floating-Point Registers as Part of VSRs</title>
+      <mediaobject>
+	<imageobject>
+	  <imagedata fileref="fig-fpr-vsr.png" format="PNG"
+		     scalefit="1" width="100%" />
+	</imageobject>
+      </mediaobject>
+    </figure>
+    <figure pgwide="1" xml:id="VR-VSR">
+      <title>Vector Registers as Part of VSRs</title>
+      <mediaobject>
+	<imageobject>
+	  <imagedata fileref="fig-vr-vsr.png" format="PNG"
+		     scalefit="1" width="100%" />
+	</imageobject>
+      </mediaobject>
+    </figure>
   </section>
 
   <section xml:id="VIPR.intro.links">
     <title>Useful Links</title>
-    <para>filler</para>
+    <para>
+      The following documents provide additional reference materials.
+    </para>
+    <itemizedlist>
+      <listitem>
+	<para>
+	  <emphasis>64-Bit ELF V2 ABI Specification - Power
+	  Architecture.</emphasis>
+	  <emphasis>
+	    <link xlink:href="https://openpowerfoundation.org/?resource_lib=64-bit-elf-v2-abi-specification-power-architecture">https://openpowerfoundation.org/?resource_lib=64-bit-elf-v2-abi-specification-power-architecture
+	    </link>
+	  </emphasis>
+	</para>
+      </listitem>
+      <listitem>
+	<para>
+	  <emphasis>AltiVec Technology Program Interface
+	  Manual.</emphasis>
+	  <emphasis>
+	    <link xlink:href="https://www.nxp.com/docs/en/reference-manual/ALTIVECPIM.pdf">https://www.nxp.com/docs/en/reference-manual/ALTIVECPIM.pdf
+	    </link>
+	  </emphasis>
+	</para>
+      </listitem>
+      <listitem>
+	<para>
+	  <emphasis>Intel Architecture Instruction Set Extensions and
+	  Future Features Programming Reference.</emphasis>
+	  <emphasis>
+	    <link xlink:href="https://software.intel.com/sites/default/files/managed/c5/15/architecture-instruction-set-extensions-programming-reference.pdf">https://software.intel.com/sites/default/files/managed/c5/15/architecture-instruction-set-extensions-programming-reference.pdf
+	    </link>
+	  </emphasis>
+	</para>
+      </listitem>
+      <listitem>
+	<para>
+	  <emphasis>Power Vector Library.</emphasis>
+	  <emphasis>
+	    <link xlink:href="https://github.com/open-power-sdk/pveclib">https://github.com/open-power-sdk/pveclib
+	    </link>
+	  </emphasis>
+	</para>
+      </listitem>
+    </itemizedlist>
   </section>
 
 </chapter>

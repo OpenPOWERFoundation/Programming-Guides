@@ -22,11 +22,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.biendian">
 
   <para>
     To ensure portability of applications optimized to exploit the
-    SIMD functions of POWER ISA processors, the ELF V2 ABI defines a
-    set of functions and data types for SIMD programming. ELF
-    V2-compliant compilers will provide suitable support for these
-    functions, preferably as built-in functions that translate to one
-    or more POWER ISA instructions.
+    SIMD functions of POWER ISA processors, this reference defines a
+    set of functions and data types for SIMD programming.  Compliant
+    compilers will provide suitable support for these functions,
+    preferably as built-in functions that translate to one or more
+    POWER ISA instructions.
   </para>
   <para>
     Compilers are encouraged, but not required, to provide built-in
@@ -43,27 +43,26 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.biendian">
     built-in functions are implemented with different instruction
     sequences for LE and BE. To achieve this, vector built-in
     functions provide a set of functions derived from the set of
-    hardware functions provided by the Power vector SIMD
-    instructions. Unlike traditional “hardware intrinsic” built-in
-    functions, no fixed mapping exists between these built-in
-    functions and the generated hardware instruction sequence. Rather,
-    the compiler is free to generate optimized instruction sequences
-    that implement the semantics of the program specified by the
-    programmer using these built-in functions.
+    hardware functions provided by the POWER SIMD instructions. Unlike
+    traditional “hardware intrinsic” built-in functions, no fixed
+    mapping exists between these built-in functions and the generated
+    hardware instruction sequence. Rather, the compiler is free to
+    generate optimized instruction sequences that implement the
+    semantics of the program specified by the programmer using these
+    built-in functions. 
   </para>
   <para>
-    This is primarily applicable to the POWER SIMD instructions.  As
-    we've seen, this set of instructions operates on groups of 2, 4,
-    8, or 16 vector elements at a time in 128-bit registers. On a
-    big-endian POWER platform, vector elements are loaded from memory
-    into a register so that the 0th element occupies the high-order
-    bits of the register, and the (N &#8211; 1)th element occupies the
-    low-order bits of the register. This is referred to as big-endian
-    element order. On a little-endian POWER platform, vector elements
-    are loaded from memory such that the 0th element occupies the
-    low-order bits of the register, and the (N &#8211; 1)th element
-    occupies the high-order bits. This is referred to as little-endian
-    element order.
+    As we've seen, the POWER SIMD instructions operate on groups of 1,
+    2, 4, 8, or 16 vector elements at a time in 128-bit registers. On
+    a big-endian POWER platform, vector elements are loaded from
+    memory into a register so that the 0th element occupies the
+    high-order bits of the register, and the (N &#8211; 1)th element
+    occupies the low-order bits of the register. This is referred to
+    as big-endian element order. On a little-endian POWER platform,
+    vector elements are loaded from memory such that the 0th element
+    occupies the low-order bits of the register, and the (N &#8211;
+    1)th element occupies the high-order bits. This is referred to as
+    little-endian element order.
   </para> 
 
   <note>
@@ -74,6 +73,46 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.biendian">
   </note>
 
   <section>
+    <title>Language Elements</title>
+    <para>
+      The C and C++ languages are extended to use new identifiers
+      <code>vector</code>, <code>pixel</code>, <code>bool</code>,
+      <code>__vector</code>, <code>__pixel</code>, and
+      <code>__bool</code>.  These keywords are used to specify vector
+      data types (<xref linkend="VIPR.ch-data-types" />).  Because
+      these identifiers may conflict with keywords in more recent C
+      and C++ language standards, compilers may implement these in one
+      of two ways.
+    </para>
+    <itemizedlist>
+      <listitem>
+	<para>
+	  <code>__vector</code>, <code>__pixel</code>,
+	  <code>__bool</code>, and <code>bool</code> are defined as
+	  keywords, with <code>vector</code> and <code>pixel</code> as
+	  predefined macros that expand to <code>__vector</code> and
+	  <code>__pixel</code>, respectively.
+	</para>
+      </listitem>
+      <listitem>
+	<para>
+	  <code>__vector</code>, <code>__pixel</code>, and
+	  <code>__bool</code> are defined as keywords in all contexts,
+	  while <code>vector</code>, <code>pixel</code>, and
+	  <code>bool</code> are treated as keywords only within the
+	  context of a type declaration.
+	</para>
+      </listitem>
+    </itemizedlist>
+    <para>
+      Vector literals may be specified using a type cast and a set of
+      literal initializers in parentheses or braces.  For example,
+    </para>
+    <programlisting>vector int x = (vector int) (4, -1, 3, 6);
+vector double g = (vector double) { 3.5, -24.6 };</programlisting>
+  </section>
+
+  <section xml:id="VIPR.ch-data-types">
     <title>Vector Data Types</title>
     <para>
       Languages provide support for the data types in <xref
@@ -84,13 +123,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.biendian">
       For the C and C++ programming languages (and related/derived
       languages), these data types may be accessed based on the type
       names listed in <xref linkend="VIPR.biendian.vectypes" /> when
-      Power ISA SIMD language extensions are enabled using either the
-      <code>vector</code> or <code>__vector</code> keywords.  [FIXME:
-      We haven't talked about these at all.  Need to borrow some
-      description from the AltiVec PIM about the usage of vector,
-      bool, and pixel, and supplement with the problems this causes
-      with strict-ANSI C++.  Maybe a separate section on "Language
-      Elements" should precede this one.]
+      POWER SIMD language extensions are enabled using either the
+      <code>vector</code> or <code>__vector</code> keywords.
     </para> 
     <para>
       For the Fortran language, <xref
@@ -125,6 +159,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.biendian">
       aligned at least to a quadword boundary.  Built-in functions
       such as <code>vec_xl</code> and <code>vec_xst</code> are
       provided for unaligned data access.
+    </para>
+    <para>
+      One vector type may be cast to another vector type without
+      restriction.  Such a cast is simply a reinterpretation of the
+      bits, and does not change the data.
     </para>
     <para>
       Compilers are expected to recognize and optimize multiple
@@ -250,6 +289,21 @@ register vector double vd = vec_splats(*double_ptr);</programlisting>
             <entry>
               <para>Vector of 8 halfwords with a value of either 0 or 
               2<superscript>16</superscript> &#8211; 1.</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>vector pixel</para>
+            </entry>
+            <entry>
+              <para>16</para>
+            </entry>
+            <entry>
+              <para>Quadword</para>
+            </entry>
+            <entry>
+              <para>Vector of 8 halfwords, each interpreted as a 1-bit
+	      channel and three 5-bit channels.</para>
             </entry>
           </row>
           <row>
@@ -424,11 +478,9 @@ register vector double vd = vec_splats(*double_ptr);</programlisting>
     <title>Vector Operators</title>
     <para>
       In addition to the dereference and assignment operators, the
-      Power SIMD Vector Programming API [FIXME: If we're going to use
-      a term like this, let's use it consistently; also, SIMD and
-      Vector are redundant] provides the usual operators that are
-      valid on pointers; these operators are also valid for pointers
-      to vector types.
+      POWER Bi-Endian Vector Programming Model provides the usual
+      operators that are valid on pointers; these operators are also
+      valid for pointers to vector types.
     </para>
     <para>
       The traditional C/C++ operators are defined on vector types
@@ -580,7 +632,7 @@ register vector double vd = vec_splats(*double_ptr);</programlisting>
 	bits are discarded before performing a memory access. These
 	instructions access load and store data in accordance with the
 	program's current endian mode, and do not need to be adapted
-	by the compiler to reflect little-endian operating during code
+	by the compiler to reflect little-endian operation during code
 	generation.
       </para>
       <table frame="all" pgwide="1" xml:id="VIPR.biendian.vmx-mem">
@@ -683,7 +735,7 @@ register vector double vd = vec_splats(*double_ptr);</programlisting>
 	Previous versions of the VMX built-in functions defined
 	intrinsics to access the VMX instructions <code>lvsl</code>
 	and <code>lvsr</code>, which could be used in conjunction with
-	<code>vec_vperm</code> and VMX load and store instructions for
+	<code>vec_perm</code> and VMX load and store instructions for
 	unaligned access. The <code>vec_lvsl</code> and
 	<code>vec_lvsr</code> interfaces are deprecated in accordance
 	with the interfaces specified here. For compatibility, the
@@ -694,12 +746,14 @@ register vector double vd = vec_splats(*double_ptr);</programlisting>
 	discouraged and usually results in worse performance. It is
 	recommended (but not required) that compilers issue a warning
 	when these functions are used in little-endian
-	environments. It is recommended that programmers use the
-	<code>vec_xl</code> and <code>vec_xst</code> vector built-in
-	functions to access unaligned data streams.  See the
-	descriptions of these instructions in <xref
-	linkend="VIPR.vec-ref" /> for further description and
-	implementation details.
+	environments.
+      </para>
+      <para>
+	It is recommended that programmers use the <code>vec_xl</code>
+	and <code>vec_xst</code> vector built-in functions to access
+	unaligned data streams.  See the descriptions of these
+	instructions in <xref linkend="VIPR.vec-ref" /> for further
+	description and implementation details.
       </para>
     </section>
     <section>

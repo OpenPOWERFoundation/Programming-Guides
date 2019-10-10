@@ -51,6 +51,92 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_techniques">
   <section>
     <title>Use Assembly Code Sparingly</title>
     <para>filler</para>
+    <section>
+      <title>Inline Assembly</title>
+      <para>filler</para>
+    </section>
+    <section>
+      <title>Assembly Files</title>
+      <para>filler</para>
+    </section>
+  </section>
+
+  <section>
+    <title>Other Vector Programming APIs</title>
+    <para>In addition to the intrinsic functions provided in this
+    reference, programmers should be aware of other vector programming
+    API resources.</para>
+    <section>
+      <title>x86 Vector Portability Headers</title>
+      <para>
+	Recent versions of the <code>gcc</code> and <code>clang</code>
+	open source compilers provide "drop-in" portability headers
+	for portions of the Intel Architecture Instruction Set
+	Extensions (see <xref linkend="VIPR.intro.links" />).  These
+	headers mirror the APIs of Intel headers having the same
+	names.  Support is provided for the MMX and SSE layers, up
+	through SSE4.  At this time, no support for the AVX layers is
+	envisioned.
+      </para>
+      <para>
+	The portability headers provide the same semantics as the
+	corresponding Intel APIs, but using VMX and VSX instructions
+	to emulate the Intel vector instructions.  It should be
+	emphasized that these headers are provided for portability,
+	and will not necessarily perform optimally (although in many
+	cases the performance is very good).  Using these headers is
+	often a good first step in porting a library using Intel
+	intrinsics to POWER, after which more detailed rewriting of
+	algorithms is usually desirable for best performance.
+      </para>
+      <para>
+	Access to the portability APIs occurs automatically when
+	including one of the corresponding Intel header files, such as
+	<code>&lt;mmintrin.h&gt;</code>.
+      </para>
+    </section>
+    <section>
+      <title>The POWER Vector Library (pveclib)</title>
+      <para>The POWER Vector Library, also known as
+      <code>pveclib</code>, is a separate project available from
+      github (see <xref linkend="VIPR.intro.links" />).  The
+      <code>pveclib</code> project builds on top of the intrinsics
+      described in this manual to provide higher-level vector
+      interfaces that are highly portable.  The goals of the project
+      include:
+      </para>
+      <itemizedlist>
+	<listitem>
+	  <para>
+	    Providing equivalent functions across versions of the
+	    PowerISA.  For example, the <emphasis>Vector
+	    Multiply-by-10 Unsigned Quadword</emphasis> operation
+	    introduced in PowerISA 3.0 (POWER9) can be implemented
+	    using a few vector instructions on earlier PowerISA
+	    versions. 
+	  </para>
+	</listitem>
+	<listitem>
+	  <para>
+	    Providing equivalent functions across compiler versions.
+	    For example, intrinsics provided in later versions of the
+	    compiler can be implemented as inline functions with
+	    inline asm in earlier compiler versions.
+	  </para>
+	</listitem>
+	<listitem>
+	  <para>
+	    Providing higher-order functions not provided directly by
+	    the PowerISA.  One example is a vector SIMD implementation
+	    for ASCII <code>__isalpha</code> and similar functions.
+	    Another example is full <code>__int128</code>
+	    implementations of <emphasis>Count Leading
+	    Zeroes</emphasis>, <emphasis>Population Count</emphasis>,
+	    and <emphasis>Multiply</emphasis>.
+	  </para>
+	</listitem>
+      </itemizedlist>
+    </section>
   </section>
 
 </chapter>
