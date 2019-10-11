@@ -54,10 +54,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_intro">
       provides for overloaded intrinsics that can operate on different
       data types.  However, such function overloading is not normally
       acceptable in the C programming language, so compilers compliant
-      with the AltiVec PIM (such as <code>gcc</code> and
-      <code>clang</code>) were required to add special handling to
-      their parsers to permit this.  The PIM suggested (but did not
-      mandate) the use of a header file,
+      with the AltiVec PIM (such as GCC and Clang) were required to
+      add special handling to their parsers to permit this.  The PIM
+      suggested (but did not mandate) the use of a header file,
       <code>&lt;altivec.h&gt;</code>, for implementations that provide
       AltiVec intrinsics.  This is common practice for all compliant
       compilers today.
@@ -204,6 +203,15 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_intro">
 	  <emphasis>Power Vector Library.</emphasis>
 	  <emphasis>
 	    <link xlink:href="https://github.com/open-power-sdk/pveclib">https://github.com/open-power-sdk/pveclib
+	    </link>
+	  </emphasis>
+	</para>
+      </listitem>
+      <listitem>
+	<para>
+	  <emphasis>Using the GNU Compiler Collection.</emphasis>
+	  <emphasis>
+	    <link xlink:href="https://gcc.gnu.org/onlinedocs/gcc.pdf">https://gcc.gnu.org/onlinedocs/gcc.pdf
 	    </link>
 	  </emphasis>
 	</para>

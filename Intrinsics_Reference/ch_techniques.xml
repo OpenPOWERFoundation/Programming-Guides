@@ -23,45 +23,181 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_techniques">
   <section>
     <title>Help the Compiler Help You</title>
     <para>
-      Start with scalar code, which is the most portable.  Use various
-      tricks for helping the compiler vectorize scalar code.  Make
-      sure you align your data on 16-byte boundaries wherever
-      possible, and tell the compiler it's aligned.  Use __restrict__
-      pointers to promise data does not alias.
+      The best way to use vector intrinsics is often <emphasis>not to
+      use them at all</emphasis>.
     </para>
+    <para>
+      This may seem counterintuitive at first.  Aren't vector
+      intrinsics the best way to ensure that the compiler does exactly
+      what you want?  Well, sometimes.  But the problem is that the
+      best instruction sequence today may not be the best instruction
+      sequence tomorrow.  As the PowerISA moves forward, new
+      instruction capabilities appear, and the old code you wrote can
+      easily become obsolete.  Then you start having to create
+      different versions of the code for different levels of the
+      PowerISA, and it can quickly become difficult to maintain.
+    </para>
+    <para>
+      Most often programmers use vector intrinsics to increase the
+      performance of loop kernels that dominate the performance of an
+      application or library.  However, modern compilers are often
+      able to optimize such loops to use vector instructions without
+      having to resort to intrinsics, using an optimization called
+      autovectorization (or auto-SIMD).  Your first focus when writing
+      loop kernels should be on making the code amenable to
+      autovectorization by the compiler.  Start by writing the code
+      naturally, using scalar memory accesses and data operations, and
+      see whether the compiler autovectorizes your code.  If not, here
+      are some steps you can try:
+    </para>
+    <itemizedlist>
+      <listitem>
+	<para>
+	  <emphasis role="underline">Check your optimization
+	  level</emphasis>.  Different compilers enable 
+	  autovectorization at different optimization levels.  For
+	  example, at this writing the GCC compiler requires
+	  <code>-O3</code> to enable autovectorization by default.
+	</para>
+      </listitem>
+      <listitem>
+	<para>
+	  <emphasis role="underline">Consider using
+	  <code>-ffast-math</code></emphasis>.  This option assumes
+	  that certain fussy aspects of IEEE floating-point can be
+	  ignored, such as the presence of Not-a-Numbers (NaNs),
+	  signed zeros, and so forth.  <code>-ffast-math</code> may
+	  also affect precision of results that may not matter to your
+	  application.  Turning on this option can simplify the
+	  control flow of loops generated for your application by
+	  removing tests for NaNs and so forth.  (Note that
+	  <code>-Ofast</code> turns on both -O3 and -ffast-math in
+	  GCC.)
+	</para>
+      </listitem>
+      <listitem>
+	<para>
+	  <emphasis role="underline">Align your data wherever
+	  possible</emphasis>.  For most effective auto-vectorization,
+	  arrays of data should be aligned on at least a 16-byte
+	  boundary, and pointers to that data should be identified as
+	  having the appropriate alignment.  For example:
+	</para>
+	<programlisting>  float fdata[4096] __attribute__((aligned(16)));</programlisting>
+	<para>
+	  ensures that the compiler can use an efficient, aligned
+	  vector load to bring data from <code>fdata</code> into a
+	  vector register.  Autovectorization will appear more
+	  profitable to the compiler when data is known to be
+	  aligned.
+	</para>
+	<para>
+	  You can also declare pointers to point to aligned data,
+	  which is particularly useful in function arguments:
+	</para>
+	<programlisting>  void foo (__attribute__((aligned(16))) double * aligned_fptr)</programlisting>
+      </listitem>
+      <listitem>
+	<para>
+	  <emphasis role="underline">Tell the compiler when data can't
+	  overlap</emphasis>.  In C and C++, use of pointers can cause
+	  compilers to pessimistically analyze which memory references
+	  can refer to the same memory.  This can prevent important
+	  optimizations, such as reordering memory references, or
+	  keeping previously loaded values in memory rather than
+	  reloading them.  Inefficiently optimized scalar loops are
+	  less likely to be autovectorized.  You can annotate your
+	  pointers with the <code>restrict</code> or
+	  <code>__restrict__</code> keyword to tell the compiler that
+	  your pointers don't "alias" with any other memory
+	  references.  (<code>restrict</code> can be used only in C
+	  when compiling for the C99 standard or later.
+	  <code>__restrict__</code> is a language extension, available
+	  in both GCC and Clang, that can be used for both C and C++.)
+	</para>
+	<para>
+	  Suppose you have a function that takes two pointer
+	  arguments, one that points to data your function writes to, and
+	  one that points to data your function reads from.  By
+	  default, the compiler may believe that the data being read
+	  and written could overlap.  To disabuse the compiler of this
+	  notion, do the following:
+	</para>
+	<programlisting>  void foo (double *__restrict__ outp, double *__restrict__ inp)</programlisting>
+      </listitem>
+    </itemizedlist>
   </section>
 
   <section>
     <title>Use Portable Intrinsics</title>
     <para>
-      Individual compilers may provide other intrinsic support.  Only
-      the intrinsics in this manual are guaranteed to be portable
-      across compliant compilers.
+      If you can't convince the compiler to autovectorize your code,
+      or you want to access specific processor features not
+      appropriate for autovectorization, you should use intrinsics.
+      However, you should go out of your way to use intrinsics that
+      are as portable as possible, in case you need to change
+      compilers in the future.
     </para>
     <para>
-      Some compilers may provide compatibility headers for use with
-      other architectures.  Recent GCC and Clang compilers support
-      compatibility headers for the lower levels of the x86 vector
-      architecture.  These can be used initially for ease of porting,
-      but for best performance, it is preferable to rewrite important
-      sections of code with native Power intrinsics.
+      This reference provides intrinsics that are guaranteed to be
+      portable across compliant compilers.  In particular, both the
+      GCC and Clang compilers for POWER implement the intrinsics in
+      this manual.  The compilers may each implement many more
+      intrinsics, but the ones in this manual are the only ones
+      guaranteed to be portable.  So if you are using an interface not
+      described here, you should look for an equivalent one in this
+      manual and change your code to use that.
+    </para>
+    <para>
+      There are also other vector APIs that may be of use to you (see
+      <xref linkend="VIPR.techniques.apis" />).  In particular, the
+      POWER Vector Library (see <xref
+      linkend="VIPR.techniques.pveclib" />) provides additional
+      portability across compiler versions.
     </para>
   </section>
 
   <section>
     <title>Use Assembly Code Sparingly</title>
-    <para>filler</para>
-    <section>
-      <title>Inline Assembly</title>
-      <para>filler</para>
-    </section>
-    <section>
-      <title>Assembly Files</title>
-      <para>filler</para>
-    </section>
+    <para>
+      Sometimes the compiler will absolutely not cooperate in giving
+      you the code you need.  You might not get the instruction you
+      want, or you might get extra instructions that are slowing down
+      your ideal performance.  When that happens, the first thing you
+      should do is report this to the compiler community!  This will
+      allow them to get the problem fixed in the next release of the
+      compiler.
+    </para>
+    <para>
+      In the meanwhile, though, what are your options?  As a
+      workaround, your best option may be to use assembly code.  There
+      are two ways to go about this.  Using inline assembly is
+      generally appropriate only for very small snippets of code (1-5
+      instructions, say).  If you want to write a whole function in
+      assembly code, though, it is better to create a separate
+      <code>.s</code> or <code>.S</code> file.  The only difference in
+      these two file types is that a <code>.S</code> file will be
+      processed by the C preprocessor before being assembled.
+    </para>
+    <para>
+      Assembly programming is beyond the scope of this manual.
+      Getting inline assembly correct can be quite tricky, and it is
+      best to look at existing examples to learn how to use it
+      properly.  However, there is a good introduction to inline
+      assembly in <emphasis>Using the GNU Compiler
+      Collection</emphasis> (see <xref linkend="VIPR.intro.links" />),
+      in section 6.47 at the time of this writing.
+    </para>
+    <para>
+      If you write a function entirely in assembly, you are
+      responsible for following the calling conventions established by
+      the ABI (see <xref linkend="VIPR.intro.links" />).  Again, it is
+      best to look at examples.  One place to find well-written
+      <code>.S</code> files is in the GLIBC project.
+    </para>
   </section>
 
-  <section>
+  <section xml:id="VIPR.techniques.apis">
     <title>Other Vector Programming APIs</title>
     <para>In addition to the intrinsic functions provided in this
     reference, programmers should be aware of other vector programming
@@ -69,14 +205,13 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_techniques">
     <section>
       <title>x86 Vector Portability Headers</title>
       <para>
-	Recent versions of the <code>gcc</code> and <code>clang</code>
-	open source compilers provide "drop-in" portability headers
-	for portions of the Intel Architecture Instruction Set
-	Extensions (see <xref linkend="VIPR.intro.links" />).  These
-	headers mirror the APIs of Intel headers having the same
-	names.  Support is provided for the MMX and SSE layers, up
-	through SSE4.  At this time, no support for the AVX layers is
-	envisioned.
+	Recent versions of the GCC and Clang open source compilers
+	provide "drop-in" portability headers for portions of the
+	Intel Architecture Instruction Set Extensions (see <xref
+	linkend="VIPR.intro.links" />).  These headers mirror the APIs
+	of Intel headers having the same names.  Support is provided
+	for the MMX and SSE layers, up through SSE4.  At this time, no
+	support for the AVX layers is envisioned.
       </para>
       <para>
 	The portability headers provide the same semantics as the
@@ -95,7 +230,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_techniques">
 	<code>&lt;mmintrin.h&gt;</code>.
       </para>
     </section>
-    <section>
+    <section xml:id="VIPR.techniques.pveclib">
       <title>The POWER Vector Library (pveclib)</title>
       <para>The POWER Vector Library, also known as
       <code>pveclib</code>, is a separate project available from

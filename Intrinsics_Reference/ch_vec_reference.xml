@@ -23,8 +23,95 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   <section>
     <title>How to Use This Reference</title>
     <para>
-      Brief description of the format of the entries, the cross-reference
-      index, and so forth.
+      This chapter contains reference material for each supported
+      vector intrinsic.  The information for each intrinsic includes:
+    </para>
+    <itemizedlist>
+      <listitem>
+	<para>
+	  The intrinsic name and extended name;
+	</para>
+      </listitem>
+      <listitem>
+	<para>
+	  A type-free example of the intrinsic's usage;
+	</para>
+      </listitem>
+      <listitem>
+	<para>
+	  A description of the intrinsic's purpose;
+	</para>
+      </listitem>
+      <listitem>
+	<para>
+	  A description of the value(s) returned from the intrinsic,
+	  if any;
+	</para>
+      </listitem>
+      <listitem>
+	<para>
+	  A description of any unusual characteristics of the
+	  intrinsic when different target endiannesses are in force.
+	  If the semantics of the intrinsic in big-endian and
+	  little-endian modes are identical, the description will read
+	  "None.";
+	</para>
+      </listitem>
+      <listitem>
+	<para>
+	  Optionally, additional explanatory notes about the
+	  intrinsic; and
+	</para>
+      </listitem>
+      <listitem>
+	<para>
+	  A table of supported type signatures for the intrinsic.
+	</para>
+      </listitem>
+    </itemizedlist>
+    <para>
+      Most intrinsics are overloaded, supporting multiple type
+      signatures.  The types of the input arguments always determine
+      the type of the result argument; that is, it is not possible to
+      define two intrinsic overloads with the same input argument
+      types and different result argument types.
+    </para>
+    <para>
+      The type-free example of the intrinsic's usage uses the
+      convention that <emphasis role="bold">r</emphasis> represents
+      the result of the intrinsic, and <emphasis
+      role="bold">a</emphasis>, <emphasis role="bold">b</emphasis>,
+      etc., represent the input arguments.  The allowed type
+      combinations of these variables are shown as rows in the table
+      of supported type signatures.
+    </para>
+    <para>
+      Each row contains at least one example implementation.  This
+      shows one way that a conforming compiler might achieve the
+      intended semantics of the intrinsic, but compilers are not
+      required to generate this code specifically.  The letters
+      <emphasis role="bold">r</emphasis>, <emphasis
+      role="bold">a</emphasis>, <emphasis role="bold">b</emphasis>,
+      etc., in the examples represent vector registers containing the
+      values of those variables.  The letters <emphasis
+      role="bold">t</emphasis>, <emphasis role="bold">u</emphasis>,
+      etc., represent vector registers containing temporary
+      intermediate results.  The same register is assumed to be used
+      for each instance of one of these letters.
+    </para>
+    <para>
+      When implementations differ for big- and little-endian targets,
+      separate example implementations are shown for each endianness.
+    </para>
+    <para>
+      The implementations show which vector instructions are used in
+      the implementation of a particular intrinsic.  When trying to
+      determine which intrinsic to use, it can be useful to have a
+      cross-reference from a specific vector instruction to the
+      intrinsics whose implementations make use of it.  This manual
+      contains such a cross-reference (<xref
+      linkend="section_isa_intrin_xref" />) for the programmer's
+      convenience.
     </para>
   </section>
 

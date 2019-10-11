@@ -769,7 +769,7 @@ register vector double vd = vec_splats(*double_ptr);</programlisting>
 	introduced serious compiler complexity without much utility.
 	Thus this support (previously controlled by switches
 	<code>-maltivec=be</code> and/or <code>-qaltivec=be</code>) is
-	now deprecated.  Current versions of the gcc and clang
+	now deprecated.  Current versions of the GCC and Clang
 	open-source compilers do not implement this support.
       </para>
     </section>
@@ -1146,8 +1146,8 @@ register vector double vd = vec_splats(*double_ptr);</programlisting>
 	elements using the groups of 4 contiguous bytes, and the
 	values of the integers will be reordered without compromising
 	each integer's contents.  The fact that the little-endian
-	result matches the big-endian result is left as an exercise to
-	the reader.
+	result matches the big-endian result is left as an exercise
+	for the reader.
       </para>
       <para>
 	Now, suppose instead that the original PCV does not reorder
