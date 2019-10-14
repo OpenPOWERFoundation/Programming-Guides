@@ -13612,7 +13612,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       r = vec_first_match_index (a, b)
       </programlisting>
 
-      <para><emphasis>GCC 8.1 implementation is broken!</emphasis></para>
       <para><emphasis role="bold">Purpose:</emphasis>
       Performs a comparison of equality on each of the corresponding
       elements of <emphasis role="bold">a</emphasis> and <emphasis
@@ -13624,493 +13623,46 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       None.
       </para>
       
+      <indexterm>
+	<primary>vcmpnezb</primary>
+	<secondary>vec_first_match_index</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpnezh</primary>
+	<secondary>vec_first_match_index</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpnezw</primary>
+	<secondary>vec_first_match_index</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xxlnor</primary>
+	<secondary>vec_first_match_index</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vctzlsbb</primary>
+	<secondary>vec_first_match_index</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vclzlsbb</primary>
+	<secondary>vec_first_match_index</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>rldicl</primary>
+	<secondary>vec_first_match_index</secondary>
+      </indexterm>
+
       <table frame="all">
       <title>Supported type signatures for vec_first_match_index</title>
-      <tgroup cols="5">
-          <colspec colname="c1" colwidth="20*" />
-          <colspec colname="c2" colwidth="20*" />
-          <colspec colname="c3" colwidth="20*" />
-          <colspec colname="c4" colwidth="20*" />
-          <colspec colname="c5" colwidth="20*" />
+      <tgroup cols="6">
+          <colspec colname="c1" colwidth="18*" />
+          <colspec colname="c2" colwidth="18*" />
+          <colspec colname="c3" colwidth="18*" />
+          <colspec colname="c4" colwidth="24*" />
+          <colspec colname="c5" colwidth="24*" />
+          <colspec colname="c6" colwidth="18*" />
           <thead>
-            <row>
-              <entry align="center">
-                <para>
-                  <emphasis role="bold">r</emphasis>
-                </para>
-              </entry>
-              <entry align="center">
-                <para>
-                  <emphasis role="bold">ARG1</emphasis>
-                </para>
-              </entry>
-              <entry align="center">
-                <para>
-                  <emphasis role="bold">ARG2</emphasis>
-                </para>
-              </entry>
-              <entry align="center">
-                <para><emphasis role="bold">Example Implementation</emphasis></para>
-              </entry>
-              <entry align="center">
-                <para><emphasis role="bold">Restrictions</emphasis></para>
-              </entry>
-            </row>
-          </thead>
-          <tbody>
-            <row>
-              <entry align="center" valign="middle">
-                <para>unsigned int</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para>vector signed char</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para> vector signed char</para>
-              </entry>
-              <entry>
-                <programlisting>sample implementation TBD</programlisting>
-              </entry>
-              <entry align="center" valign="middle">
-                <para>ISA 3.0 or later</para>
-              </entry>
-            </row>
-            <row>
-              <entry align="center" valign="middle">
-                <para>unsigned int</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para>vector unsigned char</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para> vector unsigned char</para>
-              </entry>
-              <entry>
-                <programlisting>sample implementation TBD</programlisting>
-              </entry>
-              <entry align="center" valign="middle">
-                <para>ISA 3.0 or later</para>
-              </entry>
-            </row>
-            <row>
-              <entry align="center" valign="middle">
-                <para>unsigned int</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para>vector signed int</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para> vector signed int</para>
-              </entry>
-              <entry>
-                <programlisting>sample implementation TBD</programlisting>
-              </entry>
-              <entry align="center" valign="middle">
-                <para>ISA 3.0 or later</para>
-              </entry>
-            </row>
-            <row>
-              <entry align="center" valign="middle">
-                <para>unsigned int</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para>vector unsigned int</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para> vector unsigned int</para>
-              </entry>
-              <entry>
-                <programlisting>sample implementation TBD</programlisting>
-              </entry>
-              <entry align="center" valign="middle">
-                <para>ISA 3.0 or later</para>
-              </entry>
-            </row>
-            <row>
-              <entry align="center" valign="middle">
-                <para>unsigned int</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para>vector signed short</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para> vector signed short</para>
-              </entry>
-              <entry>
-                <programlisting>sample implementation TBD</programlisting>
-              </entry>
-              <entry align="center" valign="middle">
-                <para>ISA 3.0 or later</para>
-              </entry>
-            </row>
-            <row>
-              <entry align="center" valign="middle">
-                <para>unsigned int</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para>vector unsigned short</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para> vector unsigned short</para>
-              </entry>
-              <entry>
-                <programlisting>sample implementation TBD</programlisting>
-              </entry>
-              <entry align="center" valign="middle">
-                <para>ISA 3.0 or later</para>
-              </entry>
-            </row>
-          </tbody>
-        </tgroup>
-      </table>
-
-    </simplesect>
-    <?hard-pagebreak?>
-
-    <simplesect xml:id="vec_first_match_or_eos_index">
-      <title>vec_first_match_or_eos_index</title>
-      <subtitle>Vector Index of First Match or End of String</subtitle>
-      <programlisting>
-      r = vec_first_match_or_eos_index (ARG1, ARG2)
-      </programlisting>
-
-      <para><emphasis>GCC 8.1 implementation is broken!</emphasis></para>
-      <para><emphasis role="bold">Purpose:</emphasis>
-      Performs a comparison of equality on each of the corresponding elements of ARG1 and ARG2. Returns the first position of equality, or the zero string terminator.
-      </para>
-      <para><emphasis role="bold">Result value: </emphasis>Returns the element index of the position of either the first character match or an end-of-string (EOS) terminator. If no match or terminator, returns the number of characters as an element count in the vector argument.</para>
-      <para><emphasis role="bold">Endian considerations:</emphasis>
-      None.
-      </para>
-      
-      <table frame="all">
-      <title>Supported type signatures for vec_first_match_or_eos_index</title>
-      <tgroup cols="5">
-          <colspec colname="c1" colwidth="20*" />
-          <colspec colname="c2" colwidth="20*" />
-          <colspec colname="c3" colwidth="20*" />
-          <colspec colname="c4" colwidth="20*" />
-          <colspec colname="c5" colwidth="20*" />
-          <thead>
-            <row>
-              <entry align="center">
-                <para>
-                  <emphasis role="bold">r</emphasis>
-                </para>
-              </entry>
-              <entry align="center">
-                <para>
-                  <emphasis role="bold">ARG1</emphasis>
-                </para>
-              </entry>
-              <entry align="center">
-                <para>
-                  <emphasis role="bold">ARG2</emphasis>
-                </para>
-              </entry>
-              <entry align="center">
-                <para><emphasis role="bold">Example Implementation</emphasis></para>
-              </entry>
-              <entry align="center">
-                <para><emphasis role="bold">Restrictions</emphasis></para>
-              </entry>
-            </row>
-          </thead>
-          <tbody>
-            <row>
-              <entry align="center" valign="middle">
-                <para>unsigned int</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para>vector signed char</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para> vector signed char</para>
-              </entry>
-              <entry>
-                <programlisting>sample implementation TBD</programlisting>
-              </entry>
-              <entry align="center" valign="middle">
-                <para>ISA 3.0 or later</para>
-              </entry>
-            </row>
-            <row>
-              <entry align="center" valign="middle">
-                <para>unsigned int</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para>vector unsigned char</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para> vector unsigned char</para>
-              </entry>
-              <entry>
-                <programlisting>sample implementation TBD</programlisting>
-              </entry>
-              <entry align="center" valign="middle">
-                <para>ISA 3.0 or later</para>
-              </entry>
-            </row>
-            <row>
-              <entry align="center" valign="middle">
-                <para>unsigned int</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para>vector signed int</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para> vector signed int</para>
-              </entry>
-              <entry>
-                <programlisting>sample implementation TBD</programlisting>
-              </entry>
-              <entry align="center" valign="middle">
-                <para>ISA 3.0 or later</para>
-              </entry>
-            </row>
-            <row>
-              <entry align="center" valign="middle">
-                <para>unsigned int</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para>vector unsigned int</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para> vector unsigned int</para>
-              </entry>
-              <entry>
-                <programlisting>sample implementation TBD</programlisting>
-              </entry>
-              <entry align="center" valign="middle">
-                <para>ISA 3.0 or later</para>
-              </entry>
-            </row>
-            <row>
-              <entry align="center" valign="middle">
-                <para>unsigned int</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para>vector signed short</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para> vector signed short</para>
-              </entry>
-              <entry>
-                <programlisting>sample implementation TBD</programlisting>
-              </entry>
-              <entry align="center" valign="middle">
-                <para>ISA 3.0 or later</para>
-              </entry>
-            </row>
-            <row>
-              <entry align="center" valign="middle">
-                <para>unsigned int</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para>vector unsigned short</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para> vector unsigned short</para>
-              </entry>
-              <entry>
-                <programlisting>sample implementation TBD</programlisting>
-              </entry>
-              <entry align="center" valign="middle">
-                <para>ISA 3.0 or later</para>
-              </entry>
-            </row>
-          </tbody>
-        </tgroup>
-      </table>
-
-    </simplesect>
-    <?hard-pagebreak?>
-
-    <simplesect xml:id="vec_first_mismatch_index">
-      <title>vec_first_mismatch_index</title>
-      <subtitle>Vector Index of First Mismatch</subtitle>
-      <programlisting>
-      r = vec_first_mismatch_index (ARG1, ARG2)
-      </programlisting>
-
-      <para><emphasis>GCC 8.1 implementation is broken!</emphasis></para>
-      <para><emphasis role="bold">Purpose:</emphasis>
-      Performs a comparison of inequality on each of the corresponding elements of ARG1 and ARG2, and returns the first position of inequality.
-      </para>
-      <para><emphasis role="bold">Result value: </emphasis>Returns the element index of the position of the first character mismatch. If no mismatch, returns the number of characters as an element count in the vector argument.</para>
-      <para><emphasis role="bold">Endian considerations:</emphasis>
-      None.
-      </para>
-      
-      <table frame="all">
-      <title>Supported type signatures for vec_first_mismatch_index</title>
-      <tgroup cols="5">
-          <colspec colname="c1" colwidth="20*" />
-          <colspec colname="c2" colwidth="20*" />
-          <colspec colname="c3" colwidth="20*" />
-          <colspec colname="c4" colwidth="20*" />
-          <colspec colname="c5" colwidth="20*" />
-          <thead>
-            <row>
-              <entry align="center">
-                <para>
-                  <emphasis role="bold">r</emphasis>
-                </para>
-              </entry>
-              <entry align="center">
-                <para>
-                  <emphasis role="bold">ARG1</emphasis>
-                </para>
-              </entry>
-              <entry align="center">
-                <para>
-                  <emphasis role="bold">ARG2</emphasis>
-                </para>
-              </entry>
-              <entry align="center">
-                <para><emphasis role="bold">Example Implementation</emphasis></para>
-              </entry>
-              <entry align="center">
-                <para><emphasis role="bold">Restrictions</emphasis></para>
-              </entry>
-            </row>
-          </thead>
-          <tbody>
-            <row>
-              <entry align="center" valign="middle">
-                <para>unsigned int</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para>vector signed char</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para> vector signed char</para>
-              </entry>
-              <entry>
-                <programlisting>sample implementation TBD</programlisting>
-              </entry>
-              <entry align="center" valign="middle">
-                <para>ISA 3.0 or later</para>
-              </entry>
-            </row>
-            <row>
-              <entry align="center" valign="middle">
-                <para>unsigned int</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para>vector unsigned char</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para> vector unsigned char</para>
-              </entry>
-              <entry>
-                <programlisting>sample implementation TBD</programlisting>
-              </entry>
-              <entry align="center" valign="middle">
-                <para>ISA 3.0 or later</para>
-              </entry>
-            </row>
-            <row>
-              <entry align="center" valign="middle">
-                <para>unsigned int</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para>vector signed int</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para> vector signed int</para>
-              </entry>
-              <entry>
-                <programlisting>sample implementation TBD</programlisting>
-              </entry>
-              <entry align="center" valign="middle">
-                <para>ISA 3.0 or later</para>
-              </entry>
-            </row>
-            <row>
-              <entry align="center" valign="middle">
-                <para>unsigned int</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para>vector unsigned int</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para> vector unsigned int</para>
-              </entry>
-              <entry>
-                <programlisting>sample implementation TBD</programlisting>
-              </entry>
-              <entry align="center" valign="middle">
-                <para>ISA 3.0 or later</para>
-              </entry>
-            </row>
-            <row>
-              <entry align="center" valign="middle">
-                <para>unsigned int</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para>vector signed short</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para> vector signed short</para>
-              </entry>
-              <entry>
-                <programlisting>sample implementation TBD</programlisting>
-              </entry>
-              <entry align="center" valign="middle">
-                <para>ISA 3.0 or later</para>
-              </entry>
-            </row>
-            <row>
-              <entry align="center" valign="middle">
-                <para>unsigned int</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para>vector unsigned short</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para> vector unsigned short</para>
-              </entry>
-              <entry>
-                <programlisting>sample implementation TBD</programlisting>
-              </entry>
-              <entry align="center" valign="middle">
-                <para>ISA 3.0 or later</para>
-              </entry>
-            </row>
-          </tbody>
-        </tgroup>
-      </table>
-
-    </simplesect>
-    <?hard-pagebreak?>
-
-    <simplesect xml:id="vec_first_mismatch_or_eos_index">
-      <title>vec_first_mismatch_or_eos_index</title>
-      <subtitle>Vector Index of First Mismatch or End of String</subtitle>
-      <programlisting>
-      r = vec_first_mismatch_or_eos_index (ARG1, ARG2)
-      </programlisting>
-
-      <para><emphasis>GCC 8.1 implementation is broken!</emphasis></para>
-      <para><emphasis role="bold">Purpose:</emphasis>
-      Performs a comparison of inequality on each of the corresponding elements of ARG1 and ARG2. Returns the first position of inequality, or the zero string terminator.
-      </para>
-      <para><emphasis role="bold">Result value: </emphasis>Returns the element index of the position of either the first character mismatch or an end-of-string (EOS) terminator. If no mismatch or terminator, returns the number of characters as an element count in the vector argument.</para>
-      <para><emphasis role="bold">Endian considerations:</emphasis>
-      None.
-      </para>
-      
-      <table frame="all">
-      <title>Supported type signatures for vec_first_mismatch_or_eos_index</title>
-      <tgroup cols="5">
-          <colspec colname="c1" colwidth="20*" />
-          <colspec colname="c2" colwidth="20*" />
-          <colspec colname="c3" colwidth="20*" />
-          <colspec colname="c4" colwidth="20*" />
-          <colspec colname="c5" colwidth="20*" />
-          <thead>
-            <row>
+            <row valign="middle">
               <entry align="center">
                 <para>
                   <emphasis role="bold">r</emphasis>
@@ -14127,7 +13679,12 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 </para>
               </entry>
               <entry align="center">
-                <para><emphasis role="bold">Example Implementation</emphasis></para>
+                <para><emphasis role="bold">Example LE
+		Implementation</emphasis></para> 
+              </entry>
+              <entry align="center">
+                <para><emphasis role="bold">Example BE
+		Implementation</emphasis></para> 
               </entry>
               <entry align="center">
                 <para><emphasis role="bold">Restrictions</emphasis></para>
@@ -14146,7 +13703,18 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para> vector signed char</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  vcmpnezb  t,a,b
+  xxlnor    u,t,t
+  vctzlsbb  r,u
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+  vcmpnezb  t,a,b
+  xxlnor    u,t,t
+  vclzlsbb  r,u
+		</programlisting>
               </entry>
               <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
@@ -14163,7 +13731,18 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para> vector unsigned char</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  vcmpnezb  t,a,b
+  xxlnor    u,t,t
+  vctzlsbb  r,u
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+  vcmpnezb  t,a,b
+  xxlnor    u,t,t
+  vclzlsbb  r,u
+		</programlisting>
               </entry>
               <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
@@ -14180,7 +13759,20 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para> vector signed int</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  vcmpnezw  t,a,b
+  xxlnor    u,t,t
+  vctzlsbb  v,u
+  rldicl    r,v,62,34
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+  vcmpnezw  t,a,b
+  xxlnor    u,t,t
+  vclzlsbb  v,u
+  rldicl    r,v,62,34
+		</programlisting>
               </entry>
               <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
@@ -14197,7 +13789,20 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para> vector unsigned int</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  vcmpnezw  t,a,b
+  xxlnor    u,t,t
+  vctzlsbb  v,u
+  rldicl    r,v,62,34
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+  vcmpnezw  t,a,b
+  xxlnor    u,t,t
+  vclzlsbb  v,u
+  rldicl    r,v,62,34
+		</programlisting>
               </entry>
               <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
@@ -14214,7 +13819,20 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para> vector signed short</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  vcmpnezh  t,a,b
+  xxlnor    u,t,t
+  vctzlsbb  v,u
+  rldicl    r,v,63,33
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+  vcmpnezh  t,a,b
+  xxlnor    u,t,t
+  vclzlsbb  v,u
+  rldicl    r,v,63,33
+		</programlisting>
               </entry>
               <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
@@ -14231,7 +13849,962 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para> vector unsigned short</para>
               </entry>
               <entry>
-                <programlisting>sample implementation TBD</programlisting>
+                <programlisting>
+  vcmpnezh  t,a,b
+  xxlnor    u,t,t
+  vctzlsbb  v,u
+  rldicl    r,v,63,33
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+  vcmpnezh  t,a,b
+  xxlnor    u,t,t
+  vclzlsbb  v,u
+  rldicl    r,v,63,33
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>ISA 3.0 or later</para>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+
+    </simplesect>
+    <?hard-pagebreak?>
+
+    <simplesect xml:id="vec_first_match_or_eos_index">
+      <title>vec_first_match_or_eos_index</title>
+      <subtitle>Vector Index of First Match or End of String</subtitle>
+      <programlisting>
+      r = vec_first_match_or_eos_index (a, b)
+      </programlisting>
+
+      <para><emphasis role="bold">Purpose:</emphasis>
+      Performs a comparison of equality on each of the corresponding
+      elements of <emphasis role="bold">a</emphasis> and <emphasis
+      role="bold">b</emphasis>. Returns the first position of
+      equality, or the zero string terminator.
+      </para>
+      <para><emphasis role="bold">Result value: </emphasis>Returns the
+      element index of the position of either the first character
+      match or an end-of-string (EOS) terminator. If no match or
+      terminator, returns the number of characters as an element count
+      in the vector argument.</para>
+      <para><emphasis role="bold">Endian considerations:</emphasis>
+      None.
+      </para>
+      
+      <indexterm>
+	<primary>xxspltib</primary>
+	<secondary>vec_first_match_or_eos_index</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpneb</primary>
+	<secondary>vec_first_match_or_eos_index</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpnezb</primary>
+	<secondary>vec_first_match_or_eos_index</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpneh</primary>
+	<secondary>vec_first_match_or_eos_index</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpnezh</primary>
+	<secondary>vec_first_match_or_eos_index</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpnew</primary>
+	<secondary>vec_first_match_or_eos_index</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpnezw</primary>
+	<secondary>vec_first_match_or_eos_index</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xxland</primary>
+	<secondary>vec_first_match_or_eos_index</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xxlnand</primary>
+	<secondary>vec_first_match_or_eos_index</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vctzlsbb</primary>
+	<secondary>vec_first_match_or_eos_index</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vclzlsbb</primary>
+	<secondary>vec_first_match_or_eos_index</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>rldicl</primary>
+	<secondary>vec_first_match_or_eos_index</secondary>
+      </indexterm>
+
+      <table frame="all">
+      <title>Supported type signatures for vec_first_match_or_eos_index</title>
+      <tgroup cols="6">
+          <colspec colname="c1" colwidth="18*" />
+          <colspec colname="c2" colwidth="18*" />
+          <colspec colname="c3" colwidth="18*" />
+          <colspec colname="c4" colwidth="24*" />
+          <colspec colname="c5" colwidth="24*" />
+          <colspec colname="c6" colwidth="18*" />
+          <thead>
+            <row valign="middle">
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">r</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">a</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">b</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para><emphasis role="bold">Example LE
+		Implementation</emphasis></para>
+              </entry>
+              <entry align="center">
+                <para><emphasis role="bold">Example BE
+		Implementation</emphasis></para>
+              </entry>
+              <entry align="center">
+                <para><emphasis role="bold">Restrictions</emphasis></para>
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+                <para>unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed char</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector signed char</para>
+              </entry>
+              <entry>
+                <programlisting>
+ xxspltib  t,0
+ vcmpneb   u,a,t
+ vcmpneb   v,b,t
+ vcmpnezb  w,a,b
+ xxland    x,u,v
+ xxlnand   y,x,w
+ vctzlsbb  r,y
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+ xxspltib  t,0
+ vcmpneb   u,a,t
+ vcmpneb   v,b,t
+ vcmpnezb  w,a,b
+ xxland    x,u,v
+ xxlnand   y,x,w
+ vclzlsbb  r,y
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>ISA 3.0 or later</para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned char</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector unsigned char</para>
+              </entry>
+              <entry>
+                <programlisting>
+ xxspltib  t,0
+ vcmpneb   u,a,t
+ vcmpneb   v,b,t
+ vcmpnezb  w,a,b
+ xxland    x,u,v
+ xxlnand   y,x,w
+ vctzlsbb  r,y
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+ xxspltib  t,0
+ vcmpneb   u,a,t
+ vcmpneb   v,b,t
+ vcmpnezb  w,a,b
+ xxland    x,u,v
+ xxlnand   y,x,w
+ vclzlsbb  r,y
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>ISA 3.0 or later</para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector signed int</para>
+              </entry>
+              <entry>
+                <programlisting>
+ xxspltib  t,0
+ vcmpnew   u,a,t
+ vcmpnew   v,b,t
+ vcmpnezw  w,a,b
+ xxland    x,u,v
+ xxlnand   y,x,w
+ vctzlsbb  z,y
+ rldicl    r,z,62,34
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+ xxspltib  t,0
+ vcmpnew   u,a,t
+ vcmpnew   v,b,t
+ vcmpnezw  w,a,b
+ xxland    x,u,v
+ xxlnand   y,x,w
+ vclzlsbb  z,y
+ rldicl    r,z,62,34
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>ISA 3.0 or later</para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector unsigned int</para>
+              </entry>
+              <entry>
+                <programlisting>
+ xxspltib  t,0
+ vcmpnew   u,a,t
+ vcmpnew   v,b,t
+ vcmpnezw  w,a,b
+ xxland    x,u,v
+ xxlnand   y,x,w
+ vctzlsbb  z,y
+ rldicl    r,z,62,34
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+ xxspltib  t,0
+ vcmpnew   u,a,t
+ vcmpnew   v,b,t
+ vcmpnezw  w,a,b
+ xxland    x,u,v
+ xxlnand   y,x,w
+ vclzlsbb  z,y
+ rldicl    r,z,62,34
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>ISA 3.0 or later</para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector signed short</para>
+              </entry>
+              <entry>
+                <programlisting>
+ xxspltib  t,0
+ vcmpneh   u,a,t
+ vcmpneh   v,b,t
+ vcmpnezh  w,a,b
+ xxland    x,u,v
+ xxlnand   y,x,w
+ vctzlsbb  z,y
+ rldicl    r,z,63,33
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+ xxspltib  t,0
+ vcmpneh   u,a,t
+ vcmpneh   v,b,t
+ vcmpnezh  w,a,b
+ xxland    x,u,v
+ xxlnand   y,x,w
+ vclzlsbb  z,y
+ rldicl    r,z,63,33
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>ISA 3.0 or later</para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector unsigned short</para>
+              </entry>
+              <entry>
+                <programlisting>
+ xxspltib  t,0
+ vcmpneh   u,a,t
+ vcmpneh   v,b,t
+ vcmpnezh  w,a,b
+ xxland    x,u,v
+ xxlnand   y,x,w
+ vctzlsbb  z,y
+ rldicl    r,z,63,33
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+ xxspltib  t,0
+ vcmpneh   u,a,t
+ vcmpneh   v,b,t
+ vcmpnezh  w,a,b
+ xxland    x,u,v
+ xxlnand   y,x,w
+ vclzlsbb  z,y
+ rldicl    r,z,63,33
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>ISA 3.0 or later</para>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+
+    </simplesect>
+    <?hard-pagebreak?>
+
+    <simplesect xml:id="vec_first_mismatch_index">
+      <title>vec_first_mismatch_index</title>
+      <subtitle>Vector Index of First Mismatch</subtitle>
+      <programlisting>
+      r = vec_first_mismatch_index (a, b)
+      </programlisting>
+
+      <para><emphasis role="bold">Purpose:</emphasis>
+      Performs a comparison of inequality on each of the corresponding
+      elements of <emphasis role="bold">a</emphasis> and <emphasis
+      role="bold">b</emphasis>, and returns the first position of
+      inequality.
+      </para>
+      <para><emphasis role="bold">Result value: </emphasis>Returns the
+      element index of the position of the first character
+      mismatch. If no mismatch, returns the number of characters as an
+      element count in the vector argument.</para>
+      <para><emphasis role="bold">Endian considerations:</emphasis>
+      None.
+      </para>
+      
+      <indexterm>
+	<primary>vcmpneb</primary>
+	<secondary>vec_first_mismatch_index</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpneh</primary>
+	<secondary>vec_first_mismatch_index</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpnew</primary>
+	<secondary>vec_first_mismatch_index</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vctzlsbb</primary>
+	<secondary>vec_first_mismatch_index</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vclzlsbb</primary>
+	<secondary>vec_first_mismatch_index</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>rldicl</primary>
+	<secondary>vec_first_mismatch_index</secondary>
+      </indexterm>
+
+      <table frame="all">
+      <title>Supported type signatures for vec_first_mismatch_index</title>
+      <tgroup cols="6">
+          <colspec colname="c1" colwidth="18*" />
+          <colspec colname="c2" colwidth="18*" />
+          <colspec colname="c3" colwidth="18*" />
+          <colspec colname="c4" colwidth="24*" />
+          <colspec colname="c5" colwidth="24*" />
+          <colspec colname="c6" colwidth="18*" />
+          <thead>
+            <row valign="middle">
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">r</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">a</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">b</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para><emphasis role="bold">Example LE
+		Implementation</emphasis></para>
+              </entry>
+              <entry align="center">
+                <para><emphasis role="bold">Example BE
+		Implementation</emphasis></para>
+              </entry>
+              <entry align="center">
+                <para><emphasis role="bold">Restrictions</emphasis></para>
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+                <para>unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed char</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector signed char</para>
+              </entry>
+              <entry>
+                <programlisting>
+ vcmpneb   t,a,b
+ vctzlsbb  r,t
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+ vcmpneb   t,a,b
+ vclzlsbb  r,t
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>ISA 3.0 or later</para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned char</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector unsigned char</para>
+              </entry>
+              <entry>
+                <programlisting>
+ vcmpneb   t,a,b
+ vctzlsbb  r,t
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+ vcmpneb   t,a,b
+ vclzlsbb  r,t
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>ISA 3.0 or later</para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector signed int</para>
+              </entry>
+              <entry>
+                <programlisting>
+ vcmpnew   t,a,b
+ vctzlsbb  u,t
+ rldicl    r,u,62,34
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+ vcmpnew   t,a,b
+ vclzlsbb  u,t
+ rldicl    r,u,62,34
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>ISA 3.0 or later</para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector unsigned int</para>
+              </entry>
+              <entry>
+                <programlisting>
+ vcmpnew   t,a,b
+ vctzlsbb  u,t
+ rldicl    r,u,62,34
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+ vcmpnew   t,a,b
+ vclzlsbb  u,t
+ rldicl    r,u,62,34
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>ISA 3.0 or later</para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector signed short</para>
+              </entry>
+              <entry>
+                <programlisting>
+ vcmpneh   t,a,b
+ vctzlsbb  u,t
+ rldicl    r,u,63,33
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+ vcmpneh   t,a,b
+ vclzlsbb  u,t
+ rldicl    r,u,63,33
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>ISA 3.0 or later</para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector unsigned short</para>
+              </entry>
+              <entry>
+                <programlisting>
+ vcmpneh   t,a,b
+ vctzlsbb  u,t
+ rldicl    r,u,63,33
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+ vcmpneh   t,a,b
+ vclzlsbb  u,t
+ rldicl    r,u,63,33
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>ISA 3.0 or later</para>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+
+    </simplesect>
+    <?hard-pagebreak?>
+
+    <simplesect xml:id="vec_first_mismatch_or_eos_index">
+      <title>vec_first_mismatch_or_eos_index</title>
+      <subtitle>Vector Index of First Mismatch or End of String</subtitle>
+      <programlisting>
+      r = vec_first_mismatch_or_eos_index (a, b)
+      </programlisting>
+
+      <para><emphasis role="bold">Purpose:</emphasis>
+      Performs a comparison of inequality on each of the corresponding
+      elements of <emphasis role="bold">a</emphasis> and <emphasis
+      role="bold">b</emphasis>. Returns the first position of
+      inequality, or the zero string terminator.
+      </para>
+      <para><emphasis role="bold">Result value: </emphasis>Returns the
+      element index of the position of either the first character
+      mismatch or an end-of-string (EOS) terminator. If no mismatch or
+      terminator, returns the number of characters as an element count
+      in the vector argument.</para>
+      <para><emphasis role="bold">Endian considerations:</emphasis>
+      None.
+      </para>
+      
+      <indexterm>
+	<primary>xxspltib</primary>
+	<secondary>vec_first_mismatch_or_eos_index</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpneb</primary>
+	<secondary>vec_first_mismatch_or_eos_index</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpnezb</primary>
+	<secondary>vec_first_mismatch_or_eos_index</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpneh</primary>
+	<secondary>vec_first_mismatch_or_eos_index</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpnezh</primary>
+	<secondary>vec_first_mismatch_or_eos_index</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpnew</primary>
+	<secondary>vec_first_mismatch_or_eos_index</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpnezw</primary>
+	<secondary>vec_first_mismatch_or_eos_index</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xxland</primary>
+	<secondary>vec_first_mismatch_or_eos_index</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xxlorc</primary>
+	<secondary>vec_first_mismatch_or_eos_index</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vctzlsbb</primary>
+	<secondary>vec_first_mismatch_or_eos_index</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vclzlsbb</primary>
+	<secondary>vec_first_mismatch_or_eos_index</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>rldicl</primary>
+	<secondary>vec_first_mismatch_or_eos_index</secondary>
+      </indexterm>
+
+      <table frame="all">
+      <title>Supported type signatures for
+      vec_first_mismatch_or_eos_index</title>
+      <tgroup cols="6">
+          <colspec colname="c1" colwidth="18*" />
+          <colspec colname="c2" colwidth="18*" />
+          <colspec colname="c3" colwidth="18*" />
+          <colspec colname="c4" colwidth="24*" />
+          <colspec colname="c5" colwidth="24*" />
+          <colspec colname="c6" colwidth="18*" />
+          <thead>
+            <row valign="middle">
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">r</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">a</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">b</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para><emphasis role="bold">Example LE
+		Implementation</emphasis></para>
+              </entry>
+              <entry align="center">
+                <para><emphasis role="bold">Example BE
+		Implementation</emphasis></para>
+              </entry>
+              <entry align="center">
+                <para><emphasis role="bold">Restrictions</emphasis></para>
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+                <para>unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed char</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector signed char</para>
+              </entry>
+              <entry>
+                <programlisting>
+ xxspltib  t,0
+ vcmpneb   u,a,t
+ vcmpneb   v,b,t
+ vcmpnezb  w,a,b
+ xxland    x,u,v
+ xxlorc    y,w,x
+ vctzlsbb  r,y
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+ xxspltib  t,0
+ vcmpneb   u,a,t
+ vcmpneb   v,b,t
+ vcmpnezb  w,a,b
+ xxland    x,u,v
+ xxlorc    y,w,x
+ vclzlsbb  r,y
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>ISA 3.0 or later</para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned char</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector unsigned char</para>
+              </entry>
+              <entry>
+                <programlisting>
+ xxspltib  t,0
+ vcmpneb   u,a,t
+ vcmpneb   v,b,t
+ vcmpnezb  w,a,b
+ xxland    x,u,v
+ xxlorc    y,w,x
+ vctzlsbb  r,y
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+ xxspltib  t,0
+ vcmpneb   u,a,t
+ vcmpneb   v,b,t
+ vcmpnezb  w,a,b
+ xxland    x,u,v
+ xxlorc    y,w,x
+ vclzlsbb  r,y
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>ISA 3.0 or later</para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector signed int</para>
+              </entry>
+              <entry>
+                <programlisting>
+ xxspltib  t,0
+ vcmpnew   u,a,t
+ vcmpnew   v,b,t
+ vcmpnezw  w,a,b
+ xxland    x,u,v
+ xxlorc    y,w,x
+ vctzlsbb  z,y
+ rldicr    r,z,62,34
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+ xxspltib  t,0
+ vcmpnew   u,a,t
+ vcmpnew   v,b,t
+ vcmpnezw  w,a,b
+ xxland    x,u,v
+ xxlorc    y,w,x
+ vclzlsbb  z,y
+ rldicr    r,z,62,34
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>ISA 3.0 or later</para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector unsigned int</para>
+              </entry>
+              <entry>
+                <programlisting>
+ xxspltib  t,0
+ vcmpnew   u,a,t
+ vcmpnew   v,b,t
+ vcmpnezw  w,a,b
+ xxland    x,u,v
+ xxlorc    y,w,x
+ vctzlsbb  z,y
+ rldicr    r,z,62,34
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+ xxspltib  t,0
+ vcmpnew   u,a,t
+ vcmpnew   v,b,t
+ vcmpnezw  w,a,b
+ xxland    x,u,v
+ xxlorc    y,w,x
+ vclzlsbb  z,y
+ rldicr    r,z,62,34
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>ISA 3.0 or later</para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector signed short</para>
+              </entry>
+              <entry>
+                <programlisting>
+ xxspltib  t,0
+ vcmpneh   u,a,t
+ vcmpneh   v,b,t
+ vcmpnezh  w,a,b
+ xxland    x,u,v
+ xxlorc    y,w,x
+ vctzlsbb  z,y
+ rldicl    r,z,63,33
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+ xxspltib  t,0
+ vcmpneh   u,a,t
+ vcmpneh   v,b,t
+ vcmpnezh  w,a,b
+ xxland    x,u,v
+ xxlorc    y,w,x
+ vclzlsbb  z,y
+ rldicl    r,z,63,33
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>ISA 3.0 or later</para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector unsigned short</para>
+              </entry>
+              <entry>
+                <programlisting>
+ xxspltib  t,0
+ vcmpneh   u,a,t
+ vcmpneh   v,b,t
+ vcmpnezh  w,a,b
+ xxland    x,u,v
+ xxlorc    y,w,x
+ vctzlsbb  z,y
+ rldicl    r,z,63,33
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+ xxspltib  t,0
+ vcmpneh   u,a,t
+ vcmpneh   v,b,t
+ vcmpnezh  w,a,b
+ xxland    x,u,v
+ xxlorc    y,w,x
+ vclzlsbb  z,y
+ rldicl    r,z,63,33
+		</programlisting>
               </entry>
               <entry align="center" valign="middle">
                 <para>ISA 3.0 or later</para>
