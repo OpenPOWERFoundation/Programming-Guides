@@ -15594,14 +15594,27 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <emphasis role="bold">r</emphasis> is set to the value of the
       <emphasis>i</emphasis>th bit of the <emphasis>j</emphasis>th byte
       element of <emphasis role="bold">a</emphasis>.</para>
+      <para>
+	<xref linkend="VIPR.ch-vec.vec_gb" />, taken from the
+	Power ISA, shows how bits are combined by the
+	<code>vec_gb</code> intrinsic.  Here <code>VR[VRT]</code> is
+	equivalent to <emphasis role="bold">r</emphasis>, and
+	<code>VR[VRB]</code> is equivalent to <emphasis
+	role="bold">a</emphasis>.
+      </para>
+      <figure pgwide="1" xml:id="VIPR.ch-vec.vec_gb">
+	<title>Operation of vec_gb</title>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="vgbbd.png" format="PNG"
+		       scalefit="1" width="100%" />
+	  </imageobject>
+	</mediaobject>
+      </figure>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       The <emphasis role="bold">vec_gb</emphasis> intrinsic function assumes
       big-endian (left-to-right) numbering for both bits and bytes, matching
       the ISA 2.07 <emphasis role="bold">vgbbd</emphasis> instruction.
-      </para>
-      <para><emphasis role="bold">Notes:</emphasis>
-      <emphasis>Try to get the diagram from the ISA manual to include
-      here.</emphasis>
       </para>
       
       <indexterm>

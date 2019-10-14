@@ -18,12 +18,12 @@
 xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_intro">
   
   <!-- Chapter Title goes here. -->
-  <title>Introduction to Vector Programming on POWER</title>
+  <title>Introduction to Vector Programming on Power</title>
 
   <section>
     <title>A Brief History</title>
     <para>
-      The history of vector programming on POWER processors begins
+      The history of vector programming on Power processors begins
       with the AIM (Apple, IBM, Motorola) alliance in the 1990s.  The
       AIM partners developed the Power Vector Media Extension (VMX) to
       accelerate multimedia applications, particularly image
@@ -87,15 +87,15 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_intro">
       a VSR can now contain a single 128-bit integer; and starting
       with POWER9, a VSR can contain a single 128-bit floating-point
       value.  The VMX and VSX instruction sets together may be
-      referred to as the POWER SIMD (single-instruction,
+      referred to as the Power SIMD (single-instruction,
       multiple-data) instructions.
     </para>
     <section>
       <title>Little-Endian Linux</title>
       <para>
-	The POWER architecture has supported operation in either
+	The Power architecture has supported operation in either
 	big-endian (BE) or little-endian (LE) mode from the
-	beginning.  However, IBM's POWER servers were only shipped
+	beginning.  However, IBM's Power servers were only shipped
 	with big-endian operating systems (AIX, Linux, i5/OS) prior to
 	the introduction of POWER8.  With POWER8, IBM began
 	supporting little-endian Linux distributions for the first
@@ -106,7 +106,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_intro">
 	currently used only for little-endian Linux.
       </para>
       <para>
-	Although POWER has always supported big- and little-endian
+	Although Power has always supported big- and little-endian
 	memory accesses, the introduction of vector register support
 	added a layer of complexity to programming for processors
 	operating in different endian modes.  Arrays of elements
@@ -137,7 +137,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_intro">
     <para>
       The vector-scalar registers can be addressed with VSX
       instructions, for vector and scalar processing of all 64
-      registers, or with the "classic" POWER floating-point
+      registers, or with the "classic" Power floating-point
       instructions to refer to a 32-register subset of these, having
       64 bits per register.  They can also be addressed with VMX
       instructions to refer to a 32-register subset of 128-bit registers.
@@ -194,6 +194,16 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_intro">
 	  Future Features Programming Reference.</emphasis>
 	  <emphasis>
 	    <link xlink:href="https://software.intel.com/sites/default/files/managed/c5/15/architecture-instruction-set-extensions-programming-reference.pdf">https://software.intel.com/sites/default/files/managed/c5/15/architecture-instruction-set-extensions-programming-reference.pdf
+	    </link>
+	  </emphasis>
+	</para>
+      </listitem>
+      <listitem>
+	<para>
+	  <emphasis>Power Instruction Set Architecture</emphasis>,
+	  Version 3.0B Specification.
+	  <emphasis>
+	    <link xlink:href="https://openpowerfoundation.org/?resource_lib=power-isa-version-3-0">https://openpowerfoundation.org/?resource_lib=power-isa-version-3-0
 	    </link>
 	  </emphasis>
 	</para>

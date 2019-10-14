@@ -31,11 +31,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_techniques">
       intrinsics the best way to ensure that the compiler does exactly
       what you want?  Well, sometimes.  But the problem is that the
       best instruction sequence today may not be the best instruction
-      sequence tomorrow.  As the PowerISA moves forward, new
+      sequence tomorrow.  As the Power ISA moves forward, new
       instruction capabilities appear, and the old code you wrote can
       easily become obsolete.  Then you start having to create
       different versions of the code for different levels of the
-      PowerISA, and it can quickly become difficult to maintain.
+      Power ISA, and it can quickly become difficult to maintain.
     </para>
     <para>
       Most often programmers use vector intrinsics to increase the
@@ -141,7 +141,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_techniques">
     <para>
       This reference provides intrinsics that are guaranteed to be
       portable across compliant compilers.  In particular, both the
-      GCC and Clang compilers for POWER implement the intrinsics in
+      GCC and Clang compilers for Power implement the intrinsics in
       this manual.  The compilers may each implement many more
       intrinsics, but the ones in this manual are the only ones
       guaranteed to be portable.  So if you are using an interface not
@@ -151,7 +151,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_techniques">
     <para>
       There are also other vector APIs that may be of use to you (see
       <xref linkend="VIPR.techniques.apis" />).  In particular, the
-      POWER Vector Library (see <xref
+      Power Vector Library (see <xref
       linkend="VIPR.techniques.pveclib" />) provides additional
       portability across compiler versions.
     </para>
@@ -221,7 +221,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_techniques">
 	and will not necessarily perform optimally (although in many
 	cases the performance is very good).  Using these headers is
 	often a good first step in porting a library using Intel
-	intrinsics to POWER, after which more detailed rewriting of
+	intrinsics to Power, after which more detailed rewriting of
 	algorithms is usually desirable for best performance.
       </para>
       <para>
@@ -231,8 +231,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_techniques">
       </para>
     </section>
     <section xml:id="VIPR.techniques.pveclib">
-      <title>The POWER Vector Library (pveclib)</title>
-      <para>The POWER Vector Library, also known as
+      <title>The Power Vector Library (pveclib)</title>
+      <para>The Power Vector Library, also known as
       <code>pveclib</code>, is a separate project available from
       github (see <xref linkend="VIPR.intro.links" />).  The
       <code>pveclib</code> project builds on top of the intrinsics
@@ -244,10 +244,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_techniques">
 	<listitem>
 	  <para>
 	    Providing equivalent functions across versions of the
-	    PowerISA.  For example, the <emphasis>Vector
+	    Power ISA.  For example, the <emphasis>Vector
 	    Multiply-by-10 Unsigned Quadword</emphasis> operation
-	    introduced in PowerISA 3.0 (POWER9) can be implemented
-	    using a few vector instructions on earlier PowerISA
+	    introduced in Power ISA 3.0 (POWER9) can be implemented
+	    using a few vector instructions on earlier Power ISA
 	    versions. 
 	  </para>
 	</listitem>
@@ -262,7 +262,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_techniques">
 	<listitem>
 	  <para>
 	    Providing higher-order functions not provided directly by
-	    the PowerISA.  One example is a vector SIMD implementation
+	    the Power ISA.  One example is a vector SIMD implementation
 	    for ASCII <code>__isalpha</code> and similar functions.
 	    Another example is full <code>__int128</code>
 	    implementations of <emphasis>Count Leading

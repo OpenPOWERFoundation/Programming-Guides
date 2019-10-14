@@ -18,32 +18,32 @@
 xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.biendian">
   
   <!-- Chapter Title goes here. -->
-  <title>The POWER Bi-Endian Vector Programming Model</title>
+  <title>The Power Bi-Endian Vector Programming Model</title>
 
   <para>
     To ensure portability of applications optimized to exploit the
-    SIMD functions of POWER ISA processors, this reference defines a
+    SIMD functions of Power ISA processors, this reference defines a
     set of functions and data types for SIMD programming.  Compliant
     compilers will provide suitable support for these functions,
     preferably as built-in functions that translate to one or more
-    POWER ISA instructions.
+    Power ISA instructions.
   </para>
   <para>
     Compilers are encouraged, but not required, to provide built-in
-    functions to access individual instructions in the IBM POWER®
+    functions to access individual instructions in the IBM Power®
     instruction set architecture. In most cases, each such built-in
     function should provide direct access to the underlying
     instruction.
   </para>
   <para>
     However, to ease porting between little-endian (LE) and big-endian
-    (BE) POWER systems, and between POWER and other platforms, it is
+    (BE) Power systems, and between Power and other platforms, it is
     preferable that some built-in functions provide the same semantics
-    on both LE and BE POWER systems, even if this means that the
+    on both LE and BE Power systems, even if this means that the
     built-in functions are implemented with different instruction
     sequences for LE and BE. To achieve this, vector built-in
     functions provide a set of functions derived from the set of
-    hardware functions provided by the POWER SIMD instructions. Unlike
+    hardware functions provided by the Power SIMD instructions. Unlike
     traditional “hardware intrinsic” built-in functions, no fixed
     mapping exists between these built-in functions and the generated
     hardware instruction sequence. Rather, the compiler is free to
@@ -52,13 +52,13 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.biendian">
     built-in functions. 
   </para>
   <para>
-    As we've seen, the POWER SIMD instructions operate on groups of 1,
+    As we've seen, the Power SIMD instructions operate on groups of 1,
     2, 4, 8, or 16 vector elements at a time in 128-bit registers. On
-    a big-endian POWER platform, vector elements are loaded from
+    a big-endian Power platform, vector elements are loaded from
     memory into a register so that the 0th element occupies the
     high-order bits of the register, and the (N &#8211; 1)th element
     occupies the low-order bits of the register. This is referred to
-    as big-endian element order. On a little-endian POWER platform,
+    as big-endian element order. On a little-endian Power platform,
     vector elements are loaded from memory such that the 0th element
     occupies the low-order bits of the register, and the (N &#8211;
     1)th element occupies the high-order bits. This is referred to as
@@ -68,7 +68,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.biendian">
   <note>
     <para>
       Much of the information in this chapter was formerly part of
-      Chapter 6 of the 64-Bit ELF V2 ABI Specification for POWER.
+      Chapter 6 of the 64-Bit ELF V2 ABI Specification for Power.
     </para>
   </note>
 
@@ -123,7 +123,7 @@ vector double g = (vector double) { 3.5, -24.6 };</programlisting>
       For the C and C++ programming languages (and related/derived
       languages), these data types may be accessed based on the type
       names listed in <xref linkend="VIPR.biendian.vectypes" /> when
-      POWER SIMD language extensions are enabled using either the
+      Power SIMD language extensions are enabled using either the
       <code>vector</code> or <code>__vector</code> keywords.
     </para> 
     <para>
@@ -478,7 +478,7 @@ register vector double vd = vec_splats(*double_ptr);</programlisting>
     <title>Vector Operators</title>
     <para>
       In addition to the dereference and assignment operators, the
-      POWER Bi-Endian Vector Programming Model provides the usual
+      Power Bi-Endian Vector Programming Model provides the usual
       operators that are valid on pointers; these operators are also
       valid for pointers to vector types.
     </para>
@@ -589,7 +589,7 @@ register vector double vd = vec_splats(*double_ptr);</programlisting>
   <section>
     <title>Vector Built-In Functions</title>
     <para>
-      Some of the POWER SIMD hardware instructions refer, implicitly
+      Some of the Power SIMD hardware instructions refer, implicitly
       or explicitly, to vector element numbers.  For example, the
       <code>vspltb</code> instruction has as one of its inputs an
       index into a vector.  The element at that index position is to
@@ -650,7 +650,7 @@ register vector double vd = vec_splats(*double_ptr);</programlisting>
               </entry>
               <entry>
                 <para>
-                  <emphasis role="bold">Corresponding POWER
+                  <emphasis role="bold">Corresponding Power
                   Instructions</emphasis>
                 </para>
               </entry>
@@ -761,7 +761,7 @@ register vector double vd = vec_splats(*double_ptr);</programlisting>
       (Deprecated)</title>
       <para>
 	Versions 1.0 through 1.4 of the 64-Bit ELFv2 ABI Specification
-	for POWER provided for optional compiler support for using
+	for Power provided for optional compiler support for using
 	big-endian element ordering in little-endian environments.
 	This was initially deemed useful for porting certain libraries
 	that assumed big-endian element ordering regardless of the
