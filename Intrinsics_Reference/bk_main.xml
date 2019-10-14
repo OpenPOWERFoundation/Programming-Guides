@@ -32,7 +32,7 @@
   xml:id="bk_main">
 
     <!-- TODO: Pick a Title for the new document -->
-    <title>Vector Intrinsic Programming Reference</title>
+    <title>POWER Vector Intrinsic Programming Reference</title>
     <!-- TODO: Either add a subtitle or remove the following line -->
     <!-- subtitle></subtitle -->
 
@@ -50,11 +50,11 @@
     </author>
     <copyright>
       <!-- TODO: Set copyright year -->
-      <year>2018</year>
+      <year>2017-2019</year>
       <holder>OpenPOWER Foundation</holder>
     </copyright>
     <!-- TODO: Set the correct document releaseinfo -->
-    <releaseinfo>Revision 0.9.0</releaseinfo>
+    <releaseinfo>Revision 0.9.1</releaseinfo>
     <productname>OpenPOWER</productname>
     <pubdate/>
 
@@ -87,6 +87,17 @@
 
     <revhistory>
       <!-- TODO: Set the initial version information and clear any old information out -->
+      <revision>
+        <date>2019-10-13</date>
+        <revdescription>
+          <itemizedlist spacing="compact">
+            <listitem>
+              <para>Version 0.9.1: Initial draft for internal
+	      review.</para>
+            </listitem>
+          </itemizedlist>
+        </revdescription>
+      </revision>
       <revision>
         <date>2018-12-30</date>
         <revdescription>
