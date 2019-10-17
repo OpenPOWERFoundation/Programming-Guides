@@ -149,11 +149,18 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_techniques">
       manual and change your code to use that.
     </para>
     <para>
+      Where an intrinsic may not be available from all compilers or at
+      all ISA levels, this information is called out in the
+      description of the intrinsic in <xref
+      linkend="VIPR.reference.vecfns" >.
+    </para>
+    <para>
       There are also other vector APIs that may be of use to you (see
       <xref linkend="VIPR.techniques.apis" />).  In particular, the
       Power Vector Library (see <xref
       linkend="VIPR.techniques.pveclib" />) provides additional
-      portability across compiler versions.
+      portability across compiler versions, as well as interfaces that
+      hide cases where assembly language is needed.
     </para>
   </section>
 

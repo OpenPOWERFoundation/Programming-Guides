@@ -79,16 +79,23 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_intro">
       linkend="VIPR.intro.unified" />).  The VSRs can represent all
       the data types representable by the VRs, and can also be treated
       as containing two 64-bit integers or two 64-bit double-precision
-      floating-point values.  
+      floating-point values.  However, ISA support for two 64-bit
+      integers in VSRs was limited until Version 2.07 (POWER8) of the
+      Power ISA, and only the VRs are supported for these
+      instructions.
     </para>
     <para>
       Both the VMX and VSX instruction sets have been expanded for the
       POWER8 and POWER9 processor families.  Starting with POWER8,
       a VSR can now contain a single 128-bit integer; and starting
       with POWER9, a VSR can contain a single 128-bit floating-point
-      value.  The VMX and VSX instruction sets together may be
-      referred to as the Power SIMD (single-instruction,
-      multiple-data) instructions.
+      value.  Again, the ISA currently only supports 128-bit
+      operations on values in the VRs.
+    </para>
+    <para>
+      The VMX and VSX instruction sets together may be referred to as
+      the Power SIMD (single-instruction, multiple-data)
+      instructions.
     </para>
     <section>
       <title>Little-Endian Linux</title>
@@ -160,6 +167,50 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_intro">
 	</imageobject>
       </mediaobject>
     </figure>
+  </section>
+
+  <section xml:id="VIPR.intro.reporting">
+    <title>Where to Report Bugs</title>
+    <para>
+      This reference provides guidance on using vector intrinsics that
+      are supported by all compatible compilers.  If you find a
+      problem when using one of the intrinsics with a compatible
+      compiler, please report a bug!  Bug reporting procedures differ
+      depending on which compiler you're using.
+    </para>
+    <itemizedlist>
+      <listitem>
+	<para>
+	  <emphasis role="underline">GCC</emphasis>.  The reporting
+	  procedure for bugs against the GNU Compiler Collection is
+	  described at <link
+	  xlink:href="https://gcc.gnu.org/bugs/">https://gcc.gnu.org/bugs/</link>.
+	  The GCC bugzilla tracker is located at <link
+	  xlink:href="https://gcc.gnu.org/bugzilla/">https://gcc.gnu.org/bugzilla/</link>.
+	</para>
+      </listitem>
+      <listitem>
+	<para>
+	  <emphasis role="underline">Clang/LLVM</emphasis>.  The
+	  reporting procedure for bugs against the Clang compiler is
+	  described at <link
+	  xlink:href="https://llvm.org/docs/HowToSubmitABug.html">https://llvm.org/docs/HowToSubmitABug.html</link>.
+	  The LLVM bug tracking system is located at <link
+	  xlink:href="https://bugs.llvm.org/enter_bug.cgi">https://bugs.llvm.org/enter_bug.cgi</link>.
+	</para>
+      </listitem>
+      <listitem>
+	<para>
+	  <emphasis role="underline">The XL compilers</emphasis>.
+	</para>
+	<note>
+	  <para>
+	    Reporting procedures for XL bugs on Linux are yet to be
+	    determined.
+	  </para>
+	</note>
+      </listitem>
+    </itemizedlist>
   </section>
 
   <section xml:id="VIPR.intro.links">

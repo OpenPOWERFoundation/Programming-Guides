@@ -123,7 +123,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 	<para>
 	  <emphasis role="bold">ISA 3.0 or later</emphasis>.  This
 	  form is only available starting with PowerISA 3.0,
-	  corresponding to POWER9 servers.
+	  corresponding to POWER9 servers.  The Power Vector Library
+	  (see <xref linkend="VIPR.intro.links" /> provides equivalent
+	  POWER7/POWER8 implementations for many ISA 3.0 vector
+	  instructions, which may be preferred for portability.
 	</para>
       </listitem>
       <listitem>
@@ -150,7 +153,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   </section>
 
   <?hard-pagebreak?>
-  <section>
+  <section xml:id="VIPR.reference.vecfns">
     <title>Built-In Vector Functions</title>
 
     <simplesect xml:id="vec_abs">
