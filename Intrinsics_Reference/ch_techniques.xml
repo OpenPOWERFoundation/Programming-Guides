@@ -152,7 +152,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_techniques">
       Where an intrinsic may not be available from all compilers or at
       all ISA levels, this information is called out in the
       description of the intrinsic in <xref
-      linkend="VIPR.reference.vecfns" >.
+      linkend="VIPR.reference.vecfns" />.
     </para>
     <para>
       There are also other vector APIs that may be of use to you (see

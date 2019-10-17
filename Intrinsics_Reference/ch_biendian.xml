@@ -111,7 +111,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.biendian">
     <programlisting>vector int x = (vector int) (4, -1, 3, 6);
 vector double g = (vector double) { 3.5, -24.6 };</programlisting>
     <para>
-      Current C comiplers do not support literals for
+      Current C compilers do not support literals for
       <code>__int128</code> types.  When constructing a <code>vector
       __int128</code> constant from smaller literals such as
       <code>int</code> or <code>long long</code>, you must test for
