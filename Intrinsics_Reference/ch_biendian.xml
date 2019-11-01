@@ -132,7 +132,13 @@ vector double g = (vector double) { 3.5, -24.6 };</programlisting>
       languages), these data types may be accessed based on the type
       names listed in <xref linkend="VIPR.biendian.vectypes" /> when
       Power SIMD language extensions are enabled using either the
-      <code>vector</code> or <code>__vector</code> keywords.
+      <code>vector</code> or <code>__vector</code> keywords.  Note
+      that the ELFv2 ABI for Power also includes a <code>vector
+      _Float16</code> data type.  However, no Power compilers have yet
+      implemented such a type, and it is not clear that this will
+      change anytime soon.  Thus this document has removed the
+      <code>vector _Float16</code> data type, and all intrinsics that
+      reference it.
     </para> 
     <para>
       For the Fortran language, <xref
@@ -433,20 +439,6 @@ register vector double vd = vec_splats(*double_ptr);</programlisting>
             </entry>
             <entry>
               <para>Vector of 1 signed quadword.</para>
-            </entry>
-          </row>
-          <row>
-            <entry>
-              <para>vector _Float16</para>
-            </entry>
-            <entry>
-              <para>16</para>
-            </entry>
-            <entry>
-              <para>Quadword</para>
-            </entry>
-            <entry>
-              <para>Vector of 8 half-precision floats.</para>
             </entry>
           </row>
           <row>

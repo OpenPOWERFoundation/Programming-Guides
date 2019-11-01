@@ -173,7 +173,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_techniques">
       your ideal performance.  When that happens, the first thing you
       should do is report this to the compiler community!  This will
       allow them to get the problem fixed in the next release of the
-      compiler.
+      compiler.  See <xref linkend="VIPR.intro.reporting" /> if you
+      need to report an issue.
     </para>
     <para>
       In the meanwhile, though, what are your options?  As a
@@ -192,8 +193,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_techniques">
       best to look at existing examples to learn how to use it
       properly.  However, there is a good introduction to inline
       assembly in <emphasis>Using the GNU Compiler
-      Collection</emphasis> (see <xref linkend="VIPR.intro.links" />),
-      in section 6.47 at the time of this writing.
+      Collection</emphasis>, in section 6.47 at the time of this
+      writing.  Felix Cloutier has also written a very nice guide.
+      See <xref linkend="VIPR.intro.links" />.
     </para>
     <para>
       If you write a function entirely in assembly, you are

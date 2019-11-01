@@ -277,6 +277,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_intro">
 	  </emphasis>
 	</para>
       </listitem>
+      <listitem>
+	<para>
+	  <emphasis>GCC's Assembler Syntax.</emphasis> Felix Cloutier.
+	  <emphasis>
+	    <link xlink:href="https://www.felixcloutier.com/documents/gcc-asm.html">https://www.felixcloutier.com/documents/gcc-asm.html</link>
+	  </emphasis>
+	</para>
+      </listitem>
     </itemizedlist>
   </section>
 
