@@ -167,7 +167,7 @@ vector double g = (vector double) { 3.5, -24.6 };</programlisting>
       operator <code>*</code>. Similar to other C/C++ data types, the
       array reference operator <code>[]</code> may be used to access
       vector objects with a vector pointer with the usual definition
-      to access the <emphasis>n</emphasis>th vector element from a
+      to access the <emphasis>N</emphasis>th vector element from a
       vector pointer. The dereference operator <code>*</code> may
       <emphasis>not</emphasis> be used to access data that is not
       aligned at least to a quadword boundary.  Built-in functions
