@@ -141,14 +141,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_intro">
       linkend="VR-VSR" />, there are 64 vector-scalar registers; each
       is 128 bits wide.
     </para>
-    <para>
-      The vector-scalar registers can be addressed with VSX
-      instructions, for vector and scalar processing of all 64
-      registers, or with the "classic" Power floating-point
-      instructions to refer to a 32-register subset of these, having
-      64 bits per register.  They can also be addressed with VMX
-      instructions to refer to a 32-register subset of 128-bit registers.
-    </para>
     <figure pgwide="1" xml:id="FPR-VSR">
       <title>Floating-Point Registers as Part of VSRs</title>
       <mediaobject>
@@ -167,6 +159,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_intro">
 	</imageobject>
       </mediaobject>
     </figure>
+    <para>
+      The vector-scalar registers can be addressed with VSX
+      instructions, for vector and scalar processing of all 64
+      registers, or with the "classic" Power floating-point
+      instructions to refer to a 32-register subset of these, having
+      64 bits per register.  They can also be addressed with VMX
+      instructions to refer to a 32-register subset of 128-bit registers.
+    </para>
   </section>
 
   <section xml:id="VIPR.intro.reporting">

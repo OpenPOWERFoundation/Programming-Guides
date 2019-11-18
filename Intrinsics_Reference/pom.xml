@@ -92,9 +92,9 @@ work group and should not be shared with
 other Foundation members or the public
 
 The appropriate starting security for a new document is "workgroupConfidential". -->
-              <security>workgroupConfidential</security>
+              <!-- security>workgroupConfidential</security -->
               <!-- security>foundationConfidential</security -->
-              <!-- security>public</security -->
+              <security>public</security>
 
               <!-- TODO: Set the appropriate work flow status for the document.  For documents
                    which are not "published" this will affect the document title page
@@ -109,8 +109,8 @@ not yet been reviewed
 review =    this document is presently being reviewed
 
 The appropriate starting security for a new document is "draft". -->
-              <documentStatus>draft</documentStatus>
-              <!-- documentStatus>review</documentStatus -->
+              <!-- documentStatus>draft</documentStatus -->
+              <documentStatus>review</documentStatus>
               <!-- documentStatus>publish</documentStatus -->                            
             </configuration>
           </execution>
