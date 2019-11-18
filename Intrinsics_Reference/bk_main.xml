@@ -77,7 +77,7 @@
       for vector programming on OpenPOWER systems, with an emphasis on examples
       of best practices.  It further provides a reference for intrinsics
       provided by compliant compilers on OpenPOWER systems.</para>
-      <para>This document is a Non-standard Track, Work Group Specification work product owned by the
+      <para>This document is a Standard Track, Work Group Specification work product owned by the
       System Software Workgroup and handled in compliance with the requirements outlined in the
       <citetitle>OpenPOWER Foundation Work Group (WG) Process</citetitle> document.  It was
       created using the <citetitle>Master Template Guide</citetitle> version &template_version;.
