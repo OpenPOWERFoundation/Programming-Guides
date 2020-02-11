@@ -288,4 +288,32 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_intro">
     </itemizedlist>
   </section>
 
+  <section xml:id="VIPR.intro.conf">
+    <title>Conformance to this Specification</title>
+    <orderedlist>
+      <listitem>
+	<para>
+	  Vector programs on OpenPOWER systems should follow the guide
+	  and best practices for vector programming as outlined in
+	  <xref linkend="VIPR.biendian" /> and in <xref
+	  linkend="section_techniques" />.
+	</para>
+      </listitem>
+      <listitem>
+	<para>
+	  Compliant compilers on OpenPOWER systems should provide
+	  suitable support for intrinsic functions, preferably as
+	  built-in vector functions that translate to one or more
+	  Power ISA instructions as described in <xref
+	  linkend="VIPR.biendian" /> and in <xref
+	  linkend="VIPR.vec-ref" />.  Compliant compilers targeting a
+	  supported ISA level (2.7 or 3.0, for example) should provide
+	  support for all intrinsic functions valid for that ISA
+	  level, except where an intrinsic function is marked as
+	  phased in, deferred, or deprecated.
+	</para>
+      </listitem>
+    </orderedlist>
+  </section>
+
 </chapter>
