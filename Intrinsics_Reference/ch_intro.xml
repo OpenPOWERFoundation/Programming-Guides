@@ -234,7 +234,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_intro">
 	  <emphasis>AltiVec Technology Program Interface
 	  Manual.</emphasis>
 	  <emphasis>
-	    <link xlink:href="https://www.nxp.com/docs/en/reference-manual/ALTIVECPIM.pdf">https://www.nxp.com/docs/en/reference-manual/ALTIVECPIM.pdf
+            <!-- Note: the %2e substitution for the "." in the URL is needed to work around unknown issues
+                       in the link creation in PDF documents -->
+	    <link xlink:href="https://www.nxp.com/docs/en/reference-manual/ALTIVECPIM%2epdf">https://www.nxp.com/docs/en/reference-manual/ALTIVECPIM.pdf
 	    </link>
 	  </emphasis>
 	</para>
@@ -244,7 +246,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_intro">
 	  <emphasis>Intel Architecture Instruction Set Extensions and
 	  Future Features Programming Reference.</emphasis>
 	  <emphasis>
-	    <link xlink:href="https://software.intel.com/sites/default/files/managed/c5/15/architecture-instruction-set-extensions-programming-reference.pdf">https://software.intel.com/sites/default/files/managed/c5/15/architecture-instruction-set-extensions-programming-reference.pdf
+            <!-- Note: the %2e substitution for the "." in the URL is needed to work around unknown issues
+                       in the link creation in PDF documents -->
+	    <link xlink:href="https://software.intel.com/sites/default/files/managed/c5/15/architecture-instruction-set-extensions-programming-reference%2epdf">https://software.intel.com/sites/default/files/managed/c5/15/architecture-instruction-set-extensions-programming-reference.pdf
 	    </link>
 	  </emphasis>
 	</para>
@@ -272,7 +276,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_intro">
 	<para>
 	  <emphasis>Using the GNU Compiler Collection.</emphasis>
 	  <emphasis>
-	    <link xlink:href="https://gcc.gnu.org/onlinedocs/gcc.pdf">https://gcc.gnu.org/onlinedocs/gcc.pdf
+            <!-- Note: the %2e substitution for the "." in the URL is needed to work around unknown issues
+                       in the link creation in PDF documents -->
+	    <link xlink:href="https://gcc.gnu.org/onlinedocs/gcc%2epdf">https://gcc.gnu.org/onlinedocs/gcc.pdf
 	    </link>
 	  </emphasis>
 	</para>
