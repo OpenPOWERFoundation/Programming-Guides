@@ -104,8 +104,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       separate example implementations are shown for each endianness.
     </para>
     <para>
-      The implementations show which vector instructions are used in
-      the implementation of a particular intrinsic.  When trying to
+      The implementations show a sequence of instructions that may be
+      used in the implementation of a particular intrinsic, and
+      usually include vector instructions.  When trying to
       determine which intrinsic to use, it can be useful to have a
       cross-reference from a specific vector instruction to the
       intrinsics whose implementations make use of it.  This manual
@@ -131,25 +132,36 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </listitem>
       <listitem>
 	<para>
-	  <emphasis role="bold">Phased in</emphasis>.  Not all
-	  compilers have yet completed implementing this form of the
-	  intrinsic.
-	</para>
-      </listitem>
-      <listitem>
-	<para>
-	  <emphasis role="bold">Deferred</emphasis>.  No compiler yet
-	  supports this form of the intrinsic.
-	</para>
-      </listitem>
-      <listitem>
-	<para>
 	  <emphasis role="bold">Deprecated</emphasis>.  This form of
 	  the intrinsic is currently available, but may be removed in
 	  the future.  Programmers are discouraged from using it.
 	</para>
       </listitem>
     </itemizedlist>
+    <section>
+      <title>Terminology</title>
+      <para>
+	Some intrinsic descriptions indicate that either
+	<emphasis>modular</emphasis> arithmetic or
+	<emphasis>saturating</emphasis> arithmetic is used.  This
+	refers to what happens when an operation overflows the number
+	of available bits.  A modular operation that overflows
+	truncates the result on the left, also known as wrapping the
+	result.  A saturating operation that overflows produces the
+	largest (or smallest) possible result representable in the
+	output element type.
+      </para>
+      <para>
+	Operands are sometimes represented as having a <code>const
+	int</code> type.  In such cases, the programmer is expected to
+	provide an integer literal.  When the literal has specific
+	required bounds, this is often represented instead by such
+	phrases as "5-bit signed literal" or "2-bit unsigned literal"
+	to specify them.  In such cases, compilers are encouraged to
+	at least warn upon detecting an out-of-range value.  Providing
+	a variable when a literal is required is a compile-time error.
+      </para>
+    </section>
   </section>
 
   <?hard-pagebreak?>
@@ -165,7 +177,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 
       <para><emphasis role="bold">Purpose:</emphasis>
       Returns a vector <emphasis role="bold">r</emphasis> that contains the
-      absolute values of the contents of the given vector
+      absolute values of the contents of the vector
       <emphasis role="bold">a</emphasis>.
       </para>
       <para><emphasis role="bold">Result value:</emphasis>
@@ -348,7 +360,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       The value of each element of <emphasis role="bold">r</emphasis> is the
       absolute difference of the corresponding elements of <emphasis
       role="bold">a</emphasis> and <emphasis role="bold">b</emphasis>, using
-      modulo arithmetic.
+      modular arithmetic.
       </para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
@@ -478,7 +490,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 
       <para><emphasis role="bold">Purpose:</emphasis>
       Returns a vector <emphasis role="bold">r</emphasis> that contains the
-      saturated absolute values of the contents of the given vector
+      saturated absolute values of the contents of the vector
       <emphasis role="bold">a</emphasis>.
       </para>
       <para><emphasis role="bold">Result value:</emphasis>
@@ -894,7 +906,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
-      Returns a vector of carry bits produced by adding two vectors.
+      Returns a vector of carries produced by adding two vectors.
       </para>
       <para><emphasis role="bold">Result value:</emphasis>
       The value of each element of <emphasis role="bold">r</emphasis> is the
@@ -1037,6 +1049,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
+      </para>
+      <para><emphasis role="bold">Notes:</emphasis>
+      Code generated for this intrinsic should ensure only the
+      low-order bit of <emphasis role="bold">c</emphasis> participates
+      in the sum.
       </para>
       
       <indexterm>
@@ -1191,7 +1208,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
-      Returns a vector of carry bits produced by adding two vectors and
+      Returns a vector of carries produced by adding two vectors and
       a carry vector.
       </para>
       <para><emphasis role="bold">Result value:</emphasis>
@@ -1203,6 +1220,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
+      </para>
+      <para><emphasis role="bold">Notes:</emphasis>
+      Code generated for this intrinsic should ensure only the
+      low-order bit of <emphasis role="bold">c</emphasis> participates
+      in the sum.
       </para>
       
       <indexterm>
@@ -1549,8 +1571,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
-      Tests whether all pairs of corresponding elements of the given vectors
-      are equal.
+      Tests whether all elements of <emphasis role="bold">a</emphasis>
+      are equal to the corresponding elements of <emphasis
+      role="bold">b</emphasis>.
       </para>
       <para><emphasis role="bold">Result value:  r</emphasis> is 1 if each
       element of <emphasis role="bold">a</emphasis> is equal to the
@@ -1912,10 +1935,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       greater than or equal to the corresponding elements of <emphasis
       role="bold">b</emphasis>.
       </para>
-      <para><emphasis role="bold">Result value:  r</emphasis> is 1 if each
-      element of <emphasis role="bold">a</emphasis> is greater than or equal
-      to the corresponding element of <emphasis role="bold">b</emphasis>.
-      Otherwise, <emphasis role="bold">r</emphasis> is 0.</para>
+      <para><emphasis role="bold">Result value:  r</emphasis> is 1 if
+      all elements of <emphasis role="bold">a</emphasis> are greater
+      than or equal to the corresponding elements of <emphasis
+      role="bold">b</emphasis>.  Otherwise, <emphasis
+      role="bold">r</emphasis> is 0.</para> 
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
@@ -2198,10 +2222,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       greater than the corresponding elements of <emphasis
       role="bold">b</emphasis>.
       </para>
-      <para><emphasis role="bold">Result value: r</emphasis> is 1 if each
-      element of <emphasis role="bold">a</emphasis> is greater than the
-      corresponding element of <emphasis role="bold">b</emphasis>. Otherwise,
-      <emphasis role="bold">r</emphasis> is 0.</para>
+      <para><emphasis role="bold">Result value: r</emphasis> is 1 if
+      all elements of <emphasis role="bold">a</emphasis> are greater
+      than the corresponding elements of <emphasis
+      role="bold">b</emphasis>.  Otherwise, <emphasis
+      role="bold">r</emphasis> is 0.</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
@@ -2480,7 +2505,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
-      Tests whether each element of a given vector is within a given range.
+      Tests whether all elements of a vector are within a given range.
       </para>
       <para><emphasis role="bold">Result value:  r </emphasis> is 1 if each
       element of <emphasis role="bold">a</emphasis> has a value less than or
@@ -3141,12 +3166,12 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
-      Tests whether each element of <emphasis role="bold">a</emphasis> is a
-      not-a-number (NaN).
+      Tests whether all elements of <emphasis role="bold">a</emphasis>
+      are not-a-number (NaN).
       </para>
-      <para><emphasis role="bold">Result value:  r</emphasis> is 1 if each
-      element of <emphasis role="bold">a</emphasis> is a NaN. Otherwise,
-      <emphasis role="bold">r</emphasis> is 0.</para>
+      <para><emphasis role="bold">Result value:  r</emphasis> is 1 if
+      all elements of <emphasis role="bold">a</emphasis> are
+      NaN.  Otherwise, <emphasis role="bold">r</emphasis> is 0.</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
@@ -3237,13 +3262,15 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
-      Tests whether all sets of corresponding elements of the given vectors
-      are not equal.
+      Tests whether all elements of <emphasis role="bold">a</emphasis>
+      are not equal to the corresponding elements of <emphasis
+      role="bold">b</emphasis>.
       </para>
-      <para><emphasis role="bold">Result value:  r</emphasis> is 1 if each
-      element of <emphasis role="bold">a</emphasis> is not equal to the
-      corresponding element of <emphasis role="bold">b</emphasis>. Otherwise,
-      <emphasis role="bold">r</emphasis> is 0.</para>
+      <para><emphasis role="bold">Result value:  r</emphasis> is 1 if
+      all elements of <emphasis role="bold">a</emphasis> are not equal
+      to the corresponding elements of <emphasis
+      role="bold">b</emphasis>.  Otherwise, <emphasis
+      role="bold">r</emphasis> is 0.</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
@@ -3596,15 +3623,15 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
-      Tests whether each element of <emphasis role="bold">a</emphasis> is not
-      greater than or equal to the corresponding element of <emphasis
-      role="bold">b</emphasis>.
+      Tests whether all elements of <emphasis role="bold">a</emphasis>
+      are not greater than or equal to the corresponding elements of
+      <emphasis role="bold">b</emphasis>.
       </para>
-      <para><emphasis role="bold">Result value:  r</emphasis> is 1 if each
-      element of <emphasis role="bold">a</emphasis> is not greater than or
-      equal to the corresponding element of <emphasis
-      role="bold">b</emphasis>. Otherwise, <emphasis role="bold">r</emphasis>
-      is 0.</para>
+      <para><emphasis role="bold">Result value:  r</emphasis> is 1 if
+      all elements of <emphasis role="bold">a</emphasis> are not
+      greater than or equal to the corresponding elements of <emphasis
+      role="bold">b</emphasis>. Otherwise, <emphasis
+      role="bold">r</emphasis> is 0.</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
@@ -3707,14 +3734,15 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
-      Tests whether each element of <emphasis role="bold">a</emphasis> is not
-      greater than the corresponding element of <emphasis
+      Tests whether all elements of <emphasis role="bold">a</emphasis>
+      are not greater than the corresponding elements of <emphasis
       role="bold">b</emphasis>.
       </para>
-      <para><emphasis role="bold">Result value:  r</emphasis> is 1 if each
-      element of <emphasis role="bold">a</emphasis> is not greater than the
-      corresponding element of <emphasis role="bold">b</emphasis>. Otherwise,
-      <emphasis role="bold">r</emphasis> is 0.</para>
+      <para><emphasis role="bold">Result value:  r</emphasis> is 1 if
+      all elements of <emphasis role="bold">a</emphasis> are not
+      greater than the corresponding elements of <emphasis
+      role="bold">b</emphasis>.  Otherwise, <emphasis
+      role="bold">r</emphasis> is 0.</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
@@ -3817,14 +3845,15 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
-      Tests whether each element of <emphasis role="bold">a</emphasis> is not
-      less than or equal to the corresponding element of <emphasis
-      role="bold">b</emphasis>.
+      Tests whether all elements of <emphasis role="bold">a</emphasis>
+      are not less than or equal to the corresponding elements of
+      <emphasis role="bold">b</emphasis>.
       </para>
-      <para><emphasis role="bold">Result value:  r</emphasis> is 1 if each
-      element of <emphasis role="bold">a</emphasis> is not less than or equal
-      to the corresponding element of <emphasis role="bold">b</emphasis>.
-      Otherwise, <emphasis role="bold">r</emphasis> is 0.</para>
+      <para><emphasis role="bold">Result value:  r</emphasis> is 1 if
+      all elements of <emphasis role="bold">a</emphasis> are not less
+      than or equal to the corresponding elements of <emphasis
+      role="bold">b</emphasis>.  Otherwise, <emphasis
+      role="bold">r</emphasis> is 0.</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
@@ -3927,14 +3956,15 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
-      Tests whether each element of <emphasis role="bold">a</emphasis> is not
-      less than the corresponding element of <emphasis
+      Tests whether all elements of <emphasis role="bold">a</emphasis>
+      are not less than the corresponding elements of <emphasis
       role="bold">b</emphasis>.
       </para>
-      <para><emphasis role="bold">Result value:  r</emphasis> is 1 if each
-      element of <emphasis role="bold">a</emphasis> is not less than the
-      corresponding element of <emphasis role="bold">b</emphasis>. Otherwise,
-      <emphasis role="bold">r</emphasis> is 0.</para>
+      <para><emphasis role="bold">Result value:  r</emphasis> is 1 if
+      all elements of <emphasis role="bold">a</emphasis> are not less
+      than the corresponding elements of <emphasis
+      role="bold">b</emphasis>.  Otherwise, <emphasis
+      role="bold">r</emphasis> is 0.</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
@@ -4037,11 +4067,12 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
-      Tests whether each element of the given vector is numeric (not a NaN).
+      Tests whether all elements of the vector are numeric (not NaN).
       </para>
-      <para><emphasis role="bold">Result value:  r</emphasis> is 1 if each
-      element of <emphasis role="bold">a</emphasis> is numeric (not a NaN).
-      Otherwise, <emphasis role="bold">r</emphasis> is 0.</para>
+      <para><emphasis role="bold">Result value:  r</emphasis> is 1 if
+      all elements of <emphasis role="bold">a</emphasis> are numeric
+      (not NaN).  Otherwise, <emphasis role="bold">r</emphasis> is
+      0.</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
@@ -4362,7 +4393,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 		</programlisting>
               </entry>
 	      <entry align="center" valign="middle">
-		<para>Phased in</para>
+		<para></para>
 	      </entry>
             </row>
             <row>
@@ -4381,7 +4412,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 		</programlisting>
               </entry>
 	      <entry align="center" valign="middle">
-		<para>Phased in</para>
+		<para></para>
 	      </entry>
             </row>
             <row>
@@ -4400,7 +4431,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 		</programlisting>
               </entry>
 	      <entry align="center" valign="middle">
-		<para>Phased in</para>
+		<para></para>
 	      </entry>
             </row>
             <row>
@@ -4685,7 +4716,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 		</programlisting>
               </entry>
 	      <entry align="center" valign="middle">
-		<para>Phased in</para>
+		<para></para>
 	      </entry>
             </row>
             <row>
@@ -4704,7 +4735,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 		</programlisting>
               </entry>
 	      <entry align="center" valign="middle">
-		<para>Phased in</para>
+		<para></para>
 	      </entry>
             </row>
             <row>
@@ -4723,7 +4754,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 		</programlisting>
               </entry>
 	      <entry align="center" valign="middle">
-		<para>Phased in</para>
+		<para></para>
 	      </entry>
             </row>
             <row>
@@ -4778,8 +4809,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
-      Tests whether any pair of corresponding elements of the given vectors is
-      equal.
+      Tests whether any element of <emphasis role="bold">a</emphasis>
+      is equal to the corresponding element of <emphasis
+      role="bold">b</emphasis>.
       </para>
       <para><emphasis role="bold">Result value:  r</emphasis> is 1 if any
       element of <emphasis role="bold">a</emphasis> is equal to the
@@ -6430,7 +6462,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
-      Tests whether any element of the given vector is a NaN.
+      Tests whether any element of the source vector is a NaN.
       </para>
       <para><emphasis role="bold">Result value:  r</emphasis> is 1 if any
       element of <emphasis role="bold">a</emphasis> is a NaN. Otherwise,
@@ -6537,8 +6569,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
-      Tests whether any pair of corresponding elements of the given vectors is
-      not equal.
+      Tests whether any element of <emphasis role="bold">a</emphasis>
+      is not equal to the corresponding element of <emphasis
+      role="bold">b</emphasis>.
       </para>
       <para><emphasis role="bold">Result value:  r</emphasis> is 1 if any
       element of <emphasis role="bold">a</emphasis> is not equal to the
@@ -7423,7 +7456,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
-      Tests whether any element of the given vector is numeric (not a NaN).
+      Tests whether any element of the source vector is numeric (not a NaN).
       </para>
       <para><emphasis role="bold">Result value:  r</emphasis> is 1 if any
       element of <emphasis role="bold">a</emphasis> is numeric (not a NaN).
@@ -7530,7 +7563,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
-      Tests whether the value of any element of a given vector is outside of a
+      Tests whether the value of any element of a vector is outside of a
       given range.
       </para>
       <para><emphasis role="bold">Result value:  r</emphasis> is 1 if the
@@ -7997,7 +8030,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 		</programlisting>
               </entry>
               <entry align="center" valign="middle">
-		<para>Phased in</para>
+		<para></para>
 	      </entry>
             </row>
             <row>
@@ -8017,7 +8050,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               </entry>
               <entry align="center" valign="middle">
 		<para>ISA 3.0 or later</para>
-		<para>Phased in</para>
+		<para></para>
 	      </entry>
             </row>
           </tbody>
@@ -8144,9 +8177,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       programming model.
       </para>
 
-      <para><emphasis role="bold">Notes:</emphasis> This intrinsic may
-      not yet be available in all implementations.</para>
-      
       <indexterm>
 	<primary>vcipher</primary>
 	<secondary>vec_cipher_be</secondary>
@@ -8232,9 +8262,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       programming model.
       </para>
 
-      <para><emphasis role="bold">Notes:</emphasis> This intrinsic may
-      not yet be available in all implementations.</para>
-      
       <indexterm>
 	<primary>vcipherlast</primary>
 	<secondary>vec_cipherlast_be</secondary>
@@ -8302,7 +8329,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 
       <para><emphasis role="bold">Purpose:</emphasis>
       Performs a bounds comparison of each set of corresponding elements
-      of the given vectors.
+      of two vectors.
       </para>
       <para><emphasis role="bold">Result value:</emphasis>
       Each element of <emphasis role="bold">r</emphasis> has the value 0
@@ -8411,7 +8438,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 
       <para><emphasis role="bold">Purpose:</emphasis>
       Returns a vector containing the results of comparing each set of
-      corresponding elements of the given vectors for equality.
+      corresponding elements of two vectors for equality.
       </para>
       <para><emphasis role="bold">Result value:</emphasis>
       For each element of <emphasis role="bold">r</emphasis>, the value
@@ -8720,7 +8747,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 
       <para><emphasis role="bold">Purpose:</emphasis>
       Returns a vector containing the results of a greater-than-or-equal-to
-      comparison between each set of corresponding elements of the given
+      comparison between each set of corresponding elements of two
       vectors.
       </para>
       <para><emphasis role="bold">Result value:</emphasis>
@@ -8995,7 +9022,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 
       <para><emphasis role="bold">Purpose:</emphasis>
       Returns a vector containing the results of a greater-than
-      comparison between each set of corresponding elements of the given
+      comparison between each set of corresponding elements of two
       vectors.
       </para>
       <para><emphasis role="bold">Result value:</emphasis>
@@ -9258,7 +9285,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 
       <para><emphasis role="bold">Purpose:</emphasis>
       Returns a vector containing the results of a less-than-or-equal
-      comparison between each set of corresponding elements of the given
+      comparison between each set of corresponding elements of two
       vectors.
       </para>
       <para><emphasis role="bold">Result value:</emphasis>
@@ -9533,7 +9560,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 
       <para><emphasis role="bold">Purpose:</emphasis>
       Returns a vector containing the results of a less-than
-      comparison between each set of corresponding elements of the given
+      comparison between each set of corresponding elements of two
       vectors.
       </para>
       <para><emphasis role="bold">Result value:</emphasis>
@@ -9796,7 +9823,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 
       <para><emphasis role="bold">Purpose:</emphasis>
       Returns a vector containing the results of comparing each set of
-      corresponding elements of the given vectors for inequality.
+      corresponding elements of two vectors for inequality.
       </para>
       <para><emphasis role="bold">Result value:</emphasis>
       For each element of <emphasis role="bold">r</emphasis>, the value
@@ -10114,7 +10141,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 
       <para><emphasis role="bold">Purpose:</emphasis>
       Returns a vector containing the results of comparing each set of
-      corresponding elements of the given vectors for inequality, or for
+      corresponding elements of two vectors for inequality, or for
       an element with a zero value.
       </para>
       <para><emphasis role="bold">Result value:</emphasis>
@@ -10310,7 +10337,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 
       <para><emphasis role="bold">Purpose:</emphasis>
       Returns a vector containing the number of most-significant bits
-      equal to zero of each corresponding element of the given vector.
+      equal to zero of each corresponding element of the source vector.
       </para>
       <para><emphasis role="bold">Result value:</emphasis>
       The value of each element of <emphasis role="bold">r</emphasis> is
@@ -10383,7 +10410,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 		</programlisting>
               </entry>
               <entry align="center" valign="middle">
-		<para>Phased in</para>
+		<para></para>
 	      </entry>
             </row>
             <row>
@@ -10399,7 +10426,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 		</programlisting>
               </entry>
               <entry align="center" valign="middle">
-		<para>Phased in</para>
+		<para></para>
 	      </entry>
             </row>
             <row>
@@ -10415,7 +10442,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 		</programlisting>
               </entry>
               <entry align="center" valign="middle">
-		<para>Phased in</para>
+		<para></para>
 	      </entry>
             </row>
             <row>
@@ -10431,7 +10458,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 		</programlisting>
               </entry>
               <entry align="center" valign="middle">
-		<para>Phased in</para>
+		<para></para>
 	      </entry>
             </row>
             <row>
@@ -10447,7 +10474,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 		</programlisting>
               </entry>
               <entry align="center" valign="middle">
-		<para>Phased in</para>
+		<para></para>
 	      </entry>
             </row>
             <row>
@@ -10463,7 +10490,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 		</programlisting>
               </entry>
               <entry align="center" valign="middle">
-		<para>Phased in</para>
+		<para></para>
 	      </entry>
             </row>
             <row>
@@ -10479,7 +10506,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 		</programlisting>
               </entry>
               <entry align="center" valign="middle">
-		<para>Phased in</para>
+		<para></para>
 	      </entry>
             </row>
             <row>
@@ -10495,7 +10522,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 		</programlisting>
               </entry>
               <entry align="center" valign="middle">
-		<para>Phased in</para>
+		<para></para>
 	      </entry>
             </row>
           </tbody>
@@ -10613,7 +10640,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 
       <para><emphasis role="bold">Purpose:</emphasis>
       Returns a vector containing the number of least-significant bits
-      equal to zero of each corresponding element of the given vector.
+      equal to zero of each corresponding element of the source vector.
       </para>
       <para><emphasis role="bold">Result value:</emphasis>
       The value of each element of <emphasis role="bold">r</emphasis> is
@@ -10992,7 +11019,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 		</programlisting>
               </entry>
               <entry align="center" valign="middle">
-		<para>Phased in</para>
+		<para></para>
 	      </entry>
             </row>
             <row>
@@ -11011,7 +11038,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 		</programlisting>
               </entry>
               <entry align="center" valign="middle">
-		<para>Phased in</para>
+		<para></para>
 	      </entry>
             </row>
           </tbody>
@@ -11035,17 +11062,18 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       The value of each element of <emphasis role="bold">r</emphasis> is the
       closest floating-point approximation of the value of the
       corresponding element of <emphasis role="bold">a</emphasis> divided
-      by 2 to the power of <emphasis role="bold">b</emphasis>, which should
+      by 2 to the power of <emphasis role="bold">b</emphasis>, which must
       be in the range 0&#x2013;31.
       </para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
       <para><emphasis role="bold">Notes:</emphasis>
-      The example implementations below assume <emphasis
-      role="bold">b</emphasis> is zero, so that the scaling code is
-      omitted.  Scaling is accomplished by loading a constant and
-      multiplying it by the result.
+        The example implementations below assume <emphasis
+	role="bold">b</emphasis> is zero, so that the scaling code
+	is omitted.  Scaling is accomplished by multiplying each
+	element of <emphasis role="bold">r</emphasis> by 2 to the
+	power of &#x2013;<emphasis role="bold">b</emphasis>.
       </para>
       
       <indexterm>
@@ -11097,7 +11125,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 		<para>vector signed int</para>
               </entry>
               <entry align="center" valign="middle">
-		<para>const int</para>
+		<para>5-bit unsigned literal</para>
               </entry>
               <entry>
 		<programlisting>
@@ -11113,7 +11141,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 		<para>vector unsigned int</para>
               </entry>
               <entry align="center" valign="middle">
-		<para>const int</para>
+		<para>5-bit unsigned literal</para>
               </entry>
               <entry>
 		<programlisting>
@@ -11129,7 +11157,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 		<para>vector signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-		<para>const int</para>
+		<para>5-bit unsigned literal</para>
               </entry>
               <entry>
 		<programlisting>
@@ -11145,7 +11173,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 		<para>vector unsigned long long</para>
               </entry>
               <entry align="center" valign="middle">
-		<para>const int</para>
+		<para>5-bit unsigned literal</para>
               </entry>
               <entry>
 		<programlisting>
@@ -11175,7 +11203,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       saturated signed-integer value, truncated towards zero, obtained by
       multiplying the corresponding element of <emphasis
       role="bold">a</emphasis> multiplied by 2 to the power of <emphasis
-      role="bold">b</emphasis>, which should be in the range 0&#x2013;31.
+      role="bold">b</emphasis>, which must be in the range 0&#x2013;31.
       </para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
@@ -11226,7 +11254,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 		<para>vector float</para>
               </entry>
               <entry align="center" valign="middle">
-		<para>const int</para>
+		<para>5-bit unsigned literal</para>
               </entry>
               <entry>
 		<programlisting>
@@ -11256,7 +11284,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       saturated unsigned-integer value, truncated towards zero, obtained by
       multiplying the corresponding element of <emphasis
       role="bold">a</emphasis> multiplied by 2 to the power of <emphasis
-      role="bold">b</emphasis>, which should be in the range 0&#x2013;31.
+      role="bold">b</emphasis>, which must be in the range 0&#x2013;31.
       </para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
@@ -11307,7 +11335,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 		<para>vector float</para>
               </entry>
               <entry align="center" valign="middle">
-		<para>const int</para>
+		<para>5-bit unsigned literal</para>
               </entry>
               <entry>
 		<programlisting>
@@ -11332,7 +11360,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <para><emphasis role="bold">Purpose:</emphasis>
       Divides the elements in one vector by the corresponding elements
       in another vector and places the quotients in the result vector.
-      Division is emulated using scalar arithmetic for integer types.
       </para>
       <para><emphasis role="bold">Result value:</emphasis>
       The value of each element of <emphasis role="bold">r</emphasis> is
@@ -11680,7 +11707,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 		</programlisting>
               </entry>
               <entry align="center" valign="middle">
-		<para>Phased in</para>
+		<para></para>
 	      </entry>
             </row>
             <row>
@@ -11703,7 +11730,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 		</programlisting>
               </entry>
               <entry align="center" valign="middle">
-		<para>Phased in</para>
+		<para></para>
 	      </entry>
             </row>
             <row>
@@ -11726,7 +11753,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 		</programlisting>
               </entry>
               <entry align="center" valign="middle">
-		<para>Phased in</para>
+		<para></para>
 	      </entry>
             </row>
           </tbody>
@@ -11834,7 +11861,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 		</programlisting>
               </entry>
               <entry align="center" valign="middle">
-		<para>Phased in</para>
+		<para></para>
 	      </entry>
             </row>
             <row>
@@ -11859,7 +11886,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 		</programlisting>
               </entry>
               <entry align="center" valign="middle">
-		<para>Phased in</para>
+		<para></para>
 	      </entry>
             </row>
             <row>
@@ -11884,7 +11911,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 		</programlisting>
               </entry>
               <entry align="center" valign="middle">
-		<para>Phased in</para>
+		<para></para>
 	      </entry>
             </row>
           </tbody>
@@ -11992,7 +12019,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 		</programlisting>
               </entry>
               <entry align="center" valign="middle">
-		<para>Phased in</para>
+		<para></para>
 	      </entry>
             </row>
             <row>
@@ -12017,7 +12044,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 		</programlisting>
               </entry>
               <entry align="center" valign="middle">
-		<para>Phased in</para>
+		<para></para>
 	      </entry>
             </row>
             <row>
@@ -12042,7 +12069,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 		</programlisting>
               </entry>
               <entry align="center" valign="middle">
-		<para>Phased in</para>
+		<para></para>
 	      </entry>
             </row>
           </tbody>
@@ -12148,7 +12175,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 		</programlisting>
               </entry>
               <entry align="center" valign="middle">
-		<para>Phased in</para>
+		<para></para>
 	      </entry>
             </row>
             <row>
@@ -12171,7 +12198,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 		</programlisting>
               </entry>
               <entry align="center" valign="middle">
-		<para>Phased in</para>
+		<para></para>
 	      </entry>
             </row>
             <row>
@@ -12194,7 +12221,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 		</programlisting>
               </entry>
               <entry align="center" valign="middle">
-		<para>Phased in</para>
+		<para></para>
 	      </entry>
             </row>
           </tbody>
@@ -13073,7 +13100,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
-      Extracts an exponent from a floating-point number.
+      Extracts exponents from a vector of floating-point numbers.
       </para>
       <para><emphasis role="bold">Result value: </emphasis>
       Each element of <emphasis role="bold">r</emphasis> is extracted
@@ -13516,7 +13543,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>vector unsigned char</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> const int</para>
+                <para>const int (range [0,12])</para>
               </entry>
               <entry>
                 <programlisting>
@@ -13552,7 +13579,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       role="bold">b</emphasis>, and returns the first position of
       equality.
       </para>
-      <para><emphasis role="bold">Result value: </emphasis>Returns the element index of the position of the first character match. If no match, returns the number of characters as an element count in the vector argument.</para>
+      <para><emphasis role="bold">Result value: </emphasis>Returns the
+      element index of the position of the first character match in
+      natural element order.  If no match, returns the number of
+      characters as an element count in the vector argument.</para> 
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
@@ -13823,10 +13853,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       equality, or the zero string terminator.
       </para>
       <para><emphasis role="bold">Result value: </emphasis>Returns the
-      element index of the position of either the first character
-      match or an end-of-string (EOS) terminator. If no match or
-      terminator, returns the number of characters as an element count
-      in the vector argument.</para>
+      element index of the position, in natural element order, of
+      either the first character match or an end-of-string (EOS)
+      terminator. If no match or terminator, returns the number of
+      characters as an element count in the vector argument.</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
@@ -14165,9 +14195,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       inequality.
       </para>
       <para><emphasis role="bold">Result value: </emphasis>Returns the
-      element index of the position of the first character
-      mismatch. If no mismatch, returns the number of characters as an
-      element count in the vector argument.</para>
+      element index of the position of the first character mismatch in
+      natural element order. If no mismatch, returns the number of
+      characters as an element count in the vector argument.</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
@@ -14422,10 +14452,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       inequality, or the zero string terminator.
       </para>
       <para><emphasis role="bold">Result value: </emphasis>Returns the
-      element index of the position of either the first character
-      mismatch or an end-of-string (EOS) terminator. If no mismatch or
-      terminator, returns the number of characters as an element count
-      in the vector argument.</para>
+      element index of the position, in natural element order, of
+      either the first character mismatch or an end-of-string (EOS)
+      terminator. If no mismatch or terminator, returns the number of
+      characters as an element count in the vector argument.</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
@@ -14844,7 +14874,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
-      Converts two input vectors of long long integers or double-precision
+      Converts two vectors of long long integers or double-precision
       floating-point numbers to a vector of single-precision numbers.
       </para>
       <para><emphasis role="bold">Result value: </emphasis>Elements of
@@ -15014,7 +15044,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
-      Converts the elements of an input vector to single-precision
+      Converts the elements of a source vector to single-precision
       floating-point and stores the results in the even elements of
       the target vector.
       </para>
@@ -15148,7 +15178,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
-      Converts the elements of an input vector to single-precision
+      Converts the elements of a source vector to single-precision
       floating-point and stores the results in the odd elements of the
       target vector.
       </para>
@@ -15284,7 +15314,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <para><emphasis role="bold">Purpose:</emphasis>
       Returns a vector containing the largest representable floating-point
       integral values less than or equal to the values of the corresponding
-      elements of the given vector.
+      elements of the source vector.
       </para>
       <para><emphasis role="bold">Result value: </emphasis>Each element of
       <emphasis role="bold">r</emphasis> contains the largest representable
@@ -16062,10 +16092,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>vector signed int</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> vector unsigned char</para>
+                <para>vector unsigned char</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> const int</para>
+                <para>const int (range [0,12])</para>
               </entry>
               <entry>
                 <programlisting>
@@ -16091,10 +16121,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>vector unsigned int</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> vector unsigned char</para>
+                <para>vector unsigned char</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> const int</para>
+                <para>const int (range [0,12])</para>
               </entry>
               <entry>
                 <programlisting>
@@ -16674,6 +16704,12 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
+      <para>
+	<emphasis role="bold">Notes:</emphasis>
+  	Be careful to note that the address (b+c) is aligned to an
+	element boundary.  Do not attempt to load unaligned data
+	with this intrinsic.
+      </para>
       
       <indexterm>
 	<primary>lvebx</primary>
@@ -16858,6 +16894,12 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       loading the 16-byte vector from the resultant memory address.</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
+      </para>
+      <para><emphasis role="bold">Notes:</emphasis>
+        This intrinsic can be used to indicate the last access to a
+	portion of memory, as a hint to the data cache controller that
+	the associated cache line can be replaced without performance
+	loss.
       </para>
       
       <indexterm>
@@ -19224,8 +19266,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
-      Copies the contents of the Vector Status and Control Register into the
-      result vector.
+      Copies the contents of the Vector Status and Control Register
+      (VSCR) into the result vector.
       </para>
       <para><emphasis role="bold">Result value:  </emphasis>The high-order 16
       bits of the VSCR are copied into the seventh element of <emphasis
@@ -19237,6 +19279,15 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <para><emphasis role="bold">Endian considerations:</emphasis>
       The contents of the VSCR are placed in the low-order 32 bits of the
       result vector, regardless of endianness.
+      </para>
+      <para><emphasis role="bold">Notes:</emphasis>
+        The use of <code>vector unsigned short</code> as the result
+	type eases access to the two bits currently defined in the
+	VSCR.  Following execution of <code>vec_mfvscr</code>,
+	<emphasis role="bold">r</emphasis>[6] will contain
+	VSCR<subscript>NJ</subscript> in the low-order bit, and
+	<emphasis role="bold">r</emphasis>[7] will contain
+	VSCR<subscript>SAT</subscript> in the low-order bit.
       </para>
       
       <indexterm>
@@ -19750,19 +19801,69 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       Returns a vector containing the results of performing a multiply-sum
       operation using the source vectors.
       </para>
-      <para><emphasis role="bold">Result value: </emphasis>Assume that the
-      elements of each vector are numbered beginning with 0. If
-      <emphasis role="bold">a</emphasis> is a vector signed char or a vector
-      unsigned char vector, then let <emphasis>m</emphasis> be 4. Otherwise,
-      let <emphasis>m</emphasis> be 2. The value of each element
-      <emphasis>n</emphasis> of <emphasis role="bold">r</emphasis> is obtained
-      as follows.  For <emphasis>p</emphasis> = <emphasis>mn</emphasis> to
-      <emphasis>mn</emphasis> + <emphasis>m</emphasis> – 1, multiply
-      element <emphasis>p</emphasis> of <emphasis role="bold">a</emphasis>
-      by element <emphasis>p</emphasis> of <emphasis role="bold">b</emphasis>.
-      Add the sum of these products to element <emphasis>n</emphasis> of
-      <emphasis role="bold">c</emphasis>. All additions are performed using
-      32-bit modular arithmetic.</para>
+      <para><emphasis role="bold">Result value: </emphasis>
+        There are two cases:
+	<itemizedlist>
+	  <listitem>
+	    <para>
+	      When <emphasis role="bold">a</emphasis> is of type
+	      vector signed char or vector unsigned char, each word
+	      element of <emphasis role="bold">r</emphasis> is
+	      computed as follows:
+	      <itemizedlist spacing="compact">
+		<listitem>
+		  <para>
+		    Each of the four byte elements contained in the
+		    corresponding word element of <emphasis
+		    role="bold">a</emphasis> is multiplied by the
+		    corresponding byte element of <emphasis
+		    role="bold">b</emphasis>.
+		  </para>
+		</listitem>
+		<listitem>
+		  <para>
+		    The sum of these four halfword products is added
+		    to the corresponding word element in <emphasis
+		    role="bold">c</emphasis> and placed in the
+		    corresponding word element of <emphasis
+		    role="bold">r</emphasis>.
+		  </para>
+		</listitem>
+	      </itemizedlist>
+	    </para>
+	  </listitem>
+	  <listitem>
+	    <para>
+	      When <emphasis role="bold">a</emphasis> is of type
+	      vector signed short or vector unsigned short, each word
+	      element of <emphasis role="bold">r</emphasis> is
+	      computed as follows: 
+	      <itemizedlist spacing="compact">
+		<listitem>
+		  <para>
+		    Each of the two halfword elements contained in the
+		    corresponding word element of <emphasis
+		    role="bold">a</emphasis> is multiplied by the
+		    corresponding halfword element of <emphasis
+		    role="bold">b</emphasis>.
+		  </para>
+		</listitem>
+		<listitem>
+		  <para>
+		    The sum of these two word products is added
+		    to the corresponding word element in <emphasis
+		    role="bold">c</emphasis> and placed in the
+		    corresponding word element of <emphasis
+		    role="bold">r</emphasis>.
+		  </para>
+		</listitem>
+	      </itemizedlist>
+	    </para>
+	  </listitem>
+	</itemizedlist>
+	All operations are performed using 32-bit modular arithmetic.
+      </para>
+
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
@@ -20022,13 +20123,13 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <title>vec_mtvscr</title>
       <subtitle>Vector Move to Vector Status and Control Register</subtitle>
       <programlisting>
-      r = vec_mtvscr (a)
+      vec_mtvscr (a)
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
-      Copies the given value into the Vector Status and Control Register.
-      The low-order 32 bits of <emphasis role="bold">a</emphasis> are copied
-      into the VSCR.
+      Copies a value into the Vector Status and Control Register
+      (VSCR).  The low-order 32 bits of <emphasis
+      role="bold">a</emphasis> are copied into the VSCR.
       </para>
 
       <para><emphasis role="bold">Result value:</emphasis> None.</para>
@@ -20044,17 +20145,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 
       <table frame="all">
       <title>Supported type signatures for vec_mtvscr</title>
-      <tgroup cols="3">
+      <tgroup cols="2">
           <colspec colname="c1" colwidth="20*" />
           <colspec colname="c2" colwidth="20*" />
-          <colspec colname="c3" colwidth="20*" />
           <thead>
             <row>
-              <entry align="center">
-                <para>
-                  <emphasis role="bold">r</emphasis>
-                </para>
-              </entry>
               <entry align="center">
                 <para>
                   <emphasis role="bold">a</emphasis>
@@ -20069,9 +20164,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
           <tbody>
             <row>
               <entry align="center" valign="middle">
-                <para>void</para>
-              </entry>
-              <entry align="center" valign="middle">
                 <para>vector bool char</para>
               </entry>
               <entry>
@@ -20081,9 +20173,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               </entry>
             </row>
             <row>
-              <entry align="center" valign="middle">
-                <para>void</para>
-              </entry>
               <entry align="center" valign="middle">
                 <para>vector signed char</para>
               </entry>
@@ -20095,9 +20184,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
             </row>
             <row>
               <entry align="center" valign="middle">
-                <para>void</para>
-              </entry>
-              <entry align="center" valign="middle">
                 <para>vector unsigned char</para>
               </entry>
               <entry>
@@ -20107,9 +20193,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               </entry>
             </row>
             <row>
-              <entry align="center" valign="middle">
-                <para>void</para>
-              </entry>
               <entry align="center" valign="middle">
                 <para>vector bool int</para>
               </entry>
@@ -20121,9 +20204,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
             </row>
             <row>
               <entry align="center" valign="middle">
-                <para>void</para>
-              </entry>
-              <entry align="center" valign="middle">
                 <para>vector signed int</para>
               </entry>
               <entry>
@@ -20133,9 +20213,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               </entry>
             </row>
             <row>
-              <entry align="center" valign="middle">
-                <para>void</para>
-              </entry>
               <entry align="center" valign="middle">
                 <para>vector unsigned int</para>
               </entry>
@@ -20147,9 +20224,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
             </row>
             <row>
               <entry align="center" valign="middle">
-                <para>void</para>
-              </entry>
-              <entry align="center" valign="middle">
                 <para>vector pixel</para>
               </entry>
               <entry>
@@ -20159,9 +20233,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               </entry>
             </row>
             <row>
-              <entry align="center" valign="middle">
-                <para>void</para>
-              </entry>
               <entry align="center" valign="middle">
                 <para>vector bool short</para>
               </entry>
@@ -20173,9 +20244,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
             </row>
             <row>
               <entry align="center" valign="middle">
-                <para>void</para>
-              </entry>
-              <entry align="center" valign="middle">
                 <para>vector signed short</para>
               </entry>
               <entry>
@@ -20185,9 +20253,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               </entry>
             </row>
             <row>
-              <entry align="center" valign="middle">
-                <para>void</para>
-              </entry>
               <entry align="center" valign="middle">
                 <para>vector unsigned short</para>
               </entry>
@@ -20212,8 +20277,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
-      Returns a vector containing the results of performing a multiply
-      operation using the source vectors.
+        Compute the products of corresponding elements of two vectors.
       </para>
       <para><emphasis role="bold">Result value: </emphasis>Each element of
       <emphasis role="bold">r</emphasis> receives the product of
@@ -20970,7 +21034,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </para>
       <para><emphasis role="bold">Result value: </emphasis>The value of each
       element of <emphasis role="bold">r</emphasis> is the negated absolute
-      value of the fcorresponding element of <emphasis
+      value of the corresponding element of <emphasis
       role="bold">a</emphasis>. For integer vectors, the arithmetic is
       modular.</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
@@ -21147,7 +21211,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
-      Performs a bitwise NAND of the given vectors.
+      Performs a bitwise NAND of two vectors.
       </para>
       <para><emphasis role="bold">Result value: r</emphasis> is the bitwise
       NAND of <emphasis role="bold">a</emphasis> and <emphasis
@@ -21448,9 +21512,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       programming model.
       </para>
 
-      <para><emphasis role="bold">Notes:</emphasis> This intrinsic may
-      not yet be available in all implementations.</para>
-      
       <indexterm>
 	<primary>vncipher</primary>
 	<secondary>vec_ncipher_be</secondary>
@@ -21536,9 +21597,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       programming model.
       </para>
 
-      <para><emphasis role="bold">Notes:</emphasis> This intrinsic may
-      not yet be available in all implementations.</para>
-      
       <indexterm>
 	<primary>vncipherlast</primary>
 	<secondary>vec_ncipherlast_be</secondary>
@@ -21608,12 +21666,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       Returns a vector containing the floating-point integral values nearest to
       the values of the corresponding elements of the source vector.
       </para>
-      <para><emphasis role="bold">Result value: </emphasis>Each element of
-      <emphasis role="bold">r</emphasis> contains the nearest representable
-      floating-point integral value to the value of the corresponding element
-      of <emphasis role="bold">a</emphasis>. When an input element value is
-      exactly between two integer values, the input value with the larger
-      absolute value is selected.</para>
+      <para><emphasis role="bold">Result value: </emphasis>Each
+      element of <emphasis role="bold">r</emphasis> contains the
+      nearest representable floating-point integral value to the value
+      of the corresponding element of <emphasis
+      role="bold">a</emphasis>. When an input element value is exactly
+      between two integer values, the input value with the larger
+      absolute value is selected.  The current floating-point rounding
+      mode is ignored.</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
@@ -22075,7 +22135,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
-      Performs a bitwise NOR of the given vectors.
+      Performs a bitwise NOR of two vectors.
       </para>
       <para><emphasis role="bold">Result value: r</emphasis> is the bitwise NOR
       of <emphasis role="bold">a</emphasis> and <emphasis
@@ -22358,7 +22418,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
-      Performs a bitwise OR of the given vectors.
+      Performs a bitwise OR of two vectors.
       </para>
       <para><emphasis role="bold">Result value: r</emphasis> is the bitwise OR
       of <emphasis role="bold">a</emphasis> and <emphasis
@@ -24033,8 +24093,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
-      Returns a vector that contains elements selected from two input
-      vectors, in the order specified by a third input vector.
+      Returns a vector that contains elements selected from two
+      vectors, in the order specified by a third vector.
       </para>
       <para><emphasis role="bold">Result value: </emphasis>Let <emphasis
       role="bold">v</emphasis> be the concatenation of <emphasis
@@ -24060,10 +24120,12 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 	</listitem>
 	<listitem>
 	  <para>
-	    The <code>vec_perm</code> built-in should only use permutations
-	    that reorder vector elements of the specified type, not to reorder
-	    bytes within those elements.  The results are not guaranteed to be
-	    consistent across big- and little-endian if you violate this rule.
+	    The <code>vec_perm</code> built-in should only use
+	    permutations that reorder vector elements of the specified
+	    type, not to reorder bytes within those elements.  The
+	    results are not guaranteed to be consistent across big-
+	    and little-endian if you violate this rule.  See <xref
+	    linkend="VIPR.biendian.vperm" />.
 	  </para>
 	</listitem>
       </itemizedlist>
@@ -24492,8 +24554,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
-      Applies a permute and exclusive-OR operation on two input vectors of byte
-      elements, with the selected elements identified by a third input vector.
+      Applies a permute and exclusive-OR operation on two vectors of byte
+      elements, with the selected elements identified by a third vector.
       </para>
       <para><emphasis role="bold">Result value: </emphasis>For each
       <emphasis>i</emphasis> (0 ≤ <emphasis>i</emphasis> &lt; 16), let
@@ -24801,7 +24863,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 
       <para><emphasis role="bold">Purpose:</emphasis>
       Returns a vector containing the number of bits set in each element of
-      the input vector.
+      the source vector.
       </para>
       <para><emphasis role="bold">Result value: </emphasis>The value of each
       element of <emphasis role="bold">r</emphasis> is the number of bits set
@@ -24972,7 +25034,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 
       <para><emphasis role="bold">Purpose:</emphasis>
       Returns a vector containing estimates of the reciprocals of the
-      corresponding elements of the input vector.
+      corresponding elements of the source vector.
       </para>
       <para><emphasis role="bold">Result value: </emphasis>Each element of
       <emphasis role="bold">r</emphasis> contains the estimated value of the
@@ -24980,6 +25042,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       role="bold">a</emphasis>.</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
+      </para>
+      <para><emphasis role="bold">Notes:</emphasis>
+        For finite reciprocals, this intrinsic guarantees at least 14
+	bits of accuracy.
       </para>
       
       <indexterm>
@@ -25056,17 +25122,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
-      Returns a vector containing refined approximations of the division of
-      the corresponding elements of <emphasis role="bold">a</emphasis> by the
-      corresponding elements of <emphasis role="bold">b</emphasis>. This
-      built-in function provides an implementation-dependent precision, which
-      is commonly within 2 ulps (units in the last place) for most of the
-      numeric range expressible by
-      the input operands. This built-in function does not correspond to a
-      single IEEE operation and does not provide the overflow, underflow, and
-      NaN propagation characteristics specified for IEEE division. (Precision
-      may be a function of both the specified target processor model during
-      compilation and the actual processor on which a program is executed.)
+      Returns a vector containing refined approximations of the
+      division of the corresponding elements of <emphasis
+      role="bold">a</emphasis> by the corresponding elements of
+      <emphasis role="bold">b</emphasis>.
       </para>
       <para><emphasis role="bold">Result value: </emphasis>Each element of
       <emphasis role="bold">r</emphasis> contains a refined approximation of
@@ -25076,10 +25135,34 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
-      <para><emphasis role="bold">Notes:</emphasis> The example implementation
-      for vector double assumes that a register <emphasis>z</emphasis>
-      initially contains the double-precision floating-point value 1.0
-      in each doubleword.</para>
+      <para><emphasis role="bold">Notes:</emphasis>
+        <itemizedlist spacing="compact">
+	  <listitem>
+	    <para>
+	      The example implementation for vector double assumes
+	      that a register <emphasis>z</emphasis> initially
+	      contains the double-precision floating-point value 1.0
+	      in each doubleword.
+	    </para>
+	  </listitem>
+	  <listitem>
+	    <para>
+              For finite reciprocals, this intrinsic guarantees at
+	      least 23 bits of accuracy for single-precision floating
+	      point, and at least 52 bits of accuracy for
+	      double-precision floating point.
+	    </para>
+	  </listitem>
+	  <listitem>
+	    <para>
+	      This built-in function does not correspond to a single
+	      IEEE operation and does not provide the overflow,
+	      underflow, and NaN propagation characteristics specified
+	      for IEEE division.
+	    </para>
+	  </listitem>
+	</itemizedlist>
+      </para>
       
       <indexterm>
 	<primary>xvredp</primary>
@@ -25542,7 +25625,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       Reverse the elements of a vector.
       </para>
       <para><emphasis role="bold">Result value: </emphasis>Returns a vector
-      with the elements of the input vector in reversed order.</para>
+      with the elements of the source vector in reversed order.</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       The vpermr instruction is most naturally used to implement this built-in
       function for a little-endian target, and the vperm instruction for a
@@ -25787,7 +25870,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 
       <para><emphasis role="bold">Purpose:</emphasis>
       Returns a vector containing the floating-point integral values nearest
-      to the values of the corresponding elements of the given vector.
+      to the values of the corresponding elements of the source vector.
       </para>
       <para><emphasis role="bold">Result value: </emphasis>Each element of
       <emphasis role="bold">r</emphasis> contains the nearest representable
@@ -26355,13 +26438,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 
       <para><emphasis role="bold">Purpose:</emphasis>
       Returns a vector containing the rounded values of the corresponding
-      elements of the given vector.
+      elements of the source vector.
       </para>
       <para><emphasis role="bold">Result value: </emphasis>Each element of
       <emphasis role="bold">r</emphasis> contains the value of the
       corresponding element of <emphasis role="bold">a</emphasis>, rounded
       to the nearest representable floating-point integer, using IEEE
-      round-to-nearest rounding.</para>
+      round-to-nearest rounding.  The current floating-point rounding
+      mode is ignored.</para>
       <para><emphasis role="bold">Notes:</emphasis> This function might not
       follow the strict operation definition of the resolution of a tie during
       a round if the -qstrict=nooperationprecision compiler option is
@@ -26445,7 +26529,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 
       <para><emphasis role="bold">Purpose:</emphasis>
       Returns a vector containing a refined approximation of the reciprocal
-      square roots of the corresponding elements of the given vector. This
+      square roots of the corresponding elements of the source vector. This
       function provides an implementation-dependent greater precision than
       <emphasis role="bold">vec_rsqrte</emphasis>.</para>
       <para><emphasis role="bold">Result value: </emphasis>Each element of
@@ -26455,10 +26539,26 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
-      <para><emphasis role="bold">Notes:</emphasis> The example implementations
-      assume that a register <emphasis role="bold">h</emphasis> initially
-      contains the floating-point value 0.5 in each element (single- or
-      double-precision as appropriate).</para>
+      <para><emphasis role="bold">Notes:</emphasis>
+        <itemizedlist spacing="compact">
+	  <listitem>
+	    <para>
+	      The example implementations assume that a register
+	      <emphasis role="bold">h</emphasis> initially contains
+	      the floating-point value 0.5 in each element (single- or
+	      double-precision as appropriate).
+	    </para>
+	  </listitem>
+	  <listitem>
+	    <para>
+              For finite square roots, this intrinsic guarantees at
+	      least 23 bits of accuracy for single-precision floating
+	      point, and at least 52 bits of accuracy for
+	      double-precision floating point.
+	    </para>
+	  </listitem>
+	</itemizedlist>
+      </para>
       
       <indexterm>
 	<primary>xvrsqrtedp</primary>
@@ -26584,7 +26684,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 
       <para><emphasis role="bold">Purpose:</emphasis>
       Returns a vector containing estimates of the reciprocal square roots of
-      the corresponding elements of the given vector.
+      the corresponding elements of the source vector.
       </para>
       <para><emphasis role="bold">Result value: </emphasis>Each element of
       <emphasis role="bold">r</emphasis> contains the estimated value of the
@@ -26592,6 +26692,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       role="bold">a</emphasis>.</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
+      </para>
+      <para><emphasis role="bold">Notes:</emphasis>
+        For finite square roots, this intrinsic guarantees at least 14
+	bits of accuracy.
       </para>
       
       <indexterm>
@@ -26686,9 +26790,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       programming model.
       </para>
 
-      <para><emphasis role="bold">Notes:</emphasis> This intrinsic may
-      not yet be available in all implementations.</para>
-      
       <indexterm>
 	<primary>vsbox</primary>
 	<secondary>vec_sbox_be</secondary>
@@ -26746,9 +26847,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
-      Returns a vector containing the value of either <emphasis
-      role="bold">a</emphasis> or <emphasis role="bold">b</emphasis>
-      depending on the value of <emphasis role="bold">c</emphasis>.
+      Returns a vector selecting bits from two source vectors
+      depending on the corresponding bit values of a third source
+      vector.
       </para>
       <para><emphasis role="bold">Result value: </emphasis>Each bit of
       <emphasis role="bold">r</emphasis> has the value of the corresponding
@@ -27497,7 +27598,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>const int</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>const int</para>
+                <para>4-bit unsigned literal</para>
               </entry>
               <entry>
                 <programlisting>
@@ -27513,10 +27614,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>vector unsigned long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> const int</para>
+                <para>const int</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> const int</para>
+                <para>4-bit unsigned literal</para>
               </entry>
               <entry>
                 <programlisting>
@@ -27542,10 +27643,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       Converts a vector of floating-point numbers to a vector of signed
       integers.
       </para>
-      <para><emphasis role="bold">Result value: </emphasis>Each element of
-      <emphasis role="bold">r</emphasis> is obtained by truncating the
-      corresponding element of <emphasis role="bold">a</emphasis> to a signed
-      integer.</para>
+      <para><emphasis role="bold">Result value: </emphasis>Each
+      element of <emphasis role="bold">r</emphasis> is obtained by
+      truncating the corresponding element of <emphasis
+      role="bold">a</emphasis> to a signed integer.  The current
+      floating-point rounding mode is ignored.</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
@@ -27735,7 +27837,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
-      Converts elements of an input vector to signed integers and stores
+      Converts elements of a source vector to signed integers and stores
       them in the even-numbered elements of the result vector.
       </para>
       <para><emphasis role="bold">Result value: </emphasis>Element 0 of
@@ -27823,7 +27925,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
-      Converts elements of an input vector to signed integers and stores them
+      Converts elements of a source vector to signed integers and stores them
       in the odd-numbered elements of the result vector.
       </para>
       <para><emphasis role="bold">Result value: </emphasis>Element 1 of
@@ -28134,7 +28236,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       role="bold">a</emphasis> and <emphasis role="bold">b</emphasis> is
       done in big-endian fashion (left to right), and the shift is always
       to the left.  This will generally produce surprising results for
-      little-endian targets.
+      little-endian targets.  See also <xref
+      linkend="VIPR.biendian.sld" />.
       </para>
       
       <indexterm>
@@ -28186,10 +28289,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>vector bool char</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> vector bool char</para>
+                <para>vector bool char</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> const int</para>
+                <para>4-bit unsigned literal</para>
               </entry>
               <entry>
                 <programlisting>
@@ -28205,10 +28308,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>vector signed char</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> vector signed char</para>
+                <para>vector signed char</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> const int</para>
+                <para>4-bit unsigned literal</para>
               </entry>
               <entry>
                 <programlisting>
@@ -28224,10 +28327,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>vector unsigned char</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> vector unsigned char</para>
+                <para>vector unsigned char</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> const int</para>
+                <para>4-bit unsigned literal</para>
               </entry>
               <entry>
                 <programlisting>
@@ -28243,10 +28346,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>vector bool int</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> vector bool int</para>
+                <para>vector bool int</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> const int</para>
+                <para>4-bit unsigned literal</para>
               </entry>
               <entry>
                 <programlisting>
@@ -28262,10 +28365,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>vector signed int</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> vector signed int</para>
+                <para>vector signed int</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> const int</para>
+                <para>4-bit unsigned literal</para>
               </entry>
               <entry>
                 <programlisting>
@@ -28281,10 +28384,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>vector unsigned int</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> vector unsigned int</para>
+                <para>vector unsigned int</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> const int</para>
+                <para>4-bit unsigned literal</para>
               </entry>
               <entry>
                 <programlisting>
@@ -28300,10 +28403,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>vector bool long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> vector bool long long</para>
+                <para>vector bool long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> const int</para>
+                <para>4-bit unsigned literal</para>
               </entry>
               <entry>
                 <programlisting>
@@ -28319,10 +28422,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>vector signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> vector signed long long</para>
+                <para>vector signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> const int</para>
+                <para>4-bit unsigned literal</para>
               </entry>
               <entry>
                 <programlisting>
@@ -28338,10 +28441,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>vector unsigned long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> vector unsigned long long</para>
+                <para>vector unsigned long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> const int</para>
+                <para>4-bit unsigned literal</para>
               </entry>
               <entry>
                 <programlisting>
@@ -28357,10 +28460,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>vector pixel</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> vector pixel</para>
+                <para>vector pixel</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> const int</para>
+                <para>4-bit unsigned literal</para>
               </entry>
               <entry>
                 <programlisting>
@@ -28376,10 +28479,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>vector bool short</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> vector bool short</para>
+                <para>vector bool short</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> const int</para>
+                <para>4-bit unsigned literal</para>
               </entry>
               <entry>
                 <programlisting>
@@ -28395,10 +28498,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>vector signed short</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> vector signed short</para>
+                <para>vector signed short</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> const int</para>
+                <para>4-bit unsigned literal</para>
               </entry>
               <entry>
                 <programlisting>
@@ -28414,10 +28517,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>vector unsigned short</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> vector unsigned short</para>
+                <para>vector unsigned short</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> const int</para>
+                <para>4-bit unsigned literal</para>
               </entry>
               <entry>
                 <programlisting>
@@ -28433,10 +28536,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>vector double</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> vector double</para>
+                <para>vector double</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> const int</para>
+                <para>4-bit unsigned literal</para>
               </entry>
               <entry>
                 <programlisting>
@@ -28452,10 +28555,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>vector float</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> vector float</para>
+                <para>vector float</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> const int</para>
+                <para>4-bit unsigned literal</para>
               </entry>
               <entry>
                 <programlisting>
@@ -28478,7 +28581,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
-      Returns a vector obtained by shifting left the concatenated input
+      Returns a vector obtained by shifting left the concatenated source
       vectors by the number of specified words.
       </para>
       <para><emphasis role="bold">Result value: </emphasis>Vector <emphasis
@@ -28546,10 +28649,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>vector signed char</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> vector signed char</para>
+                <para>vector signed char</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> const int</para>
+                <para>2-bit unsigned literal</para>
               </entry>
               <entry>
                 <programlisting>
@@ -28565,10 +28668,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>vector unsigned char</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> vector unsigned char</para>
+                <para>vector unsigned char</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> const int</para>
+                <para>2-bit unsigned literal</para>
               </entry>
               <entry>
                 <programlisting>
@@ -28584,10 +28687,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>vector signed int</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> vector signed int</para>
+                <para>vector signed int</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> const int</para>
+                <para>2-bit unsigned literal</para>
               </entry>
               <entry>
                 <programlisting>
@@ -28603,10 +28706,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>vector unsigned int</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> vector unsigned int</para>
+                <para>vector unsigned int</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> const int</para>
+                <para>2-bit unsigned literal</para>
               </entry>
               <entry>
                 <programlisting>
@@ -28622,10 +28725,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>vector signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> vector signed long long</para>
+                <para>vector signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> const int</para>
+                <para>2-bit unsigned literal</para>
               </entry>
               <entry>
                 <programlisting>
@@ -28641,10 +28744,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>vector unsigned long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> vector unsigned long long</para>
+                <para>vector unsigned long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> const int</para>
+                <para>2-bit unsigned literal</para>
               </entry>
               <entry>
                 <programlisting>
@@ -28660,10 +28763,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>vector signed short</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> vector signed short</para>
+                <para>vector signed short</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> const int</para>
+                <para>2-bit unsigned literal</para>
               </entry>
               <entry>
                 <programlisting>
@@ -28679,10 +28782,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>vector unsigned short</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> vector unsigned short</para>
+                <para>vector unsigned short</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> const int</para>
+                <para>2-bit unsigned literal</para>
               </entry>
               <entry>
                 <programlisting>
@@ -31159,7 +31262,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       vec_sro in big-endian code must be rewritten for little-endian targets.
       The shift count is in element 15 of <emphasis role="bold">b</emphasis>
       for big-endian, but in element 0 of <emphasis role="bold">b</emphasis>
-      for little-endian.
+      for little-endian.  See also <xref linkend="VIPR.biendian.sld" />.
       </para>
       
       <indexterm>
@@ -32200,6 +32303,12 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
+      <para>
+	<emphasis role="bold">Notes:</emphasis>
+	Be careful to note that the address (b+c) is aligned to an
+	element boundary.  Do not attempt to store unaligned data with
+	this intrinsic.
+      </para>
       
       <indexterm>
 	<primary>stvebx</primary>
@@ -32513,6 +32622,12 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       line is marked as least frequently used.</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
+      </para>
+      <para><emphasis role="bold">Notes:</emphasis>
+        This intrinsic can be used to indicate the last	access to a
+	portion of memory, as a hint to the data cache controller that
+	the associated cache line can be replaced without performance
+	loss.
       </para>
       
       <indexterm>
@@ -33342,8 +33457,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
-      Returns a vector containing the carry produced by subtracting each set
-      of corresponding elements of the given vectors.
+      Returns a vector wherein each element contains the carry
+      produced by subtracting the corresponding elements of the two
+      source vectors.
       </para>
       <para><emphasis role="bold">Result value: </emphasis>The value of each
       element of <emphasis role="bold">r</emphasis> is the complement of the
@@ -33488,6 +33604,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
+      </para>
+      <para><emphasis role="bold">Notes:</emphasis>
+      Code generated for this intrinsic should ensure only the
+      low-order bit of <emphasis role="bold">c</emphasis> participates
+      in the sum.
       </para>
       
       <indexterm>
@@ -33654,6 +33775,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       is a carry, 0 otherwise).</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
+      </para>
+      <para><emphasis role="bold">Notes:</emphasis>
+      Code generated for this intrinsic should ensure only the
+      low-order bit of <emphasis role="bold">c</emphasis> participates
+      in the sum.
       </para>
       
       <indexterm>
@@ -34102,14 +34228,34 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       operation within each word of the first source vector together with
       accumulated results in the second source vector.
       </para>
-      <para><emphasis role="bold">Result value: </emphasis>If <emphasis
-      role="bold">a</emphasis> is a vector of signed or unsigned char, then
-      let <emphasis>m</emphasis> be 4; otherwise, let <emphasis>m</emphasis>
-      be 2. For each element <emphasis>n</emphasis> of the result vector, the
-      value is obtained by adding elements <emphasis>mn</emphasis> through
-      <emphasis>mn</emphasis> + <emphasis>m</emphasis> – 1 of <emphasis
-      role="bold">a</emphasis> and element <emphasis>n</emphasis> of <emphasis
-      role="bold">b</emphasis> using saturated addition.</para>
+      <para><emphasis role="bold">Result value: </emphasis>
+      There are two cases:
+        <itemizedlist>
+	  <listitem>
+	    <para>
+	      <emphasis role="bold">a</emphasis> is a vector of signed
+	      or unsigned char.  For each element
+	      <emphasis>n</emphasis> of the result vector, the value
+	      is obtained by adding elements 4<emphasis>n</emphasis>
+	      through 4<emphasis>n</emphasis> + 3 of <emphasis
+	      role="bold">a</emphasis> and element
+	      <emphasis>n</emphasis> of <emphasis
+	      role="bold">b</emphasis> using saturated addition.
+	    </para>
+	  </listitem>
+	  <listitem>
+	    <para>
+	      <emphasis role="bold">a</emphasis> is a vector of signed
+	      short.  For each element <emphasis>n</emphasis> of the
+	      result vector, the value is obtained by adding elements
+	      2<emphasis>n</emphasis> and 2<emphasis>n</emphasis> + 1
+	      of <emphasis role="bold">a</emphasis> and element
+	      <emphasis>n</emphasis> of <emphasis
+	      role="bold">b</emphasis> using saturated addition.
+	    </para>
+	  </listitem>
+	</itemizedlist>
+      </para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
@@ -34397,7 +34543,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>vector float</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>const int</para>
+                <para>7-bit unsigned literal</para>
               </entry>
               <entry>
                 <programlisting>
@@ -34416,7 +34562,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>vector double</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> const int</para>
+                <para>7-bit unsigned literal</para>
               </entry>
               <entry>
                 <programlisting>
@@ -34443,7 +34589,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 
       <para><emphasis role="bold">Purpose:</emphasis>
       Returns a vector containing the truncated values of the corresponding
-      elements of the given vector.
+      elements of the source vector.
       </para>
       <para><emphasis role="bold">Result value: </emphasis>Each element of
       <emphasis role="bold">r</emphasis> contains the value of the
@@ -35099,7 +35245,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <para><emphasis role="bold">Result value: </emphasis>Each element of
       <emphasis role="bold">r</emphasis> is obtained by truncating the
       corresponding element of <emphasis role="bold">a</emphasis> to an
-      unsigned integer.</para>
+      unsigned integer.  The current floating-point rounding mode is
+      ignored.</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
@@ -35186,7 +35333,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       role="bold">a</emphasis> and <emphasis role="bold">b</emphasis>.  Each
       element of <emphasis role="bold">r</emphasis> is obtained by truncating
       the corresponding element of <emphasis role="bold">v</emphasis> to an
-      unsigned 32-bit integer.</para>
+      unsigned 32-bit integer.  The current floating-point rounding
+      mode is ignored.</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       The element numbering within a register is left-to-right for big-endian
       targets, and right-to-left for little-endian targets.
@@ -35290,7 +35438,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
-      Converts elements of an input vector to unsigned integers and stores
+      Converts elements of the source vector to unsigned integers and stores
       them in the even-numbered elements of the result vector.
       </para>
       <para><emphasis role="bold">Result value: </emphasis>Element 0 of
@@ -35380,7 +35528,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
-      Converts elements of an input vector to unsigned integers and stores
+      Converts elements of the source vector to unsigned integers and stores
       them in the odd-numbered elements of the result vector.
       </para>
       <para><emphasis role="bold">Result value: </emphasis> Element 1 of
@@ -35502,7 +35650,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 	    GCC provides a commonly used synonym for vec_xl called
 	    vec_vsx_ld.  Although these have the same behavior, only
 	    vec_xl is guaranteed to be portable across compliant
-	    compilers.  vec_xl should be preferred.
+	    compilers.  Therefore vec_xl is preferred.
 	  </para>
 	</listitem>
       </itemizedlist>
@@ -36428,6 +36576,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
+      <para><emphasis role="bold">Notes:</emphasis> vec_xl_len_r should
+      not be used to load from cache-inhibited memory.</para>
       
       <indexterm>
 	<primary>sldi</primary>
@@ -36518,7 +36668,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
-      Performs a bitwise XOR of the given vectors.
+      Performs a bitwise XOR of two vectors.
       </para>
       <para><emphasis role="bold">Result value: v</emphasis> is the bitwise
       exclusive OR of <emphasis role="bold">a</emphasis> and <emphasis
@@ -36833,7 +36983,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 	    GCC provides a commonly used synonym for vec_xst called
 	    vec_vsx_st.  Although these have the same behavior, only
 	    vec_xst is guaranteed to be portable across compliant
-	    compilers.  vec_xst should be preferred.
+	    compilers.  Therefore vec_xst is preferred.
 	  </para>
 	</listitem>
       </itemizedlist>
@@ -37439,6 +37589,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
+      <para><emphasis role="bold">Notes:</emphasis> vec_xst_len should
+      not be used to store to cache-inhibited memory.</para>
       
       <indexterm>
 	<primary>sldi</primary>
@@ -37753,6 +37905,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
+      <para><emphasis role="bold">Notes:</emphasis> vec_xst_len_r should
+      not be used to store to cache-inhibited memory.</para>
       
       <indexterm>
 	<primary>lvsr</primary>
@@ -37834,4 +37988,5 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
     </simplesect>
 
   </section>
+
 </chapter>

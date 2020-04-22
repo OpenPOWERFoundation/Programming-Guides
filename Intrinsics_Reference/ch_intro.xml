@@ -72,8 +72,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_intro">
     </para>
     <para>
       IBM extended VMX by introducing the Vector-Scalar Extension
-      (VSX) for the POWER7 family of processors.  VSX adds 64 logical
-      Vector Scalar Registers (VSRs); however, to optimize the amount
+      (VSX) for the POWER7 family of processors.  VSX adds sixty-four
+      128-bit vector-scalar registers (VSRs); however, to optimize the amount
       of per-process register state, the registers overlap with the
       VRs and the scalar floating-point registers (FPRs) (see <xref
       linkend="VIPR.intro.unified" />).  The VSRs can represent all
@@ -88,7 +88,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_intro">
       Both the VMX and VSX instruction sets have been expanded for the
       POWER8 and POWER9 processor families.  Starting with POWER8,
       a VSR can now contain a single 128-bit integer; and starting
-      with POWER9, a VSR can contain a single 128-bit floating-point
+      with POWER9, a VSR can contain a single 128-bit IEEE floating-point
       value.  Again, the ISA currently only supports 128-bit
       operations on values in the VRs.
     </para>
@@ -265,9 +265,40 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_intro">
       </listitem>
       <listitem>
 	<para>
+	  <emphasis>POWER8 Processor User's Manual for the Single-Chip
+	  Module.</emphasis>
+	  <emphasis>
+	    <link xlink:href="https://ibm.ent.box.com/s/649rlau0zjcc0yrulqf4cgx5wk3pgbfk">https://ibm.ent.box.com/s/649rlau0zjcc0yrulqf4cgx5wk3pgbfk
+	    </link>
+	  </emphasis>
+	</para>
+      </listitem>
+      <listitem>
+	<para>
+	  <emphasis>POWER9 Processor User's Manual.</emphasis>
+	  <emphasis>
+	    <link
+		xlink:href="https://ibm.ent.box.com/s/tmklq90ze7aj8f4n32er1mu3sy9u8k3k">https://ibm.ent.box.com/s/tmklq90ze7aj8f4n32er1mu3sy9u8k3k
+	    </link>
+	  </emphasis>
+	</para>
+      </listitem>
+      <listitem>
+	<para>
 	  <emphasis>Power Vector Library.</emphasis>
 	  <emphasis>
 	    <link xlink:href="https://github.com/open-power-sdk/pveclib">https://github.com/open-power-sdk/pveclib
+	    </link>
+	  </emphasis>
+	</para>
+      </listitem>
+      <listitem>
+	<para>
+	  <emphasis>POWER8 In-Core Cryptography: The Unofficial
+	  Guide.</emphasis>
+	  <emphasis>
+	    <link
+		xlink:href="https://github.com/noloader/POWER8-crypto/blob/master/power8-crypto.pdf">https://github.com/noloader/POWER8-crypto/blob/master/power8-crypto.pdf
 	    </link>
 	  </emphasis>
 	</para>

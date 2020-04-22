@@ -80,9 +80,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.biendian">
       <code>__vector</code>, <code>__pixel</code>, and
       <code>__bool</code>.  These keywords are used to specify vector
       data types (<xref linkend="VIPR.ch-data-types" />).  Because
-      these identifiers may conflict with keywords in more recent C
-      and C++ language standards, compilers may implement these in one
-      of two ways.
+      these identifiers may conflict with keywords in more recent
+      language standards for C and C++, compilers may implement these
+      in one of two ways.
     </para>
     <itemizedlist>
       <listitem>
@@ -104,6 +104,16 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.biendian">
 	</para>
       </listitem>
     </itemizedlist>
+    <para>
+      As a motivating example, the <emphasis
+      role="bold">vector</emphasis> token is used as a type in the
+      C++ Standard Template Library, and hence cannot be used as an
+      unrestricted keyword, but can be used in the context-sensitive
+      implementation.  For example, <emphasis role="bold">vector
+      char</emphasis> is distinct from <emphasis
+      role="bold">std::vector</emphasis> in the context-sensitive
+      implementation.
+    </para>
     <para>
       Vector literals may be specified using a type cast and a set of
       literal initializers in parentheses or braces.  For example,
@@ -129,16 +139,15 @@ vector double g = (vector double) { 3.5, -24.6 };</programlisting>
     </para> 
     <para>
       For the C and C++ programming languages (and related/derived
-      languages), these data types may be accessed based on the type
-      names listed in <xref linkend="VIPR.biendian.vectypes" /> when
-      Power SIMD language extensions are enabled using either the
-      <code>vector</code> or <code>__vector</code> keywords.  Note
-      that the ELFv2 ABI for Power also includes a <code>vector
-      _Float16</code> data type.  However, no Power compilers have yet
-      implemented such a type, and it is not clear that this will
-      change anytime soon.  Thus this document has removed the
-      <code>vector _Float16</code> data type, and all intrinsics that
-      reference it.
+      languages), the "Power SIMD C Types" listed in the leftmost
+      column of <xref linkend="VIPR.biendian.vectypes" /> may be used
+      when Power SIMD language extensions are enabled.  Either
+      <code>vector</code> or <code>__vector</code> may be used in the
+      type name.  Note that the ELFv2 ABI for Power also includes a
+      <code>vector _Float16</code> data type.  As of this writing, no
+      current compilers for Power have implemented such a type.  This
+      document does not include that type or any intrinsics related to
+      it.
     </para> 
     <para>
       For the Fortran language, <xref
@@ -158,8 +167,8 @@ vector double g = (vector double) { 3.5, -24.6 };</programlisting>
       Pointers to vector types are defined like pointers of other
       C/C++ types. Pointers to vector objects may be defined to have
       const and volatile properties.  Pointers to vector objects must
-      be divisible by 16, as vector objects are always aligned on
-      quadword (128-bit) boundaries.
+      be addresses divisible by 16, as vector objects are always
+      aligned on quadword (16-byte, or 128-bit) boundaries.
     </para>
     <para>
       The preferred way to access vectors at an application-defined
@@ -172,7 +181,8 @@ vector double g = (vector double) { 3.5, -24.6 };</programlisting>
       <emphasis>not</emphasis> be used to access data that is not
       aligned at least to a quadword boundary.  Built-in functions
       such as <code>vec_xl</code> and <code>vec_xst</code> are
-      provided for unaligned data access.
+      provided for unaligned data access.  Please refer to <xref
+      linkend="VIPR.biendian.unaligned" /> for an example.
     </para>
     <para>
       One vector type may be cast to another vector type without
@@ -182,7 +192,8 @@ vector double g = (vector double) { 3.5, -24.6 };</programlisting>
     <para>
       Compilers are expected to recognize and optimize multiple
       operations that can be optimized into a single hardware
-      instruction. For example, a load and splat hardware instruction
+      instruction. For example, a load-and-splat hardware instruction
+      (such as <emphasis role="bold">lxvdsx</emphasis>)
       might be generated for the following sequence:
     </para>
     <programlisting>double *double_ptr;
@@ -484,35 +495,55 @@ register vector double vd = vec_splats(*double_ptr);</programlisting>
     </para>
     <para>
       The traditional C/C++ operators are defined on vector types
-      with “do all” semantics for unary and binary <code>+</code>,
+      for unary and binary <code>+</code>,
       unary and binary &#8211;, binary <code>*</code>, binary
       <code>%</code>, and binary <code>/</code> as well as the unary
       and binary shift, logical and comparison operators, and the
-      ternary <code>?:</code> operator.
+      ternary <code>?:</code> operator.  These operators perform their
+      operations "elementwise" on the base elements of the operands,
+      as follows.
     </para>
     <para>
       For unary operators, the specified operation is performed on
-      the corresponding base element of the single operand to derive
-      the result value for each vector element of the vector
+      each base element of the single operand to derive the result
+      value placed into the corresponding element of the vector
       result. The result type of unary operations is the type of the
-      single input operand.
+      single operand.  For example,
     </para>
+    <programlisting>vector signed int a, b;
+a = -b;</programlisting>
+    <para>
+      produces the same result as
+    </para>
+    <programlisting>vector signed int a, b;
+a = vec_neg (b);</programlisting>
     <para>
       For binary operators, the specified operation is performed on
-      the corresponding base elements of both operands to derive the
-      result value for each vector element of the vector
-      result. Both operands of the binary operators must have the
-      same vector type with the same base element type. The result
-      of binary operators is the same type as the type of the input
-      operands.
-    </para> 
+      corresponding base elements of both operands to derive the
+      result value for each vector element of the vector result. Both
+      operands of the binary operators must have the same vector type
+      with the same base element type. The result of binary operators
+      is the same type as the type of the operands.  For example,
+    </para>
+    <programlisting>vector signed int a, b;
+a = a + b;</programlisting>
+    <para>
+      produces the same result as
+    </para>
+    <programlisting>vector signed int a, b;
+a = vec_add (a, b);</programlisting>
     <para>
       Further, the array reference operator may be applied to vector
       data types, yielding an l-value corresponding to the specified
       element in accordance with the vector element numbering rules (see 
       <xref linkend="VIPR.biendian.layout" />). An l-value may either
-      be assigned a new value or accessed for reading its value.
+      be assigned a new value or accessed for reading its value.  For
+      example,
     </para>
+    <programlisting>vector signed int a;
+signed int b, c;
+b = a[0];
+a[3] = c;</programlisting>
   </section>
 
   <section xml:id="VIPR.biendian.layout">
@@ -584,6 +615,12 @@ register vector double vd = vec_splats(*double_ptr);</programlisting>
         </tbody>
       </tgroup>
     </informaltable>
+    <para>
+      This is no longer as useful as it once was.  The primary use
+      case was for big-endian vector layout in little-endian
+      environments, which is now deprecated as discussed in <xref
+      linkend="VIPR.biendian.BELE" />.
+    </para>
     <note>
       <para>
 	Note that each element in a vector has the same representation
@@ -632,7 +669,7 @@ register vector double vd = vec_splats(*double_ptr);</programlisting>
       compiler implementation for both BE and LE.  These sample
       implementations are only intended as examples; designers of a
       compiler are free to use other methods to implement the
-      specified semantics as they see fit.
+      specified semantics.
     </para>
     <section>
       <title>Extended Data Movement Functions</title>
@@ -642,7 +679,7 @@ register vector double vd = vec_splats(*double_ptr);</programlisting>
 	store instructions and provide access to the “auto-aligning”
 	memory instructions of the VMX ISA where low-order address
 	bits are discarded before performing a memory access. These
-	instructions access load and store data in accordance with the
+	instructions load and store data in accordance with the
 	program's current endian mode, and do not need to be adapted
 	by the compiler to reflect little-endian operation during code
 	generation.
@@ -744,31 +781,31 @@ register vector double vd = vec_splats(*double_ptr);</programlisting>
         </tgroup>
       </table>
       <para>
-	Previous versions of the VMX built-in functions defined
-	intrinsics to access the VMX instructions <code>lvsl</code>
-	and <code>lvsr</code>, which could be used in conjunction with
+	Before the bi-endian programming model was introduced, the
+	<code>vec_lvsl</code> and <code>vec_lvsr</code> intrinsics
+	were supported.  These could be used in conjunction with
 	<code>vec_perm</code> and VMX load and store instructions for
 	unaligned access. The <code>vec_lvsl</code> and
 	<code>vec_lvsr</code> interfaces are deprecated in accordance
 	with the interfaces specified here. For compatibility, the
 	built-in pseudo sequences published in previous VMX documents
 	continue to work with little-endian data layout and the
-	little-endian vector layout described in this
-	document. However, the use of these sequences in new code is
-	discouraged and usually results in worse performance. It is
-	recommended (but not required) that compilers issue a warning
-	when these functions are used in little-endian
-	environments.
+	little-endian vector layout described in this document.
+	However, the use of these sequences in new code is discouraged
+	and usually results in worse performance. It is recommended
+	that compilers issue a warning when these functions are used
+	in little-endian environments.
       </para>
       <para>
-	It is recommended that programmers use the <code>vec_xl</code>
-	and <code>vec_xst</code> vector built-in functions to access
-	unaligned data streams.  See the descriptions of these
-	instructions in <xref linkend="VIPR.vec-ref" /> for further
-	description and implementation details.
+	Instead, it is recommended that programmers use the
+	<code>vec_xl</code> and <code>vec_xst</code> vector built-in
+	functions to access unaligned data streams.  See the
+	descriptions of these instructions in <xref
+	linkend="VIPR.vec-ref" /> for further description and
+	implementation details.
       </para>
     </section>
-    <section>
+    <section xml:id="VIPR.biendian.BELE">
       <title>Big-Endian Vector Layout in Little-Endian Environments
       (Deprecated)</title>
       <para>
@@ -1047,7 +1084,7 @@ register vector double vd = vec_splats(*double_ptr);</programlisting>
 
   <section>
     <title>Examples and Limitations</title>
-    <section>
+    <section xml:id="VIPR.biendian.unaligned">
       <title>Unaligned vector access</title>
       <para>
 	A common programming error is to cast a pointer to a base type
@@ -1070,8 +1107,8 @@ register vector double vd = vec_splats(*double_ptr);</programlisting>
       <programlisting>  int a[4096];
   vector int x = vec_xl (0, a);</programlisting>
     </section>
-    <section>
-      <title>vec_sld is not bi-endian</title>
+    <section xml:id="VIPR.biendian.sld">
+      <title>vec_sld and vec_sro are not bi-endian</title>
       <para>
 	One oddity in the bi-endian vector programming model is that
 	<code>vec_sld</code> has big-endian semantics for code
@@ -1099,7 +1136,7 @@ register vector double vd = vec_splats(*double_ptr);</programlisting>
 	<code>vec_sro</code> is not bi-endian for similar reasons.
       </para>
     </section>
-    <section>
+    <section xml:id="VIPR.biendian.vperm">
       <title>Limitations on bi-endianness of vec_perm</title>
       <para>
 	The <code>vec_perm</code> intrinsic is bi-endian, provided
