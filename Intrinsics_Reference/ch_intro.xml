@@ -201,14 +201,13 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_intro">
       </listitem>
       <listitem>
 	<para>
-	  <emphasis role="underline">The XL compilers</emphasis>.
+	  <emphasis role="underline">The XL compilers</emphasis>.  For
+	  XL compilers provided with the Linux Community Edition, you
+	  can provide feedback to the XL compiler team via email
+	  (<email>compinfo@cn.ibm.com</email>); for other editions of
+	  XL compilers, please open a <link
+	  xlink:href="https://www.ibm.com/mysupport/s/">Case</link>.
 	</para>
-	<note>
-	  <para>
-	    Reporting procedures for XL bugs on Linux are yet to be
-	    determined.
-	  </para>
-	</note>
       </listitem>
     </itemizedlist>
   </section>
