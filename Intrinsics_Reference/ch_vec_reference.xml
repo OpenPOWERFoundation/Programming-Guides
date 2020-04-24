@@ -1705,6 +1705,78 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>int</para>
               </entry>
               <entry align="center" valign="middle">
+                <para>vector bool short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector bool short</para>
+              </entry>
+              <entry>
+                <programlisting>
+  vcmpequh.  t,a,b
+  mfocrf     u,2
+  rlwinm     r,u,25,1
+		</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector signed short</para>
+              </entry>
+              <entry>
+                <programlisting>
+  vcmpequh.  t,a,b
+  mfocrf     u,2
+  rlwinm     r,u,25,1
+		</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector unsigned short</para>
+              </entry>
+              <entry>
+                <programlisting>
+  vcmpequh.  t,a,b
+  mfocrf     u,2
+  rlwinm     r,u,25,1
+		</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector pixel</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector pixel</para>
+              </entry>
+              <entry>
+                <programlisting>
+  vcmpequh.  t,a,b
+  mfocrf     u,2
+  rlwinm     r,u,25,1
+		</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
                 <para>vector bool int</para>
               </entry>
               <entry align="center" valign="middle">
@@ -1813,70 +1885,16 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>int</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>vector pixel</para>
+                <para>vector float</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> vector pixel</para>
+                <para> vector float</para>
               </entry>
               <entry>
                 <programlisting>
-  vcmpequh.  t,a,b
-  mfocrf     u,2
-  rlwinm     r,u,25,1
-		</programlisting>
-              </entry>
-            </row>
-            <row>
-              <entry align="center" valign="middle">
-                <para>int</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para>vector bool short</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para> vector bool short</para>
-              </entry>
-              <entry>
-                <programlisting>
-  vcmpequh.  t,a,b
-  mfocrf     u,2
-  rlwinm     r,u,25,1
-		</programlisting>
-              </entry>
-            </row>
-            <row>
-              <entry align="center" valign="middle">
-                <para>int</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para>vector signed short</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para> vector signed short</para>
-              </entry>
-              <entry>
-                <programlisting>
-  vcmpequh.  t,a,b
-  mfocrf     u,2
-  rlwinm     r,u,25,1
-		</programlisting>
-              </entry>
-            </row>
-            <row>
-              <entry align="center" valign="middle">
-                <para>int</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para>vector unsigned short</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para> vector unsigned short</para>
-              </entry>
-              <entry>
-                <programlisting>
-  vcmpequh.  t,a,b
-  mfocrf     u,2
-  rlwinm     r,u,25,1
+  xvcmpeqsp.  t,a,b
+  mfocrf      u,2
+  rlwinm      r,u,25,1
 		</programlisting>
               </entry>
             </row>
@@ -1893,24 +1911,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry>
                 <programlisting>
   xvcmpeqdp.  t,a,b
-  mfocrf      u,2
-  rlwinm      r,u,25,1
-		</programlisting>
-              </entry>
-            </row>
-            <row>
-              <entry align="center" valign="middle">
-                <para>int</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para>vector float</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para> vector float</para>
-              </entry>
-              <entry>
-                <programlisting>
-  xvcmpeqsp.  t,a,b
   mfocrf      u,2
   rlwinm      r,u,25,1
 		</programlisting>
@@ -2064,6 +2064,42 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>int</para>
               </entry>
               <entry align="center" valign="middle">
+                <para>vector signed short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector signed short</para>
+              </entry>
+              <entry>
+                <programlisting>
+  vcmpgtsh.  t,b,a
+  mfocrf     u,2
+  rlwinm     r,u,27,1
+		</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector unsigned short</para>
+              </entry>
+              <entry>
+                <programlisting>
+  vcmpgtuh.  t,b,a
+  mfocrf     u,2
+  rlwinm     r,u,27,1
+		</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
                 <para>vector signed int</para>
               </entry>
               <entry align="center" valign="middle">
@@ -2136,34 +2172,16 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>int</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>vector signed short</para>
+                <para>vector float</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> vector signed short</para>
+                <para> vector float</para>
               </entry>
               <entry>
                 <programlisting>
-  vcmpgtsh.  t,b,a
-  mfocrf     u,2
-  rlwinm     r,u,27,1
-		</programlisting>
-              </entry>
-            </row>
-            <row>
-              <entry align="center" valign="middle">
-                <para>int</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para>vector unsigned short</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para> vector unsigned short</para>
-              </entry>
-              <entry>
-                <programlisting>
-  vcmpgtuh.  t,b,a
-  mfocrf     u,2
-  rlwinm     r,u,27,1
+  xvcmpgesp.  t,a,b
+  mfocrf      u,2
+  rlwinm      r,u,25,1
 		</programlisting>
               </entry>
             </row>
@@ -2180,24 +2198,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry>
                 <programlisting>
   xvcmpgedp.  t,a,b
-  mfocrf      u,2
-  rlwinm      r,u,25,1
-		</programlisting>
-              </entry>
-            </row>
-            <row>
-              <entry align="center" valign="middle">
-                <para>int</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para>vector float</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para> vector float</para>
-              </entry>
-              <entry>
-                <programlisting>
-  xvcmpgesp.  t,a,b
   mfocrf      u,2
   rlwinm      r,u,25,1
 		</programlisting>
@@ -2351,6 +2351,42 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>int</para>
               </entry>
               <entry align="center" valign="middle">
+                <para>vector signed short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector signed short</para>
+              </entry>
+              <entry>
+                <programlisting>
+  vcmpgtsh.  t,a,b
+  mfocrf     u,2
+  rlwinm     r,u,25,1
+		</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector unsigned short</para>
+              </entry>
+              <entry>
+                <programlisting>
+  vcmpgtuh.  t,a,b
+  mfocrf     u,2
+  rlwinm     r,u,25,1
+		</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
                 <para>vector signed int</para>
               </entry>
               <entry align="center" valign="middle">
@@ -2423,32 +2459,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>int</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>vector signed short</para>
+                <para>vector float</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> vector signed short</para>
+                <para> vector float</para>
               </entry>
               <entry>
                 <programlisting>
-  vcmpgtsh.  t,a,b
-  mfocrf     u,2
-  rlwinm     r,u,25,1
-		</programlisting>
-              </entry>
-            </row>
-            <row>
-              <entry align="center" valign="middle">
-                <para>int</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para>vector unsigned short</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para> vector unsigned short</para>
-              </entry>
-              <entry>
-                <programlisting>
-  vcmpgtuh.  t,a,b
+  xvcmpgtsp. t,a,b
   mfocrf     u,2
   rlwinm     r,u,25,1
 		</programlisting>
@@ -2467,24 +2485,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry>
                 <programlisting>
   xvcmpgtdp. t,a,b
-  mfocrf     u,2
-  rlwinm     r,u,25,1
-		</programlisting>
-              </entry>
-            </row>
-            <row>
-              <entry align="center" valign="middle">
-                <para>int</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para>vector float</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para> vector float</para>
-              </entry>
-              <entry>
-                <programlisting>
-  xvcmpgtsp. t,a,b
   mfocrf     u,2
   rlwinm     r,u,25,1
 		</programlisting>
@@ -2726,6 +2726,42 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>int</para>
               </entry>
               <entry align="center" valign="middle">
+                <para>vector signed short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector signed short</para>
+              </entry>
+              <entry>
+                <programlisting>
+  vcmpgtsh.  t,a,b
+  mfocrf     u,2
+  rlwinm     r,u,27,1
+		</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector unsigned short</para>
+              </entry>
+              <entry>
+                <programlisting>
+  vcmpgtuh.  t,a,b
+  mfocrf     u,2
+  rlwinm     r,u,27,1
+		</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
                 <para>vector signed int</para>
               </entry>
               <entry align="center" valign="middle">
@@ -2798,37 +2834,19 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>int</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>vector signed short</para>
+                <para>vector float</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> vector signed short</para>
+                <para> vector float</para>
               </entry>
               <entry>
                 <programlisting>
-  vcmpgtsh.  t,a,b
-  mfocrf     u,2
-  rlwinm     r,u,27,1
+  xvcmpgesp.  t,b,a
+  mfocrf      u,2
+  rlwinm      r,u,25,1
 		</programlisting>
               </entry>
-            </row>
-            <row>
-              <entry align="center" valign="middle">
-                <para>int</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para>vector unsigned short</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para> vector unsigned short</para>
-              </entry>
-              <entry>
-                <programlisting>
-  vcmpgtuh.  t,a,b
-  mfocrf     u,2
-  rlwinm     r,u,27,1
-		</programlisting>
-              </entry>
-            </row>
+	    </row>
             <row>
               <entry align="center" valign="middle">
                 <para>int</para>
@@ -2842,24 +2860,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry>
                 <programlisting>
   xvcmpgedp.  t,b,a
-  mfocrf      u,2
-  rlwinm      r,u,25,1
-		</programlisting>
-              </entry>
-            </row>
-            <row>
-              <entry align="center" valign="middle">
-                <para>int</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para>vector float</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para> vector float</para>
-              </entry>
-              <entry>
-                <programlisting>
-  xvcmpgesp.  t,b,a
   mfocrf      u,2
   rlwinm      r,u,25,1
 		</programlisting>
@@ -3012,6 +3012,42 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>int</para>
               </entry>
               <entry align="center" valign="middle">
+                <para>vector signed short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector signed short</para>
+              </entry>
+              <entry>
+                <programlisting>
+  vcmpgtsh.  t,b,a
+  mfocrf     u,2
+  rlwinm     r,u,25,1
+		</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector unsigned short</para>
+              </entry>
+              <entry>
+                <programlisting>
+  vcmpgtuh.  t,b,a
+  mfocrf     u,2
+  rlwinm     r,u,25,1
+		</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
                 <para>vector signed int</para>
               </entry>
               <entry align="center" valign="middle">
@@ -3084,34 +3120,16 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>int</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>vector signed short</para>
+                <para>vector float</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> vector signed short</para>
+                <para> vector float</para>
               </entry>
               <entry>
                 <programlisting>
-  vcmpgtsh.  t,b,a
-  mfocrf     u,2
-  rlwinm     r,u,25,1
-		</programlisting>
-              </entry>
-            </row>
-            <row>
-              <entry align="center" valign="middle">
-                <para>int</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para>vector unsigned short</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para> vector unsigned short</para>
-              </entry>
-              <entry>
-                <programlisting>
-  vcmpgtuh.  t,b,a
-  mfocrf     u,2
-  rlwinm     r,u,25,1
+  xvcmpgtsp.  t,b,a
+  mfocrf      u,2
+  rlwinm      r,u,25,1
 		</programlisting>
               </entry>
             </row>
@@ -3128,24 +3146,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry>
                 <programlisting>
   xvcmpgtdp.  t,b,a
-  mfocrf      u,2
-  rlwinm      r,u,25,1
-		</programlisting>
-              </entry>
-            </row>
-            <row>
-              <entry align="center" valign="middle">
-                <para>int</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para>vector float</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para> vector float</para>
-              </entry>
-              <entry>
-                <programlisting>
-  xvcmpgtsp.  t,b,a
   mfocrf      u,2
   rlwinm      r,u,25,1
 		</programlisting>
@@ -3222,11 +3222,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>int</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>vector double</para>
+                <para>vector float</para>
               </entry>
               <entry>
                 <programlisting>
-  xvcmpeqdp.  t,a,a
+  xvcmpeqsp.  t,a,a
   mfocrf      u,2
   rlwinm      r,u,27,1
 		</programlisting>
@@ -3237,11 +3237,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>int</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>vector float</para>
+                <para>vector double</para>
               </entry>
               <entry>
                 <programlisting>
-  xvcmpeqsp.  t,a,a
+  xvcmpeqdp.  t,a,a
   mfocrf      u,2
   rlwinm      r,u,27,1
 		</programlisting>
@@ -3397,6 +3397,78 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>int</para>
               </entry>
               <entry align="center" valign="middle">
+                <para>vector bool short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector bool short</para>
+              </entry>
+              <entry>
+                <programlisting>
+  vcmpneh.  t,a,b
+  mfocrf    u,2
+  rlwinm    r,u,25,1
+		</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector signed short</para>
+              </entry>
+              <entry>
+                <programlisting>
+  vcmpneh.  t,a,b
+  mfocrf    u,2
+  rlwinm    r,u,25,1
+		</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector unsigned short</para>
+              </entry>
+              <entry>
+                <programlisting>
+  vcmpneh.  t,a,b
+  mfocrf    u,2
+  rlwinm    r,u,25,1
+		</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector pixel</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector pixel</para>
+              </entry>
+              <entry>
+                <programlisting>
+  vcmpneh.  t,a,b
+  mfocrf    u,2
+  rlwinm    r,u,25,1
+		</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
                 <para>vector bool int</para>
               </entry>
               <entry align="center" valign="middle">
@@ -3505,70 +3577,16 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>int</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>vector pixel</para>
+                <para>vector float</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> vector pixel</para>
+                <para> vector float</para>
               </entry>
               <entry>
                 <programlisting>
-  vcmpneh.  t,a,b
-  mfocrf    u,2
-  rlwinm    r,u,25,1
-		</programlisting>
-              </entry>
-            </row>
-            <row>
-              <entry align="center" valign="middle">
-                <para>int</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para>vector bool short</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para> vector bool short</para>
-              </entry>
-              <entry>
-                <programlisting>
-  vcmpneh.  t,a,b
-  mfocrf    u,2
-  rlwinm    r,u,25,1
-		</programlisting>
-              </entry>
-            </row>
-            <row>
-              <entry align="center" valign="middle">
-                <para>int</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para>vector signed short</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para> vector signed short</para>
-              </entry>
-              <entry>
-                <programlisting>
-  vcmpneh.  t,a,b
-  mfocrf    u,2
-  rlwinm    r,u,25,1
-		</programlisting>
-              </entry>
-            </row>
-            <row>
-              <entry align="center" valign="middle">
-                <para>int</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para>vector unsigned short</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para> vector unsigned short</para>
-              </entry>
-              <entry>
-                <programlisting>
-  vcmpneh.  t,a,b
-  mfocrf    u,2
-  rlwinm    r,u,25,1
+  xvcmpeqsp.  t,a,b
+  mfocrf      u,2
+  rlwinm      r,u,27,1
 		</programlisting>
               </entry>
             </row>
@@ -3585,24 +3603,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry>
                 <programlisting>
   xvcmpeqdp.  t,a,b
-  mfocrf      u,2
-  rlwinm      r,u,27,1
-		</programlisting>
-              </entry>
-            </row>
-            <row>
-              <entry align="center" valign="middle">
-                <para>int</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para>vector float</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para> vector float</para>
-              </entry>
-              <entry>
-                <programlisting>
-  xvcmpeqsp.  t,a,b
   mfocrf      u,2
   rlwinm      r,u,27,1
 		</programlisting>
@@ -3688,14 +3688,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>int</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>vector double</para>
+                <para>vector float</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> vector double</para>
+                <para> vector float</para>
               </entry>
               <entry>
                 <programlisting>
-  xvcmpgedp.  t,a,b
+  xvcmpgesp.  t,a,b
   mfocrf      u,2
   rlwinm      r,u,27,1
 		</programlisting>
@@ -3706,14 +3706,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>int</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>vector float</para>
+                <para>vector double</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> vector float</para>
+                <para> vector double</para>
               </entry>
               <entry>
                 <programlisting>
-  xvcmpgesp.  t,a,b
+  xvcmpgedp.  t,a,b
   mfocrf      u,2
   rlwinm      r,u,27,1
 		</programlisting>
@@ -3799,14 +3799,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>int</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>vector double</para>
+                <para>vector float</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> vector double</para>
+                <para> vector float</para>
               </entry>
               <entry>
                 <programlisting>
-  xvcmpgtdp.  t,a,b
+  xvcmpgtsp.  t,a,b
   mfocrf      u,2
   rlwinm      r,u,27,1
 		</programlisting>
@@ -3817,14 +3817,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>int</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>vector float</para>
+                <para>vector double</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> vector float</para>
+                <para> vector double</para>
               </entry>
               <entry>
                 <programlisting>
-  xvcmpgtsp.  t,a,b
+  xvcmpgtdp.  t,a,b
   mfocrf      u,2
   rlwinm      r,u,27,1
 		</programlisting>
@@ -3910,14 +3910,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>int</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>vector double</para>
+                <para>vector float</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> vector double</para>
+                <para> vector float</para>
               </entry>
               <entry>
                 <programlisting>
-  xvcmpgedp.  t,b,a
+  xvcmpgesp.  t,b,a
   mfocrf      u,2
   rlwinm      r,u,27,1
 		</programlisting>
@@ -3928,14 +3928,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>int</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>vector float</para>
+                <para>vector double</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> vector float</para>
+                <para> vector double</para>
               </entry>
               <entry>
                 <programlisting>
-  xvcmpgesp.  t,b,a
+  xvcmpgedp.  t,b,a
   mfocrf      u,2
   rlwinm      r,u,27,1
 		</programlisting>
@@ -4021,14 +4021,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>int</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>vector double</para>
+                <para>vector float</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> vector double</para>
+                <para> vector float</para>
               </entry>
               <entry>
                 <programlisting>
-  xvcmpgtdp.  t,b,a
+  xvcmpgtsp.  t,b,a
   mfocrf      u,2
   rlwinm      r,u,27,1
 		</programlisting>
@@ -4039,14 +4039,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>int</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>vector float</para>
+                <para>vector double</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> vector float</para>
+                <para> vector double</para>
               </entry>
               <entry>
                 <programlisting>
-  xvcmpgtsp.  t,b,a
+  xvcmpgtdp.  t,b,a
   mfocrf      u,2
   rlwinm      r,u,27,1
 		</programlisting>
@@ -4123,11 +4123,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>int</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>vector double</para>
+                <para>vector float</para>
               </entry>
               <entry>
                 <programlisting>
-  xvcmpeqdp.  t,a,b
+  xvcmpeqsp.  t,a,b
   mfocrf      u,2
   rlwinm      r,u,25,1
 		</programlisting>
@@ -4138,11 +4138,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>int</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>vector float</para>
+                <para>vector double</para>
               </entry>
               <entry>
                 <programlisting>
-  xvcmpeqsp.  t,a,b
+  xvcmpeqdp.  t,a,b
   mfocrf      u,2
   rlwinm      r,u,25,1
 		</programlisting>
@@ -4957,6 +4957,86 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>int</para>
               </entry>
               <entry align="center" valign="middle">
+                <para>vector bool short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector bool short</para>
+              </entry>
+              <entry>
+                <programlisting>
+  vcmpneh.  t,a,b
+  mfocrf    u,2
+  rlwinm    v,u,25,1
+  cntlzw    w,v
+  srwi      r,w,5
+		</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector signed short</para>
+              </entry>
+              <entry>
+                <programlisting>
+  vcmpneh.  t,a,b
+  mfocrf    u,2
+  rlwinm    v,u,25,1
+  cntlzw    w,v
+  srwi      r,w,5
+		</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector unsigned short</para>
+              </entry>
+              <entry>
+                <programlisting>
+  vcmpneh.  t,a,b
+  mfocrf    u,2
+  rlwinm    v,u,25,1
+  cntlzw    w,v
+  srwi      r,w,5
+		</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector pixel</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector pixel</para>
+              </entry>
+              <entry>
+                <programlisting>
+  vcmpneh.  t,a,b
+  mfocrf    u,2
+  rlwinm    v,u,25,1
+  cntlzw    w,v
+  srwi      r,w,5
+		</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
                 <para>vector bool int</para>
               </entry>
               <entry align="center" valign="middle">
@@ -5077,78 +5157,18 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>int</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>vector pixel</para>
+                <para>vector float</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> vector pixel</para>
+                <para> vector float</para>
               </entry>
               <entry>
                 <programlisting>
-  vcmpneh.  t,a,b
-  mfocrf    u,2
-  rlwinm    v,u,25,1
-  cntlzw    w,v
-  srwi      r,w,5
-		</programlisting>
-              </entry>
-            </row>
-            <row>
-              <entry align="center" valign="middle">
-                <para>int</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para>vector bool short</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para> vector bool short</para>
-              </entry>
-              <entry>
-                <programlisting>
-  vcmpneh.  t,a,b
-  mfocrf    u,2
-  rlwinm    v,u,25,1
-  cntlzw    w,v
-  srwi      r,w,5
-		</programlisting>
-              </entry>
-            </row>
-            <row>
-              <entry align="center" valign="middle">
-                <para>int</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para>vector signed short</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para> vector signed short</para>
-              </entry>
-              <entry>
-                <programlisting>
-  vcmpneh.  t,a,b
-  mfocrf    u,2
-  rlwinm    v,u,25,1
-  cntlzw    w,v
-  srwi      r,w,5
-		</programlisting>
-              </entry>
-            </row>
-            <row>
-              <entry align="center" valign="middle">
-                <para>int</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para>vector unsigned short</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para> vector unsigned short</para>
-              </entry>
-              <entry>
-                <programlisting>
-  vcmpneh.  t,a,b
-  mfocrf    u,2
-  rlwinm    v,u,25,1
-  cntlzw    w,v
-  srwi      r,w,5
+  xvcmpeqsp.  t,a,b
+  mfocrf      u,2
+  rlwinm      v,u,27,1
+  cntlzw      w,v
+  srwi        r,w,5
 		</programlisting>
               </entry>
             </row>
@@ -5165,26 +5185,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry>
                 <programlisting>
   xvcmpeqdp.  t,a,b
-  mfocrf      u,2
-  rlwinm      v,u,27,1
-  cntlzw      w,v
-  srwi        r,w,5
-		</programlisting>
-              </entry>
-            </row>
-            <row>
-              <entry align="center" valign="middle">
-                <para>int</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para>vector float</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para> vector float</para>
-              </entry>
-              <entry>
-                <programlisting>
-  xvcmpeqsp.  t,a,b
   mfocrf      u,2
   rlwinm      v,u,27,1
   cntlzw      w,v
@@ -5665,6 +5665,46 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>int</para>
               </entry>
               <entry align="center" valign="middle">
+                <para>vector signed short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector signed short</para>
+              </entry>
+              <entry>
+                <programlisting>
+  vcmpgtsh.  t,a,b
+  mfocrf     u,2
+  rlwinm     v,u,27,1
+  cntlzw     w,v
+  srwi       r,w,5
+		</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector unsigned short</para>
+              </entry>
+              <entry>
+                <programlisting>
+  vcmpgtuh.  t,a,b
+  mfocrf     u,2
+  rlwinm     v,u,27,1
+  cntlzw     w,v
+  srwi       r,w,5
+		</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
                 <para>vector signed int</para>
               </entry>
               <entry align="center" valign="middle">
@@ -5745,38 +5785,18 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>int</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>vector signed short</para>
+                <para>vector float</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> vector signed short</para>
+                <para> vector float</para>
               </entry>
               <entry>
                 <programlisting>
-  vcmpgtsh.  t,a,b
-  mfocrf     u,2
-  rlwinm     v,u,27,1
-  cntlzw     w,v
-  srwi       r,w,5
-		</programlisting>
-              </entry>
-            </row>
-            <row>
-              <entry align="center" valign="middle">
-                <para>int</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para>vector unsigned short</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para> vector unsigned short</para>
-              </entry>
-              <entry>
-                <programlisting>
-  vcmpgtuh.  t,a,b
-  mfocrf     u,2
-  rlwinm     v,u,27,1
-  cntlzw     w,v
-  srwi       r,w,5
+  xvcmpgtsp.  t,a,b
+  mfocrf      u,2
+  rlwinm      v,u,27,1
+  cntlzw      w,v
+  srwi        r,w,5
 		</programlisting>
               </entry>
             </row>
@@ -5793,26 +5813,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry>
                 <programlisting>
   xvcmpgtdp.  t,a,b
-  mfocrf      u,2
-  rlwinm      v,u,27,1
-  cntlzw      w,v
-  srwi        r,w,5
-		</programlisting>
-              </entry>
-            </row>
-            <row>
-              <entry align="center" valign="middle">
-                <para>int</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para>vector float</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para> vector float</para>
-              </entry>
-              <entry>
-                <programlisting>
-  xvcmpgtsp.  t,a,b
   mfocrf      u,2
   rlwinm      v,u,27,1
   cntlzw      w,v
@@ -5979,6 +5979,46 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>int</para>
               </entry>
               <entry align="center" valign="middle">
+                <para>vector signed short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector signed short</para>
+              </entry>
+              <entry>
+                <programlisting>
+  vcmpgtsh.  t,a,b
+  mfocrf     u,2
+  rlwinm     v,u,25,1
+  cntlzw     w,v
+  srwi       r,w,5
+		</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector unsigned short</para>
+              </entry>
+              <entry>
+                <programlisting>
+  vcmpgtuh.  t,a,b
+  mfocrf     u,2
+  rlwinm     v,u,25,1
+  cntlzw     w,v
+  srwi       r,w,5
+		</programlisting>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
                 <para>vector signed int</para>
               </entry>
               <entry align="center" valign="middle">
@@ -6059,40 +6099,20 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>int</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>vector signed short</para>
+                <para>vector float</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> vector signed short</para>
+                <para> vector float</para>
               </entry>
               <entry>
                 <programlisting>
-  vcmpgtsh.  t,a,b
-  mfocrf     u,2
-  rlwinm     v,u,25,1
-  cntlzw     w,v
-  srwi       r,w,5
+  xvcmpgesp.  t,b,a
+  mfocrf      u,2
+  rlwinm      v,u,27,1
+  cntlzw      w,v
+  srwi        r,w,5
 		</programlisting>
               </entry>
-            </row>
-            <row>
-              <entry align="center" valign="middle">
-                <para>int</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para>vector unsigned short</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para> vector unsigned short</para>
-              </entry>
-              <entry>
-                <programlisting>
-  vcmpgtuh.  t,a,b
-  mfocrf     u,2
-  rlwinm     v,u,25,1
-  cntlzw     w,v
-  srwi       r,w,5
-		</programlisting>
-	      </entry>
             </row>
             <row>
               <entry align="center" valign="middle">
@@ -6107,26 +6127,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry>
                 <programlisting>
   xvcmpgedp.  t,b,a
-  mfocrf      u,2
-  rlwinm      v,u,27,1
-  cntlzw      w,v
-  srwi        r,w,5
-		</programlisting>
-              </entry>
-            </row>
-            <row>
-              <entry align="center" valign="middle">
-                <para>int</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para>vector float</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para> vector float</para>
-              </entry>
-              <entry>
-                <programlisting>
-  xvcmpgesp.  t,b,a
   mfocrf      u,2
   rlwinm      v,u,27,1
   cntlzw      w,v
@@ -6292,6 +6292,46 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>int</para>
               </entry>
               <entry align="center" valign="middle">
+                <para>vector signed short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector signed short</para>
+              </entry>
+              <entry>
+                <programlisting>
+  vcmpgtsh.  t,b,a
+  mfocrf     u,2
+  rlwinm     v,u,27,1
+  cntlzw     w,v
+  srwi       r,w,5
+		</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector unsigned short</para>
+              </entry>
+              <entry>
+                <programlisting>
+  vcmpgtuh.  t,b,a
+  mfocrf     u,2
+  rlwinm     v,u,27,1
+  cntlzw     w,v
+  srwi       r,w,5
+		</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
                 <para>vector signed int</para>
               </entry>
               <entry align="center" valign="middle">
@@ -6372,38 +6412,18 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>int</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>vector signed short</para>
+                <para>vector float</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> vector signed short</para>
+                <para> vector float</para>
               </entry>
               <entry>
                 <programlisting>
-  vcmpgtsh.  t,b,a
-  mfocrf     u,2
-  rlwinm     v,u,27,1
-  cntlzw     w,v
-  srwi       r,w,5
-		</programlisting>
-              </entry>
-            </row>
-            <row>
-              <entry align="center" valign="middle">
-                <para>int</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para>vector unsigned short</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para> vector unsigned short</para>
-              </entry>
-              <entry>
-                <programlisting>
-  vcmpgtuh.  t,b,a
-  mfocrf     u,2
-  rlwinm     v,u,27,1
-  cntlzw     w,v
-  srwi       r,w,5
+  xvcmpgtsp.  t,b,a
+  mfocrf      u,2
+  rlwinm      v,u,27,1
+  cntlzw      w,v
+  srwi        r,w,5
 		</programlisting>
               </entry>
             </row>
@@ -6420,26 +6440,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry>
                 <programlisting>
   xvcmpgtdp.  t,b,a
-  mfocrf      u,2
-  rlwinm      v,u,27,1
-  cntlzw      w,v
-  srwi        r,w,5
-		</programlisting>
-              </entry>
-            </row>
-            <row>
-              <entry align="center" valign="middle">
-                <para>int</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para>vector float</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para> vector float</para>
-              </entry>
-              <entry>
-                <programlisting>
-  xvcmpgtsp.  t,b,a
   mfocrf      u,2
   rlwinm      v,u,27,1
   cntlzw      w,v
@@ -6525,11 +6525,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>int</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>vector double</para>
+                <para>vector float</para>
               </entry>
               <entry>
                 <programlisting>
-  xvcmpeqdp.  t,a,a
+  xvcmpeqsp.  t,a,a
   mfocrf      u,2
   rlwinm      v,u,25,1
   cntlzw      w,v
@@ -6542,11 +6542,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>int</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>vector float</para>
+                <para>vector double</para>
               </entry>
               <entry>
                 <programlisting>
-  xvcmpeqsp.  t,a,a
+  xvcmpeqdp.  t,a,a
   mfocrf      u,2
   rlwinm      v,u,25,1
   cntlzw      w,v
@@ -6717,6 +6717,86 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>int</para>
               </entry>
               <entry align="center" valign="middle">
+                <para>vector bool short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector bool short</para>
+              </entry>
+              <entry>
+                <programlisting>
+  vcmpequh.  t,a,b
+  mfocrf     u,2
+  rlwinm     v,u,25,1
+  cntlzw     w,v
+  srwi       r,w,5
+		</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector signed short</para>
+              </entry>
+              <entry>
+                <programlisting>
+  vcmpequh.  t,a,b
+  mfocrf     u,2
+  rlwinm     v,u,25,1
+  cntlzw     w,v
+  srwi       r,w,5
+		</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned short</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector unsigned short</para>
+              </entry>
+              <entry>
+                <programlisting>
+  vcmpequh.  t,a,b
+  mfocrf     u,2
+  rlwinm     v,u,25,1
+  cntlzw     w,v
+  srwi       r,w,5
+		</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector pixel</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector pixel</para>
+              </entry>
+              <entry>
+                <programlisting>
+  vcmpequh.  t,a,b
+  mfocrf     u,2
+  rlwinm     v,u,25,1
+  cntlzw     w,v
+  srwi       r,w,5
+		</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
                 <para>vector bool int</para>
               </entry>
               <entry align="center" valign="middle">
@@ -6837,78 +6917,18 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>int</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>vector pixel</para>
+                <para>vector float</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> vector pixel</para>
+                <para> vector float</para>
               </entry>
               <entry>
                 <programlisting>
-  vcmpequh.  t,a,b
-  mfocrf     u,2
-  rlwinm     v,u,25,1
-  cntlzw     w,v
-  srwi       r,w,5
-		</programlisting>
-              </entry>
-            </row>
-            <row>
-              <entry align="center" valign="middle">
-                <para>int</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para>vector bool short</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para> vector bool short</para>
-              </entry>
-              <entry>
-                <programlisting>
-  vcmpequh.  t,a,b
-  mfocrf     u,2
-  rlwinm     v,u,25,1
-  cntlzw     w,v
-  srwi       r,w,5
-		</programlisting>
-              </entry>
-            </row>
-            <row>
-              <entry align="center" valign="middle">
-                <para>int</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para>vector signed short</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para> vector signed short</para>
-              </entry>
-              <entry>
-                <programlisting>
-  vcmpequh.  t,a,b
-  mfocrf     u,2
-  rlwinm     v,u,25,1
-  cntlzw     w,v
-  srwi       r,w,5
-		</programlisting>
-              </entry>
-            </row>
-            <row>
-              <entry align="center" valign="middle">
-                <para>int</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para>vector unsigned short</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para> vector unsigned short</para>
-              </entry>
-              <entry>
-                <programlisting>
-  vcmpequh.  t,a,b
-  mfocrf     u,2
-  rlwinm     v,u,25,1
-  cntlzw     w,v
-  srwi       r,w,5
+  xvcmpeqsp.  t,a,b
+  mfocrf      u,2
+  rlwinm      v,u,25,1
+  cntlzw      w,v
+  srwi        r,w,5
 		</programlisting>
               </entry>
             </row>
@@ -6925,26 +6945,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry>
                 <programlisting>
   xvcmpeqdp.  t,a,b
-  mfocrf      u,2
-  rlwinm      v,u,25,1
-  cntlzw      w,v
-  srwi        r,w,5
-		</programlisting>
-              </entry>
-            </row>
-            <row>
-              <entry align="center" valign="middle">
-                <para>int</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para>vector float</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para> vector float</para>
-              </entry>
-              <entry>
-                <programlisting>
-  xvcmpeqsp.  t,a,b
   mfocrf      u,2
   rlwinm      v,u,25,1
   cntlzw      w,v
@@ -7040,14 +7040,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>int</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>vector double</para>
+                <para>vector float</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>vector double</para>
+                <para>vector float</para>
               </entry>
               <entry>
                 <programlisting>
-  xvcmpgedp.  t,a,b
+  xvcmpgesp.  t,a,b
   mfocrf      u,2
   rlwinm      v,u,25,1
   cntlzw      w,v
@@ -7060,14 +7060,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>int</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>vector float</para>
+                <para>vector double</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>vector float</para>
+                <para>vector double</para>
               </entry>
               <entry>
                 <programlisting>
-  xvcmpgesp.  t,a,b
+  xvcmpgedp.  t,a,b
   mfocrf      u,2
   rlwinm      v,u,25,1
   cntlzw      w,v
@@ -7162,14 +7162,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>int</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>vector double</para>
+                <para>vector float</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> vector double</para>
+                <para> vector float</para>
               </entry>
               <entry>
                 <programlisting>
-  xvcmpgtdp.  t,a,b
+  xvcmpgtsp.  t,a,b
   mfocrf      u,2
   rlwinm      v,u,25,1
   cntlzw      w,v
@@ -7182,14 +7182,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>int</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>vector float</para>
+                <para>vector double</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> vector float</para>
+                <para> vector double</para>
               </entry>
               <entry>
                 <programlisting>
-  xvcmpgtsp.  t,a,b
+  xvcmpgtdp.  t,a,b
   mfocrf      u,2
   rlwinm      v,u,25,1
   cntlzw      w,v
@@ -7284,14 +7284,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>int</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>vector double</para>
+                <para>vector float</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> vector double</para>
+                <para> vector float</para>
               </entry>
               <entry>
                 <programlisting>
-  xvcmpgedp.  t,b,a
+  xvcmpgesp.  t,b,a
   mfocrf      u,2
   rlwinm      v,u,25,1
   cntlzw      w,v
@@ -7304,14 +7304,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>int</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>vector float</para>
+                <para>vector double</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> vector float</para>
+                <para> vector double</para>
               </entry>
               <entry>
                 <programlisting>
-  xvcmpgesp.  t,b,a
+  xvcmpgedp.  t,b,a
   mfocrf      u,2
   rlwinm      v,u,25,1
   cntlzw      w,v
@@ -7406,10 +7406,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>int</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>vector double</para>
+                <para>vector float</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> vector double</para>
+                <para> vector float</para>
               </entry>
               <entry>
                 <programlisting>
@@ -7426,10 +7426,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>int</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>vector float</para>
+                <para>vector double</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> vector float</para>
+                <para> vector double</para>
               </entry>
               <entry>
                 <programlisting>
@@ -7519,11 +7519,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>int</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>vector double</para>
+                <para>vector float</para>
               </entry>
               <entry>
                 <programlisting>
-  xvcmpeqdp.  t,a,a
+  xvcmpeqsp.  t,a,a
   mfocrf      u,2
   rlwinm      v,u,27,1
   cntlzw      w,v
@@ -7536,11 +7536,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>int</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>vector float</para>
+                <para>vector double</para>
               </entry>
               <entry>
                 <programlisting>
-  xvcmpeqsp.  t,a,a
+  xvcmpeqdp.  t,a,a
   mfocrf      u,2
   rlwinm      v,u,27,1
   cntlzw      w,v
