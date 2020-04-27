@@ -34472,6 +34472,28 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   Negative subnormal        1
       </programlisting>
       </para>
+      <para>
+	For clarity of code, the following named constants are suggested.
+	Preferably, compilers will provide these constants in a header
+	file, but this is not required for compliance.
+	<programlisting>
+  #define __VEC_CLASS_FP_NAN          (1&lt;&lt;6)
+  #define __VEC_CLASS_FP_INFINITY_P   (1&lt;&lt;5)
+  #define __VEC_CLASS_FP_INFINITY_N   (1&lt;&lt;4)
+  #define __VEC_CLASS_FP_ZERO_P       (1&lt;&lt;3)
+  #define __VEC_CLASS_FP_ZERO_N       (1&lt;&lt;2)
+  #define __VEC_CLASS_FP_SUBNORMAL_P  (1&lt;&lt;1)
+  #define __VEC_CLASS_FP_SUBNORMAL_N  (1&lt;&lt;0)
+
+  #define __VEC_CLASS_FP_INFINITY   (__VEC_CLASS_FP_INFINITY_P
+                                     | __VEC_CLASS_FP_INFINITY_N)
+  #define __VEC_CLASS_FP_ZERO       (__VEC_CLASS_FP_ZERO_P | __VEC_CLASS_FP_ZERO_N)
+  #define __VEC_CLASS_FP_SUBNORMAL  (__VEC_CLASS_FP_SUBNORMAL_P
+                                     | __VEC_CLASS_FP_SUBNORMAL_N)
+  #define __VEC_CLASS_FP_NOT_NORMAL (__VEC_CLASS_FP_NAN | __VEC_CLASS_FP_SUBNORMAL
+                                     | __VEC_CLASS_FP_ZERO | __VEC_CLASS_FP_INFINITY)
+	</programlisting>
+      </para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
