@@ -552,32 +552,113 @@ a[3] = c;</programlisting>
       Vector data types consist of a homogeneous sequence of elements
       of the base data type specified in the vector data
       type. Individual elements of a vector can be addressed by a
-      vector element number. Element numbers can be established either
+      vector element number.  To understand how vector elements are
+      represented in memory and in registers, it is best to start with
+      some simple concepts of endianness.
+    </para>
+    <figure pgwide="1" xml:id="scalar-endian">
+      <title>Scalar Quantities and Endianness</title>
+      <mediaobject>
+	<imageobject>
+	  <imagedata fileref="Scalar-endian.png" format="PNG"
+		     scalefit="1" width="100%" />
+	</imageobject>
+      </mediaobject>
+    </figure>
+    <para>
+      <xref linkend="scalar-endian" /> shows different representations
+      of a 64-bit scalar integer with the hexadecimal value
+      <code>0x0123456789ABCDEF</code>.  We say that the most
+      significant byte (MSB) of this value is <code>0x01</code>, and
+      its least significant byte (LSB) is <code>0xEF</code>.  The scalar
+      value is stored using eight bytes of memory.  On a little-endian
+      (LE) system, the LSB is stored at the lowest address of these
+      eight bytes, and the MSB is stored at the highest address.  On a
+      big-endian (BE) system, the MSB is stored at the lowest address
+      of these eight bytes, and the LSB is stored at the highest
+      address.  Regardless of the memory order, the register
+      representation of the scalar value is identical; the MSB is
+      located on the "left" end of the register, and the LSB is
+      located on the "right" end.
+    </para>
+    <para>
+      Of course, the concept of "left" and "right" is a useful
+      fiction; there is no guarantee that the circuitry of a hardware
+      register is laid out this way.  However, we will see, as we deal
+      with vector elements, that the concepts of left and right are
+      more natural for human understanding than byte and element
+      significance.  Indeed, most programming languages have
+      instructions, such as shift-left and shift-right, that use this
+      same terminology.
+    </para>
+    <para>
+      Let's move from scalars to arrays, which are more interesting to
+      us since we can map arrays into vector registers.  Suppose we
+      have an array of bytes with values 0 through 15, as shown in
+      <xref linkend="byte-array-endian" />.  Note that each byte is a
+      separate data element with only one possible representation in
+      memory, so the array of bytes looks identical in memory,
+      regardless of whether we are using a BE system or an LE system.
+      But when we load these 16 bytes into a vector register, perhaps
+      by using the ISA 3.0 <emphasis role="bold">lxv</emphasis>
+      instruction, the byte at the lowest address on an LE system will
+      be placed in the LSB of the vector register, but on a BE system
+      will be placed in the MSB of the vector register.  Thus the
+      array elements appear "right to left" in the register on an LE
+      system, and "left to right" in the register on a BE system.
+    </para>
+    <figure pgwide="1" xml:id="byte-array-endian">
+      <title>Byte Arrays and Endianness</title>
+      <mediaobject>
+	<imageobject>
+	  <imagedata fileref="Byte-array-endian.png" format="PNG"
+		     scalefit="1" width="100%" />
+	</imageobject>
+      </mediaobject>
+    </figure>
+    <para>
+      Things become even more interesting when we consider arrays of
+      larger elements.  In <xref linkend="word-array-endian" />, we
+      see the layout of an array of four 32-bit integers, where the 0th
+      element has hexadecimal value <code>0x00010203</code>, the 1st
+      element has value <code>0x04050607</code>, the 2nd element has
+      value <code>0x08090A0B</code>, and the 3rd element has value
+      <code>0x0C0D0E0F</code>.  The order of the array elements in
+      memory is the same for both LE and BE systems; but the layout of
+      each element itself is reversed.  When the <emphasis
+      role="bold">lxv</emphasis> instruction is used to load the
+      memory into a vector register, again the low address is loaded
+      into the LSB of the register for LE, but loaded into the MSB of
+      the register for BE.  The effect is that the array elements
+      again appear right-to-left on a LE system and left-to-right on a
+      BE system.  Note that each 32-bit element of the array has its
+      most significant bit "on the left" whether a LE or BE system is
+      in use.  This is of course necessary for proper arithmetic to be
+      performed on the array elements by vector instructions.
+    </para>
+    <figure pgwide="1" xml:id="word-array-endian">
+      <title>Word Arrays and Endianness</title>
+      <mediaobject>
+	<imageobject>
+	  <imagedata fileref="Word-array-endian.png" format="PNG"
+		     scalefit="1" width="100%" />
+	</imageobject>
+      </mediaobject>
+    </figure>
+
+<!-- Element numbers can be established either
       by counting from the “left” of a register and assigning the
       left-most element the element number 0, or from the “right” of
       the register and assigning the right-most element the element
       number 0.
-    </para>
+      </para>
+      -->
     <para>
-      In big-endian environments, establishing element counts from the
-      left makes the element stored at the lowest memory address the
-      lowest-numbered element. Thus, when vectors and arrays of a
-      given base data type are overlaid, vector element 0 corresponds
-      to array element 0, vector element 1 corresponds to array
-      element 1, and so forth.
-    </para>
-    <para>
-      In little-endian environments, establishing element counts from
-      the right makes the element stored at the lowest memory address
-      the lowest-numbered element. Thus, when vectors and arrays of a
-      given base data type are overlaid, vector element 0 will
-      correspond to array element 0, vector element 1 will correspond
-      to array element 1, and so forth.
-    </para>
-    <para>
-      Consequently, the vector numbering schemes can be described as
-      big-endian and little-endian vector layouts and vector element
-      numberings.
+      Thus on a BE system, we number vector elements starting with 0
+      on the left, while on an LE system, we number vector elements
+      starting with 0 on the right.  We will informally refer to these
+      as big-endian and little-endian vector element numberings and
+      vector layouts.
     </para>
     <para>
       This element numbering shall also be used by the <code>[]</code>
@@ -619,11 +700,13 @@ a[3] = c;</programlisting>
       This is no longer as useful as it once was.  The primary use
       case was for big-endian vector layout in little-endian
       environments, which is now deprecated as discussed in <xref
-      linkend="VIPR.biendian.BELE" />.
+      linkend="VIPR.biendian.BELE" />.  It's generally equivalent to
+      test for <code>__BIG_ENDIAN__</code> or
+      <code>__LITTLE_ENDIAN__</code>.
     </para>
     <note>
       <para>
-	Note that each element in a vector has the same representation
+	Remember that each element in a vector has the same representation
 	in both big- and little-endian element orders.  That is, an
 	<code>int</code> is always 32 bits, with the sign bit in the
 	high-order position.  Programmers must be aware of this when
