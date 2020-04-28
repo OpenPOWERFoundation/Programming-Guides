@@ -588,7 +588,7 @@ a[3] = c;</programlisting>
       with vector elements, that the concepts of left and right are
       more natural for human understanding than byte and element
       significance.  Indeed, most programming languages have
-      instructions, such as shift-left and shift-right, that use this
+      operators, such as shift-left and shift-right, that use this
       same terminology.
     </para>
     <para>
