@@ -593,7 +593,8 @@ a[3] = c;</programlisting>
     </para>
     <para>
       Let's move from scalars to arrays, which are more interesting to
-      us since we can map arrays into vector registers.  Suppose we
+      us since we can use vector registers to operate on arrays, or
+      portions of larger arrays.  Suppose we
       have an array of bytes with values 0 through 15, as shown in
       <xref linkend="byte-array-endian" />.  Note that each byte is a
       separate data element with only one possible representation in
