@@ -29410,12 +29410,197 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       Then each byte element <emphasis>i</emphasis> of <emphasis
       role="bold">r</emphasis> is determined as follows.  The start bit
       <emphasis>sb</emphasis> is obtained from bits 5:7 of byte element
-      <emphasis>i</emphasis> of <emphasis role="bold">a</emphasis>.  Then
+      <emphasis>i</emphasis> of <emphasis role="bold">b</emphasis>.  Then
       the contents of bits <emphasis>sb</emphasis>:<emphasis>sb+7</emphasis>
       of the halfword in byte elements
       <emphasis>i</emphasis>:<emphasis>i+1</emphasis> of <emphasis
       role="bold">v</emphasis> are placed into byte element
       <emphasis>i</emphasis> of <emphasis role="bold">r</emphasis>.</para>
+      <para>An example follows:
+      <informaltable frame="none">
+      <tgroup cols="17">
+          <colspec colname="c0" colwidth="10*" />
+          <colspec colname="c1" colwidth="10*" />
+          <colspec colname="c2" colwidth="10*" />
+          <colspec colname="c3" colwidth="10*" />
+          <colspec colname="c4" colwidth="10*" />
+          <colspec colname="c5" colwidth="10*" />
+          <colspec colname="c6" colwidth="10*" />
+          <colspec colname="c7" colwidth="10*" />
+          <colspec colname="c8" colwidth="10*" />
+          <colspec colname="c9" colwidth="10*" />
+          <colspec colname="c10" colwidth="10*" />
+          <colspec colname="c11" colwidth="10*" />
+          <colspec colname="c12" colwidth="10*" />
+          <colspec colname="c13" colwidth="10*" />
+          <colspec colname="c14" colwidth="10*" />
+          <colspec colname="c15" colwidth="10*" />
+          <colspec colname="c16" colwidth="10*" />
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis role="bold">a</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>0F</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>0F</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>0F</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>0F</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>0F</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>0F</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>0F</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>0F</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>0F</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>0F</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>0F</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>0F</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>0F</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>0F</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>0F</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>0F</para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis role="bold">b</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>00</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>01</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>02</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>03</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>04</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>05</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>06</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>07</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>08</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>09</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>0A</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>0B</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>0C</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>0D</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>0E</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>0F</para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis role="bold">r</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>0F</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>1E</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>3C</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>78</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>F0</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>E1</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>C3</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>87</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>0F</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>1E</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>3C</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>78</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>F0</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>E1</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>C3</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>80</para>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+      </para>
+
       <para><emphasis role="bold">Endian considerations:</emphasis>
       All bit and byte element numbers are specified in big-endian order.
       This intrinsic is <emphasis>not</emphasis> endian-neutral.
@@ -31644,11 +31829,195 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <emphasis role="bold">r</emphasis> is determined as follows.  The
       start bit <emphasis>sb</emphasis> is obtained from bits 5:7 of
       byte element <emphasis>i</emphasis> of <emphasis
-      role="bold">a</emphasis>.  Then the contents of bits
+      role="bold">b</emphasis>.  Then the contents of bits
       (8 &#8211; <emphasis>sb</emphasis>):(15 &#8211; <emphasis>sb</emphasis>) of the
       halfword in byte elements <emphasis>i</emphasis>:<emphasis>i</emphasis>+1
       of <emphasis role="bold">v</emphasis> are placed into byte element
       <emphasis>i</emphasis> of <emphasis role="bold">r</emphasis>.</para>
+      <para>An example follows:
+      <informaltable frame="none">
+      <tgroup cols="17">
+          <colspec colname="c0" colwidth="10*" />
+          <colspec colname="c1" colwidth="10*" />
+          <colspec colname="c2" colwidth="10*" />
+          <colspec colname="c3" colwidth="10*" />
+          <colspec colname="c4" colwidth="10*" />
+          <colspec colname="c5" colwidth="10*" />
+          <colspec colname="c6" colwidth="10*" />
+          <colspec colname="c7" colwidth="10*" />
+          <colspec colname="c8" colwidth="10*" />
+          <colspec colname="c9" colwidth="10*" />
+          <colspec colname="c10" colwidth="10*" />
+          <colspec colname="c11" colwidth="10*" />
+          <colspec colname="c12" colwidth="10*" />
+          <colspec colname="c13" colwidth="10*" />
+          <colspec colname="c14" colwidth="10*" />
+          <colspec colname="c15" colwidth="10*" />
+          <colspec colname="c16" colwidth="10*" />
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis role="bold">a</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>0F</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>0F</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>0F</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>0F</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>0F</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>0F</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>0F</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>0F</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>0F</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>0F</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>0F</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>0F</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>0F</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>0F</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>0F</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>0F</para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis role="bold">b</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>0F</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>0E</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>0D</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>0C</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>0B</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>0A</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>09</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>08</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>07</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>06</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>05</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>04</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>03</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>02</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>01</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>00</para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis role="bold">r</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>00</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>3C</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>78</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>F0</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>E1</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>C3</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>87</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>0F</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>1E</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>3C</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>78</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>F0</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>E1</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>C3</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>87</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>0F</para>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+      </para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       All bit and byte element numbers are specified in big-endian order.
       This intrinsic is <emphasis>not</emphasis> endian-neutral.
