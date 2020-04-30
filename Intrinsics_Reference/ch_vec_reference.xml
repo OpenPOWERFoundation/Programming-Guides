@@ -29417,7 +29417,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       role="bold">v</emphasis> are placed into byte element
       <emphasis>i</emphasis> of <emphasis role="bold">r</emphasis>.</para>
       <para>An example follows:
-      <informaltable frame="none">
+      <informaltable frame="all">
       <tgroup cols="17">
           <colspec colname="c0" colwidth="10*" />
           <colspec colname="c1" colwidth="10*" />
@@ -31835,7 +31835,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       of <emphasis role="bold">v</emphasis> are placed into byte element
       <emphasis>i</emphasis> of <emphasis role="bold">r</emphasis>.</para>
       <para>An example follows:
-      <informaltable frame="none">
+      <informaltable frame="all">
       <tgroup cols="17">
           <colspec colname="c0" colwidth="10*" />
           <colspec colname="c1" colwidth="10*" />
