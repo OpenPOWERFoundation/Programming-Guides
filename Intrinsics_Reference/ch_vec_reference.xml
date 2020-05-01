@@ -24581,13 +24581,492 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </para>
       <para><emphasis role="bold">Result value: </emphasis>For each
       <emphasis>i</emphasis> (0 ≤ <emphasis>i</emphasis> &lt; 16), let
-      <emphasis>index1</emphasis> be bits 0–3 and
-      <emphasis>index2</emphasis> be bits 4–7 of byte element
+      <emphasis>x</emphasis> be bits 0–3 and
+      <emphasis>y</emphasis> be bits 4–7 of byte element
       <emphasis>i</emphasis> of <emphasis role="bold">c</emphasis>.  Byte
       element <emphasis>i</emphasis> of <emphasis role="bold">r</emphasis>
-      is set to the exclusive-OR of byte elements <emphasis>index1</emphasis>
-      of <emphasis role="bold">a</emphasis> and <emphasis>index2</emphasis>
+      is set to the exclusive-OR of byte elements <emphasis>x</emphasis>
+      of <emphasis role="bold">a</emphasis> and <emphasis>y</emphasis>
       of <emphasis role="bold">b</emphasis>.</para>
+      <para>An example follows:
+      <informaltable frame="all">
+      <tgroup cols="34">
+          <colspec colname="c0L" colwidth="10*" />
+          <colspec colname="c0R" colwidth="10*" />
+          <colspec colname="c1L" colwidth="10*" />
+          <colspec colname="c1R" colwidth="10*" />
+          <colspec colname="c2L" colwidth="10*" />
+          <colspec colname="c2R" colwidth="10*" />
+          <colspec colname="c3L" colwidth="10*" />
+          <colspec colname="c3R" colwidth="10*" />
+          <colspec colname="c4L" colwidth="10*" />
+          <colspec colname="c4R" colwidth="10*" />
+          <colspec colname="c5L" colwidth="10*" />
+          <colspec colname="c5R" colwidth="10*" />
+          <colspec colname="c6L" colwidth="10*" />
+          <colspec colname="c6R" colwidth="10*" />
+          <colspec colname="c7L" colwidth="10*" />
+          <colspec colname="c7R" colwidth="10*" />
+          <colspec colname="c8L" colwidth="10*" />
+          <colspec colname="c8R" colwidth="10*" />
+          <colspec colname="c9L" colwidth="10*" />
+          <colspec colname="c9R" colwidth="10*" />
+          <colspec colname="c10L" colwidth="10*" />
+          <colspec colname="c10R" colwidth="10*" />
+          <colspec colname="c11L" colwidth="10*" />
+          <colspec colname="c11R" colwidth="10*" />
+          <colspec colname="c12L" colwidth="10*" />
+          <colspec colname="c12R" colwidth="10*" />
+          <colspec colname="c13L" colwidth="10*" />
+          <colspec colname="c13R" colwidth="10*" />
+          <colspec colname="c14L" colwidth="10*" />
+          <colspec colname="c14R" colwidth="10*" />
+          <colspec colname="c15L" colwidth="10*" />
+          <colspec colname="c15R" colwidth="10*" />
+          <colspec colname="c16L" colwidth="10*" />
+          <colspec colname="c16R" colwidth="10*" />
+          <spanspec spanname="c0" namest="c0L" nameend="c0R"/>
+          <spanspec spanname="c1" namest="c1L" nameend="c1R"/>
+          <spanspec spanname="c2" namest="c2L" nameend="c2R"/>
+          <spanspec spanname="c3" namest="c3L" nameend="c3R"/>
+          <spanspec spanname="c4" namest="c4L" nameend="c4R"/>
+          <spanspec spanname="c5" namest="c5L" nameend="c5R"/>
+          <spanspec spanname="c6" namest="c6L" nameend="c6R"/>
+          <spanspec spanname="c7" namest="c7L" nameend="c7R"/>
+          <spanspec spanname="c8" namest="c8L" nameend="c8R"/>
+          <spanspec spanname="c9" namest="c9L" nameend="c9R"/>
+          <spanspec spanname="c10" namest="c10L" nameend="c10R"/>
+          <spanspec spanname="c11" namest="c11L" nameend="c11R"/>
+          <spanspec spanname="c12" namest="c12L" nameend="c12R"/>
+          <spanspec spanname="c13" namest="c13L" nameend="c13R"/>
+          <spanspec spanname="c14" namest="c14L" nameend="c14R"/>
+          <spanspec spanname="c15" namest="c15L" nameend="c15R"/>
+          <spanspec spanname="c16" namest="c16L" nameend="c16R"/>
+          <tbody>
+            <row>
+              <entry align="center" spanname="c0" valign="middle">
+                <para> <emphasis role="bold">a</emphasis> </para>
+              </entry>
+              <entry align="center" spanname="c1" valign="middle">
+                <para>F0</para>
+              </entry>
+              <entry align="center" spanname="c2" valign="middle">
+                <para>F1</para>
+              </entry>
+              <entry align="center" spanname="c3" valign="middle">
+                <para>F2</para>
+              </entry>
+              <entry align="center" spanname="c4" valign="middle">
+                <para>F3</para>
+              </entry>
+              <entry align="center" spanname="c5" valign="middle">
+                <para>F4</para>
+              </entry>
+              <entry align="center" spanname="c6" valign="middle">
+                <para>F5</para>
+              </entry>
+              <entry align="center" spanname="c7" valign="middle">
+                <para>F6</para>
+              </entry>
+              <entry align="center" spanname="c8" valign="middle">
+                <para>F7</para>
+              </entry>
+              <entry align="center" spanname="c9" valign="middle">
+                <para>F8</para>
+              </entry>
+              <entry align="center" spanname="c10" valign="middle">
+                <para>F9</para>
+              </entry>
+              <entry align="center" spanname="c11" valign="middle">
+                <para>FA</para>
+              </entry>
+              <entry align="center" spanname="c12" valign="middle">
+                <para>FB</para>
+              </entry>
+              <entry align="center" spanname="c13" valign="middle">
+                <para>FC</para>
+              </entry>
+              <entry align="center" spanname="c14" valign="middle">
+                <para>FD</para>
+              </entry>
+              <entry align="center" spanname="c15" valign="middle">
+                <para>FE</para>
+              </entry>
+              <entry align="center" spanname="c16" valign="middle">
+                <para>FF</para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" spanname="c0" valign="middle">
+                <para> <emphasis role="bold">b</emphasis> </para>
+              </entry>
+              <entry align="center" spanname="c1" valign="middle">
+                <para>FF</para>
+              </entry>
+              <entry align="center" spanname="c2" valign="middle">
+                <para>EF</para>
+              </entry>
+              <entry align="center" spanname="c3" valign="middle">
+                <para>DF</para>
+              </entry>
+              <entry align="center" spanname="c4" valign="middle">
+                <para>CF</para>
+              </entry>
+              <entry align="center" spanname="c5" valign="middle">
+                <para>BF</para>
+              </entry>
+              <entry align="center" spanname="c6" valign="middle">
+                <para>AF</para>
+              </entry>
+              <entry align="center" spanname="c7" valign="middle">
+                <para>9F</para>
+              </entry>
+              <entry align="center" spanname="c8" valign="middle">
+                <para>8F</para>
+              </entry>
+              <entry align="center" spanname="c9" valign="middle">
+                <para>7F</para>
+              </entry>
+              <entry align="center" spanname="c10" valign="middle">
+                <para>6F</para>
+              </entry>
+              <entry align="center" spanname="c11" valign="middle">
+                <para>5F</para>
+              </entry>
+              <entry align="center" spanname="c12" valign="middle">
+                <para>4F</para>
+              </entry>
+              <entry align="center" spanname="c13" valign="middle">
+                <para>3F</para>
+              </entry>
+              <entry align="center" spanname="c14" valign="middle">
+                <para>2F</para>
+              </entry>
+              <entry align="center" spanname="c15" valign="middle">
+                <para>1F</para>
+              </entry>
+              <entry align="center" spanname="c16" valign="middle">
+                <para>0F</para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" spanname="c0" valign="middle">
+                <para> <emphasis role="bold">c</emphasis> </para>
+              </entry>
+              <entry align="center" spanname="c1" valign="middle">
+                <para>01</para>
+              </entry>
+              <entry align="center" spanname="c2" valign="middle">
+                <para>23</para>
+              </entry>
+              <entry align="center" spanname="c3" valign="middle">
+                <para>45</para>
+              </entry>
+              <entry align="center" spanname="c4" valign="middle">
+                <para>67</para>
+              </entry>
+              <entry align="center" spanname="c5" valign="middle">
+                <para>89</para>
+              </entry>
+              <entry align="center" spanname="c6" valign="middle">
+                <para>AB</para>
+              </entry>
+              <entry align="center" spanname="c7" valign="middle">
+                <para>CD</para>
+              </entry>
+              <entry align="center" spanname="c8" valign="middle">
+                <para>EF</para>
+              </entry>
+              <entry align="center" spanname="c9" valign="middle">
+                <para>F0</para>
+              </entry>
+              <entry align="center" spanname="c10" valign="middle">
+                <para>E1</para>
+              </entry>
+              <entry align="center" spanname="c11" valign="middle">
+                <para>D2</para>
+              </entry>
+              <entry align="center" spanname="c12" valign="middle">
+                <para>C3</para>
+              </entry>
+              <entry align="center" spanname="c13" valign="middle">
+                <para>B4</para>
+              </entry>
+              <entry align="center" spanname="c14" valign="middle">
+                <para>A5</para>
+              </entry>
+              <entry align="center" spanname="c15" valign="middle">
+                <para>96</para>
+              </entry>
+              <entry align="center" spanname="c16" valign="middle">
+                <para>87</para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis>x</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>y</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>0</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>1</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>2</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>3</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>4</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>5</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>6</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>7</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>8</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>9</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>A</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>B</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>C</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>D</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>E</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>F</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>F</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>0</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>E</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>1</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>D</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>2</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>C</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>3</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>B</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>4</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>A</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>5</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>9</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>6</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>8</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>7</para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis role="bold">a</emphasis><subscript>x</subscript> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis role="bold">b</emphasis><subscript>y</subscript> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>F0</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>EF</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>F2</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>CF</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>F4</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>AF</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>F6</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>8F</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>F8</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>6F</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>FA</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>4F</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>FC</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>2F</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>FE</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>0F</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>FF</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>FF</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>FE</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>EF</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>FD</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>DF</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>FC</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>CF</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>FB</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>BF</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>FA</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>AF</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>F9</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>9F</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>F8</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>8F</para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" spanname="c0" valign="middle">
+                <para> <emphasis role="bold">r</emphasis> </para>
+              </entry>
+              <entry align="center" spanname="c1" valign="middle">
+                <para>1F</para>
+              </entry>
+              <entry align="center" spanname="c2" valign="middle">
+                <para>3D</para>
+              </entry>
+              <entry align="center" spanname="c3" valign="middle">
+                <para>5B</para>
+              </entry>
+              <entry align="center" spanname="c4" valign="middle">
+                <para>79</para>
+              </entry>
+              <entry align="center" spanname="c5" valign="middle">
+                <para>97</para>
+              </entry>
+              <entry align="center" spanname="c6" valign="middle">
+                <para>B5</para>
+              </entry>
+              <entry align="center" spanname="c7" valign="middle">
+                <para>D3</para>
+              </entry>
+              <entry align="center" spanname="c8" valign="middle">
+                <para>F1</para>
+              </entry>
+              <entry align="center" spanname="c9" valign="middle">
+                <para>00</para>
+              </entry>
+              <entry align="center" spanname="c10" valign="middle">
+                <para>11</para>
+              </entry>
+              <entry align="center" spanname="c11" valign="middle">
+                <para>22</para>
+              </entry>
+              <entry align="center" spanname="c12" valign="middle">
+                <para>33</para>
+              </entry>
+              <entry align="center" spanname="c13" valign="middle">
+                <para>44</para>
+              </entry>
+              <entry align="center" spanname="c14" valign="middle">
+                <para>55</para>
+              </entry>
+              <entry align="center" spanname="c15" valign="middle">
+                <para>66</para>
+              </entry>
+              <entry align="center" spanname="c16" valign="middle">
+                <para>77</para>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+      </para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       The element numbering within a register is left-to-right for big-endian
       targets, and right-to-left for little-endian targets.
