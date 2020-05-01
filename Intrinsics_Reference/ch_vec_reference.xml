@@ -13210,9 +13210,16 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       single-precision IEEE numbers.</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       The element numbering within a register is left-to-right for big-endian
-      targets, and right-to-left for little-endian targets.  Thus the
-      permute control vector at address <emphasis role="bold">pcv</emphasis>
-      in the example implementation will differ for big- and little-endian.
+      targets, and right-to-left for little-endian targets.
+      </para>
+      <para><emphasis role="bold">Notes:</emphasis> The example
+      implementation assumes that the vperm instruction is used for
+      big-endian, and the vpermr instruction is used for
+      little-endian.  The permute control vector for the vperm or
+      vpermr instruction is in a memory location identified by pcv. 
+      The value located at pcv is identical in natural element order
+      for big- and little-endian:  { 15, 14, 0, 0, 13, 12, 0, 0, 11,
+      10, 0, 0, 9, 8, 0, 0 }.
       </para>
       
       <indexterm>
@@ -13221,6 +13228,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </indexterm>
       <indexterm>
 	<primary>vperm</primary>
+	<secondary>vec_extract_fp32_from_shorth</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vpermr</primary>
 	<secondary>vec_extract_fp32_from_shorth</secondary>
       </indexterm>
       <indexterm>
@@ -13266,7 +13277,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry>
                 <programlisting>
   lxv      t,0(pcv)
-  vperm    u,a,a,t
+  vperm[r] u,a,a,t
   xvcvhpsp r,u
 		</programlisting>
               </entry>
@@ -13300,9 +13311,16 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       single-precision IEEE numbers.</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       The element numbering within a register is left-to-right for big-endian
-      targets, and right-to-left for little-endian targets.  Thus the
-      permute control vector at address <emphasis role="bold">pcv</emphasis>
-      in the example implementation will differ for big- and little-endian.
+      targets, and right-to-left for little-endian targets.
+      </para>
+      <para><emphasis role="bold">Notes:</emphasis> The example
+      implementation assumes that the vperm instruction is used for
+      big-endian, and the vpermr instruction is used for
+      little-endian.  The permute control vector for the vperm or
+      vpermr instruction is in a memory location identified by pcv. 
+      The value located at pcv is identical in natural element order
+      for big- and little-endian:  { 7, 6, 0, 0, 5, 4, 0, 0, 3, 2, 0,
+      0, 1, 0, 0, 0 }.
       </para>
       
       <indexterm>
@@ -13311,6 +13329,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </indexterm>
       <indexterm>
 	<primary>vperm</primary>
+	<secondary>vec_extract_fp32_from_shortl</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vpermr</primary>
 	<secondary>vec_extract_fp32_from_shortl</secondary>
       </indexterm>
       <indexterm>
@@ -13356,7 +13378,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry>
                 <programlisting>
   lxv      t,0(pcv)
-  vperm    u,a,a,t
+  vperm[r] u,a,a,t
   xvcvhpsp r,u
 		</programlisting>
               </entry>
@@ -25636,8 +25658,81 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <para><emphasis role="bold">Notes:</emphasis> The example
       implementations assume that the permute control vector for the
       vperm or vpermr instruction is in a register identified by pcv.
-      The value of pcv differs based on the element size.
+      The value of pcv differs based on the element size, and is the
+      same (in natural element order) for big- and little-endian,
+      assuming the use of vperm for big-endian and vpermr for
+      little-endian.
       </para>
+      <informaltable>
+	<tgroup cols="2">
+          <colspec colname="c0" colwidth="10*" />
+          <colspec colname="c1" colwidth="10*" />
+	  <thead>
+	    <row>
+	      <entry align="center">
+		<emphasis role="bold">Vector types</emphasis>
+	      </entry>
+	      <entry align="center">
+		<emphasis role="bold">Permute control vector</emphasis>
+	      </entry>
+	    </row>
+	  </thead>
+	  <tbody>
+	    <row>
+	      <entry align="center">
+		<para>
+		  vector char
+		</para>
+	      </entry>
+	      <entry align="center">
+		<para>
+		  { 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1,
+		  0 }
+		</para>
+	      </entry>
+	    </row>
+	    <row>
+	      <entry align="center">
+		<para>
+		  vector short
+		</para>
+	      </entry>
+	      <entry align="center">
+		<para>
+		  { 14, 15, 12, 13, 10, 11, 8, 9, 6, 7, 4, 5, 2, 3, 0,
+		  1 }
+		</para>
+	      </entry>
+	    </row>
+	    <row>
+	      <entry align="center">
+		<para>
+		  vector int, vector float
+		</para>
+	      </entry>
+	      <entry align="center">
+		<para>
+		  { 12, 13, 14, 15, 8, 9, 10, 11, 4, 5, 6, 7, 0, 1, 2,
+		  3 }
+		</para>
+	      </entry>
+	    </row>
+	    <row>
+	      <entry align="center">
+		<para>
+		  vector long long, vector double
+		</para>
+	      </entry>
+	      <entry align="center">
+		<para>
+		  { 8, 9, 10, 11, 12, 13, 14, 15, 0, 1, 2, 3, 4, 5, 6,
+		  7 }
+		</para>
+	      </entry>
+	    </row>
+	  </tbody>
+	</tgroup>
+      </informaltable>
       
       <indexterm>
 	<primary>vperm</primary>
