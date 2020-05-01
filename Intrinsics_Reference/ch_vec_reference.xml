@@ -25228,6 +25228,105 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <emphasis>i</emphasis> + 1 of <emphasis role="bold">a</emphasis> and
       <emphasis role="bold">b</emphasis>.
       </para>
+      <para>An example follows for inputs of type vector unsigned int:
+      <informaltable frame="all">
+      <tgroup cols="5">
+          <colspec colname="c0" colwidth="20*" />
+          <colspec colname="c1L" colwidth="10*" />
+          <colspec colname="c1R" colwidth="10*" />
+          <colspec colname="c2L" colwidth="10*" />
+          <colspec colname="c2R" colwidth="10*" />
+          <spanspec spanname="c1" namest="c1L" nameend="c1R"/>
+          <spanspec spanname="c2" namest="c2L" nameend="c2R"/>
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis role="bold">a</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>A3000000</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>00A20000</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>0000A100</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>000000A0</para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis role="bold">b</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>00B30000</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>0000B200</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>000000B1</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>B00000B0</para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis>binary polynomial multiplicands</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>A3000000</para>
+                <para>00B30000</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>00A20000</para>
+                <para>0000B200</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>0000A100</para>
+                <para>000000B1</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>000000A0</para>
+                <para>B00000B0</para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis>intermediate results</emphasis> </para>
+                <para> <emphasis>XOR operands</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>004E350000000000</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>0000004E24000000</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>00000000004E1100</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>0000004E00004E00</para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis role="bold">r</emphasis> </para>
+              </entry>
+              <entry align="center" spanname="c1" valign="middle">
+                <para>004E354E24000000</para>
+              </entry>
+              <entry align="center" spanname="c2" valign="middle">
+                <para>0000004E004E5F00</para>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+      </para>
       
       <para><emphasis role="bold">Endian considerations:</emphasis>
       All element numberings in the above description denote big-endian
