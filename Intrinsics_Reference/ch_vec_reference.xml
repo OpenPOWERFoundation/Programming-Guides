@@ -8172,7 +8172,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <para><emphasis role="bold">Endian considerations:</emphasis>
       All element and bit numberings of the AES cipher operation use
       big-endian (i.e., left-to-right) order, reflecting the underlying
-      hardware insruction.  Unlike most of the vector intrinsics in this
+      hardware instruction.  Unlike most of the vector intrinsics in this
       chapter, <code>vec_cipher_be</code> does not follow the bi-endian
       programming model.
       </para>
@@ -8257,7 +8257,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <para><emphasis role="bold">Endian considerations:</emphasis>
       All element and bit numberings of the AES cipher-last operation use
       big-endian (i.e., left-to-right) order, reflecting the underlying
-      hardware insruction.  Unlike most of the vector intrinsics in this
+      hardware instruction.  Unlike most of the vector intrinsics in this
       chapter, <code>vec_cipherlast_be</code> does not follow the bi-endian
       programming model.
       </para>
@@ -21529,7 +21529,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <para><emphasis role="bold">Endian considerations:</emphasis>
       All element and bit numberings of the AES inverse cipher operation use
       big-endian (i.e., left-to-right) order, reflecting the underlying
-      hardware insruction.  Unlike most of the vector intrinsics in this
+      hardware instruction.  Unlike most of the vector intrinsics in this
       chapter, <code>vec_ncipher_be</code> does not follow the bi-endian
       programming model.
       </para>
@@ -21614,7 +21614,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <para><emphasis role="bold">Endian considerations:</emphasis>
       All element and bit numberings of the AES inverse cipher-last operation
       use big-endian (i.e., left-to-right) order, reflecting the underlying
-      hardware insruction.  Unlike most of the vector intrinsics in this
+      hardware instruction.  Unlike most of the vector intrinsics in this
       chapter, <code>vec_ncipherlast_be</code> does not follow the bi-endian
       programming model.
       </para>
@@ -25331,7 +25331,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <para><emphasis role="bold">Endian considerations:</emphasis>
       All element numberings in the above description denote big-endian
       (i.e., left-to-right) order, reflecting the underlying hardware
-      insruction.  Unlike most of the vector intrinsics in this chapter,
+      instruction.  Unlike most of the vector intrinsics in this chapter,
       <code>vec_pmsum_be</code> does not follow the bi-endian
       programming model.
       </para>
@@ -27458,7 +27458,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <para><emphasis role="bold">Endian considerations:</emphasis>
       All element numberings of the SubBytes operation use
       big-endian (i.e., left-to-right) order, reflecting the underlying
-      hardware insruction.  Unlike most of the vector intrinsics in this
+      hardware instruction.  Unlike most of the vector intrinsics in this
       chapter, <code>vec_sbox_be</code> does not follow the bi-endian
       programming model.
       </para>
@@ -28214,7 +28214,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <para><emphasis role="bold">Endian considerations:</emphasis>
       All element numberings in the above description denote big-endian
       (i.e., left-to-right) order, reflecting the underlying hardware
-      insruction.  Unlike most of the vector intrinsics in this chapter,
+      instruction.  Unlike most of the vector intrinsics in this chapter,
       <code>vec_pmsum_be</code> does not follow the bi-endian
       programming model.
       </para>
