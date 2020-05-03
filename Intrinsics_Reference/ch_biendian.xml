@@ -1506,6 +1506,245 @@ a[3] = c;</programlisting>
 	order.
       </para>
       <para>
+	The big endian result is {0x00010203, 0x1c1d1e1f, 0x0c0d0e0f,
+	0x14151617}, as shown here:
+      </para>
+      <informaltable frame="all">
+	<tgroup cols="17">
+          <colspec colname="c1" colwidth="1*" />
+          <colspec colname="c2" colwidth="1*" />
+          <colspec colname="c3" colwidth="1*" />
+          <colspec colname="c4" colwidth="1*" />
+          <colspec colname="c5" colwidth="1*" />
+          <colspec colname="c6" colwidth="1*" />
+          <colspec colname="c7" colwidth="1*" />
+          <colspec colname="c8" colwidth="1*" />
+          <colspec colname="c9" colwidth="1*" />
+          <colspec colname="c10" colwidth="1*" />
+          <colspec colname="c11" colwidth="1*" />
+          <colspec colname="c12" colwidth="1*" />
+          <colspec colname="c13" colwidth="1*" />
+          <colspec colname="c14" colwidth="1*" />
+          <colspec colname="c15" colwidth="1*" />
+          <colspec colname="c16" colwidth="1*" />
+          <colspec colname="c17" colwidth="1*" />
+          <tbody>
+            <row>
+              <entry align="center">
+		<para><emphasis role="bold">a</emphasis></para>
+              </entry>
+	      <entry align="center">
+		<para>00</para>
+	      </entry>
+	      <entry align="center">
+		<para>01</para>
+	      </entry>
+	      <entry align="center">
+		<para>02</para>
+	      </entry>
+	      <entry align="center">
+		<para>03</para>
+	      </entry>
+	      <entry align="center">
+		<para>04</para>
+	      </entry>
+	      <entry align="center">
+		<para>05</para>
+	      </entry>
+	      <entry align="center">
+		<para>06</para>
+	      </entry>
+	      <entry align="center">
+		<para>07</para>
+	      </entry>
+	      <entry align="center">
+		<para>08</para>
+	      </entry>
+	      <entry align="center">
+		<para>09</para>
+	      </entry>
+	      <entry align="center">
+		<para>0A</para>
+	      </entry>
+	      <entry align="center">
+		<para>0B</para>
+	      </entry>
+	      <entry align="center">
+		<para>0C</para>
+	      </entry>
+	      <entry align="center">
+		<para>0D</para>
+	      </entry>
+	      <entry align="center">
+		<para>0E</para>
+	      </entry>
+	      <entry align="center">
+		<para>0F</para>
+	      </entry>
+	    </row>
+            <row>
+              <entry align="center">
+		<para><emphasis role="bold">b</emphasis></para>
+              </entry>
+	      <entry align="center">
+		<para>10</para>
+	      </entry>
+	      <entry align="center">
+		<para>11</para>
+	      </entry>
+	      <entry align="center">
+		<para>12</para>
+	      </entry>
+	      <entry align="center">
+		<para>13</para>
+	      </entry>
+	      <entry align="center">
+		<para>14</para>
+	      </entry>
+	      <entry align="center">
+		<para>15</para>
+	      </entry>
+	      <entry align="center">
+		<para>16</para>
+	      </entry>
+	      <entry align="center">
+		<para>17</para>
+	      </entry>
+	      <entry align="center">
+		<para>18</para>
+	      </entry>
+	      <entry align="center">
+		<para>19</para>
+	      </entry>
+	      <entry align="center">
+		<para>1A</para>
+	      </entry>
+	      <entry align="center">
+		<para>1B</para>
+	      </entry>
+	      <entry align="center">
+		<para>1C</para>
+	      </entry>
+	      <entry align="center">
+		<para>1D</para>
+	      </entry>
+	      <entry align="center">
+		<para>1E</para>
+	      </entry>
+	      <entry align="center">
+		<para>1F</para>
+	      </entry>
+	    </row>
+            <row>
+              <entry align="center">
+		<para><emphasis role="bold">c</emphasis></para>
+              </entry>
+	      <entry align="center">
+		<para>0</para>
+	      </entry>
+	      <entry align="center">
+		<para>1</para>
+	      </entry>
+	      <entry align="center">
+		<para>2</para>
+	      </entry>
+	      <entry align="center">
+		<para>3</para>
+	      </entry>
+	      <entry align="center">
+		<para>28</para>
+	      </entry>
+	      <entry align="center">
+		<para>29</para>
+	      </entry>
+	      <entry align="center">
+		<para>30</para>
+	      </entry>
+	      <entry align="center">
+		<para>31</para>
+	      </entry>
+	      <entry align="center">
+		<para>12</para>
+	      </entry>
+	      <entry align="center">
+		<para>13</para>
+	      </entry>
+	      <entry align="center">
+		<para>14</para>
+	      </entry>
+	      <entry align="center">
+		<para>15</para>
+	      </entry>
+	      <entry align="center">
+		<para>20</para>
+	      </entry>
+	      <entry align="center">
+		<para>21</para>
+	      </entry>
+	      <entry align="center">
+		<para>22</para>
+	      </entry>
+	      <entry align="center">
+		<para>23</para>
+	      </entry>
+	    </row>
+            <row>
+              <entry align="center">
+		<para><emphasis role="bold">t</emphasis></para>
+              </entry>
+	      <entry align="center">
+		<para>00</para>
+	      </entry>
+	      <entry align="center">
+		<para>01</para>
+	      </entry>
+	      <entry align="center">
+		<para>02</para>
+	      </entry>
+	      <entry align="center">
+		<para>03</para>
+	      </entry>
+	      <entry align="center">
+		<para>1C</para>
+	      </entry>
+	      <entry align="center">
+		<para>1D</para>
+	      </entry>
+	      <entry align="center">
+		<para>1E</para>
+	      </entry>
+	      <entry align="center">
+		<para>1F</para>
+	      </entry>
+	      <entry align="center">
+		<para>0C</para>
+	      </entry>
+	      <entry align="center">
+		<para>0D</para>
+	      </entry>
+	      <entry align="center">
+		<para>0E</para>
+	      </entry>
+	      <entry align="center">
+		<para>0F</para>
+	      </entry>
+	      <entry align="center">
+		<para>14</para>
+	      </entry>
+	      <entry align="center">
+		<para>15</para>
+	      </entry>
+	      <entry align="center">
+		<para>16</para>
+	      </entry>
+	      <entry align="center">
+		<para>17</para>
+	      </entry>
+	    </row>
+	  </tbody>
+	</tgroup>
+      </informaltable>
+      <para>
 	For little endian, the modified PCV is elementwise subtracted
 	from 31, giving {31,30,29,28,3,2,1,0,19,18,17,16,11,10,9,8}.
 	Since the elements appear in reverse order in a register when
@@ -1515,10 +1754,247 @@ a[3] = c;</programlisting>
 	<code>vperm</code> instruction will again select entire
 	elements using the groups of 4 contiguous bytes, and the
 	values of the integers will be reordered without compromising
-	each integer's contents.  The fact that the little-endian
-	result matches the big-endian result is left as an exercise
-	for the reader.
+	each integer's contents.  The little-endian result matches the
+	big-endian result, as shown.  Observe that <emphasis
+	role="bold">a</emphasis> and <emphasis
+	role="bold">b</emphasis> switch positions for little endian
+	code generation.
       </para>
+      <informaltable frame="all">
+	<tgroup cols="17">
+          <colspec colname="c1" colwidth="1*" />
+          <colspec colname="c2" colwidth="1*" />
+          <colspec colname="c3" colwidth="1*" />
+          <colspec colname="c4" colwidth="1*" />
+          <colspec colname="c5" colwidth="1*" />
+          <colspec colname="c6" colwidth="1*" />
+          <colspec colname="c7" colwidth="1*" />
+          <colspec colname="c8" colwidth="1*" />
+          <colspec colname="c9" colwidth="1*" />
+          <colspec colname="c10" colwidth="1*" />
+          <colspec colname="c11" colwidth="1*" />
+          <colspec colname="c12" colwidth="1*" />
+          <colspec colname="c13" colwidth="1*" />
+          <colspec colname="c14" colwidth="1*" />
+          <colspec colname="c15" colwidth="1*" />
+          <colspec colname="c16" colwidth="1*" />
+          <colspec colname="c17" colwidth="1*" />
+          <tbody>
+            <row>
+              <entry align="center">
+		<para><emphasis role="bold">b</emphasis></para>
+              </entry>
+	      <entry align="center">
+		<para>1C</para>
+	      </entry>
+	      <entry align="center">
+		<para>1D</para>
+	      </entry>
+	      <entry align="center">
+		<para>1E</para>
+	      </entry>
+	      <entry align="center">
+		<para>1F</para>
+	      </entry>
+	      <entry align="center">
+		<para>18</para>
+	      </entry>
+	      <entry align="center">
+		<para>19</para>
+	      </entry>
+	      <entry align="center">
+		<para>1A</para>
+	      </entry>
+	      <entry align="center">
+		<para>1B</para>
+	      </entry>
+	      <entry align="center">
+		<para>14</para>
+	      </entry>
+	      <entry align="center">
+		<para>15</para>
+	      </entry>
+	      <entry align="center">
+		<para>16</para>
+	      </entry>
+	      <entry align="center">
+		<para>17</para>
+	      </entry>
+	      <entry align="center">
+		<para>10</para>
+	      </entry>
+	      <entry align="center">
+		<para>11</para>
+	      </entry>
+	      <entry align="center">
+		<para>12</para>
+	      </entry>
+	      <entry align="center">
+		<para>13</para>
+	      </entry>
+	    </row>
+            <row>
+              <entry align="center">
+		<para><emphasis role="bold">a</emphasis></para>
+              </entry>
+	      <entry align="center">
+		<para>0C</para>
+	      </entry>
+	      <entry align="center">
+		<para>0D</para>
+	      </entry>
+	      <entry align="center">
+		<para>0E</para>
+	      </entry>
+	      <entry align="center">
+		<para>0F</para>
+	      </entry>
+	      <entry align="center">
+		<para>08</para>
+	      </entry>
+	      <entry align="center">
+		<para>09</para>
+	      </entry>
+	      <entry align="center">
+		<para>0A</para>
+	      </entry>
+	      <entry align="center">
+		<para>0B</para>
+	      </entry>
+	      <entry align="center">
+		<para>04</para>
+	      </entry>
+	      <entry align="center">
+		<para>05</para>
+	      </entry>
+	      <entry align="center">
+		<para>06</para>
+	      </entry>
+	      <entry align="center">
+		<para>07</para>
+	      </entry>
+	      <entry align="center">
+		<para>00</para>
+	      </entry>
+	      <entry align="center">
+		<para>01</para>
+	      </entry>
+	      <entry align="center">
+		<para>02</para>
+	      </entry>
+	      <entry align="center">
+		<para>03</para>
+	      </entry>
+	    </row>
+            <row>
+              <entry align="center">
+		<para><emphasis role="bold">c</emphasis></para>
+              </entry>
+	      <entry align="center">
+		<para>8</para>
+	      </entry>
+	      <entry align="center">
+		<para>9</para>
+	      </entry>
+	      <entry align="center">
+		<para>10</para>
+	      </entry>
+	      <entry align="center">
+		<para>11</para>
+	      </entry>
+	      <entry align="center">
+		<para>16</para>
+	      </entry>
+	      <entry align="center">
+		<para>17</para>
+	      </entry>
+	      <entry align="center">
+		<para>18</para>
+	      </entry>
+	      <entry align="center">
+		<para>19</para>
+	      </entry>
+	      <entry align="center">
+		<para>0</para>
+	      </entry>
+	      <entry align="center">
+		<para>1</para>
+	      </entry>
+	      <entry align="center">
+		<para>2</para>
+	      </entry>
+	      <entry align="center">
+		<para>3</para>
+	      </entry>
+	      <entry align="center">
+		<para>28</para>
+	      </entry>
+	      <entry align="center">
+		<para>29</para>
+	      </entry>
+	      <entry align="center">
+		<para>30</para>
+	      </entry>
+	      <entry align="center">
+		<para>31</para>
+	      </entry>
+	    </row>
+            <row>
+              <entry align="center">
+		<para><emphasis role="bold">t</emphasis></para>
+              </entry>
+	      <entry align="center">
+		<para>14</para>
+	      </entry>
+	      <entry align="center">
+		<para>15</para>
+	      </entry>
+	      <entry align="center">
+		<para>16</para>
+	      </entry>
+	      <entry align="center">
+		<para>17</para>
+	      </entry>
+	      <entry align="center">
+		<para>0C</para>
+	      </entry>
+	      <entry align="center">
+		<para>0D</para>
+	      </entry>
+	      <entry align="center">
+		<para>0E</para>
+	      </entry>
+	      <entry align="center">
+		<para>0F</para>
+	      </entry>
+	      <entry align="center">
+		<para>1C</para>
+	      </entry>
+	      <entry align="center">
+		<para>1D</para>
+	      </entry>
+	      <entry align="center">
+		<para>1E</para>
+	      </entry>
+	      <entry align="center">
+		<para>1F</para>
+	      </entry>
+	      <entry align="center">
+		<para>00</para>
+	      </entry>
+	      <entry align="center">
+		<para>01</para>
+	      </entry>
+	      <entry align="center">
+		<para>02</para>
+	      </entry>
+	      <entry align="center">
+		<para>03</para>
+	      </entry>
+	    </row>
+	  </tbody>
+	</tgroup>
+      </informaltable>
       <para>
 	Now, suppose instead that the original PCV does not reorder
 	entire integers at once:
@@ -1528,6 +2004,241 @@ a[3] = c;</programlisting>
 	The result of the big-endian implementation would be:
       </para>
       <programlisting>  t = {0x00141f04, 0x07110613, 0x1e030208, 0x090d0516};</programlisting>
+      <informaltable frame="all">
+	<tgroup cols="17">
+          <colspec colname="c1" colwidth="1*" />
+          <colspec colname="c2" colwidth="1*" />
+          <colspec colname="c3" colwidth="1*" />
+          <colspec colname="c4" colwidth="1*" />
+          <colspec colname="c5" colwidth="1*" />
+          <colspec colname="c6" colwidth="1*" />
+          <colspec colname="c7" colwidth="1*" />
+          <colspec colname="c8" colwidth="1*" />
+          <colspec colname="c9" colwidth="1*" />
+          <colspec colname="c10" colwidth="1*" />
+          <colspec colname="c11" colwidth="1*" />
+          <colspec colname="c12" colwidth="1*" />
+          <colspec colname="c13" colwidth="1*" />
+          <colspec colname="c14" colwidth="1*" />
+          <colspec colname="c15" colwidth="1*" />
+          <colspec colname="c16" colwidth="1*" />
+          <colspec colname="c17" colwidth="1*" />
+          <tbody>
+            <row>
+              <entry align="center">
+		<para><emphasis role="bold">a</emphasis></para>
+              </entry>
+	      <entry align="center">
+		<para>00</para>
+	      </entry>
+	      <entry align="center">
+		<para>01</para>
+	      </entry>
+	      <entry align="center">
+		<para>02</para>
+	      </entry>
+	      <entry align="center">
+		<para>03</para>
+	      </entry>
+	      <entry align="center">
+		<para>04</para>
+	      </entry>
+	      <entry align="center">
+		<para>05</para>
+	      </entry>
+	      <entry align="center">
+		<para>06</para>
+	      </entry>
+	      <entry align="center">
+		<para>07</para>
+	      </entry>
+	      <entry align="center">
+		<para>08</para>
+	      </entry>
+	      <entry align="center">
+		<para>09</para>
+	      </entry>
+	      <entry align="center">
+		<para>0A</para>
+	      </entry>
+	      <entry align="center">
+		<para>0B</para>
+	      </entry>
+	      <entry align="center">
+		<para>0C</para>
+	      </entry>
+	      <entry align="center">
+		<para>0D</para>
+	      </entry>
+	      <entry align="center">
+		<para>0E</para>
+	      </entry>
+	      <entry align="center">
+		<para>0F</para>
+	      </entry>
+	    </row>
+            <row>
+              <entry align="center">
+		<para><emphasis role="bold">b</emphasis></para>
+              </entry>
+	      <entry align="center">
+		<para>10</para>
+	      </entry>
+	      <entry align="center">
+		<para>11</para>
+	      </entry>
+	      <entry align="center">
+		<para>12</para>
+	      </entry>
+	      <entry align="center">
+		<para>13</para>
+	      </entry>
+	      <entry align="center">
+		<para>14</para>
+	      </entry>
+	      <entry align="center">
+		<para>15</para>
+	      </entry>
+	      <entry align="center">
+		<para>16</para>
+	      </entry>
+	      <entry align="center">
+		<para>17</para>
+	      </entry>
+	      <entry align="center">
+		<para>18</para>
+	      </entry>
+	      <entry align="center">
+		<para>19</para>
+	      </entry>
+	      <entry align="center">
+		<para>1A</para>
+	      </entry>
+	      <entry align="center">
+		<para>1B</para>
+	      </entry>
+	      <entry align="center">
+		<para>1C</para>
+	      </entry>
+	      <entry align="center">
+		<para>1D</para>
+	      </entry>
+	      <entry align="center">
+		<para>1E</para>
+	      </entry>
+	      <entry align="center">
+		<para>1F</para>
+	      </entry>
+	    </row>
+            <row>
+              <entry align="center">
+		<para><emphasis role="bold">c</emphasis></para>
+              </entry>
+	      <entry align="center">
+		<para>0</para>
+	      </entry>
+	      <entry align="center">
+		<para>20</para>
+	      </entry>
+	      <entry align="center">
+		<para>31</para>
+	      </entry>
+	      <entry align="center">
+		<para>4</para>
+	      </entry>
+	      <entry align="center">
+		<para>7</para>
+	      </entry>
+	      <entry align="center">
+		<para>17</para>
+	      </entry>
+	      <entry align="center">
+		<para>6</para>
+	      </entry>
+	      <entry align="center">
+		<para>19</para>
+	      </entry>
+	      <entry align="center">
+		<para>30</para>
+	      </entry>
+	      <entry align="center">
+		<para>3</para>
+	      </entry>
+	      <entry align="center">
+		<para>2</para>
+	      </entry>
+	      <entry align="center">
+		<para>8</para>
+	      </entry>
+	      <entry align="center">
+		<para>9</para>
+	      </entry>
+	      <entry align="center">
+		<para>13</para>
+	      </entry>
+	      <entry align="center">
+		<para>5</para>
+	      </entry>
+	      <entry align="center">
+		<para>22</para>
+	      </entry>
+	    </row>
+            <row>
+              <entry align="center">
+		<para><emphasis role="bold">t</emphasis></para>
+              </entry>
+	      <entry align="center">
+		<para>00</para>
+	      </entry>
+	      <entry align="center">
+		<para>14</para>
+	      </entry>
+	      <entry align="center">
+		<para>1F</para>
+	      </entry>
+	      <entry align="center">
+		<para>04</para>
+	      </entry>
+	      <entry align="center">
+		<para>07</para>
+	      </entry>
+	      <entry align="center">
+		<para>11</para>
+	      </entry>
+	      <entry align="center">
+		<para>06</para>
+	      </entry>
+	      <entry align="center">
+		<para>13</para>
+	      </entry>
+	      <entry align="center">
+		<para>1E</para>
+	      </entry>
+	      <entry align="center">
+		<para>03</para>
+	      </entry>
+	      <entry align="center">
+		<para>02</para>
+	      </entry>
+	      <entry align="center">
+		<para>08</para>
+	      </entry>
+	      <entry align="center">
+		<para>09</para>
+	      </entry>
+	      <entry align="center">
+		<para>0D</para>
+	      </entry>
+	      <entry align="center">
+		<para>05</para>
+	      </entry>
+	      <entry align="center">
+		<para>16</para>
+	      </entry>
+	    </row>
+	  </tbody>
+	</tgroup>
+      </informaltable>
       <para>
 	For little-endian, the modified PCV would be
 	{31,11,0,27,24,14,25,12,1,28,29,23,22,18,26,9}, appearing in
@@ -1539,6 +2250,241 @@ a[3] = c;</programlisting>
       <para>
 	which bears no resemblance to the big-endian result.
       </para>
+      <informaltable frame="all">
+	<tgroup cols="17">
+          <colspec colname="c1" colwidth="1*" />
+          <colspec colname="c2" colwidth="1*" />
+          <colspec colname="c3" colwidth="1*" />
+          <colspec colname="c4" colwidth="1*" />
+          <colspec colname="c5" colwidth="1*" />
+          <colspec colname="c6" colwidth="1*" />
+          <colspec colname="c7" colwidth="1*" />
+          <colspec colname="c8" colwidth="1*" />
+          <colspec colname="c9" colwidth="1*" />
+          <colspec colname="c10" colwidth="1*" />
+          <colspec colname="c11" colwidth="1*" />
+          <colspec colname="c12" colwidth="1*" />
+          <colspec colname="c13" colwidth="1*" />
+          <colspec colname="c14" colwidth="1*" />
+          <colspec colname="c15" colwidth="1*" />
+          <colspec colname="c16" colwidth="1*" />
+          <colspec colname="c17" colwidth="1*" />
+          <tbody>
+            <row>
+              <entry align="center">
+		<para><emphasis role="bold">b</emphasis></para>
+              </entry>
+	      <entry align="center">
+		<para>1C</para>
+	      </entry>
+	      <entry align="center">
+		<para>1D</para>
+	      </entry>
+	      <entry align="center">
+		<para>1E</para>
+	      </entry>
+	      <entry align="center">
+		<para>1F</para>
+	      </entry>
+	      <entry align="center">
+		<para>18</para>
+	      </entry>
+	      <entry align="center">
+		<para>19</para>
+	      </entry>
+	      <entry align="center">
+		<para>1A</para>
+	      </entry>
+	      <entry align="center">
+		<para>1B</para>
+	      </entry>
+	      <entry align="center">
+		<para>14</para>
+	      </entry>
+	      <entry align="center">
+		<para>15</para>
+	      </entry>
+	      <entry align="center">
+		<para>16</para>
+	      </entry>
+	      <entry align="center">
+		<para>17</para>
+	      </entry>
+	      <entry align="center">
+		<para>10</para>
+	      </entry>
+	      <entry align="center">
+		<para>11</para>
+	      </entry>
+	      <entry align="center">
+		<para>12</para>
+	      </entry>
+	      <entry align="center">
+		<para>13</para>
+	      </entry>
+	    </row>
+            <row>
+              <entry align="center">
+		<para><emphasis role="bold">a</emphasis></para>
+              </entry>
+	      <entry align="center">
+		<para>0C</para>
+	      </entry>
+	      <entry align="center">
+		<para>0D</para>
+	      </entry>
+	      <entry align="center">
+		<para>0E</para>
+	      </entry>
+	      <entry align="center">
+		<para>0F</para>
+	      </entry>
+	      <entry align="center">
+		<para>08</para>
+	      </entry>
+	      <entry align="center">
+		<para>09</para>
+	      </entry>
+	      <entry align="center">
+		<para>0A</para>
+	      </entry>
+	      <entry align="center">
+		<para>0B</para>
+	      </entry>
+	      <entry align="center">
+		<para>04</para>
+	      </entry>
+	      <entry align="center">
+		<para>05</para>
+	      </entry>
+	      <entry align="center">
+		<para>06</para>
+	      </entry>
+	      <entry align="center">
+		<para>07</para>
+	      </entry>
+	      <entry align="center">
+		<para>00</para>
+	      </entry>
+	      <entry align="center">
+		<para>01</para>
+	      </entry>
+	      <entry align="center">
+		<para>02</para>
+	      </entry>
+	      <entry align="center">
+		<para>03</para>
+	      </entry>
+	    </row>
+            <row>
+              <entry align="center">
+		<para><emphasis role="bold">c</emphasis></para>
+              </entry>
+	      <entry align="center">
+		<para>9</para>
+	      </entry>
+	      <entry align="center">
+		<para>26</para>
+	      </entry>
+	      <entry align="center">
+		<para>18</para>
+	      </entry>
+	      <entry align="center">
+		<para>22</para>
+	      </entry>
+	      <entry align="center">
+		<para>23</para>
+	      </entry>
+	      <entry align="center">
+		<para>29</para>
+	      </entry>
+	      <entry align="center">
+		<para>28</para>
+	      </entry>
+	      <entry align="center">
+		<para>1</para>
+	      </entry>
+	      <entry align="center">
+		<para>12</para>
+	      </entry>
+	      <entry align="center">
+		<para>25</para>
+	      </entry>
+	      <entry align="center">
+		<para>14</para>
+	      </entry>
+	      <entry align="center">
+		<para>24</para>
+	      </entry>
+	      <entry align="center">
+		<para>27</para>
+	      </entry>
+	      <entry align="center">
+		<para>0</para>
+	      </entry>
+	      <entry align="center">
+		<para>11</para>
+	      </entry>
+	      <entry align="center">
+		<para>31</para>
+	      </entry>
+	    </row>
+            <row>
+              <entry align="center">
+		<para><emphasis role="bold">t</emphasis></para>
+              </entry>
+	      <entry align="center">
+		<para>15</para>
+	      </entry>
+	      <entry align="center">
+		<para>06</para>
+	      </entry>
+	      <entry align="center">
+		<para>0E</para>
+	      </entry>
+	      <entry align="center">
+		<para>0A</para>
+	      </entry>
+	      <entry align="center">
+		<para>0B</para>
+	      </entry>
+	      <entry align="center">
+		<para>01</para>
+	      </entry>
+	      <entry align="center">
+		<para>00</para>
+	      </entry>
+	      <entry align="center">
+		<para>1D</para>
+	      </entry>
+	      <entry align="center">
+		<para>10</para>
+	      </entry>
+	      <entry align="center">
+		<para>05</para>
+	      </entry>
+	      <entry align="center">
+		<para>12</para>
+	      </entry>
+	      <entry align="center">
+		<para>04</para>
+	      </entry>
+	      <entry align="center">
+		<para>07</para>
+	      </entry>
+	      <entry align="center">
+		<para>1C</para>
+	      </entry>
+	      <entry align="center">
+		<para>17</para>
+	      </entry>
+	      <entry align="center">
+		<para>03</para>
+	      </entry>
+	    </row>
+	  </tbody>
+	</tgroup>
+      </informaltable>
       <para>
 	The lesson here is to only use <code>vec_perm</code> to
 	reorder entire elements of a vector.  If you must use vec_perm
