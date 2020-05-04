@@ -35164,6 +35164,100 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       role="bold">r</emphasis> contains the saturated sum of elements 2 and 3
       of <emphasis role="bold">a</emphasis> and element 3 of <emphasis
       role="bold">b</emphasis>.</para>
+      <para>An example follows:
+      <informaltable frame="all">
+      <tgroup cols="5">
+          <colspec colname="c0" colwidth="20*" />
+          <colspec colname="c1" colwidth="10*" />
+          <colspec colname="c2" colwidth="10*" />
+          <colspec colname="c3" colwidth="10*" />
+          <colspec colname="c4" colwidth="10*" />
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis role="bold">a</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>-2</para>
+                <para>(FFFFFFFE)</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>-3</para>
+                <para>(FFFFFFFD)</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>7</para>
+                <para>(00000007)</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>15</para>
+                <para>(0000000F)</para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis role="bold">b</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>31</para>
+                <para>(0000001F)</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>-61</para>
+                <para>(FFFFFFC3)</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>121</para>
+                <para>(000000F0)</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>2147483647</para>
+                <para>(7FFFFFFF)</para>
+                <para><emphasis>(MAXINT)</emphasis></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis>calculation</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>0</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>-2 + -3 + -61</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>0</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>7 + 15 + 2147483647</para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis role="bold">r</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>00000000</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>-66</para>
+                <para>(FFFFFFBE)</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>00000000</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>2147483647</para>
+                <para>(7FFFFFFF)</para>
+                <para><emphasis>(saturated)</emphasis></para>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+      </para>
+
       <para><emphasis role="bold">Endian considerations:</emphasis>
       The element numbering within a register is left-to-right for big-endian
       targets, and right-to-left for little-endian targets.
@@ -35286,6 +35380,246 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 	  </listitem>
 	</itemizedlist>
       </para>
+      <para>An example for input <emphasis role="bold">a</emphasis>
+      of type vector unsigned char follows:
+      <informaltable frame="all">
+      <tgroup cols="17">
+          <colspec colname="c0" colwidth="20*" />
+          <colspec colname="c1" colwidth="10*" />
+          <colspec colname="c2" colwidth="10*" />
+          <colspec colname="c3" colwidth="10*" />
+          <colspec colname="c4" colwidth="10*" />
+          <colspec colname="c5" colwidth="10*" />
+          <colspec colname="c6" colwidth="10*" />
+          <colspec colname="c7" colwidth="10*" />
+          <colspec colname="c8" colwidth="10*" />
+          <colspec colname="c9" colwidth="10*" />
+          <colspec colname="c10" colwidth="10*" />
+          <colspec colname="c11" colwidth="10*" />
+          <colspec colname="c12" colwidth="10*" />
+          <colspec colname="c13" colwidth="10*" />
+          <colspec colname="c14" colwidth="10*" />
+          <colspec colname="c15" colwidth="10*" />
+          <colspec colname="c16" colwidth="10*" />
+          <spanspec spanname="w1" namest="c1" nameend="c4"/>
+          <spanspec spanname="w2" namest="c5" nameend="c8"/>
+          <spanspec spanname="w3" namest="c9" nameend="c12"/>
+          <spanspec spanname="w4" namest="c13" nameend="c16"/>
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis role="bold">a</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>01</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>03</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>07</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>0F</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>FF</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>EE</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>BB</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>66</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>11</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>22</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>44</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>88</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>00</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>00</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>00</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>01</para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis>sum across</emphasis> </para>
+              </entry>
+              <entry spanname="w1" align="center" valign="middle">
+                <para>0000001A</para>
+              </entry>
+              <entry spanname="w2" align="center" valign="middle">
+                <para>0000030E</para>
+              </entry>
+              <entry spanname="w3" align="center" valign="middle">
+                <para>000000FF</para>
+              </entry>
+              <entry spanname="w4" align="center" valign="middle">
+                <para>00000001</para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis role="bold">b</emphasis> </para>
+              </entry>
+              <entry spanname="w1" align="center" valign="middle">
+                <para>0000FF00</para>
+              </entry>
+              <entry spanname="w2" align="center" valign="middle">
+                <para>10203040</para>
+              </entry>
+              <entry spanname="w3" align="center" valign="middle">
+                <para>0000FFFF</para>
+              </entry>
+              <entry spanname="w4" align="center" valign="middle">
+                <para>FFFFFFFF</para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis role="bold">r</emphasis> </para>
+              </entry>
+              <entry spanname="w1" align="center" valign="middle">
+                <para>0000FF1A</para>
+              </entry>
+              <entry spanname="w2" align="center" valign="middle">
+                <para>1020334E</para>
+              </entry>
+              <entry spanname="w3" align="center" valign="middle">
+                <para>000100FE</para>
+              </entry>
+              <entry spanname="w4" align="center" valign="middle">
+                <para>FFFFFFFF</para>
+                <para><emphasis>(saturated)</emphasis></para>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+      </para>
+
+      <para>An example for input <emphasis role="bold">a</emphasis>
+      of type vector signed short follows:
+      <informaltable frame="all">
+      <tgroup cols="9">
+          <colspec colname="c0" colwidth="20*" />
+          <colspec colname="c1" colwidth="10*" />
+          <colspec colname="c2" colwidth="10*" />
+          <colspec colname="c3" colwidth="10*" />
+          <colspec colname="c4" colwidth="10*" />
+          <colspec colname="c5" colwidth="10*" />
+          <colspec colname="c6" colwidth="10*" />
+          <colspec colname="c7" colwidth="10*" />
+          <colspec colname="c8" colwidth="10*" />
+          <spanspec spanname="w1" namest="c1" nameend="c2"/>
+          <spanspec spanname="w2" namest="c3" nameend="c4"/>
+          <spanspec spanname="w3" namest="c5" nameend="c6"/>
+          <spanspec spanname="w4" namest="c7" nameend="c8"/>
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis role="bold">a</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>FFFF</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>FFFE</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>7FFF</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>7FFE</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>0124</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>4210</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>FFFE</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>0001</para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis>sum across</emphasis> </para>
+              </entry>
+              <entry spanname="w1" align="center" valign="middle">
+                <para>FFFFFFFD</para>
+              </entry>
+              <entry spanname="w2" align="center" valign="middle">
+                <para>0000FFFD</para>
+              </entry>
+              <entry spanname="w3" align="center" valign="middle">
+                <para>00004334</para>
+              </entry>
+              <entry spanname="w4" align="center" valign="middle">
+                <para>FFFFFFFF</para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis role="bold">b</emphasis> </para>
+              </entry>
+              <entry spanname="w1" align="center" valign="middle">
+                <para>00000003</para>
+              </entry>
+              <entry spanname="w2" align="center" valign="middle">
+                <para>12340000</para>
+              </entry>
+              <entry spanname="w3" align="center" valign="middle">
+                <para>7FFFFF00</para>
+              </entry>
+              <entry spanname="w4" align="center" valign="middle">
+                <para>FFFFFFFF</para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis role="bold">r</emphasis> </para>
+              </entry>
+              <entry spanname="w1" align="center" valign="middle">
+                <para>00000000</para>
+              </entry>
+              <entry spanname="w2" align="center" valign="middle">
+                <para>1234FFFD</para>
+              </entry>
+              <entry spanname="w3" align="center" valign="middle">
+                <para>7FFFFFFF</para>
+                <para><emphasis>(saturated)</emphasis></para>
+              </entry>
+              <entry spanname="w4" align="center" valign="middle">
+                <para>FFFFFFFE</para>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+      </para>
+
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
@@ -35405,6 +35739,92 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       of <emphasis role="bold">r</emphasis> are 0. Element 3 is the saturated
       sum of all the elements of <emphasis role="bold">a</emphasis> and
       element 3 of <emphasis role="bold">b</emphasis>.</para>
+      <para>An example follows:
+      <informaltable frame="all">
+      <tgroup cols="5">
+          <colspec colname="c0" colwidth="20*" />
+          <colspec colname="c1" colwidth="10*" />
+          <colspec colname="c2" colwidth="10*" />
+          <colspec colname="c3" colwidth="10*" />
+          <colspec colname="c4" colwidth="10*" />
+          <colspec colname="c5" colwidth="10*" />
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis role="bold">a</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>00000001</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>00000003</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>00000007</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>0000000F</para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis>sum across</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>00000000</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>00000000</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>00000000</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>0000001A</para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis role="bold">b</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>????????</para>
+                <para><emphasis>(ignored)</emphasis></para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>????????</para>
+                <para><emphasis>(ignored)</emphasis></para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>????????</para>
+                <para><emphasis>(ignored)</emphasis></para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>87654321</para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis role="bold">r</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>00000000</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>00000000</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>00000000</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>8765433B</para>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+      </para>
+
       <para><emphasis role="bold">Endian considerations:</emphasis>
       The element numbering within a register is left-to-right for big-endian
       targets, and right-to-left for little-endian targets.
