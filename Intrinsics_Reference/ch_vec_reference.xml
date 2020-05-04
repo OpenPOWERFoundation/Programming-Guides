@@ -36501,6 +36501,53 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       3 of <emphasis role="bold">r</emphasis> are undefined.  Truncation
       of a negative number to an unsigned integer results in a value of
       zero.</para>
+      <para>An example follows:
+      <informaltable frame="all">
+      <tgroup cols="5">
+          <colspec colname="c0" colwidth="20*" />
+          <colspec colname="c1L" colwidth="10*" />
+          <colspec colname="c1R" colwidth="10*" />
+          <colspec colname="c2L" colwidth="10*" />
+          <colspec colname="c2R" colwidth="10*" />
+          <spanspec spanname="c1" namest="c1L" nameend="c1R"/>
+          <spanspec spanname="c2" namest="c2L" nameend="c2R"/>
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis role="bold">a</emphasis> </para>
+              </entry>
+              <entry align="center" spanname="c1" valign="middle">
+                <para>1.0</para>
+              </entry>
+              <entry align="center" spanname="c2" valign="middle">
+                <para>-1.0</para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis role="bold">r</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>00000001</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>????????</para>
+                <para><emphasis>(undefined)</emphasis></para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>00000000</para>
+                <para><emphasis>(truncation of a negative number to unsigned is 0)</emphasis></para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>????????</para>
+                <para><emphasis>(undefined)</emphasis></para>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+      </para>
+
       <para><emphasis role="bold">Endian considerations:</emphasis>
       The element numbering within a register is left-to-right for big-endian
       targets, and right-to-left for little-endian targets.
@@ -36591,6 +36638,53 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       and 2 of <emphasis role="bold">r</emphasis> are undefined.  Truncation
       of a negative number to an unsigned integer results in a value of
       zero.</para>
+      <para>An example follows:
+      <informaltable frame="all">
+      <tgroup cols="5">
+          <colspec colname="c0" colwidth="20*" />
+          <colspec colname="c1L" colwidth="10*" />
+          <colspec colname="c1R" colwidth="10*" />
+          <colspec colname="c2L" colwidth="10*" />
+          <colspec colname="c2R" colwidth="10*" />
+          <spanspec spanname="c1" namest="c1L" nameend="c1R"/>
+          <spanspec spanname="c2" namest="c2L" nameend="c2R"/>
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis role="bold">a</emphasis> </para>
+              </entry>
+              <entry align="center" spanname="c1" valign="middle">
+                <para>1.0</para>
+              </entry>
+              <entry align="center" spanname="c2" valign="middle">
+                <para>-1.0</para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis role="bold">r</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>????????</para>
+                <para><emphasis>(undefined)</emphasis></para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>00000001</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>????????</para>
+                <para><emphasis>(undefined)</emphasis></para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>00000000</para>
+                <para><emphasis>(truncation of a negative number to unsigned is 0)</emphasis></para>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+      </para>
+
       <para><emphasis role="bold">Endian considerations:</emphasis>
       The element numbering within a register is left-to-right for big-endian
       targets, and right-to-left for little-endian targets.
