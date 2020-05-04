@@ -25149,7 +25149,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
             </row>
             <row>
               <entry align="center" valign="middle">
-                <para>vector unsigned char</para>
+                <para>vector signed char</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>vector signed char</para>
