@@ -16240,7 +16240,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>vector bool char *</para>
+                <para>const vector bool char *</para>
               </entry>
               <entry>
                 <programlisting>
@@ -16256,7 +16256,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>signed char *</para>
+                <para>const signed char *</para>
               </entry>
               <entry>
                 <programlisting>
@@ -16272,7 +16272,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>vector signed char *</para>
+                <para>const vector signed char *</para>
               </entry>
               <entry>
                 <programlisting>
@@ -16288,7 +16288,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> unsigned char *</para>
+                <para>const unsigned char *</para>
               </entry>
               <entry>
                 <programlisting>
@@ -16304,7 +16304,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>vector unsigned char *</para>
+                <para>const vector unsigned char *</para>
               </entry>
               <entry>
                 <programlisting>
@@ -16320,7 +16320,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>vector bool short *</para>
+                <para>const vector bool short *</para>
               </entry>
               <entry>
                 <programlisting>
@@ -16336,7 +16336,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> signed short *</para>
+                <para>const signed short *</para>
               </entry>
               <entry>
                 <programlisting>
@@ -16352,7 +16352,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>vector signed short *</para>
+                <para>const vector signed short *</para>
               </entry>
               <entry>
                 <programlisting>
@@ -16368,7 +16368,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> unsigned short *</para>
+                <para>const unsigned short *</para>
               </entry>
               <entry>
                 <programlisting>
@@ -16384,7 +16384,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>vector unsigned short *</para>
+                <para>const vector unsigned short *</para>
               </entry>
               <entry>
                 <programlisting>
@@ -16400,7 +16400,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>vector pixel *</para>
+                <para>const vector pixel *</para>
               </entry>
               <entry>
                 <programlisting>
@@ -16416,7 +16416,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>vector bool int *</para>
+                <para>const vector bool int *</para>
               </entry>
               <entry>
                 <programlisting>
@@ -16432,7 +16432,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> signed int *</para>
+                <para>const signed int *</para>
               </entry>
               <entry>
                 <programlisting>
@@ -16448,7 +16448,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>vector signed int *</para>
+                <para>const vector signed int *</para>
               </entry>
               <entry>
                 <programlisting>
@@ -16464,7 +16464,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> unsigned int *</para>
+                <para>const unsigned int *</para>
               </entry>
               <entry>
                 <programlisting>
@@ -16480,7 +16480,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>vector unsigned int *</para>
+                <para>const vector unsigned int *</para>
               </entry>
               <entry>
                 <programlisting>
@@ -16496,7 +16496,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>vector bool long long *</para>
+                <para>const vector bool long long *</para>
               </entry>
               <entry>
                 <programlisting>
@@ -16512,7 +16512,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> signed long long *</para>
+                <para>const signed long long *</para>
               </entry>
               <entry>
                 <programlisting>
@@ -16528,7 +16528,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>vector signed long long *</para>
+                <para>const vector signed long long *</para>
               </entry>
               <entry>
                 <programlisting>
@@ -16544,7 +16544,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> unsigned long long *</para>
+                <para>const unsigned long long *</para>
               </entry>
               <entry>
                 <programlisting>
@@ -16560,7 +16560,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>vector unsigned long long *</para>
+                <para>const vector unsigned long long *</para>
               </entry>
               <entry>
                 <programlisting>
@@ -16576,7 +16576,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>signed __int128 *</para>
+                <para>const signed __int128 *</para>
               </entry>
               <entry>
                 <programlisting>
@@ -16592,7 +16592,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>vector signed __int128 *</para>
+                <para>const vector signed __int128 *</para>
               </entry>
               <entry>
                 <programlisting>
@@ -16608,7 +16608,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> unsigned __int128 *</para>
+                <para>const unsigned __int128 *</para>
               </entry>
               <entry>
                 <programlisting>
@@ -16624,7 +16624,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>vector unsigned __int128 *</para>
+                <para>const vector unsigned __int128 *</para>
               </entry>
               <entry>
                 <programlisting>
@@ -16640,7 +16640,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> float *</para>
+                <para>const float *</para>
               </entry>
               <entry>
                 <programlisting>
@@ -16656,7 +16656,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>vector float *</para>
+                <para>const vector float *</para>
               </entry>
               <entry>
                 <programlisting>
@@ -16672,7 +16672,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> double *</para>
+                <para>const double *</para>
               </entry>
               <entry>
                 <programlisting>
@@ -16688,7 +16688,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>vector double *</para>
+                <para>const vector double *</para>
               </entry>
               <entry>
                 <programlisting>
@@ -16789,7 +16789,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>signed char *</para>
+                <para>const signed char *</para>
               </entry>
               <entry>
                 <programlisting>
@@ -16805,7 +16805,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>unsigned char *</para>
+                <para>const unsigned char *</para>
               </entry>
               <entry>
                 <programlisting>
@@ -16821,7 +16821,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>signed short *</para>
+                <para>const signed short *</para>
               </entry>
               <entry>
                 <programlisting>
@@ -16837,7 +16837,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>unsigned short *</para>
+                <para>const unsigned short *</para>
               </entry>
               <entry>
                 <programlisting>
@@ -16853,7 +16853,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>signed int *</para>
+                <para>const signed int *</para>
               </entry>
               <entry>
                 <programlisting>
@@ -16869,7 +16869,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>unsigned int *</para>
+                <para>const unsigned int *</para>
               </entry>
               <entry>
                 <programlisting>
@@ -16885,7 +16885,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>float *</para>
+                <para>const float *</para>
               </entry>
               <entry>
                 <programlisting>
@@ -16972,7 +16972,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>vector bool char *</para>
+                <para>const vector bool char *</para>
               </entry>
               <entry>
                 <programlisting>
@@ -16988,7 +16988,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>signed char *</para>
+                <para>const signed char *</para>
               </entry>
               <entry>
                 <programlisting>
@@ -17004,7 +17004,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>vector signed char *</para>
+                <para>const vector signed char *</para>
               </entry>
               <entry>
                 <programlisting>
@@ -17020,7 +17020,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> unsigned char *</para>
+                <para>const unsigned char *</para>
               </entry>
               <entry>
                 <programlisting>
@@ -17036,7 +17036,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>vector unsigned char *</para>
+                <para>const vector unsigned char *</para>
               </entry>
               <entry>
                 <programlisting>
@@ -17052,7 +17052,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>vector bool short *</para>
+                <para>const vector bool short *</para>
               </entry>
               <entry>
                 <programlisting>
@@ -17068,7 +17068,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> signed short *</para>
+                <para>const signed short *</para>
               </entry>
               <entry>
                 <programlisting>
@@ -17084,7 +17084,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>vector signed short *</para>
+                <para>const vector signed short *</para>
               </entry>
               <entry>
                 <programlisting>
@@ -17100,7 +17100,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> unsigned short *</para>
+                <para>const unsigned short *</para>
               </entry>
               <entry>
                 <programlisting>
@@ -17116,7 +17116,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>vector unsigned short *</para>
+                <para>const vector unsigned short *</para>
               </entry>
               <entry>
                 <programlisting>
@@ -17132,7 +17132,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>vector pixel *</para>
+                <para>const vector pixel *</para>
               </entry>
               <entry>
                 <programlisting>
@@ -17148,7 +17148,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>vector bool int *</para>
+                <para>const vector bool int *</para>
               </entry>
               <entry>
                 <programlisting>
@@ -17164,7 +17164,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> signed int *</para>
+                <para>const signed int *</para>
               </entry>
               <entry>
                 <programlisting>
@@ -17180,7 +17180,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>vector signed int *</para>
+                <para>const vector signed int *</para>
               </entry>
               <entry>
                 <programlisting>
@@ -17196,7 +17196,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> unsigned int *</para>
+                <para>const unsigned int *</para>
               </entry>
               <entry>
                 <programlisting>
@@ -17212,7 +17212,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>vector unsigned int *</para>
+                <para>const vector unsigned int *</para>
               </entry>
               <entry>
                 <programlisting>
@@ -17228,7 +17228,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>vector bool long long *</para>
+                <para>const vector bool long long *</para>
               </entry>
               <entry>
                 <programlisting>
@@ -17244,7 +17244,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> signed long long *</para>
+                <para>const signed long long *</para>
               </entry>
               <entry>
                 <programlisting>
@@ -17260,7 +17260,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>vector signed long long *</para>
+                <para>const vector signed long long *</para>
               </entry>
               <entry>
                 <programlisting>
@@ -17276,7 +17276,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> unsigned long long *</para>
+                <para>const unsigned long long *</para>
               </entry>
               <entry>
                 <programlisting>
@@ -17292,7 +17292,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>vector unsigned long long *</para>
+                <para>const vector unsigned long long *</para>
               </entry>
               <entry>
                 <programlisting>
@@ -17308,7 +17308,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> float *</para>
+                <para>const float *</para>
               </entry>
               <entry>
                 <programlisting>
@@ -17324,7 +17324,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>vector float *</para>
+                <para>const vector float *</para>
               </entry>
               <entry>
                 <programlisting>
@@ -17340,7 +17340,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> double *</para>
+                <para>const double *</para>
               </entry>
               <entry>
                 <programlisting>
@@ -17356,7 +17356,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>vector double *</para>
+                <para>const vector double *</para>
               </entry>
               <entry>
                 <programlisting>
@@ -36845,7 +36845,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>signed char *</para>
+                <para>const signed char *</para>
               </entry>
               <entry>
                 <programlisting>
@@ -36861,7 +36861,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> unsigned char *</para>
+                <para>const unsigned char *</para>
               </entry>
               <entry>
                 <programlisting>
@@ -36877,7 +36877,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> signed short *</para>
+                <para>const signed short *</para>
               </entry>
               <entry>
                 <programlisting>
@@ -36893,7 +36893,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> unsigned short *</para>
+                <para>const unsigned short *</para>
               </entry>
               <entry>
                 <programlisting>
@@ -36909,7 +36909,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> signed int *</para>
+                <para>const signed int *</para>
               </entry>
               <entry>
                 <programlisting>
@@ -36925,7 +36925,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> unsigned int *</para>
+                <para>const unsigned int *</para>
               </entry>
               <entry>
                 <programlisting>
@@ -36941,7 +36941,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> signed long long *</para>
+                <para>const signed long long *</para>
               </entry>
               <entry>
                 <programlisting>
@@ -36957,7 +36957,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> unsigned long long *</para>
+                <para>const unsigned long long *</para>
               </entry>
               <entry>
                 <programlisting>
@@ -36973,7 +36973,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> signed __int128 *</para>
+                <para>const signed __int128 *</para>
               </entry>
               <entry>
                 <programlisting>
@@ -36989,7 +36989,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> unsigned __int128 *</para>
+                <para>const unsigned __int128 *</para>
               </entry>
               <entry>
                 <programlisting>
@@ -37005,7 +37005,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> float *</para>
+                <para>const float *</para>
               </entry>
               <entry>
                 <programlisting>
@@ -37021,7 +37021,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> double *</para>
+                <para>const double *</para>
               </entry>
               <entry>
                 <programlisting>
@@ -37125,7 +37125,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>signed char *</para>
+                <para>const signed char *</para>
               </entry>
               <entry>
                 <programlisting>
@@ -37146,7 +37146,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> unsigned char *</para>
+                <para>const unsigned char *</para>
               </entry>
               <entry>
                 <programlisting>
@@ -37167,7 +37167,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> signed short *</para>
+                <para>const signed short *</para>
               </entry>
               <entry>
                 <programlisting>
@@ -37188,7 +37188,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> unsigned short *</para>
+                <para>const unsigned short *</para>
               </entry>
               <entry>
                 <programlisting>
@@ -37209,7 +37209,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> signed int *</para>
+                <para>const signed int *</para>
               </entry>
               <entry>
                 <programlisting>
@@ -37230,7 +37230,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> unsigned int *</para>
+                <para>const unsigned int *</para>
               </entry>
               <entry>
                 <programlisting>
@@ -37251,7 +37251,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> signed long long *</para>
+                <para>const signed long long *</para>
               </entry>
               <entry>
                 <programlisting>
@@ -37272,7 +37272,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> unsigned long long *</para>
+                <para>const unsigned long long *</para>
               </entry>
               <entry>
                 <programlisting>
@@ -37293,7 +37293,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> signed __int128 *</para>
+                <para>const signed __int128 *</para>
               </entry>
               <entry>
                 <programlisting>
@@ -37314,7 +37314,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> unsigned __int128 *</para>
+                <para>const unsigned __int128 *</para>
               </entry>
               <entry>
                 <programlisting>
@@ -37335,7 +37335,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> float *</para>
+                <para>const float *</para>
               </entry>
               <entry>
                 <programlisting>
@@ -37356,7 +37356,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para> double *</para>
+                <para>const double *</para>
               </entry>
               <entry>
                 <programlisting>
@@ -37454,7 +37454,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>vector signed char</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>signed char *</para>
+                <para>const signed char *</para>
               </entry>
               <entry align="center" valign="middle">
                 <para> size_t</para>
@@ -37474,7 +37474,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>vector unsigned char</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>unsigned char *</para>
+                <para>const unsigned char *</para>
               </entry>
               <entry align="center" valign="middle">
                 <para> size_t</para>
@@ -37494,7 +37494,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>vector signed short</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>signed short *</para>
+                <para>const signed short *</para>
               </entry>
               <entry align="center" valign="middle">
                 <para> size_t</para>
@@ -37514,7 +37514,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>vector unsigned short</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>unsigned short *</para>
+                <para>const unsigned short *</para>
               </entry>
               <entry align="center" valign="middle">
                 <para> size_t</para>
@@ -37534,7 +37534,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>vector signed int</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>signed int *</para>
+                <para>const signed int *</para>
               </entry>
               <entry align="center" valign="middle">
                 <para> size_t</para>
@@ -37554,7 +37554,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>vector unsigned int</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>unsigned int *</para>
+                <para>const unsigned int *</para>
               </entry>
               <entry align="center" valign="middle">
                 <para> size_t</para>
@@ -37574,7 +37574,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>vector signed long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>signed long long *</para>
+                <para>const signed long long *</para>
               </entry>
               <entry align="center" valign="middle">
                 <para> size_t</para>
@@ -37594,7 +37594,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>vector unsigned long long</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>unsigned long long *</para>
+                <para>const unsigned long long *</para>
               </entry>
               <entry align="center" valign="middle">
                 <para> size_t</para>
@@ -37614,7 +37614,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>vector signed __int128</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>signed __int128 *</para>
+                <para>const signed __int128 *</para>
               </entry>
               <entry align="center" valign="middle">
                 <para> size_t</para>
@@ -37634,7 +37634,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>vector unsigned __int128</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>unsigned __int128 *</para>
+                <para>const unsigned __int128 *</para>
               </entry>
               <entry align="center" valign="middle">
                 <para> size_t</para>
@@ -37654,7 +37654,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>vector float</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>float *</para>
+                <para>const float *</para>
               </entry>
               <entry align="center" valign="middle">
                 <para> size_t</para>
@@ -37674,7 +37674,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>vector double</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>double *</para>
+                <para>const double *</para>
               </entry>
               <entry align="center" valign="middle">
                 <para> size_t</para>
@@ -37782,7 +37782,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <para>vector unsigned char</para>
               </entry>
               <entry align="center" valign="middle">
-                <para>unsigned char *</para>
+                <para>const unsigned char *</para>
               </entry>
               <entry align="center" valign="middle">
                 <para> size_t</para>
