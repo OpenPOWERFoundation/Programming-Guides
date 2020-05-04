@@ -13606,7 +13606,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       natural element order.  If no match, returns the number of
       characters as an element count in the vector argument.</para> 
       <para><emphasis role="bold">Endian considerations:</emphasis>
-      None.
+      The element numbering within a register is left-to-right for big-endian
+      targets, and right-to-left for little-endian targets.
       </para>
       
       <indexterm>
@@ -13880,7 +13881,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       terminator. If no match or terminator, returns the number of
       characters as an element count in the vector argument.</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
-      None.
+      The element numbering within a register is left-to-right for big-endian
+      targets, and right-to-left for little-endian targets.
       </para>
       
       <indexterm>
@@ -14221,7 +14223,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       natural element order. If no mismatch, returns the number of
       characters as an element count in the vector argument.</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
-      None.
+      The element numbering within a register is left-to-right for big-endian
+      targets, and right-to-left for little-endian targets.
       </para>
       
       <indexterm>
@@ -14479,7 +14482,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       terminator. If no mismatch or terminator, returns the number of
       characters as an element count in the vector argument.</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
-      None.
+      The element numbering within a register is left-to-right for big-endian
+      targets, and right-to-left for little-endian targets.
       </para>
       
       <indexterm>
