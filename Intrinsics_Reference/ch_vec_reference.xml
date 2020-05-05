@@ -23578,16 +23578,16 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               </entry>
               <entry>
                 <programlisting>
- vctuxs  t,a,0
- vctuxs  u,b,0
- vpkswss r,u,t
+ xvcvsphp t,a
+ xvcvsphp u,b
+ vpkuwum  r,t,u
 		</programlisting>
               </entry>
               <entry>
                 <programlisting>
- vctuxs  t,a,0
- vctuxs  u,b,0
- vpkswss r,t,u
+ xvcvsphp t,a
+ xvcvsphp u,b
+ vpkuwum  r,u,t
 		</programlisting>
               </entry>
               <entry align="center" valign="middle">
