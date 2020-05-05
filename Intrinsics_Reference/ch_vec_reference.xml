@@ -11627,6 +11627,51 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       the converted values of elements 0 and 2 of <emphasis
       role="bold">a</emphasis>.
       </para>
+      <para>An example where <emphasis role="bold">a</emphasis>
+      is of type vector signed int follows:
+      <informaltable frame="all">
+      <tgroup cols="5">
+          <colspec colname="c0" colwidth="20*" />
+          <colspec colname="c1L" colwidth="10*" />
+          <colspec colname="c1R" colwidth="10*" />
+          <colspec colname="c2L" colwidth="10*" />
+          <colspec colname="c2R" colwidth="10*" />
+          <spanspec spanname="c1" namest="c1L" nameend="c1R"/>
+          <spanspec spanname="c2" namest="c2L" nameend="c2R"/>
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis role="bold">a</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>00000001</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para><emphasis>(ignored)</emphasis></para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>FFFFFFFF</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para><emphasis>(ignored)</emphasis></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis role="bold">r</emphasis> </para>
+              </entry>
+              <entry align="center" spanname="c1" valign="middle">
+                <para>1.0</para>
+              </entry>
+              <entry align="center" spanname="c2" valign="middle">
+                <para>-1.0</para>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+      </para>
+
       <para><emphasis role="bold">Endian considerations:</emphasis>
       Differences in element numbering require different implementations
       for big- and little-endian code generation.
@@ -11779,6 +11824,51 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       the converted values of elements 0 and 1 of <emphasis
       role="bold">a</emphasis>.
       </para>
+      <para>An example where <emphasis role="bold">a</emphasis>
+      is of type vector signed int follows:
+      <informaltable frame="all">
+      <tgroup cols="5">
+          <colspec colname="c0" colwidth="20*" />
+          <colspec colname="c1L" colwidth="10*" />
+          <colspec colname="c1R" colwidth="10*" />
+          <colspec colname="c2L" colwidth="10*" />
+          <colspec colname="c2R" colwidth="10*" />
+          <spanspec spanname="c1" namest="c1L" nameend="c1R"/>
+          <spanspec spanname="c2" namest="c2L" nameend="c2R"/>
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis role="bold">a</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>00000001</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>FFFFFFFF</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para><emphasis>(ignored)</emphasis></para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para><emphasis>(ignored)</emphasis></para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis role="bold">r</emphasis> </para>
+              </entry>
+              <entry align="center" spanname="c1" valign="middle">
+                <para>1.0</para>
+              </entry>
+              <entry align="center" spanname="c2" valign="middle">
+                <para>-1.0</para>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+      </para>
+
       <para><emphasis role="bold">Endian considerations:</emphasis>
       Differences in element numbering require different implementations
       for big- and little-endian code generation.
@@ -11937,6 +12027,51 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       the converted values of elements 2 and 3 of <emphasis
       role="bold">a</emphasis>.
       </para>
+      <para>An example where <emphasis role="bold">a</emphasis>
+      is of type vector signed int follows:
+      <informaltable frame="all">
+      <tgroup cols="5">
+          <colspec colname="c0" colwidth="20*" />
+          <colspec colname="c1L" colwidth="10*" />
+          <colspec colname="c1R" colwidth="10*" />
+          <colspec colname="c2L" colwidth="10*" />
+          <colspec colname="c2R" colwidth="10*" />
+          <spanspec spanname="c1" namest="c1L" nameend="c1R"/>
+          <spanspec spanname="c2" namest="c2L" nameend="c2R"/>
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis role="bold">a</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para><emphasis>(ignored)</emphasis></para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para><emphasis>(ignored)</emphasis></para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>00000001</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>FFFFFFFF</para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis role="bold">r</emphasis> </para>
+              </entry>
+              <entry align="center" spanname="c1" valign="middle">
+                <para>1.0</para>
+              </entry>
+              <entry align="center" spanname="c2" valign="middle">
+                <para>-1.0</para>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+      </para>
+
       <para><emphasis role="bold">Endian considerations:</emphasis>
       Differences in element numbering require different implementations
       for big- and little-endian code generation.
@@ -12095,6 +12230,51 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       the converted values of elements 1 and 3 of <emphasis
       role="bold">a</emphasis>.
       </para>
+      <para>An example where <emphasis role="bold">a</emphasis>
+      is of type vector signed int follows:
+      <informaltable frame="all">
+      <tgroup cols="5">
+          <colspec colname="c0" colwidth="20*" />
+          <colspec colname="c1L" colwidth="10*" />
+          <colspec colname="c1R" colwidth="10*" />
+          <colspec colname="c2L" colwidth="10*" />
+          <colspec colname="c2R" colwidth="10*" />
+          <spanspec spanname="c1" namest="c1L" nameend="c1R"/>
+          <spanspec spanname="c2" namest="c2L" nameend="c2R"/>
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis role="bold">a</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para><emphasis>(ignored)</emphasis></para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>00000001</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para><emphasis>(ignored)</emphasis></para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>FFFFFFFF</para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis role="bold">r</emphasis> </para>
+              </entry>
+              <entry align="center" spanname="c1" valign="middle">
+                <para>1.0</para>
+              </entry>
+              <entry align="center" spanname="c2" valign="middle">
+                <para>-1.0</para>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+      </para>
+
       <para><emphasis role="bold">Endian considerations:</emphasis>
       Differences in element numbering require different implementations
       for big- and little-endian code generation.
