@@ -7871,8 +7871,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 	<listitem>
 	  <para>
 	    If bit index <emphasis>j</emphasis> is smaller than 128, bit
-	    <emphasis>i</emphasis> of <emphasis role="bold">r</emphasis>
-	    is set to the value of the
+	    48+<emphasis>i</emphasis> of <emphasis
+	    role="bold">r</emphasis> is set to the value of the
 	    <emphasis>j</emphasis><superscript>th</superscript> bit of
 	    <emphasis role="bold">a</emphasis>.
 	  </para>
@@ -7907,15 +7907,15 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 		      </mathphrase>
 		    </inlineequation>
 		    let bit index <emphasis>k</emphasis> denote the byte
-		    value of the
-		    <emphasis>j</emphasis><superscript>th</superscript>
+		    value of the (8<emphasis>i</emphasis> +
+		    <emphasis>j</emphasis>)<superscript>th</superscript>
 		    element of <emphasis role="bold">b</emphasis>.
 		  </para>
 		</listitem>
 		<listitem>
 		  <para>
 		    If bit index <emphasis>k</emphasis> is greater than or
-		    equal to 64, bit <emphasis>j</emphasis> of element
+		    equal to 64, bit 56+<emphasis>j</emphasis> of element
 		    <emphasis>i</emphasis> of <emphasis
 		    role="bold">r</emphasis> is set to 0.
 		  </para>
@@ -7923,7 +7923,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 		<listitem>
 		  <para>
 		    If bit index <emphasis>k</emphasis> is less than 64,
-		    bit <emphasis>j</emphasis> of element
+		    bit 56+<emphasis>j</emphasis> of element
 		    <emphasis>i</emphasis> of <emphasis
 		    role="bold">r</emphasis> is set to the value of the
 		    <emphasis>k</emphasis><superscript>th</superscript>
