@@ -7941,6 +7941,553 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 	  </listitem>
 	</itemizedlist>
       </para>
+      <para>An example for input <emphasis role="bold">a</emphasis>
+      of type vector unsigned char follows:
+      <informaltable frame="all">
+      <tgroup cols="17">
+          <colspec colname="c0" colwidth="10*" />
+          <colspec colname="c1" colwidth="10*" />
+          <colspec colname="c2" colwidth="10*" />
+          <colspec colname="c3" colwidth="10*" />
+          <colspec colname="c4" colwidth="10*" />
+          <colspec colname="c5" colwidth="10*" />
+          <colspec colname="c6" colwidth="10*" />
+          <colspec colname="c7" colwidth="10*" />
+          <colspec colname="c8" colwidth="10*" />
+          <colspec colname="c9" colwidth="10*" />
+          <colspec colname="c10" colwidth="10*" />
+          <colspec colname="c11" colwidth="10*" />
+          <colspec colname="c12" colwidth="10*" />
+          <colspec colname="c13" colwidth="10*" />
+          <colspec colname="c14" colwidth="10*" />
+          <colspec colname="c15" colwidth="10*" />
+          <colspec colname="c16" colwidth="10*" />
+          <thead>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis>byte index</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>0</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>1</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>2</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>3</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>4</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>5</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>6</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>7</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>8</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>9</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>10</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>11</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>12</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>13</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>14</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>15</emphasis> </para>
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis role="bold">a</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>FF</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>FF</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>FF</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>FF</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>FF</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>FF</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>FF</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>FF</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>FF</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>FF</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>FF</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>FF</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>FF</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>FF</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>FF</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>A9</para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis role="bold">b</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>7F</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>7E</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>7D</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>7C</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>7B</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>7A</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>79</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>78</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>77</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>76</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>75</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>74</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>73</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>72</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>71</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>70</para>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+      Zoom in to view just the two bytes in <emphasis role="bold">a</emphasis>
+      ([14..15]) containing the bits referenced by the bit indices
+      <emphasis role="bold">b</emphasis>[i]
+	    <inlineequation>
+	      <mathphrase>
+		(0 &#x2264; <emphasis>i</emphasis> &lt; 16),
+	      </mathphrase>
+            </inlineequation>
+      ([7F..70]):
+      <informaltable frame="all">
+      <tgroup cols="17">
+          <colspec colname="c0" colwidth="10*" />
+          <colspec colname="c1" colwidth="10*" />
+          <colspec colname="c2" colwidth="10*" />
+          <colspec colname="c3" colwidth="10*" />
+          <colspec colname="c4" colwidth="10*" />
+          <colspec colname="c5" colwidth="10*" />
+          <colspec colname="c6" colwidth="10*" />
+          <colspec colname="c7" colwidth="10*" />
+          <colspec colname="c8" colwidth="10*" />
+          <colspec colname="c9" colwidth="10*" />
+          <colspec colname="c10" colwidth="10*" />
+          <colspec colname="c11" colwidth="10*" />
+          <colspec colname="c12" colwidth="10*" />
+          <colspec colname="c13" colwidth="10*" />
+          <colspec colname="c14" colwidth="10*" />
+          <colspec colname="c15" colwidth="10*" />
+          <colspec colname="c16" colwidth="10*" />
+          <spanspec spanname="b1" namest="c1" nameend="c8"/>
+          <spanspec spanname="b2" namest="c9" nameend="c16"/>
+          <thead>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis>byte index</emphasis> </para>
+              </entry>
+              <entry align="center" spanname="b1" valign="middle">
+                <para>14</para>
+              </entry>
+              <entry align="center" spanname="b2" valign="middle">
+                <para>15</para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis>bit index</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>70</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>71</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>72</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>73</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>74</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>75</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>76</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>77</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>78</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>79</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>7A</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>7B</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>7C</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>7D</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>7E</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>7F</emphasis> </para>
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis role="bold">a</emphasis> </para>
+              </entry>
+              <entry align="center" spanname="b1" valign="middle">
+                <para>FF</para>
+              </entry>
+              <entry align="center" spanname="b2" valign="middle">
+                <para>A9</para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis>bit</emphasis> <emphasis role="bold">a</emphasis><subscript>bit index</subscript> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>1</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>1</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>1</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>1</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>1</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>1</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>1</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>1</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>1</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>0</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>1</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>0</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>1</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>0</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>0</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>1</para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis>bit</emphasis> <emphasis role="bold">a</emphasis><emphasis role="bold"><subscript>b</subscript></emphasis><subscript>[i]</subscript> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>1</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>0</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>0</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>1</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>0</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>1</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>0</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>1</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>1</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>1</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>1</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>1</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>1</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>1</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>1</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>1</para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis>intermediate result</emphasis> </para>
+              </entry>
+              <entry align="center" spanname="b1" valign="middle">
+                <para>95</para>
+              </entry>
+              <entry align="center" spanname="b2" valign="middle">
+                <para>FF</para>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+      <informaltable frame="all">
+      <tgroup cols="17">
+          <colspec colname="c0" colwidth="10*" />
+          <colspec colname="c1" colwidth="10*" />
+          <colspec colname="c2" colwidth="10*" />
+          <colspec colname="c3" colwidth="10*" />
+          <colspec colname="c4" colwidth="10*" />
+          <colspec colname="c5" colwidth="10*" />
+          <colspec colname="c6" colwidth="10*" />
+          <colspec colname="c7" colwidth="10*" />
+          <colspec colname="c8" colwidth="10*" />
+          <colspec colname="c9" colwidth="10*" />
+          <colspec colname="c10" colwidth="10*" />
+          <colspec colname="c11" colwidth="10*" />
+          <colspec colname="c12" colwidth="10*" />
+          <colspec colname="c13" colwidth="10*" />
+          <colspec colname="c14" colwidth="10*" />
+          <colspec colname="c15" colwidth="10*" />
+          <colspec colname="c16" colwidth="10*" />
+          <thead>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis>byte index</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>0</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>1</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>2</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>3</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>4</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>5</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>6</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>7</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>8</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>9</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>10</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>11</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>12</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>13</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>14</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>15</emphasis> </para>
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis role="bold">r</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>00</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>00</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>00</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>00</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>00</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>00</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>95</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>FF</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>00</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>00</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>00</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>00</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>00</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>00</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>00</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>00</para>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+      </para>
+
       <para><emphasis role="bold">Endian considerations:</emphasis>
       All bit and byte numberings within each element in the above
       description denote big-endian (i.e., left-to-right) order,
