@@ -11638,6 +11638,36 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
           <colspec colname="c2R" colwidth="10*" />
           <spanspec spanname="c1" namest="c1L" nameend="c1R"/>
           <spanspec spanname="c2" namest="c2L" nameend="c2R"/>
+          <thead>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis>doubleword index</emphasis> </para>
+              </entry>
+              <entry spanname="c1" align="center" valign="middle">
+                <para> <emphasis>0</emphasis> </para>
+              </entry>
+              <entry spanname="c2" align="center" valign="middle">
+                <para> <emphasis>1</emphasis> </para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis>word index</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>0</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>1</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>2</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>3</emphasis> </para>
+              </entry>
+            </row>
+          </thead>
           <tbody>
             <row>
               <entry align="center" valign="middle">
@@ -11835,6 +11865,36 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
           <colspec colname="c2R" colwidth="10*" />
           <spanspec spanname="c1" namest="c1L" nameend="c1R"/>
           <spanspec spanname="c2" namest="c2L" nameend="c2R"/>
+          <thead>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis>doubleword index</emphasis> </para>
+              </entry>
+              <entry spanname="c1" align="center" valign="middle">
+                <para> <emphasis>0</emphasis> </para>
+              </entry>
+              <entry spanname="c2" align="center" valign="middle">
+                <para> <emphasis>1</emphasis> </para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis>word index</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>0</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>1</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>2</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>3</emphasis> </para>
+              </entry>
+            </row>
+          </thead>
           <tbody>
             <row>
               <entry align="center" valign="middle">
@@ -12038,6 +12098,36 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
           <colspec colname="c2R" colwidth="10*" />
           <spanspec spanname="c1" namest="c1L" nameend="c1R"/>
           <spanspec spanname="c2" namest="c2L" nameend="c2R"/>
+          <thead>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis>doubleword index</emphasis> </para>
+              </entry>
+              <entry spanname="c1" align="center" valign="middle">
+                <para> <emphasis>0</emphasis> </para>
+              </entry>
+              <entry spanname="c2" align="center" valign="middle">
+                <para> <emphasis>1</emphasis> </para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis>word index</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>0</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>1</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>2</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>3</emphasis> </para>
+              </entry>
+            </row>
+          </thead>
           <tbody>
             <row>
               <entry align="center" valign="middle">
@@ -12241,6 +12331,36 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
           <colspec colname="c2R" colwidth="10*" />
           <spanspec spanname="c1" namest="c1L" nameend="c1R"/>
           <spanspec spanname="c2" namest="c2L" nameend="c2R"/>
+          <thead>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis>doubleword index</emphasis> </para>
+              </entry>
+              <entry spanname="c1" align="center" valign="middle">
+                <para> <emphasis>0</emphasis> </para>
+              </entry>
+              <entry spanname="c2" align="center" valign="middle">
+                <para> <emphasis>1</emphasis> </para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis>word index</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>0</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>1</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>2</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>3</emphasis> </para>
+              </entry>
+            </row>
+          </thead>
           <tbody>
             <row>
               <entry align="center" valign="middle">
@@ -25074,6 +25194,61 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
           <spanspec spanname="c14" namest="c14L" nameend="c14R"/>
           <spanspec spanname="c15" namest="c15L" nameend="c15R"/>
           <spanspec spanname="c16" namest="c16L" nameend="c16R"/>
+          <thead>
+            <row>
+              <entry spanname="c0" align="center" valign="middle">
+                <para> <emphasis>byte index</emphasis> </para>
+              </entry>
+              <entry spanname="c1" align="center" valign="middle">
+                <para> <emphasis>0</emphasis> </para>
+              </entry>
+              <entry spanname="c2" align="center" valign="middle">
+                <para> <emphasis>1</emphasis> </para>
+              </entry>
+              <entry spanname="c3" align="center" valign="middle">
+                <para> <emphasis>2</emphasis> </para>
+              </entry>
+              <entry spanname="c4" align="center" valign="middle">
+                <para> <emphasis>3</emphasis> </para>
+              </entry>
+              <entry spanname="c5" align="center" valign="middle">
+                <para> <emphasis>4</emphasis> </para>
+              </entry>
+              <entry spanname="c6" align="center" valign="middle">
+                <para> <emphasis>5</emphasis> </para>
+              </entry>
+              <entry spanname="c7" align="center" valign="middle">
+                <para> <emphasis>6</emphasis> </para>
+              </entry>
+              <entry spanname="c8" align="center" valign="middle">
+                <para> <emphasis>7</emphasis> </para>
+              </entry>
+              <entry spanname="c9" align="center" valign="middle">
+                <para> <emphasis>8</emphasis> </para>
+              </entry>
+              <entry spanname="c10" align="center" valign="middle">
+                <para> <emphasis>9</emphasis> </para>
+              </entry>
+              <entry spanname="c11" align="center" valign="middle">
+                <para> <emphasis>10</emphasis> </para>
+              </entry>
+              <entry spanname="c12" align="center" valign="middle">
+                <para> <emphasis>11</emphasis> </para>
+              </entry>
+              <entry spanname="c13" align="center" valign="middle">
+                <para> <emphasis>12</emphasis> </para>
+              </entry>
+              <entry spanname="c14" align="center" valign="middle">
+                <para> <emphasis>13</emphasis> </para>
+              </entry>
+              <entry spanname="c15" align="center" valign="middle">
+                <para> <emphasis>14</emphasis> </para>
+              </entry>
+              <entry spanname="c16" align="center" valign="middle">
+                <para> <emphasis>15</emphasis> </para>
+              </entry>
+            </row>
+          </thead>
           <tbody>
             <row>
               <entry align="center" spanname="c0" valign="middle">
@@ -25670,6 +25845,36 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
           <colspec colname="c2R" colwidth="10*" />
           <spanspec spanname="c1" namest="c1L" nameend="c1R"/>
           <spanspec spanname="c2" namest="c2L" nameend="c2R"/>
+          <thead>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis>doubleword index</emphasis> </para>
+              </entry>
+              <entry spanname="c1" align="center" valign="middle">
+                <para> <emphasis>0</emphasis> </para>
+              </entry>
+              <entry spanname="c2" align="center" valign="middle">
+                <para> <emphasis>1</emphasis> </para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis>word index</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>0</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>1</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>2</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>3</emphasis> </para>
+              </entry>
+            </row>
+          </thead>
           <tbody>
             <row>
               <entry align="center" valign="middle">
@@ -30541,6 +30746,61 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
           <colspec colname="c14" colwidth="10*" />
           <colspec colname="c15" colwidth="10*" />
           <colspec colname="c16" colwidth="10*" />
+          <thead>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis>byte index</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>0</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>1</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>2</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>3</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>4</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>5</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>6</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>7</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>8</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>9</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>10</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>11</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>12</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>13</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>14</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>15</emphasis> </para>
+              </entry>
+            </row>
+          </thead>
           <tbody>
             <row>
               <entry align="center" valign="middle">
@@ -32959,6 +33219,61 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
           <colspec colname="c14" colwidth="10*" />
           <colspec colname="c15" colwidth="10*" />
           <colspec colname="c16" colwidth="10*" />
+          <thead>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis>byte index</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>0</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>1</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>2</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>3</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>4</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>5</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>6</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>7</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>8</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>9</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>10</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>11</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>12</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>13</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>14</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>15</emphasis> </para>
+              </entry>
+            </row>
+          </thead>
           <tbody>
             <row>
               <entry align="center" valign="middle">
@@ -35600,6 +35915,25 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
           <colspec colname="c2" colwidth="10*" />
           <colspec colname="c3" colwidth="10*" />
           <colspec colname="c4" colwidth="10*" />
+          <thead>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis>word index</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>0</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>1</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>2</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>3</emphasis> </para>
+              </entry>
+            </row>
+          </thead>
           <tbody>
             <row>
               <entry align="center" valign="middle">
@@ -35833,6 +36167,78 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
           <spanspec spanname="w2" namest="c5" nameend="c8"/>
           <spanspec spanname="w3" namest="c9" nameend="c12"/>
           <spanspec spanname="w4" namest="c13" nameend="c16"/>
+          <thead>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis>word index</emphasis> </para>
+              </entry>
+              <entry spanname="w1" align="center" valign="middle">
+                <para> <emphasis>0</emphasis> </para>
+              </entry>
+              <entry spanname="w2" align="center" valign="middle">
+                <para> <emphasis>1</emphasis> </para>
+              </entry>
+              <entry spanname="w3" align="center" valign="middle">
+                <para> <emphasis>2</emphasis> </para>
+              </entry>
+              <entry spanname="w4" align="center" valign="middle">
+                <para> <emphasis>3</emphasis> </para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis>byte index</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>0</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>1</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>2</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>3</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>4</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>5</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>6</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>7</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>8</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>9</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>10</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>11</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>12</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>13</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>14</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>15</emphasis> </para>
+              </entry>
+            </row>
+          </thead>
           <tbody>
             <row>
               <entry align="center" valign="middle">
@@ -35961,6 +36367,54 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
           <spanspec spanname="w2" namest="c3" nameend="c4"/>
           <spanspec spanname="w3" namest="c5" nameend="c6"/>
           <spanspec spanname="w4" namest="c7" nameend="c8"/>
+          <thead>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis>word index</emphasis> </para>
+              </entry>
+              <entry spanname="w1" align="center" valign="middle">
+                <para> <emphasis>0</emphasis> </para>
+              </entry>
+              <entry spanname="w2" align="center" valign="middle">
+                <para> <emphasis>1</emphasis> </para>
+              </entry>
+              <entry spanname="w3" align="center" valign="middle">
+                <para> <emphasis>2</emphasis> </para>
+              </entry>
+              <entry spanname="w4" align="center" valign="middle">
+                <para> <emphasis>3</emphasis> </para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis>halfword index</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>0</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>1</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>2</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>3</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>4</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>5</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>6</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>7</emphasis> </para>
+              </entry>
+            </row>
+          </thead>
           <tbody>
             <row>
               <entry align="center" valign="middle">
@@ -36176,6 +36630,25 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
           <colspec colname="c3" colwidth="10*" />
           <colspec colname="c4" colwidth="10*" />
           <colspec colname="c5" colwidth="10*" />
+          <thead>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis>word index</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>0</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>1</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>2</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>3</emphasis> </para>
+              </entry>
+            </row>
+          </thead>
           <tbody>
             <row>
               <entry align="center" valign="middle">
@@ -37359,6 +37832,36 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
           <colspec colname="c2R" colwidth="10*" />
           <spanspec spanname="c1" namest="c1L" nameend="c1R"/>
           <spanspec spanname="c2" namest="c2L" nameend="c2R"/>
+          <thead>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis>doubleword index</emphasis> </para>
+              </entry>
+              <entry spanname="c1" align="center" valign="middle">
+                <para> <emphasis>0</emphasis> </para>
+              </entry>
+              <entry spanname="c2" align="center" valign="middle">
+                <para> <emphasis>1</emphasis> </para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis>word index</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>0</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>1</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>2</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>3</emphasis> </para>
+              </entry>
+            </row>
+          </thead>
           <tbody>
             <row>
               <entry align="center" valign="middle">
@@ -37496,6 +37999,36 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
           <colspec colname="c2R" colwidth="10*" />
           <spanspec spanname="c1" namest="c1L" nameend="c1R"/>
           <spanspec spanname="c2" namest="c2L" nameend="c2R"/>
+          <thead>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis>doubleword index</emphasis> </para>
+              </entry>
+              <entry spanname="c1" align="center" valign="middle">
+                <para> <emphasis>0</emphasis> </para>
+              </entry>
+              <entry spanname="c2" align="center" valign="middle">
+                <para> <emphasis>1</emphasis> </para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis>word index</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>0</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>1</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>2</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>3</emphasis> </para>
+              </entry>
+            </row>
+          </thead>
           <tbody>
             <row>
               <entry align="center" valign="middle">
