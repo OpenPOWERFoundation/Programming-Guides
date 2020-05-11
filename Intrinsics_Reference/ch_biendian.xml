@@ -188,7 +188,8 @@ vector unsigned __int128 x = { (((unsigned __int128)0x1020304050607080) &lt;&lt;
     <para>
       One vector type may be cast to another vector type without
       restriction.  Such a cast is simply a reinterpretation of the
-      bits, and does not change the data.
+      bits, and does not change the data. There are no default
+      conversions for vector types.
     </para>
     <para>
       Compilers are expected to recognize and optimize multiple
@@ -495,12 +496,14 @@ register vector double vd = vec_splats(*double_ptr);</programlisting>
       valid for pointers to vector types.
     </para>
     <para>
-      The traditional C/C++ operators are defined on vector types
-      for unary and binary <code>+</code>,
-      unary and binary &#8211;, binary <code>*</code>, binary
-      <code>%</code>, and binary <code>/</code> as well as the unary
-      and binary shift, logical and comparison operators, and the
-      ternary <code>?:</code> operator.  These operators perform their
+      The traditional C/C++ unary operators (<code>+</code>
+      <code>-</code>, and <code>~</code>), are defined on vector types.
+      The traditional C/C++ binary operators (<code>+</code>,
+      <code>-</code>, <code>*</code>, <code>%</code>, <code>/</code>,
+      shift, logical, and comparison) and the ternary operator
+      (<code>?:</code>)
+      are defined on like vector types.
+      Other than <code>?:</code>, these operators perform their
       operations "elementwise" on the base elements of the operands,
       as follows.
     </para>
@@ -533,6 +536,27 @@ a = a + b;</programlisting>
     </para>
     <programlisting>vector signed int a, b;
 a = vec_add (a, b);</programlisting>
+    <para>
+      For the ternary operator (<code>?:</code>), the first operand must
+      be an integral type, used to select between the second and third
+      operands which must be of the same vector type.
+      The result of the ternary operator will also have that type.
+      For example,
+    <programlisting>
+int test_value;
+vector signed int a, b, r;
+r = test_value ? a : b;
+    </programlisting>
+      produces the same result as
+    <programlisting>
+int test_value;
+vector signed int a, b, r;
+if (test_value)
+  r = a;
+else
+  r = b;
+    </programlisting>
+    </para>
     <para>
       Further, the array reference operator may be applied to vector
       data types, yielding an l-value corresponding to the specified
