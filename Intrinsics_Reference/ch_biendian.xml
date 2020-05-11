@@ -122,11 +122,12 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.biendian">
 vector double g = (vector double) { 3.5, -24.6 };</programlisting>
     <para>
       Current C compilers do not support literals for
-      <code>__int128</code> types.  When constructing a <code>vector
-      __int128</code> constant from smaller literals such as
-      <code>int</code> or <code>long long</code>, you must test for
-      endianness and reverse the order of the smaller literals for
-      little-endian mode.
+      <code>__int128</code> types.  A <code>vector __int128</code>
+      constant can be constructed from smaller literals
+      with appropriate cast-shift-or logic. For example,
+      <programlisting>
+vector unsigned __int128 x = { (((unsigned __int128)0x1020304050607080) &lt;&lt; 64) | 0x90A0B0C0D0E0F000 };
+      </programlisting>
     </para>
   </section>
 
