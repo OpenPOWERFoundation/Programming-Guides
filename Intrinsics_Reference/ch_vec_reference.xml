@@ -11099,7 +11099,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       least-significant bit of zero.
       </para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
-      None.
+      The element numbering within a register is left-to-right for
+      big-endian targets, and right-to-left for little-endian
+      targets.
       </para>
       
       <indexterm>
@@ -11109,11 +11111,12 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 
       <table frame="all">
 	<title>Supported type signatures for vec_cntlz_lsbb</title>
-	<tgroup cols="4">
+	<tgroup cols="5">
           <colspec colname="c1" colwidth="20*" />
           <colspec colname="c2" colwidth="20*" />
           <colspec colname="c3" colwidth="20*" />
           <colspec colname="c4" colwidth="20*" />
+          <colspec colname="c5" colwidth="20*" />
           <thead>
             <row>
               <entry align="center" valign="middle">
@@ -11128,7 +11131,12 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               </entry>
               <entry align="center" valign="middle">
 		<para>
-                  <emphasis role="bold">Example Implementation</emphasis>
+                  <emphasis role="bold">Example BE Implementation</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">Example LE Implementation</emphasis>
 		</para>
               </entry>
               <entry align="center" valign="middle">
@@ -11151,6 +11159,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
    vclzlsbb  r,a
 		</programlisting>
               </entry>
+              <entry>
+		<programlisting>
+   vctzlsbb  r,a
+		</programlisting>
+              </entry>
               <entry align="center" valign="middle">
 		<para>ISA 3.0 or later</para>
 	      </entry>
@@ -11165,6 +11178,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry>
 		<programlisting>
    vclzlsbb  r,a
+		</programlisting>
+              </entry>
+              <entry>
+		<programlisting>
+   vctzlsbb  r,a
 		</programlisting>
               </entry>
               <entry align="center" valign="middle">
@@ -11402,7 +11420,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       least-significant bit of zero.
       </para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
-      None.
+      The element numbering within a register is left-to-right for
+      big-endian targets, and right-to-left for little-endian
+      targets.
       </para>
       
       <indexterm>
@@ -11412,11 +11432,12 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 
       <table frame="all">
 	<title>Supported type signatures for vec_cnttz_lsbb</title>
-	<tgroup cols="4">
+	<tgroup cols="5">
           <colspec colname="c1" colwidth="20*" />
           <colspec colname="c2" colwidth="20*" />
           <colspec colname="c3" colwidth="20*" />
           <colspec colname="c4" colwidth="20*" />
+          <colspec colname="c5" colwidth="20*" />
           <thead>
             <row>
               <entry align="center" valign="middle">
@@ -11431,7 +11452,12 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               </entry>
               <entry align="center" valign="middle">
 		<para>
-                  <emphasis role="bold">Example Implementation</emphasis>
+                  <emphasis role="bold">Example BE Implementation</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">Example LE Implementation</emphasis>
 		</para>
               </entry>
               <entry align="center" valign="middle">
@@ -11454,6 +11480,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
    vctzlsbb  r,a
 		</programlisting>
               </entry>
+              <entry>
+		<programlisting>
+   vclzlsbb  r,a
+		</programlisting>
+              </entry>
               <entry align="center" valign="middle">
 		<para>ISA 3.0 or later</para>
 	      </entry>
@@ -11468,6 +11499,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry>
 		<programlisting>
    vctzlsbb  r,a
+		</programlisting>
+              </entry>
+              <entry>
+		<programlisting>
+   vclzlsbb  r,a
 		</programlisting>
               </entry>
               <entry align="center" valign="middle">
