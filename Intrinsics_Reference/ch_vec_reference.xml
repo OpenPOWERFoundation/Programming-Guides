@@ -28466,6 +28466,54 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <emphasis role="bold">r</emphasis> contains the estimated value of the
       reciprocal of the corresponding element of <emphasis
       role="bold">a</emphasis>.</para>
+      <para>An example for input <emphasis role="bold">a</emphasis>
+      of type vector double follows:
+      <informaltable frame="all">
+      <tgroup cols="3">
+          <colspec colname="c0" colwidth="10*" />
+          <colspec colname="c1" colwidth="10*" />
+          <colspec colname="c2" colwidth="10*" />
+          <thead>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis>doubleword index</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>0</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>1</emphasis> </para>
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis role="bold">a</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>-1.00000000000000000</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>4.00000000000000000</para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis role="bold">r</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>-0.99996948242187500</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>0.249992370605468750</para>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+      </para>
+
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
