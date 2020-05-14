@@ -39299,11 +39299,159 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       of <emphasis role="bold">r</emphasis> is the value of the corresponding
       element of the most-significant half of <emphasis
       role="bold">a</emphasis>.</para>
+      <para>An example for input <emphasis role="bold">a</emphasis>
+      of type vector signed int follows:
+      <informaltable frame="all">
+      <tgroup cols="5">
+          <colspec colname="c0" colwidth="20*" />
+          <colspec colname="c1L" colwidth="10*" />
+          <colspec colname="c1R" colwidth="10*" />
+          <colspec colname="c2L" colwidth="10*" />
+          <colspec colname="c2R" colwidth="10*" />
+          <spanspec spanname="c1" namest="c1L" nameend="c1R"/>
+          <spanspec spanname="c2" namest="c2L" nameend="c2R"/>
+          <thead>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis>doubleword index</emphasis> </para>
+              </entry>
+              <entry spanname="c1" align="center" valign="middle">
+                <para> <emphasis>0</emphasis> </para>
+              </entry>
+              <entry spanname="c2" align="center" valign="middle">
+                <para> <emphasis>1</emphasis> </para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis>word index</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>0</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>1</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>2</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>3</emphasis> </para>
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis role="bold">r</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>10111213</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>24252627</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>????????</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>????????</para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis role="bold">a</emphasis> </para>
+              </entry>
+              <entry align="center" spanname="c1" valign="middle">
+                <para>0000000010111213</para>
+              </entry>
+              <entry align="center" spanname="c2" valign="middle">
+                <para>0000000024252627</para>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+      </para>
       <para>If <emphasis role="bold">a</emphasis> is a floating-point vector,
       the value of each element of <emphasis role="bold">r</emphasis> is the
       value of the corresponding element of the most-significant half of
       <emphasis role="bold">a</emphasis>, widened to the result
       precision.</para>
+      <para>An example for input <emphasis role="bold">a</emphasis>
+      of type vector float follows:
+      <informaltable frame="all">
+      <tgroup cols="5">
+          <colspec colname="c0" colwidth="20*" />
+          <colspec colname="c1L" colwidth="10*" />
+          <colspec colname="c1R" colwidth="10*" />
+          <colspec colname="c2L" colwidth="10*" />
+          <colspec colname="c2R" colwidth="10*" />
+          <spanspec spanname="c1" namest="c1L" nameend="c1R"/>
+          <spanspec spanname="c2" namest="c2L" nameend="c2R"/>
+          <thead>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis>doubleword index</emphasis> </para>
+              </entry>
+              <entry spanname="c1" align="center" valign="middle">
+                <para> <emphasis>0</emphasis> </para>
+              </entry>
+              <entry spanname="c2" align="center" valign="middle">
+                <para> <emphasis>1</emphasis> </para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis>word index</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>0</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>1</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>2</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>3</emphasis> </para>
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis role="bold">r</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>-2.71828182</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>3.14159265</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>????????</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>????????</para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis role="bold">a</emphasis> </para>
+              </entry>
+              <entry align="center" spanname="c1" valign="middle">
+                <para>-2.71828182</para>
+              </entry>
+              <entry align="center" spanname="c2" valign="middle">
+                <para>3.14159265</para>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+      </para>
       <para>If <emphasis role="bold">a</emphasis> is a pixel vector, the value
       of each element of <emphasis role="bold">r</emphasis> is taken from the
       corresponding element of the most-significant half of <emphasis
@@ -39333,6 +39481,225 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 	  role="bold">a</emphasis>.</para>
         </listitem>
       </itemizedlist>
+      <para>An example follows:
+      <informaltable frame="all">
+      <tgroup cols="17">
+          <colspec colname="c0" colwidth="20*" />
+          <colspec colname="p1-1A" colwidth="10*" />
+          <colspec colname="p1-5R" colwidth="10*" />
+          <colspec colname="p1-5G" colwidth="10*" />
+          <colspec colname="p1-5B" colwidth="10*" />
+          <colspec colname="p2-1A" colwidth="10*" />
+          <colspec colname="p2-5R" colwidth="10*" />
+          <colspec colname="p2-5G" colwidth="10*" />
+          <colspec colname="p2-5B" colwidth="10*" />
+          <colspec colname="p3-1A" colwidth="10*" />
+          <colspec colname="p3-5R" colwidth="10*" />
+          <colspec colname="p3-5G" colwidth="10*" />
+          <colspec colname="p3-5B" colwidth="10*" />
+          <colspec colname="p4-1A" colwidth="10*" />
+          <colspec colname="p4-5R" colwidth="10*" />
+          <colspec colname="p4-5G" colwidth="10*" />
+          <colspec colname="p4-5B" colwidth="10*" />
+          <spanspec spanname="p1" namest="p1-1A" nameend="p1-5R"/>
+          <spanspec spanname="p2" namest="p1-5G" nameend="p1-5B"/>
+          <spanspec spanname="p3" namest="p2-1A" nameend="p2-5R"/>
+          <spanspec spanname="p4" namest="p2-5G" nameend="p2-5B"/>
+          <spanspec spanname="p5" namest="p3-1A" nameend="p3-5R"/>
+          <spanspec spanname="p6" namest="p3-5G" nameend="p3-5B"/>
+          <spanspec spanname="p7" namest="p4-1A" nameend="p4-5R"/>
+          <spanspec spanname="p8" namest="p4-5G" nameend="p4-5B"/>
+          <spanspec spanname="w1" namest="p1-1A" nameend="p1-5B"/>
+          <spanspec spanname="w2" namest="p2-1A" nameend="p2-5B"/>
+          <spanspec spanname="w3" namest="p3-1A" nameend="p3-5B"/>
+          <spanspec spanname="w4" namest="p4-1A" nameend="p4-5B"/>
+          <thead>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis>word index</emphasis> </para>
+              </entry>
+              <entry spanname="w1" align="center" valign="middle">
+                <para> <emphasis>0</emphasis> </para>
+              </entry>
+              <entry spanname="w2" align="center" valign="middle">
+                <para> <emphasis>1</emphasis> </para>
+              </entry>
+              <entry spanname="w3" align="center" valign="middle">
+                <para> <emphasis>2</emphasis> </para>
+              </entry>
+              <entry spanname="w4" align="center" valign="middle">
+                <para> <emphasis>3</emphasis> </para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis>halfword index</emphasis> </para>
+              </entry>
+              <entry spanname="p1" align="center" valign="middle">
+                <para> <emphasis>0</emphasis> </para>
+              </entry>
+              <entry spanname="p2" align="center" valign="middle">
+                <para> <emphasis>1</emphasis> </para>
+              </entry>
+              <entry spanname="p3" align="center" valign="middle">
+                <para> <emphasis>2</emphasis> </para>
+              </entry>
+              <entry spanname="p4" align="center" valign="middle">
+                <para> <emphasis>3</emphasis> </para>
+              </entry>
+              <entry spanname="p5" align="center" valign="middle">
+                <para> <emphasis>4</emphasis> </para>
+              </entry>
+              <entry spanname="p6" align="center" valign="middle">
+                <para> <emphasis>5</emphasis> </para>
+              </entry>
+              <entry spanname="p7" align="center" valign="middle">
+                <para> <emphasis>6</emphasis> </para>
+              </entry>
+              <entry spanname="p8" align="center" valign="middle">
+                <para> <emphasis>7</emphasis> </para>
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis role="bold">a</emphasis> </para>
+              </entry>
+              <entry align="center" spanname="p1" valign="middle">
+                <para>1234</para>
+              </entry>
+              <entry align="center" spanname="p2" valign="middle">
+                <para>2567</para>
+              </entry>
+              <entry align="center" spanname="p3" valign="middle">
+                <para>489A</para>
+              </entry>
+              <entry align="center" spanname="p4" valign="middle">
+                <para>8BCD</para>
+              </entry>
+              <entry align="center" spanname="p5" valign="middle">
+                <para>????</para>
+              </entry>
+              <entry align="center" spanname="p6" valign="middle">
+                <para>????</para>
+              </entry>
+              <entry align="center" spanname="p7" valign="middle">
+                <para>????</para>
+              </entry>
+              <entry align="center" spanname="p8" valign="middle">
+                <para>????</para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis>unpack halfwords to words</emphasis> </para>
+              </entry>
+              <entry spanname="w1" align="center" valign="middle">
+                <para>1234</para>
+              </entry>
+              <entry spanname="w2" align="center" valign="middle">
+                <para>2567</para>
+              </entry>
+              <entry spanname="w3" align="center" valign="middle">
+                <para>489A</para>
+              </entry>
+              <entry spanname="w4" align="center" valign="middle">
+                <para>8BCD</para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para> as bits </para>
+              </entry>
+              <entry spanname="w1" align="center" valign="middle">
+                <para>0001001000110100</para>
+              </entry>
+              <entry spanname="w2" align="center" valign="middle">
+                <para>0010010101100111</para>
+              </entry>
+              <entry spanname="w3" align="center" valign="middle">
+                <para>0100100010011010</para>
+              </entry>
+              <entry spanname="w4" align="center" valign="middle">
+                <para>1000101111001101</para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para> as <emphasis>1-5-5-5</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>0</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>00100</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>10001</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>10100</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>0</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>01001</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>01011</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>00111</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>0</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>10010</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>00100</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>11010</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>1</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>00010</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>11110</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>01101</para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis role="bold">r</emphasis> </para>
+              </entry>
+              <entry spanname="w1" align="center" valign="middle">
+                <para>00041114</para>
+              </entry>
+              <entry spanname="w2" align="center" valign="middle">
+                <para>00090B07</para>
+              </entry>
+              <entry spanname="w3" align="center" valign="middle">
+                <para>0012041A</para>
+              </entry>
+              <entry spanname="w4" align="center" valign="middle">
+                <para>FF021E0D</para>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+      </para>
+
       <para><emphasis role="bold">Endian considerations:</emphasis>
       The "high" half of a vector with <emphasis>n</emphasis> elements is the
       first <emphasis>n</emphasis>/2 elements of the vector.  For little
@@ -39582,11 +39949,159 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       of <emphasis role="bold">r</emphasis> is the value of the corresponding
       element of the least-significant half of <emphasis
       role="bold">a</emphasis>.</para>
+      <para>An example for input <emphasis role="bold">a</emphasis>
+      of type vector signed int follows:
+      <informaltable frame="all">
+      <tgroup cols="5">
+          <colspec colname="c0" colwidth="20*" />
+          <colspec colname="c1L" colwidth="10*" />
+          <colspec colname="c1R" colwidth="10*" />
+          <colspec colname="c2L" colwidth="10*" />
+          <colspec colname="c2R" colwidth="10*" />
+          <spanspec spanname="c1" namest="c1L" nameend="c1R"/>
+          <spanspec spanname="c2" namest="c2L" nameend="c2R"/>
+          <thead>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis>doubleword index</emphasis> </para>
+              </entry>
+              <entry spanname="c1" align="center" valign="middle">
+                <para> <emphasis>0</emphasis> </para>
+              </entry>
+              <entry spanname="c2" align="center" valign="middle">
+                <para> <emphasis>1</emphasis> </para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis>word index</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>0</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>1</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>2</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>3</emphasis> </para>
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis role="bold">r</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>????????</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>????????</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>38393A3B</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>4C4D4E4F</para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis role="bold">a</emphasis> </para>
+              </entry>
+              <entry align="center" spanname="c1" valign="middle">
+                <para>0000000038393A3B</para>
+              </entry>
+              <entry align="center" spanname="c2" valign="middle">
+                <para>000000004C4D4E4F</para>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+      </para>
       <para>If <emphasis role="bold">a</emphasis> is a floating-point vector,
       the value of each element of <emphasis role="bold">r</emphasis> is the
       value of the corresponding element of the least-significant half of
       <emphasis role="bold">a</emphasis>, widened to the result
       precision.</para>
+      <para>An example for input <emphasis role="bold">a</emphasis>
+      of type vector float follows:
+      <informaltable frame="all">
+      <tgroup cols="5">
+          <colspec colname="c0" colwidth="20*" />
+          <colspec colname="c1L" colwidth="10*" />
+          <colspec colname="c1R" colwidth="10*" />
+          <colspec colname="c2L" colwidth="10*" />
+          <colspec colname="c2R" colwidth="10*" />
+          <spanspec spanname="c1" namest="c1L" nameend="c1R"/>
+          <spanspec spanname="c2" namest="c2L" nameend="c2R"/>
+          <thead>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis>doubleword index</emphasis> </para>
+              </entry>
+              <entry spanname="c1" align="center" valign="middle">
+                <para> <emphasis>0</emphasis> </para>
+              </entry>
+              <entry spanname="c2" align="center" valign="middle">
+                <para> <emphasis>1</emphasis> </para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis>word index</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>0</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>1</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>2</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> <emphasis>3</emphasis> </para>
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis role="bold">r</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>????????</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>????????</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>6.0221409e+23</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>1.61803398875</para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis role="bold">a</emphasis> </para>
+              </entry>
+              <entry align="center" spanname="c1" valign="middle">
+                <para>6.0221409e+23</para>
+              </entry>
+              <entry align="center" spanname="c2" valign="middle">
+                <para>1.61803398875</para>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+      </para>
       <para>If <emphasis role="bold">a</emphasis> is a pixel vector, the value
       of each element of <emphasis role="bold">r</emphasis> is taken from the
       corresponding element of the least-significant half of <emphasis
@@ -39616,6 +40131,225 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 	  role="bold">a</emphasis>.</para>
         </listitem>
       </itemizedlist>
+      <para>An example follows:
+      <informaltable frame="all">
+      <tgroup cols="17">
+          <colspec colname="c0" colwidth="20*" />
+          <colspec colname="p1-1A" colwidth="10*" />
+          <colspec colname="p1-5R" colwidth="10*" />
+          <colspec colname="p1-5G" colwidth="10*" />
+          <colspec colname="p1-5B" colwidth="10*" />
+          <colspec colname="p2-1A" colwidth="10*" />
+          <colspec colname="p2-5R" colwidth="10*" />
+          <colspec colname="p2-5G" colwidth="10*" />
+          <colspec colname="p2-5B" colwidth="10*" />
+          <colspec colname="p3-1A" colwidth="10*" />
+          <colspec colname="p3-5R" colwidth="10*" />
+          <colspec colname="p3-5G" colwidth="10*" />
+          <colspec colname="p3-5B" colwidth="10*" />
+          <colspec colname="p4-1A" colwidth="10*" />
+          <colspec colname="p4-5R" colwidth="10*" />
+          <colspec colname="p4-5G" colwidth="10*" />
+          <colspec colname="p4-5B" colwidth="10*" />
+          <spanspec spanname="p1" namest="p1-1A" nameend="p1-5R"/>
+          <spanspec spanname="p2" namest="p1-5G" nameend="p1-5B"/>
+          <spanspec spanname="p3" namest="p2-1A" nameend="p2-5R"/>
+          <spanspec spanname="p4" namest="p2-5G" nameend="p2-5B"/>
+          <spanspec spanname="p5" namest="p3-1A" nameend="p3-5R"/>
+          <spanspec spanname="p6" namest="p3-5G" nameend="p3-5B"/>
+          <spanspec spanname="p7" namest="p4-1A" nameend="p4-5R"/>
+          <spanspec spanname="p8" namest="p4-5G" nameend="p4-5B"/>
+          <spanspec spanname="w1" namest="p1-1A" nameend="p1-5B"/>
+          <spanspec spanname="w2" namest="p2-1A" nameend="p2-5B"/>
+          <spanspec spanname="w3" namest="p3-1A" nameend="p3-5B"/>
+          <spanspec spanname="w4" namest="p4-1A" nameend="p4-5B"/>
+          <thead>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis>word index</emphasis> </para>
+              </entry>
+              <entry spanname="w1" align="center" valign="middle">
+                <para> <emphasis>0</emphasis> </para>
+              </entry>
+              <entry spanname="w2" align="center" valign="middle">
+                <para> <emphasis>1</emphasis> </para>
+              </entry>
+              <entry spanname="w3" align="center" valign="middle">
+                <para> <emphasis>2</emphasis> </para>
+              </entry>
+              <entry spanname="w4" align="center" valign="middle">
+                <para> <emphasis>3</emphasis> </para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis>halfword index</emphasis> </para>
+              </entry>
+              <entry spanname="p1" align="center" valign="middle">
+                <para> <emphasis>0</emphasis> </para>
+              </entry>
+              <entry spanname="p2" align="center" valign="middle">
+                <para> <emphasis>1</emphasis> </para>
+              </entry>
+              <entry spanname="p3" align="center" valign="middle">
+                <para> <emphasis>2</emphasis> </para>
+              </entry>
+              <entry spanname="p4" align="center" valign="middle">
+                <para> <emphasis>3</emphasis> </para>
+              </entry>
+              <entry spanname="p5" align="center" valign="middle">
+                <para> <emphasis>4</emphasis> </para>
+              </entry>
+              <entry spanname="p6" align="center" valign="middle">
+                <para> <emphasis>5</emphasis> </para>
+              </entry>
+              <entry spanname="p7" align="center" valign="middle">
+                <para> <emphasis>6</emphasis> </para>
+              </entry>
+              <entry spanname="p8" align="center" valign="middle">
+                <para> <emphasis>7</emphasis> </para>
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis role="bold">a</emphasis> </para>
+              </entry>
+              <entry align="center" spanname="p1" valign="middle">
+                <para>????</para>
+              </entry>
+              <entry align="center" spanname="p2" valign="middle">
+                <para>????</para>
+              </entry>
+              <entry align="center" spanname="p3" valign="middle">
+                <para>????</para>
+              </entry>
+              <entry align="center" spanname="p4" valign="middle">
+                <para>????</para>
+              </entry>
+              <entry align="center" spanname="p5" valign="middle">
+                <para>DCB8</para>
+              </entry>
+              <entry align="center" spanname="p6" valign="middle">
+                <para>A984</para>
+              </entry>
+              <entry align="center" spanname="p7" valign="middle">
+                <para>7652</para>
+              </entry>
+              <entry align="center" spanname="p8" valign="middle">
+                <para>4321</para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis>unpack halfwords to words</emphasis> </para>
+              </entry>
+              <entry spanname="w1" align="center" valign="middle">
+                <para>DCB8</para>
+              </entry>
+              <entry spanname="w2" align="center" valign="middle">
+                <para>A984</para>
+              </entry>
+              <entry spanname="w3" align="center" valign="middle">
+                <para>7652</para>
+              </entry>
+              <entry spanname="w4" align="center" valign="middle">
+                <para>4321</para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para> as bits </para>
+              </entry>
+              <entry spanname="w1" align="center" valign="middle">
+                <para>1101110010111000</para>
+              </entry>
+              <entry spanname="w2" align="center" valign="middle">
+                <para>1010100110000100</para>
+              </entry>
+              <entry spanname="w3" align="center" valign="middle">
+                <para>0111011001010010</para>
+              </entry>
+              <entry spanname="w4" align="center" valign="middle">
+                <para>0100001100100001</para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para> as <emphasis>1-5-5-5</emphasis> </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>1</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>10111</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>00101</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>11000</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>1</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>01010</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>01100</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>00100</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>0</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>11101</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>10010</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>10010</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>0</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>10000</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>11001</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>00001</para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para> <emphasis role="bold">r</emphasis> </para>
+              </entry>
+              <entry spanname="w1" align="center" valign="middle">
+                <para>FF170518</para>
+              </entry>
+              <entry spanname="w2" align="center" valign="middle">
+                <para>FF0A0C04</para>
+              </entry>
+              <entry spanname="w3" align="center" valign="middle">
+                <para>001D1212</para>
+              </entry>
+              <entry spanname="w4" align="center" valign="middle">
+                <para>00101901</para>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+      </para>
+
       <para><emphasis role="bold">Endian considerations:</emphasis>
       The "high" half of a vector with <emphasis>n</emphasis> elements is the
       first <emphasis>n</emphasis>/2 elements of the vector.  For little
