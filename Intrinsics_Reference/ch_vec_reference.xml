@@ -10891,7 +10891,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       set to the number of leading zeros of the corresponding element
       of <emphasis role="bold">a</emphasis>.
       </para>
-      <para>An example follows:
+      <para>An example for input <emphasis role="bold">a</emphasis>
+      of type vector unsigned char follows:
       <informaltable frame="all">
       <tgroup cols="17">
           <colspec colname="c0" colwidth="50*" />
@@ -11285,7 +11286,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       element) of <emphasis role="bold">a</emphasis> that have a
       least-significant bit of zero.
       </para>
-      <para>An example follows:
+      <para>An example for input <emphasis role="bold">a</emphasis>
+      of type vector unsigned char follows:
       <informaltable frame="all">
       <tgroup cols="17">
           <colspec colname="c0" colwidth="50*" />
@@ -11802,7 +11804,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       element) of <emphasis role="bold">a</emphasis> that have a
       least-significant bit of zero.
       </para>
-      <para>An example follows:
+      <para>An example for input <emphasis role="bold">a</emphasis>
+      of type vector unsigned char follows:
       <informaltable frame="all">
       <tgroup cols="17">
           <colspec colname="c0" colwidth="50*" />
@@ -12789,8 +12792,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       the converted values of elements 0 and 2 of <emphasis
       role="bold">a</emphasis>.
       </para>
-      <para>An example where <emphasis role="bold">a</emphasis>
-      is of type vector signed int follows:
+      <para>An example for input <emphasis role="bold">a</emphasis>
+      of type vector signed int follows:
       <informaltable frame="all">
       <tgroup cols="5">
           <colspec colname="c0" colwidth="20*" />
@@ -13016,8 +13019,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       the converted values of elements 0 and 1 of <emphasis
       role="bold">a</emphasis>.
       </para>
-      <para>An example where <emphasis role="bold">a</emphasis>
-      is of type vector signed int follows:
+      <para>An example for input <emphasis role="bold">a</emphasis>
+      of type vector signed int follows:
       <informaltable frame="all">
       <tgroup cols="5">
           <colspec colname="c0" colwidth="20*" />
@@ -13249,8 +13252,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       the converted values of elements 2 and 3 of <emphasis
       role="bold">a</emphasis>.
       </para>
-      <para>An example where <emphasis role="bold">a</emphasis>
-      is of type vector signed int follows:
+      <para>An example for input <emphasis role="bold">a</emphasis>
+      of type vector signed int follows:
       <informaltable frame="all">
       <tgroup cols="5">
           <colspec colname="c0" colwidth="20*" />
@@ -13482,8 +13485,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       the converted values of elements 1 and 3 of <emphasis
       role="bold">a</emphasis>.
       </para>
-      <para>An example where <emphasis role="bold">a</emphasis>
-      is of type vector signed int follows:
+      <para>An example for input <emphasis role="bold">a</emphasis>
+      of type vector signed int follows:
       <informaltable frame="all">
       <tgroup cols="5">
           <colspec colname="c0" colwidth="20*" />
@@ -15315,7 +15318,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       element index of the position of the first character match in
       natural element order.  If no match, returns the number of
       characters as an element count in the vector argument.</para> 
-      <para>An example follows:
+      <para>An example for input <emphasis role="bold">a</emphasis>
+      of type vector unsigned char follows:
       <informaltable frame="all">
       <tgroup cols="17">
           <colspec colname="c0" colwidth="50*" />
@@ -15786,7 +15790,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       either the first character match or an end-of-string (EOS)
       terminator. If no match or terminator, returns the number of
       characters as an element count in the vector argument.</para>
-      <para>An example follows:
+      <para>An example for input <emphasis role="bold">a</emphasis>
+      of type vector unsigned char follows:
       <informaltable frame="all">
       <tgroup cols="17">
           <colspec colname="c0" colwidth="50*" />
@@ -16324,7 +16329,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       element index of the position of the first character mismatch in
       natural element order. If no mismatch, returns the number of
       characters as an element count in the vector argument.</para>
-      <para>An example follows:
+      <para>An example for input <emphasis role="bold">a</emphasis>
+      of type vector unsigned char follows:
       <informaltable frame="all">
       <tgroup cols="17">
           <colspec colname="c0" colwidth="50*" />
@@ -16779,7 +16785,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       either the first character mismatch or an end-of-string (EOS)
       terminator. If no mismatch or terminator, returns the number of
       characters as an element count in the vector argument.</para>
-      <para>An example follows:
+      <para>An example for input <emphasis role="bold">a</emphasis>
+      of type vector unsigned char follows:
       <informaltable frame="all">
       <tgroup cols="17">
           <colspec colname="c0" colwidth="50*" />
@@ -27329,7 +27336,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       is set to the exclusive-OR of byte elements <emphasis>x</emphasis>
       of <emphasis role="bold">a</emphasis> and <emphasis>y</emphasis>
       of <emphasis role="bold">b</emphasis>.</para>
-      <para>An example follows:
+      <para>An example for input <emphasis role="bold">a</emphasis>
+      of type vector unsigned char follows:
       <informaltable frame="all">
       <tgroup cols="34">
           <colspec colname="c0L" colwidth="10*" />
