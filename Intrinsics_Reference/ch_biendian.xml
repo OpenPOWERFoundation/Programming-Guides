@@ -180,8 +180,9 @@ vector unsigned __int128 x = { (((unsigned __int128)0x1020304050607080) &lt;&lt;
       to access the <emphasis>N</emphasis>th vector element from a
       vector pointer. The dereference operator <code>*</code> may
       <emphasis>not</emphasis> be used to access data that is not
-      aligned at least to a quadword boundary.  Built-in functions
-      such as <code>vec_xl</code> and <code>vec_xst</code> are
+      aligned at least to a quadword boundary.  Built-in functions such as
+      <code><xref linkend="vec_xl" xrefstyle="select:title nopage"/></code> and
+      <code><xref linkend="vec_xst" xrefstyle="select:title nopage"/></code> and
       provided for unaligned data access.  Please refer to <xref
       linkend="VIPR.biendian.unaligned" /> for an example.
     </para>
@@ -796,238 +797,238 @@ a[3] = c;</programlisting>
 	  <tbody>
             <row>
               <entry>
-		<para>vec_bperm</para>
+		<para><code><xref linkend="vec_bperm" xrefstyle="select:title nopage"/></code></para>
               </entry>
               <entry>
-		<para>vec_mergeh</para>
+		<para><code><xref linkend="vec_mergeh" xrefstyle="select:title nopage"/></code></para>
               </entry>
               <entry>
-		<para>vec_signedo</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-		<para>vec_cipher_be</para>
-              </entry>
-              <entry>
-		<para>vec_mergel</para>
-              </entry>
-              <entry>
-		<para>vec_sld</para>
+		<para><code><xref linkend="vec_signedo" xrefstyle="select:title nopage"/></code></para>
               </entry>
             </row>
             <row>
               <entry>
-		<para>vec_cipherlast_be</para>
+		<para><code><xref linkend="vec_cipher_be" xrefstyle="select:title nopage"/></code></para>
               </entry>
               <entry>
-		<para>vec_mergeo</para>
+		<para><code><xref linkend="vec_mergel" xrefstyle="select:title nopage"/></code></para>
               </entry>
               <entry>
-		<para>vec_sldw</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-		<para>vec_doublee</para>
-              </entry>
-              <entry>
-		<para>vec_mfvscr</para>
-              </entry>
-              <entry>
-		<para>vec_sll</para>
+		<para><code><xref linkend="vec_sld" xrefstyle="select:title nopage"/></code></para>
               </entry>
             </row>
             <row>
               <entry>
-		<para>vec_doubleh</para>
+		<para><code><xref linkend="vec_cipherlast_be" xrefstyle="select:title nopage"/></code></para>
               </entry>
               <entry>
-		<para>vec_mule</para>
+		<para><code><xref linkend="vec_mergeo" xrefstyle="select:title nopage"/></code></para>
               </entry>
               <entry>
-		<para>vec_slo</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-		<para>vec_doublel</para>
-              </entry>
-              <entry>
-		<para>vec_mulo</para>
-              </entry>
-              <entry>
-		<para>vec_slv</para>
+		<para><code><xref linkend="vec_sldw" xrefstyle="select:title nopage"/></code></para>
               </entry>
             </row>
             <row>
               <entry>
-		<para>vec_doubleo</para>
+		<para><code><xref linkend="vec_doublee" xrefstyle="select:title nopage"/></code></para>
               </entry>
               <entry>
-		<para>vec_ncipher_be</para>
+		<para><code><xref linkend="vec_mfvscr" xrefstyle="select:title nopage"/></code></para>
               </entry>
               <entry>
-		<para>vec_splat</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-		<para>vec_extract</para>
-              </entry>
-              <entry>
-		<para>vec_ncipherlast_be</para>
-              </entry>
-              <entry>
-		<para>vec_srl</para>
+		<para><code><xref linkend="vec_sll" xrefstyle="select:title nopage"/></code></para>
               </entry>
             </row>
             <row>
               <entry>
-		<para>vec_extract_fp32_from_shorth</para>
+		<para><code><xref linkend="vec_doubleh" xrefstyle="select:title nopage"/></code></para>
               </entry>
               <entry>
-		<para>vec_pack</para>
+		<para><code><xref linkend="vec_mule" xrefstyle="select:title nopage"/></code></para>
               </entry>
               <entry>
-		<para>vec_sro</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-		<para>vec_extract_fp32_from_shortl</para>
-              </entry>
-              <entry>
-		<para>vec_pack_to_short_fp32</para>
-              </entry>
-              <entry>
-		<para>vec_srv</para>
+		<para><code><xref linkend="vec_slo" xrefstyle="select:title nopage"/></code></para>
               </entry>
             </row>
             <row>
               <entry>
-		<para>vec_extract4b</para>
+		<para><code><xref linkend="vec_doublel" xrefstyle="select:title nopage"/></code></para>
               </entry>
               <entry>
-		<para>vec_packpx</para>
+		<para><code><xref linkend="vec_mulo" xrefstyle="select:title nopage"/></code></para>
               </entry>
               <entry>
-		<para>vec_sum2s</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-		<para>vec_first_match_index</para>
-              </entry>
-              <entry>
-		<para>vec_packs</para>
-              </entry>
-              <entry>
-		<para>vec_sums</para>
+		<para><code><xref linkend="vec_slv" xrefstyle="select:title nopage"/></code></para>
               </entry>
             </row>
             <row>
               <entry>
-		<para>vec_first_match_or_eos_index</para>
+		<para><code><xref linkend="vec_doubleo" xrefstyle="select:title nopage"/></code></para>
               </entry>
               <entry>
-		<para>vec_packsu</para>
+		<para><code><xref linkend="vec_ncipher_be" xrefstyle="select:title nopage"/></code></para>
               </entry>
               <entry>
-		<para>vec_unpackh</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-		<para>vec_first_mismatch_index</para>
-              </entry>
-              <entry>
-		<para>vec_perm</para>
-              </entry>
-              <entry>
-		<para>vec_unpackl</para>
+		<para><code><xref linkend="vec_splat" xrefstyle="select:title nopage"/></code></para>
               </entry>
             </row>
             <row>
               <entry>
-		<para>vec_first_mismatch_or_eos_index</para>
+		<para><code><xref linkend="vec_extract" xrefstyle="select:title nopage"/></code></para>
               </entry>
               <entry>
-		<para>vec_permxor</para>
+		<para><code><xref linkend="vec_ncipherlast_be" xrefstyle="select:title nopage"/></code></para>
               </entry>
               <entry>
-		<para>vec_unsigned2</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-		<para>vec_float2</para>
-              </entry>
-              <entry>
-		<para>vec_pmsum_be</para>
-              </entry>
-              <entry>
-		<para>vec_unsignede</para>
+		<para><code><xref linkend="vec_srl" xrefstyle="select:title nopage"/></code></para>
               </entry>
             </row>
             <row>
               <entry>
-		<para>vec_floate</para>
+		<para><code><xref linkend="vec_extract_fp32_from_shorth" xrefstyle="select:title nopage"/></code></para>
               </entry>
               <entry>
-		<para>vec_reve</para>
+		<para><code><xref linkend="vec_pack" xrefstyle="select:title nopage"/></code></para>
               </entry>
               <entry>
-		<para>vec_unsignedo</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-		<para>vec_floato</para>
-              </entry>
-              <entry>
-		<para>vec_sbox_be</para>
-              </entry>
-              <entry>
-		<para>vec_xl (ISA 2.07 only)</para>
+		<para><code><xref linkend="vec_sro" xrefstyle="select:title nopage"/></code></para>
               </entry>
             </row>
             <row>
               <entry>
-		<para>vec_gb</para>
+		<para><code><xref linkend="vec_extract_fp32_from_shortl" xrefstyle="select:title nopage"/></code></para>
               </entry>
               <entry>
-		<para>vec_shasigma_be</para>
+		<para><code><xref linkend="vec_pack_to_short_fp32" xrefstyle="select:title nopage"/></code></para>
               </entry>
               <entry>
-		<para>vec_xl_be</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-		<para>vec_insert</para>
-              </entry>
-              <entry>
-		<para>vec_signed2</para>
-              </entry>
-              <entry>
-		<para>vec_xst (ISA 2.07 only)</para>
+		<para><code><xref linkend="vec_srv" xrefstyle="select:title nopage"/></code></para>
               </entry>
             </row>
             <row>
               <entry>
-		<para>vec_insert4b</para>
+		<para><code><xref linkend="vec_extract4b" xrefstyle="select:title nopage"/></code></para>
               </entry>
               <entry>
-		<para>vec_signede</para>
+		<para><code><xref linkend="vec_packpx" xrefstyle="select:title nopage"/></code></para>
               </entry>
               <entry>
-		<para>vec_xst_be</para>
+		<para><code><xref linkend="vec_sum2s" xrefstyle="select:title nopage"/></code></para>
               </entry>
             </row>
             <row>
               <entry>
-		<para>vec_mergee</para>
+		<para><code><xref linkend="vec_first_match_index" xrefstyle="select:title nopage"/></code></para>
+              </entry>
+              <entry>
+		<para><code><xref linkend="vec_packs" xrefstyle="select:title nopage"/></code></para>
+              </entry>
+              <entry>
+		<para><code><xref linkend="vec_sums" xrefstyle="select:title nopage"/></code></para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+		<para><code><xref linkend="vec_first_match_or_eos_index" xrefstyle="select:title nopage"/></code></para>
+              </entry>
+              <entry>
+		<para><code><xref linkend="vec_packsu" xrefstyle="select:title nopage"/></code></para>
+              </entry>
+              <entry>
+		<para><code><xref linkend="vec_unpackh" xrefstyle="select:title nopage"/></code></para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+		<para><code><xref linkend="vec_first_mismatch_index" xrefstyle="select:title nopage"/></code></para>
+              </entry>
+              <entry>
+		<para><code><xref linkend="vec_perm" xrefstyle="select:title nopage"/></code></para>
+              </entry>
+              <entry>
+		<para><code><xref linkend="vec_unpackl" xrefstyle="select:title nopage"/></code></para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+		<para><code><xref linkend="vec_first_mismatch_or_eos_index" xrefstyle="select:title nopage"/></code></para>
+              </entry>
+              <entry>
+		<para><code><xref linkend="vec_permxor" xrefstyle="select:title nopage"/></code></para>
+              </entry>
+              <entry>
+		<para><code><xref linkend="vec_unsigned2" xrefstyle="select:title nopage"/></code></para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+		<para><code><xref linkend="vec_float2" xrefstyle="select:title nopage"/></code></para>
+              </entry>
+              <entry>
+		<para><code><xref linkend="vec_pmsum_be" xrefstyle="select:title nopage"/></code></para>
+              </entry>
+              <entry>
+		<para><code><xref linkend="vec_unsignede" xrefstyle="select:title nopage"/></code></para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+		<para><code><xref linkend="vec_floate" xrefstyle="select:title nopage"/></code></para>
+              </entry>
+              <entry>
+		<para><code><xref linkend="vec_reve" xrefstyle="select:title nopage"/></code></para>
+              </entry>
+              <entry>
+		<para><code><xref linkend="vec_unsignedo" xrefstyle="select:title nopage"/></code></para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+		<para><code><xref linkend="vec_floato" xrefstyle="select:title nopage"/></code></para>
+              </entry>
+              <entry>
+		<para><code><xref linkend="vec_sbox_be" xrefstyle="select:title nopage"/></code></para>
+              </entry>
+              <entry>
+		<para><code><xref linkend="vec_xl" xrefstyle="select:title nopage"/></code> (ISA 2.07 only)</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+		<para><code><xref linkend="vec_gb" xrefstyle="select:title nopage"/></code></para>
+              </entry>
+              <entry>
+		<para><code><xref linkend="vec_shasigma_be" xrefstyle="select:title nopage"/></code></para>
+              </entry>
+              <entry>
+		<para><code><xref linkend="vec_xl_be" xrefstyle="select:title nopage"/></code></para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+		<para><code><xref linkend="vec_insert" xrefstyle="select:title nopage"/></code></para>
+              </entry>
+              <entry>
+		<para><code><xref linkend="vec_signed2" xrefstyle="select:title nopage"/></code></para>
+              </entry>
+              <entry>
+		<para><code><xref linkend="vec_xst" xrefstyle="select:title nopage"/></code> (ISA 2.07 only)</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+		<para><code><xref linkend="vec_insert4b" xrefstyle="select:title nopage"/></code></para>
+              </entry>
+              <entry>
+		<para><code><xref linkend="vec_signede" xrefstyle="select:title nopage"/></code></para>
+              </entry>
+              <entry>
+		<para><code><xref linkend="vec_xst_be" xrefstyle="select:title nopage"/></code></para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+		<para><code><xref linkend="vec_mergee" xrefstyle="select:title nopage"/></code></para>
               </entry>
               <entry>
 		<para></para>
@@ -1056,7 +1057,8 @@ a[3] = c;</programlisting>
 	Before the bi-endian programming model was introduced, the
 	<code>vec_lvsl</code> and <code>vec_lvsr</code> intrinsics
 	were supported.  These could be used in conjunction with
-	<code>vec_perm</code> and VMX load and store instructions for
+	<code><xref linkend="vec_perm" xrefstyle="select:title nopage"/></code>
+	and VMX load and store instructions for
 	unaligned access. The <code>vec_lvsl</code> and
 	<code>vec_lvsr</code> interfaces are deprecated in accordance
 	with the interfaces specified here. For compatibility, the
@@ -1097,7 +1099,7 @@ a[3] = c;</programlisting>
           <tbody>
             <row>
               <entry>
-                <para>vec_ld</para>
+                <para><code><xref linkend="vec_ld" xrefstyle="select:title nopage"/></code></para>
               </entry>
               <entry>
                 <para>lvx</para>
@@ -1108,7 +1110,7 @@ a[3] = c;</programlisting>
             </row>
             <row>
               <entry>
-                <para>vec_lde</para>
+                <para><code><xref linkend="vec_lde" xrefstyle="select:title nopage"/></code></para>
               </entry>
               <entry>
                 <para>lvebx, lvehx, lvewx</para>
@@ -1119,7 +1121,7 @@ a[3] = c;</programlisting>
             </row>
             <row>
               <entry>
-                <para>vec_ldl</para>
+                <para><code><xref linkend="vec_ldl" xrefstyle="select:title nopage"/></code></para>
               </entry>
               <entry>
                 <para>lvxl</para>
@@ -1130,7 +1132,7 @@ a[3] = c;</programlisting>
             </row>
             <row>
               <entry>
-                <para>vec_st</para>
+                <para><code><xref linkend="vec_st" xrefstyle="select:title nopage"/></code></para>
               </entry>
               <entry>
                 <para>stvx</para>
@@ -1141,7 +1143,7 @@ a[3] = c;</programlisting>
             </row>
             <row>
               <entry>
-                <para>vec_ste</para>
+                <para><code><xref linkend="vec_ste" xrefstyle="select:title nopage"/></code></para>
               </entry>
               <entry>
                 <para>stvebx, stvehx, stvewx</para>
@@ -1152,7 +1154,7 @@ a[3] = c;</programlisting>
             </row>
             <row>
               <entry>
-                <para>vec_stl</para>
+                <para><code><xref linkend="vec_stl" xrefstyle="select:title nopage"/></code></para>
               </entry>
               <entry>
                 <para>stvxl</para>
@@ -1166,7 +1168,9 @@ a[3] = c;</programlisting>
       </table>
       <para>
 	Instead, it is recommended that programmers use the
-	<code>vec_xl</code> and <code>vec_xst</code> vector built-in
+	<code><xref linkend="vec_xl" xrefstyle="select:title nopage"/></code> and
+	<code><xref linkend="vec_xst" xrefstyle="select:title nopage"/></code>
+	vector built-in
 	functions to access unaligned data streams.  See the
 	descriptions of these instructions in <xref
 	linkend="VIPR.vec-ref" /> for further description and
@@ -1479,35 +1483,44 @@ a[3] = c;</programlisting>
       <title>vec_sld and vec_sro are not bi-endian</title>
       <para>
 	One oddity in the bi-endian vector programming model is that
-	<code>vec_sld</code> has big-endian semantics for code
+	<code><xref linkend="vec_sld" xrefstyle="select:title nopage"/></code>
+	has big-endian semantics for code
 	compiled for both big-endian and little-endian targets.  That
-	is, any code that uses <code>vec_sld</code> without guarding
+	is, any code that uses
+	<code><xref linkend="vec_sld" xrefstyle="select:title nopage"/></code>
+	without guarding
 	it with a test on endianness is likely to be incorrect.
       </para>
       <para>
 	At the time that the bi-endian model was being developed, it
 	was discovered that existing code in several Linux packages
-	was using <code>vec_sld</code> in order to perform multiplies,
+	was using
+	<code><xref linkend="vec_sld" xrefstyle="select:title nopage"/></code>
+	in order to perform multiplies,
 	or to otherwise shift portions of base elements left.  A
 	straightforward little-endian implementation of
-	<code>vec_sld</code> would concatenate the two input vectors
+	<code><xref linkend="vec_sld" xrefstyle="select:title nopage"/></code>
+	would concatenate the two input vectors
 	in reverse order and shift bytes to the right.  This would
 	only give compatible results for <code>vector char</code>
 	types.  Those using this intrinsic as a cheap multiply, or to
 	shift bytes within larger elements, would see different
 	results on little-endian versus big-endian with such an
 	implementation.  Therefore it was decided that
-	<code>vec_sld</code> would not have a bi-endian
+	<code><xref linkend="vec_sld" xrefstyle="select:title nopage"/></code>
+	would not have a bi-endian
 	implementation.
       </para>
       <para>
-	<code>vec_sro</code> is not bi-endian for similar reasons.
+	<code><xref linkend="vec_sro" xrefstyle="select:title nopage"/></code>
+	is not bi-endian for similar reasons.
       </para>
     </section>
     <section xml:id="VIPR.biendian.vperm">
       <title>Limitations on bi-endianness of vec_perm</title>
       <para>
-	The <code>vec_perm</code> intrinsic is bi-endian, provided
+	The <code><xref linkend="vec_perm" xrefstyle="select:title nopage"/></code>
+	intrinsic is bi-endian, provided
 	that it is used to reorder entire elements of the input
 	vectors.
       </para>
@@ -2533,7 +2546,8 @@ a[3] = c;</programlisting>
 	</tgroup>
       </informaltable>
       <para>
-	The lesson here is to only use <code>vec_perm</code> to
+	The lesson here is to only use
+	<code><xref linkend="vec_perm" xrefstyle="select:title nopage"/></code> to
 	reorder entire elements of a vector.  If you must use vec_perm
 	for another purpose, your code must include a test for
 	endianness and separate algorithms for big- and
