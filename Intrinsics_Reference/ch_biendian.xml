@@ -995,7 +995,7 @@ a[3] = c;</programlisting>
             </row>
             <row>
               <entry>
-		<para><code><xref linkend="vec_gb" xrefstyle="select:title nopage"/></code></para>
+		<para><code><xref linkend="vec_insert" xrefstyle="select:title nopage"/></code></para>
               </entry>
               <entry>
 		<para><code><xref linkend="vec_shasigma_be" xrefstyle="select:title nopage"/></code></para>
@@ -1006,7 +1006,7 @@ a[3] = c;</programlisting>
             </row>
             <row>
               <entry>
-		<para><code><xref linkend="vec_insert" xrefstyle="select:title nopage"/></code></para>
+		<para><code><xref linkend="vec_insert4b" xrefstyle="select:title nopage"/></code></para>
               </entry>
               <entry>
 		<para><code><xref linkend="vec_signed2" xrefstyle="select:title nopage"/></code></para>
@@ -1017,24 +1017,13 @@ a[3] = c;</programlisting>
             </row>
             <row>
               <entry>
-		<para><code><xref linkend="vec_insert4b" xrefstyle="select:title nopage"/></code></para>
+		<para><code><xref linkend="vec_mergee" xrefstyle="select:title nopage"/></code></para>
               </entry>
               <entry>
 		<para><code><xref linkend="vec_signede" xrefstyle="select:title nopage"/></code></para>
               </entry>
               <entry>
 		<para><code><xref linkend="vec_xst_be" xrefstyle="select:title nopage"/></code></para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-		<para><code><xref linkend="vec_mergee" xrefstyle="select:title nopage"/></code></para>
-              </entry>
-              <entry>
-		<para></para>
-              </entry>
-              <entry>
-		<para></para>
               </entry>
             </row>
 	  </tbody>

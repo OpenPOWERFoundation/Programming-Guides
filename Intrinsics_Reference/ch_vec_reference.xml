@@ -18141,9 +18141,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 	</mediaobject>
       </figure>
       <para><emphasis role="bold">Endian considerations:</emphasis>
-      The <emphasis role="bold">vec_gb</emphasis> intrinsic function assumes
-      big-endian (left-to-right) numbering for both bits and bytes, matching
-      the ISA 2.07 <emphasis role="bold">vgbbd</emphasis> instruction.
+      None.
       </para>
       
       <indexterm>
