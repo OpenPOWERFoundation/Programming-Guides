@@ -54,7 +54,7 @@
       <holder>OpenPOWER Foundation</holder>
     </copyright>
     <!-- TODO: Set the correct document releaseinfo -->
-    <releaseinfo>Revision 1.0.0_prd3</releaseinfo>
+    <releaseinfo>Revision 1.0.0</releaseinfo>
     <productname>OpenPOWER</productname>
     <pubdate/>
 
@@ -88,31 +88,11 @@
     <revhistory>
       <!-- TODO: Set the initial version information and clear any old information out -->
       <revision>
-        <date>2020-05-16</date>
+        <date>2020-08-11</date>
         <revdescription>
           <itemizedlist spacing="compact">
             <listitem>
-              <para>Version 1.0.0_prd3: Public Review Draft Revision 3</para>
-            </listitem>
-          </itemizedlist>
-        </revdescription>
-      </revision>
-      <revision>
-        <date>2020-02-11</date>
-        <revdescription>
-          <itemizedlist spacing="compact">
-            <listitem>
-              <para>Version 1.0.0_prd2: Public Review Draft Revision 2</para>
-            </listitem>
-          </itemizedlist>
-        </revdescription>
-      </revision>
-      <revision>
-        <date>2019-11-12</date>
-        <revdescription>
-          <itemizedlist spacing="compact">
-            <listitem>
-              <para>Version 1.0.0_prd: Public Review Draft</para>
+              <para>Version 1.0.0</para>
             </listitem>
           </itemizedlist>
         </revdescription>
