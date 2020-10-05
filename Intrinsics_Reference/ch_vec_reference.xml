@@ -12730,6 +12730,21 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
+      <para revisionflag="added">
+	<emphasis role="bold">Notes:</emphasis>
+	For integer division, when any element of <emphasis
+	role="bold">b</emphasis> is zero, the corresponding element of
+	<emphasis role="bold">r</emphasis> is undefined.  For signed
+	integer division, when an element of <emphasis
+	role="bold">a</emphasis> is the negative number with maximum
+	cardinality and the corresponding element of <emphasis
+	role="bold">b</emphasis> is negative one, the corresponding
+	element of <emphasis role="bold">r</emphasis> is undefined.
+      </para>
+      <para revisionflag="added">
+	<emphasis role="bold">Review status:</emphasis>
+	Unreviewed.
+      </para>
       
       <indexterm>
 	<primary>xxspltd</primary>
@@ -12759,39 +12774,114 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 	<primary>xvdivdp</primary>
 	<secondary>vec_div</secondary>
       </indexterm>
+      <indexterm>
+	<primary>vdivsw</primary>
+	<secondary>vec_div</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vdivuw</primary>
+	<secondary>vec_div</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vdivsd</primary>
+	<secondary>vec_div</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vdivud</primary>
+	<secondary>vec_div</secondary>
+      </indexterm>
 
       <table frame="all">
 	<title>Supported type signatures for vec_div</title>
-	<tgroup cols="4">
+	<tgroup cols="6">
           <colspec colname="c1" colwidth="20*" />
           <colspec colname="c2" colwidth="20*" />
           <colspec colname="c3" colwidth="20*" />
           <colspec colname="c4" colwidth="20*" />
+          <colspec colname="c5" colwidth="20*" />
+          <colspec colname="c6" colwidth="20*" />
           <thead>
             <row>
-              <entry align="center">
+              <entry align="center" valign="middle">
 		<para>
                   <emphasis role="bold">r</emphasis>
 		</para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
 		<para>
                   <emphasis role="bold">a</emphasis>
 		</para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
 		<para>
                   <emphasis role="bold">b</emphasis>
 		</para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
 		<para>
-                  <emphasis role="bold">Example Implementation</emphasis>
+                  <emphasis role="bold">Example <phrase
+		  revisionflag="added">ISA 2.07 and 3.0</phrase>
+		  Implementation</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle" revisionflag="added">
+		<para>
+                  <emphasis role="bold">Example ISA 3.1
+		  Implementation</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle" revisionflag="added">
+		<para>
+                  <emphasis role="bold">Restrictions</emphasis>
 		</para>
               </entry>
             </row>
           </thead>
           <tbody>
+            <row revisionflag="added">
+              <entry align="center" valign="middle">
+		<para>vector signed int</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector signed int</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector signed int</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>Not required</para>
+              </entry>
+	      <entry valign="middle">
+		<programlisting revisionflag="added">
+   vdivsw r,a,b
+		</programlisting>
+	      </entry>
+	      <entry revisionflag="added" align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row revisionflag="added">
+              <entry align="center" valign="middle">
+		<para>vector unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>Not required</para>
+              </entry>
+	      <entry valign="middle">
+		<programlisting revisionflag="added">
+   vdivuw r,a,b
+		</programlisting>
+	      </entry>
+	      <entry revisionflag="added" align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
             <row>
               <entry align="center" valign="middle">
 		<para>vector signed long long</para>
@@ -12817,6 +12907,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
    xxmrghd r,z,y
 		</programlisting>
               </entry>
+	      <entry valign="middle">
+		<programlisting revisionflag="added">
+   vdivsd r,a,b
+		</programlisting>
+	      </entry>
+	      <entry revisionflag="added">
+		<para> </para>
+	      </entry>
             </row>
             <row>
               <entry align="center" valign="middle">
@@ -12843,6 +12941,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
    xxmrghd r,z,y
 		</programlisting>
               </entry>
+	      <entry valign="middle">
+		<programlisting revisionflag="added">
+   vdivud r,a,b
+		</programlisting>
+	      </entry>
+	      <entry revisionflag="added">
+		<para> </para>
+	      </entry>
             </row>
             <row>
               <entry align="center" valign="middle">
@@ -12859,6 +12965,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
    xvdivsp r,a,b
 		</programlisting>
               </entry>
+              <entry>
+		<programlisting revisionflag="added">
+   xvdivsp r,a,b
+		</programlisting>
+              </entry>
+	      <entry revisionflag="added">
+		<para> </para>
+	      </entry>
             </row>
             <row>
               <entry align="center" valign="middle">
@@ -12875,6 +12989,192 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
    xvdivdp r,a,b
 		</programlisting>
               </entry>
+              <entry>
+		<programlisting revisionflag="added">
+   xvdivdp r,a,b
+		</programlisting>
+              </entry>
+	      <entry revisionflag="added">
+		<para> </para>
+	      </entry>
+            </row>
+          </tbody>
+	</tgroup>
+      </table>
+
+    </simplesect>
+
+    <?hard-pagebreak?>
+    <simplesect xml:id="vec_dive" revisionflag="added">
+      <title>vec_dive</title>
+      <subtitle>Vector Divide Extended</subtitle>
+      <programlisting>
+      r = vec_dive (a, b)
+      </programlisting>
+
+      <para><emphasis role="bold">Purpose:</emphasis>
+      Divides the left-shifted elements in one vector by the
+      corresponding elements in another vector and places the
+      quotients in the result vector.
+      </para>
+      <para><emphasis role="bold">Result value:</emphasis>
+      The value of each element of <emphasis role="bold">r</emphasis> is
+      obtained by shifting the corresponding element of <emphasis
+      role="bold">a</emphasis> left by 32 bits, and then dividing that
+      value by the corresponding element of <emphasis
+      role="bold">b</emphasis>.
+      </para>
+      <para><emphasis role="bold">Endian considerations:</emphasis>
+      None.
+      </para>
+      <para>
+	<emphasis role="bold">Notes:</emphasis>
+	When any element of <emphasis role="bold">b</emphasis> is
+	zero, the corresponding element of <emphasis
+	role="bold">r</emphasis> is undefined.  If any quotient cannot
+	be represented in the element type of <emphasis
+	role="bold">r</emphasis>, the corresponding element of
+	<emphasis role="bold">r</emphasis> is undefined.
+      </para>
+      <para>
+	<emphasis role="bold">Review status:</emphasis>
+	Unreviewed.
+      </para>
+
+      <indexterm>
+	<primary>vdivesw</primary>
+	<secondary>vec_dive</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vdiveuw</primary>
+	<secondary>vec_dive</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vdivesd</primary>
+	<secondary>vec_dive</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vdiveud</primary>
+	<secondary>vec_dive</secondary>
+      </indexterm>
+
+      <table frame="all">
+	<title>Supported type signatures for vec_dive</title>
+	<tgroup cols="5">
+          <colspec colname="c1" colwidth="20*" />
+          <colspec colname="c2" colwidth="20*" />
+          <colspec colname="c3" colwidth="20*" />
+          <colspec colname="c4" colwidth="20*" />
+          <colspec colname="c5" colwidth="20*" />
+          <thead>
+            <row>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">r</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">a</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">b</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">Example Implementation</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle" revisionflag="added">
+		<para>
+                  <emphasis role="bold">Restrictions</emphasis>
+		</para>
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector signed int</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector signed int</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector signed int</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+		  <programlisting>
+   vdivesw r,a,b
+		  </programlisting>
+		</para>
+              </entry>
+	      <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row revisionflag="added">
+              <entry align="center" valign="middle">
+		<para>vector unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned int</para>
+              </entry>
+	      <entry valign="middle">
+		<programlisting>
+   vdiveuw r,a,b
+		</programlisting>
+	      </entry>
+	      <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector signed long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector signed long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector signed long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+		  <programlisting>
+   vdivesd r,a,b
+		  </programlisting>
+		</para>
+              </entry>
+	      <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row revisionflag="added">
+              <entry align="center" valign="middle">
+		<para>vector unsigned long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned long long</para>
+              </entry>
+	      <entry valign="middle">
+		<programlisting>
+   vdiveud r,a,b
+		</programlisting>
+	      </entry>
+	      <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
             </row>
           </tbody>
 	</tgroup>
@@ -22306,6 +22606,187 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </table>
 
     </simplesect>
+
+    <?hard-pagebreak?>
+    <simplesect xml:id="vec_mod" revisionflag="added">
+      <title>vec_mod</title>
+      <subtitle>Vector Modulo</subtitle>
+      <programlisting>
+      r = vec_mod (a, b)
+      </programlisting>
+
+      <para><emphasis role="bold">Purpose:</emphasis>
+      Produces the remainders from dividing the elements of one vector
+      by the elements of another vector, and places them in the result
+      vector.
+      </para>
+      <para><emphasis role="bold">Result value:</emphasis>
+      The value of each element of <emphasis role="bold">r</emphasis> is
+      obtained by dividing the corresponding element of <emphasis
+      role="bold">a</emphasis> by the corresponding element of <emphasis
+      role="bold">b</emphasis> and determining the unique signed or
+      unsigned integer remainder from the division.
+      </para>
+      <para><emphasis role="bold">Endian considerations:</emphasis>
+      None.
+      </para>
+      <para>
+	<emphasis role="bold">Notes:</emphasis>
+	When any element of <emphasis role="bold">b</emphasis> is
+	zero, the corresponding element of <emphasis
+	role="bold">r</emphasis> is undefined.  For signed arithmetic,
+	when any element of <emphasis role="bold">a</emphasis> is the
+	negative number with maximum cardinality, and the
+	corresponding element of <emphasis role="bold">b</emphasis> is
+	negative one, the corresponding element of <emphasis
+	role="bold">r</emphasis> is undefined.
+      </para>
+      <para>
+	<emphasis role="bold">Review status:</emphasis>
+	Unreviewed.
+      </para>
+
+      <indexterm>
+	<primary>vmodsw</primary>
+	<secondary>vec_mod</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vmoduw</primary>
+	<secondary>vec_mod</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vmodsd</primary>
+	<secondary>vec_mod</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vmodud</primary>
+	<secondary>vec_mod</secondary>
+      </indexterm>
+
+      <table frame="all">
+	<title>Supported type signatures for vec_mod</title>
+	<tgroup cols="5">
+          <colspec colname="c1" colwidth="20*" />
+          <colspec colname="c2" colwidth="20*" />
+          <colspec colname="c3" colwidth="20*" />
+          <colspec colname="c4" colwidth="20*" />
+          <colspec colname="c5" colwidth="20*" />
+          <thead>
+            <row>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">r</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">a</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">b</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">Example Implementation</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle" revisionflag="added">
+		<para>
+                  <emphasis role="bold">Restrictions</emphasis>
+		</para>
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector signed int</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector signed int</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector signed int</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+		  <programlisting>
+   vmodsw r,a,b
+		  </programlisting>
+		</para>
+              </entry>
+	      <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row revisionflag="added">
+              <entry align="center" valign="middle">
+		<para>vector unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned int</para>
+              </entry>
+	      <entry valign="middle">
+		<programlisting>
+   vmoduw r,a,b
+		</programlisting>
+	      </entry>
+	      <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector signed long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector signed long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector signed long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+		  <programlisting>
+   vmodsd r,a,b
+		  </programlisting>
+		</para>
+              </entry>
+	      <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row revisionflag="added">
+              <entry align="center" valign="middle">
+		<para>vector unsigned long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned long long</para>
+              </entry>
+	      <entry valign="middle">
+		<programlisting>
+   vmodud r,a,b
+		</programlisting>
+	      </entry>
+	      <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+          </tbody>
+	</tgroup>
+      </table>
+
+    </simplesect>
+
     <?hard-pagebreak?>
 
     <simplesect xml:id="vec_mradds">
@@ -23018,13 +23499,20 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 	</listitem>
 	<listitem>
 	  <para>
-	    There are currently no vector instructions to support vector long
-	    long multiplication, so the compiler must perform two scalar
-	    multiplies on the vector elements for this case.
+	    <phrase revisionflag="changed">Prior to ISA 3.1,
+	    there</phrase> are <phrase
+	    revisionflag="deleted">currently</phrase> no vector
+	    instructions to support vector long long multiplication,
+	    so the compiler must perform two scalar multiplies on the
+	    vector elements for this case.
 	  </para>
 	</listitem>
       </itemizedlist>
-      
+      <para revisionflag="added">
+	<emphasis role="bold">Review status:</emphasis>
+	Unreviewed.
+      </para>
+
       <indexterm>
 	<primary>vmulesb</primary>
 	<secondary>vec_mul</secondary>
@@ -23061,14 +23549,19 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 	<primary>xvmulsp</primary>
 	<secondary>vec_mul</secondary>
       </indexterm>
+      <indexterm>
+	<primary>vmulld</primary>
+	<secondary>vec_mul</secondary>
+      </indexterm>
 
       <table frame="all">
       <title>Supported type signatures for vec_mul</title>
-      <tgroup cols="4">
+      <tgroup cols="5">
           <colspec colname="c1" colwidth="20*" />
           <colspec colname="c2" colwidth="20*" />
           <colspec colname="c3" colwidth="20*" />
           <colspec colname="c4" colwidth="20*" />
+          <colspec colname="c5" colwidth="20*" />
           <thead>
             <row>
               <entry align="center">
@@ -23088,6 +23581,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               </entry>
               <entry align="center">
                 <para><emphasis role="bold">Example Implementation</emphasis></para>
+              </entry>
+              <entry align="center" revisionflag="added">
+                <para><emphasis role="bold">Restrictions</emphasis></para>
               </entry>
             </row>
           </thead>
@@ -23110,6 +23606,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   vperm    r,t,u,v
 		</programlisting>
               </entry>
+	      <entry revisionflag="added">
+		<para> </para>
+	      </entry>
             </row>
             <row>
               <entry align="center" valign="middle">
@@ -23129,6 +23628,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   vperm    r,t,u,v
 		</programlisting>
               </entry>
+	      <entry revisionflag="added">
+		<para> </para>
+	      </entry>
             </row>
             <row>
               <entry align="center" valign="middle">
@@ -23146,6 +23648,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   vmladduhm r,a,b,t
 		</programlisting>
               </entry>
+	      <entry revisionflag="added">
+		<para> </para>
+	      </entry>
             </row>
             <row>
               <entry align="center" valign="middle">
@@ -23163,6 +23668,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   vmladduhm r,a,b,t
 		</programlisting>
               </entry>
+	      <entry revisionflag="added">
+		<para> </para>
+	      </entry>
             </row>
             <row>
               <entry align="center" valign="middle">
@@ -23179,6 +23687,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   vmuluwm r,a,b
 		</programlisting>
               </entry>
+	      <entry revisionflag="added">
+		<para> </para>
+	      </entry>
             </row>
             <row>
               <entry align="center" valign="middle">
@@ -23195,6 +23706,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   vmuluwm r,a,b
 		</programlisting>
               </entry>
+	      <entry revisionflag="added">
+		<para> </para>
+	      </entry>
             </row>
             <row>
               <entry align="center" valign="middle">
@@ -23206,10 +23720,13 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para> vector signed long long</para>
               </entry>
-              <entry>
-                <programlisting>
-  [scalarized]
+              <entry revisionflag="changed">
+                <programlisting revisionflag="changed">
+  vmulld r,a,b
 		</programlisting>
+              </entry>
+              <entry align="center" valign="middle" revisionflag="added">
+                <para>ISA 3.1 or later</para>
               </entry>
             </row>
             <row>
@@ -23222,10 +23739,13 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para> vector unsigned long long</para>
               </entry>
-              <entry>
-                <programlisting>
-  [scalarized]
+              <entry revisionflag="changed">
+                <programlisting revisionflag="changed">
+  vmulld r,a,b
 		</programlisting>
+              </entry>
+              <entry align="center" valign="middle" revisionflag="added">
+                <para>ISA 3.1 or later</para>
               </entry>
             </row>
             <row>
@@ -23243,6 +23763,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   xvmulsp r,a,b
 		</programlisting>
               </entry>
+	      <entry revisionflag="added">
+		<para> </para>
+	      </entry>
             </row>
             <row>
               <entry align="center" valign="middle">
@@ -23259,6 +23782,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   xvmuldp r,a,b
 		</programlisting>
               </entry>
+	      <entry revisionflag="added">
+		<para> </para>
+	      </entry>
             </row>
           </tbody>
         </tgroup>
@@ -23495,6 +24021,163 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 <programlisting>
  vmuleuw r,a,b
 		</programlisting>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+
+    </simplesect>
+    <?hard-pagebreak?>
+
+    <simplesect xml:id="vec_mulh" revisionflag="added">
+      <title>vec_mulh</title>
+      <subtitle>Vector Multiply High</subtitle>
+      <programlisting>
+      r = vec_mulh (a, b)
+      </programlisting>
+
+      <para><emphasis role="bold">Purpose:</emphasis>
+      Multiplies the elements of the source vectors and places the
+      high half of each result in the target vector.
+      </para>
+      <para><emphasis role="bold">Result value: </emphasis>Each element
+      of <emphasis role="bold">r</emphasis> is the high half of the
+      product of the corresponding elements of <emphasis
+      role="bold">a</emphasis> and <emphasis
+      role="bold">b</emphasis>.</para>
+      <para><emphasis role="bold">Endian considerations:</emphasis>
+      None.
+      </para>
+      <para><emphasis role="bold">Review status:</emphasis>
+      Unreviewed.
+      </para>
+
+      <indexterm>
+	<primary>vmulhsw</primary>
+	<secondary>vec_mulh</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vmulhuw</primary>
+	<secondary>vec_mulh</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vmulhsd</primary>
+	<secondary>vec_mulh</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vmulhud</primary>
+	<secondary>vec_mulh</secondary>
+      </indexterm>
+
+      <table frame="all">
+      <title>Supported type signatures for vec_mulh</title>
+      <tgroup cols="5">
+          <colspec colname="c1" colwidth="20*" />
+          <colspec colname="c2" colwidth="20*" />
+          <colspec colname="c3" colwidth="20*" />
+          <colspec colname="c4" colwidth="20*" />
+          <colspec colname="c5" colwidth="20*" />
+          <thead>
+            <row>
+              <entry align="center" valign="middle">
+                <para>
+                  <emphasis role="bold">r</emphasis>
+                </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+                  <emphasis role="bold">a</emphasis>
+                </para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+                  <emphasis role="bold">b</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para><emphasis role="bold">Example Implementation</emphasis></para>
+              </entry>
+              <entry align="center">
+                <para><emphasis role="bold">Restrictions</emphasis></para>
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector signed int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed int</para>
+              </entry>
+              <entry>
+                <programlisting>
+ vmulhsw r,a,b
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>ISA 3.1 or later</para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned int</para>
+              </entry>
+              <entry>
+                <programlisting>
+ vmulhuw r,a,b
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>ISA 3.1 or later</para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector signed long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed long long</para>
+              </entry>
+              <entry>
+                <programlisting>
+ vmulhsd r,a,b
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>ISA 3.1 or later</para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector unsigned long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector unsigned long long</para>
+              </entry>
+              <entry>
+                <programlisting>
+ vmulhud r,a,b
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>ISA 3.1 or later</para>
               </entry>
             </row>
           </tbody>
