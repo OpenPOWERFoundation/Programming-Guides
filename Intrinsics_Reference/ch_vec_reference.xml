@@ -130,6 +130,13 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 	  instructions, which may be preferred for portability.
 	</para>
       </listitem>
+      <listitem revisionflag="added">
+	<para>
+	  <emphasis role="bold">ISA 3.1 or later</emphasis>.  This form
+	  is only available starting with PowerISA 3.1, corresponding to
+	  POWER10 servers.
+	</para>
+      </listitem>
       <listitem>
 	<para>
 	  <emphasis role="bold">Deprecated</emphasis>.  This form of

@@ -97,6 +97,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_intro">
       the Power SIMD (single-instruction, multiple-data)
       instructions.
     </para>
+    <para revisionflag="added">
+      Write an introductory paragraph about the MMA facility and the
+      ACC registers.
+    </para>
     <section>
       <title>Little-Endian Linux</title>
       <para>
@@ -260,6 +264,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_intro">
 	    <link xlink:href="https://openpowerfoundation.org/?resource_lib=power-isa-version-3-0">https://openpowerfoundation.org/?resource_lib=power-isa-version-3-0
 	    </link>
 	  </emphasis>
+	  <phrase revisionflag="added">
+	    Need to update this to Version 3.1B, which is not yet published.
+	  </phrase>
 	</para>
       </listitem>
       <listitem>
@@ -278,6 +285,17 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_intro">
 	  <emphasis>
 	    <link
 		xlink:href="https://ibm.ent.box.com/s/tmklq90ze7aj8f4n32er1mu3sy9u8k3k">https://ibm.ent.box.com/s/tmklq90ze7aj8f4n32er1mu3sy9u8k3k
+	    </link>
+	  </emphasis>
+	</para>
+      </listitem>
+      <listitem revisionflag="added">
+	<para>
+	  <emphasis>POWER10 Processor User's Manual.</emphasis>
+	  <emphasis>
+	    <link
+		xlink:href="https://ibm.ent.box.com/s/tmklq90ze7aj8f4n32er1mu3sy9u8k3k">Not
+	    yet available, link is to P9 user's manual
 	    </link>
 	  </emphasis>
 	</para>
