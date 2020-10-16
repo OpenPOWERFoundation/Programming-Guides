@@ -12737,13 +12737,15 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 	<emphasis role="bold">r</emphasis> is undefined.  For signed
 	integer division, when an element of <emphasis
 	role="bold">a</emphasis> is the negative number with maximum
-	cardinality and the corresponding element of <emphasis
+	cardinality (e.g., 0x8000_0000 for 32-bit signed integers) and
+	the corresponding element of <emphasis
 	role="bold">b</emphasis> is negative one, the corresponding
-	element of <emphasis role="bold">r</emphasis> is undefined.
+	element of <emphasis role="bold">r</emphasis> is undefined. 
       </para>
       <para revisionflag="added">
 	<emphasis role="bold">Review status:</emphasis>
-	Unreviewed.
+	Reviewed by Paul Clarke and Jinsong Ji.  Added 0x8000_0000
+	example per Jinsong's comment.
       </para>
       
       <indexterm>
@@ -13020,9 +13022,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <para><emphasis role="bold">Result value:</emphasis>
       The value of each element of <emphasis role="bold">r</emphasis> is
       obtained by shifting the corresponding element of <emphasis
-      role="bold">a</emphasis> left by 32 bits, and then dividing that
-      value by the corresponding element of <emphasis
-      role="bold">b</emphasis>.
+      role="bold">a</emphasis> left by the element size in bits, and
+      then dividing that value by the corresponding element of <emphasis
+      role="bold">b</emphasis>.  For example, the shift amount is 32
+      bits for "int" and 64 bits for "long long."
       </para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
@@ -13038,7 +13041,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </para>
       <para>
 	<emphasis role="bold">Review status:</emphasis>
-	Unreviewed.
+	Reviewed by Paul Clarke and Jinsong Ji.  Updated language
+	about the shift amount per Jinsong's comment.
       </para>
 
       <indexterm>
@@ -22643,7 +22647,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </para>
       <para>
 	<emphasis role="bold">Review status:</emphasis>
-	Unreviewed.
+	Reviewed by Paul Clarke and Jinsong Ji.
       </para>
 
       <indexterm>
@@ -23510,7 +23514,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </itemizedlist>
       <para revisionflag="added">
 	<emphasis role="bold">Review status:</emphasis>
-	Unreviewed.
+	Changes reviewed by Paul Clarke and Jinsong Ji.
       </para>
 
       <indexterm>
@@ -24050,7 +24054,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       None.
       </para>
       <para><emphasis role="bold">Review status:</emphasis>
-      Unreviewed.
+      Reviewed by Paul Clarke and Jinsong Ji.
       </para>
 
       <indexterm>
