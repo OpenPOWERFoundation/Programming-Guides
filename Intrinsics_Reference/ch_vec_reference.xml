@@ -175,7 +175,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   <section xml:id="VIPR.reference.vecfns">
     <title>Built-In Vector Functions</title>
 
-    <simplesect xml:id="vec_abs">
+    <section xml:id="vec_abs">
       <title>vec_abs</title>
       <subtitle>Vector Absolute Value</subtitle>
       <programlisting>
@@ -350,10 +350,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 	</tgroup>
       </table>
 
-    </simplesect>
+    </section>
 
     <?hard-pagebreak?>
-    <simplesect xml:id="vec_absd">
+    <section xml:id="vec_absd">
       <title>vec_absd</title>
       <subtitle>Vector Absolute Difference</subtitle>
       <programlisting>
@@ -485,10 +485,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 	</tgroup>
       </table>
 
-    </simplesect>
+    </section>
 
     <?hard-pagebreak?>
-    <simplesect xml:id="vec_abss">
+    <section xml:id="vec_abss">
       <title>vec_abss</title>
       <subtitle>Vector Absolute Value Saturated</subtitle>
       <programlisting>
@@ -622,10 +622,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 	</tgroup>
       </table>
 
-    </simplesect>
+    </section>
 
     <?hard-pagebreak?>
-    <simplesect xml:id="vec_add">
+    <section xml:id="vec_add">
       <title>vec_add</title>
       <subtitle>Vector Addition</subtitle>
       <programlisting>
@@ -902,10 +902,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 	</tgroup>
       </table>
 
-    </simplesect>
+    </section>
 
     <?hard-pagebreak?>
-    <simplesect xml:id="vec_addc">
+    <section xml:id="vec_addc">
       <title>vec_addc</title>
       <subtitle>Vector Add Carrying</subtitle>
       <programlisting>
@@ -1034,10 +1034,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 	</tgroup>
       </table>
 
-    </simplesect>
+    </section>
 
     <?hard-pagebreak?>
-    <simplesect xml:id="vec_adde">
+    <section xml:id="vec_adde">
       <title>vec_adde</title>
       <subtitle>Vector Add Extended</subtitle>
       <programlisting>
@@ -1204,10 +1204,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 	</tgroup>
       </table>
 
-    </simplesect>
+    </section>
 
     <?hard-pagebreak?>
-    <simplesect xml:id="vec_addec">
+    <section xml:id="vec_addec">
       <title>vec_addec</title>
       <subtitle>Vector Add Extended Carrying</subtitle>
       <programlisting>
@@ -1387,10 +1387,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 	</tgroup>
       </table>
 
-    </simplesect>
+    </section>
 
     <?hard-pagebreak?>
-    <simplesect xml:id="vec_adds">
+    <section xml:id="vec_adds">
       <title>vec_adds</title>
       <subtitle>Vector Add Saturating</subtitle>
       <programlisting>
@@ -1566,11 +1566,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 	</tgroup>
       </table>
 
-    </simplesect>
+    </section>
 
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_all_eq">
+    <section xml:id="vec_all_eq">
       <title>vec_all_eq</title>
       <subtitle>Vector All Equal</subtitle>
       <programlisting>
@@ -1927,10 +1927,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_all_ge">
+    <section xml:id="vec_all_ge">
       <title>vec_all_ge</title>
       <subtitle>Vector All Greater or Equal</subtitle>
       <programlisting>
@@ -2214,10 +2214,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_all_gt">
+    <section xml:id="vec_all_gt">
       <title>vec_all_gt</title>
       <subtitle>Vector All Greater Than</subtitle>
       <programlisting>
@@ -2501,10 +2501,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_all_in">
+    <section xml:id="vec_all_in">
       <title>vec_all_in</title>
       <subtitle>Vector All In Range</subtitle>
       <programlisting>
@@ -2590,10 +2590,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_all_le">
+    <section xml:id="vec_all_le">
       <title>vec_all_le</title>
       <subtitle>Vector All Less or Equal</subtitle>
       <programlisting>
@@ -2876,10 +2876,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_all_lt">
+    <section xml:id="vec_all_lt">
       <title>vec_all_lt</title>
       <subtitle>Vector All Less Than</subtitle>
       <programlisting>
@@ -3162,10 +3162,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_all_nan">
+    <section xml:id="vec_all_nan">
       <title>vec_all_nan</title>
       <subtitle>Vector All Not-a-Number</subtitle>
       <programlisting>
@@ -3258,10 +3258,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_all_ne">
+    <section xml:id="vec_all_ne">
       <title>vec_all_ne</title>
       <subtitle>Vector All Not Equal</subtitle>
       <programlisting>
@@ -3619,10 +3619,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_all_nge">
+    <section xml:id="vec_all_nge">
       <title>vec_all_nge</title>
       <subtitle>Vector All Not Greater or Equal</subtitle>
       <programlisting>
@@ -3730,10 +3730,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_all_ngt">
+    <section xml:id="vec_all_ngt">
       <title>vec_all_ngt</title>
       <subtitle>Vector All Not Greater Than</subtitle>
       <programlisting>
@@ -3841,10 +3841,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_all_nle">
+    <section xml:id="vec_all_nle">
       <title>vec_all_nle</title>
       <subtitle>Vector All Not Less or Equal</subtitle>
       <programlisting>
@@ -3952,10 +3952,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_all_nlt">
+    <section xml:id="vec_all_nlt">
       <title>vec_all_nlt</title>
       <subtitle>Vector All Not Less Than</subtitle>
       <programlisting>
@@ -4063,10 +4063,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_all_numeric">
+    <section xml:id="vec_all_numeric">
       <title>vec_all_numeric</title>
       <subtitle>Vector All Numeric</subtitle>
       <programlisting>
@@ -4159,10 +4159,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
 
     <?hard-pagebreak?>
-    <simplesect xml:id="vec_and">
+    <section xml:id="vec_and">
       <title>vec_and</title>
       <subtitle>Vector AND</subtitle>
       <programlisting>
@@ -4481,10 +4481,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 	</tgroup>
       </table>
 
-    </simplesect>
+    </section>
 
     <?hard-pagebreak?>
-    <simplesect xml:id="vec_andc">
+    <section xml:id="vec_andc">
       <title>vec_andc</title>
       <subtitle>Vector AND with Complement</subtitle>
       <programlisting>
@@ -4804,11 +4804,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 	</tgroup>
       </table>
 
-    </simplesect>
+    </section>
 
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_any_eq">
+    <section xml:id="vec_any_eq">
       <title>vec_any_eq</title>
       <subtitle>Vector Any Equal</subtitle>
       <programlisting>
@@ -5203,10 +5203,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_any_ge">
+    <section xml:id="vec_any_ge">
       <title>vec_any_ge</title>
       <subtitle>Vector Any Greater or Equal</subtitle>
       <programlisting>
@@ -5517,10 +5517,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_any_gt">
+    <section xml:id="vec_any_gt">
       <title>vec_any_gt</title>
       <subtitle>Vector Any Greater Than</subtitle>
       <programlisting>
@@ -5831,10 +5831,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_any_le">
+    <section xml:id="vec_any_le">
       <title>vec_any_le</title>
       <subtitle>Vector Any Less or Equal</subtitle>
       <programlisting>
@@ -6145,10 +6145,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_any_lt">
+    <section xml:id="vec_any_lt">
       <title>vec_any_lt</title>
       <subtitle>Vector Any Less Than</subtitle>
       <programlisting>
@@ -6458,10 +6458,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_any_nan">
+    <section xml:id="vec_any_nan">
       <title>vec_any_nan</title>
       <subtitle>Vector Any Not-a-Number</subtitle>
       <programlisting>
@@ -6565,10 +6565,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_any_ne">
+    <section xml:id="vec_any_ne">
       <title>vec_any_ne</title>
       <subtitle>Vector Any Not Equal</subtitle>
       <programlisting>
@@ -6963,10 +6963,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_any_nge">
+    <section xml:id="vec_any_nge">
       <title>vec_any_nge</title>
       <subtitle>Vector Any Not Greater or Equal</subtitle>
       <programlisting>
@@ -7086,10 +7086,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_any_ngt">
+    <section xml:id="vec_any_ngt">
       <title>vec_any_ngt</title>
       <subtitle>Vector Any Not Greater Than</subtitle>
       <programlisting>
@@ -7208,10 +7208,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_any_nle">
+    <section xml:id="vec_any_nle">
       <title>vec_any_nle</title>
       <subtitle>Vector Any Not Less or Equal</subtitle>
       <programlisting>
@@ -7330,10 +7330,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_any_nlt">
+    <section xml:id="vec_any_nlt">
       <title>vec_any_nlt</title>
       <subtitle>Vector Any Not Less Than</subtitle>
       <programlisting>
@@ -7452,10 +7452,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_any_numeric">
+    <section xml:id="vec_any_numeric">
       <title>vec_any_numeric</title>
       <subtitle>Vector Any Numeric</subtitle>
       <programlisting>
@@ -7559,10 +7559,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_any_out">
+    <section xml:id="vec_any_out">
       <title>vec_any_out</title>
       <subtitle>Vector Any Out of Range</subtitle>
       <programlisting>
@@ -7658,10 +7658,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
 
     <?hard-pagebreak?>
-    <simplesect xml:id="vec_avg">
+    <section xml:id="vec_avg">
       <title>vec_avg</title>
       <subtitle>Vector Average</subtitle>
       <programlisting>
@@ -7837,10 +7837,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 	</tgroup>
       </table>
 
-    </simplesect>
+    </section>
 
     <?hard-pagebreak?>
-    <simplesect xml:id="vec_bperm">
+    <section xml:id="vec_bperm">
       <title>vec_bperm</title>
       <subtitle>Vector Bit Permute</subtitle>
       <programlisting>
@@ -8611,10 +8611,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 	</tgroup>
       </table>
 
-    </simplesect>
+    </section>
 
     <?hard-pagebreak?>
-    <simplesect xml:id="vec_ceil">
+    <section xml:id="vec_ceil">
       <title>vec_ceil</title>
       <subtitle>Vector Ceiling</subtitle>
       <programlisting>
@@ -8701,10 +8701,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 	</tgroup>
       </table>
 
-    </simplesect>
+    </section>
 
     <?hard-pagebreak?>
-    <simplesect xml:id="vec_cipher_be">
+    <section xml:id="vec_cipher_be">
       <title>vec_cipher_be</title>
       <subtitle>Vector AES Cipher Big-Endian</subtitle>
       <programlisting>
@@ -8786,10 +8786,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_cipherlast_be">
+    <section xml:id="vec_cipherlast_be">
       <title>vec_cipherlast_be</title>
       <subtitle>Vector AES Cipher Last Big-Endian</subtitle>
       <programlisting>
@@ -8871,10 +8871,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_cmpb">
+    <section xml:id="vec_cmpb">
       <title>vec_cmpb</title>
       <subtitle>Vector Compare Bytes</subtitle>
       <programlisting>
@@ -8980,10 +8980,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 	</tgroup>
       </table>
 
-    </simplesect>
+    </section>
 
     <?hard-pagebreak?>
-    <simplesect xml:id="vec_cmpeq">
+    <section xml:id="vec_cmpeq">
       <title>vec_cmpeq</title>
       <subtitle>Vector Compare Equal</subtitle>
       <programlisting>
@@ -9289,10 +9289,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 	</tgroup>
       </table>
 
-    </simplesect>
+    </section>
 
     <?hard-pagebreak?>
-    <simplesect xml:id="vec_cmpge">
+    <section xml:id="vec_cmpge">
       <title>vec_cmpge</title>
       <subtitle>Vector Compare Greater or Equal</subtitle>
       <programlisting>
@@ -9564,10 +9564,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 	</tgroup>
       </table>
 
-    </simplesect>
+    </section>
 
     <?hard-pagebreak?>
-    <simplesect xml:id="vec_cmpgt">
+    <section xml:id="vec_cmpgt">
       <title>vec_cmpgt</title>
       <subtitle>Vector Compare Greater Than</subtitle>
       <programlisting>
@@ -9827,10 +9827,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 	</tgroup>
       </table>
 
-    </simplesect>
+    </section>
 
     <?hard-pagebreak?>
-    <simplesect xml:id="vec_cmple">
+    <section xml:id="vec_cmple">
       <title>vec_cmple</title>
       <subtitle>Vector Compare Less Than or Equal</subtitle>
       <programlisting>
@@ -10102,10 +10102,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 	</tgroup>
       </table>
 
-    </simplesect>
+    </section>
 
     <?hard-pagebreak?>
-    <simplesect xml:id="vec_cmplt">
+    <section xml:id="vec_cmplt">
       <title>vec_cmplt</title>
       <subtitle>Vector Compare Less Than</subtitle>
       <programlisting>
@@ -10365,10 +10365,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 	</tgroup>
       </table>
 
-    </simplesect>
+    </section>
 
     <?hard-pagebreak?>
-    <simplesect xml:id="vec_cmpne">
+    <section xml:id="vec_cmpne">
       <title>vec_cmpne</title>
       <subtitle>Vector Compare Not Equal</subtitle>
       <programlisting>
@@ -10683,10 +10683,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 	</tgroup>
       </table>
 
-    </simplesect>
+    </section>
 
     <?hard-pagebreak?>
-    <simplesect xml:id="vec_cmpnez">
+    <section xml:id="vec_cmpnez">
       <title>vec_cmpnez</title>
       <subtitle>Vector Compare Not Equal or Zero</subtitle>
       <programlisting>
@@ -10879,10 +10879,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 	</tgroup>
       </table>
 
-    </simplesect>
+    </section>
 
     <?hard-pagebreak?>
-    <simplesect xml:id="vec_cntlz">
+    <section xml:id="vec_cntlz">
       <title>vec_cntlz</title>
       <subtitle>Vector Count Leading Zeros</subtitle>
       <programlisting>
@@ -11271,10 +11271,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 	</tgroup>
       </table>
 
-    </simplesect>
+    </section>
 
     <?hard-pagebreak?>
-    <simplesect xml:id="vec_cntlz_lsbb">
+    <section xml:id="vec_cntlz_lsbb">
       <title>vec_cntlz_lsbb</title>
       <subtitle>Vector Count Leading Zero Least-Significant Bits by
       Byte</subtitle>
@@ -11585,10 +11585,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 	</tgroup>
       </table>
 
-    </simplesect>
+    </section>
 
     <?hard-pagebreak?>
-    <simplesect xml:id="vec_cnttz">
+    <section xml:id="vec_cnttz">
       <title>vec_cnttz</title>
       <subtitle>Vector Count Trailing Zeros</subtitle>
       <programlisting>
@@ -11977,10 +11977,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 	</tgroup>
       </table>
 
-    </simplesect>
+    </section>
 
     <?hard-pagebreak?>
-    <simplesect xml:id="vec_cnttz_lsbb">
+    <section xml:id="vec_cnttz_lsbb">
       <title>vec_cnttz_lsbb</title>
       <subtitle>Vector Count Trailing Zero Least-Significant Bits by
       Byte</subtitle>
@@ -12291,10 +12291,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 	</tgroup>
       </table>
 
-    </simplesect>
+    </section>
 
     <?hard-pagebreak?>
-    <simplesect xml:id="vec_cpsgn">
+    <section xml:id="vec_cpsgn">
       <title>vec_cpsgn</title>
       <subtitle>Vector Copy Sign</subtitle>
       <programlisting>
@@ -12405,10 +12405,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 	</tgroup>
       </table>
 
-    </simplesect>
+    </section>
 
     <?hard-pagebreak?>
-    <simplesect xml:id="vec_ctf">
+    <section xml:id="vec_ctf">
       <title>vec_ctf</title>
       <subtitle>Vector Convert to Floating-Point</subtitle>
       <programlisting>
@@ -12545,10 +12545,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 	</tgroup>
       </table>
 
-    </simplesect>
+    </section>
 
     <?hard-pagebreak?>
-    <simplesect xml:id="vec_cts">
+    <section xml:id="vec_cts">
       <title>vec_cts</title>
       <subtitle>Vector Convert to Signed Integer</subtitle>
       <programlisting>
@@ -12626,10 +12626,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 	</tgroup>
       </table>
 
-    </simplesect>
+    </section>
 
     <?hard-pagebreak?>
-    <simplesect xml:id="vec_ctu">
+    <section xml:id="vec_ctu">
       <title>vec_ctu</title>
       <subtitle>Vector Convert to Unsigned Integer</subtitle>
       <programlisting>
@@ -12707,10 +12707,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 	</tgroup>
       </table>
 
-    </simplesect>
+    </section>
 
     <?hard-pagebreak?>
-    <simplesect xml:id="vec_div">
+    <section xml:id="vec_div">
       <title>vec_div</title>
       <subtitle>Vector Divide</subtitle>
       <programlisting>
@@ -13004,10 +13004,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 	</tgroup>
       </table>
 
-    </simplesect>
+    </section>
 
     <?hard-pagebreak?>
-    <simplesect xml:id="vec_dive" revisionflag="added">
+    <section xml:id="vec_dive" revisionflag="added">
       <title>vec_dive</title>
       <subtitle>Vector Divide Extended</subtitle>
       <programlisting>
@@ -13184,10 +13184,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 	</tgroup>
       </table>
 
-    </simplesect>
+    </section>
 
     <?hard-pagebreak?>
-    <simplesect xml:id="vec_double">
+    <section xml:id="vec_double">
       <title>vec_double</title>
       <subtitle>Vector Convert to Double Precision</subtitle>
       <programlisting>
@@ -13272,10 +13272,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 	</tgroup>
       </table>
 
-    </simplesect>
+    </section>
 
     <?hard-pagebreak?>
-    <simplesect xml:id="vec_doublee">
+    <section xml:id="vec_doublee">
       <title>vec_doublee</title>
       <subtitle>Vector Convert Even Elements to Double Precision</subtitle>
       <programlisting>
@@ -13499,10 +13499,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 	</tgroup>
       </table>
 
-    </simplesect>
+    </section>
 
     <?hard-pagebreak?>
-    <simplesect xml:id="vec_doubleh">
+    <section xml:id="vec_doubleh">
       <title>vec_doubleh</title>
       <subtitle>Vector Convert High Elements to Double Precision</subtitle>
       <programlisting>
@@ -13732,10 +13732,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 	</tgroup>
       </table>
 
-    </simplesect>
+    </section>
 
     <?hard-pagebreak?>
-    <simplesect xml:id="vec_doublel">
+    <section xml:id="vec_doublel">
       <title>vec_doublel</title>
       <subtitle>Vector Convert Low Elements to Double Precision</subtitle>
       <programlisting>
@@ -13965,10 +13965,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 	</tgroup>
       </table>
 
-    </simplesect>
+    </section>
 
     <?hard-pagebreak?>
-    <simplesect xml:id="vec_doubleo">
+    <section xml:id="vec_doubleo">
       <title>vec_doubleo</title>
       <subtitle>Vector Convert Odd Elements to Double Precision</subtitle>
       <programlisting>
@@ -14192,10 +14192,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 	</tgroup>
       </table>
 
-    </simplesect>
+    </section>
 
     <?hard-pagebreak?>
-    <simplesect xml:id="vec_eqv">
+    <section xml:id="vec_eqv">
       <title>vec_eqv</title>
       <subtitle>Vector Equivalence</subtitle>
       <programlisting>
@@ -14479,10 +14479,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 	</tgroup>
       </table>
 
-    </simplesect>
+    </section>
 
     <?hard-pagebreak?>
-    <simplesect xml:id="vec_expte">
+    <section xml:id="vec_expte">
       <title>vec_expte</title>
       <subtitle>Vector Exponential Estimate</subtitle>
       <programlisting>
@@ -14551,10 +14551,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 	</tgroup>
       </table>
 
-    </simplesect>
+    </section>
 
     <?hard-pagebreak?>
-    <simplesect xml:id="vec_extract">
+    <section xml:id="vec_extract">
       <title>vec_extract</title>
       <subtitle>Vector Extract</subtitle>
       <programlisting>
@@ -15053,10 +15053,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 	</tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_extract_exp">
+    <section xml:id="vec_extract_exp">
       <title>vec_extract_exp</title>
       <subtitle>Vector Extract Exponent</subtitle>
       <programlisting>
@@ -15152,10 +15152,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_extract_fp32_from_shorth">
+    <section xml:id="vec_extract_fp32_from_shorth">
       <title>vec_extract_fp32_from_shorth</title>
       <subtitle>Vector Extract Floats from High Elements of Vector Short Int</subtitle>
       <programlisting>
@@ -15377,10 +15377,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_extract_fp32_from_shortl">
+    <section xml:id="vec_extract_fp32_from_shortl">
       <title>vec_extract_fp32_from_shortl</title>
       <subtitle>Vector Extract Floats from Low Elements of Vector Short Int</subtitle>
       <programlisting>
@@ -15602,10 +15602,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_extract_sig">
+    <section xml:id="vec_extract_sig">
       <title>vec_extract_sig</title>
       <subtitle>Vector Extract Significand</subtitle>
       <programlisting>
@@ -15701,10 +15701,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_extract4b">
+    <section xml:id="vec_extract4b">
       <title>vec_extract4b</title>
       <subtitle>Vector Extract Four Bytes</subtitle>
       <programlisting>
@@ -15797,10 +15797,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_first_match_index">
+    <section xml:id="vec_first_match_index">
       <title>vec_first_match_index</title>
       <subtitle>Vector Index of First Match</subtitle>
       <programlisting>
@@ -16268,10 +16268,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_first_match_or_eos_index">
+    <section xml:id="vec_first_match_or_eos_index">
       <title>vec_first_match_or_eos_index</title>
       <subtitle>Vector Index of First Match or End of String</subtitle>
       <programlisting>
@@ -16808,10 +16808,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_first_mismatch_index">
+    <section xml:id="vec_first_mismatch_index">
       <title>vec_first_mismatch_index</title>
       <subtitle>Vector Index of First Mismatch</subtitle>
       <programlisting>
@@ -17263,10 +17263,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_first_mismatch_or_eos_index">
+    <section xml:id="vec_first_mismatch_or_eos_index">
       <title>vec_first_mismatch_or_eos_index</title>
       <subtitle>Vector Index of First Mismatch or End of String</subtitle>
       <programlisting>
@@ -17804,10 +17804,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_float">
+    <section xml:id="vec_float">
       <title>vec_float</title>
       <subtitle>Vector Convert Integer to Floating-Point</subtitle>
       <programlisting>
@@ -17889,10 +17889,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_float2">
+    <section xml:id="vec_float2">
       <title>vec_float2</title>
       <subtitle>Vector Convert Two Vectors to Floating-Point</subtitle>
       <programlisting>
@@ -18059,10 +18059,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_floate">
+    <section xml:id="vec_floate">
       <title>vec_floate</title>
       <subtitle>Vector Convert to Floating-Point in Even Elements</subtitle>
       <programlisting>
@@ -18193,10 +18193,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_floato">
+    <section xml:id="vec_floato">
       <title>vec_floato</title>
       <subtitle>Vector Convert to Floating-Point in Odd Elements</subtitle>
       <programlisting>
@@ -18327,10 +18327,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_floor">
+    <section xml:id="vec_floor">
       <title>vec_floor</title>
       <subtitle>Vector Floor</subtitle>
       <programlisting>
@@ -18413,10 +18413,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_gb">
+    <section xml:id="vec_gb">
       <title>vec_gb</title>
       <subtitle>Vector Gather Bits by Byte</subtitle>
       <programlisting>
@@ -18501,10 +18501,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_insert">
+    <section xml:id="vec_insert">
       <title>vec_insert</title>
       <subtitle>Vector Insert</subtitle>
       <programlisting>
@@ -18881,10 +18881,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_insert_exp">
+    <section xml:id="vec_insert_exp">
       <title>vec_insert_exp</title>
       <subtitle>Vector Insert Exponent</subtitle>
       <programlisting>
@@ -19031,10 +19031,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_insert4b">
+    <section xml:id="vec_insert4b">
       <title>vec_insert4b</title>
       <subtitle>Vector Insert Four Bytes</subtitle>
       <programlisting>
@@ -19170,10 +19170,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_ld">
+    <section xml:id="vec_ld">
       <title>vec_ld</title>
       <subtitle>Vector Load Indexed</subtitle>
       <programlisting>
@@ -19698,10 +19698,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_lde">
+    <section xml:id="vec_lde">
       <title>vec_lde</title>
       <subtitle>Vector Load Element Indexed</subtitle>
       <programlisting>
@@ -19895,10 +19895,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_ldl">
+    <section xml:id="vec_ldl">
       <title>vec_ldl</title>
       <subtitle>Vector Load Indexed Least Recently Used</subtitle>
       <programlisting>
@@ -20366,10 +20366,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_loge">
+    <section xml:id="vec_loge">
       <title>vec_loge</title>
       <subtitle>Vector Base-2 Logarithm Estimate</subtitle>
       <programlisting>
@@ -20434,10 +20434,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_madd">
+    <section xml:id="vec_madd">
       <title>vec_madd</title>
       <subtitle>Vector Multiply-Add</subtitle>
       <programlisting>
@@ -20626,10 +20626,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_madds">
+    <section xml:id="vec_madds">
       <title>vec_madds</title>
       <subtitle>Vector Multiply-Add Saturated</subtitle>
       <programlisting>
@@ -20716,10 +20716,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_max">
+    <section xml:id="vec_max">
       <title>vec_max</title>
       <subtitle>Vector Maximum</subtitle>
       <programlisting>
@@ -20974,10 +20974,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_mergee">
+    <section xml:id="vec_mergee">
       <title>vec_mergee</title>
       <subtitle>Vector Merge Even</subtitle>
       <programlisting>
@@ -21217,10 +21217,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_mergeh">
+    <section xml:id="vec_mergeh">
       <title>vec_mergeh</title>
       <subtitle>Vector Merge High</subtitle>
       <programlisting>
@@ -21625,10 +21625,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_mergel">
+    <section xml:id="vec_mergel">
       <title>vec_mergel</title>
       <subtitle>Vector Merge Low</subtitle>
       <programlisting>
@@ -22036,10 +22036,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_mergeo">
+    <section xml:id="vec_mergeo">
       <title>vec_mergeo</title>
       <subtitle>Vector Merge Odd</subtitle>
       <programlisting>
@@ -22279,10 +22279,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_mfvscr">
+    <section xml:id="vec_mfvscr">
       <title>vec_mfvscr</title>
       <subtitle>Vector Move From Vector Status and Control Register</subtitle>
       <programlisting>
@@ -22352,10 +22352,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_min">
+    <section xml:id="vec_min">
       <title>vec_min</title>
       <subtitle>Vector Minimum</subtitle>
       <programlisting>
@@ -22609,10 +22609,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
 
     <?hard-pagebreak?>
-    <simplesect xml:id="vec_mod" revisionflag="added">
+    <section xml:id="vec_mod" revisionflag="added">
       <title>vec_mod</title>
       <subtitle>Vector Modulo</subtitle>
       <programlisting>
@@ -22789,11 +22789,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 	</tgroup>
       </table>
 
-    </simplesect>
+    </section>
 
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_mradds">
+    <section xml:id="vec_mradds">
       <title>vec_mradds</title>
       <subtitle>Vector Multiply-High Round and Add Saturated</subtitle>
       <programlisting>
@@ -22881,10 +22881,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_msub">
+    <section xml:id="vec_msub">
       <title>vec_msub</title>
       <subtitle>Vector Multiply-Subtract</subtitle>
       <programlisting>
@@ -22992,10 +22992,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_msum">
+    <section xml:id="vec_msum">
       <title>vec_msum</title>
       <subtitle>Vector Multiply-Sum</subtitle>
       <programlisting>
@@ -23206,10 +23206,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_msums">
+    <section xml:id="vec_msums">
       <title>vec_msums</title>
       <subtitle>Vector Multiply-Sum Saturated</subtitle>
       <programlisting>
@@ -23321,10 +23321,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_mtvscr">
+    <section xml:id="vec_mtvscr">
       <title>vec_mtvscr</title>
       <subtitle>Vector Move to Vector Status and Control Register</subtitle>
       <programlisting>
@@ -23471,10 +23471,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_mul">
+    <section xml:id="vec_mul">
       <title>vec_mul</title>
       <subtitle>Vector Multiply</subtitle>
       <programlisting>
@@ -23794,10 +23794,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_mule">
+    <section xml:id="vec_mule">
       <title>vec_mule</title>
       <subtitle>Vector Multiply Even</subtitle>
       <programlisting>
@@ -24031,10 +24031,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_mulh" revisionflag="added">
+    <section xml:id="vec_mulh" revisionflag="added">
       <title>vec_mulh</title>
       <subtitle>Vector Multiply High</subtitle>
       <programlisting>
@@ -24188,10 +24188,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_mulo">
+    <section xml:id="vec_mulo">
       <title>vec_mulo</title>
       <subtitle>Vector Multiply Odd</subtitle>
       <programlisting>
@@ -24425,10 +24425,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_nabs">
+    <section xml:id="vec_nabs">
       <title>vec_nabs</title>
       <subtitle>Vector Negated Absolute Value</subtitle>
       <programlisting>
@@ -24607,10 +24607,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_nand">
+    <section xml:id="vec_nand">
       <title>vec_nand</title>
       <subtitle>Vector NAND</subtitle>
       <programlisting>
@@ -24889,10 +24889,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
           </tbody>
         </tgroup>
       </table>
-    </simplesect>
+    </section>
 
     <?hard-pagebreak?>
-    <simplesect xml:id="vec_ncipher_be">
+    <section xml:id="vec_ncipher_be">
       <title>vec_ncipher_be</title>
       <subtitle>Vector AES Inverse Cipher Big-Endian</subtitle>
       <programlisting>
@@ -24974,10 +24974,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_ncipherlast_be">
+    <section xml:id="vec_ncipherlast_be">
       <title>vec_ncipherlast_be</title>
       <subtitle>Vector AES Inverse Cipher Last Big-Endian</subtitle>
       <programlisting>
@@ -25059,10 +25059,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_nearbyint">
+    <section xml:id="vec_nearbyint">
       <title>vec_nearbyint</title>
       <subtitle>Vector Nearby Integer</subtitle>
       <programlisting>
@@ -25148,10 +25148,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_neg">
+    <section xml:id="vec_neg">
       <title>vec_neg</title>
       <subtitle>Vector Negate</subtitle>
       <programlisting>
@@ -25309,10 +25309,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_nmadd">
+    <section xml:id="vec_nmadd">
       <title>vec_nmadd</title>
       <subtitle>Vector Negated Multiply-Add</subtitle>
       <programlisting>
@@ -25420,10 +25420,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_nmsub">
+    <section xml:id="vec_nmsub">
       <title>vec_nmsub</title>
       <subtitle>Vector Negated Multiply-Subtract</subtitle>
       <programlisting>
@@ -25531,10 +25531,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_nor">
+    <section xml:id="vec_nor">
       <title>vec_nor</title>
       <subtitle>Vector NOR</subtitle>
       <programlisting>
@@ -25814,10 +25814,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_or">
+    <section xml:id="vec_or">
       <title>vec_or</title>
       <subtitle>Vector OR</subtitle>
       <programlisting>
@@ -26097,10 +26097,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_orc">
+    <section xml:id="vec_orc">
       <title>vec_orc</title>
       <subtitle>Vector OR with Complement</subtitle>
       <programlisting>
@@ -26381,10 +26381,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_pack">
+    <section xml:id="vec_pack">
       <title>vec_pack</title>
       <subtitle>Vector Pack</subtitle>
       <programlisting>
@@ -26694,10 +26694,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_pack_to_short_fp32">
+    <section xml:id="vec_pack_to_short_fp32">
       <title>vec_pack_to_short_fp32</title>
       <subtitle>Vector Pack 32-bit Float to Short</subtitle>
       <programlisting>
@@ -26799,10 +26799,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_packpx">
+    <section xml:id="vec_packpx">
       <title>vec_packpx</title>
       <subtitle>Vector Pack Pixel</subtitle>
       <programlisting>
@@ -26899,10 +26899,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_packs">
+    <section xml:id="vec_packs">
      <title>vec_packs</title>
       <subtitle>Vector Pack Saturated</subtitle>
       <programlisting>
@@ -27113,10 +27113,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
          </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_packsu">
+    <section xml:id="vec_packsu">
       <title>vec_packsu</title>
       <subtitle>Vector Pack Saturated Unsigned</subtitle>
       <programlisting>
@@ -27327,10 +27327,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_parity_lsbb">
+    <section xml:id="vec_parity_lsbb">
       <title>vec_parity_lsbb</title>
       <subtitle>Vector Parity over Least-Significant Bits of Bytes</subtitle>
       <programlisting>
@@ -27732,10 +27732,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_perm">
+    <section xml:id="vec_perm">
       <title>vec_perm</title>
       <subtitle>Vector Permute</subtitle>
       <programlisting>
@@ -28193,10 +28193,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_permxor">
+    <section xml:id="vec_permxor">
       <title>vec_permxor</title>
       <subtitle>Vector Permute and Exclusive-OR</subtitle>
       <programlisting>
@@ -28887,10 +28887,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_pmsum_be">
+    <section xml:id="vec_pmsum_be">
       <title>vec_pmsum_be</title>
       <subtitle>Vector Polynomial Multiply-Sum Big-Endian</subtitle>
       <programlisting>
@@ -29165,10 +29165,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_popcnt">
+    <section xml:id="vec_popcnt">
       <title>vec_popcnt</title>
       <subtitle>Vector Population Count</subtitle>
       <programlisting>
@@ -29336,10 +29336,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_re">
+    <section xml:id="vec_re">
       <title>vec_re</title>
       <subtitle>Vector Reciprocal Estimate</subtitle>
       <programlisting>
@@ -29473,10 +29473,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_recipdiv">
+    <section xml:id="vec_recipdiv">
       <title>vec_recipdiv</title>
       <subtitle>Vector Reciprocal Divide</subtitle>
       <programlisting>
@@ -29633,10 +29633,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_revb">
+    <section xml:id="vec_revb">
       <title>vec_revb</title>
       <subtitle>Vector Reverse Bytes</subtitle>
       <programlisting>
@@ -29973,10 +29973,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_reve">
+    <section xml:id="vec_reve">
       <title>vec_reve</title>
       <subtitle>Vector Reverse Elements</subtitle>
       <programlisting>
@@ -30293,10 +30293,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_rint">
+    <section xml:id="vec_rint">
       <title>vec_rint</title>
       <subtitle>Vector Round to Nearest Integer</subtitle>
       <programlisting>
@@ -30381,10 +30381,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_rl">
+    <section xml:id="vec_rl">
       <title>vec_rl</title>
       <subtitle>Vector Rotate Left</subtitle>
       <programlisting>
@@ -30582,10 +30582,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_rlmi">
+    <section xml:id="vec_rlmi">
       <title>vec_rlmi</title>
       <subtitle>Vector Rotate Left then Mask Insert</subtitle>
       <programlisting>
@@ -30706,10 +30706,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_rlnm">
+    <section xml:id="vec_rlnm">
       <title>vec_rlnm</title>
       <subtitle>Vector Rotate Left then AND with Mask</subtitle>
       <programlisting>
@@ -30861,10 +30861,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_round">
+    <section xml:id="vec_round">
       <title>vec_round</title>
       <subtitle>Vector Round</subtitle>
       <programlisting>
@@ -30952,10 +30952,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_rsqrt">
+    <section xml:id="vec_rsqrt">
       <title>vec_rsqrt</title>
       <subtitle>Vector Reciprocal Square Root</subtitle>
       <programlisting>
@@ -31107,10 +31107,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_rsqrte">
+    <section xml:id="vec_rsqrte">
       <title>vec_rsqrte</title>
       <subtitle>Vector Reciprocal Square Root Estimate</subtitle>
       <programlisting>
@@ -31196,10 +31196,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_sbox_be">
+    <section xml:id="vec_sbox_be">
       <title>vec_sbox_be</title>
       <subtitle>Vector AES SubBytes Big-Endian</subtitle>
       <programlisting>
@@ -31271,10 +31271,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_sel">
+    <section xml:id="vec_sel">
       <title>vec_sel</title>
       <subtitle>Vector Select</subtitle>
       <programlisting>
@@ -31873,10 +31873,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_shasigma_be">
+    <section xml:id="vec_shasigma_be">
       <title>vec_shasigma_be</title>
       <subtitle>Vector SHA Sigma Big-Endian</subtitle>
       <programlisting>
@@ -32064,10 +32064,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_signed">
+    <section xml:id="vec_signed">
       <title>vec_signed</title>
       <subtitle>Vector Convert Floating-Point to Signed Integer</subtitle>
       <programlisting>
@@ -32150,10 +32150,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_signed2">
+    <section xml:id="vec_signed2">
       <title>vec_signed2</title>
       <subtitle>Vector Convert Double-Precision to Signed Word</subtitle>
       <programlisting>
@@ -32261,10 +32261,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_signede">
+    <section xml:id="vec_signede">
       <title>vec_signede</title>
       <subtitle>Vector Convert Double-Precision to Signed Word Even</subtitle>
       <programlisting>
@@ -32349,10 +32349,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_signedo">
+    <section xml:id="vec_signedo">
       <title>vec_signedo</title>
       <subtitle>Vector Convert Double-Precision to Signed Word Odd</subtitle>
       <programlisting>
@@ -32437,10 +32437,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_sl">
+    <section xml:id="vec_sl">
       <title>vec_sl</title>
       <subtitle>Vector Shift Left</subtitle>
       <programlisting>
@@ -32639,10 +32639,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_sld">
+    <section xml:id="vec_sld">
       <title>vec_sld</title>
       <subtitle>Vector Shift Left Double</subtitle>
       <programlisting>
@@ -33005,10 +33005,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_sldw">
+    <section xml:id="vec_sldw">
       <title>vec_sldw</title>
       <subtitle>Vector Shift Left Double by Words</subtitle>
       <programlisting>
@@ -33232,10 +33232,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_sll">
+    <section xml:id="vec_sll">
       <title>vec_sll</title>
       <subtitle>Vector Shift Left Long</subtitle>
       <programlisting>
@@ -33441,10 +33441,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_slo">
+    <section xml:id="vec_slo">
       <title>vec_slo</title>
       <subtitle>Vector Shift Left by Octets</subtitle>
       <programlisting>
@@ -33826,10 +33826,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_slv">
+    <section xml:id="vec_slv">
       <title>vec_slv</title>
       <subtitle>Vector Shift Left Variable</subtitle>
       <programlisting>
@@ -34158,10 +34158,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_splat">
+    <section xml:id="vec_splat">
       <title>vec_splat</title>
       <subtitle>Vector Splat</subtitle>
       <programlisting>
@@ -34554,10 +34554,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_splat_s8">
+    <section xml:id="vec_splat_s8">
       <title>vec_splat_s8</title>
       <subtitle>Vector Splat to Signed Byte</subtitle>
       <programlisting>
@@ -34621,10 +34621,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_splat_s16">
+    <section xml:id="vec_splat_s16">
       <title>vec_splat_s16</title>
       <subtitle>Vector Splat to Signed Halfword</subtitle>
       <programlisting>
@@ -34688,10 +34688,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_splat_s32">
+    <section xml:id="vec_splat_s32">
       <title>vec_splat_s32</title>
       <subtitle>Vector Splat to Signed Word</subtitle>
       <programlisting>
@@ -34755,10 +34755,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_splat_u8">
+    <section xml:id="vec_splat_u8">
       <title>vec_splat_u8</title>
       <subtitle>Vector Splat to Unsigned Byte</subtitle>
       <programlisting>
@@ -34824,10 +34824,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_splat_u16">
+    <section xml:id="vec_splat_u16">
       <title>vec_splat_u16</title>
       <subtitle>Vector Splat to Unsigned Halfword</subtitle>
       <programlisting>
@@ -34893,10 +34893,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_splat_u32">
+    <section xml:id="vec_splat_u32">
       <title>vec_splat_u32</title>
       <subtitle>Vector Splat to Unsigned Word</subtitle>
       <programlisting>
@@ -34962,10 +34962,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_splats">
+    <section xml:id="vec_splats">
       <title>vec_splats</title>
       <subtitle>Vector Splat Scalar</subtitle>
       <programlisting>
@@ -35215,10 +35215,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_sqrt">
+    <section xml:id="vec_sqrt">
       <title>vec_sqrt</title>
       <subtitle>Vector Square Root</subtitle>
       <programlisting>
@@ -35299,10 +35299,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_sr">
+    <section xml:id="vec_sr">
       <title>vec_sr</title>
       <subtitle>Vector Shift Right</subtitle>
       <programlisting>
@@ -35502,10 +35502,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_sra">
+    <section xml:id="vec_sra">
       <title>vec_sra</title>
       <subtitle>Vector Shift Right Algebraic</subtitle>
       <programlisting>
@@ -35705,10 +35705,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_srl">
+    <section xml:id="vec_srl">
       <title>vec_srl</title>
       <subtitle>Vector Shift Right Long</subtitle>
       <programlisting>
@@ -35913,10 +35913,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_sro">
+    <section xml:id="vec_sro">
       <title>vec_sro</title>
       <subtitle>Vector Shift Right by Octets</subtitle>
       <programlisting>
@@ -36299,10 +36299,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_srv">
+    <section xml:id="vec_srv">
       <title>vec_srv</title>
       <subtitle>Vector Shift Right Variable</subtitle>
       <programlisting>
@@ -36630,10 +36630,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_st">
+    <section xml:id="vec_st">
       <title>vec_st</title>
       <subtitle>Vector Store Indexed</subtitle>
       <programlisting>
@@ -37190,10 +37190,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_ste">
+    <section xml:id="vec_ste">
       <title>vec_ste</title>
       <subtitle>Vector Store Element Indexed</subtitle>
       <programlisting>
@@ -37496,10 +37496,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_stl">
+    <section xml:id="vec_stl">
       <title>vec_stl</title>
       <subtitle>Vector Store Indexed Least Recently Used</subtitle>
       <programlisting>
@@ -38064,10 +38064,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_sub">
+    <section xml:id="vec_sub">
       <title>vec_sub</title>
       <subtitle>Vector Subtract</subtitle>
       <programlisting>
@@ -38344,10 +38344,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_subc">
+    <section xml:id="vec_subc">
       <title>vec_subc</title>
       <subtitle>Vector Subtract Carryout</subtitle>
       <programlisting>
@@ -38476,10 +38476,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_sube">
+    <section xml:id="vec_sube">
       <title>vec_sube</title>
       <subtitle>Vector Subtract Extended</subtitle>
       <programlisting>
@@ -38648,10 +38648,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_subec">
+    <section xml:id="vec_subec">
       <title>vec_subec</title>
       <subtitle>Vector Subtract Extended Carryout</subtitle>
       <programlisting>
@@ -38831,10 +38831,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_subs">
+    <section xml:id="vec_subs">
       <title>vec_subs</title>
       <subtitle>Vector Subtract Saturated</subtitle>
       <programlisting>
@@ -39009,10 +39009,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_sum2s">
+    <section xml:id="vec_sum2s">
       <title>vec_sum2s</title>
       <subtitle>Vector Sum Across Half</subtitle>
       <programlisting>
@@ -39224,10 +39224,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_sum4s">
+    <section xml:id="vec_sum4s">
       <title>vec_sum4s</title>
       <subtitle>Vector Sum Across Quarter</subtitle>
       <programlisting>
@@ -39727,10 +39727,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_sums">
+    <section xml:id="vec_sums">
       <title>vec_sums</title>
       <subtitle>Vector Sum Across</subtitle>
       <programlisting>
@@ -39934,10 +39934,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_test_data_class">
+    <section xml:id="vec_test_data_class">
       <title>vec_test_data_class</title>
       <subtitle>Vector Test Data Class</subtitle>
       <programlisting>
@@ -40075,10 +40075,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_trunc">
+    <section xml:id="vec_trunc">
       <title>vec_trunc</title>
       <subtitle>Vector Truncate</subtitle>
       <programlisting>
@@ -40160,10 +40160,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_unpackh">
+    <section xml:id="vec_unpackh">
       <title>vec_unpackh</title>
       <subtitle>Vector Unpack High</subtitle>
       <programlisting>
@@ -40810,10 +40810,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_unpackl">
+    <section xml:id="vec_unpackl">
       <title>vec_unpackl</title>
       <subtitle>Vector Unpack Low</subtitle>
       <programlisting>
@@ -41460,10 +41460,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_unsigned">
+    <section xml:id="vec_unsigned">
       <title>vec_unsigned</title>
       <subtitle>Vector Convert Floating-Point to Unsigned Integer</subtitle>
       <programlisting>
@@ -41546,10 +41546,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_unsigned2">
+    <section xml:id="vec_unsigned2">
       <title>vec_unsigned2</title>
       <subtitle>Vector Convert Double-Precision to Unsigned Word</subtitle>
       <programlisting>
@@ -41658,10 +41658,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_unsignede">
+    <section xml:id="vec_unsignede">
       <title>vec_unsignede</title>
       <subtitle>Vector Convert Double-Precision to Unsigned Word
       Even</subtitle>
@@ -41826,10 +41826,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_unsignedo">
+    <section xml:id="vec_unsignedo">
       <title>vec_unsignedo</title>
       <subtitle>Vector Convert Double-Precision to Unsigned Word Odd</subtitle>
       <programlisting>
@@ -41993,10 +41993,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_xl">
+    <section xml:id="vec_xl">
       <title>vec_xl</title>
       <subtitle>VSX Unaligned Load</subtitle>
       <programlisting>
@@ -42273,10 +42273,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_xl_be">
+    <section xml:id="vec_xl_be">
       <title>vec_xl_be</title>
       <subtitle>VSX Unaligned Load as Big Endian</subtitle>
       <programlisting>
@@ -42613,10 +42613,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_xl_len">
+    <section xml:id="vec_xl_len">
       <title>vec_xl_len</title>
       <subtitle>Vector Load with Length</subtitle>
       <programlisting>
@@ -42933,10 +42933,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_xl_len_r">
+    <section xml:id="vec_xl_len_r">
       <title>vec_xl_len_r</title>
       <subtitle>Vector Load with Length Right-Justified</subtitle>
       <programlisting>
@@ -43043,10 +43043,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_xor">
+    <section xml:id="vec_xor">
       <title>vec_xor</title>
       <subtitle>Vector Exclusive OR</subtitle>
       <programlisting>
@@ -43326,10 +43326,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_xst">
+    <section xml:id="vec_xst">
       <title>vec_xst</title>
       <subtitle>VSX Unaligned Store</subtitle>
       <programlisting>
@@ -43606,10 +43606,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_xst_be">
+    <section xml:id="vec_xst_be">
       <title>vec_xst_be</title>
       <subtitle>VSX Unaligned Store as Big Endian</subtitle>
       <programlisting>
@@ -43946,10 +43946,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_xst_len">
+    <section xml:id="vec_xst_len">
       <title>vec_xst_len</title>
       <subtitle>Vector Store with Length</subtitle>
       <programlisting>
@@ -44265,10 +44265,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
     <?hard-pagebreak?>
 
-    <simplesect xml:id="vec_xst_len_r">
+    <section xml:id="vec_xst_len_r">
       <title>vec_xst_len_r</title>
       <subtitle>Vector Store with Length Right-Justified</subtitle>
       <programlisting>
@@ -44371,7 +44371,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
         </tgroup>
       </table>
 
-    </simplesect>
+    </section>
 
   </section>
 
