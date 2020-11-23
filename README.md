@@ -37,8 +37,7 @@ This can be accomplished with the following steps:
 The project which controls the look and feel of the document is the 
 [Docs-Maven-Plugin project](https://github.com/OpenPOWERFoundation/Docs-Maven-Plugin), an 
 OpenPOWER Foundation private project on GitHub.  To obtain access to the Maven Plugin project, 
-contact Jeff Scheel \([scheel@us.ibm.com](mailto://scheel@us.ibm.com)\) or 
-Jeff Brown \([jeffdb@us.ibm.com](mailto://jeffdb@us.ibm.com)\).
+contact TSC Chair of the OpenPOWER Foundation \([tsc-chair@openpowerfoundation.org](mailto://tsc-chair@openpowerfoundation.org)\) or 
 
 ## License
 This project is licensed under the Apache V2 license.  More information
