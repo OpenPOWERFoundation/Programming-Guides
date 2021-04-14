@@ -19234,8 +19234,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector bool char</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>const vector bool char *</para>
@@ -19250,8 +19250,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector signed char</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>const signed char *</para>
@@ -19266,8 +19266,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector signed char</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>const vector signed char *</para>
@@ -19282,8 +19282,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector unsigned char</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>const unsigned char *</para>
@@ -19298,8 +19298,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector unsigned char</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>const vector unsigned char *</para>
@@ -19314,8 +19314,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector bool short</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>const vector bool short *</para>
@@ -19330,8 +19330,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector signed short</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>const signed short *</para>
@@ -19346,8 +19346,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector signed short</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>const vector signed short *</para>
@@ -19362,8 +19362,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector unsigned short</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>const unsigned short *</para>
@@ -19378,8 +19378,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector unsigned short</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>const vector unsigned short *</para>
@@ -19394,8 +19394,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector pixel</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>const vector pixel *</para>
@@ -19410,8 +19410,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector bool int</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>const vector bool int *</para>
@@ -19426,8 +19426,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector signed int</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>const signed int *</para>
@@ -19442,8 +19442,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector signed int</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>const vector signed int *</para>
@@ -19458,8 +19458,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector unsigned int</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>const unsigned int *</para>
@@ -19474,8 +19474,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector unsigned int</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>const vector unsigned int *</para>
@@ -19490,8 +19490,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector bool long long</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>const vector bool long long *</para>
@@ -19506,8 +19506,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector signed long long</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>const signed long long *</para>
@@ -19522,8 +19522,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector signed long long</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>const vector signed long long *</para>
@@ -19538,8 +19538,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector unsigned long long</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>const unsigned long long *</para>
@@ -19554,8 +19554,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector unsigned long long</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>const vector unsigned long long *</para>
@@ -19570,8 +19570,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector signed __int128</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>const signed __int128 *</para>
@@ -19586,8 +19586,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector signed __int128</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>const vector signed __int128 *</para>
@@ -19602,8 +19602,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector unsigned __int128</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>const unsigned __int128 *</para>
@@ -19618,8 +19618,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector unsigned __int128</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>const vector unsigned __int128 *</para>
@@ -19634,8 +19634,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector float</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>const float *</para>
@@ -19650,8 +19650,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector float</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>const vector float *</para>
@@ -19666,8 +19666,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector double</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>const double *</para>
@@ -19682,8 +19682,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector double</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>const vector double *</para>
@@ -19783,8 +19783,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector signed char</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>const signed char *</para>
@@ -19799,8 +19799,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector unsigned char</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>const unsigned char *</para>
@@ -19815,8 +19815,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector signed short</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>const signed short *</para>
@@ -19831,8 +19831,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector unsigned short</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>const unsigned short *</para>
@@ -19847,8 +19847,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector signed int</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>const signed int *</para>
@@ -19863,8 +19863,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector unsigned int</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>const unsigned int *</para>
@@ -19879,8 +19879,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector float</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>const float *</para>
@@ -19966,8 +19966,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector bool char</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>const vector bool char *</para>
@@ -19982,8 +19982,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector signed char</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>const signed char *</para>
@@ -19998,8 +19998,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector signed char</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>const vector signed char *</para>
@@ -20014,8 +20014,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector unsigned char</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>const unsigned char *</para>
@@ -20030,8 +20030,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector unsigned char</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>const vector unsigned char *</para>
@@ -20046,8 +20046,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector bool short</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>const vector bool short *</para>
@@ -20062,8 +20062,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector signed short</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>const signed short *</para>
@@ -20078,8 +20078,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector signed short</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>const vector signed short *</para>
@@ -20094,8 +20094,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector unsigned short</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>const unsigned short *</para>
@@ -20110,8 +20110,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector unsigned short</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>const vector unsigned short *</para>
@@ -20126,8 +20126,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector pixel</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>const vector pixel *</para>
@@ -20142,8 +20142,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector bool int</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>const vector bool int *</para>
@@ -20158,8 +20158,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector signed int</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>const signed int *</para>
@@ -20174,8 +20174,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector signed int</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>const vector signed int *</para>
@@ -20190,8 +20190,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector unsigned int</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>const unsigned int *</para>
@@ -20206,8 +20206,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector unsigned int</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>const vector unsigned int *</para>
@@ -20222,8 +20222,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector bool long long</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>const vector bool long long *</para>
@@ -20238,8 +20238,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector signed long long</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>const signed long long *</para>
@@ -20254,8 +20254,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector signed long long</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>const vector signed long long *</para>
@@ -20270,8 +20270,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector unsigned long long</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>const unsigned long long *</para>
@@ -20286,8 +20286,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector unsigned long long</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>const vector unsigned long long *</para>
@@ -20302,8 +20302,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector float</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>const float *</para>
@@ -20318,8 +20318,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector float</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>const vector float *</para>
@@ -20334,8 +20334,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector double</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>const double *</para>
@@ -20350,8 +20350,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector double</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>const vector double *</para>
@@ -36694,8 +36694,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector bool char</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>vector bool char *</para>
@@ -36710,8 +36710,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector bool char</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>signed char *</para>
@@ -36726,8 +36726,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector bool char</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>unsigned char *</para>
@@ -36742,8 +36742,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector signed char</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>signed char *</para>
@@ -36758,8 +36758,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector signed char</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>vector signed char *</para>
@@ -36774,8 +36774,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector unsigned char</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para> unsigned char *</para>
@@ -36790,8 +36790,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector unsigned char</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>vector unsigned char *</para>
@@ -36806,8 +36806,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector bool short</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>vector bool short *</para>
@@ -36822,8 +36822,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector bool short</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>signed short *</para>
@@ -36838,8 +36838,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector bool short</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>unsigned short *</para>
@@ -36854,8 +36854,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector signed short</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para> signed short *</para>
@@ -36870,8 +36870,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector signed short</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>vector signed short *</para>
@@ -36886,8 +36886,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector unsigned short</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para> unsigned short *</para>
@@ -36902,8 +36902,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector unsigned short</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>vector unsigned short *</para>
@@ -36918,8 +36918,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector pixel</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>vector pixel *</para>
@@ -36934,8 +36934,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector bool int</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>vector bool int *</para>
@@ -36950,8 +36950,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector bool int</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>signed int *</para>
@@ -36966,8 +36966,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector bool int</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>unsigned int *</para>
@@ -36982,8 +36982,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector signed int</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para> signed int *</para>
@@ -36998,8 +36998,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector signed int</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>vector signed int *</para>
@@ -37014,8 +37014,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector unsigned int</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para> unsigned int *</para>
@@ -37030,8 +37030,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector unsigned int</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>vector unsigned int *</para>
@@ -37046,8 +37046,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector bool long long</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>vector bool long long *</para>
@@ -37062,8 +37062,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector signed long long</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para> signed long long *</para>
@@ -37078,8 +37078,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector signed long long</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>vector signed long long *</para>
@@ -37094,8 +37094,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector unsigned long long</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para> unsigned long long *</para>
@@ -37110,8 +37110,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector unsigned long long</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>vector unsigned long long *</para>
@@ -37126,8 +37126,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector float</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para> float *</para>
@@ -37142,8 +37142,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector float</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>vector float *</para>
@@ -37158,8 +37158,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector double</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para> double *</para>
@@ -37174,8 +37174,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector double</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>vector double *</para>
@@ -37272,8 +37272,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector bool char</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>signed char *</para>
@@ -37288,8 +37288,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector bool char</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>unsigned char *</para>
@@ -37304,8 +37304,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector signed char</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>signed char *</para>
@@ -37320,8 +37320,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector unsigned char</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>unsigned char *</para>
@@ -37336,8 +37336,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector bool short</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>signed short *</para>
@@ -37352,8 +37352,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector bool short</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>unsigned short *</para>
@@ -37368,8 +37368,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector signed short</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>signed short *</para>
@@ -37384,8 +37384,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector unsigned short</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>unsigned short *</para>
@@ -37400,8 +37400,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector pixel</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>unsigned short *</para>
@@ -37416,8 +37416,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector bool int</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>signed int *</para>
@@ -37432,8 +37432,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector bool int</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>unsigned int *</para>
@@ -37448,8 +37448,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector signed int</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>signed int *</para>
@@ -37464,8 +37464,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector unsigned int</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>unsigned int *</para>
@@ -37480,8 +37480,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector float</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>float *</para>
@@ -37568,8 +37568,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector bool char</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>vector bool char *</para>
@@ -37584,8 +37584,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector bool char</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>signed char *</para>
@@ -37600,8 +37600,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector bool char</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>unsigned char *</para>
@@ -37616,8 +37616,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector signed char</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>signed char *</para>
@@ -37632,8 +37632,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector signed char</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>vector signed char *</para>
@@ -37648,8 +37648,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector unsigned char</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para> unsigned char *</para>
@@ -37664,8 +37664,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector unsigned char</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>vector unsigned char *</para>
@@ -37680,8 +37680,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector bool short</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>vector bool short *</para>
@@ -37696,8 +37696,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector bool short</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>signed short *</para>
@@ -37712,8 +37712,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector bool short</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>unsigned short *</para>
@@ -37728,8 +37728,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector signed short</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para> signed short *</para>
@@ -37744,8 +37744,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector signed short</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>vector signed short *</para>
@@ -37760,8 +37760,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector unsigned short</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para> unsigned short *</para>
@@ -37776,8 +37776,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector unsigned short</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>vector unsigned short *</para>
@@ -37792,8 +37792,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector pixel</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>vector pixel *</para>
@@ -37808,8 +37808,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector bool int</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>vector bool int *</para>
@@ -37824,8 +37824,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector bool int</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>signed int *</para>
@@ -37840,8 +37840,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector bool int</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>unsigned int *</para>
@@ -37856,8 +37856,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector signed int</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para> signed int *</para>
@@ -37872,8 +37872,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector signed int</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>vector signed int *</para>
@@ -37888,8 +37888,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector unsigned int</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para> unsigned int *</para>
@@ -37904,8 +37904,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector unsigned int</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>vector unsigned int *</para>
@@ -37920,8 +37920,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector bool long long</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>vector bool long long *</para>
@@ -37936,8 +37936,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector signed long long</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para> signed long long *</para>
@@ -37952,8 +37952,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector signed long long</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>vector signed long long *</para>
@@ -37968,8 +37968,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector unsigned long long</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para> unsigned long long *</para>
@@ -37984,8 +37984,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector unsigned long long</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>vector unsigned long long *</para>
@@ -38000,8 +38000,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector float</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para> float *</para>
@@ -38016,8 +38016,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector float</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>vector float *</para>
@@ -38032,8 +38032,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector double</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para> double *</para>
@@ -38048,8 +38048,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector double</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>vector double *</para>
@@ -42081,8 +42081,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector signed char</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>const signed char *</para>
@@ -42097,8 +42097,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector unsigned char</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>const unsigned char *</para>
@@ -42113,8 +42113,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector signed short</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>const signed short *</para>
@@ -42129,8 +42129,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector unsigned short</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>const unsigned short *</para>
@@ -42145,8 +42145,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector signed int</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>const signed int *</para>
@@ -42161,8 +42161,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector unsigned int</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>const unsigned int *</para>
@@ -42177,8 +42177,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector signed signed long long</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>const signed long long *</para>
@@ -42193,8 +42193,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector unsigned long long</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>const unsigned long long *</para>
@@ -42209,8 +42209,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector signed __int128</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>const signed __int128 *</para>
@@ -42225,8 +42225,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector unsigned __int128</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>const unsigned __int128 *</para>
@@ -42241,8 +42241,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector float</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>const float *</para>
@@ -42257,8 +42257,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector double</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>const double *</para>
@@ -42361,8 +42361,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector signed char</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>const signed char *</para>
@@ -42382,8 +42382,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector unsigned char</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>const unsigned char *</para>
@@ -42403,8 +42403,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector signed short</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>const signed short *</para>
@@ -42424,8 +42424,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector unsigned short</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>const unsigned short *</para>
@@ -42445,8 +42445,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector signed int</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>const signed int *</para>
@@ -42466,8 +42466,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector unsigned int</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>const unsigned int *</para>
@@ -42487,8 +42487,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector signed long long</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>const signed long long *</para>
@@ -42508,8 +42508,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector unsigned long long</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>const unsigned long long *</para>
@@ -42529,8 +42529,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector signed __int128</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>const signed __int128 *</para>
@@ -42550,8 +42550,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector unsigned __int128</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>const unsigned __int128 *</para>
@@ -42571,8 +42571,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector float</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>const float *</para>
@@ -42592,8 +42592,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector double</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para>signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para>signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para>const double *</para>
@@ -43414,8 +43414,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector signed char</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para> signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para> signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para> signed char *</para>
@@ -43430,8 +43430,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector unsigned char</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para> signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para> signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para> unsigned char *</para>
@@ -43446,8 +43446,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector signed short</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para> signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para> signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para> signed short *</para>
@@ -43462,8 +43462,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector unsigned short</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para> signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para> signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para> unsigned short *</para>
@@ -43478,8 +43478,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector signed int</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para> signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para> signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para> signed int *</para>
@@ -43494,8 +43494,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector unsigned int</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para> signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para> signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para> unsigned int *</para>
@@ -43510,8 +43510,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector signed long long</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para> signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para> signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para> signed long long *</para>
@@ -43526,8 +43526,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector unsigned long long</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para> signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para> signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para> unsigned long long *</para>
@@ -43542,8 +43542,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector signed __int128</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para> signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para> signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para> signed __int128 *</para>
@@ -43558,8 +43558,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector unsigned __int128</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para> signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para> signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para> unsigned __int128 *</para>
@@ -43574,8 +43574,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector float</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para> signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para> signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para> float *</para>
@@ -43590,8 +43590,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector double</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para> signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para> signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para> double *</para>
@@ -43694,8 +43694,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector signed char</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para> signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para> signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para> signed char *</para>
@@ -43715,8 +43715,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector unsigned char</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para> signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para> signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para> unsigned char *</para>
@@ -43736,8 +43736,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector signed short</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para> signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para> signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para> signed short *</para>
@@ -43757,8 +43757,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector unsigned short</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para> signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para> signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para> unsigned short *</para>
@@ -43778,8 +43778,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector signed int</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para> signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para> signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para> signed int *</para>
@@ -43799,8 +43799,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector unsigned int</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para> signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para> signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para> unsigned int *</para>
@@ -43820,8 +43820,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector signed long long</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para> signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para> signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para> signed long long *</para>
@@ -43841,8 +43841,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector unsigned long long</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para> signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para> signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para> unsigned long long *</para>
@@ -43862,8 +43862,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector signed __int128</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para> signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para> signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para> signed __int128 *</para>
@@ -43883,8 +43883,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector unsigned __int128</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para> signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para> signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para> unsigned __int128 *</para>
@@ -43904,8 +43904,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector float</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para> signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para> signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para> float *</para>
@@ -43925,8 +43925,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry align="center" valign="middle">
                 <para>vector double</para>
               </entry>
-              <entry align="center" valign="middle">
-                <para> signed long long</para>
+              <entry align="center" valign="middle" revisionflag="changed">
+                <para> signed long</para>
               </entry>
               <entry align="center" valign="middle">
                 <para> double *</para>
