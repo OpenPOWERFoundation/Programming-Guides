@@ -1,0 +1,110 @@
+<!--
+  Copyright (c) 2021 OpenPOWER Foundation
+
+  Licensed under the GNU Free Documentation License, Version 1.3;
+  with no Invariants Sections, with no Front-Cover Texts,
+  and with no Back-Cover Texts (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+    http://www.gnu.org/licenses/fdl-1.3.txt
+
+-->
+<chapter xmlns="http://docbook.org/ns/docbook"
+xmlns:xl="http://www.w3.org/1999/xlink" version="5.0" xml:lang="en"
+xml:id="dbdoclet.50655240_pgfId-1156194">
+
+<title>Errata</title>
+<para>The following sections of version 1.0 of the POWER Vector Intrinsics
+Programming Reference are modified as specified.</para>
+<section>
+  <title>Section 4.2, Built-In Vector Functions</title>
+  <para>
+    <emphasis role="underline">Problem</emphasis>: For intrinsics that
+    represent vector load and store operations, the arguments that
+    represent offsets from a pointer are listed as having type "signed
+    long long."  Although this is correct for 64-bit code, and this is
+    a 64-bit specification, it is recognized that this is not
+    compatible with existing 32-bit implementations.  This can be
+    resolved using the type "signed long" instead, which is 64 bits on
+    a 64-bit system and 32 bits on a 32-bit system.
+  </para>
+  <para>
+    <emphasis role="underline">Resolution</emphasis>: The following
+    changes are incorporated for each of the specified built-in
+    functions.
+    <itemizedlist>
+      <listitem>
+	<para>
+	  <emphasis role="bold">vec_ld</emphasis>: All types in column
+	  <emphasis role="bold">a</emphasis> are changed to <emphasis
+	  role="bold">signed long</emphasis>.
+	</para>
+      </listitem>
+      <listitem>
+	<para>
+	  <emphasis role="bold">vec_lde</emphasis>: All types in column
+	  <emphasis role="bold">a</emphasis> are changed to <emphasis
+	  role="bold">signed long</emphasis>.
+	</para>
+      </listitem>
+      <listitem>
+	<para>
+	  <emphasis role="bold">vec_ldl</emphasis>: All types in column
+	  <emphasis role="bold">a</emphasis> are changed to <emphasis
+	  role="bold">signed long</emphasis>.
+	</para>
+      </listitem>
+      <listitem>
+	<para>
+	  <emphasis role="bold">vec_st</emphasis>: All types in column
+	  <emphasis role="bold">b</emphasis> are changed to <emphasis
+	  role="bold">signed long</emphasis>.
+	</para>
+      </listitem>
+      <listitem>
+	<para>
+	  <emphasis role="bold">vec_ste</emphasis>: All types in column
+	  <emphasis role="bold">b</emphasis> are changed to <emphasis
+	  role="bold">signed long</emphasis>.
+	</para>
+      </listitem>
+      <listitem>
+	<para>
+	  <emphasis role="bold">vec_stl</emphasis>: All types in column
+	  <emphasis role="bold">b</emphasis> are changed to <emphasis
+	  role="bold">signed long</emphasis>.
+	</para>
+      </listitem>
+      <listitem>
+	<para>
+	  <emphasis role="bold">vec_xl</emphasis>: All types in column
+	  <emphasis role="bold">a</emphasis> are changed to <emphasis
+	  role="bold">signed long</emphasis>.
+	</para>
+      </listitem>
+      <listitem>
+	<para>
+	  <emphasis role="bold">vec_xl_be</emphasis>: All types in column
+	  <emphasis role="bold">a</emphasis> are changed to <emphasis
+	  role="bold">signed long</emphasis>.
+	</para>
+      </listitem>
+      <listitem>
+	<para>
+	  <emphasis role="bold">vec_xst</emphasis>: All types in column
+	  <emphasis role="bold">b</emphasis> are changed to <emphasis
+	  role="bold">signed long</emphasis>.
+	</para>
+      </listitem>
+      <listitem>
+	<para>
+	  <emphasis role="bold">vec_xst_be</emphasis>: All types in column
+	  <emphasis role="bold">b</emphasis> are changed to <emphasis
+	  role="bold">signed long</emphasis>.
+	</para>
+      </listitem>
+    </itemizedlist>
+  </para>
+</section>
+</chapter>

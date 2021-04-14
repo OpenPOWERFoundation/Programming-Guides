@@ -19,5 +19,6 @@
                enable all document builds from the top level -->
     <module>Porting_Vector_Intrinsics</module>
     <module>Intrinsics_Reference</module>
+    <module>pvipr-errata-1.0</module>
   </modules>
 </project>
