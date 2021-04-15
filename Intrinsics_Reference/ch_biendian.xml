@@ -788,6 +788,10 @@ a[3] = c;</programlisting>
       endian-sensitive built-in functions can be found in <xref
       linkend="VIPR.biendian.sensitive" />.
     </para>
+    <para revisionflag="added">
+      Be sure to update this table for any new endian-sensitive
+      built-ins added for P10.
+    </para>
       <table frame="all" pgwide="1" xml:id="VIPR.biendian.sensitive">
 	<title>Endian-Sensitive Built-In Functions</title>
 	<tgroup cols="3">
