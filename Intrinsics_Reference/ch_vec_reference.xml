@@ -1589,6 +1589,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
+      <para revisionflag="added">
+	<emphasis role="bold">Review status:</emphasis>
+	Not yet reviewed.
+      </para>
       
       <indexterm>
 	<primary>vcmpequb.</primary>
@@ -1611,6 +1615,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 	<secondary>vec_all_eq</secondary>
       </indexterm>
       <indexterm>
+	<primary>vcmpequq.</primary>
+	<secondary>vec_all_eq</secondary>
+      </indexterm>
+      <indexterm>
 	<primary>vcmpequh.</primary>
 	<secondary>vec_all_eq</secondary>
       </indexterm>
@@ -1625,11 +1633,12 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 
       <table frame="all">
       <title>Supported type signatures for vec_all_eq</title>
-      <tgroup cols="4">
+      <tgroup cols="5">
           <colspec colname="c1" colwidth="20*" />
           <colspec colname="c2" colwidth="20*" />
           <colspec colname="c3" colwidth="20*" />
           <colspec colname="c4" colwidth="20*" />
+          <colspec colname="c5" colwidth="20*" />
           <thead>
             <row>
               <entry align="center" valign="middle">
@@ -1647,8 +1656,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                   <emphasis role="bold">b</emphasis>
                 </para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para><emphasis role="bold">Example Implementation</emphasis></para>
+              </entry>
+              <entry align="center" valign="middle" revisionflag="added">
+                <para><emphasis role="bold">Restrictions</emphasis></para>
               </entry>
             </row>
           </thead>
@@ -1670,6 +1682,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   rlwinm     r,u,25,1
 		</programlisting>
               </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
+              </entry>
             </row>
             <row>
               <entry align="center" valign="middle">
@@ -1687,6 +1703,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   mfocrf     u,2
   rlwinm     r,u,25,1
 		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
               </entry>
             </row>
             <row>
@@ -1706,6 +1726,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   rlwinm     r,u,25,1
 		</programlisting>
               </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
+              </entry>
             </row>
             <row>
               <entry align="center" valign="middle">
@@ -1723,6 +1747,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   mfocrf     u,2
   rlwinm     r,u,25,1
 		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
               </entry>
             </row>
             <row>
@@ -1742,6 +1770,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   rlwinm     r,u,25,1
 		</programlisting>
               </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
+              </entry>
             </row>
             <row>
               <entry align="center" valign="middle">
@@ -1759,6 +1791,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   mfocrf     u,2
   rlwinm     r,u,25,1
 		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
               </entry>
             </row>
             <row>
@@ -1778,6 +1814,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   rlwinm     r,u,25,1
 		</programlisting>
               </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
+              </entry>
             </row>
             <row>
               <entry align="center" valign="middle">
@@ -1795,6 +1835,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   mfocrf     u,2
   rlwinm     r,u,25,1
 		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
               </entry>
             </row>
             <row>
@@ -1814,6 +1858,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   rlwinm     r,u,25,1
 		</programlisting>
               </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
+              </entry>
             </row>
             <row>
               <entry align="center" valign="middle">
@@ -1831,6 +1879,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   mfocrf     u,2
   rlwinm     r,u,25,1
 		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
               </entry>
             </row>
             <row>
@@ -1850,6 +1902,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   rlwinm     r,u,25,1
 		</programlisting>
               </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
+              </entry>
             </row>
             <row>
               <entry align="center" valign="middle">
@@ -1867,6 +1923,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   mfocrf     u,2
   rlwinm     r,u,25,1
 		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
               </entry>
             </row>
             <row>
@@ -1886,6 +1946,79 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   rlwinm     r,u,25,1
 		</programlisting>
               </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
+              </entry>
+            </row>
+            <row revisionflag="added">
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector bool __int128</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector bool __int128</para>
+              </entry>
+              <entry>
+                <programlisting>
+  vcmpequq.  t,a,b
+  mfocrf     u,2
+  rlwinm     r,u,25,1
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		  ISA 3.1 or later
+		</para>
+              </entry>
+            </row>
+            <row revisionflag="added">
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed __int128</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed __int128</para>
+              </entry>
+              <entry>
+                <programlisting>
+  vcmpequq.  t,a,b
+  mfocrf     u,2
+  rlwinm     r,u,25,1
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		  ISA 3.1 or later
+		</para>
+              </entry>
+            </row>
+            <row revisionflag="added">
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned __int128</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned __int128</para>
+              </entry>
+              <entry>
+                <programlisting>
+  vcmpequq.  t,a,b
+  mfocrf     u,2
+  rlwinm     r,u,25,1
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		  ISA 3.1 or later
+		</para>
+              </entry>
             </row>
             <row>
               <entry align="center" valign="middle">
@@ -1904,6 +2037,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   rlwinm      r,u,25,1
 		</programlisting>
               </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
+              </entry>
             </row>
             <row>
               <entry align="center" valign="middle">
@@ -1921,6 +2058,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   mfocrf      u,2
   rlwinm      r,u,25,1
 		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
               </entry>
             </row>
           </tbody>
@@ -1950,6 +2091,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
+      <para revisionflag="added">
+	<emphasis role="bold">Review status:</emphasis>
+	Not yet reviewed.
+      </para>
       
       <indexterm>
 	<primary>vcmpgtsb.</primary>
@@ -1984,6 +2129,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 	<secondary>vec_all_ge</secondary>
       </indexterm>
       <indexterm>
+	<primary>vcmpgtsq.</primary>
+	<secondary>vec_all_ge</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtuq.</primary>
+	<secondary>vec_all_ge</secondary>
+      </indexterm>
+      <indexterm>
 	<primary>vcmpgtsh.</primary>
 	<secondary>vec_all_ge</secondary>
       </indexterm>
@@ -2002,11 +2155,12 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 
       <table frame="all">
       <title>Supported type signatures for vec_all_ge</title>
-      <tgroup cols="4">
+      <tgroup cols="5">
           <colspec colname="c1" colwidth="20*" />
           <colspec colname="c2" colwidth="20*" />
           <colspec colname="c3" colwidth="20*" />
           <colspec colname="c4" colwidth="20*" />
+          <colspec colname="c5" colwidth="20*" />
           <thead>
             <row>
               <entry align="center" valign="middle">
@@ -2026,6 +2180,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               </entry>
               <entry align="center">
                 <para><emphasis role="bold">Example Implementation</emphasis></para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para revisionflag="added">
+		  <emphasis role="bold">Restrictions</emphasis>
+		</para>
               </entry>
             </row>
           </thead>
@@ -2047,6 +2206,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   rlwinm     r,u,27,1
 		</programlisting>
               </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
+              </entry>
             </row>
             <row>
               <entry align="center" valign="middle">
@@ -2064,6 +2227,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   mfocrf     u,2
   rlwinm     r,u,27,1
 		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
               </entry>
             </row>
             <row>
@@ -2083,6 +2250,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   rlwinm     r,u,27,1
 		</programlisting>
               </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
+              </entry>
             </row>
             <row>
               <entry align="center" valign="middle">
@@ -2100,6 +2271,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   mfocrf     u,2
   rlwinm     r,u,27,1
 		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
               </entry>
             </row>
             <row>
@@ -2119,6 +2294,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   rlwinm     r,u,27,1
 		</programlisting>
               </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
+              </entry>
             </row>
             <row>
               <entry align="center" valign="middle">
@@ -2136,6 +2315,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   mfocrf     u,2
   rlwinm     r,u,27,1
 		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
               </entry>
             </row>
             <row>
@@ -2155,6 +2338,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   rlwinm     r,u,27,1
 		</programlisting>
               </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
+              </entry>
             </row>
             <row>
               <entry align="center" valign="middle">
@@ -2173,6 +2360,56 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   rlwinm     r,u,27,1
 		</programlisting>
               </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
+              </entry>
+            </row>
+            <row revisionflag="added">
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed __int128</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed __int128</para>
+              </entry>
+              <entry>
+                <programlisting>
+  vcmpgtsq.  t,b,a
+  mfocrf     u,2
+  rlwinm     r,u,27,1
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		  ISA 3.1 or later
+		</para>
+              </entry>
+            </row>
+            <row revisionflag="added">
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned __int128</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned __int128</para>
+              </entry>
+              <entry>
+                <programlisting>
+  vcmpgtuq.  t,b,a
+  mfocrf     u,2
+  rlwinm     r,u,27,1
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		  ISA 3.1 or later
+		</para>
+              </entry>
             </row>
             <row>
               <entry align="center" valign="middle">
@@ -2186,10 +2423,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               </entry>
               <entry>
                 <programlisting>
-  xvcmpgesp.  t,a,b
-  mfocrf      u,2
-  rlwinm      r,u,25,1
+  xvcmpgesp. t,a,b
+  mfocrf     u,2
+  rlwinm     r,u,25,1
 		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
               </entry>
             </row>
             <row>
@@ -2204,10 +2445,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               </entry>
               <entry>
                 <programlisting>
-  xvcmpgedp.  t,a,b
-  mfocrf      u,2
-  rlwinm      r,u,25,1
+  xvcmpgedp. t,a,b
+  mfocrf     u,2
+  rlwinm     r,u,25,1
 		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
               </entry>
             </row>
           </tbody>
@@ -2237,6 +2482,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
+      <para revisionflag="added">
+	<emphasis role="bold">Review status:</emphasis>
+	Not yet reviewed.
+      </para>
       
       <indexterm>
 	<primary>vcmpgtsb.</primary>
@@ -2271,6 +2520,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 	<secondary>vec_all_gt</secondary>
       </indexterm>
       <indexterm>
+	<primary>vcmpgtsq.</primary>
+	<secondary>vec_all_gt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtuq.</primary>
+	<secondary>vec_all_gt</secondary>
+      </indexterm>
+      <indexterm>
 	<primary>vcmpgtsh.</primary>
 	<secondary>vec_all_gt</secondary>
       </indexterm>
@@ -2289,11 +2546,12 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 
       <table frame="all">
       <title>Supported type signatures for vec_all_gt</title>
-      <tgroup cols="4">
+      <tgroup cols="5">
           <colspec colname="c1" colwidth="20*" />
           <colspec colname="c2" colwidth="20*" />
           <colspec colname="c3" colwidth="20*" />
           <colspec colname="c4" colwidth="20*" />
+          <colspec colname="c5" colwidth="20*" />
           <thead>
             <row>
               <entry align="center" valign="middle">
@@ -2313,6 +2571,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               </entry>
               <entry align="center">
                 <para><emphasis role="bold">Example Implementation</emphasis></para>
+              </entry>
+              <entry align="center">
+                <para><emphasis role="bold">Restrictions</emphasis></para>
               </entry>
             </row>
           </thead>
@@ -2334,6 +2595,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   rlwinm     r,u,25,1
 		</programlisting>
               </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
+              </entry>
             </row>
             <row>
               <entry align="center" valign="middle">
@@ -2351,6 +2616,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   mfocrf     u,2
   rlwinm     r,u,25,1
 		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
               </entry>
             </row>
             <row>
@@ -2370,6 +2639,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   rlwinm     r,u,25,1
 		</programlisting>
               </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
+              </entry>
             </row>
             <row>
               <entry align="center" valign="middle">
@@ -2387,6 +2660,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   mfocrf     u,2
   rlwinm     r,u,25,1
 		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
               </entry>
             </row>
             <row>
@@ -2406,6 +2683,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   rlwinm     r,u,25,1
 		</programlisting>
               </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
+              </entry>
             </row>
             <row>
               <entry align="center" valign="middle">
@@ -2423,6 +2704,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   mfocrf     u,2
   rlwinm     r,u,25,1
 		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
               </entry>
             </row>
             <row>
@@ -2442,6 +2727,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   rlwinm     r,u,25,1
 		</programlisting>
               </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
+              </entry>
             </row>
             <row>
               <entry align="center" valign="middle">
@@ -2459,6 +2748,56 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   mfocrf     u,2
   rlwinm     r,u,25,1
 		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
+              </entry>
+            </row>
+            <row revisionflag="added">
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed __int128</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed __int128</para>
+              </entry>
+              <entry>
+                <programlisting>
+  vcmpgtsq.  t,a,b
+  mfocrf     u,2
+  rlwinm     r,u,25,1
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		  ISA 3.1 or later
+		</para>
+              </entry>
+            </row>
+            <row revisionflag="added">
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned __int128</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned __int128</para>
+              </entry>
+              <entry>
+                <programlisting>
+  vcmpgtuq.  t,a,b
+  mfocrf     u,2
+  rlwinm     r,u,25,1
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		  ISA 3.1 or later
+		</para>
               </entry>
             </row>
             <row>
@@ -2478,6 +2817,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   rlwinm     r,u,25,1
 		</programlisting>
               </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
+              </entry>
             </row>
             <row>
               <entry align="center" valign="middle">
@@ -2495,6 +2838,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   mfocrf     u,2
   rlwinm     r,u,25,1
 		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
               </entry>
             </row>
           </tbody>
@@ -2612,6 +2959,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
+      <para revisionflag="added">
+	<emphasis role="bold">Review status:</emphasis>
+	Not yet reviewed.
+      </para>
       
       <indexterm>
 	<primary>vcmpgtsb.</primary>
@@ -2646,6 +2997,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 	<secondary>vec_all_le</secondary>
       </indexterm>
       <indexterm>
+	<primary>vcmpgtsq.</primary>
+	<secondary>vec_all_le</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtuq.</primary>
+	<secondary>vec_all_le</secondary>
+      </indexterm>
+      <indexterm>
 	<primary>vcmpgtsh.</primary>
 	<secondary>vec_all_le</secondary>
       </indexterm>
@@ -2664,30 +3023,34 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 
       <table frame="all">
       <title>Supported type signatures for vec_all_le</title>
-      <tgroup cols="4">
+      <tgroup cols="5">
           <colspec colname="c1" colwidth="20*" />
           <colspec colname="c2" colwidth="20*" />
           <colspec colname="c3" colwidth="20*" />
           <colspec colname="c4" colwidth="20*" />
+          <colspec colname="c5" colwidth="20*" />
           <thead>
             <row>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
                   <emphasis role="bold">r</emphasis>
                 </para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
                   <emphasis role="bold">a</emphasis>
                 </para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
                   <emphasis role="bold">b</emphasis>
                 </para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para><emphasis role="bold">Example Implementation</emphasis></para>
+              </entry>
+              <entry align="center" valign="middle" revisionflag="added">
+                <para><emphasis role="bold">Restrictions</emphasis></para>
               </entry>
             </row>
           </thead>
@@ -2709,6 +3072,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   rlwinm     r,u,27,1
 		</programlisting>
               </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
+              </entry>
             </row>
             <row>
               <entry align="center" valign="middle">
@@ -2726,6 +3093,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   mfocrf     u,2
   rlwinm     r,u,27,1
 		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
               </entry>
             </row>
             <row>
@@ -2745,6 +3116,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   rlwinm     r,u,27,1
 		</programlisting>
               </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
+              </entry>
             </row>
             <row>
               <entry align="center" valign="middle">
@@ -2762,6 +3137,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   mfocrf     u,2
   rlwinm     r,u,27,1
 		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
               </entry>
             </row>
             <row>
@@ -2781,6 +3160,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   rlwinm     r,u,27,1
 		</programlisting>
               </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
+              </entry>
             </row>
             <row>
               <entry align="center" valign="middle">
@@ -2798,6 +3181,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   mfocrf     u,2
   rlwinm     r,u,27,1
 		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
               </entry>
             </row>
             <row>
@@ -2817,6 +3204,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   rlwinm     r,u,27,1
 		</programlisting>
               </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
+              </entry>
             </row>
             <row>
               <entry align="center" valign="middle">
@@ -2835,6 +3226,56 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   rlwinm     r,u,27,1
 		</programlisting>
               </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
+              </entry>
+            </row>
+            <row revisionflag="added">
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed __int128</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed __int128</para>
+              </entry>
+              <entry>
+                <programlisting>
+  vcmpgtsq.  t,a,b
+  mfocrf     u,2
+  rlwinm     r,u,27,1
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		  ISA 3.1 or later
+		</para>
+              </entry>
+            </row>
+            <row revisionflag="added">
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned __int128</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned __int128</para>
+              </entry>
+              <entry>
+                <programlisting>
+  vcmpgtuq.  t,a,b
+  mfocrf     u,2
+  rlwinm     r,u,27,1
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		  ISA 3.1 or later
+		</para>
+              </entry>
             </row>
             <row>
               <entry align="center" valign="middle">
@@ -2848,10 +3289,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               </entry>
               <entry>
                 <programlisting>
-  xvcmpgesp.  t,b,a
-  mfocrf      u,2
-  rlwinm      r,u,25,1
+  xvcmpgesp. t,b,a
+  mfocrf     u,2
+  rlwinm     r,u,25,1
 		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
               </entry>
 	    </row>
             <row>
@@ -2866,10 +3311,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               </entry>
               <entry>
                 <programlisting>
-  xvcmpgedp.  t,b,a
-  mfocrf      u,2
-  rlwinm      r,u,25,1
+  xvcmpgedp. t,b,a
+  mfocrf     u,2
+  rlwinm     r,u,25,1
 		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
               </entry>
             </row>
           </tbody>
@@ -2898,6 +3347,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
+      <para revisionflag="added">
+	<emphasis role="bold">Review status:</emphasis>
+	Not yet reviewed.
+      </para>
       
       <indexterm>
 	<primary>vcmpgtsb.</primary>
@@ -2932,6 +3385,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 	<secondary>vec_all_lt</secondary>
       </indexterm>
       <indexterm>
+	<primary>vcmpgtsq.</primary>
+	<secondary>vec_all_lt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtuq.</primary>
+	<secondary>vec_all_lt</secondary>
+      </indexterm>
+      <indexterm>
 	<primary>vcmpgtsh.</primary>
 	<secondary>vec_all_lt</secondary>
       </indexterm>
@@ -2950,30 +3411,34 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 
       <table frame="all">
       <title>Supported type signatures for vec_all_lt</title>
-      <tgroup cols="4">
+      <tgroup cols="5">
           <colspec colname="c1" colwidth="20*" />
           <colspec colname="c2" colwidth="20*" />
           <colspec colname="c3" colwidth="20*" />
           <colspec colname="c4" colwidth="20*" />
+          <colspec colname="c5" colwidth="20*" />
           <thead>
             <row>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
                   <emphasis role="bold">r</emphasis>
                 </para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
                   <emphasis role="bold">a</emphasis>
                 </para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
                   <emphasis role="bold">b</emphasis>
                 </para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para><emphasis role="bold">Example Implementation</emphasis></para>
+              </entry>
+              <entry align="center" valign="middle" revisionflag="added">
+                <para><emphasis role="bold">Restrictions</emphasis></para>
               </entry>
             </row>
           </thead>
@@ -2995,6 +3460,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   rlwinm     r,u,25,1
 		</programlisting>
               </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
+              </entry>
             </row>
             <row>
               <entry align="center" valign="middle">
@@ -3012,6 +3481,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   mfocrf     u,2
   rlwinm     r,u,25,1
 		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
               </entry>
             </row>
             <row>
@@ -3031,6 +3504,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   rlwinm     r,u,25,1
 		</programlisting>
               </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
+              </entry>
             </row>
             <row>
               <entry align="center" valign="middle">
@@ -3048,6 +3525,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   mfocrf     u,2
   rlwinm     r,u,25,1
 		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
               </entry>
             </row>
             <row>
@@ -3067,6 +3548,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   rlwinm     r,u,25,1
 		</programlisting>
               </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
+              </entry>
             </row>
             <row>
               <entry align="center" valign="middle">
@@ -3084,6 +3569,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   mfocrf     u,2
   rlwinm     r,u,25,1
 		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
               </entry>
             </row>
             <row>
@@ -3103,6 +3592,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   rlwinm     r,u,25,1
 		</programlisting>
               </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
+              </entry>
             </row>
             <row>
               <entry align="center" valign="middle">
@@ -3121,6 +3614,56 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   rlwinm     r,u,25,1
 		</programlisting>
               </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
+              </entry>
+            </row>
+            <row revisionflag="added">
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed __int128</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed __int128</para>
+              </entry>
+              <entry>
+                <programlisting>
+  vcmpgtsq.  t,b,a
+  mfocrf     u,2
+  rlwinm     r,u,25,1
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		  ISA 3.1 or later
+		</para>
+              </entry>
+            </row>
+            <row revisionflag="added">
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned __int128</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned __int128</para>
+              </entry>
+              <entry>
+                <programlisting>
+  vcmpgtuq.  t,b,a
+  mfocrf     u,2
+  rlwinm     r,u,25,1
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		  ISA 3.1 or later
+		</para>
+              </entry>
             </row>
             <row>
               <entry align="center" valign="middle">
@@ -3134,10 +3677,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               </entry>
               <entry>
                 <programlisting>
-  xvcmpgtsp.  t,b,a
-  mfocrf      u,2
-  rlwinm      r,u,25,1
+  xvcmpgtsp. t,b,a
+  mfocrf     u,2
+  rlwinm     r,u,25,1
 		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
               </entry>
             </row>
             <row>
@@ -3152,10 +3699,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               </entry>
               <entry>
                 <programlisting>
-  xvcmpgtdp.  t,b,a
-  mfocrf      u,2
-  rlwinm      r,u,25,1
+  xvcmpgtdp. t,b,a
+  mfocrf     u,2
+  rlwinm     r,u,25,1
 		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
               </entry>
             </row>
           </tbody>
@@ -3281,6 +3832,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
+      <para revisionflag="added">
+	<emphasis role="bold">Review status:</emphasis>
+	Not yet reviewed.
+      </para>
       
       <indexterm>
 	<primary>vcmpneb.</primary>
@@ -3303,6 +3858,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 	<secondary>vec_all_ne</secondary>
       </indexterm>
       <indexterm>
+	<primary>vcmpequq.</primary>
+	<secondary>vec_all_ne</secondary>
+      </indexterm>
+      <indexterm>
 	<primary>vcmpneh.</primary>
 	<secondary>vec_all_ne</secondary>
       </indexterm>
@@ -3317,30 +3876,36 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 
       <table frame="all">
       <title>Supported type signatures for vec_all_ne</title>
-      <tgroup cols="4">
+      <tgroup cols="5">
           <colspec colname="c1" colwidth="20*" />
           <colspec colname="c2" colwidth="20*" />
           <colspec colname="c3" colwidth="20*" />
           <colspec colname="c4" colwidth="20*" />
+          <colspec colname="c5" colwidth="20*" />
           <thead>
             <row>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
                   <emphasis role="bold">r</emphasis>
                 </para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
                   <emphasis role="bold">a</emphasis>
                 </para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
                   <emphasis role="bold">b</emphasis>
                 </para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para><emphasis role="bold">Example Implementation</emphasis></para>
+              </entry>
+              <entry align="center" valign="middle" revisionflag="added">
+                <para>
+		  <emphasis role="bold">Restrictions</emphasis>
+		</para>
               </entry>
             </row>
           </thead>
@@ -3362,6 +3927,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   rlwinm    r,u,25,1
 		</programlisting>
               </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
+              </entry>
             </row>
             <row>
               <entry align="center" valign="middle">
@@ -3379,6 +3948,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   mfocrf    u,2
   rlwinm    r,u,25,1
 		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
               </entry>
             </row>
             <row>
@@ -3398,6 +3971,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   rlwinm    r,u,25,1
 		</programlisting>
               </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
+              </entry>
 	    </row>
             <row>
               <entry align="center" valign="middle">
@@ -3415,6 +3992,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   mfocrf    u,2
   rlwinm    r,u,25,1
 		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
               </entry>
             </row>
             <row>
@@ -3434,6 +4015,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   rlwinm    r,u,25,1
 		</programlisting>
               </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
+              </entry>
             </row>
             <row>
               <entry align="center" valign="middle">
@@ -3451,6 +4036,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   mfocrf    u,2
   rlwinm    r,u,25,1
 		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
               </entry>
             </row>
             <row>
@@ -3470,6 +4059,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   rlwinm    r,u,25,1
 		</programlisting>
               </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
+              </entry>
             </row>
             <row>
               <entry align="center" valign="middle">
@@ -3487,6 +4080,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   mfocrf    u,2
   rlwinm    r,u,25,1
 		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
               </entry>
             </row>
             <row>
@@ -3506,6 +4103,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   rlwinm    r,u,25,1
 		</programlisting>
               </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
+              </entry>
             </row>
             <row>
               <entry align="center" valign="middle">
@@ -3523,6 +4124,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   mfocrf    u,2
   rlwinm    r,u,25,1
 		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
               </entry>
             </row>
             <row>
@@ -3542,6 +4147,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   rlwinm     r,u,27,1
 		</programlisting>
               </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
+              </entry>
             </row>
             <row>
               <entry align="center" valign="middle">
@@ -3559,6 +4168,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   mfocrf     u,2
   rlwinm     r,u,27,1
 		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
               </entry>
             </row>
             <row>
@@ -3578,6 +4191,79 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   rlwinm     r,u,27,1
 		</programlisting>
               </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
+              </entry>
+            </row>
+            <row revisionflag="added">
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector bool __int128</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector bool __int128</para>
+              </entry>
+              <entry>
+                <programlisting>
+  vcmpequq.  t,a,b
+  mfocrf     u,2
+  rlwinm     r,u,27,1
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		  ISA 3.1 or later
+		</para>
+              </entry>
+            </row>
+            <row revisionflag="added">
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed __int128</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed __int128</para>
+              </entry>
+              <entry>
+                <programlisting>
+  vcmpequq.  t,a,b
+  mfocrf     u,2
+  rlwinm     r,u,27,1
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		  ISA 3.1 or later
+		</para>
+              </entry>
+            </row>
+            <row revisionflag="added">
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned __int128</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned __int128</para>
+              </entry>
+              <entry>
+                <programlisting>
+  vcmpequq.  t,a,b
+  mfocrf     u,2
+  rlwinm     r,u,27,1
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		  ISA 3.1 or later
+		</para>
+              </entry>
             </row>
             <row>
               <entry align="center" valign="middle">
@@ -3591,10 +4277,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               </entry>
               <entry>
                 <programlisting>
-  xvcmpeqsp.  t,a,b
-  mfocrf      u,2
-  rlwinm      r,u,27,1
+  xvcmpeqsp. t,a,b
+  mfocrf     u,2
+  rlwinm     r,u,27,1
 		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
               </entry>
             </row>
             <row>
@@ -3609,10 +4299,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               </entry>
               <entry>
                 <programlisting>
-  xvcmpeqdp.  t,a,b
-  mfocrf      u,2
-  rlwinm      r,u,27,1
+  xvcmpeqdp. t,a,b
+  mfocrf     u,2
+  rlwinm     r,u,27,1
 		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
               </entry>
             </row>
           </tbody>
@@ -4827,6 +5521,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
+      <para revisionflag="added">
+	<emphasis role="bold">Restrictions:</emphasis>
+	Not yet reviewed.
+      </para>
       
       <indexterm>
 	<primary>vcmpneb.</primary>
@@ -4857,6 +5555,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 	<secondary>vec_any_eq</secondary>
       </indexterm>
       <indexterm>
+	<primary>vcmpequq.</primary>
+	<secondary>vec_any_eq</secondary>
+      </indexterm>
+      <indexterm>
 	<primary>vcmpneh.</primary>
 	<secondary>vec_any_eq</secondary>
       </indexterm>
@@ -4871,30 +5573,36 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 
       <table frame="all">
       <title>Supported type signatures for vec_any_eq</title>
-      <tgroup cols="4">
+      <tgroup cols="5">
           <colspec colname="c1" colwidth="20*" />
           <colspec colname="c2" colwidth="20*" />
           <colspec colname="c3" colwidth="20*" />
           <colspec colname="c4" colwidth="20*" />
+          <colspec colname="c5" colwidth="20*" />
           <thead>
             <row>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
                   <emphasis role="bold">r</emphasis>
                 </para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
                   <emphasis role="bold">a</emphasis>
                 </para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
                   <emphasis role="bold">b</emphasis>
                 </para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para><emphasis role="bold">Example Implementation</emphasis></para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para revisionflag="added">
+		  <emphasis role="bold">Restrictions</emphasis>
+		</para>
               </entry>
             </row>
           </thead>
@@ -4918,6 +5626,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   srwi      r,w,5
 		</programlisting>
               </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
+              </entry>
             </row>
             <row>
               <entry align="center" valign="middle">
@@ -4937,6 +5649,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   cntlzw    w,v
   srwi      r,w,5
 		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
               </entry>
             </row>
             <row>
@@ -4958,6 +5674,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   srwi      r,w,5
 		</programlisting>
               </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
+              </entry>
             </row>
             <row>
               <entry align="center" valign="middle">
@@ -4977,6 +5697,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   cntlzw    w,v
   srwi      r,w,5
 		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
               </entry>
             </row>
             <row>
@@ -4998,6 +5722,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   srwi      r,w,5
 		</programlisting>
               </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
+              </entry>
             </row>
             <row>
               <entry align="center" valign="middle">
@@ -5017,6 +5745,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   cntlzw    w,v
   srwi      r,w,5
 		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
               </entry>
             </row>
             <row>
@@ -5038,6 +5770,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   srwi      r,w,5
 		</programlisting>
               </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
+              </entry>
             </row>
             <row>
               <entry align="center" valign="middle">
@@ -5057,6 +5793,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   cntlzw    w,v
   srwi      r,w,5
 		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
               </entry>
             </row>
             <row>
@@ -5078,6 +5818,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   srwi      r,w,5
 		</programlisting>
               </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
+              </entry>
             </row>
             <row>
               <entry align="center" valign="middle">
@@ -5097,6 +5841,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   cntlzw    w,v
   srwi      r,w,5
 		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
               </entry>
             </row>
             <row>
@@ -5118,6 +5866,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   srwi       r,w,5
 		</programlisting>
               </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
+              </entry>
             </row>
             <row>
               <entry align="center" valign="middle">
@@ -5137,6 +5889,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   cntlzw     w,v
   srwi       r,w,5
 		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
               </entry>
             </row>
             <row>
@@ -5158,6 +5914,85 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   srwi       r,w,5
 		</programlisting>
               </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
+              </entry>
+            </row>
+            <row revisionflag="added">
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector bool __int128</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector bool __int128</para>
+              </entry>
+              <entry>
+                <programlisting>
+  vcmpequq.  t,a,b
+  mfocrf     u,2
+  rlwinm     v,u,27,1
+  cntlzw     w,v
+  srwi       r,w,5
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		  ISA 3.1 or later
+		</para>
+              </entry>
+            </row>
+            <row revisionflag="added">
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed __int128</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed __int128</para>
+              </entry>
+              <entry>
+                <programlisting>
+  vcmpequq.  t,a,b
+  mfocrf     u,2
+  rlwinm     v,u,27,1
+  cntlzw     w,v
+  srwi       r,w,5
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		  ISA 3.1 or later
+		</para>
+              </entry>
+            </row>
+            <row revisionflag="added">
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned __int128</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned __int128</para>
+              </entry>
+              <entry>
+                <programlisting>
+  vcmpequq.  t,a,b
+  mfocrf     u,2
+  rlwinm     v,u,27,1
+  cntlzw     w,v
+  srwi       r,w,5
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		  ISA 3.1 or later
+		</para>
+              </entry>
             </row>
             <row>
               <entry align="center" valign="middle">
@@ -5171,12 +6006,16 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               </entry>
               <entry>
                 <programlisting>
-  xvcmpeqsp.  t,a,b
-  mfocrf      u,2
-  rlwinm      v,u,27,1
-  cntlzw      w,v
-  srwi        r,w,5
+  xvcmpeqsp. t,a,b
+  mfocrf     u,2
+  rlwinm     v,u,27,1
+  cntlzw     w,v
+  srwi       r,w,5
 		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
               </entry>
             </row>
             <row>
@@ -5191,12 +6030,16 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               </entry>
               <entry>
                 <programlisting>
-  xvcmpeqdp.  t,a,b
-  mfocrf      u,2
-  rlwinm      v,u,27,1
-  cntlzw      w,v
-  srwi        r,w,5
+  xvcmpeqdp. t,a,b
+  mfocrf     u,2
+  rlwinm     v,u,27,1
+  cntlzw     w,v
+  srwi       r,w,5
 		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
               </entry>
             </row>
           </tbody>
@@ -5225,6 +6068,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
+      <para revisionflag="added">
+	<emphasis role="bold">Review status:</emphasis>
+	Not yet reviewed.
+      </para>
       
       <indexterm>
 	<primary>vcmpgtsb.</primary>
@@ -5267,6 +6114,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 	<secondary>vec_any_ge</secondary>
       </indexterm>
       <indexterm>
+	<primary>vcmpgtsq.</primary>
+	<secondary>vec_any_ge</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtuq.</primary>
+	<secondary>vec_any_ge</secondary>
+      </indexterm>
+      <indexterm>
 	<primary>vcmpgtsh.</primary>
 	<secondary>vec_any_ge</secondary>
       </indexterm>
@@ -5285,30 +6140,34 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 
       <table frame="all">
       <title>Supported type signatures for vec_any_ge</title>
-      <tgroup cols="4">
+      <tgroup cols="5">
           <colspec colname="c1" colwidth="20*" />
           <colspec colname="c2" colwidth="20*" />
           <colspec colname="c3" colwidth="20*" />
           <colspec colname="c4" colwidth="20*" />
+          <colspec colname="c5" colwidth="20*" />
           <thead>
             <row>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
                   <emphasis role="bold">r</emphasis>
                 </para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
                   <emphasis role="bold">a</emphasis>
                 </para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
                   <emphasis role="bold">b</emphasis>
                 </para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para><emphasis role="bold">Example Implementation</emphasis></para>
+              </entry>
+              <entry align="center" valign="middle" revisionflag="added">
+                <para><emphasis role="bold">Restrictions</emphasis></para>
               </entry>
             </row>
           </thead>
@@ -5332,6 +6191,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   srwi       r,w,5
 		</programlisting>
               </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
+              </entry>
             </row>
             <row>
               <entry align="center" valign="middle">
@@ -5352,85 +6215,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   srwi       r,w,5
 		</programlisting>
               </entry>
-            </row>
-            <row>
               <entry align="center" valign="middle">
-                <para>int</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para>vector signed int</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para> vector signed int</para>
-              </entry>
-              <entry>
-                <programlisting>
-  vcmpgtsw.  t,b,a
-  mfocrf     u,2
-  rlwinm     v,u,25,1
-  cntlzw     w,v
-  srwi       r,w,5
-		</programlisting>
-              </entry>
-            </row>
-            <row>
-              <entry align="center" valign="middle">
-                <para>int</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para>vector unsigned int</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para> vector unsigned int</para>
-              </entry>
-              <entry>
-                <programlisting>
-  vcmpgtuw.  t,b,a
-  mfocrf     u,2
-  rlwinm     v,u,25,1
-  cntlzw     w,v
-  srwi       r,w,5
-		</programlisting>
-              </entry>
-            </row>
-            <row>
-              <entry align="center" valign="middle">
-                <para>int</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para>vector signed long long</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para> vector signed long long</para>
-              </entry>
-              <entry>
-                <programlisting>
-  vcmpgtsd.  t,b,a
-  mfocrf     u,2
-  rlwinm     v,u,25,1
-  cntlzw     w,v
-  srwi       r,w,5
-		</programlisting>
-              </entry>
-            </row>
-            <row>
-              <entry align="center" valign="middle">
-                <para>int</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para>vector unsigned long long</para>
-              </entry>
-              <entry align="center" valign="middle">
-                <para> vector unsigned long long</para>
-              </entry>
-              <entry>
-                <programlisting>
-  vcmpgtud.  t,b,a
-  mfocrf     u,2
-  rlwinm     v,u,25,1
-  cntlzw     w,v
-  srwi       r,w,5
-		</programlisting>
+                <para>
+		</para>
               </entry>
             </row>
             <row>
@@ -5452,6 +6239,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   srwi       r,w,5
 		</programlisting>
               </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
+              </entry>
             </row>
             <row>
               <entry align="center" valign="middle">
@@ -5472,6 +6263,252 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   srwi       r,w,5
 		</programlisting>
               </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector signed int</para>
+              </entry>
+              <entry>
+                <programlisting>
+  vcmpgtsw.  t,b,a
+  mfocrf     u,2
+  rlwinm     v,u,25,1
+  cntlzw     w,v
+  srwi       r,w,5
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector unsigned int</para>
+              </entry>
+              <entry>
+                <programlisting>
+  vcmpgtuw.  t,b,a
+  mfocrf     u,2
+  rlwinm     v,u,25,1
+  cntlzw     w,v
+  srwi       r,w,5
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector signed long long</para>
+              </entry>
+              <entry>
+                <programlisting>
+  vcmpgtsd.  t,b,a
+  mfocrf     u,2
+  rlwinm     v,u,25,1
+  cntlzw     w,v
+  srwi       r,w,5
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector unsigned long long</para>
+              </entry>
+              <entry>
+                <programlisting>
+  vcmpgtud.  t,b,a
+  mfocrf     u,2
+  rlwinm     v,u,25,1
+  cntlzw     w,v
+  srwi       r,w,5
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector signed long long</para>
+              </entry>
+              <entry>
+                <programlisting>
+  vcmpgtsd.  t,b,a
+  mfocrf     u,2
+  rlwinm     v,u,25,1
+  cntlzw     w,v
+  srwi       r,w,5
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector unsigned long long</para>
+              </entry>
+              <entry>
+                <programlisting>
+  vcmpgtud.  t,b,a
+  mfocrf     u,2
+  rlwinm     v,u,25,1
+  cntlzw     w,v
+  srwi       r,w,5
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector signed long long</para>
+              </entry>
+              <entry>
+                <programlisting>
+  vcmpgtsd.  t,b,a
+  mfocrf     u,2
+  rlwinm     v,u,25,1
+  cntlzw     w,v
+  srwi       r,w,5
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector unsigned long long</para>
+              </entry>
+              <entry>
+                <programlisting>
+  vcmpgtud.  t,b,a
+  mfocrf     u,2
+  rlwinm     v,u,25,1
+  cntlzw     w,v
+  srwi       r,w,5
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
+              </entry>
+            </row>
+            <row revisionflag="added">
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed __int128</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed __int128</para>
+              </entry>
+              <entry>
+                <programlisting>
+  vcmpgtsq.  t,b,a
+  mfocrf     u,2
+  rlwinm     v,u,25,1
+  cntlzw     w,v
+  srwi       r,w,5
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		  ISA 3.1 or later
+		</para>
+              </entry>
+            </row>
+            <row revisionflag="added">
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned __int128</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned __int128</para>
+              </entry>
+              <entry>
+                <programlisting>
+  vcmpgtuq.  t,b,a
+  mfocrf     u,2
+  rlwinm     v,u,25,1
+  cntlzw     w,v
+  srwi       r,w,5
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		  ISA 3.1 or later
+		</para>
+              </entry>
             </row>
             <row>
               <entry align="center" valign="middle">
@@ -5485,12 +6522,16 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               </entry>
               <entry>
                 <programlisting>
-  xvcmpgedp.  t,a,b
-  mfocrf      u,2
-  rlwinm      v,u,27,1
-  cntlzw      w,v
-  srwi        r,w,5
+  xvcmpgedp. t,a,b
+  mfocrf     u,2
+  rlwinm     v,u,27,1
+  cntlzw     w,v
+  srwi       r,w,5
 		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
               </entry>
             </row>
             <row>
@@ -5505,12 +6546,16 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               </entry>
               <entry>
                 <programlisting>
-  vcmpgesp.  t,a,b
-  mfocrf     u,2
-  rlwinm     v,u,27,1
-  cntlzw     w,v
-  srwi       r,w,5
+  vcmpgesp. t,a,b
+  mfocrf    u,2
+  rlwinm    v,u,27,1
+  cntlzw    w,v
+  srwi      r,w,5
 		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
               </entry>
             </row>
           </tbody>
@@ -5539,6 +6584,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
+      <para revisionflag="added">
+	<emphasis role="bold">Review status:</emphasis>
+	Not yet reviewed.
+      </para>
       
       <indexterm>
 	<primary>vcmpgtsb.</primary>
@@ -5581,6 +6630,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 	<secondary>vec_any_gt</secondary>
       </indexterm>
       <indexterm>
+	<primary>vcmpgtsq.</primary>
+	<secondary>vec_any_gt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtuq.</primary>
+	<secondary>vec_any_gt</secondary>
+      </indexterm>
+      <indexterm>
 	<primary>vcmpgtsh.</primary>
 	<secondary>vec_any_gt</secondary>
       </indexterm>
@@ -5599,30 +6656,34 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 
       <table frame="all">
       <title>Supported type signatures for vec_any_gt</title>
-      <tgroup cols="4">
+      <tgroup cols="5">
           <colspec colname="c1" colwidth="20*" />
           <colspec colname="c2" colwidth="20*" />
           <colspec colname="c3" colwidth="20*" />
           <colspec colname="c4" colwidth="20*" />
+          <colspec colname="c5" colwidth="20*" />
           <thead>
             <row>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
                   <emphasis role="bold">r</emphasis>
                 </para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
                   <emphasis role="bold">a</emphasis>
                 </para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
                   <emphasis role="bold">b</emphasis>
                 </para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para><emphasis role="bold">Example Implementation</emphasis></para>
+              </entry>
+              <entry align="center" valign="middle" revisionflag="added">
+                <para><emphasis role="bold">Restrictions</emphasis></para>
               </entry>
             </row>
           </thead>
@@ -5646,6 +6707,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   srwi       r,w,5
 		</programlisting>
               </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
+              </entry>
             </row>
             <row>
               <entry align="center" valign="middle">
@@ -5665,6 +6730,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   cntlzw     w,v
   srwi       r,w,5
 		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
               </entry>
             </row>
             <row>
@@ -5686,6 +6755,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   srwi       r,w,5
 		</programlisting>
               </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
+              </entry>
             </row>
             <row>
               <entry align="center" valign="middle">
@@ -5705,6 +6778,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   cntlzw     w,v
   srwi       r,w,5
 		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
               </entry>
             </row>
             <row>
@@ -5726,6 +6803,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   srwi       r,w,5
 		</programlisting>
               </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
+              </entry>
             </row>
             <row>
               <entry align="center" valign="middle">
@@ -5745,6 +6826,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   cntlzw     w,v
   srwi       r,w,5
 		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
               </entry>
             </row>
             <row>
@@ -5766,6 +6851,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   srwi       r,w,5
 		</programlisting>
               </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
+              </entry>
             </row>
             <row>
               <entry align="center" valign="middle">
@@ -5786,6 +6875,60 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   srwi       r,w,5
 		</programlisting>
               </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
+              </entry>
+            </row>
+            <row revisionflag="added">
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed __int128</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed __int128</para>
+              </entry>
+              <entry>
+                <programlisting>
+  vcmpgtsq.  t,a,b
+  mfocrf     u,2
+  rlwinm     v,u,27,1
+  cntlzw     w,v
+  srwi       r,w,5
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		  ISA 3.1 or later
+		</para>
+              </entry>
+            </row>
+            <row revisionflag="added">
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned __int128</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned __int128</para>
+              </entry>
+              <entry>
+                <programlisting>
+  vcmpgtuq.  t,a,b
+  mfocrf     u,2
+  rlwinm     v,u,27,1
+  cntlzw     w,v
+  srwi       r,w,5
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		  ISA 3.1 or later
+		</para>
+              </entry>
             </row>
             <row>
               <entry align="center" valign="middle">
@@ -5799,12 +6942,16 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               </entry>
               <entry>
                 <programlisting>
-  xvcmpgtsp.  t,a,b
-  mfocrf      u,2
-  rlwinm      v,u,27,1
-  cntlzw      w,v
-  srwi        r,w,5
+  xvcmpgtsp. t,a,b
+  mfocrf     u,2
+  rlwinm     v,u,27,1
+  cntlzw     w,v
+  srwi       r,w,5
 		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
               </entry>
             </row>
             <row>
@@ -5819,12 +6966,16 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               </entry>
               <entry>
                 <programlisting>
-  xvcmpgtdp.  t,a,b
-  mfocrf      u,2
-  rlwinm      v,u,27,1
-  cntlzw      w,v
-  srwi        r,w,5
+  xvcmpgtdp. t,a,b
+  mfocrf     u,2
+  rlwinm     v,u,27,1
+  cntlzw     w,v
+  srwi       r,w,5
 		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
               </entry>
             </row>
           </tbody>
@@ -5853,6 +7004,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
+      <para revisionflag="added">
+	<emphasis role="bold">Review status:</emphasis>
+	Not yet reviewed.
+      </para>
       
       <indexterm>
 	<primary>vcmpgtsb.</primary>
@@ -5895,6 +7050,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 	<secondary>vec_any_le</secondary>
       </indexterm>
       <indexterm>
+	<primary>vcmpgtsq.</primary>
+	<secondary>vec_any_le</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtuq.</primary>
+	<secondary>vec_any_le</secondary>
+      </indexterm>
+      <indexterm>
 	<primary>vcmpgtsh.</primary>
 	<secondary>vec_any_le</secondary>
       </indexterm>
@@ -5913,30 +7076,34 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 
       <table frame="all">
       <title>Supported type signatures for vec_any_le</title>
-      <tgroup cols="4">
+      <tgroup cols="5">
           <colspec colname="c1" colwidth="20*" />
           <colspec colname="c2" colwidth="20*" />
           <colspec colname="c3" colwidth="20*" />
           <colspec colname="c4" colwidth="20*" />
+          <colspec colname="c5" colwidth="20*" />
           <thead>
             <row>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
                   <emphasis role="bold">r</emphasis>
                 </para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
                   <emphasis role="bold">a</emphasis>
                 </para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
                   <emphasis role="bold">b</emphasis>
                 </para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para><emphasis role="bold">Example Implementation</emphasis></para>
+              </entry>
+              <entry align="center" valign="middle" revisionflag="added">
+                <para><emphasis role="bold">Restrictions</emphasis></para>
               </entry>
             </row>
           </thead>
@@ -5960,6 +7127,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   srwi       r,w,5
 		</programlisting>
               </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
+              </entry>
             </row>
             <row>
               <entry align="center" valign="middle">
@@ -5979,6 +7150,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   cntlzw     w,v
   srwi       r,w,5
 		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
               </entry>
             </row>
             <row>
@@ -6000,6 +7175,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   srwi       r,w,5
 		</programlisting>
               </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
+              </entry>
             </row>
             <row>
               <entry align="center" valign="middle">
@@ -6020,6 +7199,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   srwi       r,w,5
 		</programlisting>
 	      </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
+              </entry>
             </row>
             <row>
               <entry align="center" valign="middle">
@@ -6039,6 +7222,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   cntlzw     w,v
   srwi       r,w,5
 		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
               </entry>
             </row>
             <row>
@@ -6060,6 +7247,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   srwi       r,w,5
 		</programlisting>
               </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
+              </entry>
             </row>
             <row>
               <entry align="center" valign="middle">
@@ -6079,6 +7270,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   cntlzw     w,v
   srwi       r,w,5
 		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
               </entry>
             </row>
             <row>
@@ -6100,6 +7295,108 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   srwi       r,w,5
 		</programlisting>
               </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector signed long long</para>
+              </entry>
+              <entry>
+                <programlisting>
+  vcmpgtsd.  t,a,b
+  mfocrf     u,2
+  rlwinm     v,u,25,1
+  cntlzw     w,v
+  srwi       r,w,5
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector unsigned long long</para>
+              </entry>
+              <entry>
+                <programlisting>
+  vcmpgtud.  t,a,b
+  mfocrf     u,2
+  rlwinm     v,u,25,1
+  cntlzw     w,v
+  srwi       r,w,5
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
+              </entry>
+            </row>
+            <row revisionflag="added">
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed __int128</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed __int128</para>
+              </entry>
+              <entry>
+                <programlisting>
+  vcmpgtsq.  t,a,b
+  mfocrf     u,2
+  rlwinm     v,u,25,1
+  cntlzw     w,v
+  srwi       r,w,5
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		  ISA 3.1 or later
+		</para>
+              </entry>
+            </row>
+            <row revisionflag="added">
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned __int128</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned __int128</para>
+              </entry>
+              <entry>
+                <programlisting>
+  vcmpgtuq.  t,a,b
+  mfocrf     u,2
+  rlwinm     v,u,25,1
+  cntlzw     w,v
+  srwi       r,w,5
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		  ISA 3.1 or later
+		</para>
+              </entry>
             </row>
             <row>
               <entry align="center" valign="middle">
@@ -6113,12 +7410,16 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               </entry>
               <entry>
                 <programlisting>
-  xvcmpgesp.  t,b,a
-  mfocrf      u,2
-  rlwinm      v,u,27,1
-  cntlzw      w,v
-  srwi        r,w,5
+  xvcmpgesp. t,b,a
+  mfocrf     u,2
+  rlwinm     v,u,27,1
+  cntlzw     w,v
+  srwi       r,w,5
 		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
               </entry>
             </row>
             <row>
@@ -6133,12 +7434,16 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               </entry>
               <entry>
                 <programlisting>
-  xvcmpgedp.  t,b,a
-  mfocrf      u,2
-  rlwinm      v,u,27,1
-  cntlzw      w,v
-  srwi        r,w,5
+  xvcmpgedp. t,b,a
+  mfocrf     u,2
+  rlwinm     v,u,27,1
+  cntlzw     w,v
+  srwi       r,w,5
 		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
               </entry>
             </row>
           </tbody>
@@ -6166,6 +7471,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
+      <para revisionflag="added">
+	<emphasis role="bold">Review status:</emphasis>
+	Not yet reviewed.
+      </para>
       
       <indexterm>
 	<primary>vcmpgtsb.</primary>
@@ -6208,6 +7517,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 	<secondary>vec_any_lt</secondary>
       </indexterm>
       <indexterm>
+	<primary>vcmpgtsq.</primary>
+	<secondary>vec_any_lt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtuq.</primary>
+	<secondary>vec_any_lt</secondary>
+      </indexterm>
+      <indexterm>
 	<primary>vcmpgtsh.</primary>
 	<secondary>vec_any_lt</secondary>
       </indexterm>
@@ -6226,30 +7543,36 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 
       <table frame="all">
       <title>Supported type signatures for vec_any_lt</title>
-      <tgroup cols="4">
+      <tgroup cols="5">
           <colspec colname="c1" colwidth="20*" />
           <colspec colname="c2" colwidth="20*" />
           <colspec colname="c3" colwidth="20*" />
           <colspec colname="c4" colwidth="20*" />
+          <colspec colname="c5" colwidth="20*" />
           <thead>
             <row>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
                   <emphasis role="bold">r</emphasis>
                 </para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
                   <emphasis role="bold">a</emphasis>
                 </para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
                   <emphasis role="bold">b</emphasis>
                 </para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para><emphasis role="bold">Example Implementation</emphasis></para>
+              </entry>
+              <entry align="center" valign="middle" revisionflag="added">
+                <para>
+		  <emphasis role="bold">Restrictions</emphasis>
+		</para>
               </entry>
             </row>
           </thead>
@@ -6273,6 +7596,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   srwi       r,w,5
 		</programlisting>
               </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
+              </entry>
             </row>
             <row>
               <entry align="center" valign="middle">
@@ -6292,6 +7619,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   cntlzw     w,v
   srwi       r,w,5
 		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
               </entry>
             </row>
             <row>
@@ -6313,6 +7644,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   srwi       r,w,5
 		</programlisting>
               </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
+              </entry>
             </row>
             <row>
               <entry align="center" valign="middle">
@@ -6332,6 +7667,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   cntlzw     w,v
   srwi       r,w,5
 		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
               </entry>
             </row>
             <row>
@@ -6353,6 +7692,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   srwi       r,w,5
 		</programlisting>
               </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
+              </entry>
             </row>
             <row>
               <entry align="center" valign="middle">
@@ -6372,6 +7715,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   cntlzw     w,v
   srwi       r,w,5
 		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
               </entry>
             </row>
             <row>
@@ -6393,6 +7740,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   srwi       r,w,5
 		</programlisting>
               </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
+              </entry>
             </row>
             <row>
               <entry align="center" valign="middle">
@@ -6413,6 +7764,60 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   srwi       r,w,5
 		</programlisting>
               </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
+              </entry>
+            </row>
+            <row revisionflag="added">
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed __int128</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed __int128</para>
+              </entry>
+              <entry>
+                <programlisting>
+  vcmpgtsq.  t,b,a
+  mfocrf     u,2
+  rlwinm     v,u,27,1
+  cntlzw     w,v
+  srwi       r,w,5
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		  ISA 3.1 or later
+		</para>
+              </entry>
+            </row>
+            <row revisionflag="added">
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned __int128</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned __int128</para>
+              </entry>
+              <entry>
+                <programlisting>
+  vcmpgtuq.  t,b,a
+  mfocrf     u,2
+  rlwinm     v,u,27,1
+  cntlzw     w,v
+  srwi       r,w,5
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		  ISA 3.1 or later
+		</para>
+              </entry>
             </row>
             <row>
               <entry align="center" valign="middle">
@@ -6426,12 +7831,16 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               </entry>
               <entry>
                 <programlisting>
-  xvcmpgtsp.  t,b,a
-  mfocrf      u,2
-  rlwinm      v,u,27,1
-  cntlzw      w,v
-  srwi        r,w,5
+  xvcmpgtsp. t,b,a
+  mfocrf     u,2
+  rlwinm     v,u,27,1
+  cntlzw     w,v
+  srwi       r,w,5
 		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
               </entry>
             </row>
             <row>
@@ -6446,12 +7855,16 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               </entry>
               <entry>
                 <programlisting>
-  xvcmpgtdp.  t,b,a
-  mfocrf      u,2
-  rlwinm      v,u,27,1
-  cntlzw      w,v
-  srwi        r,w,5
+  xvcmpgtdp. t,b,a
+  mfocrf     u,2
+  rlwinm     v,u,27,1
+  cntlzw     w,v
+  srwi       r,w,5
 		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
               </entry>
             </row>
           </tbody>
@@ -6587,6 +8000,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
+      <para revisionflag="added">
+	<emphasis role="bold">Review status:</emphasis>
+	Not yet reviewed.
+      </para>
       
       <indexterm>
 	<primary>vcmpequb.</primary>
@@ -6617,6 +8034,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 	<secondary>vec_any_ne</secondary>
       </indexterm>
       <indexterm>
+	<primary>vcmpequq.</primary>
+	<secondary>vec_any_ne</secondary>
+      </indexterm>
+      <indexterm>
 	<primary>vcmpequh.</primary>
 	<secondary>vec_any_ne</secondary>
       </indexterm>
@@ -6631,30 +8052,36 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 
       <table frame="all">
       <title>Supported type signatures for vec_any_ne</title>
-      <tgroup cols="4">
+      <tgroup cols="5">
           <colspec colname="c1" colwidth="20*" />
           <colspec colname="c2" colwidth="20*" />
           <colspec colname="c3" colwidth="20*" />
           <colspec colname="c4" colwidth="20*" />
+          <colspec colname="c5" colwidth="20*" />
           <thead>
             <row>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
                   <emphasis role="bold">r</emphasis>
                 </para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
                   <emphasis role="bold">a</emphasis>
                 </para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
                   <emphasis role="bold">b</emphasis>
                 </para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para><emphasis role="bold">Example Implementation</emphasis></para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		  <emphasis role="bold">Restrictions</emphasis>
+		</para>
               </entry>
             </row>
           </thead>
@@ -6678,6 +8105,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   srwi       r,w,5
 		</programlisting>
               </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
+              </entry>
             </row>
             <row>
               <entry align="center" valign="middle">
@@ -6697,6 +8128,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   cntlzw     w,v
   srwi       r,w,5
 		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
               </entry>
             </row>
             <row>
@@ -6718,6 +8153,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   srwi       r,w,5
 		</programlisting>
               </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
+              </entry>
             </row>
             <row>
               <entry align="center" valign="middle">
@@ -6737,6 +8176,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   cntlzw     w,v
   srwi       r,w,5
 		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
               </entry>
             </row>
             <row>
@@ -6758,6 +8201,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   srwi       r,w,5
 		</programlisting>
               </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
+              </entry>
             </row>
             <row>
               <entry align="center" valign="middle">
@@ -6777,6 +8224,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   cntlzw     w,v
   srwi       r,w,5
 		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
               </entry>
             </row>
             <row>
@@ -6798,6 +8249,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   srwi       r,w,5
 		</programlisting>
               </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
+              </entry>
             </row>
             <row>
               <entry align="center" valign="middle">
@@ -6817,6 +8272,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   cntlzw     w,v
   srwi       r,w,5
 		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
               </entry>
             </row>
             <row>
@@ -6838,6 +8297,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   srwi       r,w,5
 		</programlisting>
               </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
+              </entry>
             </row>
             <row>
               <entry align="center" valign="middle">
@@ -6857,6 +8320,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   cntlzw     w,v
   srwi       r,w,5
 		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
               </entry>
             </row>
             <row>
@@ -6878,6 +8345,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   srwi       r,w,5
 		</programlisting>
               </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
+              </entry>
             </row>
             <row>
               <entry align="center" valign="middle">
@@ -6897,6 +8368,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   cntlzw     w,v
   srwi       r,w,5
 		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
               </entry>
             </row>
             <row>
@@ -6918,6 +8393,85 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   srwi       r,w,5
 		</programlisting>
               </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
+              </entry>
+            </row>
+            <row revisionflag="added">
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector bool __int128</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector bool __int128</para>
+              </entry>
+              <entry>
+                <programlisting>
+  vcmpequq.  t,a,b
+  mfocrf     u,2
+  rlwinm     v,u,25,1
+  cntlzw     w,v
+  srwi       r,w,5
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		  ISA 3.1 or later
+		</para>
+              </entry>
+            </row>
+            <row revisionflag="added">
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed __int128</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed __int128</para>
+              </entry>
+              <entry>
+                <programlisting>
+  vcmpequq.  t,a,b
+  mfocrf     u,2
+  rlwinm     v,u,25,1
+  cntlzw     w,v
+  srwi       r,w,5
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		  ISA 3.1 or later
+		</para>
+              </entry>
+            </row>
+            <row revisionflag="added">
+              <entry align="center" valign="middle">
+                <para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned __int128</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned __int128</para>
+              </entry>
+              <entry>
+                <programlisting>
+  vcmpequq.  t,a,b
+  mfocrf     u,2
+  rlwinm     v,u,25,1
+  cntlzw     w,v
+  srwi       r,w,5
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		  ISA 3.1 or later
+		</para>
+              </entry>
             </row>
             <row>
               <entry align="center" valign="middle">
@@ -6931,12 +8485,16 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               </entry>
               <entry>
                 <programlisting>
-  xvcmpeqsp.  t,a,b
-  mfocrf      u,2
-  rlwinm      v,u,25,1
-  cntlzw      w,v
-  srwi        r,w,5
+  xvcmpeqsp. t,a,b
+  mfocrf     u,2
+  rlwinm     v,u,25,1
+  cntlzw     w,v
+  srwi       r,w,5
 		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
               </entry>
             </row>
             <row>
@@ -6951,12 +8509,16 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               </entry>
               <entry>
                 <programlisting>
-  xvcmpeqdp.  t,a,b
-  mfocrf      u,2
-  rlwinm      v,u,25,1
-  cntlzw      w,v
-  srwi        r,w,5
+  xvcmpeqdp. t,a,b
+  mfocrf     u,2
+  rlwinm     v,u,25,1
+  cntlzw     w,v
+  srwi       r,w,5
 		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>
+		</para>
               </entry>
             </row>
           </tbody>
@@ -10187,6 +11749,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
+      <para revisionflag="added">
+	<emphasis role="bold">Review status:</emphasis>
+	Not yet reviewed.
+      </para>
       
       <indexterm>
 	<primary>vcmpgtsb</primary>
@@ -10225,6 +11791,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 	<secondary>vec_cmple</secondary>
       </indexterm>
       <indexterm>
+	<primary>vcmpgtsq</primary>
+	<secondary>vec_cmple</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vcmpgtuq</primary>
+	<secondary>vec_cmple</secondary>
+      </indexterm>
+      <indexterm>
 	<primary>xvcmpgesp</primary>
 	<secondary>vec_cmple</secondary>
       </indexterm>
@@ -10235,31 +11809,37 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 
       <table frame="all">
 	<title>Supported type signatures for vec_cmple</title>
-	<tgroup cols="4">
+	<tgroup cols="5">
           <colspec colname="c1" colwidth="20*" />
           <colspec colname="c2" colwidth="20*" />
           <colspec colname="c3" colwidth="20*" />
           <colspec colname="c4" colwidth="20*" />
+          <colspec colname="c5" colwidth="20*" />
           <thead>
             <row>
-              <entry align="center">
+              <entry align="center" valign="middle">
 		<para>
                   <emphasis role="bold">r</emphasis>
 		</para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
 		<para>
                   <emphasis role="bold">a</emphasis>
 		</para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
 		<para>
                   <emphasis role="bold">b</emphasis>
 		</para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
 		<para>
                   <emphasis role="bold">Example Implementation</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle" revisionflag="added">
+		<para>
+                  <emphasis role="bold">Restrictions</emphasis>
 		</para>
               </entry>
             </row>
@@ -10281,6 +11861,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
    xxlnor    r,t,t
 		</programlisting>
               </entry>
+              <entry align="center" valign="middle">
+		<para>
+		</para>
+              </entry>
             </row>
             <row>
               <entry align="center" valign="middle">
@@ -10297,6 +11881,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
    vcmpgtub  t,a,b
    xxlnor    r,t,t
 		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+		</para>
               </entry>
             </row>
             <row>
@@ -10315,6 +11903,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
    xxlnor    r,t,t
 		</programlisting>
               </entry>
+              <entry align="center" valign="middle">
+		<para>
+		</para>
+              </entry>
             </row>
             <row>
               <entry align="center" valign="middle">
@@ -10331,6 +11923,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
    vcmpgtuh  t,a,b
    xxlnor    r,t,t
 		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+		</para>
               </entry>
             </row>
             <row>
@@ -10349,6 +11945,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
    xxlnor    r,t,t
 		</programlisting>
               </entry>
+              <entry align="center" valign="middle">
+		<para>
+		</para>
+              </entry>
             </row>
             <row>
               <entry align="center" valign="middle">
@@ -10365,6 +11965,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
    vcmpgtuw  t,a,b
    xxlnor    r,t,t
 		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+		</para>
               </entry>
             </row>
             <row>
@@ -10383,6 +11987,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
    xxlnor    r,t,t
 		</programlisting>
               </entry>
+              <entry align="center" valign="middle">
+		<para>
+		</para>
+              </entry>
             </row>
             <row>
               <entry align="center" valign="middle">
@@ -10400,6 +12008,54 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
    xxlnor    r,t,t
 		</programlisting>
               </entry>
+              <entry align="center" valign="middle">
+		<para>
+		</para>
+              </entry>
+            </row>
+            <row revisionflag="added">
+              <entry align="center" valign="middle">
+		<para>vector bool __int128</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector signed __int128</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector signed __int128</para>
+              </entry>
+              <entry>
+		<programlisting>
+   vcmpgtsq  t,a,b
+   xxlnor    r,t,t
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+		  ISA 3.1 or later
+		</para>
+              </entry>
+            </row>
+            <row revisionflag="added">
+              <entry align="center" valign="middle">
+		<para>vector bool __int128</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned __int128</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned __int128</para>
+              </entry>
+              <entry>
+		<programlisting>
+   vcmpgtuq  t,a,b
+   xxlnor    r,t,t
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+		  ISA 3.1 or later
+		</para>
+              </entry>
             </row>
             <row>
               <entry align="center" valign="middle">
@@ -10416,6 +12072,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
    xvcmpgesp  r,b,a
 		</programlisting>
               </entry>
+              <entry align="center" valign="middle">
+		<para>
+		</para>
+              </entry>
             </row>
             <row>
               <entry align="center" valign="middle">
@@ -10431,6 +12091,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 		<programlisting>
    xvcmpgedp  r,b,a
 		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+		</para>
               </entry>
             </row>
           </tbody>
@@ -31431,6 +33095,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 	<primary>vrlh</primary>
 	<secondary>vec_rl</secondary>
       </indexterm>
+      <indexterm>
+	<primary>vrlq</primary>
+	<secondary>vec_rl</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xxswapd</primary>
+	<secondary>vec_rl</secondary>
+      </indexterm>
 
       <table frame="all">
       <title>Supported type signatures for vec_rl</title>
@@ -31587,6 +33259,72 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry>
                 <programlisting>
   vrld  r,a,b
+		</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector signed long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector unsigned long long</para>
+              </entry>
+              <entry>
+                <programlisting>
+  vrld  r,a,b
+		</programlisting>
+              </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+                <para>vector unsigned long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para> vector unsigned long long</para>
+              </entry>
+              <entry>
+                <programlisting>
+  vrld  r,a,b
+		</programlisting>
+              </entry>
+            </row>
+            <row revisionflag="added">
+              <entry align="center" valign="middle">
+                <para>vector signed __int128</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector signed __int128</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned __int128</para>
+              </entry>
+              <entry>
+                <programlisting>
+  xxswapd  t,b
+  vrlq     r,a,t
+		</programlisting>
+              </entry>
+            </row>
+            <row revisionflag="added">
+              <entry align="center" valign="middle">
+                <para>vector unsigned __int128</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned __int128</para>
+              </entry>
+              <entry align="center" valign="middle">
+                <para>vector unsigned __int128</para>
+              </entry>
+              <entry>
+                <programlisting>
+  xxswapd  t,b
+  vrlq     r,a,t
 		</programlisting>
               </entry>
             </row>
@@ -33465,15 +35203,22 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </para>
       <para><emphasis role="bold">Result value: </emphasis>Each word
       element of <emphasis role="bold">r</emphasis> is computed by
-      sign-extending the element of <emphasis role="bold">a</emphasis>
-      found in the least significant position of the corresponding
-      word of <emphasis role="bold">a</emphasis>.  For example, a
-      sign-extension of a <code>vector signed char</code> to a
-      <code>vector signed int</code> will sign-extend the rightmost
-      byte of each word.
+      sign-extending the lowest-numbered element in the corresponding
+      word of <emphasis role="bold">a</emphasis>.
       </para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
-      Discuss with team.
+      When <emphasis role="bold">a</emphasis> is of type <code>vector
+      signed char</code>, elements 0, 4, 8, and 12 of <emphasis
+      role="bold">a</emphasis> are sign-extended into elements 0, 1,
+      2, and 3 of <emphasis role="bold">r</emphasis>, respectively,
+      using natural element order.  When <emphasis
+      role="bold">a</emphasis> is of type <code>vector signed
+      short</code>, elements 0, 2, 4, and 6 of <emphasis
+      role="bold">a</emphasis> are sign-extended into elements 0, 1,
+      2, and 3 of <emphasis role="bold">r</emphasis>, respectively,
+      using natural element order.  For big endian, <code>vperm</code>
+      is used with the appropriate permute control vector (pcv) to
+      achieve this.
       </para>
       <para><emphasis role="bold">Review status:</emphasis>
       Not yet reviewed.
@@ -33487,31 +35232,40 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 	<primary>vextsh2w</primary>
 	<secondary>vec_signexti</secondary>
       </indexterm>
+      <indexterm>
+	<primary>vperm</primary>
+	<secondary>vec_signexti</secondary>
+      </indexterm>
 
       <table frame="all">
       <title>Supported type signatures for vec_signexti</title>
-      <tgroup cols="4">
+      <tgroup cols="5">
           <colspec colname="c1" colwidth="20*" />
           <colspec colname="c2" colwidth="20*" />
           <colspec colname="c3" colwidth="20*" />
           <colspec colname="c4" colwidth="20*" />
+          <colspec colname="c5" colwidth="20*" />
           <thead>
             <row>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
                   <emphasis role="bold">r</emphasis>
                 </para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
                   <emphasis role="bold">a</emphasis>
                 </para>
               </entry>
-              <entry align="center">
-                <para><emphasis role="bold">Example
+              <entry align="center" valign="middle">
+                <para><emphasis role="bold">Example LE
 		Implementation</emphasis></para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
+                <para><emphasis role="bold">Example BE
+		Implementation</emphasis></para>
+              </entry>
+              <entry align="center" valign="middle">
                 <para><emphasis role="bold">Restrictions</emphasis></para>
               </entry>
             </row>
@@ -33529,6 +35283,12 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   vextsb2w  r,a
 		</programlisting>
               </entry>
+              <entry>
+                <programlisting>
+  vperm     t,a,a,pcv
+  vextsb2w  r,t
+		</programlisting>
+              </entry>
               <entry align="center" valign="middle">
 		<para>ISA 3.0 or later</para>
               </entry>
@@ -33543,6 +35303,12 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry>
                 <programlisting>
   vextsh2w  r,a
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+  vperm     t,a,a,pcv
+  vextsh2w  r,t
 		</programlisting>
               </entry>
               <entry align="center" valign="middle">
@@ -33569,16 +35335,26 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </para>
       <para><emphasis role="bold">Result value: </emphasis>Each
       doubleword element of <emphasis role="bold">r</emphasis> is
-      computed by sign-extending the element of <emphasis
-      role="bold">a</emphasis> found in the least significant position
-      of the corresponding doubleword of <emphasis
-      role="bold">a</emphasis>.  For example, a sign-extension of a
-      <code>vector signed char</code> to a <code>vector signed long
-      long</code> will sign-extend the rightmost byte of each
-      doubleword.
+      computed by sign-extending the lowest-numbered element in the
+      corresponding doubleword of <emphasis role="bold">a</emphasis>.
       </para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
-      Discuss with team.
+      When <emphasis role="bold">a</emphasis> is of type <code>vector
+      signed char</code>, elements 0 and 8 of <emphasis
+      role="bold">a</emphasis> are sign-extended into elements 0 and 1
+      of <emphasis role="bold">r</emphasis>, respectively, using
+      natural element order.  When <emphasis role="bold">a</emphasis>
+      is of type <code>vector signed short</code>, elements 0 and 4 of
+      <emphasis role="bold">a</emphasis> are sign-extended into
+      elements 0 and 1 of <emphasis role="bold">r</emphasis>,
+      respectively, using natural element order.  When <emphasis
+      role="bold">a</emphasis> is of type <code>vector signed
+      int</code>, elements 0 and 2 of <emphasis
+      role="bold">a</emphasis> are sign-extended into elements 0 and 1
+      of <emphasis role="bold">r</emphasis>, respectively, using
+      natural element order.  For big endian, <code>vperm</code>
+      is used with the appropriate permute control vector (pcv) to
+      achieve this.
       </para>
       <para><emphasis role="bold">Review status:</emphasis>
       Not yet reviewed.
@@ -33596,31 +35372,40 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 	<primary>vextsw2d</primary>
 	<secondary>vec_signextll</secondary>
       </indexterm>
+      <indexterm>
+	<primary>vperm</primary>
+	<secondary>vec_signextll</secondary>
+      </indexterm>
 
       <table frame="all">
       <title>Supported type signatures for vec_signextll</title>
-      <tgroup cols="4">
+      <tgroup cols="5">
           <colspec colname="c1" colwidth="20*" />
           <colspec colname="c2" colwidth="20*" />
           <colspec colname="c3" colwidth="20*" />
           <colspec colname="c4" colwidth="20*" />
+          <colspec colname="c5" colwidth="20*" />
           <thead>
             <row>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
                   <emphasis role="bold">r</emphasis>
                 </para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
                   <emphasis role="bold">a</emphasis>
                 </para>
               </entry>
-              <entry align="center">
-                <para><emphasis role="bold">Example
+              <entry align="center" valign="middle">
+                <para><emphasis role="bold">Example LE
 		Implementation</emphasis></para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
+                <para><emphasis role="bold">Example BE
+		Implementation</emphasis></para>
+              </entry>
+              <entry align="center" valign="middle">
                 <para><emphasis role="bold">Restrictions</emphasis></para>
               </entry>
             </row>
@@ -33636,6 +35421,12 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry>
                 <programlisting>
   vextsb2d  r,a
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+  vperm     t,a,a,pcv
+  vextsb2d  r,t
 		</programlisting>
               </entry>
               <entry align="center" valign="middle">
@@ -33654,6 +35445,12 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   vextsh2d  r,a
 		</programlisting>
               </entry>
+              <entry>
+                <programlisting>
+  vperm     t,a,a,pcv
+  vextsh2d  r,t
+		</programlisting>
+              </entry>
               <entry align="center" valign="middle">
 		<para>ISA 3.0 or later</para>
               </entry>
@@ -33668,6 +35465,12 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry>
                 <programlisting>
   vextsw2d  r,a
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+  vperm     t,a,a,pcv
+  vextsw2d  r,t
 		</programlisting>
               </entry>
               <entry align="center" valign="middle">
@@ -33694,11 +35497,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </para>
       <para><emphasis role="bold">Result value: </emphasis>
       <emphasis role="bold">r</emphasis> is computed by sign-extending
-      the rightmost doubleword element of <emphasis
-      role="bold">a</emphasis>.
+      element 0 of <emphasis role="bold">a</emphasis>.
       </para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
-      Discuss with team.
+      Element 0 is the rightmost element for little endian, and the
+      leftmost element for big endian.
       </para>
       <para><emphasis role="bold">Review status:</emphasis>
       Not yet reviewed.
@@ -33708,31 +35511,40 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 	<primary>vextsd2q</primary>
 	<secondary>vec_signextq</secondary>
       </indexterm>
+      <indexterm>
+	<primary>xxswapd</primary>
+	<secondary>vec_signextq</secondary>
+      </indexterm>
 
       <table frame="all">
       <title>Supported type signatures for vec_signextq</title>
-      <tgroup cols="4">
+      <tgroup cols="5">
           <colspec colname="c1" colwidth="20*" />
           <colspec colname="c2" colwidth="20*" />
           <colspec colname="c3" colwidth="20*" />
           <colspec colname="c4" colwidth="20*" />
+          <colspec colname="c5" colwidth="20*" />
           <thead>
             <row>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
                   <emphasis role="bold">r</emphasis>
                 </para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
                 <para>
                   <emphasis role="bold">a</emphasis>
                 </para>
               </entry>
-              <entry align="center">
-                <para><emphasis role="bold">Example
+              <entry align="center" valign="middle">
+                <para><emphasis role="bold">Example LE
 		Implementation</emphasis></para>
               </entry>
-              <entry align="center">
+              <entry align="center" valign="middle">
+                <para><emphasis role="bold">Example BE
+		Implementation</emphasis></para>
+              </entry>
+              <entry align="center" valign="middle">
                 <para><emphasis role="bold">Restrictions</emphasis></para>
               </entry>
             </row>
@@ -33748,6 +35560,12 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry>
                 <programlisting>
   vextsd2q  r,a
+		</programlisting>
+              </entry>
+              <entry>
+                <programlisting>
+  xxswapd   t,a
+  vextsd2q  r,t
 		</programlisting>
               </entry>
               <entry align="center" valign="middle">
