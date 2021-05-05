@@ -1,0 +1,1014 @@
+<!--
+  Copyright (c) 2021 OpenPOWER Foundation
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+
+-->
+<chapter version="5.0" xml:lang="en" xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
+ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.mma-ref"
+ revisionflag="added">
+
+  <!-- Chapter Title goes here. -->
+  <title>Matrix Multiply Accelerate (MMA) Intrinsic Reference</title>
+
+  <section>
+    <title>Introduction</title>
+    <para>
+      Version 3.1 of the Power Instruction Set Architecture
+      Specification (see <xref linkend="VIPR.intro.links" />)
+      introduced instructions to accelerate matrix multiplication
+      computations.  These instructions operate both on the VSRs and
+      on new 512-bit accumulator registers (ACCs).  Intrinsic
+      functions to access these instructions are described in this
+      chapter.
+    </para>
+  </section>
+
+  <section>
+    <title>Type Support</title>
+    <para>
+      Many of the MMA instructions operate on aligned pairs of vectors
+      (that is, an even numbered vector and the next-higher numbered
+      vector), or on aligned quads of vectors (that is, a vector
+      number divisible by four and the three next-higher numbered
+      vectors).  Compilers that support the MMA intrinsic functions
+      must define two types, <code>__vector_pair</code> and
+      <code>__vector_quad</code>, to represent these concepts.
+      Pointers and references to these types must also be supported
+      where these concepts exist in the source language.
+    </para>
+  </section>
+
+  <section>
+    <title>Intrinsic Functions</title>
+    <para>
+      The intrinsics in this section are not overloaded.  Each is
+      presented with its prototype and the instruction it represents.
+      The string "vuc" is used as shorthand for "vector unsigned
+      char" throughout.
+    </para>
+    <section>
+      <title>Memory Access</title>
+      <para>
+	Load and store vector pairs.
+      </para>
+      <para>
+	<informaltable frame="all">
+	  <tgroup cols="2">
+	    <colspec colname="c0" colwidth="40*" />
+	    <colspec colname="c1" colwidth="10*" />
+	    <thead>
+	      <row>
+		<entry align="center" valign="middle">
+		  <para><emphasis role="bold">Prototype</emphasis></para>
+		</entry>
+		<entry align="center" valign="middle">
+		  <para><emphasis role="bold">Instruction</emphasis></para>
+		</entry>
+	      </row>
+	    </thead>
+	    <tbody>
+	      <row>
+		<entry>
+		  <programlisting>
+  __vector pair __builtin_vsx_lxvp (long long int a, const __vector_pair* b)
+		  </programlisting>
+		</entry>
+		<entry>
+		  <programlisting>
+  lxvp r,a(b)
+		  </programlisting>
+		</entry>
+	      </row>
+	      <row>
+		<entry>
+		  <programlisting>
+  void __builtin_vsx_stxvp (__vector_pair s, long long int a, const __vector_pair* b)
+		  </programlisting>
+		</entry>
+		<entry>
+		  <programlisting>
+  stxvp s,a(b)
+		  </programlisting>
+		</entry>
+	      </row>
+	    </tbody>
+	  </tgroup>
+	</informaltable>
+      </para>
+    </section>
+    <section>
+      <title>Assembly and Disassembly of Large Types</title>
+      <para>
+	The following builtins are used to construct
+	<code>__vector_pair</code> and <code>__vector_quad</code>
+	objects from smaller vectors, and deconstruct them into such
+	vectors.  The disassembly interfaces place the results into
+	arrays of vectors.
+      </para>
+      <para>
+	FIXME: Not clear when __builtin_mma versus __builtin_vsx is
+	used here.  Document shows __builtin_vsx for pairs only.  We
+	also have some late-breaking changes around endianness that
+	need to be properly documented.
+      </para>
+      <para>
+	FIXME: I've chosen not to include sample code generation here,
+	but I can be persuaded if folks think that's useful.
+      </para>
+      <para>
+	<informaltable frame="all">
+	  <tgroup cols="1">
+	    <colspec colname="c0" colwidth="40*" />
+	    <tbody>
+	      <row>
+		<entry>
+		  <programlisting>
+  void __builtin_mma_assemble_acc (__vector_quad*, vuc, vuc, vuc, vuc)
+		  </programlisting>
+		</entry>
+	      </row>
+	      <row>
+		<entry>
+		  <programlisting>
+  void __builtin_vsx_assemble_pair (__vector_pair*, vuc, vuc)
+		  </programlisting>
+		</entry>
+	      </row>
+	      <row>
+		<entry>
+		  <programlisting>
+  void __builtin_mma_disassemble_acc (void*, __vector_quad*)
+		  </programlisting>
+		</entry>
+	      </row>
+	      <row>
+		<entry>
+		  <programlisting>
+  void __builtin_vsx_disassemble_pair (void*, __vector_pair*)
+		  </programlisting>
+		</entry>
+	      </row>
+	    </tbody>
+	  </tgroup>
+	</informaltable>
+      </para>
+    </section>
+    <section>
+      <title>Accumulator Move Operations</title>
+      <para>
+	These instructions move data from vector quads to accumulators
+	(a "priming" operation) or vice versa ( a "depriming"
+	operation), or initialize an accumulator to zeros.
+      </para>
+      <para>
+	<informaltable frame="all">
+	  <tgroup cols="2">
+	    <colspec colname="c0" colwidth="28*" />
+	    <colspec colname="c0" colwidth="10*" />
+	    <thead>
+	      <row>
+		<entry align="center" valign="middle">
+		  <para><emphasis role="bold">Prototype</emphasis></para>
+		</entry>
+		<entry align="center" valign="middle">
+		  <para><emphasis role="bold">Instruction</emphasis></para>
+		</entry>
+	      </row>
+	    </thead>
+	    <tbody>
+	      <row>
+		<entry>
+		  <programlisting>
+  void __builtin_mma_xxmfacc (__vector_quad* a)
+		  </programlisting>
+		</entry>
+		<entry>
+		  <programlisting>
+  xxmfacc a
+		  </programlisting>
+		</entry>
+	      </row>
+	      <row>
+		<entry>
+		  <programlisting>
+  void __builtin_mma_xxmtacc (__vector_quad* a)
+		  </programlisting>
+		</entry>
+		<entry>
+		  <programlisting>
+  xxmtacc a
+		  </programlisting>
+		</entry>
+	      </row>
+	      <row>
+		<entry>
+		  <programlisting>
+  void __builtin_mma_xxsetaccz (__vector_quad* a)
+		  </programlisting>
+		</entry>
+		<entry>
+		  <programlisting>
+  xxsetaccz a
+		  </programlisting>
+		</entry>
+	      </row>
+	    </tbody>
+	  </tgroup>
+	</informaltable>
+      </para>
+    </section>
+    <section>
+      <title>Outer Product Operations</title>
+      <para>
+	Each of these intrinsics generates an instruction to perform
+	an outer product operation.
+      </para>
+      <para>
+	<informaltable frame="all">
+	  <tgroup cols="2">
+	    <colspec colname="c0" colwidth="28*" />
+	    <colspec colname="c1" colwidth="10*" />
+	    <thead>
+	      <row>
+		<entry align="center" valign="middle">
+		  <para><emphasis role="bold">Prototype</emphasis></para>
+		</entry>
+		<entry align="center" valign="middle">
+		  <para><emphasis role="bold">Instruction</emphasis></para>
+		</entry>
+	      </row>
+	    </thead>
+	    <tbody>
+	      <row>
+		<entry>
+		  <programlisting>
+ void __builtin_mma_pmxvbf16ger2 (__vector_quad* a, vuc b, vuc c,
+                                  const int d, const int e, const int f)
+		  </programlisting>
+		</entry>
+		<entry>
+		  <programlisting>
+ pmxvbf16ger2  a,b,c,d,e,f
+
+		  </programlisting>
+		</entry>
+	      </row>
+	      <row>
+		<entry>
+		  <programlisting>
+ void __builtin_mma_pmxvbf16ger2nn (__vector_quad* a, vuc b, vuc c,
+                                    const int d, const int e, const int f)
+		  </programlisting>
+		</entry>
+		<entry>
+		  <programlisting>
+ pmxvbf16ger2nn  a,b,c,d,e,f
+
+		  </programlisting>
+		</entry>
+	      </row>
+	      <row>
+		<entry>
+		  <programlisting>
+ void __builtin_mma_pmxvbf16ger2np (__vector_quad* a, vuc b, vuc c,
+                                    const int d, const int e, const int f)
+		  </programlisting>
+		</entry>
+		<entry>
+		  <programlisting>
+ pmxvbf16ger2np  a,b,c,d,e,f
+
+		  </programlisting>
+		</entry>
+	      </row>
+	      <row>
+		<entry>
+		  <programlisting>
+ void __builtin_mma_pmxvbf16ger2pn (__vector_quad* a, vuc b, vuc c,
+                                    const int d, const int e, const int f)
+		  </programlisting>
+		</entry>
+		<entry>
+		  <programlisting>
+ pmxvbf16ger2pn  a,b,c,d,e,f
+
+		  </programlisting>
+		</entry>
+	      </row>
+	      <row>
+		<entry>
+		  <programlisting>
+ void __builtin_mma_pmxvbf16ger2pp (__vector_quad* a, vuc b, vuc c,
+                                    const int d, const int e, const int f)
+		  </programlisting>
+		</entry>
+		<entry>
+		  <programlisting>
+ pmxvbf16ger2pp  a,b,c,d,e,f
+
+		  </programlisting>
+		</entry>
+	      </row>
+	      <row>
+		<entry>
+		  <programlisting>
+ void __builtin_mma_pmxvf16ger2 (__vector_quad* a, vuc b, vuc c,
+                                 const int d, const int e, const int f)
+		  </programlisting>
+		</entry>
+		<entry>
+		  <programlisting>
+ pmxvf16ger2  a,b,c,d,e,f
+
+		  </programlisting>
+		</entry>
+	      </row>
+	      <row>
+		<entry>
+		  <programlisting>
+ void __builtin_mma_pmxvf16ger2nn (__vector_quad* a, vuc b, vuc c,
+                                   const int d, const int e, const int f)
+		  </programlisting>
+		</entry>
+		<entry>
+		  <programlisting>
+ pmxvf16ger2nn  a,b,c,d,e,f
+
+		  </programlisting>
+		</entry>
+	      </row>
+	      <row>
+		<entry>
+		  <programlisting>
+ void __builtin_mma_pmxvf16ger2np (__vector_quad* a, vuc b, vuc c,
+                                   const int d, const int e, const int f)
+		  </programlisting>
+		</entry>
+		<entry>
+		  <programlisting>
+ pmxvf16ger2np  a,b,c,d,e,f
+
+		  </programlisting>
+		</entry>
+	      </row>
+	      <row>
+		<entry>
+		  <programlisting>
+ void __builtin_mma_pmxvf16ger2pn (__vector_quad* a, vuc b, vuc c,
+                                   const int d, const int e, const int f)
+		  </programlisting>
+		</entry>
+		<entry>
+		  <programlisting>
+ pmxvf16ger2pn  a,b,c,d,e,f
+
+		  </programlisting>
+		</entry>
+	      </row>
+	      <row>
+		<entry>
+		  <programlisting>
+ void __builtin_mma_pmxvf16ger2pp (__vector_quad* a, vuc b, vuc c,
+                                   const int d, const int e, const int f)
+		  </programlisting>
+		</entry>
+		<entry>
+		  <programlisting>
+ pmxvf16ger2pp  a,b,c,d,e,f
+
+		  </programlisting>
+		</entry>
+	      </row>
+	      <row>
+		<entry>
+		  <programlisting>
+ void __builtin_mma_pmxvf32ger (__vector_quad* a, vuc b, vuc c,
+                                const int d, const int e)
+		  </programlisting>
+		</entry>
+		<entry>
+		  <programlisting>
+ pmxvf32ger  a,b,c,d,e
+
+		  </programlisting>
+		</entry>
+	      </row>
+	      <row>
+		<entry>
+		  <programlisting>
+ void __builtin_mma_pmxvf32gernn (__vector_quad* a, vuc b, vuc c,
+                                  const int d, const int e)
+		  </programlisting>
+		</entry>
+		<entry>
+		  <programlisting>
+ pmxvf32gernn  a,b,c,d,e
+
+		  </programlisting>
+		</entry>
+	      </row>
+	      <row>
+		<entry>
+		  <programlisting>
+ void __builtin_mma_pmxvf32gernp (__vector_quad* a, vuc b, vuc c,
+                                  const int d, const int e)
+		  </programlisting>
+		</entry>
+		<entry>
+		  <programlisting>
+ pmxvf32gernp  a,b,c,d,e
+
+		  </programlisting>
+		</entry>
+	      </row>
+	      <row>
+		<entry>
+		  <programlisting>
+ void __builtin_mma_pmxvf32gerpn (__vector_quad* a, vuc b, vuc c,
+                                  const int d, const int e)
+		  </programlisting>
+		</entry>
+		<entry>
+		  <programlisting>
+ pmxvf32gerpn  a,b,c,d,e
+
+		  </programlisting>
+		</entry>
+	      </row>
+	      <row>
+		<entry>
+		  <programlisting>
+ void __builtin_mma_pmxvf32gerpp (__vector_quad* a, vuc b, vuc c,
+                                  const int d, const int e)
+		  </programlisting>
+		</entry>
+		<entry>
+		  <programlisting>
+ pmxvf32gerpp  a,b,c,d,e
+
+		  </programlisting>
+		</entry>
+	      </row>
+	      <row>
+		<entry>
+		  <programlisting>
+ void __builtin_mma_pmxvf64ger (__vector_quad* a, __vector_pair b,
+                                vuc c, const int d, const int e)
+		  </programlisting>
+		</entry>
+		<entry>
+		  <programlisting>
+ pmxvf64ger  a,b,c,d,e
+
+		  </programlisting>
+		</entry>
+	      </row>
+	      <row>
+		<entry>
+		  <programlisting>
+ void __builtin_mma_pmxvf64gernn (__vector_quad* a, __vector_pair b,
+                                  vuc c, const int d, const int e)
+		  </programlisting>
+		</entry>
+		<entry>
+		  <programlisting>
+ pmxvf64gernn  a,b,c,d,e
+
+		  </programlisting>
+		</entry>
+	      </row>
+	      <row>
+		<entry>
+		  <programlisting>
+ void __builtin_mma_pmxvf64gernp (__vector_quad* a, __vector_pair b,
+                                  vuc c, const int d, const int e)
+		  </programlisting>
+		</entry>
+		<entry>
+		  <programlisting>
+ pmxvf64gernp  a,b,c,d,e
+
+		  </programlisting>
+		</entry>
+	      </row>
+	      <row>
+		<entry>
+		  <programlisting>
+ void __builtin_mma_pmxvf64gerpn (__vector_quad* a, __vector_pair b,
+                                  vuc c, const int d, const int e)
+		  </programlisting>
+		</entry>
+		<entry>
+		  <programlisting>
+ pmxvf64gerpn  a,b,c,d,e
+
+		  </programlisting>
+		</entry>
+	      </row>
+	      <row>
+		<entry>
+		  <programlisting>
+ void __builtin_mma_pmxvf64gerpp (__vector_quad* a, __vector_pair b,
+                                  vuc c, const int d, const int e)
+		  </programlisting>
+		</entry>
+		<entry>
+		  <programlisting>
+ pmxvf64gerpp  a,b,c,d,e
+
+		  </programlisting>
+		</entry>
+	      </row>
+	      <row>
+		<entry>
+		  <programlisting>
+ void __builtin_mma_pmxvi64ger2 (__vector_quad* a, vuc b, vuc c,
+                                 const int d, const int e, const int f)
+		  </programlisting>
+		</entry>
+		<entry>
+		  <programlisting>
+ pmxvi64ger2  a,b,c,d,e,f
+
+		  </programlisting>
+		</entry>
+	      </row>
+	      <row>
+		<entry>
+		  <programlisting>
+ void __builtin_mma_pmxvi64ger2pp (__vector_quad* a, vuc b, vuc c,
+                                   const int d, const int e, const int f)
+		  </programlisting>
+		</entry>
+		<entry>
+		  <programlisting>
+ pmxvi64ger2pp  a,b,c,d,e,f
+
+		  </programlisting>
+		</entry>
+	      </row>
+	      <row>
+		<entry>
+		  <programlisting>
+ void __builtin_mma_pmxvi64ger2s (__vector_quad* a, vuc b, vuc c,
+                                  const int d, const int e, const int f)
+		  </programlisting>
+		</entry>
+		<entry>
+		  <programlisting>
+ pmxvi64ger2s  a,b,c,d,e,f
+
+		  </programlisting>
+		</entry>
+	      </row>
+	      <row>
+		<entry>
+		  <programlisting>
+ void __builtin_mma_pmxvi64ger2spp (__vector_quad* a, vuc b, vuc c,
+                                    const int d, const int e, const int f)
+		  </programlisting>
+		</entry>
+		<entry>
+		  <programlisting>
+ pmxvi64ger2spp  a,b,c,d,e,f
+
+		  </programlisting>
+		</entry>
+	      </row>
+	      <row>
+		<entry>
+		  <programlisting>
+ void __builtin_mma_pmxvi4ger8 (__vector_quad* a, vuc b, vuc c,
+                                const int d, const int e, const int f)
+		  </programlisting>
+		</entry>
+		<entry>
+		  <programlisting>
+ pmxvi4ger8  a,b,c,d,e,f
+
+		  </programlisting>
+		</entry>
+	      </row>
+	      <row>
+		<entry>
+		  <programlisting>
+ void __builtin_mma_pmxvi4ger8pp (__vector_quad* a, vuc b, vuc c,
+                                  const int d, const int e, const int f)
+		  </programlisting>
+		</entry>
+		<entry>
+		  <programlisting>
+ pmxvi4ger8pp  a,b,c,d,e,f
+
+		  </programlisting>
+		</entry>
+	      </row>
+	      <row>
+		<entry>
+		  <programlisting>
+ void __builtin_mma_pmxvi8ger4 (__vector_quad* a, vuc b, vuc c,
+                                const int d, const int e, const int f)
+		  </programlisting>
+		</entry>
+		<entry>
+		  <programlisting>
+ pmxvi8ger4  a,b,c,d,e,f
+
+		  </programlisting>
+		</entry>
+	      </row>
+	      <row>
+		<entry>
+		  <programlisting>
+ void __builtin_mma_pmxvi8ger4pp (__vector_quad* a, vuc b, vuc c,
+                                  const int d, const int e, const int f)
+		  </programlisting>
+		</entry>
+		<entry>
+		  <programlisting>
+ pmxvi8ger4pp  a,b,c,d,e,f
+
+		  </programlisting>
+		</entry>
+	      </row>
+	      <row>
+		<entry>
+		  <programlisting>
+ void __builtin_mma_pmxvi8ger4spp (__vector_quad* a, vuc b, vuc c,
+                                   const int d, const int e, const int f)
+		  </programlisting>
+		</entry>
+		<entry>
+		  <programlisting>
+ pmxvi8ger4spp  a,b,c,d,e,f
+
+		  </programlisting>
+		</entry>
+	      </row>
+	      <row>
+		<entry>
+		  <programlisting>
+ void __builtin_mma_xvbf16ger2 (__vector_quad* a, vuc b, vuc c)
+		  </programlisting>
+		</entry>
+		<entry>
+		  <programlisting>
+ xvbf16ger2  a,b,c
+		  </programlisting>
+		</entry>
+	      </row>
+	      <row>
+		<entry>
+		  <programlisting>
+ void __builtin_mma_xvbf16ger2nn (__vector_quad* a, vuc b, vuc c)
+		  </programlisting>
+		</entry>
+		<entry>
+		  <programlisting>
+ xvbf16ger2nn  a,b,c
+		  </programlisting>
+		</entry>
+	      </row>
+	      <row>
+		<entry>
+		  <programlisting>
+ void __builtin_mma_xvbf16ger2np (__vector_quad* a, vuc b, vuc c)
+		  </programlisting>
+		</entry>
+		<entry>
+		  <programlisting>
+ xvbf16ger2np  a,b,c
+		  </programlisting>
+		</entry>
+	      </row>
+	      <row>
+		<entry>
+		  <programlisting>
+ void __builtin_mma_xvbf16ger2pn (__vector_quad* a, vuc b, vuc c)
+		  </programlisting>
+		</entry>
+		<entry>
+		  <programlisting>
+ xvbf16ger2pn  a,b,c
+		  </programlisting>
+		</entry>
+	      </row>
+	      <row>
+		<entry>
+		  <programlisting>
+ void __builtin_mma_xvbf16ger2pp (__vector_quad* a, vuc b, vuc c)
+		  </programlisting>
+		</entry>
+		<entry>
+		  <programlisting>
+ xvbf16ger2pp  a,b,c
+		  </programlisting>
+		</entry>
+	      </row>
+	      <row>
+		<entry>
+		  <programlisting>
+ void __builtin_mma_xvf16ger2 (__vector_quad* a, vuc b, vuc c)
+		  </programlisting>
+		</entry>
+		<entry>
+		  <programlisting>
+ xvf16ger2  a,b,c
+		  </programlisting>
+		</entry>
+	      </row>
+	      <row>
+		<entry>
+		  <programlisting>
+ void __builtin_mma_xvf16ger2nn (__vector_quad* a, vuc b, vuc c)
+		  </programlisting>
+		</entry>
+		<entry>
+		  <programlisting>
+ xvf16ger2nn  a,b,c
+		  </programlisting>
+		</entry>
+	      </row>
+	      <row>
+		<entry>
+		  <programlisting>
+ void __builtin_mma_xvf16ger2np (__vector_quad* a, vuc b, vuc c)
+		  </programlisting>
+		</entry>
+		<entry>
+		  <programlisting>
+ xvf16ger2np  a,b,c
+		  </programlisting>
+		</entry>
+	      </row>
+	      <row>
+		<entry>
+		  <programlisting>
+ void __builtin_mma_xvf16ger2pn (__vector_quad* a, vuc b, vuc c)
+		  </programlisting>
+		</entry>
+		<entry>
+		  <programlisting>
+ xvf16ger2pn  a,b,c
+		  </programlisting>
+		</entry>
+	      </row>
+	      <row>
+		<entry>
+		  <programlisting>
+ void __builtin_mma_xvf16ger2pp (__vector_quad* a, vuc b, vuc c)
+		  </programlisting>
+		</entry>
+		<entry>
+		  <programlisting>
+ xvf16ger2pp  a,b,c
+		  </programlisting>
+		</entry>
+	      </row>
+	      <row>
+		<entry>
+		  <programlisting>
+ void __builtin_mma_xvf32ger (__vector_quad* a, vuc b, vuc c)
+		  </programlisting>
+		</entry>
+		<entry>
+		  <programlisting>
+ xvf32ger  a,b,c
+		  </programlisting>
+		</entry>
+	      </row>
+	      <row>
+		<entry>
+		  <programlisting>
+ void __builtin_mma_xvf32gernn (__vector_quad* a, vuc b, vuc c)
+		  </programlisting>
+		</entry>
+		<entry>
+		  <programlisting>
+ xvf32gernn  a,b,c
+		  </programlisting>
+		</entry>
+	      </row>
+	      <row>
+		<entry>
+		  <programlisting>
+ void __builtin_mma_xvf32gernp (__vector_quad* a, vuc b, vuc c)
+		  </programlisting>
+		</entry>
+		<entry>
+		  <programlisting>
+ xvf32gernp  a,b,c
+		  </programlisting>
+		</entry>
+	      </row>
+	      <row>
+		<entry>
+		  <programlisting>
+ void __builtin_mma_xvf32gerpn (__vector_quad* a, vuc b, vuc c)
+		  </programlisting>
+		</entry>
+		<entry>
+		  <programlisting>
+ xvf32gerpn  a,b,c
+		  </programlisting>
+		</entry>
+	      </row>
+	      <row>
+		<entry>
+		  <programlisting>
+ void __builtin_mma_xvf32gerpp (__vector_quad* a, vuc b, vuc c)
+		  </programlisting>
+		</entry>
+		<entry>
+		  <programlisting>
+ xvf32gerpp  a,b,c
+		  </programlisting>
+		</entry>
+	      </row>
+	      <row>
+		<entry>
+		  <programlisting>
+ void __builtin_mma_xvf64ger (__vector_quad* a, __vector_pair b, vuc c)
+		  </programlisting>
+		</entry>
+		<entry>
+		  <programlisting>
+ xvf64ger  a,b,c
+		  </programlisting>
+		</entry>
+	      </row>
+	      <row>
+		<entry>
+		  <programlisting>
+ void __builtin_mma_xvf64gernn (__vector_quad* a, __vector_pair b, vuc c)
+		  </programlisting>
+		</entry>
+		<entry>
+		  <programlisting>
+ xvf64gernn  a,b,c
+		  </programlisting>
+		</entry>
+	      </row>
+	      <row>
+		<entry>
+		  <programlisting>
+ void __builtin_mma_xvf64gernp (__vector_quad* a, __vector_pair b, vuc c)
+		  </programlisting>
+		</entry>
+		<entry>
+		  <programlisting>
+ xvf64gernp  a,b,c
+		  </programlisting>
+		</entry>
+	      </row>
+	      <row>
+		<entry>
+		  <programlisting>
+ void __builtin_mma_xvf64gerpn (__vector_quad* a, __vector_pair b, vuc c)
+		  </programlisting>
+		</entry>
+		<entry>
+		  <programlisting>
+ xvf64gerpn  a,b,c
+		  </programlisting>
+		</entry>
+	      </row>
+	      <row>
+		<entry>
+		  <programlisting>
+ void __builtin_mma_xvf64gerpp (__vector_quad* a, __vector_pair b, vuc c)
+		  </programlisting>
+		</entry>
+		<entry>
+		  <programlisting>
+ xvf64gerpp  a,b,c
+		  </programlisting>
+		</entry>
+	      </row>
+	      <row>
+		<entry>
+		  <programlisting>
+ void __builtin_mma_xvi16ger2 (__vector_quad* a, vuc b, vuc c)
+		  </programlisting>
+		</entry>
+		<entry>
+		  <programlisting>
+ xvi16ger2  a,b,c
+		  </programlisting>
+		</entry>
+	      </row>
+	      <row>
+		<entry>
+		  <programlisting>
+ void __builtin_mma_xvi16ger2pp (__vector_quad* a, vuc b, vuc c)
+		  </programlisting>
+		</entry>
+		<entry>
+		  <programlisting>
+ xvi16ger2pp  a,b,c
+		  </programlisting>
+		</entry>
+	      </row>
+	      <row>
+		<entry>
+		  <programlisting>
+ void __builtin_mma_xvi16ger2s (__vector_quad* a, vuc b, vuc c)
+		  </programlisting>
+		</entry>
+		<entry>
+		  <programlisting>
+ xvi16ger2s  a,b,c
+		  </programlisting>
+		</entry>
+	      </row>
+	      <row>
+		<entry>
+		  <programlisting>
+ void __builtin_mma_xvi16ger2spp (__vector_quad* a, vuc b, vuc c)
+		  </programlisting>
+		</entry>
+		<entry>
+		  <programlisting>
+ xvi16ger2spp  a,b,c
+		  </programlisting>
+		</entry>
+	      </row>
+	      <row>
+		<entry>
+		  <programlisting>
+ void __builtin_mma_xvi4ger8 (__vector_quad* a, vuc b, vuc c)
+		  </programlisting>
+		</entry>
+		<entry>
+		  <programlisting>
+ xvi4ger8  a,b,c
+		  </programlisting>
+		</entry>
+	      </row>
+	      <row>
+		<entry>
+		  <programlisting>
+ void __builtin_mma_xvi4ger8pp (__vector_quad* a, vuc b, vuc c)
+		  </programlisting>
+		</entry>
+		<entry>
+		  <programlisting>
+ xvi4ger8pp  a,b,c
+		  </programlisting>
+		</entry>
+	      </row>
+	      <row>
+		<entry>
+		  <programlisting>
+ void __builtin_mma_xvi8ger4 (__vector_quad* a, vuc b, vuc c)
+		  </programlisting>
+		</entry>
+		<entry>
+		  <programlisting>
+ xvi8ger4  a,b,c
+		  </programlisting>
+		</entry>
+	      </row>
+	      <row>
+		<entry>
+		  <programlisting>
+ void __builtin_mma_xvi8ger4pp (__vector_quad* a, vuc b, vuc c)
+		  </programlisting>
+		</entry>
+		<entry>
+		  <programlisting>
+ xvi8ger4pp  a,b,c
+		  </programlisting>
+		</entry>
+	      </row>
+	      <row>
+		<entry>
+		  <programlisting>
+ void __builtin_mma_xvi8ger4spp (__vector_quad* a, vuc b, vuc c)
+		  </programlisting>
+		</entry>
+		<entry>
+		  <programlisting>
+ xvi8ger4spp  a,b,c
+		  </programlisting>
+		</entry>
+	      </row>
+	    </tbody>
+	  </tgroup>
+	</informaltable>
+      </para>
+    </section>
+  </section>
+
+</chapter>

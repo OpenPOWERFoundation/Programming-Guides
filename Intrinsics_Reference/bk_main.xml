@@ -121,6 +121,7 @@
   <xi:include href="ch_techniques.xml"/>
   <xi:include href="ch_vec_reference.xml"/>
   <!-- xi:include href="ch_scal_reference.xml"/ -->
+  <xi:include href="ch_mma_reference.xml"/>
   <xi:include href="ch_isa_intrin_xref.xml"/>
   <!-- xi:include href="app_a.xml"/ -->
 
