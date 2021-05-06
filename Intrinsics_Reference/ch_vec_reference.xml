@@ -40811,7 +40811,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 	<secondary>vec_splats</secondary>
       </indexterm>
       <indexterm>
-	<primary>xxscvdpspn</primary>
+	<primary>xscvdpspn</primary>
 	<secondary>vec_splats</secondary>
       </indexterm>
 
@@ -40992,8 +40992,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               </entry>
               <entry>
                 <programlisting>
-  xxscvdpspn  t,a
-  xxspltw     r,t,0
+  xscvdpspn  t,a
+  xxspltw    r,t,0
 		</programlisting>
               </entry>
             </row>
