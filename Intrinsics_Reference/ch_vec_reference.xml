@@ -15716,9 +15716,29 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
+      <para revisionflag="added">
+	<emphasis role="bold">Review status:</emphasis>
+	Not yet reviewed.
+      </para>
+      <para revisionflag="added">
+	<emphasis role="bold">Notes:</emphasis>
+	The example implementation when <emphasis
+	role="bold">a</emphasis> is a vector double assumes that the
+	constant 2 to the power of <emphasis role="bold">b</emphasis>
+	has been loaded into floating-point register <emphasis
+	role="bold">c</emphasis>.
+      </para>
       
       <indexterm>
 	<primary>vctsxs</primary>
+	<secondary>vec_cts</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvcvdpsxds</primary>
+	<secondary>vec_cts</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvmuldp</primary>
 	<secondary>vec_cts</secondary>
       </indexterm>
 
@@ -15770,6 +15790,23 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 		</programlisting>
               </entry>
             </row>
+            <row revisionflag="added">
+              <entry align="center" valign="middle">
+		<para>vector signed long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector double</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>5-bit unsigned literal</para>
+              </entry>
+              <entry>
+		<programlisting>
+   xvmuldp     t,a,c
+   xvcvdpsxds  r,t
+		</programlisting>
+              </entry>
+            </row>
           </tbody>
 	</tgroup>
       </table>
@@ -15797,9 +15834,29 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
+      <para revisionflag="added">
+	<emphasis role="bold">Review status:</emphasis>
+	Not yet reviewed.
+      </para>
+      <para revisionflag="added">
+	<emphasis role="bold">Notes:</emphasis>
+	The example implementation when <emphasis
+	role="bold">a</emphasis> is a vector double assumes that the
+	constant 2 to the power of <emphasis role="bold">b</emphasis>
+	has been loaded into floating-point register <emphasis
+	role="bold">c</emphasis>.
+      </para>
       
       <indexterm>
 	<primary>vctuxs</primary>
+	<secondary>vec_ctu</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvcvdpuxds</primary>
+	<secondary>vec_ctu</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvmuldp</primary>
 	<secondary>vec_ctu</secondary>
       </indexterm>
 
@@ -15848,6 +15905,23 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry>
 		<programlisting>
    vctuxs  r,a,b
+		</programlisting>
+              </entry>
+            </row>
+            <row revisionflag="added">
+              <entry align="center" valign="middle">
+		<para>vector unsigned long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector double</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>5-bit unsigned literal</para>
+              </entry>
+              <entry>
+		<programlisting>
+   xvmuldp     t,a,c
+   xvcvdpuxds  r,t
 		</programlisting>
               </entry>
             </row>
