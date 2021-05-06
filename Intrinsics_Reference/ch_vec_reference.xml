@@ -48058,8 +48058,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
                 </para>
               </entry>
               <entry align="center" valign="middle">
-                <para>
-                  <emphasis role="bold">ARG1</emphasis>
+                <para revisionflag="changed">
+                  <emphasis role="bold">a</emphasis>
                 </para>
               </entry>
               <entry align="center">
