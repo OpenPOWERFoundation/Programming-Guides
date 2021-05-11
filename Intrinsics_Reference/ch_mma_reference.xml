@@ -121,19 +121,28 @@
 	arrays of vectors.
       </para>
       <para>
-	FIXME: Not clear when __builtin_mma versus __builtin_vsx is
-	used here.  Document shows __builtin_vsx for pairs only.  We
-	also have some late-breaking changes around endianness that
-	need to be properly documented.
-      </para>
-      <para>
 	FIXME: I've chosen not to include sample code generation here,
 	but I can be persuaded if folks think that's useful.
       </para>
       <para>
+	FIXME: Peter to provide some wording about semantics and
+	deprecation?  I am not sure I have the latest information.
+      </para>
+      <para>
 	<informaltable frame="all">
-	  <tgroup cols="1">
+	  <tgroup cols="2">
 	    <colspec colname="c0" colwidth="40*" />
+	    <colspec colname="c0" colwidth="10*" />
+	    <thead>
+	      <row>
+		<entry align="center" valign="middle">
+		  <para><emphasis role="bold">Prototype</emphasis></para>
+		</entry>
+		<entry align="center" valign="middle">
+		  <para><emphasis role="bold">Notes</emphasis></para>
+		</entry>
+	      </row>
+	    </thead>
 	    <tbody>
 	      <row>
 		<entry>
@@ -141,12 +150,18 @@
   void __builtin_mma_assemble_acc (__vector_quad*, vuc, vuc, vuc, vuc)
 		  </programlisting>
 		</entry>
+		<entry align="center" valign="middle">
+		  <para>Deprecated</para>
+		</entry>
 	      </row>
 	      <row>
 		<entry>
 		  <programlisting>
-  void __builtin_vsx_assemble_pair (__vector_pair*, vuc, vuc)
+  void __builtin_mma_build_acc (__vector_quad*, vuc, vuc, vuc, vuc)
 		  </programlisting>
+		</entry>
+		<entry align="center" valign="middle">
+		  <para></para>
 		</entry>
 	      </row>
 	      <row>
@@ -155,12 +170,38 @@
   void __builtin_mma_disassemble_acc (void*, __vector_quad*)
 		  </programlisting>
 		</entry>
+		<entry align="center" valign="middle">
+		  <para></para>
+		</entry>
+	      </row>
+	      <row>
+		<entry>
+		  <programlisting>
+  void __builtin_vsx_assemble_pair (__vector_pair*, vuc, vuc)
+		  </programlisting>
+		</entry>
+		<entry align="center" valign="middle">
+		  <para>Deprecated</para>
+		</entry>
+	      </row>
+	      <row>
+		<entry>
+		  <programlisting>
+  void __builtin_vsx_build_pair (__vector_pair*, vuc, vuc)
+		  </programlisting>
+		</entry>
+		<entry align="center" valign="middle">
+		  <para></para>
+		</entry>
 	      </row>
 	      <row>
 		<entry>
 		  <programlisting>
   void __builtin_vsx_disassemble_pair (void*, __vector_pair*)
 		  </programlisting>
+		</entry>
+		<entry align="center" valign="middle">
+		  <para></para>
 		</entry>
 	      </row>
 	    </tbody>
