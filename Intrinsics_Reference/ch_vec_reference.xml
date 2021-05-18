@@ -44301,6 +44301,207 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
     </section>
     <?hard-pagebreak?>
 
+    <section xml:id="vec_stril_p" revisionflag="added">
+      <title>vec_stril_p</title>
+      <subtitle>Vector String Isolate Left-Justified (Predicate)</subtitle>
+      <programlisting>
+      r = vec_stril_p (a)
+      </programlisting>
+
+      <para><emphasis role="bold">Purpose:</emphasis>
+      Return a non-zero value if and only if the input vector contains
+      a zero element.
+      </para>
+      <para><emphasis role="bold">Result value:</emphasis>
+      <emphasis role="bold">r</emphasis> is given a non-zero value if
+      any element in <emphasis role="bold">a</emphasis> has a zero
+      value.  Otherwise, <emphasis role="bold">r</emphasis> is set
+      to zero.
+      </para>
+      <para><emphasis role="bold">Endian considerations:</emphasis>
+      Compilers should generate the same instruction (using the record
+      form) that they generate for <code>vec_stril</code>.
+      </para>
+      <para>
+	<emphasis role="bold">Notes:</emphasis>
+	Use this built-in in preference to <code>vec_nez</code> when
+	the test guards a call to <code>vec_stril</code>.  This allows
+	compilers to generate the most efficient code.
+      </para>
+      <para><emphasis role="bold">Review status:</emphasis>
+      Not yet reviewed.
+      </para>
+      
+      <indexterm>
+	<primary>vstribr.</primary>
+	<secondary>vec_stril_p</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vstribl.</primary>
+	<secondary>vec_stril_p</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vstrihr.</primary>
+	<secondary>vec_stril_p</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vstrihl.</primary>
+	<secondary>vec_stril_p</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>mfocrf</primary>
+	<secondary>vec_stril_p</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>rlwinm</primary>
+	<secondary>vec_stril_p</secondary>
+      </indexterm>
+
+      <table frame="all">
+	<title>Supported type signatures for vec_stril_p</title>
+	<tgroup cols="5">
+          <colspec colname="c1" colwidth="20*" />
+          <colspec colname="c2" colwidth="20*" />
+          <colspec colname="c3" colwidth="20*" />
+          <colspec colname="c4" colwidth="20*" />
+          <colspec colname="c5" colwidth="20*" />
+          <thead>
+            <row>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">r</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">a</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">Example LE Implementation</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">Example BE Implementation</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+		  <emphasis role="bold">Restrictions</emphasis>
+		</para>
+	      </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+		<para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned char</para>
+              </entry>
+              <entry>
+		<programlisting>
+  vstribr.  t,a
+  mfocrf    u,2
+  rlwinm    r,u,26,1
+		</programlisting>
+              </entry>
+              <entry>
+		<programlisting>
+  vstribl.  t,a
+  mfocrf    u,2
+  rlwinm    r,u,26,1
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector signed char</para>
+              </entry>
+              <entry>
+		<programlisting>
+  vstribr.  t,a
+  mfocrf    u,2
+  rlwinm    r,u,26,1
+		</programlisting>
+              </entry>
+              <entry>
+		<programlisting>
+  vstribl.  t,a
+  mfocrf    u,2
+  rlwinm    r,u,26,1
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned short</para>
+              </entry>
+              <entry>
+		<programlisting>
+  vstrihr.  t,a
+  mfocrf    u,2
+  rlwinm    r,u,26,1
+		</programlisting>
+              </entry>
+              <entry>
+		<programlisting>
+  vstrihl.  t,a
+  mfocrf    u,2
+  rlwinm    r,u,26,1
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector signed short</para>
+              </entry>
+              <entry>
+		<programlisting>
+  vstrihr.  t,a
+  mfocrf    u,2
+  rlwinm    r,u,26,1
+		</programlisting>
+              </entry>
+              <entry>
+		<programlisting>
+  vstrihl.  t,a
+  mfocrf    u,2
+  rlwinm    r,u,26,1
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+          </tbody>
+	</tgroup>
+      </table>
+
+    </section>
+    <?hard-pagebreak?>
+
     <section xml:id="vec_strir" revisionflag="added">
       <title>vec_strir</title>
       <subtitle>Vector String Isolate Right-Justified</subtitle>
@@ -44464,6 +44665,207 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry>
 		<programlisting>
    vstrihr  r,a
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+          </tbody>
+	</tgroup>
+      </table>
+
+    </section>
+    <?hard-pagebreak?>
+
+    <section xml:id="vec_strir_p" revisionflag="added">
+      <title>vec_strir_p</title>
+      <subtitle>Vector String Isolate Right-Justified (Predicate)</subtitle>
+      <programlisting>
+      r = vec_strir_p (a)
+      </programlisting>
+
+      <para><emphasis role="bold">Purpose:</emphasis>
+      Return a non-zero value if and only if the input vector contains
+      a zero element.
+      </para>
+      <para><emphasis role="bold">Result value:</emphasis>
+      <emphasis role="bold">r</emphasis> is given a non-zero value if
+      any element in <emphasis role="bold">a</emphasis> has a zero
+      value.  Otherwise, <emphasis role="bold">r</emphasis> is set
+      to zero.
+      </para>
+      <para><emphasis role="bold">Endian considerations:</emphasis>
+      Compilers should generate the same instruction (using the record
+      form) that they generate for <code>vec_strir</code>.
+      </para>
+      <para>
+	<emphasis role="bold">Notes:</emphasis>
+	Use this built-in in preference to <code>vec_nez</code> when
+	the test guards a call to <code>vec_strir</code>.  This allows
+	compilers to generate the most efficient code.
+      </para>
+      <para><emphasis role="bold">Review status:</emphasis>
+      Not yet reviewed.
+      </para>
+      
+      <indexterm>
+	<primary>vstribr.</primary>
+	<secondary>vec_strir_p</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vstribl.</primary>
+	<secondary>vec_strir_p</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vstrihr.</primary>
+	<secondary>vec_strir_p</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vstrihl.</primary>
+	<secondary>vec_strir_p</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>mfocrf</primary>
+	<secondary>vec_strir_p</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>rlwinm</primary>
+	<secondary>vec_strir_p</secondary>
+      </indexterm>
+
+      <table frame="all">
+	<title>Supported type signatures for vec_strir_p</title>
+	<tgroup cols="5">
+          <colspec colname="c1" colwidth="20*" />
+          <colspec colname="c2" colwidth="20*" />
+          <colspec colname="c3" colwidth="20*" />
+          <colspec colname="c4" colwidth="20*" />
+          <colspec colname="c5" colwidth="20*" />
+          <thead>
+            <row>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">r</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">a</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">Example LE Implementation</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">Example BE Implementation</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+		  <emphasis role="bold">Restrictions</emphasis>
+		</para>
+	      </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+		<para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned char</para>
+              </entry>
+              <entry>
+		<programlisting>
+  vstribl.  t,a
+  mfocrf    u,2
+  rlwinm    r,u,26,1
+		</programlisting>
+              </entry>
+              <entry>
+		<programlisting>
+  vstribr.  t,a
+  mfocrf    u,2
+  rlwinm    r,u,26,1
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector signed char</para>
+              </entry>
+              <entry>
+		<programlisting>
+  vstribl.  t,a
+  mfocrf    u,2
+  rlwinm    r,u,26,1
+		</programlisting>
+              </entry>
+              <entry>
+		<programlisting>
+  vstribr.  t,a
+  mfocrf    u,2
+  rlwinm    r,u,26,1
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned short</para>
+              </entry>
+              <entry>
+		<programlisting>
+  vstrihl.  t,a
+  mfocrf    u,2
+  rlwinm    r,u,26,1
+		</programlisting>
+              </entry>
+              <entry>
+		<programlisting>
+  vstrihr.  t,a
+  mfocrf    u,2
+  rlwinm    r,u,26,1
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>int</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector signed short</para>
+              </entry>
+              <entry>
+		<programlisting>
+  vstrihl.  t,a
+  mfocrf    u,2
+  rlwinm    r,u,26,1
+		</programlisting>
+              </entry>
+              <entry>
+		<programlisting>
+  vstrihr.  t,a
+  mfocrf    u,2
+  rlwinm    r,u,26,1
 		</programlisting>
               </entry>
               <entry align="center" valign="middle">
