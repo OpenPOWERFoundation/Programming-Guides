@@ -97,10 +97,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_intro">
       the Power SIMD (single-instruction, multiple-data)
       instructions.
     </para>
-    <para revisionflag="added">
-      Write an introductory paragraph about the MMA facility and the
-      ACC registers.
-    </para>
     <section>
       <title>Little-Endian Linux</title>
       <para>

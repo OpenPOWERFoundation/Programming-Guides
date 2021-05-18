@@ -28,9 +28,19 @@
       Specification (see <xref linkend="VIPR.intro.links" />)
       introduced instructions to accelerate matrix multiplication
       computations.  These instructions operate both on the VSRs and
-      on new 512-bit accumulator registers (ACCs).  Intrinsic
+      on eight new 512-bit accumulator registers (ACCs).  Intrinsic
       functions to access these instructions are described in this
       chapter.
+    </para>
+    <para>
+      Although the ACCs are treated as separate registers from the
+      VSRs, each <code>ACC[i]</code> may use its associated VSRs
+      <code>4i</code> to <code>4i+3</code> as scratch space.  That is,
+      when <code>ACC[i]</code> contains defined data, the contents of
+      VSRs <code>4i</code> to <code>4i+3</code> are undefined until
+      either an <code>xxmfacc</code> instruction is used to copy the
+      contents of <code>ACC[i]</code> to the VSRs, or some other
+      instruction directly writes to one of these VSRs.
     </para>
     <para>
       <emphasis role="bold">Review status:</emphasis> This chapter is

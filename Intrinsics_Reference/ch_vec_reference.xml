@@ -10613,7 +10613,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <para>
 	<emphasis role="bold">b</emphasis> must have a value between 1
 	and the number of elements of <emphasis
-	role="bold">a</emphasis>, inclusive.
+	role="bold">a</emphasis>, inclusive, but need not be a literal
+	constant.
       </para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       The element numbering within a register is left-to-right for
@@ -10684,7 +10685,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 		<para>vector signed char</para>
               </entry>
               <entry align="center" valign="middle">
-		<para>const int</para>
+		<para>unsigned int</para>
               </entry>
               <entry>
 		<programlisting>
@@ -10708,7 +10709,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 		<para>vector unsigned char</para>
               </entry>
               <entry align="center" valign="middle">
-		<para>const int</para>
+		<para>unsigned int</para>
               </entry>
               <entry>
 		<programlisting>
@@ -10751,7 +10752,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <para>
 	<emphasis role="bold">b</emphasis> must have a value between 1
 	and the number of elements of <emphasis
-	role="bold">a</emphasis>, inclusive.
+	role="bold">a</emphasis>, inclusive, but need not be a literal
+	constant.
       </para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       The element numbering within a register is left-to-right for
@@ -10822,7 +10824,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 		<para>vector signed char</para>
               </entry>
               <entry align="center" valign="middle">
-		<para>const int</para>
+		<para>unsigned int</para>
               </entry>
               <entry>
 		<programlisting>
@@ -10846,7 +10848,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 		<para>vector unsigned char</para>
               </entry>
               <entry align="center" valign="middle">
-		<para>const int</para>
+		<para>unsigned int</para>
               </entry>
               <entry>
 		<programlisting>
