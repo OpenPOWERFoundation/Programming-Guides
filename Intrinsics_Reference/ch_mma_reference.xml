@@ -19,7 +19,7 @@
  revisionflag="added">
 
   <!-- Chapter Title goes here. -->
-  <title>Matrix Multiply Accelerate (MMA) Intrinsic Reference</title>
+  <title>Matrix-Multiply Assist (MMA) Intrinsic Reference</title>
 
   <section>
     <title>Introduction</title>
@@ -43,8 +43,14 @@
       instruction directly writes to one of these VSRs.
     </para>
     <para>
-      <emphasis role="bold">Review status:</emphasis> This chapter is
-      not yet reviewed by anyone.
+      This reference is not intended to be a complete introduction to
+      MMA concepts.  The reader is directed to the Matrix-Multiply
+      Assist Best Practices Guide (see <xref
+      linkend="VIPR.intro.links" />) and to the POWER ISA.
+    </para>
+    <para>
+      <emphasis role="bold">Review status:</emphasis> Chapter reviewed
+      by Paul Clarke; changes made.
     </para>
   </section>
 
@@ -76,6 +82,14 @@
       <para>
 	Load and store vector pairs.
       </para>
+      <indexterm>
+	<primary>lxvp</primary>
+	<secondary>__builtin_vsx_lxvp</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>stxvp</primary>
+	<secondary>__builtin_vsx_stxvp</secondary>
+      </indexterm>
       <para>
 	<informaltable frame="all">
 	  <tgroup cols="2">
@@ -95,7 +109,7 @@
 	      <row>
 		<entry>
 		  <programlisting>
-  __vector pair __builtin_vsx_lxvp (long long int a, const __vector_pair* b)
+  __vector_pair __builtin_vsx_lxvp (long long a, const __vector_pair* b)
 		  </programlisting>
 		</entry>
 		<entry>
@@ -107,7 +121,7 @@
 	      <row>
 		<entry>
 		  <programlisting>
-  void __builtin_vsx_stxvp (__vector_pair s, long long int a, const __vector_pair* b)
+  void __builtin_vsx_stxvp (__vector_pair s, long long a, const __vector_pair* b)
 		  </programlisting>
 		</entry>
 		<entry>
@@ -226,6 +240,18 @@
 	(a "priming" operation) or vice versa ( a "depriming"
 	operation), or initialize an accumulator to zeros.
       </para>
+      <indexterm>
+	<primary>xxmfacc</primary>
+	<secondary>__builtin_mma_xxmfacc</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xxmtacc</primary>
+	<secondary>__builtin_mma_xxmtacc</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xxsetaccz</primary>
+	<secondary>__builtin_mma_xxsetaccz</secondary>
+      </indexterm>
       <para>
 	<informaltable frame="all">
 	  <tgroup cols="2">
@@ -289,6 +315,238 @@
 	Each of these intrinsics generates an instruction to perform
 	an outer product operation.
       </para>
+      <indexterm>
+	<primary>pmxvbf16ger2</primary>
+	<secondary>__builtin_mma_pmxvbf16ger2</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>pmxvbf16ger2nn</primary>
+	<secondary>__builtin_mma_pmxvbf16ger2nn</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>pmxvbf16ger2np</primary>
+	<secondary>__builtin_mma_pmxvbf16ger2np</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>pmxvbf16ger2pn</primary>
+	<secondary>__builtin_mma_pmxvbf16ger2pn</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>pmxvbf16ger2pp</primary>
+	<secondary>__builtin_mma_pmxvbf16ger2pp</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>pmxvf16ger2</primary>
+	<secondary>__builtin_mma_pmxvf16ger2</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>pmxvf16ger2nn</primary>
+	<secondary>__builtin_mma_pmxvf16ger2nn</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>pmxvf16ger2np</primary>
+	<secondary>__builtin_mma_pmxvf16ger2np</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>pmxvf16ger2pn</primary>
+	<secondary>__builtin_mma_pmxvf16ger2pn</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>pmxvf16ger2pp</primary>
+	<secondary>__builtin_mma_pmxvf16ger2pp</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>pmxvf32ger</primary>
+	<secondary>__builtin_mma_pmxvf32ger</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>pmxvf32gernn</primary>
+	<secondary>__builtin_mma_pmxvf32gernn</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>pmxvf32gernp</primary>
+	<secondary>__builtin_mma_pmxvf32gernp</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>pmxvf32gerpn</primary>
+	<secondary>__builtin_mma_pmxvf32gerpn</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>pmxvf32gerpp</primary>
+	<secondary>__builtin_mma_pmxvf32gerpp</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>pmxvf64ger</primary>
+	<secondary>__builtin_mma_pmxvf64ger</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>pmxvf64gernn</primary>
+	<secondary>__builtin_mma_pmxvf64gernn</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>pmxvf64gernp</primary>
+	<secondary>__builtin_mma_pmxvf64gernp</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>pmxvf64gerpn</primary>
+	<secondary>__builtin_mma_pmxvf64gerpn</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>pmxvf64gerpp</primary>
+	<secondary>__builtin_mma_pmxvf64gerpp</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>pmxvi64ger2</primary>
+	<secondary>__builtin_mma_pmxvi64ger2</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>pmxvi64ger2pp</primary>
+	<secondary>__builtin_mma_pmxvi64ger2pp</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>pmxvi64ger2s</primary>
+	<secondary>__builtin_mma_pmxvi64ger2s</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>pmxvi64ger2spp</primary>
+	<secondary>__builtin_mma_pmxvi64ger2spp</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>pmxvi4ger8</primary>
+	<secondary>__builtin_mma_pmxvi4ger8</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>pmxvi4ger8pp</primary>
+	<secondary>__builtin_mma_pmxvi4ger8pp</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>pmxvi8ger4</primary>
+	<secondary>__builtin_mma_pmxvi8ger4</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>pmxvi8ger4pp</primary>
+	<secondary>__builtin_mma_pmxvi8ger4pp</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>pmxvi8ger4spp</primary>
+	<secondary>__builtin_mma_pmxvi8ger4spp</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvbf16ger2</primary>
+	<secondary>__builtin_mma_xvbf16ger2</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvbf16ger2nn</primary>
+	<secondary>__builtin_mma_xvbf16ger2nn</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvbf16ger2np</primary>
+	<secondary>__builtin_mma_xvbf16ger2np</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvbf16ger2pn</primary>
+	<secondary>__builtin_mma_xvbf16ger2pn</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvbf16ger2pp</primary>
+	<secondary>__builtin_mma_xvbf16ger2pp</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvf16ger2</primary>
+	<secondary>__builtin_mma_xvf16ger2</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvf16ger2nn</primary>
+	<secondary>__builtin_mma_xvf16ger2nn</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvf16ger2np</primary>
+	<secondary>__builtin_mma_xvf16ger2np</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvf16ger2pn</primary>
+	<secondary>__builtin_mma_xvf16ger2pn</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvf16ger2pp</primary>
+	<secondary>__builtin_mma_xvf16ger2pp</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvf32ger</primary>
+	<secondary>__builtin_mma_xvf32ger</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvf32gernn</primary>
+	<secondary>__builtin_mma_xvf32gernn</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvf32gernp</primary>
+	<secondary>__builtin_mma_xvf32gernp</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvf32gerpn</primary>
+	<secondary>__builtin_mma_xvf32gerpn</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvf32gerpp</primary>
+	<secondary>__builtin_mma_xvf32gerpp</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvf64ger</primary>
+	<secondary>__builtin_mma_xvf64ger</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvf64gernn</primary>
+	<secondary>__builtin_mma_xvf64gernn</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvf64gernp</primary>
+	<secondary>__builtin_mma_xvf64gernp</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvf64gerpn</primary>
+	<secondary>__builtin_mma_xvf64gerpn</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvf64gerpp</primary>
+	<secondary>__builtin_mma_xvf64gerpp</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvi16ger2</primary>
+	<secondary>__builtin_mma_xvi16ger2</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvi16ger2pp</primary>
+	<secondary>__builtin_mma_xvi16ger2pp</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvi16ger2s</primary>
+	<secondary>__builtin_mma_xvi16ger2s</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvi16ger2spp</primary>
+	<secondary>__builtin_mma_xvi16ger2spp</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvi4ger8</primary>
+	<secondary>__builtin_mma_xvi4ger8</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvi4ger8pp</primary>
+	<secondary>__builtin_mma_xvi4ger8pp</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvi8ger4</primary>
+	<secondary>__builtin_mma_xvi8ger4</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvi8ger4pp</primary>
+	<secondary>__builtin_mma_xvi8ger4pp</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvi8ger4spp</primary>
+	<secondary>__builtin_mma_xvi8ger4spp</secondary>
+      </indexterm>
       <para>
 	<informaltable frame="all">
 	  <tgroup cols="2">

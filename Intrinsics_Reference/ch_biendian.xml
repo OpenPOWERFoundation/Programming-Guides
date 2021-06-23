@@ -804,7 +804,7 @@ a[3] = c;</programlisting>
               </entry>
               <entry>
 		<para revisionflag="added">
-		  <code><xref linkend="vec_signextll"
+		  <code><xref linkend="vec_signextq"
 		  xrefstyle="select:title nopage"/></code>
 		</para>
               </entry>
@@ -817,10 +817,7 @@ a[3] = c;</programlisting>
 		<para><code><xref linkend="vec_mergee" xrefstyle="select:title nopage"/></code></para>
               </entry>
               <entry>
-		<para revisionflag="added">
-		  <code><xref linkend="vec_signextq"
-		  xrefstyle="select:title nopage"/></code>
-		</para>
+		<para><code><xref linkend="vec_sld" xrefstyle="select:title nopage"/></code></para>
               </entry>
             </row>
             <row>
@@ -831,7 +828,7 @@ a[3] = c;</programlisting>
 		<para><code><xref linkend="vec_mergeh" xrefstyle="select:title nopage"/></code></para>
               </entry>
               <entry>
-		<para><code><xref linkend="vec_sld" xrefstyle="select:title nopage"/></code></para>
+		<para><code><xref linkend="vec_sldw" xrefstyle="select:title nopage"/></code></para>
               </entry>
             </row>
             <row>
@@ -845,7 +842,7 @@ a[3] = c;</programlisting>
 		<para><code><xref linkend="vec_mergel" xrefstyle="select:title nopage"/></code></para>
               </entry>
               <entry>
-		<para><code><xref linkend="vec_sldw" xrefstyle="select:title nopage"/></code></para>
+		<para><code><xref linkend="vec_sll" xrefstyle="select:title nopage"/></code></para>
               </entry>
             </row>
             <row>
@@ -859,7 +856,7 @@ a[3] = c;</programlisting>
 		<para><code><xref linkend="vec_mergeo" xrefstyle="select:title nopage"/></code></para>
               </entry>
               <entry>
-		<para><code><xref linkend="vec_sll" xrefstyle="select:title nopage"/></code></para>
+		<para><code><xref linkend="vec_slo" xrefstyle="select:title nopage"/></code></para>
               </entry>
             </row>
             <row>
@@ -870,7 +867,7 @@ a[3] = c;</programlisting>
 		<para><code><xref linkend="vec_mfvscr" xrefstyle="select:title nopage"/></code></para>
               </entry>
               <entry>
-		<para><code><xref linkend="vec_slo" xrefstyle="select:title nopage"/></code></para>
+		<para><code><xref linkend="vec_slv" xrefstyle="select:title nopage"/></code></para>
               </entry>
             </row>
             <row>
@@ -881,7 +878,7 @@ a[3] = c;</programlisting>
 		<para><code><xref linkend="vec_mule" xrefstyle="select:title nopage"/></code></para>
               </entry>
               <entry>
-		<para><code><xref linkend="vec_slv" xrefstyle="select:title nopage"/></code></para>
+		<para><code><xref linkend="vec_splat" xrefstyle="select:title nopage"/></code></para>
               </entry>
             </row>
             <row>
@@ -892,7 +889,7 @@ a[3] = c;</programlisting>
 		<para><code><xref linkend="vec_mulo" xrefstyle="select:title nopage"/></code></para>
               </entry>
               <entry>
-		<para><code><xref linkend="vec_splat" xrefstyle="select:title nopage"/></code></para>
+		<para><code><xref linkend="vec_srl" xrefstyle="select:title nopage"/></code></para>
               </entry>
             </row>
             <row>
@@ -903,7 +900,7 @@ a[3] = c;</programlisting>
 		<para><code><xref linkend="vec_ncipher_be" xrefstyle="select:title nopage"/></code></para>
               </entry>
               <entry>
-		<para><code><xref linkend="vec_srl" xrefstyle="select:title nopage"/></code></para>
+		<para><code><xref linkend="vec_sro" xrefstyle="select:title nopage"/></code></para>
               </entry>
             </row>
             <row>
@@ -914,7 +911,7 @@ a[3] = c;</programlisting>
 		<para><code><xref linkend="vec_ncipherlast_be" xrefstyle="select:title nopage"/></code></para>
               </entry>
               <entry>
-		<para><code><xref linkend="vec_sro" xrefstyle="select:title nopage"/></code></para>
+		<para><code><xref linkend="vec_srv" xrefstyle="select:title nopage"/></code></para>
               </entry>
             </row>
             <row>
@@ -925,7 +922,10 @@ a[3] = c;</programlisting>
 		<para><code><xref linkend="vec_pack" xrefstyle="select:title nopage"/></code></para>
               </entry>
               <entry>
-		<para><code><xref linkend="vec_srv" xrefstyle="select:title nopage"/></code></para>
+		<para revisionflag="added">
+		  <code><xref linkend="vec_stril"
+		  xrefstyle="select:title nopage"/></code>
+		</para>
               </entry>
             </row>
             <row>
@@ -937,7 +937,7 @@ a[3] = c;</programlisting>
               </entry>
               <entry>
 		<para revisionflag="added">
-		  <code><xref linkend="vec_stril"
+		  <code><xref linkend="vec_stril_p"
 		  xrefstyle="select:title nopage"/></code>
 		</para>
               </entry>
@@ -964,7 +964,10 @@ a[3] = c;</programlisting>
 		<para><code><xref linkend="vec_packs" xrefstyle="select:title nopage"/></code></para>
               </entry>
               <entry>
-		<para><code><xref linkend="vec_sum2s" xrefstyle="select:title nopage"/></code></para>
+		<para revisionflag="added">
+		  <code><xref linkend="vec_strir_p"
+		  xrefstyle="select:title nopage"/></code>
+		</para>
               </entry>
             </row>
             <row>
@@ -975,7 +978,7 @@ a[3] = c;</programlisting>
 		<para><code><xref linkend="vec_packsu" xrefstyle="select:title nopage"/></code></para>
               </entry>
               <entry>
-		<para><code><xref linkend="vec_sums" xrefstyle="select:title nopage"/></code></para>
+		<para><code><xref linkend="vec_sum2s" xrefstyle="select:title nopage"/></code></para>
               </entry>
             </row>
             <row>
@@ -986,7 +989,7 @@ a[3] = c;</programlisting>
 		<para><code><xref linkend="vec_perm" xrefstyle="select:title nopage"/></code></para>
               </entry>
               <entry>
-		<para><code><xref linkend="vec_unpackh" xrefstyle="select:title nopage"/></code></para>
+		<para><code><xref linkend="vec_sums" xrefstyle="select:title nopage"/></code></para>
               </entry>
             </row>
             <row>
@@ -997,7 +1000,8 @@ a[3] = c;</programlisting>
 		<para><code><xref linkend="vec_permxor" xrefstyle="select:title nopage"/></code></para>
               </entry>
               <entry>
-		<para><code><xref linkend="vec_unpackl" xrefstyle="select:title nopage"/></code></para>
+		<para><code><xref linkend="vec_unpackh"
+		xrefstyle="select:title nopage"/></code></para>
               </entry>
             </row>
             <row>
@@ -1008,7 +1012,7 @@ a[3] = c;</programlisting>
 		<para><code><xref linkend="vec_pmsum_be" xrefstyle="select:title nopage"/></code></para>
               </entry>
 	      <entry>
-		<para><code><xref linkend="vec_unsigned2" xrefstyle="select:title nopage"/></code></para>
+		<para><code><xref linkend="vec_unpackl" xrefstyle="select:title nopage"/></code></para>
 	      </entry>
             </row>
             <row>
@@ -1019,7 +1023,7 @@ a[3] = c;</programlisting>
 		<para><code><xref linkend="vec_reve" xrefstyle="select:title nopage"/></code></para>
               </entry>
 	      <entry>
-		<para><code><xref linkend="vec_unsignede" xrefstyle="select:title nopage"/></code></para>
+		<para><code><xref linkend="vec_unsigned2" xrefstyle="select:title nopage"/></code></para>
 	      </entry>
             </row>
             <row>
@@ -1030,7 +1034,7 @@ a[3] = c;</programlisting>
 		<para><code><xref linkend="vec_sbox_be" xrefstyle="select:title nopage"/></code></para>
               </entry>
 	      <entry>
-		<para><code><xref linkend="vec_unsignedo" xrefstyle="select:title nopage"/></code></para>
+		<para><code><xref linkend="vec_unsignede" xrefstyle="select:title nopage"/></code></para>
 	      </entry>
             </row>
             <row>
@@ -1044,7 +1048,7 @@ a[3] = c;</programlisting>
 		<para><code><xref linkend="vec_shasigma_be" xrefstyle="select:title nopage"/></code></para>
               </entry>
               <entry>
-		<para><code><xref linkend="vec_xl" xrefstyle="select:title nopage"/></code> (ISA 2.07 only)</para>
+		<para><code><xref linkend="vec_unsignedo" xrefstyle="select:title nopage"/></code></para>
               </entry>
             </row>
 	    <row>
@@ -1058,7 +1062,7 @@ a[3] = c;</programlisting>
 		<para><code><xref linkend="vec_signed2" xrefstyle="select:title nopage"/></code></para>
 	      </entry>
               <entry>
-		<para><code><xref linkend="vec_xl_be" xrefstyle="select:title nopage"/></code></para>
+		<para><code><xref linkend="vec_xl" xrefstyle="select:title nopage"/></code> (ISA 2.07 only)</para>
               </entry>
 	    </row>
 	    <row>
@@ -1072,6 +1076,20 @@ a[3] = c;</programlisting>
 		<para><code><xref linkend="vec_signede" xrefstyle="select:title nopage"/></code></para>
 	      </entry>
               <entry>
+		<para><code><xref linkend="vec_xl_be" xrefstyle="select:title nopage"/></code></para>
+              </entry>
+	    </row>
+	    <row>
+	      <entry>
+		<para revisionflag="added">
+		  <code><xref linkend="vec_genpcvm"
+		  xrefstyle="select:title nopage"/></code>
+		</para>
+	      </entry>
+	      <entry>
+		<para><code><xref linkend="vec_signedo" xrefstyle="select:title nopage"/></code></para>
+	      </entry>
+              <entry>
 		<para><code><xref linkend="vec_xst" xrefstyle="select:title nopage"/></code> (ISA 2.07 only)</para>
               </entry>
 	    </row>
@@ -1083,11 +1101,14 @@ a[3] = c;</programlisting>
 		</para>
 	      </entry>
 	      <entry>
-		<para><code><xref linkend="vec_signedo" xrefstyle="select:title nopage"/></code></para>
+		<para revisionflag="added">
+		  <code><xref linkend="vec_signexti"
+		  xrefstyle="select:title nopage"/></code>
+		</para>
 	      </entry>
-              <entry>
+	      <entry>
 		<para><code><xref linkend="vec_xst_be" xrefstyle="select:title nopage"/></code></para>
-              </entry>
+	      </entry>
 	    </row>
 	    <row>
 	      <entry>
@@ -1095,7 +1116,7 @@ a[3] = c;</programlisting>
 	      </entry>
 	      <entry>
 		<para revisionflag="added">
-		  <code><xref linkend="vec_signexti"
+		  <code><xref linkend="vec_signextll"
 		  xrefstyle="select:title nopage"/></code>
 		</para>
 	      </entry>
@@ -1255,13 +1276,14 @@ a[3] = c;</programlisting>
 	introduced serious compiler complexity without much utility.
 	Thus this support (previously controlled by switches
 	<code>-maltivec=be</code> and/or <code>-qaltivec=be</code>) is
-	now deprecated.  Current versions of the GCC and Clang
-	open-source compilers do not implement this support.
+	now deprecated.  Current versions of the <phrase
+	revisionflag="changed">GCC, Clang, and Open XL</phrase>
+	compilers do not implement this support.
       </para>
     </section>
   </section>
 
-  <section>
+  <section revisionflag="deleted">
     <title>Language-Specific Vector Support for Other
     Languages</title>
     <section>

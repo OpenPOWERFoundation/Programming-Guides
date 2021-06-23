@@ -51,7 +51,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <listitem>
 	<para>
 	  A description of any unusual characteristics of the
-	  intrinsic when different target endiannesses are in force.
+	  intrinsic when <phrase revisionflag="changed">the target is
+	  big-endian versus little-endian.</phrase>
 	  If the semantics of the intrinsic in big-endian and
 	  little-endian modes are identical, the description will read
 	  "None.";
@@ -134,7 +135,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 	<para>
 	  <emphasis role="bold">ISA 3.1 or later</emphasis>.  This form
 	  is only available starting with PowerISA 3.1, corresponding to
-	  POWER10 servers.
+	  POWER10 servers.  The Power Vector Library (see <xref
+	  linkend="VIPR.intro.links" /> provides equivalent
+	  POWER7/POWER8/POWER9 implementations for many ISA 3.1 vector
+	  instructions, which may be preferred for portability.
 	</para>
       </listitem>
       <listitem>
@@ -1591,7 +1595,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </para>
       <para revisionflag="added">
 	<emphasis role="bold">Review status:</emphasis>
-	Not yet reviewed.
+	Reviewed by Paul Clarke.
       </para>
       
       <indexterm>
@@ -1641,7 +1645,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
           <colspec colname="c1" colwidth="20*" />
           <colspec colname="c2" colwidth="20*" />
           <colspec colname="c3" colwidth="20*" />
-          <colspec colname="c4" colwidth="20*" />
+          <colspec colname="c4" colwidth="25*" />
           <colspec colname="c5" colwidth="20*" />
           <thead>
             <row>
@@ -2094,7 +2098,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </para>
       <para revisionflag="added">
 	<emphasis role="bold">Review status:</emphasis>
-	Not yet reviewed.
+	Reviewed by Paul Clarke.
       </para>
       
       <indexterm>
@@ -2487,7 +2491,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </para>
       <para revisionflag="added">
 	<emphasis role="bold">Review status:</emphasis>
-	Not yet reviewed.
+	Reviewed by Paul Clarke.
       </para>
       
       <indexterm>
@@ -2966,7 +2970,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </para>
       <para revisionflag="added">
 	<emphasis role="bold">Review status:</emphasis>
-	Not yet reviewed.
+	Reviewed by Paul Clarke.
       </para>
       
       <indexterm>
@@ -3356,7 +3360,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </para>
       <para revisionflag="added">
 	<emphasis role="bold">Review status:</emphasis>
-	Not yet reviewed.
+	Reviewed by Paul Clarke.
       </para>
       
       <indexterm>
@@ -3843,7 +3847,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </para>
       <para revisionflag="added">
 	<emphasis role="bold">Review status:</emphasis>
-	Not yet reviewed.
+	Reviewed by Paul Clarke.
       </para>
       
       <indexterm>
@@ -4346,6 +4350,12 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
+      <para revisionflag="added">
+	<emphasis role="bold">Notes:</emphasis> If an element of
+	either <emphasis role="bold">a</emphasis> or <emphasis
+	role="bold">b</emphasis> contains a NaN value, the condition
+	for that element is considered to be satisfied.
+      </para>
       
       <indexterm>
 	<primary>xvcmpeqdp.</primary>
@@ -4456,6 +4466,12 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       role="bold">r</emphasis> is 0.</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
+      </para>
+      <para revisionflag="added">
+	<emphasis role="bold">Notes:</emphasis> If an element of
+	either <emphasis role="bold">a</emphasis> or <emphasis
+	role="bold">b</emphasis> contains a NaN value, the condition
+	for that element is considered to be satisfied.
       </para>
       
       <indexterm>
@@ -4568,6 +4584,12 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
+      <para revisionflag="added">
+	<emphasis role="bold">Notes:</emphasis> If an element of
+	either <emphasis role="bold">a</emphasis> or <emphasis
+	role="bold">b</emphasis> contains a NaN value, the condition
+	for that element is considered to be satisfied.
+      </para>
       
       <indexterm>
 	<primary>xvcmpgedp.</primary>
@@ -4678,6 +4700,12 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       role="bold">r</emphasis> is 0.</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
+      </para>
+      <para revisionflag="added">
+	<emphasis role="bold">Notes:</emphasis> If an element of
+	either <emphasis role="bold">a</emphasis> or <emphasis
+	role="bold">b</emphasis> contains a NaN value, the condition
+	for that element is considered to be satisfied.
       </para>
       
       <indexterm>
@@ -5532,8 +5560,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       None.
       </para>
       <para revisionflag="added">
-	<emphasis role="bold">Restrictions:</emphasis>
-	Not yet reviewed.
+	<emphasis role="bold">Review status:</emphasis>
+	Reviewed by Paul Clarke.
       </para>
       
       <indexterm>
@@ -6075,7 +6103,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </para>
       <para revisionflag="added">
 	<emphasis role="bold">Review status:</emphasis>
-	Not yet reviewed.
+	Reviewed by Paul Clarke.
       </para>
       
       <indexterm>
@@ -6589,7 +6617,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </para>
       <para revisionflag="added">
 	<emphasis role="bold">Review status:</emphasis>
-	Not yet reviewed.
+	Reviewed by Paul Clarke.
       </para>
       
       <indexterm>
@@ -7007,7 +7035,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </para>
       <para revisionflag="added">
 	<emphasis role="bold">Review status:</emphasis>
-	Not yet reviewed.
+	Reviewed by Paul Clarke.
       </para>
       
       <indexterm>
@@ -7472,7 +7500,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </para>
       <para revisionflag="added">
 	<emphasis role="bold">Review status:</emphasis>
-	Not yet reviewed.
+	Reviewed by Paul Clarke.
       </para>
       
       <indexterm>
@@ -7999,7 +8027,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </para>
       <para revisionflag="added">
 	<emphasis role="bold">Review status:</emphasis>
-	Not yet reviewed.
+	Reviewed by Paul Clarke.
       </para>
       
       <indexterm>
@@ -8540,6 +8568,12 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
+      <para revisionflag="added">
+	<emphasis role="bold">Notes:</emphasis> If an element of
+	either <emphasis role="bold">a</emphasis> or <emphasis
+	role="bold">b</emphasis> contains a NaN value, the condition
+	for that element is considered to be satisfied.
+      </para>
       
       <indexterm>
 	<primary>xvcmpgedp.</primary>
@@ -8661,6 +8695,12 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <emphasis role="bold">r</emphasis> is 0.</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
+      </para>
+      <para revisionflag="added">
+	<emphasis role="bold">Notes:</emphasis> If an element of
+	either <emphasis role="bold">a</emphasis> or <emphasis
+	role="bold">b</emphasis> contains a NaN value, the condition
+	for that element is considered to be satisfied.
       </para>
       
       <indexterm>
@@ -8784,6 +8824,12 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
+      <para revisionflag="added">
+	<emphasis role="bold">Notes:</emphasis> If an element of
+	either <emphasis role="bold">a</emphasis> or <emphasis
+	role="bold">b</emphasis> contains a NaN value, the condition
+	for that element is considered to be satisfied.
+      </para>
       
       <indexterm>
 	<primary>xvcmpgedp.</primary>
@@ -8905,6 +8951,12 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <emphasis role="bold">r</emphasis> is 0.</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
+      </para>
+      <para revisionflag="added">
+	<emphasis role="bold">Notes:</emphasis> If an element of
+	either <emphasis role="bold">a</emphasis> or <emphasis
+	role="bold">b</emphasis> contains a NaN value, the condition
+	for that element is considered to be satisfied.
       </para>
       
       <indexterm>
@@ -10306,10 +10358,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <para><emphasis role="bold">a</emphasis></para>
             </entry>
             <entry align="center" valign="middle">
-              <para>0x0123456789abcdef</para>
+              <para><code>0x0123456789abcdef</code></para>
             </entry>
             <entry align="center" valign="middle">
-              <para>0x0123456789abcdef</para>
+              <para><code>0x0123456789abcdef</code></para>
             </entry>
           </row>
           <row>
@@ -10317,10 +10369,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <para><emphasis role="bold">b</emphasis></para>
             </entry>
             <entry align="center" valign="middle">
-              <para>0x0f0f0f0f0f0f0f0f</para>
+              <para><code>0x0f0f0f0f0f0f0f0f</code></para>
             </entry>
             <entry align="center" valign="middle">
-              <para>0xffff0000ffff0000</para>
+              <para><code>0xffff0000ffff0000</code></para>
             </entry>
           </row>
           <row>
@@ -10328,10 +10380,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <para><emphasis role="bold">r</emphasis></para>
             </entry>
             <entry align="center" valign="middle">
-              <para>0x02468ace13579bdf</para>
+              <para><code>0x02468ace13579bdf</code></para>
             </entry>
             <entry align="center" valign="middle">
-              <para>0x4567cdef012389ab</para>
+              <para><code>0x4567cdef012389ab</code></para>
             </entry>
           </row>
         </tbody>
@@ -10343,7 +10395,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       None.
       </para>
       <para><emphasis role="bold">Review status:</emphasis>
-      Not yet reviewed.
+      Reviewed by Paul Clarke; changes made.
       </para>
       
       <indexterm>
@@ -10613,7 +10665,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       big-endian targets, and right-to-left for little-endian targets.
       </para>
       <para><emphasis role="bold">Review status:</emphasis>
-      Not yet reviewed.
+      Reviewed by Paul Clarke.
       </para>
       
       <indexterm>
@@ -10752,7 +10804,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       big-endian targets, and right-to-left for little-endian targets.
       </para>
       <para><emphasis role="bold">Review status:</emphasis>
-      Not yet reviewed.
+      Reviewed by Paul Clarke.
       </para>
       
       <indexterm>
@@ -10994,7 +11046,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </para>
       <para revisionflag="added">
 	<emphasis role="bold">Review status:</emphasis>
-	Not yet reviewed.
+	Reviewed by Paul Clarke.
       </para>
       
       <indexterm>
@@ -11438,7 +11490,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </para>
       <para revisionflag="added">
 	<emphasis role="bold">Review status:</emphasis>
-	Not yet reviewed.
+	Reviewed by Paul Clarke.
       </para>
       
       <indexterm>
@@ -11815,7 +11867,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </para>
       <para revisionflag="added">
 	<emphasis role="bold">Review status:</emphasis>
-	Not yet reviewed.
+	Reviewed by Paul Clarke.
       </para>
       
       <indexterm>
@@ -12178,7 +12230,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </para>
       <para revisionflag="added">
 	<emphasis role="bold">Review status:</emphasis>
-	Not yet reviewed.
+	Reviewed by Paul Clarke.
       </para>
       
       <indexterm>
@@ -12555,7 +12607,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </para>
       <para revisionflag="added">
 	<emphasis role="bold">Review status:</emphasis>
-	Not yet reviewed.
+	Reviewed by Paul Clarke.
       </para>
       
       <indexterm>
@@ -12916,7 +12968,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </para>
       <para revisionflag="added">
 	<emphasis role="bold">Review status:</emphasis>
-	Not yet reviewed.
+	Reviewed by Paul Clarke.
       </para>
       
       <indexterm>
@@ -14294,10 +14346,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <para><emphasis role="bold">a</emphasis></para>
             </entry>
             <entry align="center" valign="middle">
-              <para>0x0123456789abcdef</para>
+              <para><code>0x0123456789abcdef</code></para>
             </entry>
             <entry align="center" valign="middle">
-              <para>0x0123456789abcdef</para>
+              <para><code>0x0123456789abcdef</code></para>
             </entry>
           </row>
           <row>
@@ -14305,10 +14357,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <para><emphasis role="bold">b</emphasis></para>
             </entry>
             <entry align="center" valign="middle">
-              <para>0xaaaaaaaaaaaaaaaa</para>
+              <para><code>0xaaaaaaaaaaaaaaaa</code></para>
             </entry>
             <entry align="center" valign="middle">
-              <para>0xcccccccccccccccc</para>
+              <para><code>0xcccccccccccccccc</code></para>
             </entry>
           </row>
           <row>
@@ -14326,12 +14378,22 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </tgroup>
       </informaltable>
       </para>
+      <para>
+	Consider element 0 in the above table.  The first sixteen bits
+	of <emphasis role="bold">a</emphasis> are 0000 0001 0010 0011.
+	The first sixteen bits of <emphasis role="bold">b</emphasis>
+	are 1010 1010 1010 1010.  Applying the mask of <emphasis
+	role="bold">b</emphasis> to <emphasis role="bold">a</emphasis>
+	means that we only consider the even-numbered bits of
+	<emphasis role="bold">a</emphasis>, which are 0 0 0 0 0 1 0
+	1.  The number of leading zeros in this result is 5.
+      </para>
 
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
       <para><emphasis role="bold">Review status:</emphasis>
-      Not yet reviewed.
+      Reviewed by Paul Clarke; changes made.
       </para>
       
       <indexterm>
@@ -14436,7 +14498,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       (<code>lxvl</code>) instruction.
       </para>
       <para><emphasis role="bold">Review status:</emphasis>
-      Not yet reviewed.
+      Reviewed by Paul Clarke.
       </para>
       
       <indexterm>
@@ -15327,10 +15389,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <para><emphasis role="bold">a</emphasis></para>
             </entry>
             <entry align="center" valign="middle">
-              <para>0xfedcba9876543210</para>
+              <para><code>0xfedcba9876543210</code></para>
             </entry>
             <entry align="center" valign="middle">
-              <para>0xfedcba9876543210</para>
+              <para><code>0xfedcba9876543210</code></para>
             </entry>
           </row>
           <row>
@@ -15338,10 +15400,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <para><emphasis role="bold">b</emphasis></para>
             </entry>
             <entry align="center" valign="middle">
-              <para>0xaaaaaaaaaaaaaaaa</para>
+              <para><code>0xaaaaaaaaaaaaaaaa</code></para>
             </entry>
             <entry align="center" valign="middle">
-              <para>0xcccccccccccccccc</para>
+              <para><code>0xcccccccccccccccc</code></para>
             </entry>
           </row>
           <row>
@@ -15359,12 +15421,22 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </tgroup>
       </informaltable>
       </para>
+      <para>
+	Consider element 0 in the above table.  The last sixteen bits
+	of <emphasis role="bold">a</emphasis> are 0011 0010 0001 0000.
+	The last sixteen bits of <emphasis role="bold">b</emphasis>
+	are 1010 1010 1010 1010.  Applying the mask of <emphasis
+	role="bold">b</emphasis> to <emphasis role="bold">a</emphasis>
+	means that we only consider the even-numbered bits of
+	<emphasis role="bold">a</emphasis>, which are 0 1 0 1 0 0 0
+	0.  The number of trailing zeros in this result is 4.
+      </para>
 
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
       <para><emphasis role="bold">Review status:</emphasis>
-      Not yet reviewed.
+      Reviewed by Paul Clarke; changes made.
       </para>
       
       <indexterm>
@@ -15712,7 +15784,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </para>
       <para revisionflag="added">
 	<emphasis role="bold">Review status:</emphasis>
-	Not yet reviewed.
+	Reviewed by Paul Clarke.
       </para>
       <para revisionflag="added">
 	<emphasis role="bold">Notes:</emphasis>
@@ -15830,7 +15902,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </para>
       <para revisionflag="added">
 	<emphasis role="bold">Review status:</emphasis>
-	Not yet reviewed.
+	Reviewed by Paul Clarke.
       </para>
       <para revisionflag="added">
 	<emphasis role="bold">Notes:</emphasis>
@@ -15962,7 +16034,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 	<emphasis role="bold">Review status:</emphasis>
 	Changes other than __int128 reviewed by Paul Clarke and
 	Jinsong Ji.  Added 0x8000_0000 example per Jinsong's comment.
-	Changes for __int128 have not yet been reviewed.
+	Changes for __int128 have been reviewed by Paul Clarke.
       </para>
       
       <indexterm>
@@ -16312,8 +16384,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 	<emphasis role="bold">Review status:</emphasis>
 	Changes other than __int128 were reviewed by Paul Clarke and
 	Jinsong Ji.  Updated language about the shift amount per
-	Jinsong's comment.  Changes for __int128 have not yet been
-	reviewed.
+	Jinsong's comment.  Changes for __int128 were reviewed by Paul
+	Clarke.
       </para>
 
       <indexterm>
@@ -17822,7 +17894,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       None.
       </para>
       <para><emphasis role="bold">Review status:</emphasis>
-      Not yet reviewed.
+      Reviewed by Paul Clarke.
       </para>
       
       <indexterm>
@@ -19208,7 +19280,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       None.
       </para>
       <para><emphasis role="bold">Review status:</emphasis>
-      Not yet reviewed.
+      Reviewed by Paul Clarke.
       </para>
       
       <indexterm>
@@ -22177,13 +22249,49 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       role="bold">a</emphasis> are likewise numbered from left to
       right.
       </para>
+      <para>An example follows:
+      <informaltable frame="all">
+      <tgroup cols="2">
+        <colspec colname="c0" colwidth="10*" />
+        <colspec colname="c1" colwidth="50*" />
+        <thead>
+          <row>
+            <entry align="center" valign="middle">
+              <para></para>
+            </entry>
+            <entry align="center" valign="middle">
+              <para><emphasis role="bold">Example</emphasis></para>
+            </entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry align="center" valign="middle">
+              <para><emphasis role="bold">a</emphasis></para>
+            </entry>
+            <entry align="center" valign="middle">
+              <para><code>1010 1010 1010 1010</code></para>
+            </entry>
+          </row>
+          <row>
+            <entry align="center" valign="middle">
+              <para><emphasis role="bold">r</emphasis></para>
+            </entry>
+            <entry align="center" valign="middle">
+              <para><code>0xff00ff00 ff00ff00 ff00ff00 ff00ff00</code></para>
+            </entry>
+          </row>
+        </tbody>
+      </tgroup>
+      </informaltable>
+      </para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       Because elements are numbered from left to right in the result
       vector regardless of endianness, the semantics of this built-in
       function differ on big-endian and little-endian targets.
       </para>
       <para><emphasis role="bold">Review status:</emphasis>
-      Not yet reviewed.
+      Reviewed by Paul Clarke; example added.
       </para>
       
       <indexterm>
@@ -22272,13 +22380,49 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       role="bold">a</emphasis> are likewise numbered from left to
       right.
       </para>
+      <para>An example follows:
+      <informaltable frame="all">
+      <tgroup cols="2">
+        <colspec colname="c0" colwidth="10*" />
+        <colspec colname="c1" colwidth="50*" />
+        <thead>
+          <row>
+            <entry align="center" valign="middle">
+              <para></para>
+            </entry>
+            <entry align="center" valign="middle">
+              <para><emphasis role="bold">Example</emphasis></para>
+            </entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry align="center" valign="middle">
+              <para><emphasis role="bold">a</emphasis></para>
+            </entry>
+            <entry align="center" valign="middle">
+              <para><code>0 1</code></para>
+            </entry>
+          </row>
+          <row>
+            <entry align="center" valign="middle">
+              <para><emphasis role="bold">r</emphasis></para>
+            </entry>
+            <entry align="center" valign="middle">
+              <para><code>0x0000000000000000 ffffffffffffffff</code></para>
+            </entry>
+	  </row>
+        </tbody>
+      </tgroup>
+      </informaltable>
+      </para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       Because elements are numbered from left to right in the result
       vector regardless of endianness, the semantics of this built-in
       function differ on big-endian and little-endian targets.
       </para>
       <para><emphasis role="bold">Review status:</emphasis>
-      Not yet reviewed.
+      Reviewed by Paul Clarke; example added.
       </para>
       
       <indexterm>
@@ -22367,13 +22511,49 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       role="bold">a</emphasis> are likewise numbered from left to
       right.
       </para>
+      <para>An example follows:
+      <informaltable frame="all">
+      <tgroup cols="2">
+        <colspec colname="c0" colwidth="10*" />
+        <colspec colname="c1" colwidth="50*" />
+        <thead>
+          <row>
+            <entry align="center" valign="middle">
+              <para></para>
+            </entry>
+            <entry align="center" valign="middle">
+              <para><emphasis role="bold">Example</emphasis></para>
+            </entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry align="center" valign="middle">
+              <para><emphasis role="bold">a</emphasis></para>
+            </entry>
+            <entry align="center" valign="middle">
+              <para><code>10 10 01 01</code></para>
+            </entry>
+          </row>
+          <row>
+            <entry align="center" valign="middle">
+              <para><emphasis role="bold">r</emphasis></para>
+            </entry>
+            <entry align="center" valign="middle">
+              <para><code>0xffff0000 ffff0000 0000ffff 0000ffff</code></para>
+            </entry>
+          </row>
+        </tbody>
+      </tgroup>
+      </informaltable>
+      </para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       Because elements are numbered from left to right in the result
       vector regardless of endianness, the semantics of this built-in
       function differ on big-endian and little-endian targets.
       </para>
       <para><emphasis role="bold">Review status:</emphasis>
-      Not yet reviewed.
+      Reviewed by Paul Clarke; example added.
       </para>
       
       <indexterm>
@@ -22448,11 +22628,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       source vector according to a specified mask.
       </para>
       <para><emphasis role="bold">Result value:</emphasis>
-      <emphasis role="bold">b</emphasis> must have a value of 0, 1, 2,
-      or 3.  <emphasis role="bold">a</emphasis> contains a bit mask
-      where the high-order bit in each element is set if the permute
-      mask should specify expansion or compression of that element, as
-      explained below.
+      In what follows, <emphasis role="bold">b</emphasis> must have a
+      value of 0, 1, 2, or 3.  <emphasis role="bold">a</emphasis>
+      contains a bit mask where the high-order bit in each element is
+      set if the permute mask should specify expansion or compression
+      of that element, as explained below.
       </para>
       <para>
 	If <emphasis role="bold">b</emphasis> = 0, <emphasis
@@ -22494,13 +22674,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       must be reversed by the compiler for little-endian targets.
       </para>
       <para><emphasis role="bold">Notes:</emphasis>
-      See the descriptions of <code>xxgenpcvbm</code> et al. in the
-      Power Instruction Set Architecture, Version 3.1B Specification
-      (<xref linkend="VIPR.intro.links" />) for examples of how to use
-      this function in practice.
+      See the Programming Notes following the descriptions of
+      <code>xxgenpcvbm</code> et al. in the Power Instruction Set
+      Architecture, Version 3.1B Specification (<xref
+      linkend="VIPR.intro.links" />) for examples of how to use this
+      function in practice.
       </para>
       <para><emphasis role="bold">Review status:</emphasis>
-      Not yet reviewed.
+      Reviewed by Paul Clarke; minor changes made.
       </para>
       
       <indexterm>
@@ -22691,15 +22872,15 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </para>
       <para><emphasis role="bold">Result value:</emphasis>
       All bits of <emphasis role="bold">r</emphasis> are set to 0 if
-      the bit in <emphasis role="bold">a</emphasis> is equal to 0.
-      Otherwise all bits of <emphasis role="bold">r</emphasis> are set
-      to 1.
+      the low-order bit in <emphasis role="bold">a</emphasis> is equal
+      to 0.  Otherwise all bits of <emphasis role="bold">r</emphasis>
+      are set to 1.
       </para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
       <para><emphasis role="bold">Review status:</emphasis>
-      Not yet reviewed.
+      Reviewed by Paul Clarke.
       </para>
       
       <indexterm>
@@ -22788,13 +22969,49 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       role="bold">a</emphasis> are likewise numbered from left to
       right.
       </para>
+      <para>An example follows:
+      <informaltable frame="all">
+      <tgroup cols="2">
+        <colspec colname="c0" colwidth="10*" />
+        <colspec colname="c1" colwidth="50*" />
+        <thead>
+          <row>
+            <entry align="center" valign="middle">
+              <para></para>
+            </entry>
+            <entry align="center" valign="middle">
+              <para><emphasis role="bold">Example</emphasis></para>
+            </entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry align="center" valign="middle">
+              <para><emphasis role="bold">a</emphasis></para>
+            </entry>
+            <entry align="center" valign="middle">
+              <para><code>10 01</code></para>
+            </entry>
+          </row>
+          <row>
+            <entry align="center" valign="middle">
+              <para><emphasis role="bold">r</emphasis></para>
+            </entry>
+            <entry align="center" valign="middle">
+              <para><code>0xffffffff00000000 00000000ffffffff</code></para>
+            </entry>
+          </row>
+        </tbody>
+      </tgroup>
+      </informaltable>
+      </para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       Because elements are numbered from left to right in the result
       vector regardless of endianness, the semantics of this built-in
       function differ on big-endian and little-endian targets.
       </para>
       <para><emphasis role="bold">Review status:</emphasis>
-      Not yet reviewed.
+      Reviewed by Paul Clarke; example added.
       </para>
       
       <indexterm>
@@ -22891,7 +23108,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       None.
       </para>
       <para><emphasis role="bold">Review status:</emphasis>
-      Not yet reviewed.
+      Reviewed by Paul Clarke.
       </para>
       
       <indexterm>
@@ -27107,7 +27324,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <para>
 	<emphasis role="bold">Review status:</emphasis>
 	Changes other than __int128 were reviewed by Paul Clarke and
-	Jinsong Ji.  Changes for __int128 have not yet been reviewed.
+	Jinsong Ji.  Changes for __int128 have been reviewed by Paul
+	Clarke.
       </para>
 
       <indexterm>
@@ -27515,7 +27733,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       operation using the source vectors.
       </para>
       <para><emphasis role="bold">Result value: </emphasis>
-        There are two cases:
+        There are <phrase revisionflag="changed">three</phrase> cases:
 	<itemizedlist>
 	  <listitem>
 	    <para>
@@ -27540,6 +27758,12 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 		    role="bold">c</emphasis> and placed in the
 		    corresponding word element of <emphasis
 		    role="bold">r</emphasis>.
+		  </para>
+		</listitem>
+		<listitem revisionflag="added">
+		  <para>
+		    All operations are performed using 32-bit modular
+		    arithmetic.
 		  </para>
 		</listitem>
 	      </itemizedlist>
@@ -27570,19 +27794,52 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 		    role="bold">r</emphasis>.
 		  </para>
 		</listitem>
+		<listitem revisionflag="added">
+		  <para>
+		    All operations are performed using 32-bit modular
+		    arithmetic.
+		  </para>
+		</listitem>
+	      </itemizedlist>
+	    </para>
+	  </listitem>
+	  <listitem revisionflag="added">
+	    <para>
+	      When <emphasis role="bold">a</emphasis> is of type
+	      vector signed long long or vector unsigned long long,
+	      <emphasis role="bold">r</emphasis> is
+	      computed as follows:
+	      <itemizedlist spacing="compact">
+		<listitem>
+		  <para>
+		    Each of the two doubleword elements of <emphasis
+		    role="bold">a</emphasis> is multiplied by the
+		    corresponding doubleword element of <emphasis
+		    role="bold">b</emphasis>.
+		  </para>
+		</listitem>
+		<listitem>
+		  <para>
+		    The sum of these two doubleword products is added
+		    to the contents of <emphasis
+		    role="bold">c</emphasis> and placed in <emphasis
+		    role="bold">r</emphasis>.
+		  </para>
+		</listitem>
 	      </itemizedlist>
 	    </para>
 	  </listitem>
 	</itemizedlist>
-	All operations are performed using 32-bit modular arithmetic.
+	<phrase revisionflag="deleted">All operations are performed
+	using 32-bit modular arithmetic.</phrase>
       </para>
 
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
       <para revisionflag="added">
-	<emphasis role="bold">Endian considerations:</emphasis>
-	Changes not yet reviewed.
+	<emphasis role="bold">Review status:</emphasis>
+	Reviewed by Paul Clarke; changes made.
       </para>
       
       <indexterm>
@@ -27792,7 +28049,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       None.
       </para>
       <para><emphasis role="bold">Review status:</emphasis>
-      Changes have not been reviewed.
+      Reviewed by Paul Clarke.
       </para>
       
       <indexterm>
@@ -28478,7 +28735,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </para>
       <para revisionflag="added"><emphasis role="bold">Review
       status:</emphasis>
-      Changes not yet reviewed.
+      Reviewed by Paul Clarke.
       </para>
       
       <indexterm>
@@ -28964,7 +29221,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </para>
       <para revisionflag="added"><emphasis role="bold">Review
       status:</emphasis>
-      Changes not yet reviewed.
+      Reviewed by Paul Clarke.
       </para>
       
       <indexterm>
@@ -32630,10 +32887,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <para><emphasis role="bold">a</emphasis></para>
             </entry>
             <entry align="center" valign="middle">
-              <para>0xfedcba9876543210</para>
+              <para><code>0xfedcba9876543210</code></para>
             </entry>
             <entry align="center" valign="middle">
-              <para>0xfedcba9876543210</para>
+              <para><code>0xfedcba9876543210</code></para>
             </entry>
           </row>
           <row>
@@ -32641,10 +32898,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <para><emphasis role="bold">b</emphasis></para>
             </entry>
             <entry align="center" valign="middle">
-              <para>0x8888888888888888</para>
+              <para><code>0x8888888888888888</code></para>
             </entry>
             <entry align="center" valign="middle">
-              <para>0xcccccccccccccccc</para>
+              <para><code>0xcccccccccccccccc</code></para>
             </entry>
           </row>
           <row>
@@ -32652,22 +32909,31 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <para><emphasis role="bold">r</emphasis></para>
             </entry>
             <entry align="center" valign="middle">
-              <para>0x0088 0080 0008 0000</para>
+              <para><code>0x0088 0080 0008 0000</code></para>
             </entry>
             <entry align="center" valign="middle">
-              <para>0x4c 48 44 40 0c 08 04 00</para>
+              <para><code>0x4c 48 44 40 0c 08 04 00</code></para>
             </entry>
           </row>
         </tbody>
       </tgroup>
       </informaltable>
       </para>
-
+      <para>
+	Consider element 0 in the above table.  Since <emphasis
+	role="bold">b</emphasis> contains 16 set bits, only the
+	rightmost 16 bits of <emphasis role="bold">a</emphasis> are
+	pertinent to the result.  These bits are 0011 0010 0001 0000.
+	These bits are distributed into <emphasis
+	role="bold">r</emphasis> at the bit positions that are set in
+	<emphasis role="bold">b</emphasis>, providing the result shown
+	in the table.
+      </para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
       <para><emphasis role="bold">Review status:</emphasis>
-      Not yet reviewed.
+      Reviewed by Paul Clarke; changes made.
       </para>
       
       <indexterm>
@@ -33948,10 +34214,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <para><emphasis role="bold">a</emphasis></para>
             </entry>
             <entry align="center" valign="middle">
-              <para>0x0088 0080 0008 0000</para>
+              <para><code>0x0088 0080 0008 0000</code></para>
             </entry>
             <entry align="center" valign="middle">
-              <para>0x4c 48 44 40 0c 08 04 00</para>
+              <para><code>0x4c 48 44 40 0c 08 04 00</code></para>
             </entry>
           </row>
           <row>
@@ -33959,10 +34225,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <para><emphasis role="bold">b</emphasis></para>
             </entry>
             <entry align="center" valign="middle">
-              <para>0x8888888888888888</para>
+              <para><code>0x8888888888888888</code></para>
             </entry>
             <entry align="center" valign="middle">
-              <para>0xcccccccccccccccc</para>
+              <para><code>0xcccccccccccccccc</code></para>
             </entry>
           </row>
           <row>
@@ -33970,22 +34236,31 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <para><emphasis role="bold">r</emphasis></para>
             </entry>
             <entry align="center" valign="middle">
-              <para>0x0000000000003210</para>
+              <para><code>0x0000000000003210</code></para>
             </entry>
             <entry align="center" valign="middle">
-              <para>0x0000000076543210</para>
+              <para><code>0x0000000076543210</code></para>
             </entry>
           </row>
         </tbody>
       </tgroup>
       </informaltable>
       </para>
-
+      <para>
+	Consider element 0 in the above table.  Since <emphasis
+	role="bold">b</emphasis> contains 16 set bits, all but the
+	rightmost 16 bits of <emphasis role="bold">r</emphasis> are
+	set to zero.  The remaining 16 bits are set by extracting
+	the bits of <emphasis role="bold">a</emphasis> at the
+	positions of the bits set in <emphasis
+	role="bold">b</emphasis>.  Those bits are 0011 0010 0001 0000,
+	providing the result shown in the table.
+      </para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
       <para><emphasis role="bold">Review status:</emphasis>
-      Not yet reviewed.
+      Reviewed by Paul Clarke; changes made.
       </para>
       
       <indexterm>
@@ -35571,7 +35846,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </para>
       <para revisionflag="added">
 	<emphasis role="bold">Review status:</emphasis>
-	Not yet reviewed.
+	Reviewed by Paul Clarke.
       </para>
       
       <indexterm>
@@ -35916,7 +36191,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </para>
       <para revisionflag="added">
 	<emphasis role="bold">Review status:</emphasis>
-	Not yet reviewed.
+	Reviewed by Paul Clarke.
       </para>
       
       <indexterm>
@@ -36092,7 +36367,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </para>
       <para revisionflag="added">
 	<emphasis role="bold">Review status:</emphasis>
-	Not yet reviewed.
+	Reviewed by Paul Clarke.
       </para>
       
       <indexterm>
@@ -37897,7 +38172,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       achieve this.
       </para>
       <para><emphasis role="bold">Review status:</emphasis>
-      Not yet reviewed.
+      Reviewed by Paul Clarke.
       </para>
       
       <indexterm>
@@ -37957,6 +38232,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry>
                 <programlisting>
   vextsb2w  r,a
+
 		</programlisting>
               </entry>
               <entry>
@@ -37979,6 +38255,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry>
                 <programlisting>
   vextsh2w  r,a
+
 		</programlisting>
               </entry>
               <entry>
@@ -38033,7 +38310,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       achieve this.
       </para>
       <para><emphasis role="bold">Review status:</emphasis>
-      Not yet reviewed.
+      Reviewed by Paul Clarke.
       </para>
       
       <indexterm>
@@ -38097,6 +38374,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry>
                 <programlisting>
   vextsb2d  r,a
+
 		</programlisting>
               </entry>
               <entry>
@@ -38119,6 +38397,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry>
                 <programlisting>
   vextsh2d  r,a
+
 		</programlisting>
               </entry>
               <entry>
@@ -38141,6 +38420,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry>
                 <programlisting>
   vextsw2d  r,a
+
 		</programlisting>
               </entry>
               <entry>
@@ -38180,7 +38460,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       leftmost element for big endian.
       </para>
       <para><emphasis role="bold">Review status:</emphasis>
-      Not yet reviewed.
+      Reviewed by Paul Clarke.
       </para>
       
       <indexterm>
@@ -38236,6 +38516,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               <entry>
                 <programlisting>
   vextsd2q  r,a
+
 		</programlisting>
               </entry>
               <entry>
@@ -38276,7 +38557,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </para>
       <para revisionflag="added">
 	<emphasis role="bold">Review status:</emphasis>
-	Not yet reviewed.
+	Reviewed by Paul Clarke.
       </para>
       
       <indexterm>
@@ -41231,7 +41512,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </para>
       <para revisionflag="added">
 	<emphasis role="bold">Review status:</emphasis>
-	Not yet reviewed.
+	Reviewed by Paul Clarke.
       </para>
       
       <indexterm>
@@ -41526,7 +41807,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </para>
       <para revisionflag="added">
 	<emphasis role="bold">Review status:</emphasis>
-	Not yet reviewed.
+	Reviewed by Paul Clarke.
       </para>
       
       <indexterm>
@@ -44184,7 +44465,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       big-endian targets, and right-to-left for little-endian targets.
       </para>
       <para><emphasis role="bold">Review status:</emphasis>
-      Not yet reviewed.
+      Reviewed by Paul Clarke.
       </para>
       
       <indexterm>
@@ -44549,7 +44830,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       big-endian targets, and right-to-left for little-endian targets.
       </para>
       <para><emphasis role="bold">Review status:</emphasis>
-      Not yet reviewed.
+      Reviewed by Paul Clarke.
       </para>
       
       <indexterm>
@@ -46796,7 +47077,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       None.
       </para>
       <para><emphasis role="bold">Review status:</emphasis>
-      Not yet reviewed.
+      Reviewed by Paul Clarke.
       </para>
       
       <indexterm>
@@ -47155,7 +47436,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       position in condition register field <emphasis>t</emphasis>.
       </para>
       <para><emphasis role="bold">Review status:</emphasis>
-      Not yet reviewed.
+      Reviewed by Paul Clarke.
       </para>
       
       <indexterm>
@@ -47251,7 +47532,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       position in condition register field <emphasis>t</emphasis>.
       </para>
       <para><emphasis role="bold">Review status:</emphasis>
-      Not yet reviewed.
+      Reviewed by Paul Clarke.
       </para>
       
       <indexterm>
@@ -51614,6 +51895,293 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 
     </section>
 
+  </section>
+
+  <?hard-pagebreak?>
+  <section xml:id="VIPR.reference.fortfns">
+    <title>Built-In Vector Functions for Fortran</title>
+
+      <para>
+	<xref linkend="VIPR.biendian.fortrantypes" /> shows the
+	correspondence between the C/C++ types described in this
+	document and their Fortran equivalents. In Fortran, the
+	Boolean vector data types are represented by
+	<code>VECTOR(UNSIGNED(</code><emphasis>n</emphasis><code>))</code>.
+      </para>
+      <table frame="all" pgwide="1" xml:id="VIPR.biendian.fortrantypes">
+        <title>Fortran Vector Data Types</title>
+        <tgroup cols="2">
+          <colspec colname="c1" colwidth="50*" />
+          <colspec colname="c2" colwidth="50*" />
+          <thead>
+            <row>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">XL Fortran Vector Type</emphasis>
+                </para>
+              </entry>
+              <entry align="center">
+                <para>
+                  <emphasis role="bold">XL C/C++ Vector Type</emphasis>
+                </para>
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>
+                <para>VECTOR(INTEGER(1))</para>
+              </entry>
+              <entry>
+                <para>vector signed char</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>VECTOR(INTEGER(2))</para>
+              </entry>
+              <entry>
+                <para>vector signed short</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>VECTOR(INTEGER(4))</para>
+              </entry>
+              <entry>
+                <para>vector signed int</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>VECTOR(INTEGER(8))</para>
+              </entry>
+              <entry>
+                <para>vector signed long long, vector signed long<footnote
+		xml:id="vlong-appalling">
+                  <para>The vector long types are deprecated due to their
+                  ambiguity between 32-bit and 64-bit environments. The use
+                  of the vector long long types is preferred.</para>
+		</footnote></para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>VECTOR(INTEGER(16))</para>
+              </entry>
+              <entry>
+                <para>vector signed __int128</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>VECTOR(UNSIGNED(1))</para>
+              </entry>
+              <entry>
+                <para>vector unsigned char</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>VECTOR(UNSIGNED(2))</para>
+              </entry>
+              <entry>
+                <para>vector unsigned short</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>VECTOR(UNSIGNED(4))</para>
+              </entry>
+              <entry>
+                <para>vector unsigned int</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>VECTOR(UNSIGNED(8))</para>
+              </entry>
+              <entry>
+                <para>vector unsigned long long, vector unsigned long<footnoteref
+		linkend="vlong-appalling" /></para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>VECTOR(UNSIGNED(16))</para>
+              </entry>
+              <entry>
+                <para>vector unsigned __int128</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>VECTOR(REAL(4))</para>
+              </entry>
+              <entry>
+                <para>vector float</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>VECTOR(REAL(8))</para>
+              </entry>
+              <entry>
+                <para>vector double</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>VECTOR(PIXEL)</para>
+              </entry>
+              <entry>
+                <para>vector pixel</para>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+      <para>
+	Because the Fortran language does not support pointers, vector
+	built-in functions that expect pointers to a base type take an
+	array element reference to indicate the address of a memory
+	location that is the subject of a memory access built-in
+	function.
+      </para>
+      <para>
+	Because the Fortran language does not support type casts, the
+	<code>vec_convert</code> and <code>vec_concat</code> built-in
+	functions described in the following pages are provided to
+	perform bit-exact type conversions between vector types.
+      </para>
+
+    <?hard-pagebreak?>
+    <section xml:id="vec_concat">
+      <title>vec_concat</title>
+      <subtitle>Vector Concatenate</subtitle>
+      <programlisting>
+      r = vec_concat (a, b)
+      </programlisting>
+
+      <para><emphasis role="bold">Purpose:</emphasis>
+      Concatenates two elements to form a vector.
+      </para>
+      <para><emphasis role="bold">Result value:</emphasis>
+      The resulting vector consists of the two scalar elements,
+      <emphasis role="bold">a</emphasis> and <emphasis
+      role="bold">b</emphasis>, assigned to elements 0 and 1 in
+      natural element order, respectively.
+      </para>
+      <para><emphasis role="bold">Endian considerations:</emphasis>
+      None.
+      </para>
+      <table frame="all">
+	<title>Supported type signatures for vec_concat</title>
+	<tgroup cols="3">
+          <colspec colname="c1" colwidth="20*" />
+          <colspec colname="c2" colwidth="20*" />
+          <colspec colname="c3" colwidth="20*" />
+          <thead>
+            <row>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">r</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">a</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">b</emphasis>
+		</para>
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+	      <entry align="center" valign="middle">
+		<para>
+		  vector signed long long
+		</para>
+	      </entry>
+	      <entry align="center" valign="middle">
+		<para>
+		  signed long long
+		</para>
+	      </entry>
+	      <entry align="center" valign="middle">
+		<para>
+		  signed long long
+		</para>
+	      </entry>
+	    </row>
+            <row>
+	      <entry align="center" valign="middle">
+		<para>
+		  vector unsigned long long
+		</para>
+	      </entry>
+	      <entry align="center" valign="middle">
+		<para>
+		  unsigned long long
+		</para>
+	      </entry>
+	      <entry align="center" valign="middle">
+		<para>
+		  unsigned long long
+		</para>
+	      </entry>
+	    </row>
+            <row>
+	      <entry align="center" valign="middle">
+		<para>
+		  vector double
+		</para>
+	      </entry>
+	      <entry align="center" valign="middle">
+		<para>
+		  double
+		</para>
+	      </entry>
+	      <entry align="center" valign="middle">
+		<para>
+		  double
+		</para>
+	      </entry>
+	    </row>
+	  </tbody>
+	</tgroup>
+      </table>
+    </section>
+
+    <?hard-pagebreak?>
+    <section xml:id="vec_convert">
+      <title>vec_convert</title>
+      <subtitle>Vector Convert</subtitle>
+      <programlisting>
+      r = vec_convert (a, b)
+      </programlisting>
+
+      <para><emphasis role="bold">Purpose:</emphasis>
+      Converts a vector to a vector of a different type by
+      reinterpreting the bits of the vector.
+      </para>
+      <para><emphasis role="bold">Result value:</emphasis>
+      In what follows, <emphasis role="bold">a</emphasis> and
+      <emphasis role="bold">b</emphasis> must be INTENT(IN) vectors.
+      If <emphasis role="bold">b</emphasis> is a variable, it need not
+      be defined.  The result <emphasis role="bold">r</emphasis> has
+      the value of <emphasis role="bold">a</emphasis> interpreted as
+      the type of <emphasis role="bold">b</emphasis>.
+      </para>
+      <para><emphasis role="bold">Endian considerations:</emphasis>
+      None.
+      </para>
+    </section>
+    
   </section>
 
 </chapter>

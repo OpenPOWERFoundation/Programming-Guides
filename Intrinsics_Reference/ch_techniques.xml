@@ -113,9 +113,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_techniques">
 	  references.  (<code>restrict</code> can be used only in C
 	  when compiling for the C99 standard or later.
 	  <code>__restrict__</code> is a language extension, available
-	  in GCC, Clang, and the XL compilers, that can be used
-	  without restriction for both C and C++.  See your compiler's
-	  user manual for details.)
+	  in GCC, Clang, and the XL <phrase revisionflag="added">and
+	  Open XL</phrase> compilers, that can be used without
+	  restriction for both C and C++.  See your compiler's user
+	  manual for details.)
 	</para>
 	<para>
 	  Suppose you have a function that takes two pointer
@@ -142,8 +143,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_techniques">
     </para>
     <para>
       This reference provides intrinsics that are guaranteed to be
-      portable across compliant compilers.  In particular, both the
-      GCC and Clang compilers for Power implement the intrinsics in
+      portable across compliant compilers.  In particular, the <phrase
+      revisionflag="changed">GCC, Clang, and Open XL</phrase>
+      compilers for Power implement the intrinsics in
       this manual.  The compilers may each implement many more
       intrinsics, but the ones in this manual are the only ones
       guaranteed to be portable.  So if you are using an interface not
@@ -204,10 +206,15 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_techniques">
       responsible for following the calling conventions established by
       the ABI (see <xref linkend="VIPR.intro.links" />).  Again, it is
       best to look at examples.  One place to find well-written
-      <code>.S</code> files is in the GLIBC project.  You can also
+      <code>.S</code> files is in the <phrase
+      revisionflag="changed">GNU C Library project (see <xref
+      linkend="VIPR.intro.links" />).</phrase>  You can also
       study the assembly output from your favorite compiler, which can
       be obtained with the <code>-S</code> or similar option, or by
-      using the <emphasis role="bold">objdump</emphasis> utility.
+      using the <emphasis role="bold">objdump</emphasis> utility:
+    </para>
+    <para revisionflag="added">
+      <programlisting>  objdump -dr &lt;binary or object file&gt;</programlisting>
     </para>
   </section>
 
@@ -219,7 +226,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_techniques">
     <section>
       <title>x86 Vector Portability Headers</title>
       <para>
-	Recent versions of the GCC and Clang open-source compilers
+	Recent versions of the <phrase revisionflag="changed">GCC,
+	Clang, and Open XL</phrase> compilers
 	for Power provide "drop-in" portability headers for portions
 	of the Intel Architecture Instruction Set Extensions (see <xref
 	linkend="VIPR.intro.links" />).  These headers mirror the APIs
@@ -243,14 +251,18 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_techniques">
       <para>
 	Access to the portability APIs occurs automatically when
 	including one of the corresponding Intel header files, such as
-	<code>&lt;mmintrin.h&gt;</code>.
+	<code>&lt;mmintrin.h&gt;</code>.  <phrase
+	revisionflag="added">You must also compile with
+	<code>-DNO_WARN_X86_INTRINSICS</code> to opt into using the
+	headers.</phrase>
       </para>
     </section>
     <section xml:id="VIPR.techniques.pveclib">
       <title>The Power Vector Library (pveclib)</title>
       <para>The Power Vector Library, also known as
       <code>pveclib</code>, is a separate project available from
-      github (see <xref linkend="VIPR.intro.links" />).  The
+      <phrase revisionflag="changed">GitHub</phrase> (see <xref
+      linkend="VIPR.intro.links" />).  The
       <code>pveclib</code> project builds on top of the intrinsics
       described in this manual to provide higher-level vector
       interfaces that are highly portable.  The goals of the project
