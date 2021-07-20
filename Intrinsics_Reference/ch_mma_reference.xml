@@ -310,6 +310,65 @@
       </para>
     </section>
     <section>
+      <title>Conversion Operations</title>
+      <para>
+	These instructions convert between vectors of single precision
+	and bfloat16 types.
+      </para>
+      <indexterm>
+	<primary>xvcvbf16spn</primary>
+	<secondary>__builtin_vsx_xvcvbf16spn</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xvcvspbf16</primary>
+	<secondary>__builtin_vsx_xvcvspbf16</secondary>
+      </indexterm>
+      <para>
+	<informaltable frame="all">
+	  <tgroup cols="2">
+	    <colspec colname="c0" colwidth="28*" />
+	    <colspec colname="c0" colwidth="10*" />
+	    <thead>
+	      <row>
+		<entry align="center" valign="middle">
+		  <para><emphasis role="bold">Prototype</emphasis></para>
+		</entry>
+		<entry align="center" valign="middle">
+		  <para><emphasis role="bold">Instruction</emphasis></para>
+		</entry>
+	      </row>
+	    </thead>
+	    <tbody>
+	      <row>
+		<entry>
+		  <programlisting>
+  vuc __builtin_vsx_xvcvbf16spn (vuc a)
+		  </programlisting>
+		</entry>
+		<entry>
+		  <programlisting>
+  xvcvbf16spn a
+		  </programlisting>
+		</entry>
+	      </row>
+	      <row>
+		<entry>
+		  <programlisting>
+  vuc __builtin_vsx_xvcvspbf16 (vuc a)
+		  </programlisting>
+		</entry>
+		<entry>
+		  <programlisting>
+  xvcvspbf16 a
+		  </programlisting>
+		</entry>
+	      </row>
+	    </tbody>
+	  </tgroup>
+	</informaltable>
+      </para>
+    </section>
+    <section>
       <title>Outer Product Operations</title>
       <para>
 	Each of these intrinsics generates an instruction to perform
@@ -394,6 +453,22 @@
       <indexterm>
 	<primary>pmxvf64gerpp</primary>
 	<secondary>__builtin_mma_pmxvf64gerpp</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>pmxvi16ger2</primary>
+	<secondary>__builtin_mma_pmxvi64ger2</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>pmxvi16ger2pp</primary>
+	<secondary>__builtin_mma_pmxvi64ger2pp</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>pmxvi16ger2s</primary>
+	<secondary>__builtin_mma_pmxvi64ger2s</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>pmxvi16ger2spp</primary>
+	<secondary>__builtin_mma_pmxvi64ger2spp</secondary>
       </indexterm>
       <indexterm>
 	<primary>pmxvi64ger2</primary>
@@ -839,6 +914,62 @@
 		<entry>
 		  <programlisting>
  pmxvf64gerpp  a,b,c,d,e
+
+		  </programlisting>
+		</entry>
+	      </row>
+	      <row>
+		<entry>
+		  <programlisting>
+ void __builtin_mma_pmxvi16ger2 (__vector_quad* a, vuc b, vuc c,
+                                 const int d, const int e, const int f)
+		  </programlisting>
+		</entry>
+		<entry>
+		  <programlisting>
+ pmxvi16ger2  a,b,c,d,e,f
+
+		  </programlisting>
+		</entry>
+	      </row>
+	      <row>
+		<entry>
+		  <programlisting>
+ void __builtin_mma_pmxvi16ger2pp (__vector_quad* a, vuc b, vuc c,
+                                   const int d, const int e, const int f)
+		  </programlisting>
+		</entry>
+		<entry>
+		  <programlisting>
+ pmxvi16ger2pp  a,b,c,d,e,f
+
+		  </programlisting>
+		</entry>
+	      </row>
+	      <row>
+		<entry>
+		  <programlisting>
+ void __builtin_mma_pmxvi16ger2s (__vector_quad* a, vuc b, vuc c,
+                                  const int d, const int e, const int f)
+		  </programlisting>
+		</entry>
+		<entry>
+		  <programlisting>
+ pmxvi16ger2s  a,b,c,d,e,f
+
+		  </programlisting>
+		</entry>
+	      </row>
+	      <row>
+		<entry>
+		  <programlisting>
+ void __builtin_mma_pmxvi16ger2spp (__vector_quad* a, vuc b, vuc c,
+                                    const int d, const int e, const int f)
+		  </programlisting>
+		</entry>
+		<entry>
+		  <programlisting>
+ pmxvi16ger2spp  a,b,c,d,e,f
 
 		  </programlisting>
 		</entry>
