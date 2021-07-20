@@ -15591,7 +15591,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               </entry>
               <entry>
 		<programlisting>
-   xvcpsgnsp  r,b,a
+   xvcpsgnsp  r,a,b
 		</programlisting>
               </entry>
               <entry align="center" valign="middle">
@@ -15610,7 +15610,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
               </entry>
               <entry>
 		<programlisting>
-   xvcpsgndp  r,b,a
+   xvcpsgndp  r,a,b
 		</programlisting>
               </entry>
               <entry align="center" valign="middle">
