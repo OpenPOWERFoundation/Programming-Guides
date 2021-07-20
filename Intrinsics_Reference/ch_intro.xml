@@ -23,13 +23,17 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_intro">
   <section>
     <title>A Brief History</title>
     <para>
-      The history of vector programming on Power processors begins
+      The history of vector programming on <phrase
+      revisionflag="changed"><trademark
+      class="registered">Power</trademark></phrase> processors begins
       with the AIM (Apple, IBM, Motorola) alliance in the 1990s.  The
       AIM partners developed the Power Vector Media Extension (VMX) to
       accelerate multimedia applications, particularly image
       processing.  VMX is the name still used by IBM for this
       instruction set.  Freescale (formerly Motorola) used the
-      trademark "AltiVec," while Apple at one time called it "Velocity
+      trademark <phrase revisionflag="changed"><trademark
+      class="trade">AltiVec</trademark>,</phrase> while Apple at one
+      time called it "Velocity
       Engine."  While VMX remains the most official name, the term
       AltiVec is still in common use today.  Freescale's AltiVec
       Technology Programming Interface Manual (the "AltiVec PIM") is
@@ -68,11 +72,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_intro">
       also included AltiVec support, and was used in the Apple
       PowerMac G5.  IBM initially omitted support for VMX from its
       server-class computers, but added support for it in the POWER6
-      server family.
+      <phrase revisionflag="added">processor-based</phrase> server
+      family.
     </para>
     <para>
       IBM extended VMX by introducing the Vector-Scalar Extension
-      (VSX) for the POWER7 family of processors.  VSX adds sixty-four
+      (VSX) for the <phrase revisionflag="changed"><trademark
+      class="registered">POWER7</trademark></phrase> family of
+      processors.  VSX adds sixty-four
       128-bit vector-scalar registers (VSRs); however, to optimize the amount
       of per-process register state, the registers overlap with the
       VRs and the scalar floating-point registers (FPRs) (see <xref
@@ -80,13 +87,18 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_intro">
       the data types representable by the VRs, and can also be treated
       as containing two 64-bit integers or two 64-bit double-precision
       floating-point values.  However, ISA support for two 64-bit
-      integers in VSRs was limited until Version 2.07 (POWER8) of the
+      integers in VSRs was limited until Version 2.07 (<phrase
+      revisionflag="changed"><trademark
+      class="registered">POWER8</trademark></phrase>) of the
       Power ISA, and only the VRs are supported for these
       instructions.
     </para>
     <para>
       Both the VMX and VSX instruction sets have been expanded for the
-      POWER8 and POWER9 processor families.  Starting with POWER8,
+      <phrase revisionflag="changed">POWER8, <trademark
+      class="registered">POWER9</trademark>, and <trademark
+      class="registered">Power10</trademark></phrase> processor
+      families.  Starting with POWER8,
       a VSR can now contain a single 128-bit integer; and starting
       with POWER9, a VSR can contain a single 128-bit IEEE floating-point
       value.  Again, the ISA currently only supports 128-bit
@@ -103,7 +115,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_intro">
 	The Power architecture has supported operation in either
 	big-endian (BE) or little-endian (LE) mode from the
 	beginning.  However, IBM's Power servers were only shipped
-	with big-endian operating systems (AIX, Linux, i5/OS) prior to
+	with big-endian operating systems (<phrase
+	revisionflag="changed"><trademark
+	class="registered">AIX</trademark>, IBM i, <trademark
+	class="registered">Linux</trademark></phrase>) prior to
 	the introduction of POWER8.  With POWER8, IBM began
 	supporting little-endian Linux distributions for the first
 	time, and introduced a new application binary interface (the
@@ -135,7 +150,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_intro">
   <section xml:id="VIPR.intro.unified">
     <title>The Unified Vector Register Set</title>
     <para>
-      In OpenPOWER-compliant processors, floating-point and vector
+      In <phrase revisionflag="changed"><trademark
+      class="trade">OpenPOWER</trademark>-compliant</phrase>
+      processors, floating-point and vector
       operations are implemented using a unified vector-scalar model.
       As shown in <xref linkend="FPR-VSR" /> and <xref
       linkend="VR-VSR" />, there are 64 vector-scalar registers; each
@@ -202,13 +219,13 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_intro">
       <listitem>
 	<para>
 	  <emphasis role="underline">The XL <phrase
-	  revisionflag="added">and OpenXL</phrase>
+	  revisionflag="added">and Open XL</phrase>
 	  compilers</emphasis>.  For XL <phrase
-	  revisionflag="added">and OpenXL</phrase> compilers provided
+	  revisionflag="added">and Open XL</phrase> compilers provided
 	  with the Linux Community Edition, you can provide feedback
 	  to the XL compiler team via email
 	  (<email>compinfo@cn.ibm.com</email>); for other editions of
-	  XL <phrase revisionflag="added">and OpenXL</phrase>
+	  XL <phrase revisionflag="added">and Open XL</phrase>
 	  compilers, please open a <link
 	  xlink:href="https://www.ibm.com/mysupport/s/">Case</link>.
 	</para>
@@ -291,7 +308,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_intro">
       </listitem>
       <listitem revisionflag="added">
 	<para>
-	  <emphasis>POWER10 Processor User's Manual.</emphasis>
+	  <emphasis>Power10 Processor User's Manual.</emphasis>
 	  <emphasis>
 	    <link
 		xlink:href="https://ibm.ent.box.com/s/tmklq90ze7aj8f4n32er1mu3sy9u8k3k">Not
@@ -356,6 +373,18 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_intro">
 	</para>
       </listitem>
     </itemizedlist>
+  </section>
+
+  <section xml:id="VIPR.intro.marks" revisionflag="added">
+    <title>Trademarks</title>
+    <para>
+      AIX, POWER7, POWER8, POWER9, and Power10 are trademarks or
+      registered trademarks of International Business Machines
+      Corporation.  Linux is a registered trademark of Linus
+      Torvalds.  Intel is s registered trademark of Intel Corporation
+      or its subsidiaries.  AltiVec is a trademark of Freescale
+      Semiconductor, Inc.
+    </para>
   </section>
 
   <section xml:id="VIPR.intro.conf">

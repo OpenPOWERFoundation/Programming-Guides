@@ -125,8 +125,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 	<para>
 	  <emphasis role="bold">ISA 3.0 or later</emphasis>.  This
 	  form is only available starting with PowerISA 3.0,
-	  corresponding to POWER9 servers.  The Power Vector Library
-	  (see <xref linkend="VIPR.intro.links" /> provides equivalent
+	  corresponding to Power servers built with POWER9
+	  architecture.  The Power Vector Library (see <xref
+	  linkend="VIPR.intro.links" /> provides equivalent
 	  POWER7/POWER8 implementations for many ISA 3.0 vector
 	  instructions, which may be preferred for portability.
 	</para>
@@ -135,10 +136,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 	<para>
 	  <emphasis role="bold">ISA 3.1 or later</emphasis>.  This form
 	  is only available starting with PowerISA 3.1, corresponding to
-	  POWER10 servers.  The Power Vector Library (see <xref
-	  linkend="VIPR.intro.links" /> provides equivalent
-	  POWER7/POWER8/POWER9 implementations for many ISA 3.1 vector
-	  instructions, which may be preferred for portability.
+	  Power servers built with Power10 architecture.  The Power
+	  Vector Library (see <xref linkend="VIPR.intro.links" />
+	  provides equivalent POWER7/POWER8/POWER9 implementations for
+	  many ISA 3.1 vector instructions, which may be preferred for
+	  portability.
 	</para>
       </listitem>
       <listitem>
@@ -44622,8 +44624,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
-      Return a non-zero value if and only if the input vector contains
-      a zero element.
+      Tests whether the input vector contains a zero element.
       </para>
       <para><emphasis role="bold">Result value:</emphasis>
       <emphasis role="bold">r</emphasis> is given a non-zero value if
@@ -44637,12 +44638,12 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </para>
       <para>
 	<emphasis role="bold">Notes:</emphasis>
-	Use this built-in in preference to <code>vec_nez</code> when
-	the test guards a call to <code>vec_stril</code>.  This allows
-	compilers to generate the most efficient code.
+	Use this built-in in preference to <code>vec_cmpnez</code>
+	when the test guards a call to <code>vec_stril</code>.  This
+	allows compilers to generate the most efficient code.
       </para>
       <para><emphasis role="bold">Review status:</emphasis>
-      Not yet reviewed.
+      Reviewed by Paul Clarke.
       </para>
       
       <indexterm>
@@ -44987,8 +44988,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </programlisting>
 
       <para><emphasis role="bold">Purpose:</emphasis>
-      Return a non-zero value if and only if the input vector contains
-      a zero element.
+      Tests whether the input vector contains a zero element.
       </para>
       <para><emphasis role="bold">Result value:</emphasis>
       <emphasis role="bold">r</emphasis> is given a non-zero value if
@@ -45002,12 +45002,12 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </para>
       <para>
 	<emphasis role="bold">Notes:</emphasis>
-	Use this built-in in preference to <code>vec_nez</code> when
-	the test guards a call to <code>vec_strir</code>.  This allows
-	compilers to generate the most efficient code.
+	Use this built-in in preference to <code>vec_cmpnez</code>
+	when the test guards a call to <code>vec_strir</code>.  This
+	allows compilers to generate the most efficient code.
       </para>
       <para><emphasis role="bold">Review status:</emphasis>
-      Not yet reviewed.
+      Reviewed by Paul Clarke.
       </para>
       
       <indexterm>

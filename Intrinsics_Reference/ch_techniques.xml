@@ -229,7 +229,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_techniques">
 	Recent versions of the <phrase revisionflag="changed">GCC,
 	Clang, and Open XL</phrase> compilers
 	for Power provide "drop-in" portability headers for portions
-	of the Intel Architecture Instruction Set Extensions (see <xref
+	of the <phrase revisionflag="changed"><trademark
+	class="registered">Intel</trademark></phrase> Architecture
+	Instruction Set Extensions (see <xref
 	linkend="VIPR.intro.links" />).  These headers mirror the APIs
 	of Intel headers having the same names.  As of this writing,
 	support is provided for the MMX and SSE layers, up through

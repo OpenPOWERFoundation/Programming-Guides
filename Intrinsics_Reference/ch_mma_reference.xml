@@ -109,7 +109,7 @@
 	      <row>
 		<entry>
 		  <programlisting>
-  __vector_pair __builtin_vsx_lxvp (long long a, const __vector_pair* b)
+  __vector_pair __builtin_vsx_lxvp (signed long a, const __vector_pair* b)
 		  </programlisting>
 		</entry>
 		<entry>
@@ -121,7 +121,7 @@
 	      <row>
 		<entry>
 		  <programlisting>
-  void __builtin_vsx_stxvp (__vector_pair s, long long a, const __vector_pair* b)
+  void __builtin_vsx_stxvp (__vector_pair s, signed long a, const __vector_pair* b)
 		  </programlisting>
 		</entry>
 		<entry>
