@@ -36582,8 +36582,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <emphasis role="bold">r</emphasis> contains the value of the
       corresponding element of <emphasis role="bold">a</emphasis>, rounded
       to the nearest representable floating-point integer, using IEEE
-      round-to-nearest rounding.  The current floating-point rounding
-      mode is ignored.</para>
+      round-to-nearest <phrase
+      revisionflag="added">away-from-zero</phrase> rounding.  The
+      current floating-point rounding mode is ignored.</para>
       <para><emphasis role="bold">Notes:</emphasis> This function might not
       follow the strict operation definition of the resolution of a tie during
       a round if the -qstrict=nooperationprecision compiler option is
