@@ -151,8 +151,8 @@ vector unsigned __int128 x = { (((unsigned __int128)0x1020304050607080) &lt;&lt;
       it.
     </para> 
     <para>
-      For the Fortran language, <xref
-      linkend="VIPR.biendian.fortran-types" /> gives a correspondence
+      For the Fortran language, <phrase revisionflag="changed"><xref
+      linkend="VIPR.biendian.fortrantypes" /></phrase> gives a correspondence
       between Fortran and C/C++ language types.
     </para>
     <para>
