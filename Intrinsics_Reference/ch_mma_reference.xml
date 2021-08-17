@@ -90,6 +90,14 @@
 	<primary>stxvp</primary>
 	<secondary>__builtin_vsx_stxvp</secondary>
       </indexterm>
+      <indexterm>
+	<primary>lxvpx</primary>
+	<secondary>__builtin_vsx_lxvp</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>stxvpx</primary>
+	<secondary>__builtin_vsx_stxvp</secondary>
+      </indexterm>
       <para>
 	<informaltable frame="all">
 	  <tgroup cols="2">
@@ -109,24 +117,32 @@
 	      <row>
 		<entry>
 		  <programlisting>
+
   __vector_pair __builtin_vsx_lxvp (signed long a, const __vector_pair* b)
+
 		  </programlisting>
 		</entry>
 		<entry>
 		  <programlisting>
   lxvp r,a(b)
+      or
+  lxvpx r,b,a
 		  </programlisting>
 		</entry>
 	      </row>
 	      <row>
 		<entry>
 		  <programlisting>
+
   void __builtin_vsx_stxvp (__vector_pair s, signed long a, const __vector_pair* b)
+
 		  </programlisting>
 		</entry>
 		<entry>
 		  <programlisting>
   stxvp s,a(b)
+      or
+  stxvpx s,b,a
 		  </programlisting>
 		</entry>
 	      </row>
@@ -140,7 +156,7 @@
       <para>
 	The following builtins are used to construct
 	<code>__vector_pair</code> and <code>__vector_quad</code>
-	objects from smaller vectors, and deconstruct them into such
+	objects from 128-bit vectors, and deconstruct them into such
 	vectors.  The disassembly interfaces place the results into
 	arrays of vectors.
       </para>

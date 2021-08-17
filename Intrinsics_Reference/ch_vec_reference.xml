@@ -10220,8 +10220,323 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </table>
 
     </section>
-
     <?hard-pagebreak?>
+
+    <section xml:id="vec_blendv" revisionflag="added">
+      <title>vec_blendv</title>
+      <subtitle>Vector Blend Variable</subtitle>
+      <programlisting>
+      r = vec_blendv (a, b, c)
+      </programlisting>
+
+      <para><emphasis role="bold">Purpose:</emphasis>
+      Blend two source vectors according to the sign bits of the
+      corresponding elements of a third source vector.
+      </para>
+      <para><emphasis role="bold">Result value:</emphasis>
+      For each element of <emphasis role="bold">c</emphasis>, if bit 0
+      of that element is equal to 0, the corresponding element of
+      <emphasis role="bold">r</emphasis> is set to the corresponding
+      element of <emphasis role="bold">a</emphasis>.  Otherwise, the
+      corresponding element of <emphasis role="bold">r</emphasis> is
+      set to the corresponding element of <emphasis
+      role="bold">b</emphasis>.
+      </para>
+      <para><emphasis role="bold">Endian considerations:</emphasis>
+      None.
+      </para>
+      <para><emphasis role="bold">Review status:</emphasis>
+      Not yet reviewed.
+      </para>
+      
+      <indexterm>
+	<primary>xxblendvb</primary>
+	<secondary>vec_blendv</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xxblendvh</primary>
+	<secondary>vec_blendv</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xxblendvw</primary>
+	<secondary>vec_blendv</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xxblendvd</primary>
+	<secondary>vec_blendv</secondary>
+      </indexterm>
+
+      <table frame="all">
+	<title>Supported type signatures for vec_blendv</title>
+	<tgroup cols="6">
+          <colspec colname="c1" colwidth="20*" />
+          <colspec colname="c2" colwidth="20*" />
+          <colspec colname="c3" colwidth="20*" />
+          <colspec colname="c4" colwidth="20*" />
+          <colspec colname="c5" colwidth="30*" />
+          <colspec colname="c6" colwidth="20*" />
+          <thead>
+            <row>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">r</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">a</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">b</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">c</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">Example Implementation</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+		  <emphasis role="bold">Restrictions</emphasis>
+		</para>
+	      </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector signed char</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector signed char</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector signed char</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector signed char</para>
+              </entry>
+              <entry>
+		<programlisting>
+  xxblendvb  r,a,b,c
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector unsigned char</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned char</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned char</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned char</para>
+              </entry>
+              <entry>
+		<programlisting>
+  xxblendvb  r,a,b,c
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector signed short</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector signed short</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector signed short</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector signed short</para>
+              </entry>
+              <entry>
+		<programlisting>
+  xxblendvh  r,a,b,c
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector unsigned short</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned short</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned short</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned short</para>
+              </entry>
+              <entry>
+		<programlisting>
+  xxblendvh  r,a,b,c
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector signed int</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector signed int</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector signed int</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector signed int</para>
+              </entry>
+              <entry>
+		<programlisting>
+  xxblendvw  r,a,b,c
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned int</para>
+              </entry>
+              <entry>
+		<programlisting>
+  xxblendvw  r,a,b,c
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector signed long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector signed long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector signed long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector signed long long</para>
+              </entry>
+              <entry>
+		<programlisting>
+  xxblendvd  r,a,b,c
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector unsigned long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned long long</para>
+              </entry>
+              <entry>
+		<programlisting>
+  xxblendvd  r,a,b,c
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector float</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector float</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector float</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector float</para>
+              </entry>
+              <entry>
+		<programlisting>
+  xxblendvw  r,a,b,c
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector double</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector double</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector double</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector double</para>
+              </entry>
+              <entry>
+		<programlisting>
+  xxblendvd  r,a,b,c
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+          </tbody>
+	</tgroup>
+      </table>
+
+    </section>
+    <?hard-pagebreak?>
+
     <section xml:id="vec_ceil">
       <title>vec_ceil</title>
       <subtitle>Vector Ceiling</subtitle>
@@ -19261,6 +19576,498 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
     </section>
     <?hard-pagebreak?>
 
+    <section xml:id="vec_extracth" revisionflag="added">
+      <title>vec_extracth</title>
+      <subtitle>Vector Extract High-Order</subtitle>
+      <programlisting>
+      r = vec_extracth (a, b, c)
+      </programlisting>
+
+      <para><emphasis role="bold">Purpose:</emphasis>
+      Extract an element from a pair of vectors using an index in
+      reverse of natural order.
+      </para>
+      <para><emphasis role="bold">Result value:</emphasis>
+      Let <emphasis role="bold">v</emphasis> be a wide vector
+      consisting of <emphasis role="bold">a</emphasis> concatenated
+      with <emphasis role="bold">b</emphasis>.  Let <emphasis
+      role="bold">e</emphasis> be the element of <emphasis
+      role="bold">v</emphasis> starting at byte position <emphasis
+      role="bold">c</emphasis> in the reverse of natural byte order.
+      Then doubleword element 1 of <emphasis role="bold">r</emphasis>
+      is set to <emphasis role="bold">e</emphasis>, and doubleword
+      element 0 of <emphasis role="bold">r</emphasis> is set to zero.
+      </para>
+      <para><emphasis role="bold">Endian considerations:</emphasis>
+      The byte and element numbering within a register is
+      left-to-right for big-endian targets, and right-to-left for
+      little-endian targets.
+      </para>
+      <para><emphasis role="bold">Notes:</emphasis>
+      The byte index <emphasis role="bold">c</emphasis> must be in the
+      range 0 to 31.  The results are undefined if the byte index does
+      not address an element boundary.
+      </para>
+      <para><emphasis role="bold">Review status:</emphasis>
+      Not yet reviewed.
+      </para>
+      
+      <indexterm>
+	<primary>vextubvlx</primary>
+	<secondary>vec_extracth</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vextubvrx</primary>
+	<secondary>vec_extracth</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vextuhvlx</primary>
+	<secondary>vec_extracth</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vextuhvrx</primary>
+	<secondary>vec_extracth</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vextuwvlx</primary>
+	<secondary>vec_extracth</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vextuwvrx</primary>
+	<secondary>vec_extracth</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vextddvlx</primary>
+	<secondary>vec_extracth</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vextddvrx</primary>
+	<secondary>vec_extracth</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xxpermdi</primary>
+	<secondary>vec_extracth</secondary>
+      </indexterm>
+
+      <table frame="all">
+	<title>Supported type signatures for vec_extracth</title>
+	<tgroup cols="7">
+          <colspec colname="c1" colwidth="20*" />
+          <colspec colname="c2" colwidth="20*" />
+          <colspec colname="c3" colwidth="20*" />
+          <colspec colname="c4" colwidth="20*" />
+          <colspec colname="c5" colwidth="40*" />
+          <colspec colname="c6" colwidth="40*" />
+          <colspec colname="c7" colwidth="20*" />
+          <thead>
+            <row>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">r</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">a</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">b</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">c</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">Example LE Implementation</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">Example BE Implementation</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+		  <emphasis role="bold">Restrictions</emphasis>
+		</para>
+	      </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector unsigned long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned char</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned char</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>unsigned int</para>
+              </entry>
+              <entry>
+		<programlisting>
+  vextdubvlx  r,b,a,c
+
+		</programlisting>
+              </entry>
+              <entry>
+		<programlisting>
+  vextdubvrx  t,a,b,c
+  xxswapd     r,t
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector unsigned long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned short</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned short</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>unsigned int</para>
+              </entry>
+              <entry>
+		<programlisting>
+  vextduhvlx  r,b,a,c
+
+		</programlisting>
+              </entry>
+              <entry>
+		<programlisting>
+  vextduhvrx  t,a,b,c
+  xxswapd     r,t
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector unsigned long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>unsigned int</para>
+              </entry>
+              <entry>
+		<programlisting>
+  vextduwvlx  r,b,a,c
+
+		</programlisting>
+              </entry>
+              <entry>
+		<programlisting>
+  vextduwvrx  t,a,b,c
+  xxswapd     r,t
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector unsigned long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>unsigned int</para>
+              </entry>
+              <entry>
+		<programlisting>
+  vextddvlx  r,b,a,c
+
+		</programlisting>
+              </entry>
+              <entry>
+		<programlisting>
+  vextddvrx  t,a,b,c
+  xxswapd    r,t
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+          </tbody>
+	</tgroup>
+      </table>
+
+    </section>
+    <?hard-pagebreak?>
+
+    <section xml:id="vec_extractl" revisionflag="added">
+      <title>vec_extractl</title>
+      <subtitle>Vector Extract Low-Order</subtitle>
+      <programlisting>
+      r = vec_extractl (a, b, c)
+      </programlisting>
+
+      <para><emphasis role="bold">Purpose:</emphasis>
+      Extract an element from a pair of vectors using an index in
+      natural order.
+      </para>
+      <para><emphasis role="bold">Result value:</emphasis>
+      Let <emphasis role="bold">v</emphasis> be a wide vector
+      consisting of <emphasis role="bold">a</emphasis> concatenated
+      with <emphasis role="bold">b</emphasis>.  Let <emphasis
+      role="bold">e</emphasis> be the element of <emphasis
+      role="bold">v</emphasis> starting at byte position <emphasis
+      role="bold">c</emphasis> in natural byte order.  Then doubleword
+      element 1 of <emphasis role="bold">r</emphasis> is set to
+      <emphasis role="bold">e</emphasis>, and doubleword element 0 of
+      <emphasis role="bold">r</emphasis> is set to zero.
+      </para>
+      <para><emphasis role="bold">Endian considerations:</emphasis>
+      The byte and element numbering within a register is
+      left-to-right for big-endian targets, and right-to-left for
+      little-endian targets.
+      </para>
+      <para><emphasis role="bold">Notes:</emphasis>
+      The byte index <emphasis role="bold">c</emphasis> must be in the
+      range 0 to 31.  The results are undefined if the byte index does
+      not address an element boundary.
+      </para>
+      <para><emphasis role="bold">Review status:</emphasis>
+      Not yet reviewed.
+      </para>
+      
+      <indexterm>
+	<primary>vextubvlx</primary>
+	<secondary>vec_extractl</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vextubvrx</primary>
+	<secondary>vec_extractl</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vextuhvlx</primary>
+	<secondary>vec_extractl</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vextuhvrx</primary>
+	<secondary>vec_extractl</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vextuwvlx</primary>
+	<secondary>vec_extractl</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vextuwvrx</primary>
+	<secondary>vec_extractl</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vextddvlx</primary>
+	<secondary>vec_extractl</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vextddvrx</primary>
+	<secondary>vec_extractl</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>xxpermdi</primary>
+	<secondary>vec_extractl</secondary>
+      </indexterm>
+
+      <table frame="all">
+	<title>Supported type signatures for vec_extractl</title>
+	<tgroup cols="7">
+          <colspec colname="c1" colwidth="20*" />
+          <colspec colname="c2" colwidth="20*" />
+          <colspec colname="c3" colwidth="20*" />
+          <colspec colname="c4" colwidth="20*" />
+          <colspec colname="c5" colwidth="40*" />
+          <colspec colname="c6" colwidth="40*" />
+          <colspec colname="c7" colwidth="20*" />
+          <thead>
+            <row>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">r</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">a</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">b</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">c</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">Example LE Implementation</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">Example BE Implementation</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+		  <emphasis role="bold">Restrictions</emphasis>
+		</para>
+	      </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector unsigned long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned char</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned char</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>unsigned int</para>
+              </entry>
+              <entry>
+		<programlisting>
+  vextdubvrx  r,b,a,c
+
+		</programlisting>
+              </entry>
+              <entry>
+		<programlisting>
+  vextdubvlx  t,a,b,c
+  xxswapd     r,t
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector unsigned long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned short</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned short</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>unsigned int</para>
+              </entry>
+              <entry>
+		<programlisting>
+  vextduhvrx  r,b,a,c
+
+		</programlisting>
+              </entry>
+              <entry>
+		<programlisting>
+  vextduhvlx  t,a,b,c
+  xxswapd     r,t
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector unsigned long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>unsigned int</para>
+              </entry>
+              <entry>
+		<programlisting>
+  vextduwvrx  r,b,a,c
+
+		</programlisting>
+              </entry>
+              <entry>
+		<programlisting>
+  vextduwvlx  t,a,b,c
+  xxswapd     r,t
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector unsigned long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>unsigned int</para>
+              </entry>
+              <entry>
+		<programlisting>
+  vextddvrx  r,b,a,c
+
+		</programlisting>
+              </entry>
+              <entry>
+		<programlisting>
+  vextddvlx  t,a,b,c
+  xxswapd    r,t
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+          </tbody>
+	</tgroup>
+      </table>
+
+    </section>
+    <?hard-pagebreak?>
+
     <section xml:id="vec_extractm" revisionflag="added">
       <title>vec_extractm</title>
       <subtitle>Vector Extract Mask</subtitle>
@@ -22352,6 +23159,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
           </tbody>
 	</tgroup>
       </table>
+      <para><emphasis role="bold">Notes:</emphasis>
+      When <emphasis role="bold">a</emphasis> is a constant, compilers
+      may generate the <code>mtvsrbmi</code> instruction as an
+      optimization.
+      </para>
 
     </section>
     <?hard-pagebreak?>
@@ -23707,6 +24519,726 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
             </row>
           </tbody>
         </tgroup>
+      </table>
+
+    </section>
+    <?hard-pagebreak?>
+
+    <section xml:id="vec_inserth" revisionflag="added">
+      <title>vec_inserth</title>
+      <subtitle>Vector Insert High-Indexed</subtitle>
+      <programlisting>
+      r = vec_inserth (a, b, c)
+      </programlisting>
+
+      <para><emphasis role="bold">Purpose:</emphasis>
+      Insert a source element into a source vector at a specified
+      byte position in reverse of natural byte order.
+      </para>
+      <para><emphasis role="bold">Result value:</emphasis>
+      When <emphasis role="bold">a</emphasis> is a scalar, let
+      <emphasis role="bold">e</emphasis> be equal to <emphasis
+      role="bold">a</emphasis>. Otherwise, when <emphasis
+      role="bold">a</emphasis> is a vector, let <emphasis
+      role="bold">e</emphasis> be the rightmost element of the
+      leftmost doubleword of <emphasis role="bold">a</emphasis> in
+      register order.  Then the result <emphasis
+      role="bold">r</emphasis> is set to the value of <emphasis
+      role="bold">b</emphasis> with <emphasis role="bold">e</emphasis>
+      inserted at byte position <emphasis role="bold">c</emphasis>,
+      counting in reverse of natural byte order.  Other than the bytes
+      modified by the insert operation, bytes of <emphasis
+      role="bold">r</emphasis> are identical to the corresponding
+      bytes of <emphasis role="bold">b</emphasis>.
+      </para>
+      <para><emphasis role="bold">Endian considerations:</emphasis>
+      The byte and element numbering within a register is
+      left-to-right for big-endian targets, and right-to-left for
+      little-endian targets.  Note that this operation is not
+      semantically equivalent for big- and little-endian targets when
+      <emphasis role="bold">a</emphasis> is a vector, because the
+      element chosen for insertion is at the same location in the
+      vector, regardless of target endianness.
+      </para>
+      <para><emphasis role="bold">Notes:</emphasis>
+      The byte index <emphasis role="bold">c</emphasis> must be in the
+      range 0 to 15.  The results are undefined if the byte index does
+      not address an element boundary.
+      </para>
+      <para><emphasis role="bold">Review status:</emphasis>
+      Not yet reviewed.
+      </para>
+      
+      <indexterm>
+	<primary>vinsblx</primary>
+	<secondary>vec_inserth</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vinsbrx</primary>
+	<secondary>vec_inserth</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vinshlx</primary>
+	<secondary>vec_inserth</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vinshrx</primary>
+	<secondary>vec_inserth</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vinswlx</primary>
+	<secondary>vec_inserth</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vinswrx</primary>
+	<secondary>vec_inserth</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vinsdlx</primary>
+	<secondary>vec_inserth</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vinsdrx</primary>
+	<secondary>vec_inserth</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vinsbvlx</primary>
+	<secondary>vec_inserth</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vinsbvrx</primary>
+	<secondary>vec_inserth</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vinshvlx</primary>
+	<secondary>vec_inserth</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vinshvrx</primary>
+	<secondary>vec_inserth</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vinswvlx</primary>
+	<secondary>vec_inserth</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vinswvrx</primary>
+	<secondary>vec_inserth</secondary>
+      </indexterm>
+
+      <table frame="all">
+	<title>Supported type signatures for vec_inserth</title>
+	<tgroup cols="7">
+          <colspec colname="c1" colwidth="20*" />
+          <colspec colname="c2" colwidth="20*" />
+          <colspec colname="c3" colwidth="20*" />
+          <colspec colname="c4" colwidth="20*" />
+          <colspec colname="c5" colwidth="40*" />
+          <colspec colname="c6" colwidth="40*" />
+          <colspec colname="c7" colwidth="20*" />
+          <thead>
+            <row>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">r</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">a</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">b</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">c</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">Example LE Implementation</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">Example BE Implementation</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+		  <emphasis role="bold">Restrictions</emphasis>
+		</para>
+	      </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector unsigned char</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>unsigned char</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned char</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>unsigned int</para>
+              </entry>
+              <entry>
+		<programlisting>
+  vinsblx  r/b,c,a
+
+		</programlisting>
+              </entry>
+              <entry>
+		<programlisting>
+  vinsbrx  r/b,c,a
+
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector unsigned short</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>unsigned short</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned short</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>unsigned int</para>
+              </entry>
+              <entry>
+		<programlisting>
+  vinshlx  r/b,c,a
+
+		</programlisting>
+              </entry>
+              <entry>
+		<programlisting>
+  vinshrx  r/b,c,a
+
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>unsigned int</para>
+              </entry>
+              <entry>
+		<programlisting>
+  vinswlx  r/b,c,a
+
+		</programlisting>
+              </entry>
+              <entry>
+		<programlisting>
+  vinswrx  r/b,c,a
+
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector unsigned long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>unsigned long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>unsigned int</para>
+              </entry>
+              <entry>
+		<programlisting>
+  vinsdlx  r/b,c,a
+
+		</programlisting>
+              </entry>
+              <entry>
+		<programlisting>
+  vinsdrx  r/b,c,a
+
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector unsigned char</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned char</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned char</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>unsigned int</para>
+              </entry>
+              <entry>
+		<programlisting>
+  vinsbvlx  r/b,c,a
+
+		</programlisting>
+              </entry>
+              <entry>
+		<programlisting>
+  vinsbvrx  r/b,c,a
+
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector unsigned short</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned short</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned short</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>unsigned int</para>
+              </entry>
+              <entry>
+		<programlisting>
+  vinshvlx  r/b,c,a
+
+		</programlisting>
+              </entry>
+              <entry>
+		<programlisting>
+  vinshvrx  r/b,c,a
+
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>unsigned int</para>
+              </entry>
+              <entry>
+		<programlisting>
+  vinswvlx  r/b,c,a
+		</programlisting>
+              </entry>
+              <entry>
+		<programlisting>
+  vinswvrx  r/b,c,a
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+          </tbody>
+	</tgroup>
+      </table>
+
+    </section>
+    <?hard-pagebreak?>
+
+    <section xml:id="vec_insertl" revisionflag="added">
+      <title>vec_insertl</title>
+      <subtitle>Vector Insert Low-Indexed</subtitle>
+      <programlisting>
+      r = vec_insertl (a, b, c)
+      </programlisting>
+
+      <para><emphasis role="bold">Purpose:</emphasis>
+      Insert a source element into a source vector at a specified
+      byte position in natural byte order.
+      </para>
+      <para><emphasis role="bold">Result value:</emphasis>
+      When <emphasis role="bold">a</emphasis> is a scalar, let
+      <emphasis role="bold">e</emphasis> be equal to <emphasis
+      role="bold">a</emphasis>. Otherwise, when <emphasis
+      role="bold">a</emphasis> is a vector, let <emphasis
+      role="bold">e</emphasis> be the rightmost element of the
+      leftmost doubleword of <emphasis role="bold">a</emphasis> in
+      register order.  Then the result <emphasis
+      role="bold">r</emphasis> is set to the value of <emphasis
+      role="bold">b</emphasis> with <emphasis role="bold">e</emphasis>
+      inserted at byte position <emphasis role="bold">c</emphasis> in
+      natural byte order.  Other than the bytes modified by the insert
+      operation, bytes of <emphasis role="bold">r</emphasis> are
+      identical to the corresponding bytes of <emphasis
+      role="bold">b</emphasis>.
+      </para>
+      <para><emphasis role="bold">Endian considerations:</emphasis>
+      The byte and element numbering within a register is
+      left-to-right for big-endian targets, and right-to-left for
+      little-endian targets.  Note that this operation is not
+      semantically equivalent for big- and little-endian targets when
+      <emphasis role="bold">a</emphasis> is a vector, because the
+      element chosen for insertion is at the same location in the
+      vector, regardless of target endianness.
+      </para>
+      <para><emphasis role="bold">Notes:</emphasis>
+      The byte index <emphasis role="bold">c</emphasis> must be in the
+      range 0 to 15.  The results are undefined if the byte index does
+      not address an element boundary.
+      </para>
+      <para><emphasis role="bold">Review status:</emphasis>
+      Not yet reviewed.
+      </para>
+      
+      <indexterm>
+	<primary>vinsblx</primary>
+	<secondary>vec_insertl</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vinsbrx</primary>
+	<secondary>vec_insertl</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vinshlx</primary>
+	<secondary>vec_insertl</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vinshrx</primary>
+	<secondary>vec_insertl</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vinswlx</primary>
+	<secondary>vec_insertl</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vinswrx</primary>
+	<secondary>vec_insertl</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vinsdlx</primary>
+	<secondary>vec_insertl</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vinsdrx</primary>
+	<secondary>vec_insertl</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vinsbvlx</primary>
+	<secondary>vec_insertl</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vinsbvrx</primary>
+	<secondary>vec_insertl</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vinshvlx</primary>
+	<secondary>vec_insertl</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vinshvrx</primary>
+	<secondary>vec_insertl</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vinswvlx</primary>
+	<secondary>vec_insertl</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vinswvrx</primary>
+	<secondary>vec_insertl</secondary>
+      </indexterm>
+
+      <table frame="all">
+	<title>Supported type signatures for vec_insertl</title>
+	<tgroup cols="7">
+          <colspec colname="c1" colwidth="20*" />
+          <colspec colname="c2" colwidth="20*" />
+          <colspec colname="c3" colwidth="20*" />
+          <colspec colname="c4" colwidth="20*" />
+          <colspec colname="c5" colwidth="40*" />
+          <colspec colname="c6" colwidth="40*" />
+          <colspec colname="c7" colwidth="20*" />
+          <thead>
+            <row>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">r</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">a</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">b</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">c</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">Example LE Implementation</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">Example BE Implementation</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+		  <emphasis role="bold">Restrictions</emphasis>
+		</para>
+	      </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector unsigned char</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>unsigned char</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned char</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>unsigned int</para>
+              </entry>
+              <entry>
+		<programlisting>
+  vinsbrx  r/b,c,a
+
+		</programlisting>
+              </entry>
+              <entry>
+		<programlisting>
+  vinsblx  r/b,c,a
+
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector unsigned short</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>unsigned short</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned short</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>unsigned int</para>
+              </entry>
+              <entry>
+		<programlisting>
+  vinshrx  r/b,c,a
+
+		</programlisting>
+              </entry>
+              <entry>
+		<programlisting>
+  vinshlx  r/b,c,a
+
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>unsigned int</para>
+              </entry>
+              <entry>
+		<programlisting>
+  vinswrx  r/b,c,a
+
+		</programlisting>
+              </entry>
+              <entry>
+		<programlisting>
+  vinswlx  r/b,c,a
+
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector unsigned long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>unsigned long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>unsigned int</para>
+              </entry>
+              <entry>
+		<programlisting>
+  vinsdrx  r/b,c,a
+
+		</programlisting>
+              </entry>
+              <entry>
+		<programlisting>
+  vinsdlx  r/b,c,a
+
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector unsigned char</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned char</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned char</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>unsigned int</para>
+              </entry>
+              <entry>
+		<programlisting>
+  vinsbvrx  r/b,c,a
+
+		</programlisting>
+              </entry>
+              <entry>
+		<programlisting>
+  vinsbvlx  r/b,c,a
+
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector unsigned short</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned short</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned short</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>unsigned int</para>
+              </entry>
+              <entry>
+		<programlisting>
+  vinshvrx  r/b,c,a
+
+		</programlisting>
+              </entry>
+              <entry>
+		<programlisting>
+  vinshvlx  r/b,c,a
+
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>unsigned int</para>
+              </entry>
+              <entry>
+		<programlisting>
+  vinswvrx  r/b,c,a
+		</programlisting>
+              </entry>
+              <entry>
+		<programlisting>
+  vinswvlx  r/b,c,a
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+          </tbody>
+	</tgroup>
       </table>
 
     </section>
@@ -25415,6 +26947,12 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
+      </para>
+      <para revisionflag="added"><emphasis role="bold">Notes:</emphasis>
+      For floating-point types, if both source elements contain signed
+      zeros, or if either source element contains a NaN, it is
+      undefined which of the two source elements is copied into the
+      corresponding result element.
       </para>
       
       <indexterm>
@@ -33468,6 +35006,369 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
     </section>
     <?hard-pagebreak?>
 
+    <section xml:id="vec_permx" revisionflag="added">
+      <title>vec_permx</title>
+      <subtitle>Vector Permute Extended</subtitle>
+      <programlisting>
+      r = vec_permx (a, b, c, d)
+      </programlisting>
+
+      <para><emphasis role="bold">Purpose:</emphasis>
+      Perform a partial permute of the first two arguments, which form
+      an aligned 32-byte section of an emulated vector up to 256 bytes
+      wide, using the partial permute control vector in the third
+      argument.  The fourth argument (constrained to values of 0-7)
+      identifies which 32-byte section of the emulated vector is
+      contained in the first two arguments.
+      </para>
+      <para><emphasis role="bold">Result value:</emphasis>
+      Let <emphasis role="bold">s</emphasis> be the concatenation of
+      <emphasis role="bold">a</emphasis> and <emphasis
+      role="bold">b</emphasis>.  For each integer value
+      <emphasis>i</emphasis> from 0 to 15, do the following.
+      </para>
+      <para>
+	Let <emphasis>j</emphasis> be the contents of bits 3 through 7
+	of byte element <emphasis>i</emphasis> of <emphasis
+	role="bold">c</emphasis>.  If <emphasis
+	role="bold">d</emphasis> is equal to the contents of bits 0
+	through 2 of byte element <emphasis>i</emphasis> of <emphasis
+	role="bold">c</emphasis>, the contents of byte element
+	<emphasis>j</emphasis> of <emphasis role="bold">s</emphasis>
+	are placed into byte element <emphasis>i</emphasis> of
+	<emphasis role="bold">r</emphasis>.  Otherwise the contents of
+	byte element <emphasis>i</emphasis> of <emphasis
+	role="bold">r</emphasis> are set to zero.
+      </para>
+      <para><emphasis role="bold">Endian considerations:</emphasis>
+      This instruction operates in big-endian fashion, with elements
+      numbered in increasing order from left to right.
+      </para>
+      <para><emphasis role="bold">Notes:</emphasis> This built-in
+      function can be used to emulate permutes on vectors up to 256
+      bytes in length, and can also be used to perform a parallel
+      table lookup on up to 256-byte tables.  Please see the
+      description of the <code>xxpermx</code> instruction in the Power
+      Instruction Set Architecture (<xref linkend="VIPR.intro.links"
+      />) for examples.
+      </para>
+      <para><emphasis role="bold">Review status:</emphasis>
+      Not yet reviewed.
+      </para>
+      
+      <indexterm>
+	<primary>xxpermx</primary>
+	<secondary>vec_permx</secondary>
+      </indexterm>
+
+      <table frame="all">
+	<title>Supported type signatures for vec_permx</title>
+	<tgroup cols="7">
+          <colspec colname="c1" colwidth="20*" />
+          <colspec colname="c2" colwidth="20*" />
+          <colspec colname="c3" colwidth="20*" />
+          <colspec colname="c4" colwidth="20*" />
+          <colspec colname="c4" colwidth="20*" />
+          <colspec colname="c5" colwidth="30*" />
+          <colspec colname="c6" colwidth="20*" />
+          <thead>
+            <row>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">r</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">a</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">b</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">c</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">d</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">Example Implementation</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+		  <emphasis role="bold">Restrictions</emphasis>
+		</para>
+	      </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector signed char</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector signed char</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector signed char</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned char</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>const int</para>
+              </entry>
+              <entry>
+		<programlisting>
+  xxpermx  r,a,b,c,d
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector unsigned char</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned char</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned char</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned char</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>const int</para>
+              </entry>
+              <entry>
+		<programlisting>
+  xxpermx  r,a,b,c,d
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector signed short</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector signed short</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector signed short</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned char</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>const int</para>
+              </entry>
+              <entry>
+		<programlisting>
+  xxpermx  r,a,b,c,d
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector unsigned short</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned short</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned short</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned char</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>const int</para>
+              </entry>
+              <entry>
+		<programlisting>
+  xxpermx  r,a,b,c,d
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector signed int</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector signed int</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector signed int</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned char</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>const int</para>
+              </entry>
+              <entry>
+		<programlisting>
+  xxpermx  r,a,b,c,d
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned char</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>const int</para>
+              </entry>
+              <entry>
+		<programlisting>
+  xxpermx  r,a,b,c,d
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector signed long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector signed long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector signed long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned char</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>const int</para>
+              </entry>
+              <entry>
+		<programlisting>
+  xxpermx  r,a,b,c,d
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector unsigned long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned char</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>const int</para>
+              </entry>
+              <entry>
+		<programlisting>
+  xxpermx  r,a,b,c,d
+
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector float</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector float</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector float</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned char</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>const int</para>
+              </entry>
+              <entry>
+		<programlisting>
+  xxpermx  r,a,b,c,d
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector double</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector double</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector double</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned char</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>const int</para>
+              </entry>
+              <entry>
+		<programlisting>
+  xxpermx  r,a,b,c,d
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+          </tbody>
+	</tgroup>
+      </table>
+
+    </section>
+    <?hard-pagebreak?>
+
     <section xml:id="vec_permxor">
       <title>vec_permxor</title>
       <subtitle>Vector Permute and Exclusive-OR</subtitle>
@@ -35075,6 +36976,492 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
             </row>
           </tbody>
         </tgroup>
+      </table>
+
+    </section>
+    <?hard-pagebreak?>
+
+    <section xml:id="vec_replace_elt" revisionflag="added">
+      <title>vec_replace_elt</title>
+      <subtitle>Vector Replace Element</subtitle>
+      <programlisting>
+      r = vec_replace_elt (a, b, c)
+      </programlisting>
+
+      <para><emphasis role="bold">Purpose:</emphasis>
+      Replaces an element in a vector.
+      </para>
+      <para><emphasis role="bold">Result value:</emphasis>
+      The result value <emphasis role="bold">r</emphasis> is set to
+      the value of <emphasis role="bold">a</emphasis>.  Then the
+      element of <emphasis role="bold">r</emphasis> indexed by
+      <emphasis role="bold">c</emphasis> using natural element order
+      is set to the value of <emphasis role="bold">b</emphasis>.
+      </para>
+      <para><emphasis role="bold">Endian considerations:</emphasis>
+      The element numbering within a register is left-to-right for big-endian
+      targets, and right-to-left for little-endian targets.
+      </para>
+      <para><emphasis role="bold">Notes:</emphasis>
+      The value of <emphasis role="bold">c</emphasis> must be between
+      0 and  3 for word-length elements, and between 0 and 1 for
+      doubleword-length elements.
+      </para>
+      <para><emphasis role="bold">Review status:</emphasis>
+      Not yet reviewed.
+      </para>
+      
+      <indexterm>
+	<primary>vinsw</primary>
+	<secondary>vec_replace_elt</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vinsd</primary>
+	<secondary>vec_replace_elt</secondary>
+      </indexterm>
+
+      <table frame="all">
+	<title>Supported type signatures for vec_replace_elt</title>
+	<tgroup cols="7">
+          <colspec colname="c1" colwidth="20*" />
+          <colspec colname="c2" colwidth="20*" />
+          <colspec colname="c3" colwidth="20*" />
+          <colspec colname="c4" colwidth="20*" />
+          <colspec colname="c5" colwidth="40*" />
+          <colspec colname="c6" colwidth="40*" />
+          <colspec colname="c7" colwidth="20*" />
+          <thead>
+            <row>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">r</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">a</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">b</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">c</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">Example LE Implementation</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">Example BE Implementation</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+		  <emphasis role="bold">Restrictions</emphasis>
+		</para>
+	      </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector signed int</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector signed int</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>signed int</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>const int</para>
+              </entry>
+              <entry>
+		<programlisting>
+  vinsw  r/a,b,12-4*c
+		</programlisting>
+              </entry>
+              <entry>
+		<programlisting>
+  vinsw  r/a,b,4*c
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>const int</para>
+              </entry>
+              <entry>
+		<programlisting>
+  vinsw  r/a,b,12-4*c
+		</programlisting>
+              </entry>
+              <entry>
+		<programlisting>
+  vinsw  r/a,b,4*c
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector signed long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector signed long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>signed long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>const int</para>
+              </entry>
+              <entry>
+		<programlisting>
+  vinsd  r/a,b,8-8*c
+
+		</programlisting>
+              </entry>
+              <entry>
+		<programlisting>
+  vinsd  r/a,b,8*c
+
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector unsigned long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>unsigned long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>const int</para>
+              </entry>
+              <entry>
+		<programlisting>
+  vinsd  r/a,b,8-8*c
+
+		</programlisting>
+              </entry>
+              <entry>
+		<programlisting>
+  vinsd  r/a,b,8*c
+
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector float</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector float</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>float</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>const int</para>
+              </entry>
+              <entry>
+		<programlisting>
+  vinsw  r/a,b,12-4*c
+		</programlisting>
+              </entry>
+              <entry>
+		<programlisting>
+  vinsw  r/a,b,4*c
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector double</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector double</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>double</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>const int</para>
+              </entry>
+              <entry>
+		<programlisting>
+  vinsd  r/a,b,8-8*c
+		</programlisting>
+              </entry>
+              <entry>
+		<programlisting>
+  vinsd  r/a,b,8*c
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+          </tbody>
+	</tgroup>
+      </table>
+
+    </section>
+    <?hard-pagebreak?>
+
+    <section xml:id="vec_replace_unaligned" revisionflag="added">
+      <title>vec_replace_unaligned</title>
+      <subtitle>Vector Replace Unaligned</subtitle>
+      <programlisting>
+      r = vec_replace_unaligned (a, b, c)
+      </programlisting>
+
+      <para><emphasis role="bold">Purpose:</emphasis>
+      Replaces some bytes of a vector with a given value, not
+      necessarily aligned where an element of that size would normally
+      be placed.
+      </para>
+      <para><emphasis role="bold">Result value:</emphasis>
+      The result value <emphasis role="bold">r</emphasis> is set to
+      the value of <emphasis role="bold">a</emphasis>.  Then the
+      value of <emphasis role="bold">b</emphasis> is written to
+      <emphasis role="bold">r</emphasis> starting at the byte position
+      indicated by <emphasis role="bold">c</emphasis> in left-to-right
+      byte order.
+      </para>
+      <para><emphasis role="bold">Endian considerations:</emphasis>
+      The semantics of this built-in function differ for big-endian
+      and little-endian targets.
+      </para>
+      <para><emphasis role="bold">Notes:</emphasis>
+      The value of <emphasis role="bold">c</emphasis> must be between
+      0 and 15.
+      </para>
+      <para><emphasis role="bold">Review status:</emphasis>
+      Not yet reviewed.
+      </para>
+      
+      <indexterm>
+	<primary>vinsw</primary>
+	<secondary>vec_replace_unaligned</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vinsd</primary>
+	<secondary>vec_replace_unaligned</secondary>
+      </indexterm>
+
+      <table frame="all">
+	<title>Supported type signatures for vec_replace_unaligned</title>
+	<tgroup cols="6">
+          <colspec colname="c1" colwidth="20*" />
+          <colspec colname="c2" colwidth="20*" />
+          <colspec colname="c3" colwidth="20*" />
+          <colspec colname="c4" colwidth="20*" />
+          <colspec colname="c5" colwidth="30*" />
+          <colspec colname="c7" colwidth="20*" />
+          <thead>
+            <row>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">r</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">a</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">b</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">c</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">Example Implementation</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+		  <emphasis role="bold">Restrictions</emphasis>
+		</para>
+	      </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector signed int</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector signed int</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>signed int</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>const int</para>
+              </entry>
+              <entry>
+		<programlisting>
+  vinsw  r/a,b,c
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>const int</para>
+              </entry>
+              <entry>
+		<programlisting>
+  vinsw  r/a,b,c
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector signed long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector signed long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>signed long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>const int</para>
+              </entry>
+              <entry>
+		<programlisting>
+  vinsd  r/a,b,c
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector unsigned long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>unsigned long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>const int</para>
+              </entry>
+              <entry>
+		<programlisting>
+  vinsd  r/a,b,c
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector float</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector float</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>float</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>const int</para>
+              </entry>
+              <entry>
+		<programlisting>
+  vinsw  r/a,b,c
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector double</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector double</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>double</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>const int</para>
+              </entry>
+              <entry>
+		<programlisting>
+  vinsd  r/a,b,c
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+          </tbody>
+	</tgroup>
       </table>
 
     </section>
@@ -39199,6 +41586,272 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
     </section>
     <?hard-pagebreak?>
 
+    <section xml:id="vec_sldb" revisionflag="added">
+      <title>vec_sldb</title>
+      <subtitle>Vector Shift Left Double Bit Immediate</subtitle>
+      <programlisting>
+      r = vec_sldb (a, b, c)
+      </programlisting>
+
+      <para><emphasis role="bold">Purpose:</emphasis>
+      Shifts a double-wide vector left by up to 7 bits and returns the
+      leftmost 128 bits of the result.
+      </para>
+      <para><emphasis role="bold">Result value:</emphasis>
+      Let <emphasis role="bold">v</emphasis> be the concatenation of
+      <emphasis role="bold">a</emphasis> and <emphasis
+      role="bold">b</emphasis>, with <emphasis
+      role="bold">a</emphasis> on the left.  Let <emphasis
+      role="bold">v'</emphasis> be <emphasis role="bold">v</emphasis>
+      shifted left by the number of bits specified by <emphasis
+      role="bold">c</emphasis>.  Then <emphasis
+      role="bold">r</emphasis> is set to the leftmost 128 bits of
+      <emphasis role="bold">v'</emphasis>.
+      </para>
+      <para><emphasis role="bold">Endian considerations:</emphasis>
+      The semantics of this built-in function differ for big-endian
+      and little-endian targets.
+      </para>
+      <para><emphasis role="bold">Notes:</emphasis>
+      The value of <emphasis role="bold">c</emphasis> must be between
+      0 and 7, inclusive.
+      </para>
+      <para><emphasis role="bold">Review status:</emphasis>
+      Not yet reviewed.
+      </para>
+      
+      <indexterm>
+	<primary>vsldbi</primary>
+	<secondary>vec_sldb</secondary>
+      </indexterm>
+
+      <table frame="all">
+	<title>Supported type signatures for vec_sldb</title>
+	<tgroup cols="6">
+          <colspec colname="c1" colwidth="20*" />
+          <colspec colname="c2" colwidth="20*" />
+          <colspec colname="c3" colwidth="20*" />
+          <colspec colname="c4" colwidth="20*" />
+          <colspec colname="c5" colwidth="20*" />
+          <colspec colname="c6" colwidth="20*" />
+          <thead>
+            <row>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">r</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">a</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">b</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">c</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">Example Implementation</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+		  <emphasis role="bold">Restrictions</emphasis>
+		</para>
+	      </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector signed char</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector signed char</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector signed char</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>const unsigned int</para>
+              </entry>
+              <entry>
+		<programlisting>
+  vsldbi  r,a,b,c
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector unsigned char</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned char</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned char</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>const unsigned int</para>
+              </entry>
+              <entry>
+		<programlisting>
+  vsldbi  r,a,b,c
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector signed short</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector signed short</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector signed short</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>const unsigned int</para>
+              </entry>
+              <entry>
+		<programlisting>
+  vsldbi  r,a,b,c
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector unsigned short</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned short</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned short</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>const unsigned int</para>
+              </entry>
+              <entry>
+		<programlisting>
+  vsldbi  r,a,b,c
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector signed int</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector signed int</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector signed int</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>const unsigned int</para>
+              </entry>
+              <entry>
+		<programlisting>
+  vsldbi  r,a,b,c
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>const unsigned int</para>
+              </entry>
+              <entry>
+		<programlisting>
+  vsldbi  r,a,b,c
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector signed long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector signed long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector signed long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>const unsigned int</para>
+              </entry>
+              <entry>
+		<programlisting>
+  vsldbi  r,a,b,c
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector unsigned long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>const unsigned int</para>
+              </entry>
+              <entry>
+		<programlisting>
+  vsldbi  r,a,b,c
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+          </tbody>
+	</tgroup>
+      </table>
+
+    </section>
+    <?hard-pagebreak?>
+
     <section xml:id="vec_sldw">
       <title>vec_sldw</title>
       <subtitle>Vector Shift Left Double by Words</subtitle>
@@ -41156,6 +43809,368 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
     </section>
     <?hard-pagebreak?>
 
+    <section xml:id="vec_splati" revisionflag="added">
+      <title>vec_splati</title>
+      <subtitle>Vector Splat Immediate</subtitle>
+      <programlisting>
+      r = vec_splati (a)
+      </programlisting>
+
+      <para><emphasis role="bold">Purpose:</emphasis>
+      Copy an immediate value into every element of a vector.
+      </para>
+      <para><emphasis role="bold">Result value:</emphasis>
+      The result value <emphasis role="bold">r</emphasis> is a vector
+      with each element set to the value of <emphasis
+      role="bold">a</emphasis>.
+      </para>
+      <para><emphasis role="bold">Endian considerations:</emphasis>
+      None.
+      </para>
+      <para><emphasis role="bold">Review status:</emphasis>
+      Not yet reviewed.
+      </para>
+      
+      <indexterm>
+	<primary>xxspltiw</primary>
+	<secondary>vec_splati</secondary>
+      </indexterm>
+
+      <table frame="all">
+	<title>Supported type signatures for vec_splati</title>
+	<tgroup cols="4">
+          <colspec colname="c1" colwidth="20*" />
+          <colspec colname="c2" colwidth="20*" />
+          <colspec colname="c3" colwidth="20*" />
+          <colspec colname="c4" colwidth="20*" />
+          <thead>
+            <row>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">r</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">a</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">Example Implementation</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+		  <emphasis role="bold">Restrictions</emphasis>
+		</para>
+	      </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector signed int</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>const signed int</para>
+              </entry>
+              <entry>
+		<programlisting>
+  xxspltiw  r,a
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector float</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>const float</para>
+              </entry>
+              <entry>
+		<programlisting>
+  xxspltiw  r,a
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+          </tbody>
+	</tgroup>
+      </table>
+
+    </section>
+    <?hard-pagebreak?>
+
+    <section xml:id="vec_splati_ins" revisionflag="added">
+      <title>vec_splati_ins</title>
+      <subtitle>Vector Splat Immediate Insert</subtitle>
+      <programlisting>
+      r = vec_splati_ins (a, b, c)
+      </programlisting>
+
+      <para><emphasis role="bold">Purpose:</emphasis>
+      Copy an immediate value into a specified word of each doubleword
+      of a vector, leaving the remaining words unchanged.
+      </para>
+      <para><emphasis role="bold">Result value:</emphasis>
+      If <emphasis role="bold">b</emphasis> has a value of 0, then the
+      even elements of <emphasis role="bold">r</emphasis> are set to
+      the value of <emphasis role="bold">c</emphasis> and the odd
+      elements of <emphasis role="bold">r</emphasis> are copied from
+      the corresponding elements of <emphasis
+      role="bold">a</emphasis>.  Otherwise, <emphasis
+      role="bold">b</emphasis> must have a value of 1, and the odd
+      elements of <emphasis role="bold">r</emphasis> are set to the
+      value of <emphasis role="bold">c</emphasis> and the even
+      elements of <emphasis role="bold">r</emphasis> are copied from
+      the corresponding elements of <emphasis
+      role="bold">a</emphasis>.
+      </para>
+      <para><emphasis role="bold">Endian considerations:</emphasis>
+      Element numbering is left-to-right in a register for big-endian
+      targets, and right-to-left for little-endian targets.
+      </para>
+      <para><emphasis role="bold">Review status:</emphasis>
+      Not yet reviewed.
+      </para>
+      
+      <indexterm>
+	<primary>xxsplti32dx</primary>
+	<secondary>vec_splati_ins</secondary>
+      </indexterm>
+
+      <table frame="all">
+	<title>Supported type signatures for vec_splati_ins</title>
+	<tgroup cols="7">
+          <colspec colname="c1" colwidth="20*" />
+          <colspec colname="c2" colwidth="20*" />
+          <colspec colname="c3" colwidth="20*" />
+          <colspec colname="c4" colwidth="20*" />
+          <colspec colname="c5" colwidth="40*" />
+          <colspec colname="c6" colwidth="40*" />
+          <colspec colname="c7" colwidth="20*" />
+          <thead>
+            <row>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">r</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">a</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">b</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">c</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">Example LE Implementation</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">Example BE Implementation</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+		  <emphasis role="bold">Restrictions</emphasis>
+		</para>
+	      </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector signed int</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector signed int</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>const unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>const signed int</para>
+              </entry>
+              <entry>
+		<programlisting>
+ xxsplti32dx  r/a,1-b,c
+		</programlisting>
+              </entry>
+              <entry>
+		<programlisting>
+  xxsplti32dx  r/a,b,c
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>const unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>const unsigned int</para>
+              </entry>
+              <entry>
+		<programlisting>
+ xxsplti32dx  r/a,1-b,c
+		</programlisting>
+              </entry>
+              <entry>
+		<programlisting>
+  xxsplti32dx  r/a,b,c
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector float</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector float</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>const unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>const float</para>
+              </entry>
+              <entry>
+		<programlisting>
+ xxsplti32dx  r/a,1-b,c
+		</programlisting>
+              </entry>
+              <entry>
+		<programlisting>
+  xxsplti32dx  r/a,b,c
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+          </tbody>
+	</tgroup>
+      </table>
+
+    </section>
+    <?hard-pagebreak?>
+
+    <section xml:id="vec_splatid" revisionflag="added">
+      <title>vec_splatid</title>
+      <subtitle>Vector Splat Immediate Double</subtitle>
+      <programlisting>
+      r = vec_splatid (a)
+      </programlisting>
+
+      <para><emphasis role="bold">Purpose:</emphasis>
+      Convert an immediate single-precision floating-point value to
+      double precision, and copy the result into every element of a vector.
+      </para>
+      <para><emphasis role="bold">Result value:</emphasis>
+      The result value <emphasis role="bold">r</emphasis> is a vector
+      with each element set to the value of <emphasis
+      role="bold">a</emphasis> when converted to double precision.
+      </para>
+      <para><emphasis role="bold">Endian considerations:</emphasis>
+      None.
+      </para>
+      <para><emphasis role="bold">Notes:</emphasis>
+      If <emphasis role="bold">a</emphasis> is a single-precision
+      denormal value, the value of <emphasis role="bold">r</emphasis>
+      is undefined.
+      </para>
+      <para><emphasis role="bold">Review status:</emphasis>
+      Not yet reviewed.
+      </para>
+      
+      <indexterm>
+	<primary>xxspltidp</primary>
+	<secondary>vec_splatid</secondary>
+      </indexterm>
+
+      <table frame="all">
+	<title>Supported type signatures for vec_splatid</title>
+	<tgroup cols="4">
+          <colspec colname="c1" colwidth="20*" />
+          <colspec colname="c2" colwidth="20*" />
+          <colspec colname="c3" colwidth="20*" />
+          <colspec colname="c4" colwidth="20*" />
+          <thead>
+            <row>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">r</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">a</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">Example Implementation</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+		  <emphasis role="bold">Restrictions</emphasis>
+		</para>
+	      </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector double</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>const float</para>
+              </entry>
+              <entry>
+		<programlisting>
+  xxspltidp  r,a
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+          </tbody>
+	</tgroup>
+      </table>
+
+    </section>
+    <?hard-pagebreak?>
+
     <section xml:id="vec_splats">
       <title>vec_splats</title>
       <subtitle>Vector Splat Scalar</subtitle>
@@ -42078,6 +45093,272 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
             </row>
           </tbody>
         </tgroup>
+      </table>
+
+    </section>
+    <?hard-pagebreak?>
+
+    <section xml:id="vec_srdb" revisionflag="added">
+      <title>vec_srdb</title>
+      <subtitle>Vector Shift Right Double Bit Immediate</subtitle>
+      <programlisting>
+      r = vec_srdb (a, b, c)
+      </programlisting>
+
+      <para><emphasis role="bold">Purpose:</emphasis>
+      Shifts a double-wide vector right by up to 7 bits and returns the
+      rightmost 128 bits of the result.
+      </para>
+      <para><emphasis role="bold">Result value:</emphasis>
+      Let <emphasis role="bold">v</emphasis> be the concatenation of
+      <emphasis role="bold">a</emphasis> and <emphasis
+      role="bold">b</emphasis>, with <emphasis
+      role="bold">a</emphasis> on the left.  Let <emphasis
+      role="bold">v'</emphasis> be <emphasis role="bold">v</emphasis>
+      shifted right by the number of bits specified by <emphasis
+      role="bold">c</emphasis>.  Then <emphasis
+      role="bold">r</emphasis> is set to the rightmost 128 bits of
+      <emphasis role="bold">v'</emphasis>.
+      </para>
+      <para><emphasis role="bold">Endian considerations:</emphasis>
+      The semantics of this built-in function differ for big-endian
+      and little-endian targets.
+      </para>
+      <para><emphasis role="bold">Notes:</emphasis>
+      The value of <emphasis role="bold">c</emphasis> must be between
+      0 and 7, inclusive.
+      </para>
+      <para><emphasis role="bold">Review status:</emphasis>
+      Not yet reviewed.
+      </para>
+      
+      <indexterm>
+	<primary>vsrdbi</primary>
+	<secondary>vec_srdb</secondary>
+      </indexterm>
+
+      <table frame="all">
+	<title>Supported type signatures for vec_srdb</title>
+	<tgroup cols="6">
+          <colspec colname="c1" colwidth="20*" />
+          <colspec colname="c2" colwidth="20*" />
+          <colspec colname="c3" colwidth="20*" />
+          <colspec colname="c4" colwidth="20*" />
+          <colspec colname="c5" colwidth="20*" />
+          <colspec colname="c6" colwidth="20*" />
+          <thead>
+            <row>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">r</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">a</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">b</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">c</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">Example Implementation</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+		  <emphasis role="bold">Restrictions</emphasis>
+		</para>
+	      </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector signed char</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector signed char</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector signed char</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>const unsigned int</para>
+              </entry>
+              <entry>
+		<programlisting>
+  vsrdbi  r,a,b,c
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector unsigned char</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned char</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned char</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>const unsigned int</para>
+              </entry>
+              <entry>
+		<programlisting>
+  vsrdbi  r,a,b,c
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector signed short</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector signed short</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector signed short</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>const unsigned int</para>
+              </entry>
+              <entry>
+		<programlisting>
+  vsrdbi  r,a,b,c
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector unsigned short</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned short</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned short</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>const unsigned int</para>
+              </entry>
+              <entry>
+		<programlisting>
+  vsrdbi  r,a,b,c
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector signed int</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector signed int</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector signed int</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>const unsigned int</para>
+              </entry>
+              <entry>
+		<programlisting>
+  vsrdbi  r,a,b,c
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned int</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>const unsigned int</para>
+              </entry>
+              <entry>
+		<programlisting>
+  vsrdbi  r,a,b,c
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector signed long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector signed long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector signed long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>const unsigned int</para>
+              </entry>
+              <entry>
+		<programlisting>
+  vsrdbi  r,a,b,c
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector unsigned long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>vector unsigned long long</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>const unsigned int</para>
+              </entry>
+              <entry>
+		<programlisting>
+  vsrdbi  r,a,b,c
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+          </tbody>
+	</tgroup>
       </table>
 
     </section>
@@ -50569,6 +53850,361 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
     </section>
     <?hard-pagebreak?>
 
+    <section xml:id="vec_xl_sext" revisionflag="added">
+      <title>vec_xl_sext</title>
+      <subtitle>Load VSX Vector Element and Sign Extend</subtitle>
+      <programlisting>
+      r = vec_xl_sext (a, b)
+      </programlisting>
+
+      <para><emphasis role="bold">Purpose:</emphasis>
+      Load a single element into a vector register and sign extend it
+      to a 128-bit integer.
+      </para>
+      <para><emphasis role="bold">Result value:</emphasis>
+      Let <emphasis role="bold">x</emphasis> be the addressed formed
+      by adding <emphasis role="bold">a</emphasis> and <emphasis
+      role="bold">b</emphasis>.  Then <emphasis
+      role="bold">r</emphasis> is set to the value of the element
+      loaded from address <emphasis role="bold">x</emphasis> and
+      sign-extended to 128 bits.  The type of the loaded element is
+      specified by the pointer type of argument <emphasis
+      role="bold">b</emphasis>.
+      </para>
+      <para><emphasis role="bold">Endian considerations:</emphasis>
+      None.
+      </para>
+      <para><emphasis role="bold">Review status:</emphasis>
+      Not yet reviewed.
+      </para>
+      
+      <indexterm>
+	<primary>lxvrbx</primary>
+	<secondary>vec_xl_sext</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>lxvrhx</primary>
+	<secondary>vec_xl_sext</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>lxvrwx</primary>
+	<secondary>vec_xl_sext</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>lxvrdx</primary>
+	<secondary>vec_xl_sext</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vextsb2d</primary>
+	<secondary>vec_xl_sext</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vextsh2d</primary>
+	<secondary>vec_xl_sext</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vextsw2d</primary>
+	<secondary>vec_xl_sext</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>vextsd2q</primary>
+	<secondary>vec_xl_sext</secondary>
+      </indexterm>
+
+      <table frame="all">
+	<title>Supported type signatures for vec_xl_sext</title>
+	<tgroup cols="5">
+          <colspec colname="c1" colwidth="20*" />
+          <colspec colname="c2" colwidth="20*" />
+          <colspec colname="c3" colwidth="20*" />
+          <colspec colname="c4" colwidth="20*" />
+          <colspec colname="c5" colwidth="20*" />
+          <thead>
+            <row>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">r</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">a</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">b</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">Example Implementation</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+		  <emphasis role="bold">Restrictions</emphasis>
+		</para>
+	      </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector signed __int128</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>signed long</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>signed char *</para>
+              </entry>
+              <entry>
+		<programlisting>
+  lxvrbx    t,b,a
+  vextsb2d  u,t
+  vextsd2q  r,u
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector signed __int128</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>signed long</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>signed short *</para>
+              </entry>
+              <entry>
+		<programlisting>
+  lxvrhx    t,b,a
+  vextsh2d  u,t
+  vextsd2q  r,u
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector signed __int128</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>signed long</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>signed int *</para>
+              </entry>
+              <entry>
+		<programlisting>
+  lxvrwx    t,b,a
+  vextsw2d  u,t
+  vextsd2q  r,u
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector signed __int128</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>signed long</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>signed long long *</para>
+              </entry>
+              <entry>
+		<programlisting>
+  lxvrdx    t,b,a
+  vextsd2q  r,t
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+          </tbody>
+	</tgroup>
+      </table>
+
+    </section>
+    <?hard-pagebreak?>
+
+    <section xml:id="vec_xl_zext" revisionflag="added">
+      <title>vec_xl_zext</title>
+      <subtitle>Load VSX Vector Element and Zero Extend</subtitle>
+      <programlisting>
+      r = vec_xl_zext (a, b)
+      </programlisting>
+
+      <para><emphasis role="bold">Purpose:</emphasis>
+      Load a single element into a vector register and zero-extend it
+      to a 128-bit unsigned integer.
+      </para>
+      <para><emphasis role="bold">Result value:</emphasis>
+      Let <emphasis role="bold">x</emphasis> be the addressed formed
+      by adding <emphasis role="bold">a</emphasis> and <emphasis
+      role="bold">b</emphasis>.  Then <emphasis
+      role="bold">r</emphasis> is set to the value of the element
+      loaded from address <emphasis role="bold">x</emphasis> and
+      zero-extended to 128 bits.  The type of the loaded element is
+      specified by the pointer type of argument <emphasis
+      role="bold">b</emphasis>.
+      </para>
+      <para><emphasis role="bold">Endian considerations:</emphasis>
+      None.
+      </para>
+      <para><emphasis role="bold">Review status:</emphasis>
+      Not yet reviewed.
+      </para>
+      
+      <indexterm>
+	<primary>lxvrbx</primary>
+	<secondary>vec_xl_zext</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>lxvrhx</primary>
+	<secondary>vec_xl_zext</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>lxvrwx</primary>
+	<secondary>vec_xl_zext</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>lxvrdx</primary>
+	<secondary>vec_xl_zext</secondary>
+      </indexterm>
+
+      <table frame="all">
+	<title>Supported type signatures for vec_xl_zext</title>
+	<tgroup cols="5">
+          <colspec colname="c1" colwidth="20*" />
+          <colspec colname="c2" colwidth="20*" />
+          <colspec colname="c3" colwidth="20*" />
+          <colspec colname="c4" colwidth="20*" />
+          <colspec colname="c5" colwidth="20*" />
+          <thead>
+            <row>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">r</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">a</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">b</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">Example Implementation</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+		  <emphasis role="bold">Restrictions</emphasis>
+		</para>
+	      </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector unsigned __int128</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>signed long</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>unsigned char *</para>
+              </entry>
+              <entry>
+		<programlisting>
+  lxvrbx    r,b,a
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector unsigned __int128</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>signed long</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>unsigned short *</para>
+              </entry>
+              <entry>
+		<programlisting>
+  lxvrhx    r,b,a
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector unsigned __int128</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>signed long</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>unsigned int *</para>
+              </entry>
+              <entry>
+		<programlisting>
+  lxvrwx    r,b,a
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector unsigned __int128</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>signed long</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>unsigned long long *</para>
+              </entry>
+              <entry>
+		<programlisting>
+  lxvrdx    r,b,a
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+          </tbody>
+	</tgroup>
+      </table>
+
+    </section>
+    <?hard-pagebreak?>
+
     <section xml:id="vec_xor">
       <title>vec_xor</title>
       <subtitle>Vector Exclusive OR</subtitle>
@@ -51892,6 +55528,244 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
             </row>
           </tbody>
         </tgroup>
+      </table>
+
+    </section>
+    <?hard-pagebreak?>
+
+    <section xml:id="vec_xst_trunc" revisionflag="added">
+      <title>vec_xst_trunc</title>
+      <subtitle>Truncate and Store from VSX Vector</subtitle>
+      <programlisting>
+      vec_xst_trunc (a, b, c)
+      </programlisting>
+
+      <para><emphasis role="bold">Purpose:</emphasis>
+      Truncate the value in a vector register and store it.
+      </para>
+      <para><emphasis role="bold">Operation:</emphasis>
+      The rightmost element of <emphasis role="bold">a</emphasis>
+      (using the element type specified by the pointer type of
+      <emphasis role="bold">c</emphasis>) is stored to the address
+      formed by adding <emphasis role="bold">b</emphasis> and
+      <emphasis role="bold">c</emphasis>.
+      </para>
+      <para><emphasis role="bold">Endian considerations:</emphasis>
+      None.
+      </para>
+      <para><emphasis role="bold">Review status:</emphasis>
+      Not yet reviewed.
+      </para>
+      
+      <indexterm>
+	<primary>stxvrbx</primary>
+	<secondary>vec_xst_trunc</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>stxvrhx</primary>
+	<secondary>vec_xst_trunc</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>stxvrwx</primary>
+	<secondary>vec_xst_trunc</secondary>
+      </indexterm>
+      <indexterm>
+	<primary>stxvrdx</primary>
+	<secondary>vec_xst_trunc</secondary>
+      </indexterm>
+
+      <table frame="all">
+	<title>Supported type signatures for vec_xst_trunc</title>
+	<tgroup cols="5">
+          <colspec colname="c1" colwidth="20*" />
+          <colspec colname="c2" colwidth="20*" />
+          <colspec colname="c3" colwidth="20*" />
+          <colspec colname="c4" colwidth="20*" />
+          <colspec colname="c5" colwidth="20*" />
+          <thead>
+            <row>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">a</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">b</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">c</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+                  <emphasis role="bold">Example Implementation</emphasis>
+		</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>
+		  <emphasis role="bold">Restrictions</emphasis>
+		</para>
+	      </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector signed __int128</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>signed long</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>signed char *</para>
+              </entry>
+              <entry>
+		<programlisting>
+  stxvrbx  a,c,b
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector unsigned __int128</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>signed long</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>unsigned char *</para>
+              </entry>
+              <entry>
+		<programlisting>
+  stxvrbx  a,c,b
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector signed __int128</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>signed long</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>signed short *</para>
+              </entry>
+              <entry>
+		<programlisting>
+  stxvrhx  a,c,b
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector unsigned __int128</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>signed long</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>unsigned short *</para>
+              </entry>
+              <entry>
+		<programlisting>
+  stxvrhx  a,c,b
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector signed __int128</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>signed long</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>signed int *</para>
+              </entry>
+              <entry>
+		<programlisting>
+  stxvrwx  a,c,b
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector unsigned __int128</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>signed long</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>unsigned int *</para>
+              </entry>
+              <entry>
+		<programlisting>
+  stxvrwx  a,c,b
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector signed __int128</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>signed long</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>signed long long *</para>
+              </entry>
+              <entry>
+		<programlisting>
+  stxvrdx  a,c,b
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+            <row>
+              <entry align="center" valign="middle">
+		<para>vector unsigned __int128</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>signed long</para>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>unsigned long long *</para>
+              </entry>
+              <entry>
+		<programlisting>
+  stxvrdx  a,c,b
+		</programlisting>
+              </entry>
+              <entry align="center" valign="middle">
+		<para>ISA 3.1 or later</para>
+	      </entry>
+            </row>
+          </tbody>
+	</tgroup>
       </table>
 
     </section>
