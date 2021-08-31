@@ -38,9 +38,10 @@
       <code>4i</code> to <code>4i+3</code> as scratch space.  That is,
       when <code>ACC[i]</code> contains defined data, the contents of
       VSRs <code>4i</code> to <code>4i+3</code> are undefined until
-      either an <code>xxmfacc</code> instruction is used to copy the
-      contents of <code>ACC[i]</code> to the VSRs, or some other
-      instruction directly writes to one of these VSRs.
+      an <code>xxmfacc</code> instruction is used to copy the contents
+      of <code>ACC[i]</code> to the VSRs.  Writing to a VSR associated
+      with <code>ACC[i]</code> that contains defined data will cause
+      <code>ACC[i]</code> to become undefined.
     </para>
     <para>
       This reference is not intended to be a complete introduction to
@@ -50,7 +51,8 @@
     </para>
     <para>
       <emphasis role="bold">Review status:</emphasis> Chapter reviewed
-      by Paul Clarke; changes made.
+      by Paul Clarke; changes made.  Chapter reviewed by Peter
+      Bergner; changes made.
     </para>
   </section>
 
@@ -154,19 +156,18 @@
     <section>
       <title>Assembly and Disassembly of Large Types</title>
       <para>
-	The following builtins are used to construct
+	The following intrinsics are used to construct
 	<code>__vector_pair</code> and <code>__vector_quad</code>
 	objects from 128-bit vectors, and deconstruct them into such
 	vectors.  The disassembly interfaces place the results into
-	arrays of vectors.
-      </para>
-      <para>
-	FIXME: I've chosen not to include sample code generation here,
-	but I can be persuaded if folks think that's useful.
-      </para>
-      <para>
-	FIXME: Peter to provide some wording about semantics and
-	deprecation?  I am not sure I have the latest information.
+	arrays of vectors using natural element order.  The build
+	interfaces treat the vector input arguments as if they form an
+	array of vectors, with the first vector argument being array
+	element 0 in natural element order, the second vector argument
+	being array element 1, and so forth.  The assemble interfaces
+	are deprecated because they do not give consistent results for
+	big- and little-endian targets, and users should use the build
+	interfaces instead.
       </para>
       <para>
 	<informaltable frame="all">
@@ -250,20 +251,10 @@
       </para>
     </section>
     <section>
-      <title>Accumulator Move Operations</title>
+      <title>Accumulator Clear Operation</title>
       <para>
-	These instructions move data from vector quads to accumulators
-	(a "priming" operation) or vice versa ( a "depriming"
-	operation), or initialize an accumulator to zeros.
+	This intrinsic function initializes an accumulator to zeros.
       </para>
-      <indexterm>
-	<primary>xxmfacc</primary>
-	<secondary>__builtin_mma_xxmfacc</secondary>
-      </indexterm>
-      <indexterm>
-	<primary>xxmtacc</primary>
-	<secondary>__builtin_mma_xxmtacc</secondary>
-      </indexterm>
       <indexterm>
 	<primary>xxsetaccz</primary>
 	<secondary>__builtin_mma_xxsetaccz</secondary>
@@ -284,30 +275,6 @@
 	      </row>
 	    </thead>
 	    <tbody>
-	      <row>
-		<entry>
-		  <programlisting>
-  void __builtin_mma_xxmfacc (__vector_quad* a)
-		  </programlisting>
-		</entry>
-		<entry>
-		  <programlisting>
-  xxmfacc a
-		  </programlisting>
-		</entry>
-	      </row>
-	      <row>
-		<entry>
-		  <programlisting>
-  void __builtin_mma_xxmtacc (__vector_quad* a)
-		  </programlisting>
-		</entry>
-		<entry>
-		  <programlisting>
-  xxmtacc a
-		  </programlisting>
-		</entry>
-	      </row>
 	      <row>
 		<entry>
 		  <programlisting>
@@ -484,22 +451,6 @@
       </indexterm>
       <indexterm>
 	<primary>pmxvi16ger2spp</primary>
-	<secondary>__builtin_mma_pmxvi64ger2spp</secondary>
-      </indexterm>
-      <indexterm>
-	<primary>pmxvi64ger2</primary>
-	<secondary>__builtin_mma_pmxvi64ger2</secondary>
-      </indexterm>
-      <indexterm>
-	<primary>pmxvi64ger2pp</primary>
-	<secondary>__builtin_mma_pmxvi64ger2pp</secondary>
-      </indexterm>
-      <indexterm>
-	<primary>pmxvi64ger2s</primary>
-	<secondary>__builtin_mma_pmxvi64ger2s</secondary>
-      </indexterm>
-      <indexterm>
-	<primary>pmxvi64ger2spp</primary>
 	<secondary>__builtin_mma_pmxvi64ger2spp</secondary>
       </indexterm>
       <indexterm>
@@ -986,62 +937,6 @@
 		<entry>
 		  <programlisting>
  pmxvi16ger2spp  a,b,c,d,e,f
-
-		  </programlisting>
-		</entry>
-	      </row>
-	      <row>
-		<entry>
-		  <programlisting>
- void __builtin_mma_pmxvi64ger2 (__vector_quad* a, vuc b, vuc c,
-                                 const int d, const int e, const int f)
-		  </programlisting>
-		</entry>
-		<entry>
-		  <programlisting>
- pmxvi64ger2  a,b,c,d,e,f
-
-		  </programlisting>
-		</entry>
-	      </row>
-	      <row>
-		<entry>
-		  <programlisting>
- void __builtin_mma_pmxvi64ger2pp (__vector_quad* a, vuc b, vuc c,
-                                   const int d, const int e, const int f)
-		  </programlisting>
-		</entry>
-		<entry>
-		  <programlisting>
- pmxvi64ger2pp  a,b,c,d,e,f
-
-		  </programlisting>
-		</entry>
-	      </row>
-	      <row>
-		<entry>
-		  <programlisting>
- void __builtin_mma_pmxvi64ger2s (__vector_quad* a, vuc b, vuc c,
-                                  const int d, const int e, const int f)
-		  </programlisting>
-		</entry>
-		<entry>
-		  <programlisting>
- pmxvi64ger2s  a,b,c,d,e,f
-
-		  </programlisting>
-		</entry>
-	      </row>
-	      <row>
-		<entry>
-		  <programlisting>
- void __builtin_mma_pmxvi64ger2spp (__vector_quad* a, vuc b, vuc c,
-                                    const int d, const int e, const int f)
-		  </programlisting>
-		</entry>
-		<entry>
-		  <programlisting>
- pmxvi64ger2spp  a,b,c,d,e,f
 
 		  </programlisting>
 		</entry>

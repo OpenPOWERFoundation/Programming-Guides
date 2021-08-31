@@ -151,6 +151,15 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 	</para>
       </listitem>
     </itemizedlist>
+    <para revisionflag="added">
+      Note that this document does not make distinctions about
+      availability of intrinsic functions prior to ISA 2.07, as
+      implemented on POWER8 processors.  Many intrinsics not
+      restricted to ISA 3.0 or later are also available on earlier
+      processor generations.  However, any interfaces that make use
+      of "vector long long" data types are only available beginning
+      with ISA 2.07.
+    </para>
     <section>
       <title>Terminology</title>
       <para>
@@ -28589,6 +28598,12 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
+      <para revisionflag="added"><emphasis role="bold">Notes:</emphasis>
+      For floating-point types, if both source elements contain signed
+      zeros, or if either source element contains a NaN, it is
+      undefined which of the two source elements is copied into the
+      corresponding result element.
+      </para>
       
       <indexterm>
 	<primary>vminsb</primary>
@@ -55773,7 +55788,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
   </section>
 
   <?hard-pagebreak?>
-  <section xml:id="VIPR.reference.fortfns">
+  <section xml:id="VIPR.reference.fortfns" revisionflag="added">
     <title>Built-In Vector Functions for Fortran</title>
 
       <para>
