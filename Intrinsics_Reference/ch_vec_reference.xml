@@ -10255,7 +10255,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       None.
       </para>
       <para><emphasis role="bold">Review status:</emphasis>
-      Not yet reviewed.
+      Reviewed by Will Schmidt.
       </para>
       
       <indexterm>
@@ -19618,7 +19618,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       not address an element boundary.
       </para>
       <para><emphasis role="bold">Review status:</emphasis>
-      Not yet reviewed.
+      Reviewed by Will Schmidt.
       </para>
       
       <indexterm>
@@ -41617,11 +41617,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <emphasis role="bold">a</emphasis> and <emphasis
       role="bold">b</emphasis>, with <emphasis
       role="bold">a</emphasis> on the left.  Let <emphasis
-      role="bold">v'</emphasis> be <emphasis role="bold">v</emphasis>
+      role="bold">w</emphasis> be <emphasis role="bold">v</emphasis>
       shifted left by the number of bits specified by <emphasis
       role="bold">c</emphasis>.  Then <emphasis
       role="bold">r</emphasis> is set to the leftmost 128 bits of
-      <emphasis role="bold">v'</emphasis>.
+      <emphasis role="bold">w</emphasis>.
       </para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       The semantics of this built-in function differ for big-endian
@@ -41632,7 +41632,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       0 and 7, inclusive.
       </para>
       <para><emphasis role="bold">Review status:</emphasis>
-      Not yet reviewed.
+      Reviewed by Will Schmidt.
       </para>
       
       <indexterm>
@@ -43843,7 +43843,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       None.
       </para>
       <para><emphasis role="bold">Review status:</emphasis>
-      Not yet reviewed.
+      Reviewed by Will Schmidt.
       </para>
       
       <indexterm>
@@ -43952,7 +43952,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       targets, and right-to-left for little-endian targets.
       </para>
       <para><emphasis role="bold">Review status:</emphasis>
-      Not yet reviewed.
+      Reviewed by Will Schmidt.
       </para>
       
       <indexterm>
@@ -45129,11 +45129,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <emphasis role="bold">a</emphasis> and <emphasis
       role="bold">b</emphasis>, with <emphasis
       role="bold">a</emphasis> on the left.  Let <emphasis
-      role="bold">v'</emphasis> be <emphasis role="bold">v</emphasis>
+      role="bold">w</emphasis> be <emphasis role="bold">v</emphasis>
       shifted right by the number of bits specified by <emphasis
       role="bold">c</emphasis>.  Then <emphasis
       role="bold">r</emphasis> is set to the rightmost 128 bits of
-      <emphasis role="bold">v'</emphasis>.
+      <emphasis role="bold">w</emphasis>.
       </para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       The semantics of this built-in function differ for big-endian
@@ -45144,7 +45144,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       0 and 7, inclusive.
       </para>
       <para><emphasis role="bold">Review status:</emphasis>
-      Not yet reviewed.
+      Reviewed by Will Schmidt.
       </para>
       
       <indexterm>

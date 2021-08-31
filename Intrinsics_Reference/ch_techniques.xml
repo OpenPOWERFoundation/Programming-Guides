@@ -254,9 +254,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="section_techniques">
 	Access to the portability APIs occurs automatically when
 	including one of the corresponding Intel header files, such as
 	<code>&lt;mmintrin.h&gt;</code>.  <phrase
-	revisionflag="added">You must also compile with
-	<code>-DNO_WARN_X86_INTRINSICS</code> to opt into using the
-	headers.</phrase>
+	revisionflag="added">To enable the portability headers, you
+	must compile with
+	<code>-DNO_WARN_X86_INTRINSICS</code>.</phrase>
       </para>
     </section>
     <section xml:id="VIPR.techniques.pveclib">
