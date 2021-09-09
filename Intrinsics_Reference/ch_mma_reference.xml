@@ -49,11 +49,6 @@
       Assist Best Practices Guide (see <xref
       linkend="VIPR.intro.links" />) and to the POWER ISA.
     </para>
-    <para>
-      <emphasis role="bold">Review status:</emphasis> Chapter reviewed
-      by Paul Clarke; changes made.  Chapter reviewed by Peter
-      Bergner; changes made.
-    </para>
   </section>
 
   <section>
@@ -439,19 +434,19 @@
       </indexterm>
       <indexterm>
 	<primary>pmxvi16ger2</primary>
-	<secondary>__builtin_mma_pmxvi64ger2</secondary>
+	<secondary>__builtin_mma_pmxvi16ger2</secondary>
       </indexterm>
       <indexterm>
 	<primary>pmxvi16ger2pp</primary>
-	<secondary>__builtin_mma_pmxvi64ger2pp</secondary>
+	<secondary>__builtin_mma_pmxvi16ger2pp</secondary>
       </indexterm>
       <indexterm>
 	<primary>pmxvi16ger2s</primary>
-	<secondary>__builtin_mma_pmxvi64ger2s</secondary>
+	<secondary>__builtin_mma_pmxvi16ger2s</secondary>
       </indexterm>
       <indexterm>
 	<primary>pmxvi16ger2spp</primary>
-	<secondary>__builtin_mma_pmxvi64ger2spp</secondary>
+	<secondary>__builtin_mma_pmxvi16ger2spp</secondary>
       </indexterm>
       <indexterm>
 	<primary>pmxvi4ger8</primary>

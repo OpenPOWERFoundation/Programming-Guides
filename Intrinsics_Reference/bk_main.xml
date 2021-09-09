@@ -54,7 +54,7 @@
       <holder>OpenPOWER Foundation</holder>
     </copyright>
     <!-- TODO: Set the correct document releaseinfo -->
-    <releaseinfo>Revision 2.0.0</releaseinfo>
+    <releaseinfo>Revision 2.0.0_prd</releaseinfo>
     <productname>OpenPOWER</productname>
     <pubdate/>
 
@@ -88,11 +88,11 @@
     <revhistory>
       <!-- TODO: Set the initial version information and clear any old information out -->
       <revision>
-        <date>2020-10-05</date>
+        <date>2021-09-08</date>
         <revdescription>
           <itemizedlist spacing="compact">
             <listitem>
-              <para>Version 2.0_pre pre-review draft</para>
+              <para>Version 2.0.0_prd public review draft</para>
             </listitem>
           </itemizedlist>
         </revdescription>

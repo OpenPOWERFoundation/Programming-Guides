@@ -1604,10 +1604,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
-      <para revisionflag="added">
-	<emphasis role="bold">Review status:</emphasis>
-	Reviewed by Paul Clarke.
-      </para>
       
       <indexterm>
 	<primary>vcmpequb.</primary>
@@ -2107,10 +2103,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
-      <para revisionflag="added">
-	<emphasis role="bold">Review status:</emphasis>
-	Reviewed by Paul Clarke.
-      </para>
       
       <indexterm>
 	<primary>vcmpgtsb.</primary>
@@ -2499,10 +2491,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       role="bold">r</emphasis> is 0.</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
-      </para>
-      <para revisionflag="added">
-	<emphasis role="bold">Review status:</emphasis>
-	Reviewed by Paul Clarke.
       </para>
       
       <indexterm>
@@ -2979,10 +2967,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
-      <para revisionflag="added">
-	<emphasis role="bold">Review status:</emphasis>
-	Reviewed by Paul Clarke.
-      </para>
       
       <indexterm>
 	<primary>vcmpgtsb.</primary>
@@ -3368,10 +3352,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <emphasis role="bold">r</emphasis> is 0.</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
-      </para>
-      <para revisionflag="added">
-	<emphasis role="bold">Review status:</emphasis>
-	Reviewed by Paul Clarke.
       </para>
       
       <indexterm>
@@ -3855,10 +3835,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       role="bold">r</emphasis> is 0.</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
-      </para>
-      <para revisionflag="added">
-	<emphasis role="bold">Review status:</emphasis>
-	Reviewed by Paul Clarke.
       </para>
       
       <indexterm>
@@ -5570,10 +5546,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
-      <para revisionflag="added">
-	<emphasis role="bold">Review status:</emphasis>
-	Reviewed by Paul Clarke.
-      </para>
       
       <indexterm>
 	<primary>vcmpneb.</primary>
@@ -6112,10 +6084,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
-      <para revisionflag="added">
-	<emphasis role="bold">Review status:</emphasis>
-	Reviewed by Paul Clarke.
-      </para>
       
       <indexterm>
 	<primary>vcmpgtsb.</primary>
@@ -6626,10 +6594,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
-      <para revisionflag="added">
-	<emphasis role="bold">Review status:</emphasis>
-	Reviewed by Paul Clarke.
-      </para>
       
       <indexterm>
 	<primary>vcmpgtsb.</primary>
@@ -7043,10 +7007,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       Otherwise, <emphasis role="bold">r</emphasis> is 0.</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
-      </para>
-      <para revisionflag="added">
-	<emphasis role="bold">Review status:</emphasis>
-	Reviewed by Paul Clarke.
       </para>
       
       <indexterm>
@@ -7508,10 +7468,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <emphasis role="bold">r</emphasis> is 0.</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
-      </para>
-      <para revisionflag="added">
-	<emphasis role="bold">Review status:</emphasis>
-	Reviewed by Paul Clarke.
       </para>
       
       <indexterm>
@@ -8035,10 +7991,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <emphasis role="bold">r</emphasis> is 0.</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
-      </para>
-      <para revisionflag="added">
-	<emphasis role="bold">Review status:</emphasis>
-	Reviewed by Paul Clarke.
       </para>
       
       <indexterm>
@@ -10254,9 +10206,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
-      <para><emphasis role="bold">Review status:</emphasis>
-      Reviewed by Will Schmidt.
-      </para>
       
       <indexterm>
 	<primary>xxblendvb</primary>
@@ -10720,9 +10669,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
-      <para><emphasis role="bold">Review status:</emphasis>
-      Reviewed by Paul Clarke; changes made.
-      </para>
       
       <indexterm>
 	<primary>vcfuged</primary>
@@ -10990,9 +10936,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       The element numbering within a register is left-to-right for
       big-endian targets, and right-to-left for little-endian targets.
       </para>
-      <para><emphasis role="bold">Review status:</emphasis>
-      Reviewed by Paul Clarke.
-      </para>
       
       <indexterm>
 	<primary>vclrlb</primary>
@@ -11128,9 +11071,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <para><emphasis role="bold">Endian considerations:</emphasis>
       The element numbering within a register is left-to-right for
       big-endian targets, and right-to-left for little-endian targets.
-      </para>
-      <para><emphasis role="bold">Review status:</emphasis>
-      Reviewed by Paul Clarke.
       </para>
       
       <indexterm>
@@ -11369,10 +11309,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
-      </para>
-      <para revisionflag="added">
-	<emphasis role="bold">Review status:</emphasis>
-	Reviewed by Paul Clarke.
       </para>
       
       <indexterm>
@@ -11814,10 +11750,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
-      <para revisionflag="added">
-	<emphasis role="bold">Review status:</emphasis>
-	Reviewed by Paul Clarke.
-      </para>
       
       <indexterm>
 	<primary>vcmpgtsb</primary>
@@ -12191,10 +12123,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
-      <para revisionflag="added">
-	<emphasis role="bold">Review status:</emphasis>
-	Reviewed by Paul Clarke.
-      </para>
       
       <indexterm>
 	<primary>vcmpgtsb</primary>
@@ -12553,10 +12481,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
-      </para>
-      <para revisionflag="added">
-	<emphasis role="bold">Review status:</emphasis>
-	Reviewed by Paul Clarke.
       </para>
       
       <indexterm>
@@ -12931,10 +12855,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
-      <para revisionflag="added">
-	<emphasis role="bold">Review status:</emphasis>
-	Reviewed by Paul Clarke.
-      </para>
       
       <indexterm>
 	<primary>vcmpgtsb</primary>
@@ -13291,10 +13211,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
-      </para>
-      <para revisionflag="added">
-	<emphasis role="bold">Review status:</emphasis>
-	Reviewed by Paul Clarke.
       </para>
       
       <indexterm>
@@ -14718,9 +14634,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
-      <para><emphasis role="bold">Review status:</emphasis>
-      Reviewed by Paul Clarke; changes made.
-      </para>
       
       <indexterm>
 	<primary>vclzdm</primary>
@@ -14822,9 +14735,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       allow <emphasis role="bold">r</emphasis> to be consumed
       efficiently by the VSX Load Vector with Length
       (<code>lxvl</code>) instruction.
-      </para>
-      <para><emphasis role="bold">Review status:</emphasis>
-      Reviewed by Paul Clarke.
       </para>
       
       <indexterm>
@@ -15761,9 +15671,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
-      <para><emphasis role="bold">Review status:</emphasis>
-      Reviewed by Paul Clarke; changes made.
-      </para>
       
       <indexterm>
 	<primary>vctzdm</primary>
@@ -16109,10 +16016,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       None.
       </para>
       <para revisionflag="added">
-	<emphasis role="bold">Review status:</emphasis>
-	Reviewed by Paul Clarke.
-      </para>
-      <para revisionflag="added">
 	<emphasis role="bold">Notes:</emphasis>
 	The example implementation when <emphasis
 	role="bold">a</emphasis> is a vector double assumes that the
@@ -16225,10 +16128,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
-      </para>
-      <para revisionflag="added">
-	<emphasis role="bold">Review status:</emphasis>
-	Reviewed by Paul Clarke.
       </para>
       <para revisionflag="added">
 	<emphasis role="bold">Notes:</emphasis>
@@ -16355,12 +16254,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 	the corresponding element of <emphasis
 	role="bold">b</emphasis> is negative one, the corresponding
 	element of <emphasis role="bold">r</emphasis> is undefined. 
-      </para>
-      <para revisionflag="added">
-	<emphasis role="bold">Review status:</emphasis>
-	Changes other than __int128 reviewed by Paul Clarke and
-	Jinsong Ji.  Added 0x8000_0000 example per Jinsong's comment.
-	Changes for __int128 have been reviewed by Paul Clarke.
       </para>
       
       <indexterm>
@@ -16705,13 +16598,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 	be represented in the element type of <emphasis
 	role="bold">r</emphasis>, the corresponding element of
 	<emphasis role="bold">r</emphasis> is undefined.
-      </para>
-      <para>
-	<emphasis role="bold">Review status:</emphasis>
-	Changes other than __int128 were reviewed by Paul Clarke and
-	Jinsong Ji.  Updated language about the shift amount per
-	Jinsong's comment.  Changes for __int128 were reviewed by Paul
-	Clarke.
       </para>
 
       <indexterm>
@@ -18219,9 +18105,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
-      <para><emphasis role="bold">Review status:</emphasis>
-      Reviewed by Paul Clarke.
-      </para>
       
       <indexterm>
 	<primary>vexpandbm</primary>
@@ -19617,9 +19500,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       range 0 to 31.  The results are undefined if the byte index does
       not address an element boundary.
       </para>
-      <para><emphasis role="bold">Review status:</emphasis>
-      Reviewed by Will Schmidt.
-      </para>
       
       <indexterm>
 	<primary>vextubvlx</primary>
@@ -19863,9 +19743,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       range 0 to 31.  The results are undefined if the byte index does
       not address an element boundary.
       </para>
-      <para><emphasis role="bold">Review status:</emphasis>
-      Not yet reviewed.
-      </para>
       
       <indexterm>
 	<primary>vextubvlx</primary>
@@ -20096,9 +19973,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
-      </para>
-      <para><emphasis role="bold">Review status:</emphasis>
-      Reviewed by Paul Clarke.
       </para>
       
       <indexterm>
@@ -23108,9 +22982,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       vector regardless of endianness, the semantics of this built-in
       function differ on big-endian and little-endian targets.
       </para>
-      <para><emphasis role="bold">Review status:</emphasis>
-      Reviewed by Paul Clarke; example added.
-      </para>
       
       <indexterm>
 	<primary>mtvsrbm</primary>
@@ -23244,9 +23115,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       vector regardless of endianness, the semantics of this built-in
       function differ on big-endian and little-endian targets.
       </para>
-      <para><emphasis role="bold">Review status:</emphasis>
-      Reviewed by Paul Clarke; example added.
-      </para>
       
       <indexterm>
 	<primary>mtvsrdm</primary>
@@ -23375,9 +23243,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       vector regardless of endianness, the semantics of this built-in
       function differ on big-endian and little-endian targets.
       </para>
-      <para><emphasis role="bold">Review status:</emphasis>
-      Reviewed by Paul Clarke; example added.
-      </para>
       
       <indexterm>
 	<primary>mtvsrhm</primary>
@@ -23502,9 +23367,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       Architecture, Version 3.1B Specification (<xref
       linkend="VIPR.intro.links" />) for examples of how to use this
       function in practice.
-      </para>
-      <para><emphasis role="bold">Review status:</emphasis>
-      Reviewed by Paul Clarke; minor changes made.
       </para>
       
       <indexterm>
@@ -23702,9 +23564,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
-      <para><emphasis role="bold">Review status:</emphasis>
-      Reviewed by Paul Clarke.
-      </para>
       
       <indexterm>
 	<primary>mtvsrqm</primary>
@@ -23833,9 +23692,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       vector regardless of endianness, the semantics of this built-in
       function differ on big-endian and little-endian targets.
       </para>
-      <para><emphasis role="bold">Review status:</emphasis>
-      Reviewed by Paul Clarke; example added.
-      </para>
       
       <indexterm>
 	<primary>mtvsrwm</primary>
@@ -23929,9 +23785,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
-      </para>
-      <para><emphasis role="bold">Review status:</emphasis>
-      Reviewed by Paul Clarke.
       </para>
       
       <indexterm>
@@ -24574,9 +24427,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       range 0 to 15.  The results are undefined if the byte index does
       not address an element boundary.
       </para>
-      <para><emphasis role="bold">Review status:</emphasis>
-      Not yet reviewed.
-      </para>
       
       <indexterm>
 	<primary>vinsblx</primary>
@@ -24933,9 +24783,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       The byte index <emphasis role="bold">c</emphasis> must be in the
       range 0 to 15.  The results are undefined if the byte index does
       not address an element boundary.
-      </para>
-      <para><emphasis role="bold">Review status:</emphasis>
-      Not yet reviewed.
       </para>
       
       <indexterm>
@@ -28876,12 +28723,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 	negative one, the corresponding element of <emphasis
 	role="bold">r</emphasis> is undefined.
       </para>
-      <para>
-	<emphasis role="bold">Review status:</emphasis>
-	Changes other than __int128 were reviewed by Paul Clarke and
-	Jinsong Ji.  Changes for __int128 have been reviewed by Paul
-	Clarke.
-      </para>
 
       <indexterm>
 	<primary>vmodsw</primary>
@@ -29392,10 +29233,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
-      <para revisionflag="added">
-	<emphasis role="bold">Review status:</emphasis>
-	Reviewed by Paul Clarke; changes made.
-      </para>
       
       <indexterm>
 	<primary>vmsummbm</primary>
@@ -29602,9 +29439,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
-      </para>
-      <para><emphasis role="bold">Review status:</emphasis>
-      Reviewed by Paul Clarke.
       </para>
       
       <indexterm>
@@ -29983,10 +29817,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 	  </para>
 	</listitem>
       </itemizedlist>
-      <para revisionflag="added">
-	<emphasis role="bold">Review status:</emphasis>
-	Changes reviewed by Paul Clarke and Jinsong Ji.
-      </para>
 
       <indexterm>
 	<primary>vmulesb</primary>
@@ -30287,10 +30117,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <para><emphasis role="bold">Endian considerations:</emphasis>
       The element numbering within a register is left-to-right for big-endian
       targets, and right-to-left for little-endian targets.
-      </para>
-      <para revisionflag="added"><emphasis role="bold">Review
-      status:</emphasis>
-      Reviewed by Paul Clarke.
       </para>
       
       <indexterm>
@@ -30616,9 +30442,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
-      <para><emphasis role="bold">Review status:</emphasis>
-      Reviewed by Paul Clarke and Jinsong Ji.
-      </para>
 
       <indexterm>
 	<primary>vmulhsw</primary>
@@ -30773,10 +30596,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <para><emphasis role="bold">Endian considerations:</emphasis>
       The element numbering within a register is left-to-right for big-endian
       targets, and right-to-left for little-endian targets.
-      </para>
-      <para revisionflag="added"><emphasis role="bold">Review
-      status:</emphasis>
-      Reviewed by Paul Clarke.
       </para>
       
       <indexterm>
@@ -34487,9 +34306,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
-      <para><emphasis role="bold">Review status:</emphasis>
-      Reviewed by Paul Clarke; changes made.
-      </para>
       
       <indexterm>
 	<primary>vpdepd</primary>
@@ -35066,9 +34882,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       description of the <code>xxpermx</code> instruction in the Power
       Instruction Set Architecture (<xref linkend="VIPR.intro.links"
       />) for examples.
-      </para>
-      <para><emphasis role="bold">Review status:</emphasis>
-      Not yet reviewed.
       </para>
       
       <indexterm>
@@ -36177,9 +35990,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
-      <para><emphasis role="bold">Review status:</emphasis>
-      Reviewed by Paul Clarke; changes made.
-      </para>
       
       <indexterm>
 	<primary>vpextd</primary>
@@ -37022,9 +36832,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       0 and  3 for word-length elements, and between 0 and 1 for
       doubleword-length elements.
       </para>
-      <para><emphasis role="bold">Review status:</emphasis>
-      Not yet reviewed.
-      </para>
       
       <indexterm>
 	<primary>vinsw</primary>
@@ -37280,14 +37087,13 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       The semantics of this built-in function differ for big-endian
-      and little-endian targets.
+      and little-endian targets, since the byte position indicated by
+      <emphasis role="bold">c</emphasis> is in left-to-right order
+      regardless of target endianness.
       </para>
       <para><emphasis role="bold">Notes:</emphasis>
       The value of <emphasis role="bold">c</emphasis> must be between
       0 and 15.
-      </para>
-      <para><emphasis role="bold">Review status:</emphasis>
-      Not yet reviewed.
       </para>
       
       <indexterm>
@@ -38248,10 +38054,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
-      <para revisionflag="added">
-	<emphasis role="bold">Review status:</emphasis>
-	Reviewed by Paul Clarke.
-      </para>
       
       <indexterm>
 	<primary>vrlb</primary>
@@ -38593,10 +38395,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       The referenced bit numbers within the elements of <emphasis
       role="bold">c</emphasis> are in left-to-right order.
       </para>
-      <para revisionflag="added">
-	<emphasis role="bold">Review status:</emphasis>
-	Reviewed by Paul Clarke.
-      </para>
       
       <indexterm>
 	<primary>vrlwmi</primary>
@@ -38768,10 +38566,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       begin in the next higher byte, and other bytes zero.</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
-      </para>
-      <para revisionflag="added">
-	<emphasis role="bold">Review status:</emphasis>
-	Reviewed by Paul Clarke.
       </para>
       
       <indexterm>
@@ -40576,9 +40370,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       is used with the appropriate permute control vector (pcv) to
       achieve this.
       </para>
-      <para><emphasis role="bold">Review status:</emphasis>
-      Reviewed by Paul Clarke.
-      </para>
       
       <indexterm>
 	<primary>vextsb2w</primary>
@@ -40713,9 +40504,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       natural element order.  For big endian, <code>vperm</code>
       is used with the appropriate permute control vector (pcv) to
       achieve this.
-      </para>
-      <para><emphasis role="bold">Review status:</emphasis>
-      Reviewed by Paul Clarke.
       </para>
       
       <indexterm>
@@ -40864,9 +40652,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       Element 0 is the rightmost element for little endian, and the
       leftmost element for big endian.
       </para>
-      <para><emphasis role="bold">Review status:</emphasis>
-      Reviewed by Paul Clarke.
-      </para>
       
       <indexterm>
 	<primary>vextsd2q</primary>
@@ -40959,10 +40744,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       Zeros are shifted in from the right.</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
-      </para>
-      <para revisionflag="added">
-	<emphasis role="bold">Review status:</emphasis>
-	Reviewed by Paul Clarke.
       </para>
       
       <indexterm>
@@ -41625,14 +41406,13 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       The semantics of this built-in function differ for big-endian
-      and little-endian targets.
+      and little-endian targets, since the concatenation of <emphasis
+      role="bold">a</emphasis> and <emphasis role="bold">b</emphasis>
+      is done in big-endian fashion (left to right).
       </para>
       <para><emphasis role="bold">Notes:</emphasis>
       The value of <emphasis role="bold">c</emphasis> must be between
       0 and 7, inclusive.
-      </para>
-      <para><emphasis role="bold">Review status:</emphasis>
-      Reviewed by Will Schmidt.
       </para>
       
       <indexterm>
@@ -43842,9 +43622,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
-      <para><emphasis role="bold">Review status:</emphasis>
-      Reviewed by Will Schmidt.
-      </para>
       
       <indexterm>
 	<primary>xxspltiw</primary>
@@ -43950,9 +43727,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <para><emphasis role="bold">Endian considerations:</emphasis>
       Element numbering is left-to-right in a register for big-endian
       targets, and right-to-left for little-endian targets.
-      </para>
-      <para><emphasis role="bold">Review status:</emphasis>
-      Reviewed by Will Schmidt.
       </para>
       
       <indexterm>
@@ -44121,9 +43895,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       If <emphasis role="bold">a</emphasis> is a single-precision
       denormal value, the value of <emphasis role="bold">r</emphasis>
       is undefined.
-      </para>
-      <para><emphasis role="bold">Review status:</emphasis>
-      Not yet reviewed.
       </para>
       
       <indexterm>
@@ -44543,10 +44314,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
-      <para revisionflag="added">
-	<emphasis role="bold">Review status:</emphasis>
-	Reviewed by Paul Clarke.
-      </para>
       
       <indexterm>
 	<primary>vsrb</primary>
@@ -44837,10 +44604,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       from the left.</para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
-      </para>
-      <para revisionflag="added">
-	<emphasis role="bold">Review status:</emphasis>
-	Reviewed by Paul Clarke.
       </para>
       
       <indexterm>
@@ -45137,14 +44900,13 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       The semantics of this built-in function differ for big-endian
-      and little-endian targets.
+      and little-endian targets, since the concatenation of <emphasis
+      role="bold">a</emphasis> and <emphasis role="bold">b</emphasis>
+      is done in big-endian fashion (left to right).
       </para>
       <para><emphasis role="bold">Notes:</emphasis>
       The value of <emphasis role="bold">c</emphasis> must be between
       0 and 7, inclusive.
-      </para>
-      <para><emphasis role="bold">Review status:</emphasis>
-      Reviewed by Will Schmidt.
       </para>
       
       <indexterm>
@@ -47763,9 +47525,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       The element numbering within a register is left-to-right for
       big-endian targets, and right-to-left for little-endian targets.
       </para>
-      <para><emphasis role="bold">Review status:</emphasis>
-      Reviewed by Paul Clarke.
-      </para>
       
       <indexterm>
 	<primary>vstribr</primary>
@@ -47938,9 +47697,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 	Use this built-in in preference to <code>vec_cmpnez</code>
 	when the test guards a call to <code>vec_stril</code>.  This
 	allows compilers to generate the most efficient code.
-      </para>
-      <para><emphasis role="bold">Review status:</emphasis>
-      Reviewed by Paul Clarke.
       </para>
       
       <indexterm>
@@ -48127,9 +47883,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       The element numbering within a register is left-to-right for
       big-endian targets, and right-to-left for little-endian targets.
       </para>
-      <para><emphasis role="bold">Review status:</emphasis>
-      Reviewed by Paul Clarke.
-      </para>
       
       <indexterm>
 	<primary>vstribr</primary>
@@ -48302,9 +48055,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
 	Use this built-in in preference to <code>vec_cmpnez</code>
 	when the test guards a call to <code>vec_strir</code>.  This
 	allows compilers to generate the most efficient code.
-      </para>
-      <para><emphasis role="bold">Review status:</emphasis>
-      Reviewed by Paul Clarke.
       </para>
       
       <indexterm>
@@ -50373,9 +50123,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
       </para>
-      <para><emphasis role="bold">Review status:</emphasis>
-      Reviewed by Paul Clarke.
-      </para>
       
       <indexterm>
 	<primary>xxeval</primary>
@@ -50732,9 +50479,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       <emphasis>t</emphasis>, and "bit" identifies the first bit
       position in condition register field <emphasis>t</emphasis>.
       </para>
-      <para><emphasis role="bold">Review status:</emphasis>
-      Reviewed by Paul Clarke.
-      </para>
       
       <indexterm>
 	<primary>xvtlsbb</primary>
@@ -50827,9 +50571,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       only set bit identifies condition register field
       <emphasis>t</emphasis>, and "bit" identifies the third bit
       position in condition register field <emphasis>t</emphasis>.
-      </para>
-      <para><emphasis role="bold">Review status:</emphasis>
-      Reviewed by Paul Clarke.
       </para>
       
       <indexterm>
@@ -53877,7 +53618,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       to a 128-bit integer.
       </para>
       <para><emphasis role="bold">Result value:</emphasis>
-      Let <emphasis role="bold">x</emphasis> be the addressed formed
+      Let <emphasis role="bold">x</emphasis> be the address formed
       by adding <emphasis role="bold">a</emphasis> and <emphasis
       role="bold">b</emphasis>.  Then <emphasis
       role="bold">r</emphasis> is set to the value of the element
@@ -53888,9 +53629,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
-      </para>
-      <para><emphasis role="bold">Review status:</emphasis>
-      Not yet reviewed.
       </para>
       
       <indexterm>
@@ -54066,7 +53804,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       to a 128-bit unsigned integer.
       </para>
       <para><emphasis role="bold">Result value:</emphasis>
-      Let <emphasis role="bold">x</emphasis> be the addressed formed
+      Let <emphasis role="bold">x</emphasis> be the address formed
       by adding <emphasis role="bold">a</emphasis> and <emphasis
       role="bold">b</emphasis>.  Then <emphasis
       role="bold">r</emphasis> is set to the value of the element
@@ -54077,9 +53815,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
-      </para>
-      <para><emphasis role="bold">Review status:</emphasis>
-      Not yet reviewed.
       </para>
       
       <indexterm>
@@ -55567,9 +55302,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="VIPR.vec-ref">
       </para>
       <para><emphasis role="bold">Endian considerations:</emphasis>
       None.
-      </para>
-      <para><emphasis role="bold">Review status:</emphasis>
-      Not yet reviewed.
       </para>
       
       <indexterm>
